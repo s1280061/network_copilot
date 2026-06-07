@@ -2,33 +2,18 @@
 
 import Link from "next/link";
 import { ArticleMeta } from "@/lib/types";
-
-const CATEGORY_STYLE: Record<
-  string,
-  { bg: string; text: string; icon: string }
-> = {
-  Ethernet:  { bg: "bg-blue-100",   text: "text-blue-700",   icon: "🔌" },
-  "TCP/IP":  { bg: "bg-sky-100",    text: "text-sky-700",    icon: "🌐" },
-  PCAP:      { bg: "bg-violet-100", text: "text-violet-700", icon: "🔍" },
-  "SOME/IP": { bg: "bg-orange-100", text: "text-orange-700", icon: "🚗" },
-  AUTOSAR:   { bg: "bg-green-100",  text: "text-green-700",  icon: "⚙️" },
-  SDV:       { bg: "bg-rose-100",   text: "text-rose-700",   icon: "🤖" },
-};
-
-const DEFAULT_STYLE = { bg: "bg-slate-100", text: "text-slate-600", icon: "📄" };
+import Thumbnail, { categoryStyle } from "@/components/Thumbnail";
 
 export default function ArticleCard({ a }: { a: ArticleMeta }) {
-  const style = CATEGORY_STYLE[a.category] ?? DEFAULT_STYLE;
+  const style = categoryStyle(a.category);
 
   return (
     <Link
       href={`/glossary/${a.slug}`}
       className="block w-64 shrink-0 border rounded-xl bg-white overflow-hidden hover:border-sky-400 hover:shadow-md transition"
     >
-      {/* thumbnail banner */}
-      <div className={`${style.bg} flex items-center justify-center h-24`}>
-        <span className="text-4xl">{style.icon}</span>
-      </div>
+      {/* thumbnail (image if present, else colored banner) */}
+      <Thumbnail slug={a.slug} category={a.category} className="h-24 w-full" />
 
       <div className="p-4">
         <div className="flex items-center gap-2 mb-2">

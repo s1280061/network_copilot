@@ -12,6 +12,7 @@ import {
 import { Article, Ref } from "@/lib/types";
 import { useStudyPanel } from "@/lib/study-context";
 import { recordView } from "@/lib/profile";
+import Thumbnail from "@/components/Thumbnail";
 
 export default function ArticleView({ slug }: { slug: string }) {
   const router = useRouter();
@@ -79,6 +80,14 @@ export default function ArticleView({ slug }: { slug: string }) {
 
   return (
     <article>
+      {/* note-style header image (falls back to a colored banner) */}
+      <Thumbnail
+        slug={article.slug}
+        category={article.category}
+        className="w-full h-48 sm:h-64 rounded-xl mb-6"
+        iconClassName="text-6xl"
+      />
+
       <div className="flex items-start justify-between gap-4 mb-4">
         <div>
           <span className="text-xs font-semibold text-sky-600">
