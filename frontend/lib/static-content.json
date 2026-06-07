@@ -94,6 +94,100 @@
 "favorite": false
 },
 {
+"slug": "arp",
+"title": "ARP",
+"level": 2,
+"category": "Ethernet",
+"difficulty": "中級",
+"related": [
+"mac-address",
+"ip",
+"ethernet"
+],
+"next": [
+"ip"
+],
+"tags": [
+"l2",
+"l3",
+"automotive"
+],
+"updated": "2026-06-07",
+"excerpt": "ARP(Address Resolution Protocol)は、IPアドレスから対応する mac-address を調べるためのプロトコルです。「このIPの機器のMACは?」とネットワークに問い合わせ(ARPリクエスト)、該当機器が自分",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "dhcp",
+"title": "DHCP",
+"level": 2,
+"category": "TCP/IP",
+"difficulty": "中級",
+"related": [
+"ip",
+"subnet",
+"dns"
+],
+"next": [
+"dns"
+],
+"tags": [
+"l3"
+],
+"updated": "2026-06-07",
+"excerpt": "DHCP(Dynamic Host Configuration Protocol)は、機器に ip アドレスやサブネットマスク、ゲートウェイ、DNSサーバなどのネットワーク設定を自動で配布する仕組みです。手動設定の手間とミスを無くします。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "dns",
+"title": "DNS",
+"level": 2,
+"category": "TCP/IP",
+"difficulty": "初級",
+"related": [
+"ip",
+"udp",
+"dhcp"
+],
+"next": [
+"socket"
+],
+"tags": [
+"l7"
+],
+"updated": "2026-06-07",
+"excerpt": "DNS(Domain Name System)は、人間が読みやすいドメイン名(例 `example.com`)を、機器が使う ip アドレスに変換する「インターネットの電話帳」です。問い合わせは主に udp 上で高速に行われます。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "icmp",
+"title": "ICMP / ping",
+"level": 2,
+"category": "TCP/IP",
+"difficulty": "初級",
+"related": [
+"ip",
+"wireshark"
+],
+"next": [
+"subnet"
+],
+"tags": [
+"l3",
+"tool"
+],
+"updated": "2026-06-07",
+"excerpt": "ICMP(Internet Control Message Protocol)は、ip 通信のエラー通知や制御メッセージをやり取りするプロトコルです。最も身近な用途が `ping` で、相手に到達できるか・往復にどれだけ時間がかかるかを調べ",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "ip",
 "title": "IP",
 "level": 2,
@@ -191,6 +285,53 @@
 "favorite": false
 },
 {
+"slug": "vlan",
+"title": "VLAN",
+"level": 2,
+"category": "Ethernet",
+"difficulty": "中級",
+"related": [
+"ethernet",
+"mac-address",
+"tsn"
+],
+"next": [
+"tsn"
+],
+"tags": [
+"l2",
+"automotive"
+],
+"updated": "2026-06-07",
+"excerpt": "VLAN(Virtual LAN / IEEE 802.1Q)は、1本の物理 ethernet を論理的に複数のネットワークに分割する技術です。フレームに「VLANタグ」を付けることで、同じケーブル上でもグループごとに通信を分離できます。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "subnet",
+"title": "サブネット / CIDR",
+"level": 2,
+"category": "TCP/IP",
+"difficulty": "中級",
+"related": [
+"ip",
+"dhcp",
+"mac-address"
+],
+"next": [
+"dhcp"
+],
+"tags": [
+"l3"
+],
+"updated": "2026-06-07",
+"excerpt": "サブネットは、ip アドレス空間を小さなネットワークに区切る考え方です。「ネットワーク部」と「ホスト部」をサブネットマスク(例 `255.255.255.0` / CIDR表記 `/24`)で分け、どこまでが同じネットワークかを定めます。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "pcap",
 "title": "PCAP",
 "level": 3,
@@ -263,6 +404,54 @@
 "favorite": false
 },
 {
+"slug": "tcpdump",
+"title": "tcpdump",
+"level": 3,
+"category": "PCAP",
+"difficulty": "中級",
+"related": [
+"pcap",
+"wireshark",
+"tshark"
+],
+"next": [
+"tshark"
+],
+"tags": [
+"tool",
+"cli"
+],
+"updated": "2026-06-07",
+"excerpt": "tcpdumpは、コマンドラインでパケットをキャプチャ・表示する定番ツールです。GUIの wireshark と違い、サーバや組み込み機器など画面の無い環境でも動き、結果を pcap ファイルに保存できます。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "tshark",
+"title": "tshark",
+"level": 3,
+"category": "PCAP",
+"difficulty": "中級",
+"related": [
+"wireshark",
+"tcpdump",
+"pcap"
+],
+"next": [
+"doip"
+],
+"tags": [
+"tool",
+"cli"
+],
+"updated": "2026-06-07",
+"excerpt": "tsharkは、wireshark のコマンドライン版です。Wiresharkと同じ強力なプロトコル解析(ディセクタ)を持ちつつ、CLIで動くため自動化やバッチ処理に向いています。表示フィルタで欲しい情報だけを抽出できます。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "autosar",
 "title": "AUTOSAR",
 "level": 4,
@@ -307,6 +496,55 @@
 "difficulty": "上級",
 "updated": "2026-06-07",
 "excerpt": "CAN(Controller Area Network)は、自動車向けに開発された堅牢なシリアル通信バスです。各メッセージはIDを持ち、宛先ではなく「内容」で識別されるブロードキャスト方式。ノイズに強く、配線がシンプルなのが特長です。CAN",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "can-fd",
+"title": "CAN FD",
+"level": 4,
+"category": "AUTOSAR",
+"difficulty": "中級",
+"related": [
+"can",
+"autosar",
+"ethernet"
+],
+"next": [
+"autosar"
+],
+"tags": [
+"automotive",
+"bus"
+],
+"updated": "2026-06-07",
+"excerpt": "CAN FD(CAN with Flexible Data-rate)は、従来の can を拡張した規格です。1フレームで運べるデータ量を8バイトから最大64バイトへ拡大し、データ部分の通信速度も高速化しました。既存のCAN資産を活かしつつ",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "doip",
+"title": "DoIP(Diagnostics over IP)",
+"level": 4,
+"category": "SOME/IP",
+"difficulty": "上級",
+"related": [
+"tcp",
+"ip",
+"some-ip",
+"autosar"
+],
+"next": [
+"some-ip"
+],
+"tags": [
+"automotive",
+"diagnostics"
+],
+"updated": "2026-06-07",
+"excerpt": "DoIP(Diagnostics over IP / ISO 13400)は、車載診断通信(UDS)を ip ネットワーク上で行うための規格です。従来CAN上で行っていた診断を、高帯域なEthernetとIPで実現し、大量データの高速なやり",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -404,6 +642,31 @@
 "difficulty": "上級",
 "updated": "2026-06-07",
 "excerpt": "SDV(Software Defined Vehicle)は、車両の機能をソフトウェアで定義・更新できるようにする設計思想です。ハード固定の機能群から、OTAで継続的に進化するソフト中心の車へ——スマートフォンのような体験を車にもたらします",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "tsn",
+"title": "TSN(Time-Sensitive Networking)",
+"level": 5,
+"category": "SDV",
+"difficulty": "上級",
+"related": [
+"ethernet",
+"vlan",
+"adas-comm",
+"sdv"
+],
+"next": [
+"adas-comm"
+],
+"tags": [
+"automotive",
+"realtime"
+],
+"updated": "2026-06-07",
+"excerpt": "TSN(Time-Sensitive Networking)は、標準 ethernet に「時間保証」を加える一連の規格(IEEE 802.1)です。時刻同期・帯域予約・優先制御により、重要なフレームを決められた時間内に確実に届けます。",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -570,6 +833,172 @@
 {
 "slug": "osi",
 "title": "OSI参照モデル"
+}
+],
+"completed": false,
+"favorite": false
+},
+"arp": {
+"slug": "arp",
+"title": "ARP",
+"level": 2,
+"category": "Ethernet",
+"difficulty": "中級",
+"related": [
+"mac-address",
+"ip",
+"ethernet"
+],
+"next": [
+"ip"
+],
+"tags": [
+"l2",
+"l3",
+"automotive"
+],
+"updated": "2026-06-07",
+"html": "<h2>概要</h2>\n<p>ARP(Address Resolution Protocol)は、IPアドレスから対応する <a class=\"term-link\" data-slug=\"mac-address\" href=\"/glossary/mac-address\">MAC Address</a> を調べるためのプロトコルです。「このIPの機器のMACは?」とネットワークに問い合わせ(ARPリクエスト)、該当機器が自分のMACを返答(ARPリプライ)します。</p>\n<h2>なぜ必要か</h2>\n<p><a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a> は論理的な宛先を示しますが、<a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> が実際にフレームを届けるには物理アドレスであるMACが必要です。ARPはこの「IP→MAC」の橋渡しを担う、L3とL2をつなぐ重要な仕組みです。</p>\n<h2>自動運転での利用例</h2>\n<p>車載Ethernetでも、ECU同士がIP通信を始める前にARPでMACを解決します。解析時にARPの様子を見ると、どのECUがどのIPを持ち、いつ通信を開始したかが分かります。ARPが返らない場合は相手ECUの不在や設定ミスを疑います。</p>\n<h2>関連用語</h2>\n<p>解決対象が <a class=\"term-link\" data-slug=\"mac-address\" href=\"/glossary/mac-address\">MAC Address</a>、問い合わせの元になるのが <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a>、フレームを運ぶのが <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>ARPが補助する論理アドレス <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a> の仕組みを復習しましょう。</p>",
+"related_full": [
+{
+"slug": "mac-address",
+"title": "MAC Address"
+},
+{
+"slug": "ip",
+"title": "IP"
+},
+{
+"slug": "ethernet",
+"title": "Ethernet"
+}
+],
+"next_full": [
+{
+"slug": "ip",
+"title": "IP"
+}
+],
+"completed": false,
+"favorite": false
+},
+"dhcp": {
+"slug": "dhcp",
+"title": "DHCP",
+"level": 2,
+"category": "TCP/IP",
+"difficulty": "中級",
+"related": [
+"ip",
+"subnet",
+"dns"
+],
+"next": [
+"dns"
+],
+"tags": [
+"l3"
+],
+"updated": "2026-06-07",
+"html": "<h2>概要</h2>\n<p>DHCP(Dynamic Host Configuration Protocol)は、機器に <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a> アドレスやサブネットマスク、ゲートウェイ、DNSサーバなどのネットワーク設定を自動で配布する仕組みです。手動設定の手間とミスを無くします。</p>\n<h2>なぜ必要か</h2>\n<p>多数の機器に一つずつIPを手で設定するのは現実的ではありません。DHCPサーバが空きアドレスを貸し出すことで、機器は接続するだけでネットワークに参加できます。</p>\n<h2>自動運転での利用例</h2>\n<p>車載ネットワークでは多くのECUが固定IP(静的設定)を使いますが、診断ツールの接続やインフォテインメント機器など、動的にIPを割り当てたい場面でDHCPが利用されます。</p>\n<h2>関連用語</h2>\n<p>配布対象が <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a>、区切りの概念が <a class=\"term-link\" data-slug=\"subnet\" href=\"/glossary/subnet\">サブネット / CIDR</a>、名前解決が <a class=\"term-link\" data-slug=\"dns\" href=\"/glossary/dns\">DNS</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>名前からIPを引く <a class=\"term-link\" data-slug=\"dns\" href=\"/glossary/dns\">DNS</a> を学びましょう。</p>",
+"related_full": [
+{
+"slug": "ip",
+"title": "IP"
+},
+{
+"slug": "subnet",
+"title": "サブネット / CIDR"
+},
+{
+"slug": "dns",
+"title": "DNS"
+}
+],
+"next_full": [
+{
+"slug": "dns",
+"title": "DNS"
+}
+],
+"completed": false,
+"favorite": false
+},
+"dns": {
+"slug": "dns",
+"title": "DNS",
+"level": 2,
+"category": "TCP/IP",
+"difficulty": "初級",
+"related": [
+"ip",
+"udp",
+"dhcp"
+],
+"next": [
+"socket"
+],
+"tags": [
+"l7"
+],
+"updated": "2026-06-07",
+"html": "<h2>概要</h2>\n<p>DNS(Domain Name System)は、人間が読みやすいドメイン名(例 <code>example.com</code>)を、機器が使う <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a> アドレスに変換する「インターネットの電話帳」です。問い合わせは主に <a class=\"term-link\" data-slug=\"udp\" href=\"/glossary/udp\">UDP</a> 上で高速に行われます。</p>\n<h2>なぜ必要か</h2>\n<p>人はIPアドレスの数字を覚えられません。DNSが名前とIPを対応づけることで、私たちは名前だけでサービスにアクセスできます。設定変更時もIPが変わるだけでよく、名前は維持できます。</p>\n<h2>自動運転での利用例</h2>\n<p>クラウド連携(OTA更新やテレマティクス)を行う車載システムでは、接続先サーバをDNSで解決します。社内開発環境でも、ECUやテスト機をホスト名で扱うためにDNSが使われます。</p>\n<h2>関連用語</h2>\n<p>変換先が <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a>、問い合わせの土台が <a class=\"term-link\" data-slug=\"udp\" href=\"/glossary/udp\">UDP</a>、設定配布元が <a class=\"term-link\" data-slug=\"dhcp\" href=\"/glossary/dhcp\">DHCP</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>通信の出入口 <a class=\"term-link\" data-slug=\"socket\" href=\"/glossary/socket\">Socket</a> を学びましょう。</p>",
+"related_full": [
+{
+"slug": "ip",
+"title": "IP"
+},
+{
+"slug": "udp",
+"title": "UDP"
+},
+{
+"slug": "dhcp",
+"title": "DHCP"
+}
+],
+"next_full": [
+{
+"slug": "socket",
+"title": "Socket"
+}
+],
+"completed": false,
+"favorite": false
+},
+"icmp": {
+"slug": "icmp",
+"title": "ICMP / ping",
+"level": 2,
+"category": "TCP/IP",
+"difficulty": "初級",
+"related": [
+"ip",
+"wireshark"
+],
+"next": [
+"subnet"
+],
+"tags": [
+"l3",
+"tool"
+],
+"updated": "2026-06-07",
+"html": "<h2>概要</h2>\n<p>ICMP(Internet Control Message Protocol)は、<a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a> 通信のエラー通知や制御メッセージをやり取りするプロトコルです。最も身近な用途が <code>ping</code> で、相手に到達できるか・往復にどれだけ時間がかかるかを調べます。</p>\n<h2>なぜ必要か</h2>\n<p>通信がうまくいかないとき、まず「相手まで届くのか」を確認する必要があります。ICMP(ping)は到達性と遅延を手早く確認できる、ネットワーク診断の第一歩です。</p>\n<h2>自動運転での利用例</h2>\n<p>車載Ethernetの立ち上げ時、各ECUにpingを打って到達性とIP設定を確認します。応答が無ければ配線・IP・VLAN設定のいずれかを疑う、という切り分けの起点になります。</p>\n<h2>関連用語</h2>\n<p>土台が <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a>、通信の中身を観測するのが <a class=\"term-link\" data-slug=\"wireshark\" href=\"/glossary/wireshark\">Wireshark</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>IPアドレスの範囲を扱う <a class=\"term-link\" data-slug=\"subnet\" href=\"/glossary/subnet\">サブネット / CIDR</a> を学びましょう。</p>",
+"related_full": [
+{
+"slug": "ip",
+"title": "IP"
+},
+{
+"slug": "wireshark",
+"title": "Wireshark"
+}
+],
+"next_full": [
+{
+"slug": "subnet",
+"title": "サブネット / CIDR"
 }
 ],
 "completed": false,
@@ -764,6 +1193,91 @@
 "completed": false,
 "favorite": false
 },
+"vlan": {
+"slug": "vlan",
+"title": "VLAN",
+"level": 2,
+"category": "Ethernet",
+"difficulty": "中級",
+"related": [
+"ethernet",
+"mac-address",
+"tsn"
+],
+"next": [
+"tsn"
+],
+"tags": [
+"l2",
+"automotive"
+],
+"updated": "2026-06-07",
+"html": "<h2>概要</h2>\n<p>VLAN(Virtual LAN / IEEE 802.1Q)は、1本の物理 <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> を論理的に複数のネットワークに分割する技術です。フレームに「VLANタグ」を付けることで、同じケーブル上でもグループごとに通信を分離できます。</p>\n<h2>なぜ必要か</h2>\n<p>1つの物理網に異なる目的のトラフィックが混在すると、セキュリティやリアルタイム性に問題が出ます。VLANで論理的に分けることで、不要な通信の混入を防ぎ、帯域と安全性を確保できます。</p>\n<h2>自動運転での利用例</h2>\n<p>車載Ethernetでは、制御系・情報系(インフォテインメント)・診断系などをVLANで分離するのが一般的です。これにより、映像ストリームが制御通信を圧迫するのを防ぎ、安全に関わるトラフィックを保護します。</p>\n<h2>関連用語</h2>\n<p>土台が <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a>、宛先識別が <a class=\"term-link\" data-slug=\"mac-address\" href=\"/glossary/mac-address\">MAC Address</a>、時間保証と組み合わせる技術が <a class=\"term-link\" data-slug=\"tsn\" href=\"/glossary/tsn\">TSN(Time-Sensitive Networking)</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>リアルタイム性を保証する <a class=\"term-link\" data-slug=\"tsn\" href=\"/glossary/tsn\">TSN(Time-Sensitive Networking)</a> を学びましょう。</p>",
+"related_full": [
+{
+"slug": "ethernet",
+"title": "Ethernet"
+},
+{
+"slug": "mac-address",
+"title": "MAC Address"
+},
+{
+"slug": "tsn",
+"title": "TSN(Time-Sensitive Networking)"
+}
+],
+"next_full": [
+{
+"slug": "tsn",
+"title": "TSN(Time-Sensitive Networking)"
+}
+],
+"completed": false,
+"favorite": false
+},
+"subnet": {
+"slug": "subnet",
+"title": "サブネット / CIDR",
+"level": 2,
+"category": "TCP/IP",
+"difficulty": "中級",
+"related": [
+"ip",
+"dhcp",
+"mac-address"
+],
+"next": [
+"dhcp"
+],
+"tags": [
+"l3"
+],
+"updated": "2026-06-07",
+"html": "<h2>概要</h2>\n<p>サブネットは、<a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a> アドレス空間を小さなネットワークに区切る考え方です。「ネットワーク部」と「ホスト部」をサブネットマスク(例 <code>255.255.255.0</code> / CIDR表記 <code>/24</code>)で分け、どこまでが同じネットワークかを定めます。</p>\n<h2>なぜ必要か</h2>\n<p>すべての機器を1つの巨大なネットワークに置くと、通信効率も管理性も悪化します。サブネットで適切に区切ることで、ブロードキャストの範囲を限定し、ルーティングや管理をしやすくします。</p>\n<h2>自動運転での利用例</h2>\n<p>ゾーンアーキテクチャの車両では、ゾーンごとにサブネットを割り当てて管理することがあります。あるECUと別ECUが「同じサブネットか」で、直接通信できるかルータ越しかが決まります。</p>\n<h2>関連用語</h2>\n<p>区切る対象が <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a>、アドレス自動割り当てが <a class=\"term-link\" data-slug=\"dhcp\" href=\"/glossary/dhcp\">DHCP</a>、同一サブネット内の到達に使うのが <a class=\"term-link\" data-slug=\"mac-address\" href=\"/glossary/mac-address\">MAC Address</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>IPアドレスを自動配布する <a class=\"term-link\" data-slug=\"dhcp\" href=\"/glossary/dhcp\">DHCP</a> を学びましょう。</p>",
+"related_full": [
+{
+"slug": "ip",
+"title": "IP"
+},
+{
+"slug": "dhcp",
+"title": "DHCP"
+},
+{
+"slug": "mac-address",
+"title": "MAC Address"
+}
+],
+"next_full": [
+{
+"slug": "dhcp",
+"title": "DHCP"
+}
+],
+"completed": false,
+"favorite": false
+},
 "pcap": {
 "slug": "pcap",
 "title": "PCAP",
@@ -901,6 +1415,92 @@
 "completed": false,
 "favorite": false
 },
+"tcpdump": {
+"slug": "tcpdump",
+"title": "tcpdump",
+"level": 3,
+"category": "PCAP",
+"difficulty": "中級",
+"related": [
+"pcap",
+"wireshark",
+"tshark"
+],
+"next": [
+"tshark"
+],
+"tags": [
+"tool",
+"cli"
+],
+"updated": "2026-06-07",
+"html": "<h2>概要</h2>\n<p>tcpdumpは、コマンドラインでパケットをキャプチャ・表示する定番ツールです。GUIの <a class=\"term-link\" data-slug=\"wireshark\" href=\"/glossary/wireshark\">Wireshark</a> と違い、サーバや組み込み機器など画面の無い環境でも動き、結果を <a class=\"term-link\" data-slug=\"pcap\" href=\"/glossary/pcap\">PCAP</a> ファイルに保存できます。</p>\n<h2>なぜ必要か</h2>\n<p>現場の機器に直接GUIを入れられないことは多々あります。tcpdumpなら <code>tcpdump -i eth0 -w capture.pcap</code> のように軽量にキャプチャでき、取得したファイルを後でWiresharkで詳細解析する、という流れが作れます。</p>\n<h2>自動運転での利用例</h2>\n<p>車載のLinuxベースECU(AUTOSAR Adaptiveなど)上でtcpdumpを動かし、SOME/IPやDoIPの通信を <code>.pcap</code> で採取します。採取データは本アプリのPCAP解析にもそのままアップロードできます。</p>\n<h2>関連用語</h2>\n<p>保存形式が <a class=\"term-link\" data-slug=\"pcap\" href=\"/glossary/pcap\">PCAP</a>、GUI版が <a class=\"term-link\" data-slug=\"wireshark\" href=\"/glossary/wireshark\">Wireshark</a>、Wireshark系CLIが <a class=\"term-link\" data-slug=\"tshark\" href=\"/glossary/tshark\">tshark</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>Wireshark由来のCLI <a class=\"term-link\" data-slug=\"tshark\" href=\"/glossary/tshark\">tshark</a> を学びましょう。</p>",
+"related_full": [
+{
+"slug": "pcap",
+"title": "PCAP"
+},
+{
+"slug": "wireshark",
+"title": "Wireshark"
+},
+{
+"slug": "tshark",
+"title": "tshark"
+}
+],
+"next_full": [
+{
+"slug": "tshark",
+"title": "tshark"
+}
+],
+"completed": false,
+"favorite": false
+},
+"tshark": {
+"slug": "tshark",
+"title": "tshark",
+"level": 3,
+"category": "PCAP",
+"difficulty": "中級",
+"related": [
+"wireshark",
+"tcpdump",
+"pcap"
+],
+"next": [
+"doip"
+],
+"tags": [
+"tool",
+"cli"
+],
+"updated": "2026-06-07",
+"html": "<h2>概要</h2>\n<p>tsharkは、<a class=\"term-link\" data-slug=\"wireshark\" href=\"/glossary/wireshark\">Wireshark</a> のコマンドライン版です。Wiresharkと同じ強力なプロトコル解析(ディセクタ)を持ちつつ、CLIで動くため自動化やバッチ処理に向いています。表示フィルタで欲しい情報だけを抽出できます。</p>\n<h2>なぜ必要か</h2>\n<p><a class=\"term-link\" data-slug=\"wireshark\" href=\"/glossary/wireshark\">Wireshark</a> のGUIは対話的解析に最適ですが、大量の <a class=\"term-link\" data-slug=\"pcap\" href=\"/glossary/pcap\">PCAP</a> を機械的に処理したり、CI/テストに組み込むにはCLIが必要です。tsharkはWireshark並の解析力をスクリプトから使えます。</p>\n<h2>自動運転での利用例</h2>\n<p>回帰テストで「採取したPCAPにSOME/IPのエラーが含まれていないか」を tshark のフィルタで自動チェックする、といった使い方ができます。例えば SOME/IP のメッセージ種別だけを抽出して集計する処理を自動化できます。</p>\n<h2>関連用語</h2>\n<p>GUI版が <a class=\"term-link\" data-slug=\"wireshark\" href=\"/glossary/wireshark\">Wireshark</a>、軽量キャプチャが <a class=\"term-link\" data-slug=\"tcpdump\" href=\"/glossary/tcpdump\">tcpdump</a>、対象ファイルが <a class=\"term-link\" data-slug=\"pcap\" href=\"/glossary/pcap\">PCAP</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>車載診断通信 <a class=\"term-link\" data-slug=\"doip\" href=\"/glossary/doip\">DoIP(Diagnostics over IP)</a> を学びましょう。</p>",
+"related_full": [
+{
+"slug": "wireshark",
+"title": "Wireshark"
+},
+{
+"slug": "tcpdump",
+"title": "tcpdump"
+},
+{
+"slug": "pcap",
+"title": "PCAP"
+}
+],
+"next_full": [
+{
+"slug": "doip",
+"title": "DoIP(Diagnostics over IP)"
+}
+],
+"completed": false,
+"favorite": false
+},
 "autosar": {
 "slug": "autosar",
 "title": "AUTOSAR",
@@ -981,6 +1581,97 @@
 {
 "slug": "ethernet",
 "title": "Ethernet"
+}
+],
+"next_full": [
+{
+"slug": "some-ip",
+"title": "SOME/IP"
+}
+],
+"completed": false,
+"favorite": false
+},
+"can-fd": {
+"slug": "can-fd",
+"title": "CAN FD",
+"level": 4,
+"category": "AUTOSAR",
+"difficulty": "中級",
+"related": [
+"can",
+"autosar",
+"ethernet"
+],
+"next": [
+"autosar"
+],
+"tags": [
+"automotive",
+"bus"
+],
+"updated": "2026-06-07",
+"html": "<h2>概要</h2>\n<p>CAN FD(CAN with Flexible Data-rate)は、従来の <a class=\"term-link\" data-slug=\"can\" href=\"/glossary/can\">CAN</a> を拡張した規格です。1フレームで運べるデータ量を8バイトから最大64バイトへ拡大し、データ部分の通信速度も高速化しました。既存のCAN資産を活かしつつ帯域を底上げします。</p>\n<h2>なぜ必要か</h2>\n<p>ECUの高機能化でやり取りするデータが増え、従来CANの8バイト・低速では不足するようになりました。CAN FDは配線や開発資産を大きく変えずに、より多くのデータを速く送れるようにします。</p>\n<h2>自動運転での利用例</h2>\n<p>カメラ映像のような大容量は <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> が担いますが、制御系の中量データではCAN FDが活躍します。CAN→CAN FD→Ethernetと、データ量に応じて通信方式を使い分けるのが現代の車載ネットワーク設計です。</p>\n<h2>関連用語</h2>\n<p>基礎が <a class=\"term-link\" data-slug=\"can\" href=\"/glossary/can\">CAN</a>、高帯域通信が <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a>、統合する標準が <a class=\"term-link\" data-slug=\"autosar\" href=\"/glossary/autosar\">AUTOSAR</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>これらを束ねる車載ソフト標準 <a class=\"term-link\" data-slug=\"autosar\" href=\"/glossary/autosar\">AUTOSAR</a> を学びましょう。</p>",
+"related_full": [
+{
+"slug": "can",
+"title": "CAN"
+},
+{
+"slug": "autosar",
+"title": "AUTOSAR"
+},
+{
+"slug": "ethernet",
+"title": "Ethernet"
+}
+],
+"next_full": [
+{
+"slug": "autosar",
+"title": "AUTOSAR"
+}
+],
+"completed": false,
+"favorite": false
+},
+"doip": {
+"slug": "doip",
+"title": "DoIP(Diagnostics over IP)",
+"level": 4,
+"category": "SOME/IP",
+"difficulty": "上級",
+"related": [
+"tcp",
+"ip",
+"some-ip",
+"autosar"
+],
+"next": [
+"some-ip"
+],
+"tags": [
+"automotive",
+"diagnostics"
+],
+"updated": "2026-06-07",
+"html": "<h2>概要</h2>\n<p>DoIP(Diagnostics over IP / ISO 13400)は、車載診断通信(UDS)を <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a> ネットワーク上で行うための規格です。従来CAN上で行っていた診断を、高帯域なEthernetとIPで実現し、大量データの高速なやり取りを可能にします。</p>\n<h2>なぜ必要か</h2>\n<p>ソフトウェア更新(OTA)や大容量ログの取得など、現代の診断は従来のCANでは帯域が不足します。DoIPはIP上で診断を行うことで、高速・大容量の診断・書き換えを可能にします。</p>\n<h2>自動運転での利用例</h2>\n<p>ECUのファームウェア更新や故障診断を、車載Ethernet経由で高速に実施します。DoIPは信頼性が必要なため主に <a class=\"term-link\" data-slug=\"tcp\" href=\"/glossary/tcp\">TCP</a> 上で動作し、ポート13400番が標準として使われます。</p>\n<h2>関連用語</h2>\n<p>土台が <a class=\"term-link\" data-slug=\"tcp\" href=\"/glossary/tcp\">TCP</a> / <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a>、サービス通信が <a class=\"term-link\" data-slug=\"some-ip\" href=\"/glossary/some-ip\">SOME/IP</a>、標準フレームワークが <a class=\"term-link\" data-slug=\"autosar\" href=\"/glossary/autosar\">AUTOSAR</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>サービス指向通信の中核 <a class=\"term-link\" data-slug=\"some-ip\" href=\"/glossary/some-ip\">SOME/IP</a> を学びましょう。</p>",
+"related_full": [
+{
+"slug": "tcp",
+"title": "TCP"
+},
+{
+"slug": "ip",
+"title": "IP"
+},
+{
+"slug": "some-ip",
+"title": "SOME/IP"
+},
+{
+"slug": "autosar",
+"title": "AUTOSAR"
 }
 ],
 "next_full": [
@@ -1175,6 +1866,54 @@
 ],
 "completed": false,
 "favorite": false
+},
+"tsn": {
+"slug": "tsn",
+"title": "TSN(Time-Sensitive Networking)",
+"level": 5,
+"category": "SDV",
+"difficulty": "上級",
+"related": [
+"ethernet",
+"vlan",
+"adas-comm",
+"sdv"
+],
+"next": [
+"adas-comm"
+],
+"tags": [
+"automotive",
+"realtime"
+],
+"updated": "2026-06-07",
+"html": "<h2>概要</h2>\n<p>TSN(Time-Sensitive Networking)は、標準 <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> に「時間保証」を加える一連の規格(IEEE 802.1)です。時刻同期・帯域予約・優先制御により、重要なフレームを決められた時間内に確実に届けます。</p>\n<h2>なぜ必要か</h2>\n<p>通常のEthernetはベストエフォートで、遅延やジッタが保証されません。しかし自動運転の制御通信は「いつ届くか」が安全に直結します。TSNはEthernetにリアルタイムLAN並みの確定性を与え、この要求に応えます。</p>\n<h2>自動運転での利用例</h2>\n<p>カメラ・センサーの大容量データと、安全に関わる制御コマンドを同じEthernetバックボーンでTSNにより共存させます。<a class=\"term-link\" data-slug=\"vlan\" href=\"/glossary/vlan\">VLAN</a> による分離と組み合わせ、制御フレームの遅延を上限内に抑えます。これが <a class=\"term-link\" data-slug=\"sdv\" href=\"/glossary/sdv\">SDV(ソフトウェア定義車両)</a> の通信基盤を支えます。</p>\n<h2>関連用語</h2>\n<p>土台が <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a>、論理分離が <a class=\"term-link\" data-slug=\"vlan\" href=\"/glossary/vlan\">VLAN</a>、応用先が <a class=\"term-link\" data-slug=\"adas-comm\" href=\"/glossary/adas-comm\">ADAS通信</a> と <a class=\"term-link\" data-slug=\"sdv\" href=\"/glossary/sdv\">SDV(ソフトウェア定義車両)</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>ADAS通信全体の要件 <a class=\"term-link\" data-slug=\"adas-comm\" href=\"/glossary/adas-comm\">ADAS通信</a> を学びましょう。</p>",
+"related_full": [
+{
+"slug": "ethernet",
+"title": "Ethernet"
+},
+{
+"slug": "vlan",
+"title": "VLAN"
+},
+{
+"slug": "adas-comm",
+"title": "ADAS通信"
+},
+{
+"slug": "sdv",
+"title": "SDV(ソフトウェア定義車両)"
+}
+],
+"next_full": [
+{
+"slug": "adas-comm",
+"title": "ADAS通信"
+}
+],
+"completed": false,
+"favorite": false
 }
 },
 "recommend": {
@@ -1192,16 +1931,16 @@
 "title": "OSI参照モデル"
 },
 {
+"slug": "arp",
+"title": "ARP"
+},
+{
+"slug": "vlan",
+"title": "VLAN"
+},
+{
 "slug": "autosar",
 "title": "AUTOSAR"
-},
-{
-"slug": "can",
-"title": "CAN"
-},
-{
-"slug": "some-ip",
-"title": "SOME/IP"
 }
 ],
 "mac-address": [
@@ -1212,6 +1951,14 @@
 {
 "slug": "ethernet",
 "title": "Ethernet"
+},
+{
+"slug": "arp",
+"title": "ARP"
+},
+{
+"slug": "vlan",
+"title": "VLAN"
 }
 ],
 "osi": [
@@ -1246,6 +1993,98 @@
 "title": "Ethernet"
 }
 ],
+"arp": [
+{
+"slug": "ip",
+"title": "IP"
+},
+{
+"slug": "ethernet",
+"title": "Ethernet"
+},
+{
+"slug": "mac-address",
+"title": "MAC Address"
+},
+{
+"slug": "vlan",
+"title": "VLAN"
+},
+{
+"slug": "autosar",
+"title": "AUTOSAR"
+},
+{
+"slug": "can-fd",
+"title": "CAN FD"
+}
+],
+"dhcp": [
+{
+"slug": "dns",
+"title": "DNS"
+},
+{
+"slug": "ip",
+"title": "IP"
+},
+{
+"slug": "subnet",
+"title": "サブネット / CIDR"
+},
+{
+"slug": "arp",
+"title": "ARP"
+},
+{
+"slug": "icmp",
+"title": "ICMP / ping"
+}
+],
+"dns": [
+{
+"slug": "ip",
+"title": "IP"
+},
+{
+"slug": "udp",
+"title": "UDP"
+},
+{
+"slug": "dhcp",
+"title": "DHCP"
+},
+{
+"slug": "socket",
+"title": "Socket"
+}
+],
+"icmp": [
+{
+"slug": "ip",
+"title": "IP"
+},
+{
+"slug": "wireshark",
+"title": "Wireshark"
+},
+{
+"slug": "subnet",
+"title": "サブネット / CIDR"
+},
+{
+"slug": "arp",
+"title": "ARP"
+},
+{
+"slug": "dhcp",
+"title": "DHCP"
+},
+{
+"slug": "pcap",
+"title": "PCAP"
+}
+],
 "ip": [
 {
 "slug": "tcp",
@@ -1262,6 +2101,14 @@
 {
 "slug": "osi",
 "title": "OSI参照モデル"
+},
+{
+"slug": "arp",
+"title": "ARP"
+},
+{
+"slug": "dhcp",
+"title": "DHCP"
 }
 ],
 "port": [
@@ -1322,6 +2169,54 @@
 "title": "ADAS通信"
 }
 ],
+"vlan": [
+{
+"slug": "tsn",
+"title": "TSN(Time-Sensitive Networking)"
+},
+{
+"slug": "ethernet",
+"title": "Ethernet"
+},
+{
+"slug": "mac-address",
+"title": "MAC Address"
+},
+{
+"slug": "arp",
+"title": "ARP"
+},
+{
+"slug": "autosar",
+"title": "AUTOSAR"
+},
+{
+"slug": "can-fd",
+"title": "CAN FD"
+}
+],
+"subnet": [
+{
+"slug": "dhcp",
+"title": "DHCP"
+},
+{
+"slug": "ip",
+"title": "IP"
+},
+{
+"slug": "mac-address",
+"title": "MAC Address"
+},
+{
+"slug": "arp",
+"title": "ARP"
+},
+{
+"slug": "icmp",
+"title": "ICMP / ping"
+}
+],
 "pcap": [
 {
 "slug": "wireshark",
@@ -1342,6 +2237,10 @@
 {
 "slug": "can",
 "title": "CAN"
+},
+{
+"slug": "icmp",
+"title": "ICMP / ping"
 }
 ],
 "socket": [
@@ -1374,6 +2273,58 @@
 {
 "slug": "ip",
 "title": "IP"
+},
+{
+"slug": "icmp",
+"title": "ICMP / ping"
+},
+{
+"slug": "tcpdump",
+"title": "tcpdump"
+},
+{
+"slug": "tshark",
+"title": "tshark"
+}
+],
+"tcpdump": [
+{
+"slug": "tshark",
+"title": "tshark"
+},
+{
+"slug": "pcap",
+"title": "PCAP"
+},
+{
+"slug": "wireshark",
+"title": "Wireshark"
+},
+{
+"slug": "icmp",
+"title": "ICMP / ping"
+}
+],
+"tshark": [
+{
+"slug": "tcpdump",
+"title": "tcpdump"
+},
+{
+"slug": "wireshark",
+"title": "Wireshark"
+},
+{
+"slug": "pcap",
+"title": "PCAP"
+},
+{
+"slug": "doip",
+"title": "DoIP(Diagnostics over IP)"
+},
+{
+"slug": "icmp",
+"title": "ICMP / ping"
 }
 ],
 "autosar": [
@@ -1394,8 +2345,12 @@
 "title": "SDV(ソフトウェア定義車両)"
 },
 {
-"slug": "ethernet",
-"title": "Ethernet"
+"slug": "arp",
+"title": "ARP"
+},
+{
+"slug": "can-fd",
+"title": "CAN FD"
 }
 ],
 "can": [
@@ -1410,6 +2365,70 @@
 {
 "slug": "ethernet",
 "title": "Ethernet"
+},
+{
+"slug": "can-fd",
+"title": "CAN FD"
+},
+{
+"slug": "arp",
+"title": "ARP"
+},
+{
+"slug": "doip",
+"title": "DoIP(Diagnostics over IP)"
+}
+],
+"can-fd": [
+{
+"slug": "autosar",
+"title": "AUTOSAR"
+},
+{
+"slug": "can",
+"title": "CAN"
+},
+{
+"slug": "ethernet",
+"title": "Ethernet"
+},
+{
+"slug": "arp",
+"title": "ARP"
+},
+{
+"slug": "doip",
+"title": "DoIP(Diagnostics over IP)"
+},
+{
+"slug": "some-ip",
+"title": "SOME/IP"
+}
+],
+"doip": [
+{
+"slug": "some-ip",
+"title": "SOME/IP"
+},
+{
+"slug": "autosar",
+"title": "AUTOSAR"
+},
+{
+"slug": "tcp",
+"title": "TCP"
+},
+{
+"slug": "ip",
+"title": "IP"
+},
+{
+"slug": "arp",
+"title": "ARP"
+},
+{
+"slug": "can-fd",
+"title": "CAN FD"
 }
 ],
 "some-ip": [
@@ -1430,12 +2449,12 @@
 "title": "IP"
 },
 {
-"slug": "can",
-"title": "CAN"
+"slug": "arp",
+"title": "ARP"
 },
 {
-"slug": "ethernet",
-"title": "Ethernet"
+"slug": "can-fd",
+"title": "CAN FD"
 }
 ],
 "adas-comm": [
@@ -1490,6 +2509,32 @@
 {
 "slug": "ethernet",
 "title": "Ethernet"
+}
+],
+"tsn": [
+{
+"slug": "adas-comm",
+"title": "ADAS通信"
+},
+{
+"slug": "ethernet",
+"title": "Ethernet"
+},
+{
+"slug": "vlan",
+"title": "VLAN"
+},
+{
+"slug": "sdv",
+"title": "SDV(ソフトウェア定義車両)"
+},
+{
+"slug": "arp",
+"title": "ARP"
+},
+{
+"slug": "autosar",
+"title": "AUTOSAR"
 }
 ]
 },
@@ -1671,6 +2716,55 @@
 "views": 0,
 "completed": false,
 "favorite": false
+},
+{
+"slug": "arp",
+"title": "ARP",
+"level": 2,
+"category": "Ethernet",
+"difficulty": "中級",
+"related": [
+"mac-address",
+"ip",
+"ethernet"
+],
+"next": [
+"ip"
+],
+"tags": [
+"l2",
+"l3",
+"automotive"
+],
+"updated": "2026-06-07",
+"excerpt": "ARP(Address Resolution Protocol)は、IPアドレスから対応する mac-address を調べるためのプロトコルです。「このIPの機器のMACは?」とネットワークに問い合わせ(ARPリクエスト)、該当機器が自分",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "vlan",
+"title": "VLAN",
+"level": 2,
+"category": "Ethernet",
+"difficulty": "中級",
+"related": [
+"ethernet",
+"mac-address",
+"tsn"
+],
+"next": [
+"tsn"
+],
+"tags": [
+"l2",
+"automotive"
+],
+"updated": "2026-06-07",
+"excerpt": "VLAN(Virtual LAN / IEEE 802.1Q)は、1本の物理 ethernet を論理的に複数のネットワークに分割する技術です。フレームに「VLANタグ」を付けることで、同じケーブル上でもグループごとに通信を分離できます。",
+"views": 0,
+"completed": false,
+"favorite": false
 }
 ]
 },
@@ -1720,6 +2814,75 @@
 "difficulty": "初級",
 "updated": "2026-06-07",
 "excerpt": "通信とは、ある機器から別の機器へ「データ」を届けることです。届ける相手・順番・形式を双方が約束しておくことで、初めて意味のあるやり取りが成立します。この約束ごとを **プロトコル** と呼びます。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "dhcp",
+"title": "DHCP",
+"level": 2,
+"category": "TCP/IP",
+"difficulty": "中級",
+"related": [
+"ip",
+"subnet",
+"dns"
+],
+"next": [
+"dns"
+],
+"tags": [
+"l3"
+],
+"updated": "2026-06-07",
+"excerpt": "DHCP(Dynamic Host Configuration Protocol)は、機器に ip アドレスやサブネットマスク、ゲートウェイ、DNSサーバなどのネットワーク設定を自動で配布する仕組みです。手動設定の手間とミスを無くします。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "dns",
+"title": "DNS",
+"level": 2,
+"category": "TCP/IP",
+"difficulty": "初級",
+"related": [
+"ip",
+"udp",
+"dhcp"
+],
+"next": [
+"socket"
+],
+"tags": [
+"l7"
+],
+"updated": "2026-06-07",
+"excerpt": "DNS(Domain Name System)は、人間が読みやすいドメイン名(例 `example.com`)を、機器が使う ip アドレスに変換する「インターネットの電話帳」です。問い合わせは主に udp 上で高速に行われます。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "icmp",
+"title": "ICMP / ping",
+"level": 2,
+"category": "TCP/IP",
+"difficulty": "初級",
+"related": [
+"ip",
+"wireshark"
+],
+"next": [
+"subnet"
+],
+"tags": [
+"l3",
+"tool"
+],
+"updated": "2026-06-07",
+"excerpt": "ICMP(Internet Control Message Protocol)は、ip 通信のエラー通知や制御メッセージをやり取りするプロトコルです。最も身近な用途が `ping` で、相手に到達できるか・往復にどれだけ時間がかかるかを調べ",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -1820,6 +2983,29 @@
 "views": 0,
 "completed": false,
 "favorite": false
+},
+{
+"slug": "subnet",
+"title": "サブネット / CIDR",
+"level": 2,
+"category": "TCP/IP",
+"difficulty": "中級",
+"related": [
+"ip",
+"dhcp",
+"mac-address"
+],
+"next": [
+"dhcp"
+],
+"tags": [
+"l3"
+],
+"updated": "2026-06-07",
+"excerpt": "サブネットは、ip アドレス空間を小さなネットワークに区切る考え方です。「ネットワーク部」と「ホスト部」をサブネットマスク(例 `255.255.255.0` / CIDR表記 `/24`)で分け、どこまでが同じネットワークかを定めます。",
+"views": 0,
+"completed": false,
+"favorite": false
 }
 ]
 },
@@ -1897,12 +3083,85 @@
 "views": 0,
 "completed": false,
 "favorite": false
+},
+{
+"slug": "tcpdump",
+"title": "tcpdump",
+"level": 3,
+"category": "PCAP",
+"difficulty": "中級",
+"related": [
+"pcap",
+"wireshark",
+"tshark"
+],
+"next": [
+"tshark"
+],
+"tags": [
+"tool",
+"cli"
+],
+"updated": "2026-06-07",
+"excerpt": "tcpdumpは、コマンドラインでパケットをキャプチャ・表示する定番ツールです。GUIの wireshark と違い、サーバや組み込み機器など画面の無い環境でも動き、結果を pcap ファイルに保存できます。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "tshark",
+"title": "tshark",
+"level": 3,
+"category": "PCAP",
+"difficulty": "中級",
+"related": [
+"wireshark",
+"tcpdump",
+"pcap"
+],
+"next": [
+"doip"
+],
+"tags": [
+"tool",
+"cli"
+],
+"updated": "2026-06-07",
+"excerpt": "tsharkは、wireshark のコマンドライン版です。Wiresharkと同じ強力なプロトコル解析(ディセクタ)を持ちつつ、CLIで動くため自動化やバッチ処理に向いています。表示フィルタで欲しい情報だけを抽出できます。",
+"views": 0,
+"completed": false,
+"favorite": false
 }
 ]
 },
 {
 "name": "SOME/IP",
 "articles": [
+{
+"slug": "doip",
+"title": "DoIP(Diagnostics over IP)",
+"level": 4,
+"category": "SOME/IP",
+"difficulty": "上級",
+"related": [
+"tcp",
+"ip",
+"some-ip",
+"autosar"
+],
+"next": [
+"some-ip"
+],
+"tags": [
+"automotive",
+"diagnostics"
+],
+"updated": "2026-06-07",
+"excerpt": "DoIP(Diagnostics over IP / ISO 13400)は、車載診断通信(UDS)を ip ネットワーク上で行うための規格です。従来CAN上で行っていた診断を、高帯域なEthernetとIPで実現し、大量データの高速なやり",
+"views": 0,
+"completed": false,
+"favorite": false
+},
 {
 "slug": "some-ip",
 "title": "SOME/IP",
@@ -1981,6 +3240,30 @@
 "views": 0,
 "completed": false,
 "favorite": false
+},
+{
+"slug": "can-fd",
+"title": "CAN FD",
+"level": 4,
+"category": "AUTOSAR",
+"difficulty": "中級",
+"related": [
+"can",
+"autosar",
+"ethernet"
+],
+"next": [
+"autosar"
+],
+"tags": [
+"automotive",
+"bus"
+],
+"updated": "2026-06-07",
+"excerpt": "CAN FD(CAN with Flexible Data-rate)は、従来の can を拡張した規格です。1フレームで運べるデータ量を8バイトから最大64バイトへ拡大し、データ部分の通信速度も高速化しました。既存のCAN資産を活かしつつ",
+"views": 0,
+"completed": false,
+"favorite": false
 }
 ]
 },
@@ -2055,6 +3338,31 @@
 "difficulty": "上級",
 "updated": "2026-06-07",
 "excerpt": "SDV(Software Defined Vehicle)は、車両の機能をソフトウェアで定義・更新できるようにする設計思想です。ハード固定の機能群から、OTAで継続的に進化するソフト中心の車へ——スマートフォンのような体験を車にもたらします",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "tsn",
+"title": "TSN(Time-Sensitive Networking)",
+"level": 5,
+"category": "SDV",
+"difficulty": "上級",
+"related": [
+"ethernet",
+"vlan",
+"adas-comm",
+"sdv"
+],
+"next": [
+"adas-comm"
+],
+"tags": [
+"automotive",
+"realtime"
+],
+"updated": "2026-06-07",
+"excerpt": "TSN(Time-Sensitive Networking)は、標準 ethernet に「時間保証」を加える一連の規格(IEEE 802.1)です。時刻同期・帯域予約・優先制御により、重要なフレームを決められた時間内に確実に届けます。",
 "views": 0,
 "completed": false,
 "favorite": false
