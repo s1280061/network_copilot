@@ -6,6 +6,7 @@ import { useStudyPanel } from "@/lib/study-context";
 export default function StudyPanel() {
   const { panel } = useStudyPanel();
   const empty =
+    !panel.prereq?.length &&
     !panel.related?.length &&
     !panel.next?.length &&
     !panel.recommendations?.length &&
@@ -29,7 +30,8 @@ export default function StudyPanel() {
         </div>
       )}
 
-      <Section title="関連用語" items={panel.related} />
+      <Section title="前提知識" items={panel.prereq} />
+      <Section title="関連知識" items={panel.related} />
       <Section title="推奨記事" items={panel.recommendations} highlight />
       <Section title="次に学ぶべき項目" items={panel.next} highlight />
     </aside>

@@ -12,6 +12,7 @@ const NAV = [
   { href: "/pcap", label: "PCAP解析", icon: "📂" },
   { href: "/favorites", label: "お気に入り", icon: "⭐" },
   { href: "/history", label: "学習履歴", icon: "📝" },
+  { href: "/profile", label: "プロフィール", icon: "👤" },
 ];
 
 export default function SidebarNav() {

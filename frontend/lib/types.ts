@@ -37,8 +37,15 @@ export type SearchHit = {
 
 export type Article = ArticleMeta & {
   html: string;
+  prereq_full: Ref[];
   related_full: Ref[];
   next_full: Ref[];
+};
+
+export type Profile = {
+  role: string;
+  interests: string[]; // category names
+  goals: string[];
 };
 
 export type RoadmapItem = Ref & { completed: boolean };
@@ -75,6 +82,7 @@ export type History = {
 export type PanelContext = {
   title?: string;
   slug?: string;
+  prereq?: Ref[];
   related?: Ref[];
   next?: Ref[];
   note?: string;

@@ -11,6 +11,7 @@ import {
 } from "@/lib/api";
 import { Article, Ref } from "@/lib/types";
 import { useStudyPanel } from "@/lib/study-context";
+import { recordView } from "@/lib/profile";
 
 export default function ArticleView({ slug }: { slug: string }) {
   const router = useRouter();
@@ -26,9 +27,11 @@ export default function ArticleView({ slug }: { slug: string }) {
     getArticle(slug)
       .then((a) => {
         setArticle(a);
+        recordView(a.slug);
         setPanel({
           title: a.title,
           slug: a.slug,
+          prereq: a.prereq_full,
           related: a.related_full,
           next: a.next_full,
         });
@@ -112,8 +115,24 @@ export default function ArticleView({ slug }: { slug: string }) {
         dangerouslySetInnerHTML={{ __html: article.html }}
       />
 
+      {article.prereq_full.length > 0 && (
+        <LinkSection
+          label="前提知識"
+          items={article.prereq_full}
+          onClick={(s) => router.push(`/glossary/${s}`)}
+        />
+      )}
+
+      {article.related_full.length > 0 && (
+        <LinkSection
+          label="関連知識"
+          items={article.related_full}
+          onClick={(s) => router.push(`/glossary/${s}`)}
+        />
+      )}
+
       {article.next_full.length > 0 && (
-        <div className="mt-8 border-t pt-4">
+        <div className="mt-6 border-t pt-4">
           <p className="text-sm text-slate-500 mb-2">次に学ぶべき内容</p>
           <div className="flex flex-wrap gap-2">
             {article.next_full.map((n) => (
@@ -148,5 +167,32 @@ export default function ArticleView({ slug }: { slug: string }) {
         </div>
       )}
     </article>
+  );
+}
+
+function LinkSection({
+  label,
+  items,
+  onClick,
+}: {
+  label: string;
+  items: Ref[];
+  onClick: (slug: string) => void;
+}) {
+  return (
+    <div className="mt-6 border-t pt-4">
+      <p className="text-sm text-slate-500 mb-2">{label}</p>
+      <div className="flex flex-wrap gap-2">
+        {items.map((it) => (
+          <button
+            key={it.slug}
+            onClick={() => onClick(it.slug)}
+            className="text-sm border rounded-md px-3 py-1.5 bg-white text-slate-700 hover:border-sky-400"
+          >
+            {it.title}
+          </button>
+        ))}
+      </div>
+    </div>
   );
 }

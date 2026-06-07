@@ -123,6 +123,27 @@ def _titles() -> dict:
     return {slug: a["meta"]["title"] for slug, a in _load_all().items()}
 
 
+def _prerequisites() -> dict:
+    """slug -> list of prerequisite slugs.
+
+    Derived as the reverse of `next` links (if A.next contains B, then A is a
+    prerequisite of B), merged with any explicit `prereq` in frontmatter.
+    """
+    prereq: dict[str, list[str]] = {}
+    for slug, a in _load_all().items():
+        for nxt in a["meta"].get("next", []):
+            prereq.setdefault(nxt, [])
+            if slug not in prereq[nxt]:
+                prereq[nxt].append(slug)
+    # explicit overrides/additions
+    for slug, a in _load_all().items():
+        for p in a["meta"].get("prereq", []):
+            prereq.setdefault(slug, [])
+            if p not in prereq[slug]:
+                prereq[slug].insert(0, p)
+    return prereq
+
+
 def _resolve_links(body: str) -> str:
     """Replace [[slug]] with a markdown link to /glossary/slug using the title."""
     titles = _titles()
@@ -158,7 +179,15 @@ def get_article(slug: str) -> dict | None:
     meta = a["meta"]
     related = [{"slug": s, "title": titles.get(s, s)} for s in meta["related"] if s in titles]
     nxt = [{"slug": s, "title": titles.get(s, s)} for s in meta["next"] if s in titles]
-    return {**meta, "html": html, "related_full": related, "next_full": nxt}
+    prereq_slugs = _prerequisites().get(slug, [])
+    prereq = [{"slug": s, "title": titles.get(s, s)} for s in prereq_slugs if s in titles]
+    return {
+        **meta,
+        "html": html,
+        "prereq_full": prereq,
+        "related_full": related,
+        "next_full": nxt,
+    }
 
 
 def get_roadmap_raw() -> dict:

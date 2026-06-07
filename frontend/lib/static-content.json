@@ -693,6 +693,12 @@
 "difficulty": "初級",
 "updated": "2026-06-07",
 "html": "<h2>概要</h2>\n<p>Ethernetは有線LANの標準技術で、OSIの物理層・データリンク層(L1/L2)を担います。データを「フレーム」という単位にまとめ、<a class=\"term-link\" data-slug=\"mac-address\" href=\"/glossary/mac-address\">MAC Address</a> を使って同じネットワーク内の機器へ届けます。</p>\n<h2>なぜ必要か</h2>\n<p>高帯域・低コスト・成熟した技術であり、PCからデータセンターまで世界中で使われています。車載でも、従来のCANでは足りない大容量データ(カメラ映像など)を運ぶバックボーンとして採用が進んでいます。</p>\n<h2>自動運転での利用例</h2>\n<p>車載Ethernet(100BASE-T1 / 1000BASE-T1 など)は1対のツイストペアで高速通信を実現し、カメラ・LiDAR・SOME/IP通信を1本の物理網に集約します。VLANで制御系と情報系のトラフィックを分離するのも一般的です。</p>\n<h2>関連用語</h2>\n<p>フレームの宛先には <a class=\"term-link\" data-slug=\"mac-address\" href=\"/glossary/mac-address\">MAC Address</a> が使われ、その上に <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a> が載ります。階層全体像は <a class=\"term-link\" data-slug=\"osi\" href=\"/glossary/osi\">OSI参照モデル</a> を参照。</p>\n<h2>次に学ぶべき内容</h2>\n<p>Ethernetが宛先判定に使う <a class=\"term-link\" data-slug=\"mac-address\" href=\"/glossary/mac-address\">MAC Address</a> を学びましょう。</p>",
+"prereq_full": [
+{
+"slug": "osi",
+"title": "OSI参照モデル"
+}
+],
 "related_full": [
 {
 "slug": "mac-address",
@@ -734,6 +740,12 @@
 "difficulty": "初級",
 "updated": "2026-06-07",
 "html": "<h2>概要</h2>\n<p>MACアドレスは、ネットワーク機器に割り当てられた48ビットの物理アドレスです(例: <code>00:1A:2B:3C:4D:5E</code>)。<a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> フレームの送信元・宛先として使われ、同じネットワーク内で「どの機器宛か」を識別します。</p>\n<h2>なぜ必要か</h2>\n<p>IPアドレスが「論理的な住所」なら、MACアドレスは「機器固有の番号」です。最終的にデータを物理的に届けるには、IPに対応するMACを知る必要があります(この変換がARP)。</p>\n<h2>自動運転での利用例</h2>\n<p>車載Ethernetスイッチは、各ポートに繋がるECUのMACアドレスを学習してフレームを適切なポートだけに転送します。これにより不要なトラフィックを抑え、帯域と安全性を確保します。</p>\n<h2>関連用語</h2>\n<p>MACは <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> フレームの中に入り、その上位の論理アドレスが <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>論理的な住所である <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a> へ進みましょう。</p>",
+"prereq_full": [
+{
+"slug": "ethernet",
+"title": "Ethernet"
+}
+],
 "related_full": [
 {
 "slug": "ethernet",
@@ -774,6 +786,12 @@
 "difficulty": "初級",
 "updated": "2026-06-07",
 "html": "<h2>概要</h2>\n<p>OSI参照モデルは、通信機能を7つの階層に分けて整理した概念モデルです。下から順に、物理層・データリンク層・ネットワーク層・トランスポート層・セッション層・プレゼンテーション層・アプリケーション層。各層が「自分の役割」だけに集中できるよう分業しています。</p>\n<h2>なぜ必要か</h2>\n<p>障害解析やプロトコル設計のときに「どの層の問題か」を切り分ける共通言語になります。例えば「ケーブル断線」は物理層、「IPが届かない」はネットワーク層、というように問題の所在を素早く特定できます。</p>\n<h2>自動運転での利用例</h2>\n<p>車載Ethernetのトラブルシュートでは、L1(配線/信号)→L2(フレーム)→L3(IP)→L4(TCP/UDP)と層ごとに切り分けます。SOME/IPの不具合がアプリ層なのか下位層なのかを判断する基礎にもなります。</p>\n<h2>関連用語</h2>\n<p>データリンク層の代表が <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a>、ネットワーク層が <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a>、トランスポート層が <a class=\"term-link\" data-slug=\"tcp\" href=\"/glossary/tcp\">TCP</a> と <a class=\"term-link\" data-slug=\"udp\" href=\"/glossary/udp\">UDP</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>最も身近なデータリンク層、<a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> へ進みましょう。</p>",
+"prereq_full": [
+{
+"slug": "communication-basics",
+"title": "通信とは"
+}
+],
 "related_full": [
 {
 "slug": "ethernet",
@@ -819,6 +837,7 @@
 "difficulty": "初級",
 "updated": "2026-06-07",
 "html": "<h2>概要</h2>\n<p>通信とは、ある機器から別の機器へ「データ」を届けることです。届ける相手・順番・形式を双方が約束しておくことで、初めて意味のあるやり取りが成立します。この約束ごとを <strong>プロトコル</strong> と呼びます。</p>\n<h2>なぜ必要か</h2>\n<p>車には数十〜百を超える ECU(電子制御ユニット)が積まれており、センサーの値や制御指令を互いにやり取りしています。共通のルールが無ければ、ブレーキ指令もカメラ映像も「ただのビット列」にしか見えません。通信の基礎は、すべての車載ネットワークの出発点です。</p>\n<h2>自動運転での利用例</h2>\n<p>カメラECUが検出した歩行者情報を、制御ECUへ送る——この単純なやり取りも「どの形式で・どの順で・誰宛に」というルールに支えられています。自動運転では遅延や欠損が安全に直結するため、通信の信頼性設計が極めて重要です。</p>\n<h2>関連用語</h2>\n<p>通信の階層モデルを整理したのが <a class=\"term-link\" data-slug=\"osi\" href=\"/glossary/osi\">OSI参照モデル</a> です。物理的な配線レベルでは <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> が使われます。</p>\n<h2>次に学ぶべき内容</h2>\n<p>まずは通信を7つの層に分けて考える <a class=\"term-link\" data-slug=\"osi\" href=\"/glossary/osi\">OSI参照モデル</a> を学びましょう。</p>",
+"prereq_full": [],
 "related_full": [
 {
 "slug": "osi",
@@ -859,6 +878,7 @@
 ],
 "updated": "2026-06-07",
 "html": "<h2>概要</h2>\n<p>ARP(Address Resolution Protocol)は、IPアドレスから対応する <a class=\"term-link\" data-slug=\"mac-address\" href=\"/glossary/mac-address\">MAC Address</a> を調べるためのプロトコルです。「このIPの機器のMACは?」とネットワークに問い合わせ(ARPリクエスト)、該当機器が自分のMACを返答(ARPリプライ)します。</p>\n<h2>なぜ必要か</h2>\n<p><a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a> は論理的な宛先を示しますが、<a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> が実際にフレームを届けるには物理アドレスであるMACが必要です。ARPはこの「IP→MAC」の橋渡しを担う、L3とL2をつなぐ重要な仕組みです。</p>\n<h2>自動運転での利用例</h2>\n<p>車載Ethernetでも、ECU同士がIP通信を始める前にARPでMACを解決します。解析時にARPの様子を見ると、どのECUがどのIPを持ち、いつ通信を開始したかが分かります。ARPが返らない場合は相手ECUの不在や設定ミスを疑います。</p>\n<h2>関連用語</h2>\n<p>解決対象が <a class=\"term-link\" data-slug=\"mac-address\" href=\"/glossary/mac-address\">MAC Address</a>、問い合わせの元になるのが <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a>、フレームを運ぶのが <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>ARPが補助する論理アドレス <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a> の仕組みを復習しましょう。</p>",
+"prereq_full": [],
 "related_full": [
 {
 "slug": "mac-address",
@@ -901,6 +921,12 @@
 ],
 "updated": "2026-06-07",
 "html": "<h2>概要</h2>\n<p>DHCP(Dynamic Host Configuration Protocol)は、機器に <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a> アドレスやサブネットマスク、ゲートウェイ、DNSサーバなどのネットワーク設定を自動で配布する仕組みです。手動設定の手間とミスを無くします。</p>\n<h2>なぜ必要か</h2>\n<p>多数の機器に一つずつIPを手で設定するのは現実的ではありません。DHCPサーバが空きアドレスを貸し出すことで、機器は接続するだけでネットワークに参加できます。</p>\n<h2>自動運転での利用例</h2>\n<p>車載ネットワークでは多くのECUが固定IP(静的設定)を使いますが、診断ツールの接続やインフォテインメント機器など、動的にIPを割り当てたい場面でDHCPが利用されます。</p>\n<h2>関連用語</h2>\n<p>配布対象が <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a>、区切りの概念が <a class=\"term-link\" data-slug=\"subnet\" href=\"/glossary/subnet\">サブネット / CIDR</a>、名前解決が <a class=\"term-link\" data-slug=\"dns\" href=\"/glossary/dns\">DNS</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>名前からIPを引く <a class=\"term-link\" data-slug=\"dns\" href=\"/glossary/dns\">DNS</a> を学びましょう。</p>",
+"prereq_full": [
+{
+"slug": "subnet",
+"title": "サブネット / CIDR"
+}
+],
 "related_full": [
 {
 "slug": "ip",
@@ -943,6 +969,12 @@
 ],
 "updated": "2026-06-07",
 "html": "<h2>概要</h2>\n<p>DNS(Domain Name System)は、人間が読みやすいドメイン名(例 <code>example.com</code>)を、機器が使う <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a> アドレスに変換する「インターネットの電話帳」です。問い合わせは主に <a class=\"term-link\" data-slug=\"udp\" href=\"/glossary/udp\">UDP</a> 上で高速に行われます。</p>\n<h2>なぜ必要か</h2>\n<p>人はIPアドレスの数字を覚えられません。DNSが名前とIPを対応づけることで、私たちは名前だけでサービスにアクセスできます。設定変更時もIPが変わるだけでよく、名前は維持できます。</p>\n<h2>自動運転での利用例</h2>\n<p>クラウド連携(OTA更新やテレマティクス)を行う車載システムでは、接続先サーバをDNSで解決します。社内開発環境でも、ECUやテスト機をホスト名で扱うためにDNSが使われます。</p>\n<h2>関連用語</h2>\n<p>変換先が <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a>、問い合わせの土台が <a class=\"term-link\" data-slug=\"udp\" href=\"/glossary/udp\">UDP</a>、設定配布元が <a class=\"term-link\" data-slug=\"dhcp\" href=\"/glossary/dhcp\">DHCP</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>通信の出入口 <a class=\"term-link\" data-slug=\"socket\" href=\"/glossary/socket\">Socket</a> を学びましょう。</p>",
+"prereq_full": [
+{
+"slug": "dhcp",
+"title": "DHCP"
+}
+],
 "related_full": [
 {
 "slug": "ip",
@@ -985,6 +1017,7 @@
 ],
 "updated": "2026-06-07",
 "html": "<h2>概要</h2>\n<p>ICMP(Internet Control Message Protocol)は、<a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a> 通信のエラー通知や制御メッセージをやり取りするプロトコルです。最も身近な用途が <code>ping</code> で、相手に到達できるか・往復にどれだけ時間がかかるかを調べます。</p>\n<h2>なぜ必要か</h2>\n<p>通信がうまくいかないとき、まず「相手まで届くのか」を確認する必要があります。ICMP(ping)は到達性と遅延を手早く確認できる、ネットワーク診断の第一歩です。</p>\n<h2>自動運転での利用例</h2>\n<p>車載Ethernetの立ち上げ時、各ECUにpingを打って到達性とIP設定を確認します。応答が無ければ配線・IP・VLAN設定のいずれかを疑う、という切り分けの起点になります。</p>\n<h2>関連用語</h2>\n<p>土台が <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a>、通信の中身を観測するのが <a class=\"term-link\" data-slug=\"wireshark\" href=\"/glossary/wireshark\">Wireshark</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>IPアドレスの範囲を扱う <a class=\"term-link\" data-slug=\"subnet\" href=\"/glossary/subnet\">サブネット / CIDR</a> を学びましょう。</p>",
+"prereq_full": [],
 "related_full": [
 {
 "slug": "ip",
@@ -1024,6 +1057,16 @@
 "difficulty": "初級",
 "updated": "2026-06-07",
 "html": "<h2>概要</h2>\n<p>IP(Internet Protocol)はOSIのネットワーク層(L3)を担い、データを「パケット」にして送信元IPから宛先IPへ届けます。ネットワークをまたいだ転送(ルーティング)を可能にする中核プロトコルです。IPv4とIPv6があります。</p>\n<h2>なぜ必要か</h2>\n<p><a class=\"term-link\" data-slug=\"mac-address\" href=\"/glossary/mac-address\">MAC Address</a> は同じネットワーク内でしか使えませんが、IPは異なるネットワーク間でも宛先を指定できます。車内の複数ドメイン(サブネット)をまたいだECU間通信には不可欠です。</p>\n<h2>自動運転での利用例</h2>\n<p>車載Ethernetでは各ECUにIPアドレスが割り当てられ、SOME/IPやDoIP診断通信がIP上で動きます。ゾーンアーキテクチャでは、ゾーンごとにサブネットを分けて管理することもあります。</p>\n<h2>関連用語</h2>\n<p>IPの上で動く代表的なプロトコルが <a class=\"term-link\" data-slug=\"tcp\" href=\"/glossary/tcp\">TCP</a> と <a class=\"term-link\" data-slug=\"udp\" href=\"/glossary/udp\">UDP</a> です。下位の物理転送は <a class=\"term-link\" data-slug=\"mac-address\" href=\"/glossary/mac-address\">MAC Address</a> と <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> が担います。</p>\n<h2>次に学ぶべき内容</h2>\n<p>信頼性の高い通信を実現する <a class=\"term-link\" data-slug=\"tcp\" href=\"/glossary/tcp\">TCP</a> を学びましょう。</p>",
+"prereq_full": [
+{
+"slug": "arp",
+"title": "ARP"
+},
+{
+"slug": "mac-address",
+"title": "MAC Address"
+}
+],
 "related_full": [
 {
 "slug": "tcp",
@@ -1070,6 +1113,12 @@
 "difficulty": "初級",
 "updated": "2026-06-07",
 "html": "<h2>概要</h2>\n<p>ポート番号は、1台の機器内で動く複数の通信を区別するための16ビットの番号(0〜65535)です。IPアドレスが「建物の住所」なら、ポートは「部屋番号」に相当します。</p>\n<h2>なぜ必要か</h2>\n<p>1つのECUが同時に複数の通信(診断・SOME/IP・映像など)を扱うとき、どのデータがどのアプリ宛かを区別する必要があります。ポート番号がその振り分けを可能にします。</p>\n<h2>自動運転での利用例</h2>\n<p>SOME/IPのサービスディスカバリは UDP 30490 番、DoIP診断は 13400 番、というように用途ごとにポートが決まっています。PCAP解析でポートを見れば、どの通信かを推測できます。</p>\n<h2>関連用語</h2>\n<p>IPアドレスとポートの組が <a class=\"term-link\" data-slug=\"socket\" href=\"/glossary/socket\">Socket</a> です。ポートは <a class=\"term-link\" data-slug=\"tcp\" href=\"/glossary/tcp\">TCP</a> と <a class=\"term-link\" data-slug=\"udp\" href=\"/glossary/udp\">UDP</a> の両方で使われます。</p>\n<h2>次に学ぶべき内容</h2>\n<p>IPとポートを組み合わせた通信の出入口、<a class=\"term-link\" data-slug=\"socket\" href=\"/glossary/socket\">Socket</a> を学びましょう。</p>",
+"prereq_full": [
+{
+"slug": "udp",
+"title": "UDP"
+}
+],
 "related_full": [
 {
 "slug": "socket",
@@ -1113,6 +1162,12 @@
 "difficulty": "初級",
 "updated": "2026-06-07",
 "html": "<h2>概要</h2>\n<p>TCP(Transmission Control Protocol)はコネクション型のトランスポート層プロトコルです。3wayハンドシェイクで接続を確立し、再送制御・順序保証・フロー制御により「データが確実に正しい順で届く」ことを保証します。</p>\n<h2>なぜ必要か</h2>\n<p>通信路ではパケットの欠落や順序入れ替わりが起こります。TCPはこれを自動で補正するため、アプリは信頼性を意識せずにデータを送れます。確実性が求められる場面の定番です。</p>\n<h2>自動運転での利用例</h2>\n<p>車載診断通信の DoIP(Diagnostics over IP)や、大きなファイル/ソフトウェア更新(OTA)の転送に使われます。SOME/IPでも、大きなペイロードや確実性が必要な通信はTCP上で行われます。</p>\n<h2>関連用語</h2>\n<p>対照的な軽量プロトコルが <a class=\"term-link\" data-slug=\"udp\" href=\"/glossary/udp\">UDP</a>、通信の入り口が <a class=\"term-link\" data-slug=\"port\" href=\"/glossary/port\">Port</a> と <a class=\"term-link\" data-slug=\"socket\" href=\"/glossary/socket\">Socket</a>、土台が <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>低遅延を優先する <a class=\"term-link\" data-slug=\"udp\" href=\"/glossary/udp\">UDP</a> との違いを学びましょう。</p>",
+"prereq_full": [
+{
+"slug": "ip",
+"title": "IP"
+}
+],
 "related_full": [
 {
 "slug": "udp",
@@ -1162,6 +1217,12 @@
 "difficulty": "初級",
 "updated": "2026-06-07",
 "html": "<h2>概要</h2>\n<p>UDP(User Datagram Protocol)はコネクションレスで、再送や順序保証を持たない軽量なトランスポート層プロトコルです。ハンドシェイクなしで即座に送れるため、低遅延・低オーバーヘッドが特長です。</p>\n<h2>なぜ必要か</h2>\n<p>リアルタイム性が信頼性より重要な場面があります。例えば映像やセンサーストリームでは、1フレーム届かなくても再送を待つより次のデータを送る方が有益です。UDPはそうした用途に最適です。</p>\n<h2>自動運転での利用例</h2>\n<p>ADAS ECU間の低遅延通信、SOME/IPのイベント通知やサービスディスカバリ(SOME/IP-SD)、カメラ映像ストリームなどで多用されます。遅延が安全に直結する自動運転では、UDPの低遅延性が活きます。</p>\n<h2>関連用語</h2>\n<p>信頼性重視の <a class=\"term-link\" data-slug=\"tcp\" href=\"/glossary/tcp\">TCP</a> と対をなし、通信エンドポイントは <a class=\"term-link\" data-slug=\"socket\" href=\"/glossary/socket\">Socket</a> と <a class=\"term-link\" data-slug=\"port\" href=\"/glossary/port\">Port</a> で表します。車載では <a class=\"term-link\" data-slug=\"some-ip\" href=\"/glossary/some-ip\">SOME/IP</a> がUDP上で動きます。</p>\n<h2>次に学ぶべき内容</h2>\n<p>通信の宛先を細かく指定する <a class=\"term-link\" data-slug=\"port\" href=\"/glossary/port\">Port</a> を学びましょう。</p>",
+"prereq_full": [
+{
+"slug": "tcp",
+"title": "TCP"
+}
+],
 "related_full": [
 {
 "slug": "tcp",
@@ -1213,6 +1274,7 @@
 ],
 "updated": "2026-06-07",
 "html": "<h2>概要</h2>\n<p>VLAN(Virtual LAN / IEEE 802.1Q)は、1本の物理 <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> を論理的に複数のネットワークに分割する技術です。フレームに「VLANタグ」を付けることで、同じケーブル上でもグループごとに通信を分離できます。</p>\n<h2>なぜ必要か</h2>\n<p>1つの物理網に異なる目的のトラフィックが混在すると、セキュリティやリアルタイム性に問題が出ます。VLANで論理的に分けることで、不要な通信の混入を防ぎ、帯域と安全性を確保できます。</p>\n<h2>自動運転での利用例</h2>\n<p>車載Ethernetでは、制御系・情報系(インフォテインメント)・診断系などをVLANで分離するのが一般的です。これにより、映像ストリームが制御通信を圧迫するのを防ぎ、安全に関わるトラフィックを保護します。</p>\n<h2>関連用語</h2>\n<p>土台が <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a>、宛先識別が <a class=\"term-link\" data-slug=\"mac-address\" href=\"/glossary/mac-address\">MAC Address</a>、時間保証と組み合わせる技術が <a class=\"term-link\" data-slug=\"tsn\" href=\"/glossary/tsn\">TSN(Time-Sensitive Networking)</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>リアルタイム性を保証する <a class=\"term-link\" data-slug=\"tsn\" href=\"/glossary/tsn\">TSN(Time-Sensitive Networking)</a> を学びましょう。</p>",
+"prereq_full": [],
 "related_full": [
 {
 "slug": "ethernet",
@@ -1255,6 +1317,12 @@
 ],
 "updated": "2026-06-07",
 "html": "<h2>概要</h2>\n<p>サブネットは、<a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a> アドレス空間を小さなネットワークに区切る考え方です。「ネットワーク部」と「ホスト部」をサブネットマスク(例 <code>255.255.255.0</code> / CIDR表記 <code>/24</code>)で分け、どこまでが同じネットワークかを定めます。</p>\n<h2>なぜ必要か</h2>\n<p>すべての機器を1つの巨大なネットワークに置くと、通信効率も管理性も悪化します。サブネットで適切に区切ることで、ブロードキャストの範囲を限定し、ルーティングや管理をしやすくします。</p>\n<h2>自動運転での利用例</h2>\n<p>ゾーンアーキテクチャの車両では、ゾーンごとにサブネットを割り当てて管理することがあります。あるECUと別ECUが「同じサブネットか」で、直接通信できるかルータ越しかが決まります。</p>\n<h2>関連用語</h2>\n<p>区切る対象が <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a>、アドレス自動割り当てが <a class=\"term-link\" data-slug=\"dhcp\" href=\"/glossary/dhcp\">DHCP</a>、同一サブネット内の到達に使うのが <a class=\"term-link\" data-slug=\"mac-address\" href=\"/glossary/mac-address\">MAC Address</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>IPアドレスを自動配布する <a class=\"term-link\" data-slug=\"dhcp\" href=\"/glossary/dhcp\">DHCP</a> を学びましょう。</p>",
+"prereq_full": [
+{
+"slug": "icmp",
+"title": "ICMP / ping"
+}
+],
 "related_full": [
 {
 "slug": "ip",
@@ -1299,6 +1367,12 @@
 "difficulty": "中級",
 "updated": "2026-06-07",
 "html": "<h2>概要</h2>\n<p>PCAP(Packet Capture)は、キャプチャしたパケットを保存するファイル形式です(拡張子 <code>.pcap</code> / <code>.pcapng</code>)。各パケットのタイムスタンプと生データが記録され、後から繰り返し解析できます。</p>\n<h2>なぜ必要か</h2>\n<p>通信は一瞬で流れ去ります。PCAPに保存しておけば、現場で取得したデータを持ち帰って詳細解析したり、チームで共有したり、回帰テストに使ったりできます。本アプリの「PCAP解析」機能もこの形式を読み込みます。</p>\n<h2>自動運転での利用例</h2>\n<p>車両テストで取得した車載Ethernetのキャプチャを <code>.pcap</code> で保存し、SOME/IPの通信シーケンスやプロトコル構成をオフラインで解析します。本アプリにアップロードすると、使用プロトコルを抽出して関連学習記事を推薦します。</p>\n<h2>関連用語</h2>\n<p>キャプチャに使うツールが <a class=\"term-link\" data-slug=\"wireshark\" href=\"/glossary/wireshark\">Wireshark</a>、中身として現れるのが <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> / <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a> / <a class=\"term-link\" data-slug=\"tcp\" href=\"/glossary/tcp\">TCP</a> / <a class=\"term-link\" data-slug=\"udp\" href=\"/glossary/udp\">UDP</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>ここから車載特有の世界へ。まずは <a class=\"term-link\" data-slug=\"can\" href=\"/glossary/can\">CAN</a> を学びましょう。</p>",
+"prereq_full": [
+{
+"slug": "wireshark",
+"title": "Wireshark"
+}
+],
 "related_full": [
 {
 "slug": "wireshark",
@@ -1346,6 +1420,16 @@
 "difficulty": "中級",
 "updated": "2026-06-07",
 "html": "<h2>概要</h2>\n<p>ソケットは、IPアドレスとポート番号の組で表される「通信のエンドポイント(出入口)」であり、プログラムがネットワーク通信を行うためのAPIでもあります。アプリはソケットを開いてデータを読み書きします。</p>\n<h2>なぜ必要か</h2>\n<p>OSやネットワークの複雑さを隠し、アプリ開発者が「ファイルの読み書き」に近い感覚で通信を扱えるようにするのがソケットです。TCP/UDP通信を実装する際の基本単位です。</p>\n<h2>自動運転での利用例</h2>\n<p>ECU上のアプリはUDP/TCPソケットを開いて他ECUと通信します。SOME/IPミドルウェアも内部ではソケットを使ってメッセージを送受信しています。</p>\n<h2>関連用語</h2>\n<p>ソケットは <a class=\"term-link\" data-slug=\"port\" href=\"/glossary/port\">Port</a> と IP の組で表され、<a class=\"term-link\" data-slug=\"tcp\" href=\"/glossary/tcp\">TCP</a> / <a class=\"term-link\" data-slug=\"udp\" href=\"/glossary/udp\">UDP</a> のどちらでも使えます。通信の中身を観測するには <a class=\"term-link\" data-slug=\"wireshark\" href=\"/glossary/wireshark\">Wireshark</a> を使います。</p>\n<h2>次に学ぶべき内容</h2>\n<p>通信を実際に「見る」ためのツール、<a class=\"term-link\" data-slug=\"wireshark\" href=\"/glossary/wireshark\">Wireshark</a> へ進みましょう。</p>",
+"prereq_full": [
+{
+"slug": "dns",
+"title": "DNS"
+},
+{
+"slug": "port",
+"title": "Port"
+}
+],
 "related_full": [
 {
 "slug": "port",
@@ -1392,6 +1476,12 @@
 "difficulty": "中級",
 "updated": "2026-06-07",
 "html": "<h2>概要</h2>\n<p>Wiresharkは、ネットワークを流れるパケットをキャプチャして可視化する定番の解析ツールです。各パケットを <a class=\"term-link\" data-slug=\"osi\" href=\"/glossary/osi\">OSI参照モデル</a> の層ごとに分解し、Ethernet/IP/TCP/UDPの中身を人間が読める形で表示します。</p>\n<h2>なぜ必要か</h2>\n<p>通信トラブルは「実際に何が流れているか」を見ないと解決できません。Wiresharkはフィルタリングや統計機能で、膨大なパケットから問題を絞り込めます。学習用にも、教科書の知識を実物で確認できる強力な手段です。</p>\n<h2>自動運転での利用例</h2>\n<p>車載Ethernetの開発・検証では、SOME/IPやDoIPの通信が仕様通りか、遅延や再送が無いかをWiresharkで確認します。キャプチャ結果は <a class=\"term-link\" data-slug=\"pcap\" href=\"/glossary/pcap\">PCAP</a> ファイルとして保存・共有されます。</p>\n<h2>関連用語</h2>\n<p>キャプチャ結果の保存形式が <a class=\"term-link\" data-slug=\"pcap\" href=\"/glossary/pcap\">PCAP</a>、解析対象の最下層が <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> と <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>キャプチャの保存形式であり、本アプリで解析できる <a class=\"term-link\" data-slug=\"pcap\" href=\"/glossary/pcap\">PCAP</a> を学びましょう。</p>",
+"prereq_full": [
+{
+"slug": "socket",
+"title": "Socket"
+}
+],
 "related_full": [
 {
 "slug": "pcap",
@@ -1435,6 +1525,7 @@
 ],
 "updated": "2026-06-07",
 "html": "<h2>概要</h2>\n<p>tcpdumpは、コマンドラインでパケットをキャプチャ・表示する定番ツールです。GUIの <a class=\"term-link\" data-slug=\"wireshark\" href=\"/glossary/wireshark\">Wireshark</a> と違い、サーバや組み込み機器など画面の無い環境でも動き、結果を <a class=\"term-link\" data-slug=\"pcap\" href=\"/glossary/pcap\">PCAP</a> ファイルに保存できます。</p>\n<h2>なぜ必要か</h2>\n<p>現場の機器に直接GUIを入れられないことは多々あります。tcpdumpなら <code>tcpdump -i eth0 -w capture.pcap</code> のように軽量にキャプチャでき、取得したファイルを後でWiresharkで詳細解析する、という流れが作れます。</p>\n<h2>自動運転での利用例</h2>\n<p>車載のLinuxベースECU(AUTOSAR Adaptiveなど)上でtcpdumpを動かし、SOME/IPやDoIPの通信を <code>.pcap</code> で採取します。採取データは本アプリのPCAP解析にもそのままアップロードできます。</p>\n<h2>関連用語</h2>\n<p>保存形式が <a class=\"term-link\" data-slug=\"pcap\" href=\"/glossary/pcap\">PCAP</a>、GUI版が <a class=\"term-link\" data-slug=\"wireshark\" href=\"/glossary/wireshark\">Wireshark</a>、Wireshark系CLIが <a class=\"term-link\" data-slug=\"tshark\" href=\"/glossary/tshark\">tshark</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>Wireshark由来のCLI <a class=\"term-link\" data-slug=\"tshark\" href=\"/glossary/tshark\">tshark</a> を学びましょう。</p>",
+"prereq_full": [],
 "related_full": [
 {
 "slug": "pcap",
@@ -1478,6 +1569,12 @@
 ],
 "updated": "2026-06-07",
 "html": "<h2>概要</h2>\n<p>tsharkは、<a class=\"term-link\" data-slug=\"wireshark\" href=\"/glossary/wireshark\">Wireshark</a> のコマンドライン版です。Wiresharkと同じ強力なプロトコル解析(ディセクタ)を持ちつつ、CLIで動くため自動化やバッチ処理に向いています。表示フィルタで欲しい情報だけを抽出できます。</p>\n<h2>なぜ必要か</h2>\n<p><a class=\"term-link\" data-slug=\"wireshark\" href=\"/glossary/wireshark\">Wireshark</a> のGUIは対話的解析に最適ですが、大量の <a class=\"term-link\" data-slug=\"pcap\" href=\"/glossary/pcap\">PCAP</a> を機械的に処理したり、CI/テストに組み込むにはCLIが必要です。tsharkはWireshark並の解析力をスクリプトから使えます。</p>\n<h2>自動運転での利用例</h2>\n<p>回帰テストで「採取したPCAPにSOME/IPのエラーが含まれていないか」を tshark のフィルタで自動チェックする、といった使い方ができます。例えば SOME/IP のメッセージ種別だけを抽出して集計する処理を自動化できます。</p>\n<h2>関連用語</h2>\n<p>GUI版が <a class=\"term-link\" data-slug=\"wireshark\" href=\"/glossary/wireshark\">Wireshark</a>、軽量キャプチャが <a class=\"term-link\" data-slug=\"tcpdump\" href=\"/glossary/tcpdump\">tcpdump</a>、対象ファイルが <a class=\"term-link\" data-slug=\"pcap\" href=\"/glossary/pcap\">PCAP</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>車載診断通信 <a class=\"term-link\" data-slug=\"doip\" href=\"/glossary/doip\">DoIP(Diagnostics over IP)</a> を学びましょう。</p>",
+"prereq_full": [
+{
+"slug": "tcpdump",
+"title": "tcpdump"
+}
+],
 "related_full": [
 {
 "slug": "wireshark",
@@ -1522,6 +1619,16 @@
 "difficulty": "上級",
 "updated": "2026-06-07",
 "html": "<h2>概要</h2>\n<p>AUTOSAR(AUTomotive Open System ARchitecture)は、車載ソフトウェアの標準アーキテクチャです。ハードに依存しない再利用可能なソフト開発を目指します。従来制御向けの <strong>Classic Platform</strong> と、高性能・サービス指向の <strong>Adaptive Platform</strong> があります。</p>\n<h2>なぜ必要か</h2>\n<p>車載ソフトは大規模・長寿命・多サプライヤで開発されます。共通の標準が無いと互換性や再利用が困難です。AUTOSARは層構造とインターフェースを標準化し、ECU間・サプライヤ間の連携を可能にします。</p>\n<h2>自動運転での利用例</h2>\n<p>Adaptive Platform は POSIX ベースで、<a class=\"term-link\" data-slug=\"some-ip\" href=\"/glossary/some-ip\">SOME/IP</a> によるサービス指向通信を前提とします。自動運転のような高性能・動的なアプリは Adaptive 上で構築され、Classic(CAN中心)と共存します。</p>\n<h2>関連用語</h2>\n<p>通信手段として <a class=\"term-link\" data-slug=\"some-ip\" href=\"/glossary/some-ip\">SOME/IP</a> と <a class=\"term-link\" data-slug=\"can\" href=\"/glossary/can\">CAN</a>、次世代の通信ミドルウェアとして <a class=\"term-link\" data-slug=\"ros2-dds\" href=\"/glossary/ros2-dds\">ROS2 DDS</a>、車両全体の方向性として <a class=\"term-link\" data-slug=\"sdv\" href=\"/glossary/sdv\">SDV(ソフトウェア定義車両)</a> があります。</p>\n<h2>次に学ぶべき内容</h2>\n<p>ロボティクス由来の通信基盤、<a class=\"term-link\" data-slug=\"ros2-dds\" href=\"/glossary/ros2-dds\">ROS2 DDS</a> へ進みましょう。</p>",
+"prereq_full": [
+{
+"slug": "can-fd",
+"title": "CAN FD"
+},
+{
+"slug": "some-ip",
+"title": "SOME/IP"
+}
+],
 "related_full": [
 {
 "slug": "some-ip",
@@ -1569,6 +1676,12 @@
 "difficulty": "上級",
 "updated": "2026-06-07",
 "html": "<h2>概要</h2>\n<p>CAN(Controller Area Network)は、自動車向けに開発された堅牢なシリアル通信バスです。各メッセージはIDを持ち、宛先ではなく「内容」で識別されるブロードキャスト方式。ノイズに強く、配線がシンプルなのが特長です。CAN FDは高速・大容量化した拡張版です。</p>\n<h2>なぜ必要か</h2>\n<p>車内には多数のECUがあり、限られた配線で確実に制御信号をやり取りする必要があります。CANは数十年にわたり車載制御通信の標準として使われ、エンジン・ブレーキ・ボディ系などを支えてきました。</p>\n<h2>自動運転での利用例</h2>\n<p>CANは今も車両制御の基幹で広く使われますが、カメラ映像のような大容量データには帯域が不足します。そこで高帯域の <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> と組み合わせ、制御系はCAN、情報系はEthernetという役割分担が進んでいます。</p>\n<h2>関連用語</h2>\n<p>高帯域な車載通信が <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a>、IP上のサービス通信が <a class=\"term-link\" data-slug=\"some-ip\" href=\"/glossary/some-ip\">SOME/IP</a>、これらを束ねる標準が <a class=\"term-link\" data-slug=\"autosar\" href=\"/glossary/autosar\">AUTOSAR</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>IP上のサービス指向通信、<a class=\"term-link\" data-slug=\"some-ip\" href=\"/glossary/some-ip\">SOME/IP</a> へ進みましょう。</p>",
+"prereq_full": [
+{
+"slug": "pcap",
+"title": "PCAP"
+}
+],
 "related_full": [
 {
 "slug": "some-ip",
@@ -1612,6 +1725,7 @@
 ],
 "updated": "2026-06-07",
 "html": "<h2>概要</h2>\n<p>CAN FD(CAN with Flexible Data-rate)は、従来の <a class=\"term-link\" data-slug=\"can\" href=\"/glossary/can\">CAN</a> を拡張した規格です。1フレームで運べるデータ量を8バイトから最大64バイトへ拡大し、データ部分の通信速度も高速化しました。既存のCAN資産を活かしつつ帯域を底上げします。</p>\n<h2>なぜ必要か</h2>\n<p>ECUの高機能化でやり取りするデータが増え、従来CANの8バイト・低速では不足するようになりました。CAN FDは配線や開発資産を大きく変えずに、より多くのデータを速く送れるようにします。</p>\n<h2>自動運転での利用例</h2>\n<p>カメラ映像のような大容量は <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> が担いますが、制御系の中量データではCAN FDが活躍します。CAN→CAN FD→Ethernetと、データ量に応じて通信方式を使い分けるのが現代の車載ネットワーク設計です。</p>\n<h2>関連用語</h2>\n<p>基礎が <a class=\"term-link\" data-slug=\"can\" href=\"/glossary/can\">CAN</a>、高帯域通信が <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a>、統合する標準が <a class=\"term-link\" data-slug=\"autosar\" href=\"/glossary/autosar\">AUTOSAR</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>これらを束ねる車載ソフト標準 <a class=\"term-link\" data-slug=\"autosar\" href=\"/glossary/autosar\">AUTOSAR</a> を学びましょう。</p>",
+"prereq_full": [],
 "related_full": [
 {
 "slug": "can",
@@ -1656,6 +1770,12 @@
 ],
 "updated": "2026-06-07",
 "html": "<h2>概要</h2>\n<p>DoIP(Diagnostics over IP / ISO 13400)は、車載診断通信(UDS)を <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a> ネットワーク上で行うための規格です。従来CAN上で行っていた診断を、高帯域なEthernetとIPで実現し、大量データの高速なやり取りを可能にします。</p>\n<h2>なぜ必要か</h2>\n<p>ソフトウェア更新(OTA)や大容量ログの取得など、現代の診断は従来のCANでは帯域が不足します。DoIPはIP上で診断を行うことで、高速・大容量の診断・書き換えを可能にします。</p>\n<h2>自動運転での利用例</h2>\n<p>ECUのファームウェア更新や故障診断を、車載Ethernet経由で高速に実施します。DoIPは信頼性が必要なため主に <a class=\"term-link\" data-slug=\"tcp\" href=\"/glossary/tcp\">TCP</a> 上で動作し、ポート13400番が標準として使われます。</p>\n<h2>関連用語</h2>\n<p>土台が <a class=\"term-link\" data-slug=\"tcp\" href=\"/glossary/tcp\">TCP</a> / <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a>、サービス通信が <a class=\"term-link\" data-slug=\"some-ip\" href=\"/glossary/some-ip\">SOME/IP</a>、標準フレームワークが <a class=\"term-link\" data-slug=\"autosar\" href=\"/glossary/autosar\">AUTOSAR</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>サービス指向通信の中核 <a class=\"term-link\" data-slug=\"some-ip\" href=\"/glossary/some-ip\">SOME/IP</a> を学びましょう。</p>",
+"prereq_full": [
+{
+"slug": "tshark",
+"title": "tshark"
+}
+],
 "related_full": [
 {
 "slug": "tcp",
@@ -1704,6 +1824,16 @@
 "difficulty": "上級",
 "updated": "2026-06-07",
 "html": "<h2>概要</h2>\n<p>SOME/IP(Scalable service-Oriented MiddlewarE over IP)は、車載ECU同士が「サービス」をやり取りするためのIP上のミドルウェアです。メソッド呼び出し(RPC)、イベント通知(Pub/Sub)、サービスディスカバリ(SOME/IP-SD)を提供します。</p>\n<h2>なぜ必要か</h2>\n<p>ゾーン/ドメイン型アーキテクチャでは、ECUが提供する機能を他のECUが柔軟に利用したくなります。SOME/IPは「どのECUがどのサービスを提供するか」を動的に発見し、IP上で疎結合な通信を実現します。</p>\n<h2>自動運転での利用例</h2>\n<p>カメラECUが提供する物体検出サービスを、複数の制御ECUが購読(subscribe)して受け取る、といった使い方をします。低遅延通知は <a class=\"term-link\" data-slug=\"udp\" href=\"/glossary/udp\">UDP</a>、大きなデータや確実性が必要な通信は <a class=\"term-link\" data-slug=\"tcp\" href=\"/glossary/tcp\">TCP</a> 上で行われます。SOME/IP-SDは UDP 30490 番を使います。</p>\n<h2>関連用語</h2>\n<p>土台のトランスポートが <a class=\"term-link\" data-slug=\"udp\" href=\"/glossary/udp\">UDP</a> / <a class=\"term-link\" data-slug=\"tcp\" href=\"/glossary/tcp\">TCP</a>、上位の標準フレームワークが <a class=\"term-link\" data-slug=\"autosar\" href=\"/glossary/autosar\">AUTOSAR</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>これらを統合する車載ソフト標準、<a class=\"term-link\" data-slug=\"autosar\" href=\"/glossary/autosar\">AUTOSAR</a> を学びましょう。</p>",
+"prereq_full": [
+{
+"slug": "can",
+"title": "CAN"
+},
+{
+"slug": "doip",
+"title": "DoIP(Diagnostics over IP)"
+}
+],
 "related_full": [
 {
 "slug": "udp",
@@ -1750,6 +1880,16 @@
 "difficulty": "上級",
 "updated": "2026-06-07",
 "html": "<h2>概要</h2>\n<p>ADAS通信とは、先進運転支援システム(ADAS)を構成するセンサー・コンピュータ・アクチュエータ間のデータ通信全般を指します。カメラ・レーダー・LiDARの大量データを、低遅延かつ高信頼に運ぶことが求められます。</p>\n<h2>なぜ必要か</h2>\n<p>ADAS/自動運転では、認識→判断→制御のループを短い周期で回す必要があり、通信の遅延・ジッタ・欠損が安全性に直結します。そのため帯域・リアルタイム性・冗長性を考慮した通信設計が不可欠です。</p>\n<h2>自動運転での利用例</h2>\n<p>高帯域な <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> をバックボーンに、低遅延通知は <a class=\"term-link\" data-slug=\"udp\" href=\"/glossary/udp\">UDP</a> ベースの <a class=\"term-link\" data-slug=\"some-ip\" href=\"/glossary/some-ip\">SOME/IP</a> で、時刻同期にはTSN(Time-Sensitive Networking)を用います。これらを束ねた車両像が <a class=\"term-link\" data-slug=\"sdv\" href=\"/glossary/sdv\">SDV(ソフトウェア定義車両)</a> です。安全のため通信経路を二重化することもあります。</p>\n<h2>関連用語</h2>\n<p>基盤技術は <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> / <a class=\"term-link\" data-slug=\"udp\" href=\"/glossary/udp\">UDP</a> / <a class=\"term-link\" data-slug=\"some-ip\" href=\"/glossary/some-ip\">SOME/IP</a>、上位概念が <a class=\"term-link\" data-slug=\"sdv\" href=\"/glossary/sdv\">SDV(ソフトウェア定義車両)</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>ロードマップは一周しました。気になった用語をクリックして、Wikipedia風に知識を深めましょう。</p>",
+"prereq_full": [
+{
+"slug": "sdv",
+"title": "SDV(ソフトウェア定義車両)"
+},
+{
+"slug": "tsn",
+"title": "TSN(Time-Sensitive Networking)"
+}
+],
 "related_full": [
 {
 "slug": "some-ip",
@@ -1793,6 +1933,12 @@
 "difficulty": "上級",
 "updated": "2026-06-07",
 "html": "<h2>概要</h2>\n<p>ROS2(Robot Operating System 2)は、ロボット・自動運転ソフト開発のフレームワークです。その通信基盤に <strong>DDS(Data Distribution Service)</strong> を採用し、Pub/Sub型でノード間がデータをやり取りします。リアルタイム性と分散性に優れます。</p>\n<h2>なぜ必要か</h2>\n<p>自動運転ソフトは多数のモジュール(認識・計画・制御)が並行動作し、大量のデータを低遅延で共有する必要があります。DDSは発見・QoS制御・多対多通信を標準で備え、こうした要求に応えます。</p>\n<h2>自動運転での利用例</h2>\n<p>Autowareなどの自動運転スタックはROS2上で構築され、LiDAR点群やカメラ画像、車両状態をDDSで配信します。車載では <a class=\"term-link\" data-slug=\"some-ip\" href=\"/glossary/some-ip\">SOME/IP</a> とDDSが用途で使い分けられ、両者の橋渡し(ゲートウェイ)も検討されます。</p>\n<h2>関連用語</h2>\n<p>車載のサービス通信が <a class=\"term-link\" data-slug=\"some-ip\" href=\"/glossary/some-ip\">SOME/IP</a>、土台のトランスポートが <a class=\"term-link\" data-slug=\"udp\" href=\"/glossary/udp\">UDP</a>、全体の潮流が <a class=\"term-link\" data-slug=\"sdv\" href=\"/glossary/sdv\">SDV(ソフトウェア定義車両)</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>これらが向かう先、<a class=\"term-link\" data-slug=\"sdv\" href=\"/glossary/sdv\">SDV(ソフトウェア定義車両)</a>(ソフトウェア定義車両)を学びましょう。</p>",
+"prereq_full": [
+{
+"slug": "autosar",
+"title": "AUTOSAR"
+}
+],
 "related_full": [
 {
 "slug": "some-ip",
@@ -1840,6 +1986,12 @@
 "difficulty": "上級",
 "updated": "2026-06-07",
 "html": "<h2>概要</h2>\n<p>SDV(Software Defined Vehicle)は、車両の機能をソフトウェアで定義・更新できるようにする設計思想です。ハード固定の機能群から、OTAで継続的に進化するソフト中心の車へ——スマートフォンのような体験を車にもたらします。</p>\n<h2>なぜ必要か</h2>\n<p>自動運転やコネクテッド機能は、出荷後も改善・追加が必要です。多数のECUに分散した固定機能では限界があるため、高性能な集中型コンピュータと高帯域ネットワークで、ソフト更新を前提とした設計へ移行しています。</p>\n<h2>自動運転での利用例</h2>\n<p>SDVではゾーンアーキテクチャ+車載 <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> バックボーン上に、<a class=\"term-link\" data-slug=\"autosar\" href=\"/glossary/autosar\">AUTOSAR</a> Adaptive や <a class=\"term-link\" data-slug=\"ros2-dds\" href=\"/glossary/ros2-dds\">ROS2 DDS</a> ベースのアプリが載り、OTAで自動運転機能が更新されます。通信の中心は <a class=\"term-link\" data-slug=\"adas-comm\" href=\"/glossary/adas-comm\">ADAS通信</a> で扱うサービス指向通信です。</p>\n<h2>関連用語</h2>\n<p>基盤の通信が <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a>、ソフト標準が <a class=\"term-link\" data-slug=\"autosar\" href=\"/glossary/autosar\">AUTOSAR</a>、ADAS固有の通信設計が <a class=\"term-link\" data-slug=\"adas-comm\" href=\"/glossary/adas-comm\">ADAS通信</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>最後に、ADAS特有の通信要件をまとめた <a class=\"term-link\" data-slug=\"adas-comm\" href=\"/glossary/adas-comm\">ADAS通信</a> を学びましょう。</p>",
+"prereq_full": [
+{
+"slug": "ros2-dds",
+"title": "ROS2 DDS"
+}
+],
 "related_full": [
 {
 "slug": "adas-comm",
@@ -1888,6 +2040,12 @@
 ],
 "updated": "2026-06-07",
 "html": "<h2>概要</h2>\n<p>TSN(Time-Sensitive Networking)は、標準 <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> に「時間保証」を加える一連の規格(IEEE 802.1)です。時刻同期・帯域予約・優先制御により、重要なフレームを決められた時間内に確実に届けます。</p>\n<h2>なぜ必要か</h2>\n<p>通常のEthernetはベストエフォートで、遅延やジッタが保証されません。しかし自動運転の制御通信は「いつ届くか」が安全に直結します。TSNはEthernetにリアルタイムLAN並みの確定性を与え、この要求に応えます。</p>\n<h2>自動運転での利用例</h2>\n<p>カメラ・センサーの大容量データと、安全に関わる制御コマンドを同じEthernetバックボーンでTSNにより共存させます。<a class=\"term-link\" data-slug=\"vlan\" href=\"/glossary/vlan\">VLAN</a> による分離と組み合わせ、制御フレームの遅延を上限内に抑えます。これが <a class=\"term-link\" data-slug=\"sdv\" href=\"/glossary/sdv\">SDV(ソフトウェア定義車両)</a> の通信基盤を支えます。</p>\n<h2>関連用語</h2>\n<p>土台が <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a>、論理分離が <a class=\"term-link\" data-slug=\"vlan\" href=\"/glossary/vlan\">VLAN</a>、応用先が <a class=\"term-link\" data-slug=\"adas-comm\" href=\"/glossary/adas-comm\">ADAS通信</a> と <a class=\"term-link\" data-slug=\"sdv\" href=\"/glossary/sdv\">SDV(ソフトウェア定義車両)</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>ADAS通信全体の要件 <a class=\"term-link\" data-slug=\"adas-comm\" href=\"/glossary/adas-comm\">ADAS通信</a> を学びましょう。</p>",
+"prereq_full": [
+{
+"slug": "vlan",
+"title": "VLAN"
+}
+],
 "related_full": [
 {
 "slug": "ethernet",

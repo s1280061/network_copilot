@@ -97,7 +97,6 @@ export default function GlossaryPage() {
               </div>
               <p className="text-sm text-slate-500 mt-1 line-clamp-2">{a.excerpt}</p>
               <div className="flex gap-2 mt-2 text-xs">
-                <span className="text-slate-400">{a.difficulty}</span>
                 {a.completed && <span className="text-green-600">✓ 学習済み</span>}
                 {a.favorite && <span className="text-amber-600">★</span>}
               </div>
