@@ -8,55 +8,90 @@ import {
   Dashboard,
   SearchHit,
 } from "./types";
+import staticContent from "./static-content.json";
 
-const BASE = process.env.NEXT_PUBLIC_API_BASE || "http://localhost:8080";
+// When NEXT_PUBLIC_API_BASE is empty (e.g. Vercel-only "read" deployment),
+// the app runs in STATIC MODE: articles are read from the bundled JSON and
+// interactive features (AI chat, PCAP, progress save) are gracefully disabled.
+const BASE = process.env.NEXT_PUBLIC_API_BASE || "";
+const HAS_BACKEND = BASE !== "";
+
+const SC: any = staticContent;
 
 async function json<T>(res: Response): Promise<T> {
   if (!res.ok) throw new Error(`${res.url} -> ${res.status}`);
   return res.json() as Promise<T>;
 }
 
-// ---- content ----
+// Try the live API; fall back to a static value if backend is absent or errors.
+async function liveOrStatic<T>(
+  path: string,
+  fallback: () => T,
+  init?: RequestInit
+): Promise<T> {
+  if (!HAS_BACKEND) return fallback();
+  try {
+    const res = await fetch(`${BASE}${path}`, { cache: "no-store", ...init });
+    return await json<T>(res);
+  } catch {
+    return fallback();
+  }
+}
+
+// ---- content (read-only: works in static mode) ----
 export const getRoadmap = () =>
-  fetch(`${BASE}/api/roadmap`, { cache: "no-store" }).then(json<Roadmap>);
+  liveOrStatic<Roadmap>("/api/roadmap", () => SC.roadmap);
 
 export const getArticles = () =>
-  fetch(`${BASE}/api/articles`, { cache: "no-store" }).then(
-    json<{ articles: Article[] }>
-  );
+  liveOrStatic<{ articles: Article[] }>("/api/articles", () => ({
+    articles: SC.articles,
+  }));
 
 export const getArticle = (slug: string) =>
-  fetch(`${BASE}/api/articles/${slug}`, { cache: "no-store" }).then(
-    json<Article>
-  );
+  liveOrStatic<Article>(`/api/articles/${slug}`, () => {
+    const a = SC.bySlug[slug];
+    if (!a) throw new Error("not found");
+    return a;
+  });
 
-// ---- home / dashboard / search ----
 export const getHome = () =>
-  fetch(`${BASE}/api/home`, { cache: "no-store" }).then(json<Home>);
+  liveOrStatic<Home>("/api/home", () => SC.home);
 
 export const getDashboard = () =>
-  fetch(`${BASE}/api/dashboard`, { cache: "no-store" }).then(json<Dashboard>);
-
-export const search = (q: string) =>
-  fetch(`${BASE}/api/search?q=${encodeURIComponent(q)}`, {
-    cache: "no-store",
-  }).then(json<{ results: SearchHit[]; mode: string }>);
+  liveOrStatic<Dashboard>("/api/dashboard", () => staticDashboard());
 
 export const getRecommend = (slug: string) =>
-  fetch(`${BASE}/api/articles/${slug}/recommend`, { cache: "no-store" }).then(
-    json<{ recommendations: Ref[] }>
+  liveOrStatic<{ recommendations: Ref[] }>(
+    `/api/articles/${slug}/recommend`,
+    () => ({ recommendations: SC.recommend[slug] || [] })
   );
 
-// ---- chat ----
-export const chat = (question: string) =>
-  fetch(`${BASE}/api/chat`, {
+export const search = (q: string) =>
+  liveOrStatic<{ results: SearchHit[]; mode: string }>(
+    `/api/search?q=${encodeURIComponent(q)}`,
+    () => ({ results: staticSearch(q), mode: "keyword" })
+  );
+
+// ---- interactive (need backend) ----
+export const chat = (question: string) => {
+  if (!HAS_BACKEND) {
+    return Promise.resolve({
+      answer:
+        "（このサイトは記事閲覧専用モードで公開されています。AIチャットはバックエンド接続時に利用できます。）",
+      sources: [] as Ref[],
+    });
+  }
+  return fetch(`${BASE}/api/chat`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ question }),
   }).then(json<{ answer: string; sources: Ref[] }>);
+};
 
-// ---- pcap ----
 export const uploadPcap = (file: File) => {
+  if (!HAS_BACKEND) {
+    return Promise.reject(new Error("PCAP解析はバックエンド接続時のみ利用できます。"));
+  }
   const form = new FormData();
   form.append("file", file);
   return fetch(`${BASE}/api/pcap`, { method: "POST", body: form }).then(
@@ -64,30 +99,80 @@ export const uploadPcap = (file: File) => {
   );
 };
 
-// ---- progress / favorites / history ----
+// ---- progress / favorites (no-op in static mode) ----
 export const setProgress = (slug: string, completed: boolean) =>
-  fetch(`${BASE}/api/progress`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ slug, completed }),
-  }).then(json<{ ok: boolean }>);
-
-export const addFavorite = (slug: string, title: string) =>
-  fetch(`${BASE}/api/favorites`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ slug, title }),
-  }).then(json<{ ok: boolean }>);
-
-export const removeFavorite = (slug: string) =>
-  fetch(`${BASE}/api/favorites/${slug}`, { method: "DELETE" }).then(
-    json<{ ok: boolean }>
+  liveOrStatic<{ ok: boolean }>(
+    "/api/progress",
+    () => ({ ok: false }),
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ slug, completed }),
+    }
   );
 
+export const addFavorite = (slug: string, title: string) =>
+  liveOrStatic<{ ok: boolean }>(
+    "/api/favorites",
+    () => ({ ok: false }),
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ slug, title }),
+    }
+  );
+
+export const removeFavorite = (slug: string) =>
+  liveOrStatic<{ ok: boolean }>(`/api/favorites/${slug}`, () => ({ ok: false }), {
+    method: "DELETE",
+  });
+
 export const getFavorites = () =>
-  fetch(`${BASE}/api/favorites`, { cache: "no-store" }).then(
-    json<{ favorites: (Ref & { created_at: string })[] }>
+  liveOrStatic<{ favorites: (Ref & { created_at: string })[] }>(
+    "/api/favorites",
+    () => ({ favorites: [] })
   );
 
 export const getHistory = () =>
-  fetch(`${BASE}/api/history`, { cache: "no-store" }).then(json<History>);
+  liveOrStatic<History>("/api/history", () => ({
+    views: [],
+    chats: [],
+    pcaps: [],
+  }));
+
+// ---- static helpers ----
+function staticSearch(q: string): SearchHit[] {
+  const s = q.trim().toLowerCase();
+  if (!s) return [];
+  return (SC.articles as Article[])
+    .filter(
+      (a) =>
+        a.title.toLowerCase().includes(s) ||
+        (a.excerpt || "").toLowerCase().includes(s) ||
+        a.tags.some((t) => t.includes(s))
+    )
+    .slice(0, 8)
+    .map((a) => ({ slug: a.slug, title: a.title, category: a.category }));
+}
+
+function staticDashboard(): Dashboard {
+  const arts = SC.articles as Article[];
+  const byCat: Record<string, { category: string; total: number; completed: number; rate: number }> = {};
+  for (const a of arts) {
+    byCat[a.category] = byCat[a.category] || {
+      category: a.category,
+      total: 0,
+      completed: 0,
+      rate: 0,
+    };
+    byCat[a.category].total += 1;
+  }
+  return {
+    total: arts.length,
+    completed: 0,
+    rate: 0,
+    categories: Object.values(byCat),
+  };
+}
+
+export const IS_STATIC = !HAS_BACKEND;
