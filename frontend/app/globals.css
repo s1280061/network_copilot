@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Article rendering (HTML from backend markdown) */
+.prose-article {
+  @apply text-slate-700 leading-relaxed;
+}
+.prose-article h2 {
+  @apply text-lg font-bold mt-6 mb-2 text-slate-900;
+}
+.prose-article h3 {
+  @apply text-base font-semibold mt-4 mb-1 text-slate-900;
+}
+.prose-article p {
+  @apply my-3;
+}
+.prose-article ul {
+  @apply list-disc list-inside my-3 space-y-1;
+}
+.prose-article a {
+  @apply text-sky-600 underline decoration-sky-300 underline-offset-2;
+}
+.prose-article a.term-link {
+  @apply font-medium cursor-pointer hover:text-sky-700 hover:decoration-sky-500;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

@@ -1,0 +1,24 @@
+# Render.com deployment for the FastAPI backend.
+# (Vercel hosts the Next.js frontend; the Python backend with Scapy/ChromaDB
+#  needs a real server + persistent disk, so it runs here instead.)
+services:
+  - type: web
+    name: network-copilot-api
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: AI_PROVIDER
+        value: groq
+      - key: GROQ_API_KEY
+        sync: false          # set in Render dashboard (do NOT commit secrets)
+      - key: GROQ_MODEL
+        value: llama-3.3-70b-versatile
+      - key: FRONTEND_ORIGIN
+        sync: false          # set to your Vercel URL, e.g. https://xxx.vercel.app
+    disk:
+      name: chroma-data
+      mountPath: /opt/render/project/src/backend/data
+      sizeGB: 1
