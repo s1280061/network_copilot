@@ -10,25 +10,31 @@
       "level": 2,
       "title": "Level 2 — TCP/IP の中核",
       "description": "インターネットと車載通信を支える中心プロトコル群。",
-      "items": ["ip", "tcp", "udp", "port"]
+      "items": ["ip", "tcp", "udp", "port", "arp", "icmp", "subnet", "dhcp", "dns", "vlan"]
     },
     {
       "level": 3,
       "title": "Level 3 — 解析ツールと実践",
       "description": "通信を観測・解析するための知識とツール。",
-      "items": ["socket", "wireshark", "pcap"]
+      "items": ["socket", "wireshark", "pcap", "tcpdump", "tshark"]
     },
     {
       "level": 4,
-      "title": "Level 4 — 車載ネットワーク",
-      "description": "自動車特有の通信規格とミドルウェア。",
-      "items": ["can", "some-ip", "autosar"]
+      "title": "Level 4 — 車載バス・診断",
+      "description": "自動車特有のバスプロトコルと診断通信。",
+      "items": ["can", "can-fd", "lin", "flexray", "uds", "doip", "xcp"]
     },
     {
       "level": 5,
-      "title": "Level 5 — SDV / ADAS 応用",
+      "title": "Level 5 — 車載 Ethernet 高度活用",
+      "description": "AVTPからTSN・PTPまで高度なEthernet技術。",
+      "items": ["some-ip", "avtp", "tsn", "ptp"]
+    },
+    {
+      "level": 6,
+      "title": "Level 6 — SDV / ADAS 応用",
       "description": "次世代車両アーキテクチャと自動運転の通信。",
-      "items": ["ros2-dds", "sdv", "adas-comm"]
+      "items": ["autosar", "adaptive-autosar", "ros2-dds", "sdv", "adas-comm", "ota", "v2x", "cybersecurity"]
     }
   ]
 }

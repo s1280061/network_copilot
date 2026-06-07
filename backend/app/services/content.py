@@ -19,7 +19,7 @@ _FRONTMATTER_RE = re.compile(r"^---\s*\n(.*?)\n---\s*\n(.*)$", re.DOTALL)
 _LINK_RE = re.compile(r"\[\[([a-z0-9\-]+)\]\]")
 
 # note-style top categories shown on the home screen.
-CATEGORIES = ["Ethernet", "TCP/IP", "PCAP", "SOME/IP", "AUTOSAR", "SDV"]
+CATEGORIES = ["Ethernet", "TCP/IP", "PCAP", "SOME/IP", "AUTOSAR", "SDV", "Automotive Bus", "Diagnostics", "Security"]
 
 # slug -> category (overridable via frontmatter `category`).
 _CATEGORY_MAP = {
@@ -40,6 +40,17 @@ _CATEGORY_MAP = {
     "ros2-dds": "SDV",
     "sdv": "SDV",
     "adas-comm": "SDV",
+    "lin": "Automotive Bus",
+    "flexray": "Automotive Bus",
+    "ptp": "Ethernet",
+    "avtp": "Ethernet",
+    "uds": "Diagnostics",
+    "xcp": "Diagnostics",
+    "doip": "Diagnostics",
+    "adaptive-autosar": "AUTOSAR",
+    "ota": "SDV",
+    "v2x": "SDV",
+    "cybersecurity": "Security",
 }
 
 

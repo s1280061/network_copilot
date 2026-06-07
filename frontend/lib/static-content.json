@@ -212,6 +212,31 @@
 "favorite": false
 },
 {
+"slug": "lin",
+"title": "LIN バス",
+"level": 2,
+"category": "Automotive Bus",
+"difficulty": "初級",
+"related": [
+"can",
+"can-fd",
+"ethernet"
+],
+"next": [
+"can"
+],
+"tags": [
+"automotive",
+"bus",
+"l2"
+],
+"updated": "2026-06-08",
+"excerpt": "LIN(Local Interconnect Network)は、低コスト・低速な車載シリアルバスです。1本のワイヤで最大19.2 kbpsの通信を行い、マスター/スレーブ構成で動作します。CANより安価で、シート調整・ドアミラー・ワイパー",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "port",
 "title": "Port",
 "level": 2,
@@ -332,6 +357,59 @@
 "favorite": false
 },
 {
+"slug": "avtp",
+"title": "AVTP (車載映像・音声転送プロトコル)",
+"level": 3,
+"category": "Ethernet",
+"difficulty": "中級",
+"related": [
+"ethernet",
+"tsn",
+"udp",
+"ptp"
+],
+"next": [
+"tsn"
+],
+"tags": [
+"ethernet",
+"audio",
+"video",
+"automotive"
+],
+"updated": "2026-06-08",
+"excerpt": "AVTP(Audio Video Transport Protocol、IEEE 1722)は、車載Ethernet上で映像・音声ストリームをリアルタイム転送するプロトコルです。カメラ映像をサラウンドビューモニター(SVM)に表示したり、マ",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "flexray",
+"title": "FlexRay",
+"level": 3,
+"category": "Automotive Bus",
+"difficulty": "中級",
+"related": [
+"can",
+"can-fd",
+"tsn",
+"ethernet"
+],
+"next": [
+"tsn"
+],
+"tags": [
+"automotive",
+"bus",
+"realtime"
+],
+"updated": "2026-06-08",
+"excerpt": "FlexRayは、時分割多重(TDMA)方式を採用した高速・高信頼性の車載バスです。最大10 Mbpsの速度と、決定論的タイミング(遅延上限が保証)が特徴です。冗長チャネル構成によりフォールトトレランスも実現します。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "pcap",
 "title": "PCAP",
 "level": 3,
@@ -352,6 +430,31 @@
 "difficulty": "中級",
 "updated": "2026-06-07",
 "excerpt": "PCAP(Packet Capture)は、キャプチャしたパケットを保存するファイル形式です(拡張子 `.pcap` / `.pcapng`)。各パケットのタイムスタンプと生データが記録され、後から繰り返し解析できます。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "ptp",
+"title": "PTP (精密時刻同期 / IEEE 1588)",
+"level": 3,
+"category": "Ethernet",
+"difficulty": "中級",
+"related": [
+"tsn",
+"ethernet",
+"udp"
+],
+"next": [
+"tsn"
+],
+"tags": [
+"ethernet",
+"timing",
+"automotive"
+],
+"updated": "2026-06-08",
+"excerpt": "PTP(Precision Time Protocol、IEEE 1588)は、ネットワーク上の複数ノードの時刻をナノ秒精度で同期するプロトコルです。グランドマスタークロックが基準時刻を発信し、スレーブノードが遅延を計測しながら追従します。",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -381,6 +484,32 @@
 "favorite": false
 },
 {
+"slug": "uds",
+"title": "UDS (統合診断サービス)",
+"level": 3,
+"category": "Diagnostics",
+"difficulty": "中級",
+"related": [
+"doip",
+"can",
+"tcp",
+"socket"
+],
+"next": [
+"doip"
+],
+"tags": [
+"diagnostics",
+"automotive",
+"iso14229"
+],
+"updated": "2026-06-08",
+"excerpt": "UDS(Unified Diagnostic Services、ISO 14229)は、ECUを診断・プログラムするための標準プロトコルです。「サービスID」と呼ばれる命令コードで、故障コード(DTC)の読み出し、メモリへの書き込み、ECU",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "wireshark",
 "title": "Wireshark",
 "level": 3,
@@ -399,6 +528,32 @@
 "difficulty": "中級",
 "updated": "2026-06-07",
 "excerpt": "Wiresharkは、ネットワークを流れるパケットをキャプチャして可視化する定番の解析ツールです。各パケットを osi の層ごとに分解し、Ethernet/IP/TCP/UDPの中身を人間が読める形で表示します。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "xcp",
+"title": "XCP (測定・校正プロトコル)",
+"level": 3,
+"category": "Diagnostics",
+"difficulty": "中級",
+"related": [
+"uds",
+"ethernet",
+"udp",
+"can"
+],
+"next": [
+"uds"
+],
+"tags": [
+"diagnostics",
+"automotive",
+"calibration"
+],
+"updated": "2026-06-08",
+"excerpt": "XCP(Universal Measurement and Calibration Protocol、ASAM MCD-1 XCP)は、ECU内部の変数をリアルタイムに測定・書き換えするためのプロトコルです。開発中のECUに対してキャリブレ",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -477,6 +632,33 @@
 "favorite": false
 },
 {
+"slug": "adaptive-autosar",
+"title": "Adaptive AUTOSAR",
+"level": 4,
+"category": "AUTOSAR",
+"difficulty": "上級",
+"related": [
+"autosar",
+"some-ip",
+"ros2-dds",
+"sdv",
+"ethernet"
+],
+"next": [
+"sdv"
+],
+"tags": [
+"automotive",
+"middleware",
+"autosar"
+],
+"updated": "2026-06-08",
+"excerpt": "Adaptive AUTOSARは、高性能プロセッサ上でLinux等のOSを動かしながら、機能安全と柔軟なソフトウェア配置を両立する車載ミドルウェア標準です。Classic AUTOSARが静的なマイコン向けであるのに対し、Adaptive",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "can",
 "title": "CAN",
 "level": 4,
@@ -550,6 +732,34 @@
 "favorite": false
 },
 {
+"slug": "ota",
+"title": "OTA更新 (Over-The-Air)",
+"level": 4,
+"category": "SDV",
+"difficulty": "上級",
+"related": [
+"sdv",
+"adaptive-autosar",
+"tls",
+"tcp",
+"uds"
+],
+"next": [
+"sdv"
+],
+"tags": [
+"sdv",
+"update",
+"security",
+"automotive"
+],
+"updated": "2026-06-08",
+"excerpt": "OTA(Over-The-Air)更新は、無線通信を通じて車両のソフトウェア・ファームウェアをリモートで書き換える仕組みです。販売店に持ち込まずに最新機能の追加やバグ修正が可能となり、SDVの中核技術の一つです。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "some-ip",
 "title": "SOME/IP",
 "level": 4,
@@ -570,6 +780,60 @@
 "difficulty": "上級",
 "updated": "2026-06-07",
 "excerpt": "SOME/IP(Scalable service-Oriented MiddlewarE over IP)は、車載ECU同士が「サービス」をやり取りするためのIP上のミドルウェアです。メソッド呼び出し(RPC)、イベント通知(Pub/Sub",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "v2x",
+"title": "V2X通信 (Vehicle-to-Everything)",
+"level": 4,
+"category": "SDV",
+"difficulty": "上級",
+"related": [
+"ethernet",
+"udp",
+"ip",
+"cybersecurity"
+],
+"next": [
+"cybersecurity"
+],
+"tags": [
+"automotive",
+"wireless",
+"v2x",
+"adas"
+],
+"updated": "2026-06-08",
+"excerpt": "V2X(Vehicle-to-Everything)は、車両が道路インフラ・他車・歩行者・クラウドとリアルタイムに情報を交換する無線通信の総称です。V2V(車々間)、V2I(路車間)、V2P(歩行者)、V2N(ネットワーク)に分類されます。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "cybersecurity",
+"title": "車載サイバーセキュリティ (ISO 21434)",
+"level": 4,
+"category": "Security",
+"difficulty": "上級",
+"related": [
+"ethernet",
+"v2x",
+"ota",
+"doip",
+"vlan"
+],
+"next": [
+"v2x"
+],
+"tags": [
+"security",
+"automotive",
+"iso21434"
+],
+"updated": "2026-06-08",
+"excerpt": "車載サイバーセキュリティとは、外部からの不正アクセス・改ざん・盗聴から車両の電子システムを守る技術と管理体系の総称です。ISO 21434は自動車サイバーセキュリティの国際標準であり、開発〜廃棄まで全ライフサイクルでのリスク管理を義務付けて",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -1094,6 +1358,51 @@
 "completed": false,
 "favorite": false
 },
+"lin": {
+"slug": "lin",
+"title": "LIN バス",
+"level": 2,
+"category": "Automotive Bus",
+"difficulty": "初級",
+"related": [
+"can",
+"can-fd",
+"ethernet"
+],
+"next": [
+"can"
+],
+"tags": [
+"automotive",
+"bus",
+"l2"
+],
+"updated": "2026-06-08",
+"html": "<h2>概要</h2>\n<p>LIN(Local Interconnect Network)は、低コスト・低速な車載シリアルバスです。1本のワイヤで最大19.2 kbpsの通信を行い、マスター/スレーブ構成で動作します。CANより安価で、シート調整・ドアミラー・ワイパーなどシンプルな制御に使われます。</p>\n<h2>なぜ必要か</h2>\n<p>CANは信頼性が高い反面、トランシーバーや配線コストが高めです。LINはシングルワイヤで12V電源ラインを使い回せるため、費用対効果の高い補助バスとして普及しました。1台の車に40本以上のLINバスが搭載されることもあります。</p>\n<h2>仕組み</h2>\n<p>マスターECUがヘッダ(Break+Sync+ID)を送り、スレーブがIDに応じてレスポンスを返します。スレーブはアドレスを持たず、IDで自分への呼びかけを認識します。衝突検知機構はなく、マスターがスケジューリングを管理します。</p>\n<h2>自動運転での利用例</h2>\n<p>ADAS ECUが主カメラをEthernetで制御する一方、サイドミラーの角度調整モーターはLINで制御するという混在構成が一般的です。LINは帯域が低いため、センサデータの転送ではなくアクチュエータ制御に限定されます。</p>\n<h2>関連用語</h2>\n<p>帯域が必要な用途は <a class=\"term-link\" data-slug=\"can\" href=\"/glossary/can\">CAN</a> や <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> へ移行します。高速化版として <a class=\"term-link\" data-slug=\"can-fd\" href=\"/glossary/can-fd\">CAN FD</a> があります。</p>\n<h2>次に学ぶべき内容</h2>\n<p>より高速で信頼性の高い <a class=\"term-link\" data-slug=\"can\" href=\"/glossary/can\">CAN</a> へ進みましょう。</p>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "can",
+"title": "CAN"
+},
+{
+"slug": "can-fd",
+"title": "CAN FD"
+},
+{
+"slug": "ethernet",
+"title": "Ethernet"
+}
+],
+"next_full": [
+{
+"slug": "can",
+"title": "CAN"
+}
+],
+"completed": false,
+"favorite": false
+},
 "port": {
 "slug": "port",
 "title": "Port",
@@ -1346,6 +1655,107 @@
 "completed": false,
 "favorite": false
 },
+"avtp": {
+"slug": "avtp",
+"title": "AVTP (車載映像・音声転送プロトコル)",
+"level": 3,
+"category": "Ethernet",
+"difficulty": "中級",
+"related": [
+"ethernet",
+"tsn",
+"udp",
+"ptp"
+],
+"next": [
+"tsn"
+],
+"tags": [
+"ethernet",
+"audio",
+"video",
+"automotive"
+],
+"updated": "2026-06-08",
+"html": "<h2>概要</h2>\n<p>AVTP(Audio Video Transport Protocol、IEEE 1722)は、車載Ethernet上で映像・音声ストリームをリアルタイム転送するプロトコルです。カメラ映像をサラウンドビューモニター(SVM)に表示したり、マイク音声をデジタルオーディオバスに流す用途に使われます。</p>\n<h2>なぜ必要か</h2>\n<p>カメラの生映像(1080p@30fpsで約1 Gbps)をECU間で転送する場合、通常のTCP/IPでは遅延・ジッターが問題になります。AVTPはタイムスタンプ付きのストリームをEthernetフレームに直接マッピングし、<a class=\"term-link\" data-slug=\"ptp\" href=\"/glossary/ptp\">PTP (精密時刻同期 / IEEE 1588)</a> 時刻同期と組み合わせてマイクロ秒精度の低遅延転送を実現します。</p>\n<h2>仕組み</h2>\n<ul>\n<li>Ethernetフレームの EtherType <strong>0x22F0</strong> を使用</li>\n<li>各フレームにavtp_timestampを付与(gPTP基準時刻)</li>\n<li>受信側は一定バッファで再生タイミングを合わせる(Presentation Time)</li>\n</ul>\n<h2>主なサブタイプ</h2>\n<ul>\n<li><strong>CVF (Compressed Video Format)</strong> — H.264/H.265圧縮映像</li>\n<li><strong>CRF (Clock Reference Format)</strong> — 時刻同期専用ストリーム</li>\n<li><strong>AAF (AVTP Audio Format)</strong> — PCM音声</li>\n</ul>\n<h2>自動運転での利用例</h2>\n<p>全周囲カメラ(6〜8台)の映像をAVTPでADAS Domain Controllerへ集約し、センサフュージョンに使います。<a class=\"term-link\" data-slug=\"tsn\" href=\"/glossary/tsn\">TSN(Time-Sensitive Networking)</a> の帯域予約(CBS: Credit-Based Shaper)と組み合わせることで、映像フレームの遅延上限を保証します。</p>\n<h2>関連用語</h2>\n<p>時刻同期は <a class=\"term-link\" data-slug=\"ptp\" href=\"/glossary/ptp\">PTP (精密時刻同期 / IEEE 1588)</a>、帯域保証は <a class=\"term-link\" data-slug=\"tsn\" href=\"/glossary/tsn\">TSN(Time-Sensitive Networking)</a>、ベースはもちろん <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>映像転送の帯域保証を実現する <a class=\"term-link\" data-slug=\"tsn\" href=\"/glossary/tsn\">TSN(Time-Sensitive Networking)</a> を深く理解しましょう。</p>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "ethernet",
+"title": "Ethernet"
+},
+{
+"slug": "tsn",
+"title": "TSN(Time-Sensitive Networking)"
+},
+{
+"slug": "udp",
+"title": "UDP"
+},
+{
+"slug": "ptp",
+"title": "PTP (精密時刻同期 / IEEE 1588)"
+}
+],
+"next_full": [
+{
+"slug": "tsn",
+"title": "TSN(Time-Sensitive Networking)"
+}
+],
+"completed": false,
+"favorite": false
+},
+"flexray": {
+"slug": "flexray",
+"title": "FlexRay",
+"level": 3,
+"category": "Automotive Bus",
+"difficulty": "中級",
+"related": [
+"can",
+"can-fd",
+"tsn",
+"ethernet"
+],
+"next": [
+"tsn"
+],
+"tags": [
+"automotive",
+"bus",
+"realtime"
+],
+"updated": "2026-06-08",
+"html": "<h2>概要</h2>\n<p>FlexRayは、時分割多重(TDMA)方式を採用した高速・高信頼性の車載バスです。最大10 Mbpsの速度と、決定論的タイミング(遅延上限が保証)が特徴です。冗長チャネル構成によりフォールトトレランスも実現します。</p>\n<h2>なぜ必要か</h2>\n<p>ステアリングやブレーキといった機能安全(ASIL-D)が要求される制御では、「このメッセージは必ず○ms以内に届く」という保証が必要です。CANはCSMA/CAバスなので遅延が確率的ですが、FlexRayのTDMAは各ノードに固定タイムスロットを割り当てるため遅延が上限保証されます。</p>\n<h2>仕組み</h2>\n<p>通信サイクルは静的セグメント(TDMA)と動的セグメント(FTDMA)に分かれます。安全クリティカルなデータは静的セグメントで確実に送り、優先度の低いデータは動的セグメントで柔軟に送ります。</p>\n<h2>自動運転での利用例</h2>\n<p>電子式パワーステアリング(EPS)やESCなどの制御ECUはFlexRayで連携し、最悪応答時間を保証します。ただし10 Mbpsではセンサの大容量データに不足するため、カメラ・LiDARはEthernetに移行しています。</p>\n<h2>関連用語</h2>\n<p>Ethernet上でFlexRayと同等の時刻保証を実現するのが <a class=\"term-link\" data-slug=\"tsn\" href=\"/glossary/tsn\">TSN(Time-Sensitive Networking)</a> です。速度向上版CANとして <a class=\"term-link\" data-slug=\"can-fd\" href=\"/glossary/can-fd\">CAN FD</a> も並行して使われます。</p>\n<h2>次に学ぶべき内容</h2>\n<p>Ethernet上でリアルタイム性を保証する <a class=\"term-link\" data-slug=\"tsn\" href=\"/glossary/tsn\">TSN(Time-Sensitive Networking)</a> を学びましょう。</p>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "can",
+"title": "CAN"
+},
+{
+"slug": "can-fd",
+"title": "CAN FD"
+},
+{
+"slug": "tsn",
+"title": "TSN(Time-Sensitive Networking)"
+},
+{
+"slug": "ethernet",
+"title": "Ethernet"
+}
+],
+"next_full": [
+{
+"slug": "tsn",
+"title": "TSN(Time-Sensitive Networking)"
+}
+],
+"completed": false,
+"favorite": false
+},
 "pcap": {
 "slug": "pcap",
 "title": "PCAP",
@@ -1395,6 +1805,51 @@
 {
 "slug": "can",
 "title": "CAN"
+}
+],
+"completed": false,
+"favorite": false
+},
+"ptp": {
+"slug": "ptp",
+"title": "PTP (精密時刻同期 / IEEE 1588)",
+"level": 3,
+"category": "Ethernet",
+"difficulty": "中級",
+"related": [
+"tsn",
+"ethernet",
+"udp"
+],
+"next": [
+"tsn"
+],
+"tags": [
+"ethernet",
+"timing",
+"automotive"
+],
+"updated": "2026-06-08",
+"html": "<h2>概要</h2>\n<p>PTP(Precision Time Protocol、IEEE 1588)は、ネットワーク上の複数ノードの時刻をナノ秒精度で同期するプロトコルです。グランドマスタークロックが基準時刻を発信し、スレーブノードが遅延を計測しながら追従します。車載向けには gPTP(IEEE 802.1AS)が使われます。</p>\n<h2>なぜ必要か</h2>\n<p>センサフュージョンでは、カメラ・LiDAR・レーダーの各フレームが同一時刻基準で記録されている必要があります。各ECUのクロックがバラバラだと、異なるセンサのデータを「同時刻のスナップショット」として合成できず、物体位置の計算が狂います。</p>\n<h2>仕組み</h2>\n<ol>\n<li>マスターが Sync メッセージを送信(送信タイムスタンプ t1 を付与)</li>\n<li>スレーブが受信タイムスタンプ t2 を記録</li>\n<li>スレーブが Delay_Req を送信、マスターが t3 を記録し Delay_Resp で返送</li>\n<li>スレーブが t4 を記録し、4つのタイムスタンプからオフセットと遅延を計算して補正</li>\n</ol>\n<h2>自動運転での利用例</h2>\n<p>ADAS Domain Controller が gPTP グランドマスターとなり、接続されたカメラ・LiDAR・レーダーの全ECUをサブマイクロ秒精度で同期します。これによりセンサフュージョンアルゴリズムへ渡すデータの時刻整合性が保証されます。<a class=\"term-link\" data-slug=\"tsn\" href=\"/glossary/tsn\">TSN(Time-Sensitive Networking)</a> の時刻スケジューリングも gPTP を前提とします。</p>\n<h2>関連用語</h2>\n<p><a class=\"term-link\" data-slug=\"tsn\" href=\"/glossary/tsn\">TSN(Time-Sensitive Networking)</a> はgPTPによる時刻同期を基盤として動作します。同期パケットの転送には <a class=\"term-link\" data-slug=\"udp\" href=\"/glossary/udp\">UDP</a> / <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> が使われます。</p>\n<h2>次に学ぶべき内容</h2>\n<p>時刻同期を活用したリアルタイムスケジューリング、<a class=\"term-link\" data-slug=\"tsn\" href=\"/glossary/tsn\">TSN(Time-Sensitive Networking)</a> を学びましょう。</p>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "tsn",
+"title": "TSN(Time-Sensitive Networking)"
+},
+{
+"slug": "ethernet",
+"title": "Ethernet"
+},
+{
+"slug": "udp",
+"title": "UDP"
+}
+],
+"next_full": [
+{
+"slug": "tsn",
+"title": "TSN(Time-Sensitive Networking)"
 }
 ],
 "completed": false,
@@ -1457,6 +1912,61 @@
 "completed": false,
 "favorite": false
 },
+"uds": {
+"slug": "uds",
+"title": "UDS (統合診断サービス)",
+"level": 3,
+"category": "Diagnostics",
+"difficulty": "中級",
+"related": [
+"doip",
+"can",
+"tcp",
+"socket"
+],
+"next": [
+"doip"
+],
+"tags": [
+"diagnostics",
+"automotive",
+"iso14229"
+],
+"updated": "2026-06-08",
+"html": "<h2>概要</h2>\n<p>UDS(Unified Diagnostic Services、ISO 14229)は、ECUを診断・プログラムするための標準プロトコルです。「サービスID」と呼ばれる命令コードで、故障コード(DTC)の読み出し、メモリへの書き込み、ECUのリセットなどを行います。</p>\n<h2>なぜ必要か</h2>\n<p>車両には数十〜百を超えるECUが搭載されており、それぞれのメーカー独自プロトコルでは診断機器の対応コストが爆発します。UDSは共通言語として、工場・販売店・開発者が同じ手順でECUを診断できる仕組みを提供します。</p>\n<h2>主なサービス</h2>\n<ul>\n<li><strong>0x10</strong> DiagnosticSessionControl — 診断セッションの切り替え(デフォルト/拡張/プログラミング)</li>\n<li><strong>0x11</strong> ECUReset — ECUのリセット</li>\n<li><strong>0x19</strong> ReadDTCInformation — 故障コードの読み出し</li>\n<li><strong>0x22</strong> ReadDataByIdentifier(DID) — センサ値・設定値の読み出し</li>\n<li><strong>0x2E</strong> WriteDataByIdentifier — 設定値の書き込み</li>\n<li><strong>0x34/0x36/0x37</strong> RequestDownload/TransferData/RequestTransferExit — ファームウェア書き換え</li>\n</ul>\n<h2>自動運転での利用例</h2>\n<p>ADAS ECUの開発中、カメラやLiDARのキャリブレーションパラメータをUDS 0x2Eで書き込みます。また走行テスト後にADAS故障コードをUDS 0x19で読み出し、誤検知や通信エラーの原因を特定します。<a class=\"term-link\" data-slug=\"doip\" href=\"/glossary/doip\">DoIP(Diagnostics over IP)</a> を使えばEthernetケーブル1本でUDS診断が可能です。</p>\n<h2>関連用語</h2>\n<p>UDSの転送路として <a class=\"term-link\" data-slug=\"doip\" href=\"/glossary/doip\">DoIP(Diagnostics over IP)</a>(Ethernet経由)や <a class=\"term-link\" data-slug=\"can\" href=\"/glossary/can\">CAN</a> が使われます。TCP/IP上の接続管理には <a class=\"term-link\" data-slug=\"socket\" href=\"/glossary/socket\">Socket</a> が必要です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>EthernetでUDSを運ぶ仕組み、<a class=\"term-link\" data-slug=\"doip\" href=\"/glossary/doip\">DoIP(Diagnostics over IP)</a> を学びましょう。</p>",
+"prereq_full": [
+{
+"slug": "xcp",
+"title": "XCP (測定・校正プロトコル)"
+}
+],
+"related_full": [
+{
+"slug": "doip",
+"title": "DoIP(Diagnostics over IP)"
+},
+{
+"slug": "can",
+"title": "CAN"
+},
+{
+"slug": "tcp",
+"title": "TCP"
+},
+{
+"slug": "socket",
+"title": "Socket"
+}
+],
+"next_full": [
+{
+"slug": "doip",
+"title": "DoIP(Diagnostics over IP)"
+}
+],
+"completed": false,
+"favorite": false
+},
 "wireshark": {
 "slug": "wireshark",
 "title": "Wireshark",
@@ -1500,6 +2010,56 @@
 {
 "slug": "pcap",
 "title": "PCAP"
+}
+],
+"completed": false,
+"favorite": false
+},
+"xcp": {
+"slug": "xcp",
+"title": "XCP (測定・校正プロトコル)",
+"level": 3,
+"category": "Diagnostics",
+"difficulty": "中級",
+"related": [
+"uds",
+"ethernet",
+"udp",
+"can"
+],
+"next": [
+"uds"
+],
+"tags": [
+"diagnostics",
+"automotive",
+"calibration"
+],
+"updated": "2026-06-08",
+"html": "<h2>概要</h2>\n<p>XCP(Universal Measurement and Calibration Protocol、ASAM MCD-1 XCP)は、ECU内部の変数をリアルタイムに測定・書き換えするためのプロトコルです。開発中のECUに対してキャリブレーションツール(INCA、CANape等)から接続し、センサゲイン・制御パラメータをオンザフライで調整します。</p>\n<h2>なぜ必要か</h2>\n<p>ADAS・エンジン制御のパラメータは数千〜数万に及び、都度ファームウェアを焼き直していたら開発期間が爆発します。XCPは実行中のECUメモリに直接アクセスし、ループを回しながらパラメータを調整できるため、HILシミュレーションや試験車両での開発効率を劇的に向上させます。</p>\n<h2>仕組み</h2>\n<p>マスター(PC側ツール)がスレーブ(ECU)に CONNECT コマンドを送り、セッションを確立します。その後：\n- <strong>DAQ (Data Acquisition)</strong> — ECU変数を一定周期でPCへ送信\n- <strong>STIM (Stimulation)</strong> — PC側からECUに変数を書き込む\n- <strong>SET_CAL_PAGE / COPY_CAL_PAGE</strong> — キャリブレーションページの切り替え</p>\n<h2>転送路</h2>\n<p>XCPはトランスポート層を選ばない設計で、CAN(XCP on CAN)、Ethernet(XCP on UDP/TCP)、USB、FlexRayに対応します。近年の高性能ECUではXCP on Ethernetが主流です。</p>\n<h2>自動運転での利用例</h2>\n<p>ADAS Domain Controllerの物体認識閾値・センサフュージョン重みをXCPで実車走行中にリアルタイム調整し、ログを取りながら最適パラメータを探索します。<a class=\"term-link\" data-slug=\"uds\" href=\"/glossary/uds\">UDS (統合診断サービス)</a> が量産診断向けなのに対し、XCPは開発・テスト工程専用です。</p>\n<h2>関連用語</h2>\n<p>量産診断は <a class=\"term-link\" data-slug=\"uds\" href=\"/glossary/uds\">UDS (統合診断サービス)</a>、転送基盤は <a class=\"term-link\" data-slug=\"udp\" href=\"/glossary/udp\">UDP</a> / <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> または <a class=\"term-link\" data-slug=\"can\" href=\"/glossary/can\">CAN</a> を使います。</p>\n<h2>次に学ぶべき内容</h2>\n<p>量産診断の標準プロトコル <a class=\"term-link\" data-slug=\"uds\" href=\"/glossary/uds\">UDS (統合診断サービス)</a> と比較して理解を深めましょう。</p>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "uds",
+"title": "UDS (統合診断サービス)"
+},
+{
+"slug": "ethernet",
+"title": "Ethernet"
+},
+{
+"slug": "udp",
+"title": "UDP"
+},
+{
+"slug": "can",
+"title": "CAN"
+}
+],
+"next_full": [
+{
+"slug": "uds",
+"title": "UDS (統合診断サービス)"
 }
 ],
 "completed": false,
@@ -1656,6 +2216,61 @@
 "completed": false,
 "favorite": false
 },
+"adaptive-autosar": {
+"slug": "adaptive-autosar",
+"title": "Adaptive AUTOSAR",
+"level": 4,
+"category": "AUTOSAR",
+"difficulty": "上級",
+"related": [
+"autosar",
+"some-ip",
+"ros2-dds",
+"sdv",
+"ethernet"
+],
+"next": [
+"sdv"
+],
+"tags": [
+"automotive",
+"middleware",
+"autosar"
+],
+"updated": "2026-06-08",
+"html": "<h2>概要</h2>\n<p>Adaptive AUTOSARは、高性能プロセッサ上でLinux等のOSを動かしながら、機能安全と柔軟なソフトウェア配置を両立する車載ミドルウェア標準です。Classic AUTOSARが静的なマイコン向けであるのに対し、Adaptiveは動的なサービス追加・OTA更新・AI推論を想定して設計されています。</p>\n<h2>なぜ必要か</h2>\n<p>ADAS・自動運転ではGPU/NPU搭載の高性能SoCが必須となり、Classic AUTOSARのリアルタイムOSでは対応できません。Adaptive AUTOSARはPOSIX準拠OS上で動き、アプリケーションを「Adaptive Application(AA)」として疎結合で組み合わせる設計を可能にします。</p>\n<h2>主要コンポーネント</h2>\n<ul>\n<li><strong>ara::com</strong> — SOME/IPまたはDDSを使ったサービス通信API</li>\n<li><strong>ara::exec</strong> — アプリケーションのライフサイクル管理(起動/停止)</li>\n<li><strong>ara::diag</strong> — UDS診断のアダプティブ対応</li>\n<li><strong>ara::update</strong> — OTA更新フレームワーク</li>\n<li><strong>ara::crypto</strong> — 暗号化・鍵管理</li>\n</ul>\n<h2>自動運転での利用例</h2>\n<p>ADAS Domain Controllerに Adaptive AUTOSAR を採用し、物体認識・経路計画・車線維持の各機能を独立したAdaptive Applicationとして展開します。OTAでアルゴリズムを更新でき、フィールドでの機能改善が可能になります。通信は <a class=\"term-link\" data-slug=\"some-ip\" href=\"/glossary/some-ip\">SOME/IP</a> または <a class=\"term-link\" data-slug=\"ros2-dds\" href=\"/glossary/ros2-dds\">ROS2 DDS</a> で行われます。</p>\n<h2>関連用語</h2>\n<p>Classic版の <a class=\"term-link\" data-slug=\"autosar\" href=\"/glossary/autosar\">AUTOSAR</a> と対になる存在です。通信ミドルウェアとして <a class=\"term-link\" data-slug=\"some-ip\" href=\"/glossary/some-ip\">SOME/IP</a> を使い、ソフト定義車両全体の文脈は <a class=\"term-link\" data-slug=\"sdv\" href=\"/glossary/sdv\">SDV(ソフトウェア定義車両)</a> を参照。</p>\n<h2>次に学ぶべき内容</h2>\n<p>Adaptive AUTOSARが実現する <a class=\"term-link\" data-slug=\"sdv\" href=\"/glossary/sdv\">SDV(ソフトウェア定義車両)</a> の全体像を学びましょう。</p>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "autosar",
+"title": "AUTOSAR"
+},
+{
+"slug": "some-ip",
+"title": "SOME/IP"
+},
+{
+"slug": "ros2-dds",
+"title": "ROS2 DDS"
+},
+{
+"slug": "sdv",
+"title": "SDV(ソフトウェア定義車両)"
+},
+{
+"slug": "ethernet",
+"title": "Ethernet"
+}
+],
+"next_full": [
+{
+"slug": "sdv",
+"title": "SDV(ソフトウェア定義車両)"
+}
+],
+"completed": false,
+"favorite": false
+},
 "can": {
 "slug": "can",
 "title": "CAN",
@@ -1677,6 +2292,10 @@
 "updated": "2026-06-07",
 "html": "<h2>概要</h2>\n<p>CAN(Controller Area Network)は、自動車向けに開発された堅牢なシリアル通信バスです。各メッセージはIDを持ち、宛先ではなく「内容」で識別されるブロードキャスト方式。ノイズに強く、配線がシンプルなのが特長です。CAN FDは高速・大容量化した拡張版です。</p>\n<h2>なぜ必要か</h2>\n<p>車内には多数のECUがあり、限られた配線で確実に制御信号をやり取りする必要があります。CANは数十年にわたり車載制御通信の標準として使われ、エンジン・ブレーキ・ボディ系などを支えてきました。</p>\n<h2>自動運転での利用例</h2>\n<p>CANは今も車両制御の基幹で広く使われますが、カメラ映像のような大容量データには帯域が不足します。そこで高帯域の <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> と組み合わせ、制御系はCAN、情報系はEthernetという役割分担が進んでいます。</p>\n<h2>関連用語</h2>\n<p>高帯域な車載通信が <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a>、IP上のサービス通信が <a class=\"term-link\" data-slug=\"some-ip\" href=\"/glossary/some-ip\">SOME/IP</a>、これらを束ねる標準が <a class=\"term-link\" data-slug=\"autosar\" href=\"/glossary/autosar\">AUTOSAR</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>IP上のサービス指向通信、<a class=\"term-link\" data-slug=\"some-ip\" href=\"/glossary/some-ip\">SOME/IP</a> へ進みましょう。</p>",
 "prereq_full": [
+{
+"slug": "lin",
+"title": "LIN バス"
+},
 {
 "slug": "pcap",
 "title": "PCAP"
@@ -1774,6 +2393,10 @@
 {
 "slug": "tshark",
 "title": "tshark"
+},
+{
+"slug": "uds",
+"title": "UDS (統合診断サービス)"
 }
 ],
 "related_full": [
@@ -1798,6 +2421,58 @@
 {
 "slug": "some-ip",
 "title": "SOME/IP"
+}
+],
+"completed": false,
+"favorite": false
+},
+"ota": {
+"slug": "ota",
+"title": "OTA更新 (Over-The-Air)",
+"level": 4,
+"category": "SDV",
+"difficulty": "上級",
+"related": [
+"sdv",
+"adaptive-autosar",
+"tls",
+"tcp",
+"uds"
+],
+"next": [
+"sdv"
+],
+"tags": [
+"sdv",
+"update",
+"security",
+"automotive"
+],
+"updated": "2026-06-08",
+"html": "<h2>概要</h2>\n<p>OTA(Over-The-Air)更新は、無線通信を通じて車両のソフトウェア・ファームウェアをリモートで書き換える仕組みです。販売店に持ち込まずに最新機能の追加やバグ修正が可能となり、SDVの中核技術の一つです。</p>\n<h2>なぜ必要か</h2>\n<p>現代の車両はソフトウェアが数億行に達し、リコール対応や機能改善のたびにディーラー来店を強いていては運用コストが膨大になります。OTAにより、クラウドからECUへ直接パッチを配布し、ユーザーへの負担なく常に最新状態を維持できます。</p>\n<h2>OTAの流れ</h2>\n<ol>\n<li><strong>クラウドサーバー</strong>が差分更新パッケージ(Delta)を生成</li>\n<li><strong>Telematics Control Unit(TCU)</strong> が4G/5G経由でパッケージを受信・検証(署名確認)</li>\n<li><strong>OTA Manager</strong> がパッケージを各ドメインコントローラへ転送</li>\n<li>各ECUが <a class=\"term-link\" data-slug=\"uds\" href=\"/glossary/uds\">UDS (統合診断サービス)</a> のDownloadサービスを使ってファームウェアを書き換え</li>\n<li>整合性チェック後にECUをリセット・起動</li>\n</ol>\n<h2>セキュリティ要件</h2>\n<p>改ざんされたファームウェアの書き込みを防ぐため、コード署名(RSA/ECDSA)とTLS暗号化が必須です。書き換え失敗時のロールバック機能も安全設計の重要要素です。</p>\n<h2>自動運転での利用例</h2>\n<p>ADAS認識アルゴリズムのモデル更新、地図データの差分配信、法規制対応のパラメータ調整をOTAで実施します。Adaptive AUTOSARの <a class=\"term-link\" data-slug=\"adaptive-autosar\" href=\"/glossary/adaptive-autosar\">Adaptive AUTOSAR</a> はOTA更新を標準コンポーネントとして組み込んでいます。</p>\n<h2>関連用語</h2>\n<p>全体像は <a class=\"term-link\" data-slug=\"sdv\" href=\"/glossary/sdv\">SDV(ソフトウェア定義車両)</a>、書き換え手順は <a class=\"term-link\" data-slug=\"uds\" href=\"/glossary/uds\">UDS (統合診断サービス)</a>、ソフトウェア基盤は <a class=\"term-link\" data-slug=\"adaptive-autosar\" href=\"/glossary/adaptive-autosar\">Adaptive AUTOSAR</a> を参照。</p>\n<h2>次に学ぶべき内容</h2>\n<p>OTAを支える <a class=\"term-link\" data-slug=\"sdv\" href=\"/glossary/sdv\">SDV(ソフトウェア定義車両)</a> アーキテクチャ全体を理解しましょう。</p>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "sdv",
+"title": "SDV(ソフトウェア定義車両)"
+},
+{
+"slug": "adaptive-autosar",
+"title": "Adaptive AUTOSAR"
+},
+{
+"slug": "tcp",
+"title": "TCP"
+},
+{
+"slug": "uds",
+"title": "UDS (統合診断サービス)"
+}
+],
+"next_full": [
+{
+"slug": "sdv",
+"title": "SDV(ソフトウェア定義車両)"
 }
 ],
 "completed": false,
@@ -1856,6 +2531,122 @@
 {
 "slug": "autosar",
 "title": "AUTOSAR"
+}
+],
+"completed": false,
+"favorite": false
+},
+"v2x": {
+"slug": "v2x",
+"title": "V2X通信 (Vehicle-to-Everything)",
+"level": 4,
+"category": "SDV",
+"difficulty": "上級",
+"related": [
+"ethernet",
+"udp",
+"ip",
+"cybersecurity"
+],
+"next": [
+"cybersecurity"
+],
+"tags": [
+"automotive",
+"wireless",
+"v2x",
+"adas"
+],
+"updated": "2026-06-08",
+"html": "<h2>概要</h2>\n<p>V2X(Vehicle-to-Everything)は、車両が道路インフラ・他車・歩行者・クラウドとリアルタイムに情報を交換する無線通信の総称です。V2V(車々間)、V2I(路車間)、V2P(歩行者)、V2N(ネットワーク)に分類されます。</p>\n<h2>なぜ必要か</h2>\n<p>カメラやLiDARは「見える範囲」しか認識できませんが、V2Xは見通し外の情報(交差点の対向車、信号の切り替えタイミング)を事前に取得できます。人間の反射速度を超える数百ms先の危険回避を可能にし、ADAS・自動運転の安全性を根本から向上させます。</p>\n<h2>主な技術方式</h2>\n<ul>\n<li><strong>DSRC / IEEE 802.11p (WAVE)</strong> — 5.9 GHz帯、低遅延(&lt; 10 ms)、インフラ不要のアドホック通信</li>\n<li><strong>C-V2X (Cellular V2X)</strong> — LTE/5G基地局を利用、広域カバレッジ、サービス品質保証</li>\n<li><strong>5G NR-V2X</strong> — 超低遅延・高信頼で自動運転レベル4以上を想定</li>\n</ul>\n<h2>主なユースケース</h2>\n<ul>\n<li><strong>ETSI ITS / SAE J2735</strong> 標準メッセージ: CAM(位置・速度)、DENM(危険警告)</li>\n<li>交差点での出会い頭衝突防止(V2I信号情報)</li>\n<li>緊急車両接近通知(V2V)</li>\n<li>路面状況・落下物情報の共有(V2N)</li>\n</ul>\n<h2>自動運転での利用例</h2>\n<p>自動運転レベル4以上では、センサだけでなくV2Xによる協調認識が安全マージンを大幅に向上させます。信号情報活用(GLOSA)により、最適速度で信号を通過して燃費改善も実現します。</p>\n<h2>関連用語</h2>\n<p>V2X通信のセキュリティには <a class=\"term-link\" data-slug=\"cybersecurity\" href=\"/glossary/cybersecurity\">車載サイバーセキュリティ (ISO 21434)</a> の理解が必須です。パケット転送の基盤は <a class=\"term-link\" data-slug=\"udp\" href=\"/glossary/udp\">UDP</a> / <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>V2X通信を含む車載ネットワーク全体のセキュリティ、<a class=\"term-link\" data-slug=\"cybersecurity\" href=\"/glossary/cybersecurity\">車載サイバーセキュリティ (ISO 21434)</a> を学びましょう。</p>",
+"prereq_full": [
+{
+"slug": "cybersecurity",
+"title": "車載サイバーセキュリティ (ISO 21434)"
+}
+],
+"related_full": [
+{
+"slug": "ethernet",
+"title": "Ethernet"
+},
+{
+"slug": "udp",
+"title": "UDP"
+},
+{
+"slug": "ip",
+"title": "IP"
+},
+{
+"slug": "cybersecurity",
+"title": "車載サイバーセキュリティ (ISO 21434)"
+}
+],
+"next_full": [
+{
+"slug": "cybersecurity",
+"title": "車載サイバーセキュリティ (ISO 21434)"
+}
+],
+"completed": false,
+"favorite": false
+},
+"cybersecurity": {
+"slug": "cybersecurity",
+"title": "車載サイバーセキュリティ (ISO 21434)",
+"level": 4,
+"category": "Security",
+"difficulty": "上級",
+"related": [
+"ethernet",
+"v2x",
+"ota",
+"doip",
+"vlan"
+],
+"next": [
+"v2x"
+],
+"tags": [
+"security",
+"automotive",
+"iso21434"
+],
+"updated": "2026-06-08",
+"html": "<h2>概要</h2>\n<p>車載サイバーセキュリティとは、外部からの不正アクセス・改ざん・盗聴から車両の電子システムを守る技術と管理体系の総称です。ISO 21434は自動車サイバーセキュリティの国際標準であり、開発〜廃棄まで全ライフサイクルでのリスク管理を義務付けています。</p>\n<h2>なぜ必要か</h2>\n<p>現代の車はインターネット・Bluetooth・V2Xなど多数の外部インターフェースを持ち、遠隔から制御を乗っ取られるリスクが現実となっています。2015年のJeep Cherokee遠隔操作事件は世界に衝撃を与え、UN-R155/UN-R156規制により2022年以降のEU型式認証でサイバーセキュリティ対策が必須となりました。</p>\n<h2>主な脅威と対策</h2>\n<table>\n<thead>\n<tr>\n<th>脅威</th>\n<th>対策</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>不正診断アクセス</td>\n<td>UDS認証(Security Access)、SecOC</td>\n</tr>\n<tr>\n<td>OTA改ざん</td>\n<td>コード署名、TLS暗号化</td>\n</tr>\n<tr>\n<td>CAN bus注入</td>\n<td>CANの分離、侵入検知(IDS)</td>\n</tr>\n<tr>\n<td>外部ネット侵入</td>\n<td>ファイアウォール、VLANセグメント</td>\n</tr>\n<tr>\n<td>盗聴</td>\n<td>TLS/DTLS、鍵管理(HSM)</td>\n</tr>\n</tbody>\n</table>\n<h2>SecOC (Secure Onboard Communication)</h2>\n<p>AUTOSAR準拠のCAN/Ethernet通信に認証コード(MAC)を付与する仕組みです。改ざんされたメッセージを受信側で検知できます。</p>\n<h2>自動運転での利用例</h2>\n<p>ADAS ECUはHSM(Hardware Security Module)内で鍵を管理し、SecOCで制御コマンドを認証します。外部ネットワークとの境界にはファイアウォール機能付きゲートウェイを配置し、<a class=\"term-link\" data-slug=\"vlan\" href=\"/glossary/vlan\">VLAN</a> でADASネットワークとインフォテインメントを分離します。</p>\n<h2>関連用語</h2>\n<p>ネットワーク分離は <a class=\"term-link\" data-slug=\"vlan\" href=\"/glossary/vlan\">VLAN</a>、通信経路の保護は <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> 上のTLS、外部通信は <a class=\"term-link\" data-slug=\"v2x\" href=\"/glossary/v2x\">V2X通信 (Vehicle-to-Everything)</a> / <a class=\"term-link\" data-slug=\"ota\" href=\"/glossary/ota\">OTA更新 (Over-The-Air)</a> を参照。</p>\n<h2>次に学ぶべき内容</h2>\n<p>外部との無線通信 <a class=\"term-link\" data-slug=\"v2x\" href=\"/glossary/v2x\">V2X通信 (Vehicle-to-Everything)</a> のセキュリティ要件を確認しましょう。</p>",
+"prereq_full": [
+{
+"slug": "v2x",
+"title": "V2X通信 (Vehicle-to-Everything)"
+}
+],
+"related_full": [
+{
+"slug": "ethernet",
+"title": "Ethernet"
+},
+{
+"slug": "v2x",
+"title": "V2X通信 (Vehicle-to-Everything)"
+},
+{
+"slug": "ota",
+"title": "OTA更新 (Over-The-Air)"
+},
+{
+"slug": "doip",
+"title": "DoIP(Diagnostics over IP)"
+},
+{
+"slug": "vlan",
+"title": "VLAN"
+}
+],
+"next_full": [
+{
+"slug": "v2x",
+"title": "V2X通信 (Vehicle-to-Everything)"
 }
 ],
 "completed": false,
@@ -1988,6 +2779,14 @@
 "html": "<h2>概要</h2>\n<p>SDV(Software Defined Vehicle)は、車両の機能をソフトウェアで定義・更新できるようにする設計思想です。ハード固定の機能群から、OTAで継続的に進化するソフト中心の車へ——スマートフォンのような体験を車にもたらします。</p>\n<h2>なぜ必要か</h2>\n<p>自動運転やコネクテッド機能は、出荷後も改善・追加が必要です。多数のECUに分散した固定機能では限界があるため、高性能な集中型コンピュータと高帯域ネットワークで、ソフト更新を前提とした設計へ移行しています。</p>\n<h2>自動運転での利用例</h2>\n<p>SDVではゾーンアーキテクチャ+車載 <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> バックボーン上に、<a class=\"term-link\" data-slug=\"autosar\" href=\"/glossary/autosar\">AUTOSAR</a> Adaptive や <a class=\"term-link\" data-slug=\"ros2-dds\" href=\"/glossary/ros2-dds\">ROS2 DDS</a> ベースのアプリが載り、OTAで自動運転機能が更新されます。通信の中心は <a class=\"term-link\" data-slug=\"adas-comm\" href=\"/glossary/adas-comm\">ADAS通信</a> で扱うサービス指向通信です。</p>\n<h2>関連用語</h2>\n<p>基盤の通信が <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a>、ソフト標準が <a class=\"term-link\" data-slug=\"autosar\" href=\"/glossary/autosar\">AUTOSAR</a>、ADAS固有の通信設計が <a class=\"term-link\" data-slug=\"adas-comm\" href=\"/glossary/adas-comm\">ADAS通信</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>最後に、ADAS特有の通信要件をまとめた <a class=\"term-link\" data-slug=\"adas-comm\" href=\"/glossary/adas-comm\">ADAS通信</a> を学びましょう。</p>",
 "prereq_full": [
 {
+"slug": "adaptive-autosar",
+"title": "Adaptive AUTOSAR"
+},
+{
+"slug": "ota",
+"title": "OTA更新 (Over-The-Air)"
+},
+{
 "slug": "ros2-dds",
 "title": "ROS2 DDS"
 }
@@ -2042,6 +2841,18 @@
 "html": "<h2>概要</h2>\n<p>TSN(Time-Sensitive Networking)は、標準 <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> に「時間保証」を加える一連の規格(IEEE 802.1)です。時刻同期・帯域予約・優先制御により、重要なフレームを決められた時間内に確実に届けます。</p>\n<h2>なぜ必要か</h2>\n<p>通常のEthernetはベストエフォートで、遅延やジッタが保証されません。しかし自動運転の制御通信は「いつ届くか」が安全に直結します。TSNはEthernetにリアルタイムLAN並みの確定性を与え、この要求に応えます。</p>\n<h2>自動運転での利用例</h2>\n<p>カメラ・センサーの大容量データと、安全に関わる制御コマンドを同じEthernetバックボーンでTSNにより共存させます。<a class=\"term-link\" data-slug=\"vlan\" href=\"/glossary/vlan\">VLAN</a> による分離と組み合わせ、制御フレームの遅延を上限内に抑えます。これが <a class=\"term-link\" data-slug=\"sdv\" href=\"/glossary/sdv\">SDV(ソフトウェア定義車両)</a> の通信基盤を支えます。</p>\n<h2>関連用語</h2>\n<p>土台が <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a>、論理分離が <a class=\"term-link\" data-slug=\"vlan\" href=\"/glossary/vlan\">VLAN</a>、応用先が <a class=\"term-link\" data-slug=\"adas-comm\" href=\"/glossary/adas-comm\">ADAS通信</a> と <a class=\"term-link\" data-slug=\"sdv\" href=\"/glossary/sdv\">SDV(ソフトウェア定義車両)</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>ADAS通信全体の要件 <a class=\"term-link\" data-slug=\"adas-comm\" href=\"/glossary/adas-comm\">ADAS通信</a> を学びましょう。</p>",
 "prereq_full": [
 {
+"slug": "avtp",
+"title": "AVTP (車載映像・音声転送プロトコル)"
+},
+{
+"slug": "flexray",
+"title": "FlexRay"
+},
+{
+"slug": "ptp",
+"title": "PTP (精密時刻同期 / IEEE 1588)"
+},
+{
 "slug": "vlan",
 "title": "VLAN"
 }
@@ -2093,12 +2904,12 @@
 "title": "ARP"
 },
 {
-"slug": "vlan",
-"title": "VLAN"
+"slug": "lin",
+"title": "LIN バス"
 },
 {
-"slug": "autosar",
-"title": "AUTOSAR"
+"slug": "vlan",
+"title": "VLAN"
 }
 ],
 "mac-address": [
@@ -2113,6 +2924,10 @@
 {
 "slug": "arp",
 "title": "ARP"
+},
+{
+"slug": "lin",
+"title": "LIN バス"
 },
 {
 "slug": "vlan",
@@ -2165,16 +2980,16 @@
 "title": "MAC Address"
 },
 {
+"slug": "lin",
+"title": "LIN バス"
+},
+{
 "slug": "vlan",
 "title": "VLAN"
 },
 {
-"slug": "autosar",
-"title": "AUTOSAR"
-},
-{
-"slug": "can-fd",
-"title": "CAN FD"
+"slug": "adaptive-autosar",
+"title": "Adaptive AUTOSAR"
 }
 ],
 "dhcp": [
@@ -2269,6 +3084,32 @@
 "title": "DHCP"
 }
 ],
+"lin": [
+{
+"slug": "can",
+"title": "CAN"
+},
+{
+"slug": "can-fd",
+"title": "CAN FD"
+},
+{
+"slug": "ethernet",
+"title": "Ethernet"
+},
+{
+"slug": "arp",
+"title": "ARP"
+},
+{
+"slug": "flexray",
+"title": "FlexRay"
+},
+{
+"slug": "vlan",
+"title": "VLAN"
+}
+],
 "port": [
 {
 "slug": "socket",
@@ -2345,12 +3186,12 @@
 "title": "ARP"
 },
 {
-"slug": "autosar",
-"title": "AUTOSAR"
+"slug": "lin",
+"title": "LIN バス"
 },
 {
-"slug": "can-fd",
-"title": "CAN FD"
+"slug": "adaptive-autosar",
+"title": "Adaptive AUTOSAR"
 }
 ],
 "subnet": [
@@ -2373,6 +3214,58 @@
 {
 "slug": "icmp",
 "title": "ICMP / ping"
+}
+],
+"avtp": [
+{
+"slug": "tsn",
+"title": "TSN(Time-Sensitive Networking)"
+},
+{
+"slug": "ptp",
+"title": "PTP (精密時刻同期 / IEEE 1588)"
+},
+{
+"slug": "ethernet",
+"title": "Ethernet"
+},
+{
+"slug": "udp",
+"title": "UDP"
+},
+{
+"slug": "adaptive-autosar",
+"title": "Adaptive AUTOSAR"
+},
+{
+"slug": "arp",
+"title": "ARP"
+}
+],
+"flexray": [
+{
+"slug": "tsn",
+"title": "TSN(Time-Sensitive Networking)"
+},
+{
+"slug": "can",
+"title": "CAN"
+},
+{
+"slug": "can-fd",
+"title": "CAN FD"
+},
+{
+"slug": "ethernet",
+"title": "Ethernet"
+},
+{
+"slug": "lin",
+"title": "LIN バス"
+},
+{
+"slug": "adaptive-autosar",
+"title": "Adaptive AUTOSAR"
 }
 ],
 "pcap": [
@@ -2401,6 +3294,32 @@
 "title": "ICMP / ping"
 }
 ],
+"ptp": [
+{
+"slug": "tsn",
+"title": "TSN(Time-Sensitive Networking)"
+},
+{
+"slug": "ethernet",
+"title": "Ethernet"
+},
+{
+"slug": "udp",
+"title": "UDP"
+},
+{
+"slug": "avtp",
+"title": "AVTP (車載映像・音声転送プロトコル)"
+},
+{
+"slug": "adaptive-autosar",
+"title": "Adaptive AUTOSAR"
+},
+{
+"slug": "arp",
+"title": "ARP"
+}
+],
 "socket": [
 {
 "slug": "wireshark",
@@ -2417,6 +3336,32 @@
 {
 "slug": "udp",
 "title": "UDP"
+}
+],
+"uds": [
+{
+"slug": "doip",
+"title": "DoIP(Diagnostics over IP)"
+},
+{
+"slug": "can",
+"title": "CAN"
+},
+{
+"slug": "tcp",
+"title": "TCP"
+},
+{
+"slug": "socket",
+"title": "Socket"
+},
+{
+"slug": "xcp",
+"title": "XCP (測定・校正プロトコル)"
+},
+{
+"slug": "adaptive-autosar",
+"title": "Adaptive AUTOSAR"
 }
 ],
 "wireshark": [
@@ -2443,6 +3388,32 @@
 {
 "slug": "tshark",
 "title": "tshark"
+}
+],
+"xcp": [
+{
+"slug": "uds",
+"title": "UDS (統合診断サービス)"
+},
+{
+"slug": "ethernet",
+"title": "Ethernet"
+},
+{
+"slug": "can",
+"title": "CAN"
+},
+{
+"slug": "udp",
+"title": "UDP"
+},
+{
+"slug": "doip",
+"title": "DoIP(Diagnostics over IP)"
+},
+{
+"slug": "adaptive-autosar",
+"title": "Adaptive AUTOSAR"
 }
 ],
 "tcpdump": [
@@ -2503,12 +3474,38 @@
 "title": "SDV(ソフトウェア定義車両)"
 },
 {
-"slug": "arp",
-"title": "ARP"
+"slug": "adaptive-autosar",
+"title": "Adaptive AUTOSAR"
 },
 {
-"slug": "can-fd",
-"title": "CAN FD"
+"slug": "arp",
+"title": "ARP"
+}
+],
+"adaptive-autosar": [
+{
+"slug": "some-ip",
+"title": "SOME/IP"
+},
+{
+"slug": "sdv",
+"title": "SDV(ソフトウェア定義車両)"
+},
+{
+"slug": "autosar",
+"title": "AUTOSAR"
+},
+{
+"slug": "ros2-dds",
+"title": "ROS2 DDS"
+},
+{
+"slug": "ethernet",
+"title": "Ethernet"
+},
+{
+"slug": "arp",
+"title": "ARP"
 }
 ],
 "can": [
@@ -2529,12 +3526,12 @@
 "title": "CAN FD"
 },
 {
-"slug": "arp",
-"title": "ARP"
+"slug": "flexray",
+"title": "FlexRay"
 },
 {
-"slug": "doip",
-"title": "DoIP(Diagnostics over IP)"
+"slug": "lin",
+"title": "LIN バス"
 }
 ],
 "can-fd": [
@@ -2551,16 +3548,16 @@
 "title": "Ethernet"
 },
 {
-"slug": "arp",
-"title": "ARP"
+"slug": "flexray",
+"title": "FlexRay"
 },
 {
-"slug": "doip",
-"title": "DoIP(Diagnostics over IP)"
+"slug": "lin",
+"title": "LIN バス"
 },
 {
-"slug": "some-ip",
-"title": "SOME/IP"
+"slug": "adaptive-autosar",
+"title": "Adaptive AUTOSAR"
 }
 ],
 "doip": [
@@ -2581,12 +3578,38 @@
 "title": "IP"
 },
 {
-"slug": "arp",
-"title": "ARP"
+"slug": "uds",
+"title": "UDS (統合診断サービス)"
 },
 {
-"slug": "can-fd",
-"title": "CAN FD"
+"slug": "xcp",
+"title": "XCP (測定・校正プロトコル)"
+}
+],
+"ota": [
+{
+"slug": "sdv",
+"title": "SDV(ソフトウェア定義車両)"
+},
+{
+"slug": "adaptive-autosar",
+"title": "Adaptive AUTOSAR"
+},
+{
+"slug": "uds",
+"title": "UDS (統合診断サービス)"
+},
+{
+"slug": "tcp",
+"title": "TCP"
+},
+{
+"slug": "cybersecurity",
+"title": "車載サイバーセキュリティ (ISO 21434)"
+},
+{
+"slug": "arp",
+"title": "ARP"
 }
 ],
 "some-ip": [
@@ -2607,12 +3630,64 @@
 "title": "IP"
 },
 {
-"slug": "arp",
-"title": "ARP"
+"slug": "adaptive-autosar",
+"title": "Adaptive AUTOSAR"
 },
 {
-"slug": "can-fd",
-"title": "CAN FD"
+"slug": "arp",
+"title": "ARP"
+}
+],
+"v2x": [
+{
+"slug": "cybersecurity",
+"title": "車載サイバーセキュリティ (ISO 21434)"
+},
+{
+"slug": "ethernet",
+"title": "Ethernet"
+},
+{
+"slug": "udp",
+"title": "UDP"
+},
+{
+"slug": "ip",
+"title": "IP"
+},
+{
+"slug": "adaptive-autosar",
+"title": "Adaptive AUTOSAR"
+},
+{
+"slug": "adas-comm",
+"title": "ADAS通信"
+}
+],
+"cybersecurity": [
+{
+"slug": "v2x",
+"title": "V2X通信 (Vehicle-to-Everything)"
+},
+{
+"slug": "ota",
+"title": "OTA更新 (Over-The-Air)"
+},
+{
+"slug": "ethernet",
+"title": "Ethernet"
+},
+{
+"slug": "doip",
+"title": "DoIP(Diagnostics over IP)"
+},
+{
+"slug": "vlan",
+"title": "VLAN"
+},
+{
+"slug": "adaptive-autosar",
+"title": "Adaptive AUTOSAR"
 }
 ],
 "adas-comm": [
@@ -2631,6 +3706,10 @@
 {
 "slug": "ethernet",
 "title": "Ethernet"
+},
+{
+"slug": "v2x",
+"title": "V2X通信 (Vehicle-to-Everything)"
 }
 ],
 "ros2-dds": [
@@ -2649,6 +3728,10 @@
 {
 "slug": "udp",
 "title": "UDP"
+},
+{
+"slug": "adaptive-autosar",
+"title": "Adaptive AUTOSAR"
 }
 ],
 "sdv": [
@@ -2687,12 +3770,12 @@
 "title": "SDV(ソフトウェア定義車両)"
 },
 {
-"slug": "arp",
-"title": "ARP"
+"slug": "flexray",
+"title": "FlexRay"
 },
 {
-"slug": "autosar",
-"title": "AUTOSAR"
+"slug": "adaptive-autosar",
+"title": "Adaptive AUTOSAR"
 }
 ]
 },
@@ -2749,6 +3832,36 @@
 "slug": "port",
 "title": "Port",
 "completed": false
+},
+{
+"slug": "arp",
+"title": "ARP",
+"completed": false
+},
+{
+"slug": "icmp",
+"title": "ICMP / ping",
+"completed": false
+},
+{
+"slug": "subnet",
+"title": "サブネット / CIDR",
+"completed": false
+},
+{
+"slug": "dhcp",
+"title": "DHCP",
+"completed": false
+},
+{
+"slug": "dns",
+"title": "DNS",
+"completed": false
+},
+{
+"slug": "vlan",
+"title": "VLAN",
+"completed": false
 }
 ]
 },
@@ -2771,13 +3884,23 @@
 "slug": "pcap",
 "title": "PCAP",
 "completed": false
+},
+{
+"slug": "tcpdump",
+"title": "tcpdump",
+"completed": false
+},
+{
+"slug": "tshark",
+"title": "tshark",
+"completed": false
 }
 ]
 },
 {
 "level": 4,
-"title": "Level 4 — 車載ネットワーク",
-"description": "自動車特有の通信規格とミドルウェア。",
+"title": "Level 4 — 車載バス・診断",
+"description": "自動車特有のバスプロトコルと診断通信。",
 "items": [
 {
 "slug": "can",
@@ -2785,22 +3908,79 @@
 "completed": false
 },
 {
-"slug": "some-ip",
-"title": "SOME/IP",
+"slug": "can-fd",
+"title": "CAN FD",
 "completed": false
 },
 {
-"slug": "autosar",
-"title": "AUTOSAR",
+"slug": "lin",
+"title": "LIN バス",
+"completed": false
+},
+{
+"slug": "flexray",
+"title": "FlexRay",
+"completed": false
+},
+{
+"slug": "uds",
+"title": "UDS (統合診断サービス)",
+"completed": false
+},
+{
+"slug": "doip",
+"title": "DoIP(Diagnostics over IP)",
+"completed": false
+},
+{
+"slug": "xcp",
+"title": "XCP (測定・校正プロトコル)",
 "completed": false
 }
 ]
 },
 {
 "level": 5,
-"title": "Level 5 — SDV / ADAS 応用",
+"title": "Level 5 — 車載 Ethernet 高度活用",
+"description": "AVTPからTSN・PTPまで高度なEthernet技術。",
+"items": [
+{
+"slug": "some-ip",
+"title": "SOME/IP",
+"completed": false
+},
+{
+"slug": "avtp",
+"title": "AVTP (車載映像・音声転送プロトコル)",
+"completed": false
+},
+{
+"slug": "tsn",
+"title": "TSN(Time-Sensitive Networking)",
+"completed": false
+},
+{
+"slug": "ptp",
+"title": "PTP (精密時刻同期 / IEEE 1588)",
+"completed": false
+}
+]
+},
+{
+"level": 6,
+"title": "Level 6 — SDV / ADAS 応用",
 "description": "次世代車両アーキテクチャと自動運転の通信。",
 "items": [
+{
+"slug": "autosar",
+"title": "AUTOSAR",
+"completed": false
+},
+{
+"slug": "adaptive-autosar",
+"title": "Adaptive AUTOSAR",
+"completed": false
+},
 {
 "slug": "ros2-dds",
 "title": "ROS2 DDS",
@@ -2815,13 +3995,28 @@
 "slug": "adas-comm",
 "title": "ADAS通信",
 "completed": false
+},
+{
+"slug": "ota",
+"title": "OTA更新 (Over-The-Air)",
+"completed": false
+},
+{
+"slug": "v2x",
+"title": "V2X通信 (Vehicle-to-Everything)",
+"completed": false
+},
+{
+"slug": "cybersecurity",
+"title": "車載サイバーセキュリティ (ISO 21434)",
+"completed": false
 }
 ]
 }
 ],
 "progress": {
 "completed": 0,
-"total": 17
+"total": 38
 }
 },
 "home": {
@@ -2920,6 +4115,58 @@
 ],
 "updated": "2026-06-07",
 "excerpt": "VLAN(Virtual LAN / IEEE 802.1Q)は、1本の物理 ethernet を論理的に複数のネットワークに分割する技術です。フレームに「VLANタグ」を付けることで、同じケーブル上でもグループごとに通信を分離できます。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "avtp",
+"title": "AVTP (車載映像・音声転送プロトコル)",
+"level": 3,
+"category": "Ethernet",
+"difficulty": "中級",
+"related": [
+"ethernet",
+"tsn",
+"udp",
+"ptp"
+],
+"next": [
+"tsn"
+],
+"tags": [
+"ethernet",
+"audio",
+"video",
+"automotive"
+],
+"updated": "2026-06-08",
+"excerpt": "AVTP(Audio Video Transport Protocol、IEEE 1722)は、車載Ethernet上で映像・音声ストリームをリアルタイム転送するプロトコルです。カメラ映像をサラウンドビューモニター(SVM)に表示したり、マ",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "ptp",
+"title": "PTP (精密時刻同期 / IEEE 1588)",
+"level": 3,
+"category": "Ethernet",
+"difficulty": "中級",
+"related": [
+"tsn",
+"ethernet",
+"udp"
+],
+"next": [
+"tsn"
+],
+"tags": [
+"ethernet",
+"timing",
+"automotive"
+],
+"updated": "2026-06-08",
+"excerpt": "PTP(Precision Time Protocol、IEEE 1588)は、ネットワーク上の複数ノードの時刻をナノ秒精度で同期するプロトコルです。グランドマスタークロックが基準時刻を発信し、スレーブノードが遅延を計測しながら追従します。",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -3376,6 +4623,33 @@
 "favorite": false
 },
 {
+"slug": "adaptive-autosar",
+"title": "Adaptive AUTOSAR",
+"level": 4,
+"category": "AUTOSAR",
+"difficulty": "上級",
+"related": [
+"autosar",
+"some-ip",
+"ros2-dds",
+"sdv",
+"ethernet"
+],
+"next": [
+"sdv"
+],
+"tags": [
+"automotive",
+"middleware",
+"autosar"
+],
+"updated": "2026-06-08",
+"excerpt": "Adaptive AUTOSARは、高性能プロセッサ上でLinux等のOSを動かしながら、機能安全と柔軟なソフトウェア配置を両立する車載ミドルウェア標準です。Classic AUTOSARが静的なマイコン向けであるのに対し、Adaptive",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "can",
 "title": "CAN",
 "level": 4,
@@ -3428,6 +4702,61 @@
 {
 "name": "SDV",
 "articles": [
+{
+"slug": "ota",
+"title": "OTA更新 (Over-The-Air)",
+"level": 4,
+"category": "SDV",
+"difficulty": "上級",
+"related": [
+"sdv",
+"adaptive-autosar",
+"tls",
+"tcp",
+"uds"
+],
+"next": [
+"sdv"
+],
+"tags": [
+"sdv",
+"update",
+"security",
+"automotive"
+],
+"updated": "2026-06-08",
+"excerpt": "OTA(Over-The-Air)更新は、無線通信を通じて車両のソフトウェア・ファームウェアをリモートで書き換える仕組みです。販売店に持ち込まずに最新機能の追加やバグ修正が可能となり、SDVの中核技術の一つです。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "v2x",
+"title": "V2X通信 (Vehicle-to-Everything)",
+"level": 4,
+"category": "SDV",
+"difficulty": "上級",
+"related": [
+"ethernet",
+"udp",
+"ip",
+"cybersecurity"
+],
+"next": [
+"cybersecurity"
+],
+"tags": [
+"automotive",
+"wireless",
+"v2x",
+"adas"
+],
+"updated": "2026-06-08",
+"excerpt": "V2X(Vehicle-to-Everything)は、車両が道路インフラ・他車・歩行者・クラウドとリアルタイムに情報を交換する無線通信の総称です。V2V(車々間)、V2I(路車間)、V2P(歩行者)、V2N(ネットワーク)に分類されます。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
 {
 "slug": "adas-comm",
 "title": "ADAS通信",
@@ -3521,6 +4850,151 @@
 ],
 "updated": "2026-06-07",
 "excerpt": "TSN(Time-Sensitive Networking)は、標準 ethernet に「時間保証」を加える一連の規格(IEEE 802.1)です。時刻同期・帯域予約・優先制御により、重要なフレームを決められた時間内に確実に届けます。",
+"views": 0,
+"completed": false,
+"favorite": false
+}
+]
+},
+{
+"name": "Automotive Bus",
+"articles": [
+{
+"slug": "lin",
+"title": "LIN バス",
+"level": 2,
+"category": "Automotive Bus",
+"difficulty": "初級",
+"related": [
+"can",
+"can-fd",
+"ethernet"
+],
+"next": [
+"can"
+],
+"tags": [
+"automotive",
+"bus",
+"l2"
+],
+"updated": "2026-06-08",
+"excerpt": "LIN(Local Interconnect Network)は、低コスト・低速な車載シリアルバスです。1本のワイヤで最大19.2 kbpsの通信を行い、マスター/スレーブ構成で動作します。CANより安価で、シート調整・ドアミラー・ワイパー",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "flexray",
+"title": "FlexRay",
+"level": 3,
+"category": "Automotive Bus",
+"difficulty": "中級",
+"related": [
+"can",
+"can-fd",
+"tsn",
+"ethernet"
+],
+"next": [
+"tsn"
+],
+"tags": [
+"automotive",
+"bus",
+"realtime"
+],
+"updated": "2026-06-08",
+"excerpt": "FlexRayは、時分割多重(TDMA)方式を採用した高速・高信頼性の車載バスです。最大10 Mbpsの速度と、決定論的タイミング(遅延上限が保証)が特徴です。冗長チャネル構成によりフォールトトレランスも実現します。",
+"views": 0,
+"completed": false,
+"favorite": false
+}
+]
+},
+{
+"name": "Diagnostics",
+"articles": [
+{
+"slug": "uds",
+"title": "UDS (統合診断サービス)",
+"level": 3,
+"category": "Diagnostics",
+"difficulty": "中級",
+"related": [
+"doip",
+"can",
+"tcp",
+"socket"
+],
+"next": [
+"doip"
+],
+"tags": [
+"diagnostics",
+"automotive",
+"iso14229"
+],
+"updated": "2026-06-08",
+"excerpt": "UDS(Unified Diagnostic Services、ISO 14229)は、ECUを診断・プログラムするための標準プロトコルです。「サービスID」と呼ばれる命令コードで、故障コード(DTC)の読み出し、メモリへの書き込み、ECU",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "xcp",
+"title": "XCP (測定・校正プロトコル)",
+"level": 3,
+"category": "Diagnostics",
+"difficulty": "中級",
+"related": [
+"uds",
+"ethernet",
+"udp",
+"can"
+],
+"next": [
+"uds"
+],
+"tags": [
+"diagnostics",
+"automotive",
+"calibration"
+],
+"updated": "2026-06-08",
+"excerpt": "XCP(Universal Measurement and Calibration Protocol、ASAM MCD-1 XCP)は、ECU内部の変数をリアルタイムに測定・書き換えするためのプロトコルです。開発中のECUに対してキャリブレ",
+"views": 0,
+"completed": false,
+"favorite": false
+}
+]
+},
+{
+"name": "Security",
+"articles": [
+{
+"slug": "cybersecurity",
+"title": "車載サイバーセキュリティ (ISO 21434)",
+"level": 4,
+"category": "Security",
+"difficulty": "上級",
+"related": [
+"ethernet",
+"v2x",
+"ota",
+"doip",
+"vlan"
+],
+"next": [
+"v2x"
+],
+"tags": [
+"security",
+"automotive",
+"iso21434"
+],
+"updated": "2026-06-08",
+"excerpt": "車載サイバーセキュリティとは、外部からの不正アクセス・改ざん・盗聴から車両の電子システムを守る技術と管理体系の総称です。ISO 21434は自動車サイバーセキュリティの国際標準であり、開発〜廃棄まで全ライフサイクルでのリスク管理を義務付けて",
 "views": 0,
 "completed": false,
 "favorite": false
