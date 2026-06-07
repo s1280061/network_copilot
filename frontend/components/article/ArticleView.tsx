@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import {
   getArticle,
   setProgress,
@@ -79,6 +80,15 @@ export default function ArticleView({ slug }: { slug: string }) {
 
   return (
     <article>
+      <div className="relative w-full h-52 rounded-xl overflow-hidden bg-slate-100 mb-6">
+        <Image
+          src={`/thumbnails/${article.slug}.jpg`}
+          alt={article.title}
+          fill
+          className="object-cover"
+          onError={(e) => { (e.currentTarget as HTMLImageElement).parentElement!.style.display = "none"; }}
+        />
+      </div>
       <div className="flex items-start justify-between gap-4 mb-4">
         <div>
           <span className="text-xs font-semibold text-sky-600">
