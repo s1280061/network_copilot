@@ -165,6 +165,34 @@
 "favorite": false
 },
 {
+"slug": "howto-ping-ecu",
+"title": "ECUへのping疎通確認手順",
+"level": 2,
+"category": "Howto",
+"difficulty": "初級",
+"related": [
+"icmp",
+"ip",
+"arp",
+"ethernet",
+"subnet"
+],
+"next": [
+"howto-tcpdump-capture"
+],
+"tags": [
+"howto",
+"tool",
+"diagnostics",
+"icmp"
+],
+"updated": "2026-06-08",
+"excerpt": "診断PCや別ECUから対象ECUへpingを使って疎通確認する手順と、応答がない場合のトラブルシュート手順を説明します。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "icmp",
 "title": "ICMP / ping",
 "level": 2,
@@ -334,6 +362,33 @@
 "favorite": false
 },
 {
+"slug": "howto-vlan-check",
+"title": "WiresharkでVLANタグを確認する",
+"level": 2,
+"category": "Howto",
+"difficulty": "初級",
+"related": [
+"vlan",
+"wireshark",
+"ethernet",
+"tshark"
+],
+"next": [
+"howto-tshark-filter"
+],
+"tags": [
+"howto",
+"tool",
+"vlan",
+"ethernet"
+],
+"updated": "2026-06-08",
+"excerpt": "車載EthernetのキャプチャデータにVLANタグ(IEEE 802.1Q)が含まれているかをWiresharkで確認し、VLANごとにトラフィックを分離して解析する手順を説明します。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "subnet",
 "title": "サブネット / CIDR",
 "level": 2,
@@ -379,6 +434,61 @@
 ],
 "updated": "2026-06-08",
 "excerpt": "AVTP(Audio Video Transport Protocol、IEEE 1722)は、車載Ethernet上で映像・音声ストリームをリアルタイム転送するプロトコルです。カメラ映像をサラウンドビューモニター(SVM)に表示したり、マ",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "howto-doip-connect",
+"title": "DoIP診断接続の手順",
+"level": 3,
+"category": "Howto",
+"difficulty": "中級",
+"related": [
+"doip",
+"uds",
+"tcp",
+"ip",
+"wireshark"
+],
+"next": [
+"howto-uds-dtc"
+],
+"tags": [
+"howto",
+"diagnostics",
+"doip",
+"automotive"
+],
+"updated": "2026-06-08",
+"excerpt": "診断PCからDoIP(Diagnostics over IP)を使ってゲートウェイECUへ接続し、UDS診断を開始するまでの手順を説明します。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "howto-tcpdump-capture",
+"title": "ECU上でtcpdumpキャプチャする",
+"level": 3,
+"category": "Howto",
+"difficulty": "中級",
+"related": [
+"tcpdump",
+"pcap",
+"wireshark",
+"tshark"
+],
+"next": [
+"howto-wireshark-someip"
+],
+"tags": [
+"howto",
+"tool",
+"cli",
+"pcap"
+],
+"updated": "2026-06-08",
+"excerpt": "Linux搭載のECUやゲートウェイECU上で tcpdump を使い、車載Ethernetパケットをキャプチャしてpcapファイルに保存する手順を説明します。",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -510,6 +620,33 @@
 "favorite": false
 },
 {
+"slug": "howto-uds-dtc",
+"title": "UDSで故障コード(DTC)を読む",
+"level": 3,
+"category": "Howto",
+"difficulty": "中級",
+"related": [
+"uds",
+"doip",
+"can",
+"howto-doip-connect"
+],
+"next": [
+"howto-doip-connect"
+],
+"tags": [
+"howto",
+"diagnostics",
+"uds",
+"automotive"
+],
+"updated": "2026-06-08",
+"excerpt": "UDS (ISO 14229) の `ReadDTCInformation` サービス(0x19)を使って、ECUに記録された故障コード(DTC: Diagnostic Trouble Code)を読み出す手順を説明します。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "wireshark",
 "title": "Wireshark",
 "level": 3,
@@ -528,6 +665,32 @@
 "difficulty": "中級",
 "updated": "2026-06-07",
 "excerpt": "Wiresharkは、ネットワークを流れるパケットをキャプチャして可視化する定番の解析ツールです。各パケットを osi の層ごとに分解し、Ethernet/IP/TCP/UDPの中身を人間が読める形で表示します。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "howto-wireshark-someip",
+"title": "WiresharkでSOME/IPを解析する",
+"level": 3,
+"category": "Howto",
+"difficulty": "中級",
+"related": [
+"wireshark",
+"some-ip",
+"udp",
+"pcap"
+],
+"next": [
+"howto-tcpdump-capture"
+],
+"tags": [
+"howto",
+"tool",
+"some-ip"
+],
+"updated": "2026-06-08",
+"excerpt": "Wiresharkを使って、車載EthernetのSOME/IPパケットを可視化・解析する手順を説明します。",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -554,6 +717,35 @@
 ],
 "updated": "2026-06-08",
 "excerpt": "XCP(Universal Measurement and Calibration Protocol、ASAM MCD-1 XCP)は、ECU内部の変数をリアルタイムに測定・書き換えするためのプロトコルです。開発中のECUに対してキャリブレ",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "howto-pcap-analyze",
+"title": "pcapから車載通信パターンを読む",
+"level": 3,
+"category": "Howto",
+"difficulty": "中級",
+"related": [
+"pcap",
+"wireshark",
+"tshark",
+"some-ip",
+"doip",
+"arp"
+],
+"next": [
+"howto-wireshark-someip"
+],
+"tags": [
+"howto",
+"tool",
+"pcap",
+"analysis"
+],
+"updated": "2026-06-08",
+"excerpt": "車両ネットワークのpcapファイルを受け取ったとき、何から確認すればよいかの分析ステップと、よく見るべきポイントを説明します。",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -602,6 +794,34 @@
 ],
 "updated": "2026-06-07",
 "excerpt": "tsharkは、wireshark のコマンドライン版です。Wiresharkと同じ強力なプロトコル解析(ディセクタ)を持ちつつ、CLIで動くため自動化やバッチ処理に向いています。表示フィルタで欲しい情報だけを抽出できます。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "howto-tshark-filter",
+"title": "tsharkで車載通信をフィルタ・解析する",
+"level": 3,
+"category": "Howto",
+"difficulty": "中級",
+"related": [
+"tshark",
+"wireshark",
+"pcap",
+"some-ip",
+"doip"
+],
+"next": [
+"howto-wireshark-someip"
+],
+"tags": [
+"howto",
+"tool",
+"cli",
+"tshark"
+],
+"updated": "2026-06-08",
+"excerpt": "tshark(Wiresharkのコマンドライン版)を使って、pcapファイルや生トラフィックから特定の車載プロトコルを素早く抽出・解析する実践的なコマンドを紹介します。",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -1262,6 +1482,62 @@
 "completed": false,
 "favorite": false
 },
+"howto-ping-ecu": {
+"slug": "howto-ping-ecu",
+"title": "ECUへのping疎通確認手順",
+"level": 2,
+"category": "Howto",
+"difficulty": "初級",
+"related": [
+"icmp",
+"ip",
+"arp",
+"ethernet",
+"subnet"
+],
+"next": [
+"howto-tcpdump-capture"
+],
+"tags": [
+"howto",
+"tool",
+"diagnostics",
+"icmp"
+],
+"updated": "2026-06-08",
+"html": "<h2>やること</h2>\n<p>診断PCや別ECUから対象ECUへpingを使って疎通確認する手順と、応答がない場合のトラブルシュート手順を説明します。</p>\n<h2>前提条件</h2>\n<ul>\n<li>診断PCと対象ECUが同じEthernetセグメント(またはルータ経由で到達可能)に接続</li>\n<li>対象ECUのIPアドレスが判明している</li>\n</ul>\n<h2>ステップ1: 基本ping</h2>\n<pre><code class=\"language-bash\"># Windows\nping 192.168.1.10\n\n# Linux / macOS\nping 192.168.1.10\n\n# 回数指定 (Linuxは -c、Windowsは -n)\nping -c 4 192.168.1.10\n</code></pre>\n<p>正常応答例：</p>\n<pre><code>64 bytes from 192.168.1.10: icmp_seq=1 ttl=64 time=0.8 ms\n</code></pre>\n<h2>ステップ2: 応答がない場合のチェックリスト</h2>\n<h3>L1/L2 チェック（物理・データリンク）</h3>\n<pre><code class=\"language-bash\"># リンクアップ確認\nip link show eth0\n# → state UP なら物理接続OK\n\n# ARPテーブルを確認 (pingの前にARPが解決されているか)\narp -n\n# または\nip neigh show\n</code></pre>\n<p><a class=\"term-link\" data-slug=\"arp\" href=\"/glossary/arp\">ARP</a> が解決できていない場合はケーブル/スイッチポートの問題です。</p>\n<h3>L3 チェック（IPアドレス・サブネット）</h3>\n<pre><code class=\"language-bash\"># 自分のIPアドレス確認\nip addr show eth0\n\n# サブネットの確認 (192.168.1.0/24 同士か？)\nip route show\n</code></pre>\n<p>自分が <code>192.168.1.x/24</code>、相手が <code>10.0.0.x/24</code> なら異なるサブネット。<br />\n→ ルータまたは <a class=\"term-link\" data-slug=\"vlan\" href=\"/glossary/vlan\">VLAN</a> の設定を確認。</p>\n<h3>ファイアウォール/ECU側設定チェック</h3>\n<p>一部の車載ECUはICMPに応答しない設定(セキュリティ要件)になっています。<br />\nその場合は <a class=\"term-link\" data-slug=\"howto-doip-connect\" href=\"/glossary/howto-doip-connect\">DoIP診断接続の手順</a> のようにアプリ層で疎通を確認します。</p>\n<h2>ステップ3: 詳細診断 — traceroute</h2>\n<pre><code class=\"language-bash\"># Linux\ntraceroute 192.168.1.10\n\n# Windows\ntracert 192.168.1.10\n</code></pre>\n<p>どのホップで止まっているか特定できます。</p>\n<h2>ステップ4: ARP で存在確認</h2>\n<p>pingが届かなくてもARPで機器の存在は確認できます：</p>\n<pre><code class=\"language-bash\"># arping (L2レベルの疎通確認)\narping -I eth0 192.168.1.10\n</code></pre>\n<p>ARPには応答するがpingに応答しない → ECU側でICMP無効化の可能性。</p>\n<h2>関連用語</h2>\n<p>疎通確認の仕組みは <a class=\"term-link\" data-slug=\"icmp\" href=\"/glossary/icmp\">ICMP / ping</a>、アドレス解決は <a class=\"term-link\" data-slug=\"arp\" href=\"/glossary/arp\">ARP</a>、サブネット設計は <a class=\"term-link\" data-slug=\"subnet\" href=\"/glossary/subnet\">サブネット / CIDR</a> を参照。</p>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "icmp",
+"title": "ICMP / ping"
+},
+{
+"slug": "ip",
+"title": "IP"
+},
+{
+"slug": "arp",
+"title": "ARP"
+},
+{
+"slug": "ethernet",
+"title": "Ethernet"
+},
+{
+"slug": "subnet",
+"title": "サブネット / CIDR"
+}
+],
+"next_full": [
+{
+"slug": "howto-tcpdump-capture",
+"title": "ECU上でtcpdumpキャプチャする"
+}
+],
+"completed": false,
+"favorite": false
+},
 "icmp": {
 "slug": "icmp",
 "title": "ICMP / ping",
@@ -1607,6 +1883,57 @@
 "completed": false,
 "favorite": false
 },
+"howto-vlan-check": {
+"slug": "howto-vlan-check",
+"title": "WiresharkでVLANタグを確認する",
+"level": 2,
+"category": "Howto",
+"difficulty": "初級",
+"related": [
+"vlan",
+"wireshark",
+"ethernet",
+"tshark"
+],
+"next": [
+"howto-tshark-filter"
+],
+"tags": [
+"howto",
+"tool",
+"vlan",
+"ethernet"
+],
+"updated": "2026-06-08",
+"html": "<h2>やること</h2>\n<p>車載EthernetのキャプチャデータにVLANタグ(IEEE 802.1Q)が含まれているかをWiresharkで確認し、VLANごとにトラフィックを分離して解析する手順を説明します。</p>\n<h2>前提条件</h2>\n<ul>\n<li>Wiresharkインストール済み</li>\n<li>VLANタグ付きトラフィックのpcapファイル、またはトランクポートへの接続</li>\n</ul>\n<h2>ステップ1: VLANタグを確認する</h2>\n<p>pcapを開いてパケットを選択し、下部の詳細ペインを確認します：</p>\n<pre><code>Ethernet II\n  ▶ 802.1Q Virtual LAN, PRI: 0, DEI: 0, ID: 10\n      VLAN ID: 10\n      Type: IPv4\n</code></pre>\n<p><code>802.1Q Virtual LAN</code> の行があればVLANタグ付きです。</p>\n<h2>ステップ2: VLAN IDでフィルタ</h2>\n<pre><code># VLAN 10 のパケットだけ表示\nvlan.id == 10\n\n# VLAN 20 かつ SOME/IP\nvlan.id == 20 &amp;&amp; someip\n\n# VLANタグ付きパケット全体\nvlan\n</code></pre>\n<h2>ステップ3: 複数VLANの通信量を比較</h2>\n<p><code>Statistics</code> → <code>IO Graph</code> を開いて：</p>\n<ul>\n<li>グラフ1: フィルタ <code>vlan.id == 10</code> (ADASドメイン)</li>\n<li>グラフ2: フィルタ <code>vlan.id == 20</code> (IVIドメイン)</li>\n</ul>\n<p>時系列で各ドメインのトラフィック量を比較できます。</p>\n<h2>ステップ4: tsharkでVLAN IDを一覧化</h2>\n<pre><code class=\"language-bash\"># pcap内の全VLAN IDを集計\ntshark -r capture.pcap -Y &quot;vlan&quot; \\\n  -T fields -e vlan.id | sort | uniq -c | sort -rn\n\n# 出力例:\n# 1523  10\n#  487  20\n#   34  30\n</code></pre>\n<h2>VLANが見えない場合</h2>\n<p>キャプチャポイントがアクセスポート(タグなし)の場合、VLANタグは除去されています。VLANタグを観測するにはスイッチのトランクポート(タグ付きポート)かミラーポートに接続してキャプチャする必要があります。</p>\n<h2>車載での典型的なVLAN構成</h2>\n<table>\n<thead>\n<tr>\n<th>VLAN ID</th>\n<th>ドメイン</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>10</td>\n<td>ADASカメラ・LiDAR</td>\n</tr>\n<tr>\n<td>20</td>\n<td>インフォテインメント(IVI)</td>\n</tr>\n<tr>\n<td>30</td>\n<td>診断(DoIP)</td>\n</tr>\n<tr>\n<td>99</td>\n<td>管理用</td>\n</tr>\n</tbody>\n</table>\n<p>各ドメインが混在していないかをWiresharkで確認することがセキュリティ監査の第一歩です。</p>\n<h2>関連用語</h2>\n<p>VLANの概念は <a class=\"term-link\" data-slug=\"vlan\" href=\"/glossary/vlan\">VLAN</a>、Wiresharkの基本は <a class=\"term-link\" data-slug=\"wireshark\" href=\"/glossary/wireshark\">Wireshark</a>、高度なフィルタは <a class=\"term-link\" data-slug=\"howto-tshark-filter\" href=\"/glossary/howto-tshark-filter\">tsharkで車載通信をフィルタ・解析する</a> を参照。</p>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "vlan",
+"title": "VLAN"
+},
+{
+"slug": "wireshark",
+"title": "Wireshark"
+},
+{
+"slug": "ethernet",
+"title": "Ethernet"
+},
+{
+"slug": "tshark",
+"title": "tshark"
+}
+],
+"next_full": [
+{
+"slug": "howto-tshark-filter",
+"title": "tsharkで車載通信をフィルタ・解析する"
+}
+],
+"completed": false,
+"favorite": false
+},
 "subnet": {
 "slug": "subnet",
 "title": "サブネット / CIDR",
@@ -1701,6 +2028,127 @@
 {
 "slug": "tsn",
 "title": "TSN(Time-Sensitive Networking)"
+}
+],
+"completed": false,
+"favorite": false
+},
+"howto-doip-connect": {
+"slug": "howto-doip-connect",
+"title": "DoIP診断接続の手順",
+"level": 3,
+"category": "Howto",
+"difficulty": "中級",
+"related": [
+"doip",
+"uds",
+"tcp",
+"ip",
+"wireshark"
+],
+"next": [
+"howto-uds-dtc"
+],
+"tags": [
+"howto",
+"diagnostics",
+"doip",
+"automotive"
+],
+"updated": "2026-06-08",
+"html": "<h2>やること</h2>\n<p>診断PCからDoIP(Diagnostics over IP)を使ってゲートウェイECUへ接続し、UDS診断を開始するまでの手順を説明します。</p>\n<h2>前提条件</h2>\n<ul>\n<li>診断PCと車両ゲートウェイECUがEthernetで接続</li>\n<li>診断ツール (ETAS INCA、Vector CANoe、またはPythonスクリプト)</li>\n<li>対象ECUのIPアドレスと論理アドレス(Logical Address)が判明</li>\n</ul>\n<h2>DoIPの接続フロー</h2>\n<pre><code>診断PC ──[UDP 13400]──→ ECU : Vehicle Discovery (broadcast)\n診断PC ←──────────────── ECU : Vehicle Announcement (IP + Logical Address)\n診断PC ──[TCP 13400]──→ ECU : Routing Activation Request\n診断PC ←────────────────ECU : Routing Activation Response (成功)\n診断PC ──[TCP 13400]──→ ECU : UDS Request (例: ReadDTC)\n診断PC ←────────────────ECU : UDS Response\n</code></pre>\n<h2>ステップ1: ECUのIPアドレスを探す</h2>\n<pre><code class=\"language-python\"># Python (doipclient ライブラリ使用)\nimport doipclient\n\n# UDP 13400 でブロードキャスト送信し、応答を収集\nclient = doipclient.DoIPClient(&quot;192.168.1.255&quot;, 13400)\nresult = client.request_vehicle_identity()\nprint(result)  # VIN, IPアドレス, 論理アドレス が返る\n</code></pre>\n<p>または手動でDoIPゲートウェイのIPが分かっている場合は直接指定します。</p>\n<h2>ステップ2: Routing Activation</h2>\n<pre><code class=\"language-python\">client = doipclient.DoIPClient(&quot;192.168.1.1&quot;, 13400)\n\n# Routing Activation (診断セッションの入り口)\nresponse = client.request_activation(0x00)  # 0x00 = Default Activation\nprint(f&quot;Activation result: {response.activation_response_code}&quot;)\n# 0x10 = Routing successfully activated\n</code></pre>\n<h2>ステップ3: UDSリクエストを送る</h2>\n<pre><code class=\"language-python\"># DiagnosticSessionControl — 拡張診断セッションへ切り替え\n# UDS: 0x10 0x03\nresp = client.send_doip(\n    source_address=0x0E00,   # 診断PC論理アドレス\n    target_address=0x0001,   # ゲートウェイECU論理アドレス\n    uds_message=bytes([0x10, 0x03])\n)\nprint(resp.hex())  # 50 03 = PositiveResponse\n</code></pre>\n<h2>ステップ4: Wiresharkで確認</h2>\n<pre><code># WiresharkでDoIPセッションを確認するフィルタ\ntcp.port == 13400\n</code></pre>\n<p>Routing Activation → UDS Request → UDS Response の流れが見えれば接続成功です。</p>\n<h2>よくあるエラー</h2>\n<table>\n<thead>\n<tr>\n<th>エラーコード</th>\n<th>原因</th>\n<th>対処</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0x00 (Denied)</td>\n<td>認証失敗 / アドレス不一致</td>\n<td>論理アドレスを確認</td>\n</tr>\n<tr>\n<td>TCP接続タイムアウト</td>\n<td>IPアドレスが違う / ファイアウォール</td>\n<td><a class=\"term-link\" data-slug=\"howto-ping-ecu\" href=\"/glossary/howto-ping-ecu\">ECUへのping疎通確認手順</a> で疎通確認</td>\n</tr>\n<tr>\n<td>NRC 0x25</td>\n<td>ECUがプログラミングセッション以外では拒否</td>\n<td>セッション種別を確認</td>\n</tr>\n</tbody>\n</table>\n<h2>関連用語</h2>\n<p>プロトコル詳細は <a class=\"term-link\" data-slug=\"doip\" href=\"/glossary/doip\">DoIP(Diagnostics over IP)</a>、UDSサービスの意味は <a class=\"term-link\" data-slug=\"uds\" href=\"/glossary/uds\">UDS (統合診断サービス)</a>、通信の確認は <a class=\"term-link\" data-slug=\"wireshark\" href=\"/glossary/wireshark\">Wireshark</a> を参照。</p>",
+"prereq_full": [
+{
+"slug": "howto-uds-dtc",
+"title": "UDSで故障コード(DTC)を読む"
+}
+],
+"related_full": [
+{
+"slug": "doip",
+"title": "DoIP(Diagnostics over IP)"
+},
+{
+"slug": "uds",
+"title": "UDS (統合診断サービス)"
+},
+{
+"slug": "tcp",
+"title": "TCP"
+},
+{
+"slug": "ip",
+"title": "IP"
+},
+{
+"slug": "wireshark",
+"title": "Wireshark"
+}
+],
+"next_full": [
+{
+"slug": "howto-uds-dtc",
+"title": "UDSで故障コード(DTC)を読む"
+}
+],
+"completed": false,
+"favorite": false
+},
+"howto-tcpdump-capture": {
+"slug": "howto-tcpdump-capture",
+"title": "ECU上でtcpdumpキャプチャする",
+"level": 3,
+"category": "Howto",
+"difficulty": "中級",
+"related": [
+"tcpdump",
+"pcap",
+"wireshark",
+"tshark"
+],
+"next": [
+"howto-wireshark-someip"
+],
+"tags": [
+"howto",
+"tool",
+"cli",
+"pcap"
+],
+"updated": "2026-06-08",
+"html": "<h2>やること</h2>\n<p>Linux搭載のECUやゲートウェイECU上で tcpdump を使い、車載Ethernetパケットをキャプチャしてpcapファイルに保存する手順を説明します。</p>\n<h2>前提条件</h2>\n<ul>\n<li>対象ECUにSSHまたはシリアルコンソールでログイン可能</li>\n<li>ECU上にtcpdump(またはbusybox tcpdump)がインストール済み</li>\n<li>解析用PCとのファイル転送手段(SCP/USB)</li>\n</ul>\n<h2>ステップ1: インターフェース確認</h2>\n<pre><code class=\"language-bash\"># 利用可能なネットワークインターフェースを確認\nip link show\n# または\nifconfig -a\n</code></pre>\n<p>車載EthernetはECUによって <code>eth0</code>、<code>eth1</code>、<code>br0</code> などになっています。</p>\n<h2>ステップ2: 基本キャプチャ</h2>\n<pre><code class=\"language-bash\"># eth0 の全パケットを capture.pcap に保存\ntcpdump -i eth0 -w /tmp/capture.pcap\n\n# ファイルサイズ上限付き (100MB)\ntcpdump -i eth0 -w /tmp/capture.pcap -C 100\n\n# 指定パケット数でキャプチャ停止\ntcpdump -i eth0 -w /tmp/capture.pcap -c 10000\n</code></pre>\n<h2>ステップ3: フィルタ付きキャプチャ</h2>\n<pre><code class=\"language-bash\"># SOME/IP-SD のみ (UDP 30490)\ntcpdump -i eth0 -w /tmp/someip_sd.pcap 'udp port 30490'\n\n# DoIP のみ (TCP/UDP 13400)\ntcpdump -i eth0 -w /tmp/doip.pcap 'port 13400'\n\n# 特定IPとの通信のみ\ntcpdump -i eth0 -w /tmp/ecu.pcap 'host 192.168.1.10'\n\n# ICMPのみ (疎通確認)\ntcpdump -i eth0 -w /tmp/icmp.pcap 'icmp'\n</code></pre>\n<h2>ステップ4: キャプチャファイルをPCへ転送</h2>\n<pre><code class=\"language-bash\"># SCP でPCへコピー (PC側から実行)\nscp user@192.168.1.50:/tmp/capture.pcap ./\n\n# ECU側から送る場合\nscp /tmp/capture.pcap analyst@192.168.0.100:/captures/\n</code></pre>\n<h2>ステップ5: Wiresharkで開く</h2>\n<p>転送した <code>.pcap</code> ファイルをWiresharkで開いて解析します。<br />\n<a class=\"term-link\" data-slug=\"howto-wireshark-someip\" href=\"/glossary/howto-wireshark-someip\">WiresharkでSOME/IPを解析する</a> の手順でSOME/IPフィルタをかけると効率的です。</p>\n<h2>バックグラウンドでの長時間キャプチャ</h2>\n<pre><code class=\"language-bash\"># nohupで端末切断後も継続\nnohup tcpdump -i eth0 -w /tmp/long_cap.pcap &amp;\n\n# 停止するとき\nkill $(pgrep tcpdump)\n</code></pre>\n<h2>関連用語</h2>\n<p>コマンドの詳細は <a class=\"term-link\" data-slug=\"tcpdump\" href=\"/glossary/tcpdump\">tcpdump</a>、キャプチャファイルの形式は <a class=\"term-link\" data-slug=\"pcap\" href=\"/glossary/pcap\">PCAP</a>、高度なフィルタは <a class=\"term-link\" data-slug=\"tshark\" href=\"/glossary/tshark\">tshark</a> を参照。</p>",
+"prereq_full": [
+{
+"slug": "howto-ping-ecu",
+"title": "ECUへのping疎通確認手順"
+},
+{
+"slug": "howto-wireshark-someip",
+"title": "WiresharkでSOME/IPを解析する"
+}
+],
+"related_full": [
+{
+"slug": "tcpdump",
+"title": "tcpdump"
+},
+{
+"slug": "pcap",
+"title": "PCAP"
+},
+{
+"slug": "wireshark",
+"title": "Wireshark"
+},
+{
+"slug": "tshark",
+"title": "tshark"
+}
+],
+"next_full": [
+{
+"slug": "howto-wireshark-someip",
+"title": "WiresharkでSOME/IPを解析する"
 }
 ],
 "completed": false,
@@ -1967,6 +2415,62 @@
 "completed": false,
 "favorite": false
 },
+"howto-uds-dtc": {
+"slug": "howto-uds-dtc",
+"title": "UDSで故障コード(DTC)を読む",
+"level": 3,
+"category": "Howto",
+"difficulty": "中級",
+"related": [
+"uds",
+"doip",
+"can",
+"howto-doip-connect"
+],
+"next": [
+"howto-doip-connect"
+],
+"tags": [
+"howto",
+"diagnostics",
+"uds",
+"automotive"
+],
+"updated": "2026-06-08",
+"html": "<h2>やること</h2>\n<p>UDS (ISO 14229) の <code>ReadDTCInformation</code> サービス(0x19)を使って、ECUに記録された故障コード(DTC: Diagnostic Trouble Code)を読み出す手順を説明します。</p>\n<h2>前提条件</h2>\n<ul>\n<li>DoIP または CAN 経由でECUへ接続済み(<a class=\"term-link\" data-slug=\"howto-doip-connect\" href=\"/glossary/howto-doip-connect\">DoIP診断接続の手順</a> 参照)</li>\n<li>ECUがデフォルトまたは拡張診断セッションにある</li>\n</ul>\n<h2>DTCとは</h2>\n<p>DTCは <code>P0123</code> のような5桁コードで、故障内容を示します：\n- <strong>P</strong> = Powertrain / <strong>C</strong> = Chassis / <strong>B</strong> = Body / <strong>U</strong> = Network\n- <code>P0123</code> = Throttle Position Sensor / Pedal Position Sensor A Circuit High</p>\n<h2>ステップ1: 診断セッション切り替え</h2>\n<p>まず拡張診断セッション(0x03)に切り替えます：</p>\n<pre><code>送信: 10 03         (DiagnosticSessionControl, ExtendedDiagnosticSession)\n応答: 50 03 00 19 01 F4   (PositiveResponse)\n</code></pre>\n<h2>ステップ2: 全DTCを読む (subfunction 0x02)</h2>\n<pre><code>送信: 19 02 08\n      ↑  ↑  ↑\n      |  |  StatusMask: 0x08 = confirmedDTC\n      |  subfunction: 0x02 = reportDTCByStatusMask\n      Service ID: 0x19\n\n応答: 59 02 08 [DTCRecord...] [DTCRecord...]\n      各DTCRecord = 3バイトDTCコード + 1バイトStatus\n</code></pre>\n<p>Pythonでのバイト列例：</p>\n<pre><code class=\"language-python\">request = bytes([0x19, 0x02, 0x08])\nresponse = send_uds(request)\n\n# レスポンスを解析\ndtc_list = response[3:]   # 先頭3バイト(59 02 08)を除く\nfor i in range(0, len(dtc_list), 4):\n    dtc = dtc_list[i:i+3].hex().upper()\n    status = dtc_list[i+3]\n    print(f&quot;DTC: {dtc}, Status: {status:#04x}&quot;)\n</code></pre>\n<h2>ステップ3: DTCの件数だけ確認 (subfunction 0x01)</h2>\n<pre><code>送信: 19 01 08     (reportNumberOfDTCByStatusMask)\n応答: 59 01 08 FF 00 05   → DTCが5件\n</code></pre>\n<h2>ステップ4: スナップショットデータを読む</h2>\n<p>特定のDTCが発生した瞬間の車両状態を取得：</p>\n<pre><code>送信: 19 04 [DTC3バイト] FF   (reportDTCSnapshotRecordByDTCNumber)\n応答: DTC発生時の各センサ値・車速・電圧などのDID値\n</code></pre>\n<h2>ステップ5: DTCをクリアする</h2>\n<pre><code>送信: 14 FF FF FF   (ClearDiagnosticInformation, 全DTC対象)\n応答: 54            (PositiveResponse)\n</code></pre>\n<h2>注意</h2>\n<p>量産車のECUではセキュリティアクセス(0x27)認証が必要なサービスがあります。認証なしで0x14を送ると NRC <code>0x33</code>(SecurityAccessDenied) が返ります。</p>\n<h2>関連用語</h2>\n<p>プロトコルの概要は <a class=\"term-link\" data-slug=\"uds\" href=\"/glossary/uds\">UDS (統合診断サービス)</a>、接続手順は <a class=\"term-link\" data-slug=\"howto-doip-connect\" href=\"/glossary/howto-doip-connect\">DoIP診断接続の手順</a>、CANバス経由の場合は <a class=\"term-link\" data-slug=\"can\" href=\"/glossary/can\">CAN</a> を参照。</p>",
+"prereq_full": [
+{
+"slug": "howto-doip-connect",
+"title": "DoIP診断接続の手順"
+}
+],
+"related_full": [
+{
+"slug": "uds",
+"title": "UDS (統合診断サービス)"
+},
+{
+"slug": "doip",
+"title": "DoIP(Diagnostics over IP)"
+},
+{
+"slug": "can",
+"title": "CAN"
+},
+{
+"slug": "howto-doip-connect",
+"title": "DoIP診断接続の手順"
+}
+],
+"next_full": [
+{
+"slug": "howto-doip-connect",
+"title": "DoIP診断接続の手順"
+}
+],
+"completed": false,
+"favorite": false
+},
 "wireshark": {
 "slug": "wireshark",
 "title": "Wireshark",
@@ -2010,6 +2514,69 @@
 {
 "slug": "pcap",
 "title": "PCAP"
+}
+],
+"completed": false,
+"favorite": false
+},
+"howto-wireshark-someip": {
+"slug": "howto-wireshark-someip",
+"title": "WiresharkでSOME/IPを解析する",
+"level": 3,
+"category": "Howto",
+"difficulty": "中級",
+"related": [
+"wireshark",
+"some-ip",
+"udp",
+"pcap"
+],
+"next": [
+"howto-tcpdump-capture"
+],
+"tags": [
+"howto",
+"tool",
+"some-ip"
+],
+"updated": "2026-06-08",
+"html": "<h2>やること</h2>\n<p>Wiresharkを使って、車載EthernetのSOME/IPパケットを可視化・解析する手順を説明します。</p>\n<h2>前提条件</h2>\n<ul>\n<li>Wireshark 4.x インストール済み</li>\n<li>解析対象のpcapファイル、またはEthernetインターフェースへの接続</li>\n</ul>\n<h2>ステップ1: SOME/IP ディセクタを有効化</h2>\n<p>Wiresharkは標準でSOME/IPに対応しています。</p>\n<ol>\n<li><code>Edit</code> → <code>Preferences</code> → <code>Protocols</code> → <code>SOMEIP</code> を開く</li>\n<li>UDPポート <strong>30490</strong>（SOME/IP-SD）と任意のサービスポートを登録</li>\n<li><code>SOMEIP-SD</code> も同様に有効化</li>\n</ol>\n<h2>ステップ2: キャプチャ or ファイルを開く</h2>\n<pre><code># pcapファイルを開く場合\nFile → Open → vehicle_capture.pcap\n\n# ライブキャプチャの場合\nCapture → Interfaces → 対象インターフェースを選択 → Start\n</code></pre>\n<h2>ステップ3: SOME/IP でフィルタ</h2>\n<p>Wireshark のフィルタバーに以下を入力：</p>\n<pre><code>someip\n</code></pre>\n<p>SD(サービスディスカバリ)だけ見たい場合：</p>\n<pre><code>someip.messageid == 0xffff8100\n</code></pre>\n<p>特定のService IDで絞り込む：</p>\n<pre><code>someip.serviceid == 0x1234\n</code></pre>\n<h2>ステップ4: パケット詳細を読む</h2>\n<p>パケットを選択すると下部に詳細が展開されます：</p>\n<ul>\n<li><strong>Service ID</strong> — どのサービスか</li>\n<li><strong>Method ID</strong> — メソッド呼び出し(0x0xxx) or イベント(0x8xxx)</li>\n<li><strong>Message Type</strong> — REQUEST / RESPONSE / NOTIFICATION</li>\n<li><strong>Payload</strong> — 実データ(16進数 + 型定義があれば自動デコード)</li>\n</ul>\n<h2>ステップ5: 統計を確認</h2>\n<p><code>Statistics</code> → <code>Endpoints</code> でECUごとの通信量を把握。<br />\n<code>Statistics</code> → <code>IO Graph</code> でSOME/IPトラフィックの時系列変化を確認できます。</p>\n<h2>よくあるトラブル</h2>\n<table>\n<thead>\n<tr>\n<th>症状</th>\n<th>確認ポイント</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>パケットが <code>UDP</code> のまま</td>\n<td>ポート設定が未登録</td>\n</tr>\n<tr>\n<td>Payloadが読めない</td>\n<td>SOME/IPの型定義(FIBEX/arxml)をインポートしていない</td>\n</tr>\n<tr>\n<td>SDパケットだけ見える</td>\n<td>サービスが起動していない — ECUの状態確認</td>\n</tr>\n</tbody>\n</table>\n<h2>関連用語</h2>\n<p><a class=\"term-link\" data-slug=\"wireshark\" href=\"/glossary/wireshark\">Wireshark</a> の基本操作、<a class=\"term-link\" data-slug=\"some-ip\" href=\"/glossary/some-ip\">SOME/IP</a> のプロトコル仕様、<a class=\"term-link\" data-slug=\"pcap\" href=\"/glossary/pcap\">PCAP</a> ファイルの扱い方。</p>",
+"prereq_full": [
+{
+"slug": "howto-pcap-analyze",
+"title": "pcapから車載通信パターンを読む"
+},
+{
+"slug": "howto-tcpdump-capture",
+"title": "ECU上でtcpdumpキャプチャする"
+},
+{
+"slug": "howto-tshark-filter",
+"title": "tsharkで車載通信をフィルタ・解析する"
+}
+],
+"related_full": [
+{
+"slug": "wireshark",
+"title": "Wireshark"
+},
+{
+"slug": "some-ip",
+"title": "SOME/IP"
+},
+{
+"slug": "udp",
+"title": "UDP"
+},
+{
+"slug": "pcap",
+"title": "PCAP"
+}
+],
+"next_full": [
+{
+"slug": "howto-tcpdump-capture",
+"title": "ECU上でtcpdumpキャプチャする"
 }
 ],
 "completed": false,
@@ -2060,6 +2627,67 @@
 {
 "slug": "uds",
 "title": "UDS (統合診断サービス)"
+}
+],
+"completed": false,
+"favorite": false
+},
+"howto-pcap-analyze": {
+"slug": "howto-pcap-analyze",
+"title": "pcapから車載通信パターンを読む",
+"level": 3,
+"category": "Howto",
+"difficulty": "中級",
+"related": [
+"pcap",
+"wireshark",
+"tshark",
+"some-ip",
+"doip",
+"arp"
+],
+"next": [
+"howto-wireshark-someip"
+],
+"tags": [
+"howto",
+"tool",
+"pcap",
+"analysis"
+],
+"updated": "2026-06-08",
+"html": "<h2>やること</h2>\n<p>車両ネットワークのpcapファイルを受け取ったとき、何から確認すればよいかの分析ステップと、よく見るべきポイントを説明します。</p>\n<h2>前提条件</h2>\n<ul>\n<li>Wireshark / tshark インストール済み</li>\n<li>解析対象のpcapファイル</li>\n</ul>\n<h2>ステップ1: 全体像を把握する (最初の5分)</h2>\n<pre><code class=\"language-bash\"># パケット数・期間・平均レートを確認\ntshark -r capture.pcap -q -z io,stat,0\n\n# プロトコル分布\ntshark -r capture.pcap -q -z io,phs\n\n# エンドポイント一覧\ntshark -r capture.pcap -q -z endpoints,ip\n</code></pre>\n<p>どのプロトコルが何%を占めるかを把握してから詳細に入ります。</p>\n<h2>ステップ2: ARPテーブルを再現する</h2>\n<pre><code class=\"language-bash\"># ARP応答からIP-MACの対応表を作成\ntshark -r capture.pcap -Y &quot;arp.opcode == 2&quot; \\\n  -T fields -e arp.src.proto_ipv4 -e arp.src.hw_mac \\\n  -E separator=&quot; =&gt; &quot; | sort | uniq\n</code></pre>\n<p>どのIPがどのECUか(MAC OUI等で推定)を特定します。</p>\n<h2>ステップ3: サービスディスカバリを確認 (SOME/IP-SD)</h2>\n<pre><code class=\"language-bash\"># SDのOfferServiceを抽出 (どのサービスが公開されているか)\ntshark -r capture.pcap -Y &quot;someip.type == 0x01&quot; \\\n  -T fields -e ip.src -e someip.sd.entry.srv.id\n</code></pre>\n<p>車内にどんなサービスが存在するかのマップを描けます。</p>\n<h2>ステップ4: 異常パターンを探す</h2>\n<h3>ARP嵐</h3>\n<pre><code class=\"language-bash\"># 短時間に同一IPへのARP要求が多発しているか\ntshark -r capture.pcap -Y &quot;arp.opcode == 1&quot; \\\n  -T fields -e frame.time_relative -e arp.dst.proto_ipv4 | head -50\n</code></pre>\n<h3>TCPリトライ</h3>\n<pre><code class=\"language-bash\"># TCP再送パケット (通信品質問題のサイン)\ntshark -r capture.pcap -Y &quot;tcp.analysis.retransmission&quot; \\\n  -T fields -e ip.src -e ip.dst -e tcp.stream | sort | uniq -c | sort -rn\n</code></pre>\n<h3>未解決ARP(ECU不在の疑い)</h3>\n<pre><code class=\"language-bash\"># ARPリクエストを送ったが応答がないもの\ntshark -r capture.pcap -Y &quot;arp.opcode == 1&quot; \\\n  -T fields -e arp.dst.proto_ipv4 &gt; arp_req.txt\n\ntshark -r capture.pcap -Y &quot;arp.opcode == 2&quot; \\\n  -T fields -e arp.src.proto_ipv4 &gt; arp_rep.txt\n\n# arp_req.txtにあってarp_rep.txtにないIPが「応答なし」\n</code></pre>\n<h2>ステップ5: タイムライン作成</h2>\n<pre><code class=\"language-bash\"># CSV出力でExcelに取り込む\ntshark -r capture.pcap \\\n  -T fields -e frame.time_epoch \\\n  -e ip.src -e ip.dst -e _ws.col.Protocol -e frame.len \\\n  -E header=y -E separator=, &gt; timeline.csv\n</code></pre>\n<p>Excelのピボットテーブルで「時間別 × プロトコル別 × ECU別」のヒートマップを作ると通信パターンの全体像が見えます。</p>\n<h2>チェックリスト</h2>\n<ul>\n<li>[ ] ARPで全ECUのIPを特定した</li>\n<li>[ ] プロトコル分布で想定外のトラフィックがないか確認</li>\n<li>[ ] SOME/IP-SDでサービス一覧を把握した</li>\n<li>[ ] TCPリトライ・未解決ARPなど異常がないか確認</li>\n<li>[ ] DoIPポート(13400)への想定外アクセスがないか確認</li>\n</ul>\n<h2>関連用語</h2>\n<p>pcapの形式は <a class=\"term-link\" data-slug=\"pcap\" href=\"/glossary/pcap\">PCAP</a>、GUIでの解析は <a class=\"term-link\" data-slug=\"wireshark\" href=\"/glossary/wireshark\">Wireshark</a>、コマンドライン解析は <a class=\"term-link\" data-slug=\"howto-tshark-filter\" href=\"/glossary/howto-tshark-filter\">tsharkで車載通信をフィルタ・解析する</a> を参照。</p>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "pcap",
+"title": "PCAP"
+},
+{
+"slug": "wireshark",
+"title": "Wireshark"
+},
+{
+"slug": "tshark",
+"title": "tshark"
+},
+{
+"slug": "some-ip",
+"title": "SOME/IP"
+},
+{
+"slug": "doip",
+"title": "DoIP(Diagnostics over IP)"
+},
+{
+"slug": "arp",
+"title": "ARP"
+}
+],
+"next_full": [
+{
+"slug": "howto-wireshark-someip",
+"title": "WiresharkでSOME/IPを解析する"
 }
 ],
 "completed": false,
@@ -2153,6 +2781,67 @@
 {
 "slug": "doip",
 "title": "DoIP(Diagnostics over IP)"
+}
+],
+"completed": false,
+"favorite": false
+},
+"howto-tshark-filter": {
+"slug": "howto-tshark-filter",
+"title": "tsharkで車載通信をフィルタ・解析する",
+"level": 3,
+"category": "Howto",
+"difficulty": "中級",
+"related": [
+"tshark",
+"wireshark",
+"pcap",
+"some-ip",
+"doip"
+],
+"next": [
+"howto-wireshark-someip"
+],
+"tags": [
+"howto",
+"tool",
+"cli",
+"tshark"
+],
+"updated": "2026-06-08",
+"html": "<h2>やること</h2>\n<p>tshark(Wiresharkのコマンドライン版)を使って、pcapファイルや生トラフィックから特定の車載プロトコルを素早く抽出・解析する実践的なコマンドを紹介します。</p>\n<h2>前提条件</h2>\n<ul>\n<li>tshark インストール済み (<code>sudo apt install tshark</code> または Wireshark同梱)</li>\n<li>解析対象のpcapファイル or キャプチャ可能なインターフェース</li>\n</ul>\n<h2>基本構文</h2>\n<pre><code class=\"language-bash\">tshark -r &lt;ファイル&gt; -Y &lt;表示フィルタ&gt; -T fields -e &lt;フィールド&gt;\n</code></pre>\n<h2>SOME/IP の解析</h2>\n<pre><code class=\"language-bash\"># SOME/IP パケットの一覧\ntshark -r capture.pcap -Y &quot;someip&quot;\n\n# Service ID と Method ID を抽出\ntshark -r capture.pcap -Y &quot;someip&quot; \\\n  -T fields -e frame.number -e ip.src -e ip.dst \\\n  -e someip.serviceid -e someip.methodid -e someip.msgtype \\\n  -E header=y -E separator=,\n\n# 特定サービスIDだけ\ntshark -r capture.pcap -Y &quot;someip.serviceid == 0x1234&quot;\n</code></pre>\n<h2>DoIP の解析</h2>\n<pre><code class=\"language-bash\"># DoIP パケット一覧 (TCP/UDP 13400)\ntshark -r capture.pcap -Y &quot;doip&quot;\n\n# Routing Activationだけ\ntshark -r capture.pcap -Y &quot;doip.type == 0x0005&quot;\n\n# UDSペイロードを16進数で表示\ntshark -r capture.pcap -Y &quot;doip&quot; -T fields -e doip.diag.payload\n</code></pre>\n<h2>ARP の解析</h2>\n<pre><code class=\"language-bash\"># ARP要求・応答を全表示\ntshark -r capture.pcap -Y &quot;arp&quot; -V\n\n# ARPが解決できていないリクエストだけ (応答なし)\ntshark -r capture.pcap -Y &quot;arp.opcode == 1&quot; \\\n  -T fields -e arp.src.proto_ipv4 -e arp.dst.proto_ipv4\n</code></pre>\n<h2>通信量の集計</h2>\n<pre><code class=\"language-bash\"># IPアドレスごとのパケット数\ntshark -r capture.pcap -q -z endpoints,ip\n\n# プロトコルごとの割合\ntshark -r capture.pcap -q -z io,phs\n\n# 1秒ごとのビットレート\ntshark -r capture.pcap -q -z io,stat,1\n</code></pre>\n<h2>リアルタイムキャプチャ + フィルタ</h2>\n<pre><code class=\"language-bash\"># eth0 をリアルタイム解析してSOME/IPだけ表示\ntshark -i eth0 -Y &quot;someip&quot; \\\n  -T fields -e ip.src -e someip.serviceid -e someip.methodid\n</code></pre>\n<h2>pcapをCSVに変換</h2>\n<pre><code class=\"language-bash\">tshark -r capture.pcap \\\n  -T fields \\\n  -e frame.time_relative \\\n  -e ip.src -e ip.dst \\\n  -e _ws.col.Protocol \\\n  -e frame.len \\\n  -E header=y -E separator=, &gt; output.csv\n</code></pre>\n<p>Excelで開いて通信量の時系列分析ができます。</p>\n<h2>関連用語</h2>\n<p>GUIで同じことをする場合は <a class=\"term-link\" data-slug=\"wireshark\" href=\"/glossary/wireshark\">Wireshark</a>、コマンドラインでの簡易キャプチャは <a class=\"term-link\" data-slug=\"tcpdump\" href=\"/glossary/tcpdump\">tcpdump</a>、pcapの形式は <a class=\"term-link\" data-slug=\"pcap\" href=\"/glossary/pcap\">PCAP</a> を参照。</p>",
+"prereq_full": [
+{
+"slug": "howto-vlan-check",
+"title": "WiresharkでVLANタグを確認する"
+}
+],
+"related_full": [
+{
+"slug": "tshark",
+"title": "tshark"
+},
+{
+"slug": "wireshark",
+"title": "Wireshark"
+},
+{
+"slug": "pcap",
+"title": "PCAP"
+},
+{
+"slug": "some-ip",
+"title": "SOME/IP"
+},
+{
+"slug": "doip",
+"title": "DoIP(Diagnostics over IP)"
+}
+],
+"next_full": [
+{
+"slug": "howto-wireshark-someip",
+"title": "WiresharkでSOME/IPを解析する"
 }
 ],
 "completed": false,
@@ -3032,6 +3721,32 @@
 "title": "Socket"
 }
 ],
+"howto-ping-ecu": [
+{
+"slug": "howto-tcpdump-capture",
+"title": "ECU上でtcpdumpキャプチャする"
+},
+{
+"slug": "icmp",
+"title": "ICMP / ping"
+},
+{
+"slug": "ip",
+"title": "IP"
+},
+{
+"slug": "arp",
+"title": "ARP"
+},
+{
+"slug": "ethernet",
+"title": "Ethernet"
+},
+{
+"slug": "subnet",
+"title": "サブネット / CIDR"
+}
+],
 "icmp": [
 {
 "slug": "ip",
@@ -3054,8 +3769,8 @@
 "title": "DHCP"
 },
 {
-"slug": "pcap",
-"title": "PCAP"
+"slug": "howto-pcap-analyze",
+"title": "pcapから車載通信パターンを読む"
 }
 ],
 "ip": [
@@ -3194,6 +3909,32 @@
 "title": "Adaptive AUTOSAR"
 }
 ],
+"howto-vlan-check": [
+{
+"slug": "howto-tshark-filter",
+"title": "tsharkで車載通信をフィルタ・解析する"
+},
+{
+"slug": "wireshark",
+"title": "Wireshark"
+},
+{
+"slug": "tshark",
+"title": "tshark"
+},
+{
+"slug": "vlan",
+"title": "VLAN"
+},
+{
+"slug": "ethernet",
+"title": "Ethernet"
+},
+{
+"slug": "howto-pcap-analyze",
+"title": "pcapから車載通信パターンを読む"
+}
+],
 "subnet": [
 {
 "slug": "dhcp",
@@ -3240,6 +3981,58 @@
 {
 "slug": "arp",
 "title": "ARP"
+}
+],
+"howto-doip-connect": [
+{
+"slug": "howto-uds-dtc",
+"title": "UDSで故障コード(DTC)を読む"
+},
+{
+"slug": "doip",
+"title": "DoIP(Diagnostics over IP)"
+},
+{
+"slug": "uds",
+"title": "UDS (統合診断サービス)"
+},
+{
+"slug": "tcp",
+"title": "TCP"
+},
+{
+"slug": "ip",
+"title": "IP"
+},
+{
+"slug": "wireshark",
+"title": "Wireshark"
+}
+],
+"howto-tcpdump-capture": [
+{
+"slug": "tcpdump",
+"title": "tcpdump"
+},
+{
+"slug": "tshark",
+"title": "tshark"
+},
+{
+"slug": "howto-wireshark-someip",
+"title": "WiresharkでSOME/IPを解析する"
+},
+{
+"slug": "pcap",
+"title": "PCAP"
+},
+{
+"slug": "wireshark",
+"title": "Wireshark"
+},
+{
+"slug": "howto-pcap-analyze",
+"title": "pcapから車載通信パターンを読む"
 }
 ],
 "flexray": [
@@ -3290,8 +4083,8 @@
 "title": "CAN"
 },
 {
-"slug": "icmp",
-"title": "ICMP / ping"
+"slug": "howto-pcap-analyze",
+"title": "pcapから車載通信パターンを読む"
 }
 ],
 "ptp": [
@@ -3356,12 +4149,38 @@
 "title": "Socket"
 },
 {
-"slug": "xcp",
-"title": "XCP (測定・校正プロトコル)"
+"slug": "howto-doip-connect",
+"title": "DoIP診断接続の手順"
 },
 {
-"slug": "adaptive-autosar",
-"title": "Adaptive AUTOSAR"
+"slug": "howto-uds-dtc",
+"title": "UDSで故障コード(DTC)を読む"
+}
+],
+"howto-uds-dtc": [
+{
+"slug": "howto-doip-connect",
+"title": "DoIP診断接続の手順"
+},
+{
+"slug": "uds",
+"title": "UDS (統合診断サービス)"
+},
+{
+"slug": "doip",
+"title": "DoIP(Diagnostics over IP)"
+},
+{
+"slug": "can",
+"title": "CAN"
+},
+{
+"slug": "howto-ping-ecu",
+"title": "ECUへのping疎通確認手順"
+},
+{
+"slug": "xcp",
+"title": "XCP (測定・校正プロトコル)"
 }
 ],
 "wireshark": [
@@ -3378,16 +4197,42 @@
 "title": "IP"
 },
 {
-"slug": "icmp",
-"title": "ICMP / ping"
+"slug": "howto-pcap-analyze",
+"title": "pcapから車載通信パターンを読む"
 },
 {
-"slug": "tcpdump",
-"title": "tcpdump"
+"slug": "howto-ping-ecu",
+"title": "ECUへのping疎通確認手順"
 },
 {
-"slug": "tshark",
-"title": "tshark"
+"slug": "howto-tcpdump-capture",
+"title": "ECU上でtcpdumpキャプチャする"
+}
+],
+"howto-wireshark-someip": [
+{
+"slug": "howto-tcpdump-capture",
+"title": "ECU上でtcpdumpキャプチャする"
+},
+{
+"slug": "wireshark",
+"title": "Wireshark"
+},
+{
+"slug": "pcap",
+"title": "PCAP"
+},
+{
+"slug": "some-ip",
+"title": "SOME/IP"
+},
+{
+"slug": "udp",
+"title": "UDP"
+},
+{
+"slug": "howto-pcap-analyze",
+"title": "pcapから車載通信パターンを読む"
 }
 ],
 "xcp": [
@@ -3412,8 +4257,34 @@
 "title": "DoIP(Diagnostics over IP)"
 },
 {
-"slug": "adaptive-autosar",
-"title": "Adaptive AUTOSAR"
+"slug": "howto-doip-connect",
+"title": "DoIP診断接続の手順"
+}
+],
+"howto-pcap-analyze": [
+{
+"slug": "howto-wireshark-someip",
+"title": "WiresharkでSOME/IPを解析する"
+},
+{
+"slug": "pcap",
+"title": "PCAP"
+},
+{
+"slug": "wireshark",
+"title": "Wireshark"
+},
+{
+"slug": "tshark",
+"title": "tshark"
+},
+{
+"slug": "howto-tcpdump-capture",
+"title": "ECU上でtcpdumpキャプチャする"
+},
+{
+"slug": "some-ip",
+"title": "SOME/IP"
 }
 ],
 "tcpdump": [
@@ -3430,8 +4301,16 @@
 "title": "Wireshark"
 },
 {
-"slug": "icmp",
-"title": "ICMP / ping"
+"slug": "howto-tcpdump-capture",
+"title": "ECU上でtcpdumpキャプチャする"
+},
+{
+"slug": "howto-tshark-filter",
+"title": "tsharkで車載通信をフィルタ・解析する"
+},
+{
+"slug": "howto-pcap-analyze",
+"title": "pcapから車載通信パターンを読む"
 }
 ],
 "tshark": [
@@ -3452,8 +4331,38 @@
 "title": "DoIP(Diagnostics over IP)"
 },
 {
-"slug": "icmp",
-"title": "ICMP / ping"
+"slug": "howto-tcpdump-capture",
+"title": "ECU上でtcpdumpキャプチャする"
+},
+{
+"slug": "howto-tshark-filter",
+"title": "tsharkで車載通信をフィルタ・解析する"
+}
+],
+"howto-tshark-filter": [
+{
+"slug": "tshark",
+"title": "tshark"
+},
+{
+"slug": "howto-wireshark-someip",
+"title": "WiresharkでSOME/IPを解析する"
+},
+{
+"slug": "wireshark",
+"title": "Wireshark"
+},
+{
+"slug": "pcap",
+"title": "PCAP"
+},
+{
+"slug": "howto-tcpdump-capture",
+"title": "ECU上でtcpdumpキャプチャする"
+},
+{
+"slug": "some-ip",
+"title": "SOME/IP"
 }
 ],
 "autosar": [
@@ -3578,12 +4487,12 @@
 "title": "IP"
 },
 {
-"slug": "uds",
-"title": "UDS (統合診断サービス)"
+"slug": "howto-doip-connect",
+"title": "DoIP診断接続の手順"
 },
 {
-"slug": "xcp",
-"title": "XCP (測定・校正プロトコル)"
+"slug": "howto-uds-dtc",
+"title": "UDSで故障コード(DTC)を読む"
 }
 ],
 "ota": [
@@ -4012,11 +4921,58 @@
 "completed": false
 }
 ]
+},
+{
+"level": 7,
+"title": "Level 7 — 実践ノウハウ",
+"description": "ツールの使い方・診断手順・解析テクニックの実践ガイド。",
+"items": [
+{
+"slug": "howto-ping-ecu",
+"title": "ECUへのping疎通確認手順",
+"completed": false
+},
+{
+"slug": "howto-vlan-check",
+"title": "WiresharkでVLANタグを確認する",
+"completed": false
+},
+{
+"slug": "howto-tcpdump-capture",
+"title": "ECU上でtcpdumpキャプチャする",
+"completed": false
+},
+{
+"slug": "howto-tshark-filter",
+"title": "tsharkで車載通信をフィルタ・解析する",
+"completed": false
+},
+{
+"slug": "howto-wireshark-someip",
+"title": "WiresharkでSOME/IPを解析する",
+"completed": false
+},
+{
+"slug": "howto-pcap-analyze",
+"title": "pcapから車載通信パターンを読む",
+"completed": false
+},
+{
+"slug": "howto-doip-connect",
+"title": "DoIP診断接続の手順",
+"completed": false
+},
+{
+"slug": "howto-uds-dtc",
+"title": "UDSで故障コード(DTC)を読む",
+"completed": false
+}
+]
 }
 ],
 "progress": {
 "completed": 0,
-"total": 38
+"total": 46
 }
 },
 "home": {
@@ -4995,6 +5951,231 @@
 ],
 "updated": "2026-06-08",
 "excerpt": "車載サイバーセキュリティとは、外部からの不正アクセス・改ざん・盗聴から車両の電子システムを守る技術と管理体系の総称です。ISO 21434は自動車サイバーセキュリティの国際標準であり、開発〜廃棄まで全ライフサイクルでのリスク管理を義務付けて",
+"views": 0,
+"completed": false,
+"favorite": false
+}
+]
+},
+{
+"name": "Howto",
+"articles": [
+{
+"slug": "howto-ping-ecu",
+"title": "ECUへのping疎通確認手順",
+"level": 2,
+"category": "Howto",
+"difficulty": "初級",
+"related": [
+"icmp",
+"ip",
+"arp",
+"ethernet",
+"subnet"
+],
+"next": [
+"howto-tcpdump-capture"
+],
+"tags": [
+"howto",
+"tool",
+"diagnostics",
+"icmp"
+],
+"updated": "2026-06-08",
+"excerpt": "診断PCや別ECUから対象ECUへpingを使って疎通確認する手順と、応答がない場合のトラブルシュート手順を説明します。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "howto-vlan-check",
+"title": "WiresharkでVLANタグを確認する",
+"level": 2,
+"category": "Howto",
+"difficulty": "初級",
+"related": [
+"vlan",
+"wireshark",
+"ethernet",
+"tshark"
+],
+"next": [
+"howto-tshark-filter"
+],
+"tags": [
+"howto",
+"tool",
+"vlan",
+"ethernet"
+],
+"updated": "2026-06-08",
+"excerpt": "車載EthernetのキャプチャデータにVLANタグ(IEEE 802.1Q)が含まれているかをWiresharkで確認し、VLANごとにトラフィックを分離して解析する手順を説明します。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "howto-doip-connect",
+"title": "DoIP診断接続の手順",
+"level": 3,
+"category": "Howto",
+"difficulty": "中級",
+"related": [
+"doip",
+"uds",
+"tcp",
+"ip",
+"wireshark"
+],
+"next": [
+"howto-uds-dtc"
+],
+"tags": [
+"howto",
+"diagnostics",
+"doip",
+"automotive"
+],
+"updated": "2026-06-08",
+"excerpt": "診断PCからDoIP(Diagnostics over IP)を使ってゲートウェイECUへ接続し、UDS診断を開始するまでの手順を説明します。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "howto-tcpdump-capture",
+"title": "ECU上でtcpdumpキャプチャする",
+"level": 3,
+"category": "Howto",
+"difficulty": "中級",
+"related": [
+"tcpdump",
+"pcap",
+"wireshark",
+"tshark"
+],
+"next": [
+"howto-wireshark-someip"
+],
+"tags": [
+"howto",
+"tool",
+"cli",
+"pcap"
+],
+"updated": "2026-06-08",
+"excerpt": "Linux搭載のECUやゲートウェイECU上で tcpdump を使い、車載Ethernetパケットをキャプチャしてpcapファイルに保存する手順を説明します。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "howto-uds-dtc",
+"title": "UDSで故障コード(DTC)を読む",
+"level": 3,
+"category": "Howto",
+"difficulty": "中級",
+"related": [
+"uds",
+"doip",
+"can",
+"howto-doip-connect"
+],
+"next": [
+"howto-doip-connect"
+],
+"tags": [
+"howto",
+"diagnostics",
+"uds",
+"automotive"
+],
+"updated": "2026-06-08",
+"excerpt": "UDS (ISO 14229) の `ReadDTCInformation` サービス(0x19)を使って、ECUに記録された故障コード(DTC: Diagnostic Trouble Code)を読み出す手順を説明します。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "howto-wireshark-someip",
+"title": "WiresharkでSOME/IPを解析する",
+"level": 3,
+"category": "Howto",
+"difficulty": "中級",
+"related": [
+"wireshark",
+"some-ip",
+"udp",
+"pcap"
+],
+"next": [
+"howto-tcpdump-capture"
+],
+"tags": [
+"howto",
+"tool",
+"some-ip"
+],
+"updated": "2026-06-08",
+"excerpt": "Wiresharkを使って、車載EthernetのSOME/IPパケットを可視化・解析する手順を説明します。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "howto-pcap-analyze",
+"title": "pcapから車載通信パターンを読む",
+"level": 3,
+"category": "Howto",
+"difficulty": "中級",
+"related": [
+"pcap",
+"wireshark",
+"tshark",
+"some-ip",
+"doip",
+"arp"
+],
+"next": [
+"howto-wireshark-someip"
+],
+"tags": [
+"howto",
+"tool",
+"pcap",
+"analysis"
+],
+"updated": "2026-06-08",
+"excerpt": "車両ネットワークのpcapファイルを受け取ったとき、何から確認すればよいかの分析ステップと、よく見るべきポイントを説明します。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "howto-tshark-filter",
+"title": "tsharkで車載通信をフィルタ・解析する",
+"level": 3,
+"category": "Howto",
+"difficulty": "中級",
+"related": [
+"tshark",
+"wireshark",
+"pcap",
+"some-ip",
+"doip"
+],
+"next": [
+"howto-wireshark-someip"
+],
+"tags": [
+"howto",
+"tool",
+"cli",
+"tshark"
+],
+"updated": "2026-06-08",
+"excerpt": "tshark(Wiresharkのコマンドライン版)を使って、pcapファイルや生トラフィックから特定の車載プロトコルを素早く抽出・解析する実践的なコマンドを紹介します。",
 "views": 0,
 "completed": false,
 "favorite": false

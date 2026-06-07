@@ -35,6 +35,12 @@
       "title": "Level 6 — SDV / ADAS 応用",
       "description": "次世代車両アーキテクチャと自動運転の通信。",
       "items": ["autosar", "adaptive-autosar", "ros2-dds", "sdv", "adas-comm", "ota", "v2x", "cybersecurity"]
+    },
+    {
+      "level": 7,
+      "title": "Level 7 — 実践ノウハウ",
+      "description": "ツールの使い方・診断手順・解析テクニックの実践ガイド。",
+      "items": ["howto-ping-ecu", "howto-vlan-check", "howto-tcpdump-capture", "howto-tshark-filter", "howto-wireshark-someip", "howto-pcap-analyze", "howto-doip-connect", "howto-uds-dtc"]
     }
   ]
 }
