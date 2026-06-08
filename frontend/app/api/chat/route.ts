@@ -78,12 +78,12 @@ export async function POST(req: NextRequest) {
     ? `${context}\n\n質問: ${question}`
     : `質問: ${question}`;
 
-  const apiKey = process.env.ANTHROPIC_API_KEY;
+  const apiKey = process.env.GROQ_API_KEY;
   if (!apiKey) {
     return NextResponse.json(
       {
         answer:
-          "## 一言説明\nAIチャットを使用するには Anthropic API キーの設定が必要です。\n\n## 詳細解説\nVercelの環境変数に `ANTHROPIC_API_KEY` を設定してください。\n\n## 自動運転での利用例\nAPI設定後、ADAS・車載ネットワークについて何でも質問できます。\n\n## 関連知識\n- Anthropic Claude API\n- Vercel Environment Variables\n\n## 次に学ぶべきこと\n- API設定後にこの画面に戻ってください",
+          "## 一言説明\nAIチャットを使用するには Groq API キーの設定が必要です。\n\n## 詳細解説\nVercelの環境変数に `GROQ_API_KEY` を設定してください。Groq Cloud (console.groq.com) でAPIキーを発行できます。\n\n## 自動運転での利用例\nAPI設定後、ADAS・車載ネットワークについて何でも質問できます。\n\n## 関連知識\n- Groq Cloud API (OpenAI互換)\n- Vercel Environment Variables\n\n## 次に学ぶべきこと\n- API設定後にこの画面に戻ってください",
         sources: sources.map((s) => ({ slug: s.slug, title: s.title })),
       },
       { status: 200 }
@@ -91,27 +91,28 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    const resp = await fetch("https://api.anthropic.com/v1/messages", {
+    const resp = await fetch("https://api.groq.com/openai/v1/chat/completions", {
       method: "POST",
       headers: {
-        "x-api-key": apiKey,
-        "anthropic-version": "2023-06-01",
-        "content-type": "application/json",
+        "Authorization": `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model: "claude-haiku-4-5-20251001",
+        model: "llama-3.3-70b-versatile",
         max_tokens: 1500,
-        system: SYSTEM_PROMPT,
-        messages: [{ role: "user", content: userContent }],
+        messages: [
+          { role: "system", content: SYSTEM_PROMPT },
+          { role: "user", content: userContent },
+        ],
       }),
     });
 
     if (!resp.ok) {
-      throw new Error(`Anthropic API error: ${resp.status}`);
+      throw new Error(`Groq API error: ${resp.status}`);
     }
 
     const data = await resp.json();
-    const answer = data.content?.[0]?.text ?? "（回答を取得できませんでした）";
+    const answer = data.choices?.[0]?.message?.content ?? "（回答を取得できませんでした）";
 
     return NextResponse.json({
       answer,
@@ -120,7 +121,7 @@ export async function POST(req: NextRequest) {
   } catch (err: any) {
     return NextResponse.json(
       {
-        answer: `（AI呼び出しに失敗しました: ${err.message}）`,
+        answer: `（Groq AI呼び出しに失敗しました: ${err.message}）`,
         sources: sources.map((s) => ({ slug: s.slug, title: s.title })),
       },
       { status: 200 }
