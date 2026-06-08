@@ -109,7 +109,7 @@ export default function ArticleView({ slug }: { slug: string }) {
           src={`/thumbnails/${article.slug}.jpg`}
           alt={article.title}
           fill
-          className="object-cover"
+          className="object-contain"
           onError={(e) => {
             (e.currentTarget as HTMLImageElement).parentElement!.style.display = "none";
           }}
