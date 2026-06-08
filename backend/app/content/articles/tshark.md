@@ -23,3 +23,11 @@ GUI版が [[wireshark]]、軽量キャプチャが [[tcpdump]]、対象ファイ
 
 ## 次に学ぶべき内容
 車載診断通信 [[doip]] を学びましょう。
+
+## 図解
+```mermaid
+graph LR
+  PCAP["vehicle_capture.pcap"] -->|"tshark -r -Y someip"| FILTER["フィルタ済みパケット"]
+  FILTER -->|"-T fields -e someip.serviceid"| CSV["service_id 一覧"]
+  PCAP -->|"-q -z io,phs"| STATS["プロトコル統計"]
+```

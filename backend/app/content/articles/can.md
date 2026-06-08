@@ -21,3 +21,18 @@ CANは今も車両制御の基幹で広く使われますが、カメラ映像�
 
 ## 次に学ぶべき内容
 IP上のサービス指向通信、[[some-ip]] へ進みましょう。
+
+## 図解
+```mermaid
+graph LR
+  ECU1["エンジンECU"] -->|CANフレーム| BUS["CAN バス
+(ツイストペア)"]
+  ECU2["ブレーキECU"] -->|CANフレーム| BUS
+  BUS --> ECU3["インスツルメント
+クラスタECU"]
+  BUS --> ECU4["トランスミッション
+ECU"]
+  subgraph Frame["CAN フレーム"]
+    ID["ID (11bit)"] --- DLC["DLC"] --- DATA["データ (最大8B)"] --- CRC["CRC"]
+  end
+```

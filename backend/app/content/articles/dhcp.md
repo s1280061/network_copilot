@@ -23,3 +23,14 @@ DHCP(Dynamic Host Configuration Protocol)は、機器に [[ip]] アドレスや�
 
 ## 次に学ぶべき内容
 名前からIPを引く [[dns]] を学びましょう。
+
+## 図解
+```mermaid
+sequenceDiagram
+  participant C as IVIシステム (新規起動)
+  participant S as DHCPサーバー (ゲートウェイ)
+  C->>S: DHCP Discover (ブロードキャスト)
+  S->>C: DHCP Offer (IP: 192.168.1.50 提案)
+  C->>S: DHCP Request (192.168.1.50 要求)
+  S->>C: DHCP ACK (IP・サブネット・GW 確定)
+```

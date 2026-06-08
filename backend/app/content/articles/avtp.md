@@ -33,3 +33,17 @@ AVTP(Audio Video Transport Protocol、IEEE 1722)は、車載Ethernet上で映像
 
 ## 次に学ぶべき内容
 映像転送の帯域保証を実現する [[tsn]] を深く理解しましょう。
+
+## 図解
+```mermaid
+graph LR
+  CAM["カメラECU×6"] -->|"AVTP (EtherType 0x22F0)
+gPTPタイムスタンプ付き"| SW["TSN対応
+Ethernetスイッチ"]
+  SW -->|"帯域予約 (CBS)"| ADC["ADASドメイン
+コントローラ"]
+  ADC -->|センサフュージョン| CTRL["車両制御"]
+  subgraph Format["AVTPサブタイプ"]
+    CVF["CVF: H.264映像"] --- AAF["AAF: PCM音声"] --- CRF["CRF: 時刻参照"]
+  end
+```

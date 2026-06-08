@@ -23,3 +23,21 @@ tags: [l3]
 
 ## 次に学ぶべき内容
 IPアドレスを自動配布する [[dhcp]] を学びましょう。
+
+## 図解
+```mermaid
+graph TD
+  GW["ゲートウェイECU"]
+  subgraph A["Network A: 192.168.1.0/24 (ADAS)"]
+    CAM["カメラECU .10"]
+    LID["LiDARセンサ .11"]
+  end
+  subgraph B["Network B: 10.0.0.0/8 (IVI)"]
+    IVI["IVIシステム .20"]
+    TCU["TCU .50"]
+  end
+  GW --- CAM
+  GW --- LID
+  GW --- IVI
+  GW --- TCU
+```

@@ -85,3 +85,18 @@ for i in range(0, len(dtc_list), 4):
 
 ## 関連用語
 プロトコルの概要は [[uds]]、接続手順は [[howto-doip-connect]]、CANバス経由の場合は [[can]] を参照。
+
+## 図解
+```mermaid
+sequenceDiagram
+  participant PC as 診断ツール
+  participant ECU as ゲートウェイECU
+  PC->>ECU: 10 03 (拡張診断セッション)
+  ECU->>PC: 50 03 ✓
+  PC->>ECU: 19 01 08 (DTC件数確認)
+  ECU->>PC: 59 01 08 FF 00 05 (5件)
+  PC->>ECU: 19 02 08 (全DTC読み出し)
+  ECU->>PC: 59 02 08 [DTC×5]
+  PC->>ECU: 14 FF FF FF (DTC全クリア)
+  ECU->>PC: 54 ✓
+```

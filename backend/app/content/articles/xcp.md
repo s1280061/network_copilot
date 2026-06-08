@@ -32,3 +32,17 @@ ADAS Domain Controllerの物体認識閾値・センサフュージョン重み�
 
 ## 次に学ぶべき内容
 量産診断の標準プロトコル [[uds]] と比較して理解を深めましょう。
+
+## 図解
+```mermaid
+sequenceDiagram
+  participant Tool as キャリブレーションツール (INCA/CANape)
+  participant ECU as ADASドメインコントローラ
+  Tool->>ECU: CONNECT
+  ECU->>Tool: PositiveResponse (セッション確立)
+  Tool->>ECU: SET_DAQ_LIST (測定変数リスト登録)
+  Tool->>ECU: START_STOP_DAQ (計測開始)
+  ECU->>Tool: DAQパケット (センサ値 1kHz で送信)
+  Tool->>ECU: DOWNLOAD (パラメータ書き換え)
+  Note over Tool,ECU: リアルタイムに閾値を調整しながらログ取得
+```

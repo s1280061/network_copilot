@@ -21,3 +21,18 @@ Autowareなどの自動運転スタックはROS2上で構築され、LiDAR点群
 
 ## 次に学ぶべき内容
 これらが向かう先、[[sdv]](ソフトウェア定義車両)を学びましょう。
+
+## 図解
+```mermaid
+graph LR
+  subgraph ADAS["ADASコンピュータ"]
+    CAM_NODE["カメラノード
+(Publisher)"] -->|"/image_raw"| DDS["DDS データバス"]
+    DDS --> PERC["認識ノード
+(Subscriber)"]
+    PERC -->|"/objects"| DDS
+    DDS --> PLAN["計画ノード
+(Subscriber)"]
+  end
+  LID["LiDARセンサ"] --> CAM_NODE
+```

@@ -23,3 +23,15 @@ ARP(Address Resolution Protocol)は、IPアドレスから対応する [[mac-add
 
 ## 次に学ぶべき内容
 ARPが補助する論理アドレス [[ip]] の仕組みを復習しましょう。
+
+## 図解
+```mermaid
+sequenceDiagram
+  participant A as 診断PC (192.168.1.100)
+  participant N as ネットワーク(ブロードキャスト)
+  participant B as IVI ECU (192.168.1.3)
+  A->>N: ARP Request: 192.168.1.3のMACは?
+  N->>B: (全ノードへ転送)
+  B->>A: ARP Reply: 02:00:1A:BC:DE:03
+  Note over A: ARPテーブルに記録
+```

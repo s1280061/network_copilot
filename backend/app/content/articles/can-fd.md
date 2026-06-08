@@ -23,3 +23,17 @@ ECUの高機能化でやり取りするデータが増え、従来CANの8バイ�
 
 ## 次に学ぶべき内容
 これらを束ねる車載ソフト標準 [[autosar]] を学びましょう。
+
+## 図解
+```mermaid
+graph LR
+  subgraph Classic["Classic CAN (最大8B)"]
+    C1["ブレーキECU"] -->|"8B @ 1Mbps"| GW["ゲートウェイ
+ECU"]
+  end
+  subgraph FD["CAN FD (最大64B)"]
+    GW -->|"64B @ 5Mbps
+データフェーズ"| CAM["カメラECU"]
+    GW --> RAD["レーダーECU"]
+  end
+```

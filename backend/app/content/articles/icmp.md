@@ -23,3 +23,15 @@ ICMP(Internet Control Message Protocol)は、[[ip]] 通信のエラー通知や�
 
 ## 次に学ぶべき内容
 IPアドレスの範囲を扱う [[subnet]] を学びましょう。
+
+## 図解
+```mermaid
+sequenceDiagram
+  participant PC as 診断ワークステーション
+  participant ECU as 車載ECU (LiDAR)
+  PC->>ECU: ICMP Echo Request (ping)
+  ECU->>PC: ICMP Echo Reply
+  Note over PC: RTT = 0.8ms → 正常
+  PC->>ECU: ICMP Echo Request
+  Note over PC,ECU: タイムアウト → ECU不在 or IP設定ミス
+```

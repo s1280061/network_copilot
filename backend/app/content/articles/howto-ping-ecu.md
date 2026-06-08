@@ -91,3 +91,22 @@ ARPには応答するがpingに応答しない → ECU側でICMP無効化の可�
 
 ## 関連用語
 疎通確認の仕組みは [[icmp]]、アドレス解決は [[arp]]、サブネット設計は [[subnet]] を参照。
+
+## 図解
+```mermaid
+flowchart TD
+  START["ping 192.168.1.10"] --> RES{応答あり?}
+  RES -->|Yes| OK["疎通OK
+L1-L3正常"]
+  RES -->|No| L1["ip link show
+リンクUP確認"]
+  L1 --> L2{UP?}
+  L2 -->|No| PHY["ケーブル/スイッチ確認"]
+  L2 -->|Yes| ARP["arp -n
+ARPテーブル確認"]
+  ARP --> ARP2{MACあり?}
+  ARP2 -->|No| SUB["サブネット確認
+ip addr show"]
+  ARP2 -->|Yes| ICMP["ECU側ICMP無効化
+→ DoIP等で確認"]
+```

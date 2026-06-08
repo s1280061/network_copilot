@@ -31,3 +31,16 @@ UDSの転送路として [[doip]](Ethernet経由)や [[can]] が使われます�
 
 ## 次に学ぶべき内容
 EthernetでUDSを運ぶ仕組み、[[doip]] を学びましょう。
+
+## 図解
+```mermaid
+sequenceDiagram
+  participant PC as 診断ツール
+  participant ECU as ターゲットECU
+  PC->>ECU: 10 03 (ExtendedDiagnosticSession)
+  ECU->>PC: 50 03 (PositiveResponse)
+  PC->>ECU: 19 02 08 (ReadDTC, confirmedDTC)
+  ECU->>PC: 59 02 08 [DTC1][DTC2]... (故障コード一覧)
+  PC->>ECU: 22 F1 90 (ReadDID: VIN番号)
+  ECU->>PC: 62 F1 90 [17バイトVIN]
+```

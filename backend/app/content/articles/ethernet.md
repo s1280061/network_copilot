@@ -21,3 +21,13 @@ Ethernetは有線LANの標準技術で、OSIの物理層・データリンク層
 
 ## 次に学ぶべき内容
 Ethernetが宛先判定に使う [[mac-address]] を学びましょう。
+
+## 図解
+```mermaid
+graph LR
+  subgraph EthernetFrame["Ethernet フレーム"]
+    DA["宛先MAC (6B)"] --- SA["送信元MAC (6B)"] --- ET["EtherType (2B)"] --- PL["ペイロード (46-1500B)"] --- FCS["FCS (4B)"]
+  end
+  CAM[カメラECU] -->|フレーム送信| SW[Ethernetスイッチ]
+  SW -->|転送| ADC[ADASコントローラ]
+```

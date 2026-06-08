@@ -29,3 +29,15 @@ ADAS Domain Controller が gPTP グランドマスターとなり、接続され
 
 ## 次に学ぶべき内容
 時刻同期を活用したリアルタイムスケジューリング、[[tsn]] を学びましょう。
+
+## 図解
+```mermaid
+sequenceDiagram
+  participant M as グランドマスター (ADASコントローラ)
+  participant S as スレーブECU (カメラ)
+  M->>S: Sync (t1タイムスタンプ付き)
+  Note over S: t2 = 受信時刻を記録
+  S->>M: Delay_Req (t3タイムスタンプ)
+  M->>S: Delay_Resp (t3を返送)
+  Note over S: t4 = 受信時刻<br/>オフセット = ((t2-t1)-(t4-t3))/2<br/>サブマイクロ秒精度で補正
+```

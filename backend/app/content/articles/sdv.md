@@ -21,3 +21,16 @@ SDVではゾーンアーキテクチャ+車載 [[ethernet]] バックボーン�
 
 ## 次に学ぶべき内容
 最後に、ADAS特有の通信要件をまとめた [[adas-comm]] を学びましょう。
+
+## 図解
+```mermaid
+graph TD
+  CLOUD["クラウドサービス
+(OTA / 診断 / データ収集)"]
+  HPC["車両コンピューティングプラットフォーム
+(HPC / Adaptive AUTOSAR / ROS2)"]
+  HW["車両ハードウェア
+(ECU / センサ / アクチュエータ)"]
+  CLOUD <-->|"4G/5G"| HPC
+  HPC <-->|"Ethernet / CAN"| HW
+```

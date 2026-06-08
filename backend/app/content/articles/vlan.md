@@ -23,3 +23,21 @@ VLAN(Virtual LAN / IEEE 802.1Q)は、1本の物理 [[ethernet]] を論理的に�
 
 ## 次に学ぶべき内容
 リアルタイム性を保証する [[tsn]] を学びましょう。
+
+## 図解
+```mermaid
+graph LR
+  SW["Ethernetスイッチ"]
+  subgraph VLAN10["VLAN 10 (ADASドメイン)"]
+    CAM[カメラECU]
+    ADC[ADASコントローラ]
+  end
+  subgraph VLAN20["VLAN 20 (IVI・診断)"]
+    IVI[IVIシステム]
+    TCU[テレマティクスECU]
+  end
+  CAM --- SW
+  ADC --- SW
+  IVI --- SW
+  TCU --- SW
+```

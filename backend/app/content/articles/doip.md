@@ -23,3 +23,19 @@ ECUのファームウェア更新や故障診断を、車載Ethernet経由で高
 
 ## 次に学ぶべき内容
 サービス指向通信の中核 [[some-ip]] を学びましょう。
+
+## 図解
+```mermaid
+sequenceDiagram
+  participant PC as 診断ワークステーション
+  participant GW as ゲートウェイECU (DoIPエンティティ)
+  participant ECU as ターゲットECU
+  PC->>GW: Vehicle Discovery (UDP 13400)
+  GW->>PC: Vehicle Announcement (IP + 論理アドレス)
+  PC->>GW: Routing Activation Request (TCP 13400)
+  GW->>PC: Routing Activation Response (成功)
+  PC->>GW: UDS Request (診断コマンド)
+  GW->>ECU: UDS転送 (CAN/Ethernet)
+  ECU->>GW: UDS Response
+  GW->>PC: UDS Response転送
+```

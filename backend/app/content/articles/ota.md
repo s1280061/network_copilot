@@ -33,3 +33,18 @@ ADAS認識アルゴリズムのモデル更新、地図データの差分配信�
 
 ## 次に学ぶべき内容
 OTAを支える [[sdv]] アーキテクチャ全体を理解しましょう。
+
+## 図解
+```mermaid
+sequenceDiagram
+  participant Cloud as OTAクラウドサーバー
+  participant TCU as テレマティクスECU
+  participant OTA as OTAマネージャー
+  participant ECU as ターゲットECU
+  Cloud->>TCU: 差分パッケージ配信 (TLS暗号化)
+  TCU->>TCU: 署名検証 (RSA/ECDSA)
+  TCU->>OTA: パッケージ転送
+  OTA->>ECU: UDS Download (0x34/0x36/0x37)
+  ECU->>OTA: 整合性チェック完了
+  ECU->>ECU: リセット・新FW起動
+```

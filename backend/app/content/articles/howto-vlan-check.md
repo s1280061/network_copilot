@@ -81,3 +81,14 @@ tshark -r capture.pcap -Y "vlan" \
 
 ## 関連用語
 VLANの概念は [[vlan]]、Wiresharkの基本は [[wireshark]]、高度なフィルタは [[howto-tshark-filter]] を参照。
+
+## 図解
+```mermaid
+graph LR
+  TRUNK["スイッチ
+トランクポート"] -->|VLANタグ付きフレーム| PC["Wireshark"]
+  PC -->|"フィルタ: vlan.id == 10"| ADAS["VLAN10 (ADAS)
+トラフィック"]
+  PC -->|"フィルタ: vlan.id == 20"| IVI["VLAN20 (IVI)
+トラフィック"]
+```

@@ -21,3 +21,19 @@ ECU上のアプリはUDP/TCPソケットを開いて他ECUと通信します。S
 
 ## 次に学ぶべき内容
 通信を実際に「見る」ためのツール、[[wireshark]] へ進みましょう。
+
+## 図解
+```mermaid
+sequenceDiagram
+  participant App as DoIPアプリ (クライアント)
+  participant OS as OS ソケット層
+  participant ECU as ゲートウェイECU
+  App->>OS: socket() + connect(192.168.1.1:13400)
+  OS->>ECU: TCP SYN
+  ECU->>OS: SYN-ACK
+  OS->>App: 接続完了
+  App->>OS: send(UDSリクエスト)
+  OS->>ECU: TCP DATA
+  ECU->>OS: TCP DATA (UDS応答)
+  OS->>App: recv() → 応答データ
+```

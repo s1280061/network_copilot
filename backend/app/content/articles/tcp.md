@@ -21,3 +21,17 @@ TCP(Transmission Control Protocol)はコネクション型のトランスポー�
 
 ## 次に学ぶべき内容
 低遅延を優先する [[udp]] との違いを学びましょう。
+
+## 図解
+```mermaid
+sequenceDiagram
+  participant C as 診断PC
+  participant S as ゲートウェイECU
+  C->>S: SYN
+  S->>C: SYN-ACK
+  C->>S: ACK (接続確立)
+  C->>S: DATA (UDSリクエスト)
+  S->>C: ACK + DATA (UDS応答)
+  C->>S: FIN
+  S->>C: FIN-ACK
+```

@@ -21,3 +21,16 @@ Adaptive Platform は POSIX ベースで、[[some-ip]] によるサービス指�
 
 ## 次に学ぶべき内容
 ロボティクス由来の通信基盤、[[ros2-dds]] へ進みましょう。
+
+## 図解
+```mermaid
+graph TD
+  APP["アプリケーション層
+(Brake Control / Lights Control)"]
+  RTE["RTE: Runtime Environment
+(上位・下位の橋渡し)"]
+  BSW["Basic Software (BSW)
+Services / Communication / Memory / I/O"]
+  MCU["マイクロコントローラ"]
+  APP --> RTE --> BSW --> MCU
+```

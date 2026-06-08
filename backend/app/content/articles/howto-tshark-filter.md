@@ -99,3 +99,13 @@ Excelで開いて通信量の時系列分析ができます。
 
 ## 関連用語
 GUIで同じことをする場合は [[wireshark]]、コマンドラインでの簡易キャプチャは [[tcpdump]]、pcapの形式は [[pcap]] を参照。
+
+## 図解
+```mermaid
+graph LR
+  PCAP["capture.pcap"] -->|"-Y someip"| F1["SOME/IPパケット"]
+  PCAP -->|"-Y doip"| F2["DoIPパケット"]
+  PCAP -->|"-z endpoints,ip"| STATS["IPエンドポイント統計"]
+  F1 -->|"-T fields -e someip.serviceid"| CSV["ServiceID一覧 (CSV)"]
+  STATS --> XLS["Excel分析"]
+```

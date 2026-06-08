@@ -78,3 +78,15 @@ someip.serviceid == 0x1234
 
 ## 関連用語
 [[wireshark]] の基本操作、[[some-ip]] のプロトコル仕様、[[pcap]] ファイルの扱い方。
+
+## 図解
+```mermaid
+graph LR
+  PCAP["vehicle.pcap
+またはLiveキャプチャ"] --> WS["Wireshark"]
+  WS -->|"フィルタ: someip"| LIST["SOME/IPパケット一覧"]
+  LIST --> DET["パケット詳細
+Service ID / Method ID"]
+  DET --> STATS["Statistics
+→ IO Graph / Endpoints"]
+```

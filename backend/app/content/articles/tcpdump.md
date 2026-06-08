@@ -23,3 +23,14 @@ tcpdumpは、コマンドラインでパケットをキャプチャ・表示す�
 
 ## 次に学ぶべき内容
 Wireshark由来のCLI [[tshark]] を学びましょう。
+
+## 図解
+```mermaid
+graph LR
+  NW["車両ネットワーク
+TCP/UDP/DoIP"] --> ECU["組み込みECU
+(Linux OS)"]
+  ECU -->|"tcpdump -i eth0 -w cap.pcap"| FILE["capture.pcap"]
+  FILE -->|SCP転送| PC["診断PC
+Wireshark解析"]
+```

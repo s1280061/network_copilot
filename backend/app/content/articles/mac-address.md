@@ -21,3 +21,16 @@ MACは [[ethernet]] フレームの中に入り、その上位の論理アドレ
 
 ## 次に学ぶべき内容
 論理的な住所である [[ip]] へ進みましょう。
+
+## 図解
+```mermaid
+graph LR
+  subgraph MAC["MACアドレス (48bit = 6オクテット)"]
+    OUI["OUI (24bit)
+メーカー識別"] --- NIC["NIC固有番号 (24bit)"]
+  end
+  ECU1["TCU
+02:00:1A:BC:DE:F0"] -->|Ethernetフレーム| SW[スイッチ]
+  SW --> ECU2["ゲートウェイECU
+02:00:1A:BC:DE:F1"]
+```

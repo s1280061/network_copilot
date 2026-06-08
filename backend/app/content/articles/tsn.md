@@ -23,3 +23,15 @@ TSN(Time-Sensitive Networking)は、標準 [[ethernet]] に「時間保証」を
 
 ## 次に学ぶべき内容
 ADAS通信全体の要件 [[adas-comm]] を学びましょう。
+
+## 図解
+```mermaid
+sequenceDiagram
+  participant SW as TSN対応スイッチ
+  participant CTRL as ブレーキ制御ECU
+  participant IVI as IVIシステム
+  Note over SW: gPTP時刻同期 (PTP)
+  SW->>CTRL: 制御データ (タイムスロット予約済み・遅延保証)
+  SW->>IVI: 映像データ (ベストエフォート)
+  Note over CTRL: 最悪遅延 < 500μs 保証
+```

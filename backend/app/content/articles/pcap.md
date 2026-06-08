@@ -21,3 +21,15 @@ PCAP(Packet Capture)は、キャプチャしたパケットを保存するファ
 
 ## 次に学ぶべき内容
 ここから車載特有の世界へ。まずは [[can]] を学びましょう。
+
+## 図解
+```mermaid
+graph LR
+  ETH["車載Ethernet"] -->|パケットキャプチャ| LOGGER["診断ロガーECU"]
+  LOGGER -->|pcapファイル保存| FILE["vehicle_traffic.pcap"]
+  subgraph Structure["pcapファイル構造"]
+    GH["グローバルヘッダ"] --- PH["パケットヘッダ×N"] --- DATA["パケットデータ×N"]
+  end
+  FILE --> WS["Wireshark / tshark
+で開いて解析"]
+```

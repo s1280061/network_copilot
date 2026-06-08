@@ -36,3 +36,19 @@ ADAS ECUはHSM(Hardware Security Module)内で鍵を管理し、SecOCで制御�
 
 ## 次に学ぶべき内容
 外部との無線通信 [[v2x]] のセキュリティ要件を確認しましょう。
+
+## 図解
+```mermaid
+graph TD
+  EXT["外部インターフェース
+(V2X / OTA / Bluetooth / USB)"]
+  FW["ファイアウォール
+(ゲートウェイECU)"]
+  VLAN["VLANセグメント
+ADAS / IVI / 診断を分離"]
+  IDS["IDS (侵入検知)
+異常トラフィック監視"]
+  SECOCC["SecOC
+(通信メッセージ認証)"]
+  EXT -->|フィルタリング| FW --> VLAN --> IDS --> SECOCC
+```

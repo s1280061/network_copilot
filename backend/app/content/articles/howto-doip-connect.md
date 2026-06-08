@@ -85,3 +85,16 @@ Routing Activation → UDS Request → UDS Response の流れが見えれば接�
 
 ## 関連用語
 プロトコル詳細は [[doip]]、UDSサービスの意味は [[uds]]、通信の確認は [[wireshark]] を参照。
+
+## 図解
+```mermaid
+sequenceDiagram
+  participant PC as 診断PC
+  participant GW as ゲートウェイECU
+  PC->>GW: Vehicle Discovery (UDP 13400 ブロードキャスト)
+  GW->>PC: Vehicle Announcement (IP + 論理アドレス)
+  PC->>GW: Routing Activation Request (TCP 13400)
+  GW->>PC: Routing Activation Response (0x10: 成功)
+  PC->>GW: UDS DiagnosticSessionControl (10 03)
+  GW->>PC: PositiveResponse (50 03)
+```

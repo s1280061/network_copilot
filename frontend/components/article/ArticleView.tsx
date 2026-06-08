@@ -3,6 +3,7 @@
 import { useEffect, useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import mermaid from "mermaid";
 import {
   getArticle,
   setProgress,
@@ -13,6 +14,8 @@ import {
 import { Article, Ref } from "@/lib/types";
 import { useStudyPanel } from "@/lib/study-context";
 import { recordView } from "@/lib/profile";
+
+mermaid.initialize({ startOnLoad: false, theme: "default", securityLevel: "loose" });
 
 export default function ArticleView({ slug }: { slug: string }) {
   const router = useRouter();
@@ -47,6 +50,27 @@ export default function ArticleView({ slug }: { slug: string }) {
     load();
   }, [load]);
 
+  // Render mermaid code blocks after HTML is injected
+  useEffect(() => {
+    if (!article) return;
+    const blocks = document.querySelectorAll<HTMLElement>(
+      ".prose-article code.language-mermaid"
+    );
+    blocks.forEach(async (block, i) => {
+      const chart = block.textContent || "";
+      const id = `mermaid-${slug}-${i}`;
+      try {
+        const { svg } = await mermaid.render(id, chart);
+        const wrapper = document.createElement("div");
+        wrapper.className = "overflow-x-auto my-6 flex justify-center";
+        wrapper.innerHTML = svg;
+        block.closest("pre")?.replaceWith(wrapper);
+      } catch {
+        // leave as-is on error
+      }
+    });
+  }, [article, slug]);
+
   // Intercept internal [[term]] links for SPA navigation.
   useEffect(() => {
     function onClick(e: MouseEvent) {
@@ -80,13 +104,15 @@ export default function ArticleView({ slug }: { slug: string }) {
 
   return (
     <article>
-      <div className="relative w-full h-52 rounded-xl overflow-hidden bg-slate-100 mb-6">
+      <div className="relative w-full rounded-xl overflow-hidden bg-slate-100 mb-6" style={{ aspectRatio: "16/5", maxHeight: "220px" }}>
         <Image
           src={`/thumbnails/${article.slug}.jpg`}
           alt={article.title}
           fill
           className="object-cover"
-          onError={(e) => { (e.currentTarget as HTMLImageElement).parentElement!.style.display = "none"; }}
+          onError={(e) => {
+            (e.currentTarget as HTMLImageElement).parentElement!.style.display = "none";
+          }}
         />
       </div>
       <div className="flex items-start justify-between gap-4 mb-4">

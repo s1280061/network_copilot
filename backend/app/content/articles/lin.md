@@ -26,3 +26,16 @@ ADAS ECUが主カメラをEthernetで制御する一方、サイドミラーの�
 
 ## 次に学ぶべき内容
 より高速で信頼性の高い [[can]] へ進みましょう。
+
+## 図解
+```mermaid
+sequenceDiagram
+  participant M as マスターECU
+  participant S1 as スレーブ1 (ミラーモーター)
+  participant S2 as スレーブ2 (シート調整)
+  M->>S1: ヘッダ (Break + Sync + ID=0x10)
+  S1->>M: レスポンス (モーター角度データ)
+  M->>S2: ヘッダ (ID=0x20)
+  S2->>M: レスポンス (シート位置データ)
+  Note over M: スケジュール管理はマスターのみ
+```

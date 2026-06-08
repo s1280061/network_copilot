@@ -84,3 +84,14 @@ kill $(pgrep tcpdump)
 
 ## 関連用語
 コマンドの詳細は [[tcpdump]]、キャプチャファイルの形式は [[pcap]]、高度なフィルタは [[tshark]] を参照。
+
+## 図解
+```mermaid
+graph LR
+  NW["車載Ethernet
+(eth0)"] -->|"tcpdump -i eth0 -w cap.pcap"| ECU["組み込みECU
+(Linux)"]
+  ECU -->|SCP転送| PC["診断PC"]
+  PC --> WS["Wireshark
+/ tshark 解析"]
+```

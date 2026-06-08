@@ -23,3 +23,15 @@ DNS(Domain Name System)は、人間が読みやすいドメイン名(例 `exampl
 
 ## 次に学ぶべき内容
 通信の出入口 [[socket]] を学びましょう。
+
+## 図解
+```mermaid
+sequenceDiagram
+  participant IVI as IVIシステム (クライアント)
+  participant GW as DNSサーバー (ゲートウェイ)
+  participant Cloud as 外部DNSサーバー
+  IVI->>GW: クエリ: backend.service の IP は?
+  GW->>Cloud: 再帰クエリ (キャッシュなし時)
+  Cloud->>GW: 10.0.0.5
+  GW->>IVI: 応答: 10.0.0.5
+```

@@ -102,3 +102,18 @@ Excelのピボットテーブルで「時間別 × プロトコル別 × ECU別�
 
 ## 関連用語
 pcapの形式は [[pcap]]、GUIでの解析は [[wireshark]]、コマンドライン解析は [[howto-tshark-filter]] を参照。
+
+## 図解
+```mermaid
+flowchart TD
+  PCAP["vehicle_capture.pcap"]
+  PCAP -->|"tshark -z io,phs"| PROTO["プロトコル分布
+把握"]
+  PCAP -->|"ARP opcode==2"| IPTBL["IP/MACテーブル
+再現"]
+  PCAP -->|"someip.type==0x01"| SVC["公開サービス
+一覧"]
+  PCAP -->|"tcp.analysis.retransmission"| ERR["異常パターン
+検出"]
+  PROTO & IPTBL & SVC & ERR --> RPT["解析レポート"]
+```

@@ -21,3 +21,18 @@ SOME/IP(Scalable service-Oriented MiddlewarE over IP)は、車載ECU同士が「
 
 ## 次に学ぶべき内容
 これらを統合する車載ソフト標準、[[autosar]] を学びましょう。
+
+## 図解
+```mermaid
+sequenceDiagram
+  participant C as クライアントECU (インフォテインメント)
+  participant S as サーバーECU (ゲートウェイ)
+  Note over C,S: SOME/IP-SD サービスディスカバリ
+  S->>C: OfferService (Service ID: 0x1234)
+  C->>S: SubscribeEventgroup
+  S->>C: SubscribeEventgroupAck
+  Note over C,S: 通常通信
+  C->>S: Request (Method 0x0001)
+  S->>C: Response
+  S->>C: Notification (イベント通知)
+```

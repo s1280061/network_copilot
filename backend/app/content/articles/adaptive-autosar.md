@@ -30,3 +30,15 @@ Classic版の [[autosar]] と対になる存在です。通信ミドルウェア
 
 ## 次に学ぶべき内容
 Adaptive AUTOSARが実現する [[sdv]] の全体像を学びましょう。
+
+## 図解
+```mermaid
+graph TD
+  AA["Adaptive Application
+(物体認識 / 経路計画 / 車線維持)"]
+  ARA["ara:: API
+(com / exec / diag / update / crypto)"]
+  OS["POSIX OS (Linux / QNX)"]
+  HW["高性能SoC (GPU / NPU搭載)"]
+  AA --> ARA --> OS --> HW
+```
