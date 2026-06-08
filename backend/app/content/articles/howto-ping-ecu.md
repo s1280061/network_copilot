@@ -1,6 +1,6 @@
 ---
-slug: howto-ping-ecu
-title: ECUへのping疎通確認手順
+slug: howto-**ping**-ecu
+title: ECUへの**ping****疎通確認**手順
 level: 2
 category: Howto
 difficulty: 初級
@@ -10,7 +10,7 @@ tags: [howto, tool, diagnostics, icmp]
 ---
 
 ## やること
-診断PCや別ECUから対象ECUへpingを使って疎通確認する手順と、応答がない場合のトラブルシュート手順を説明します。
+診断PCや別ECUから対象ECUへ**ping**を使って**疎通確認**する手順と、応答がない場合のトラブルシュート手順を説明します。
 
 ## 前提条件
 - 診断PCと対象ECUが同じEthernetセグメント(またはルータ経由で到達可能)に接続
@@ -80,17 +80,17 @@ tracert 192.168.1.10
 
 ## ステップ4: ARP で存在確認
 
-pingが届かなくてもARPで機器の存在は確認できます：
+**ping**が届かなくても**ARP**で機器の存在は確認できます：
 
 ```bash
 # arping (L2レベルの疎通確認)
 arping -I eth0 192.168.1.10
 ```
 
-ARPには応答するがpingに応答しない → ECU側でICMP無効化の可能性。
+**ARP**には応答するが**ping**に応答しない → ECU側でICMP無効化の可能性。
 
 ## 関連用語
-疎通確認の仕組みは [[icmp]]、アドレス解決は [[arp]]、サブネット設計は [[subnet]] を参照。
+**疎通確認**の仕組みは [[icmp]]、アドレス解決は [[arp]]、サブネット設計は [[subnet]] を参照。
 
 ## 図解
 ```mermaid

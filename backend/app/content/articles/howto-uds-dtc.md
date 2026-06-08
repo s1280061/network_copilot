@@ -14,7 +14,7 @@ UDS (ISO 14229) の `ReadDTCInformation` サービス(0x19)を使って、ECUに
 
 ## 前提条件
 - DoIP または CAN 経由でECUへ接続済み([[howto-doip-connect]] 参照)
-- ECUがデフォルトまたは拡張診断セッションにある
+- ECUがデフォルトまたは**拡張診断セッション**にある
 
 ## DTCとは
 
@@ -24,7 +24,7 @@ DTCは `P0123` のような5桁コードで、故障内容を示します：
 
 ## ステップ1: 診断セッション切り替え
 
-まず拡張診断セッション(0x03)に切り替えます：
+まず**拡張診断セッション**(0x03)に切り替えます：
 
 ```
 送信: 10 03         (DiagnosticSessionControl, ExtendedDiagnosticSession)
@@ -81,7 +81,7 @@ for i in range(0, len(dtc_list), 4):
 ```
 
 ## 注意
-量産車のECUではセキュリティアクセス(0x27)認証が必要なサービスがあります。認証なしで0x14を送ると NRC `0x33`(SecurityAccessDenied) が返ります。
+量産車のECUではセキュリティアクセス(0x27)認証が必要なサービスがあります。認証なしで**0x14**を送ると NRC `0x33`(SecurityAccessDenied) が返ります。
 
 ## 関連用語
 プロトコルの概要は [[uds]]、接続手順は [[howto-doip-connect]]、CANバス経由の場合は [[can]] を参照。

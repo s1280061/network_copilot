@@ -15,7 +15,7 @@ tags: [howto, diagnostics, doip, automotive]
 ## 前提条件
 - 診断PCと車両ゲートウェイECUがEthernetで接続
 - 診断ツール (ETAS INCA、Vector CANoe、またはPythonスクリプト)
-- 対象ECUのIPアドレスと論理アドレス(Logical Address)が判明
+- 対象ECUのIPアドレスと**論理アドレス**(Logical Address)が判明
 
 ## DoIPの接続フロー
 
@@ -73,14 +73,14 @@ print(resp.hex())  # 50 03 = PositiveResponse
 tcp.port == 13400
 ```
 
-Routing Activation → UDS Request → UDS Response の流れが見えれば接続成功です。
+**Routing Activation** → UDS Request → UDS Response の流れが見えれば接続成功です。
 
 ## よくあるエラー
 
 | エラーコード | 原因 | 対処 |
 |-------------|------|------|
-| 0x00 (Denied) | 認証失敗 / アドレス不一致 | 論理アドレスを確認 |
-| TCP接続タイムアウト | IPアドレスが違う / ファイアウォール | [[howto-ping-ecu]] で疎通確認 |
+| 0x00 (Denied) | 認証失敗 / アドレス不一致 | **論理アドレス**を確認 |
+| **TCP接続**タイムアウト | IPアドレスが違う / ファイアウォール | [[howto-ping-ecu]] で疎通確認 |
 | NRC 0x25 | ECUがプログラミングセッション以外では拒否 | セッション種別を確認 |
 
 ## 関連用語

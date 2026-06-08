@@ -10,7 +10,7 @@ tags: [ethernet, audio, video, automotive]
 ---
 
 ## 概要
-AVTP(Audio Video Transport Protocol、IEEE 1722)は、車載Ethernet上で映像・音声ストリームをリアルタイム転送するプロトコルです。カメラ映像をサラウンドビューモニター(SVM)に表示したり、マイク音声をデジタルオーディオバスに流す用途に使われます。
+AVTP(Audio Video Transport Protocol、**IEEE 1722**)は、車載Ethernet上で映像・音声ストリームをリアルタイム転送するプロトコルです。カメラ映像をサラウンドビューモニター(SVM)に表示したり、マイク音声をデジタルオーディオバスに流す用途に使われます。
 
 ## なぜ必要か
 カメラの生映像(1080p@30fpsで約1 Gbps)をECU間で転送する場合、通常のTCP/IPでは遅延・ジッターが問題になります。AVTPはタイムスタンプ付きのストリームをEthernetフレームに直接マッピングし、[[ptp]] 時刻同期と組み合わせてマイクロ秒精度の低遅延転送を実現します。

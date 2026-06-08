@@ -1,5 +1,5 @@
 ---
-slug: howto-wireshark-someip
+slug: howto-wireshark-**someip**
 title: WiresharkでSOME/IPを解析する
 level: 3
 category: Howto
@@ -66,7 +66,7 @@ someip.serviceid == 0x1234
 ## ステップ5: 統計を確認
 
 `Statistics` → `Endpoints` でECUごとの通信量を把握。  
-`Statistics` → `IO Graph` でSOME/IPトラフィックの時系列変化を確認できます。
+`Statistics` → `**IO Graph**` でSOME/IPトラフィックの時系列変化を確認できます。
 
 ## よくあるトラブル
 

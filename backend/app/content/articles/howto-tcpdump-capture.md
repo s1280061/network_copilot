@@ -5,7 +5,7 @@ level: 3
 category: Howto
 difficulty: 中級
 related: [tcpdump, pcap, wireshark, tshark]
-next: [howto-wireshark-someip]
+next: [howto**-w**ireshark-someip]
 tags: [howto, tool, cli, pcap]
 ---
 
@@ -70,7 +70,7 @@ scp /tmp/capture.pcap analyst@192.168.0.100:/captures/
 ## ステップ5: Wiresharkで開く
 
 転送した `.pcap` ファイルをWiresharkで開いて解析します。  
-[[howto-wireshark-someip]] の手順でSOME/IPフィルタをかけると効率的です。
+[[howto**-w**ireshark-someip]] の手順でSOME/IPフィルタをかけると効率的です。
 
 ## バックグラウンドでの長時間キャプチャ
 

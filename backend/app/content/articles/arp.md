@@ -10,7 +10,7 @@ tags: [l2, l3, automotive]
 ---
 
 ## 概要
-ARP(Address Resolution Protocol)は、IPアドレスから対応する [[mac-address]] を調べるためのプロトコルです。「このIPの機器のMACは?」とネットワークに問い合わせ(ARPリクエスト)、該当機器が自分のMACを返答(ARPリプライ)します。
+ARP(**Address Resolution Protocol**)は、IPアドレスから対応する [[mac-address]] を調べるためのプロトコルです。「このIPの機器のMACは?」とネットワークに問い合わせ(ARPリクエスト)、該当機器が自分のMACを返答(ARPリプライ)します。
 
 ## なぜ必要か
 [[ip]] は論理的な宛先を示しますが、[[ethernet]] が実際にフレームを届けるには物理アドレスであるMACが必要です。ARPはこの「IP→MAC」の橋渡しを担う、L3とL2をつなぐ重要な仕組みです。

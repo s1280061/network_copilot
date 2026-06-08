@@ -20,16 +20,16 @@ tags: [security, automotive, iso21434]
 | 脅威 | 対策 |
 |------|------|
 | 不正診断アクセス | UDS認証(Security Access)、SecOC |
-| OTA改ざん | コード署名、TLS暗号化 |
+| OTA改ざん | コード署名、TLS**暗号化** |
 | CAN bus注入 | CANの分離、侵入検知(IDS) |
-| 外部ネット侵入 | ファイアウォール、VLANセグメント |
+| 外部ネット侵入 | **ファイアウォール**、VLANセグメント |
 | 盗聴 | TLS/DTLS、鍵管理(HSM) |
 
 ## SecOC (Secure Onboard Communication)
 AUTOSAR準拠のCAN/Ethernet通信に認証コード(MAC)を付与する仕組みです。改ざんされたメッセージを受信側で検知できます。
 
 ## 自動運転での利用例
-ADAS ECUはHSM(Hardware Security Module)内で鍵を管理し、SecOCで制御コマンドを認証します。外部ネットワークとの境界にはファイアウォール機能付きゲートウェイを配置し、[[vlan]] でADASネットワークとインフォテインメントを分離します。
+ADAS ECUはHSM(Hardware Security Module)内で鍵を管理し、SecOCで制御コマンドを認証します。外部ネットワークとの境界には**ファイアウォール**機能付きゲートウェイを配置し、[[vlan]] でADASネットワークとインフォテインメントを分離します。
 
 ## 関連用語
 ネットワーク分離は [[vlan]]、通信経路の保護は [[ethernet]] 上のTLS、外部通信は [[v2x]] / [[ota]] を参照。
