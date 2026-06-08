@@ -104,7 +104,7 @@ export default function ArticleView({ slug }: { slug: string }) {
 
   return (
     <article>
-      <div className="relative w-full rounded-xl overflow-hidden bg-slate-100 mb-6" style={{ aspectRatio: "16/4", maxHeight: "160px" }}>
+      <div className="relative w-full rounded-xl overflow-hidden bg-slate-100 mb-6" style={{ aspectRatio: "1376/768", maxHeight: "200px" }}>
         <Image
           src={`/thumbnails/${article.slug}.jpg`}
           alt={article.title}
