@@ -10,7 +10,7 @@
       "level": 2,
       "title": "Level 2 — TCP/IP の中核",
       "description": "インターネットと車載通信を支える中心プロトコル群。",
-      "items": ["ip", "tcp", "udp", "port", "arp", "icmp", "subnet", "dhcp", "dns", "vlan"]
+      "items": ["ip", "ipv4-ipv6", "tcp", "udp", "port", "arp", "icmp", "subnet", "dhcp", "dns", "vlan"]
     },
     {
       "level": 3,
@@ -34,7 +34,7 @@
       "level": 6,
       "title": "Level 6 — SDV / ADAS 応用",
       "description": "次世代車両アーキテクチャと自動運転の通信。",
-      "items": ["autosar", "adaptive-autosar", "ros2-dds", "sdv", "adas-comm", "ota", "v2x", "cybersecurity"]
+      "items": ["autosar", "adaptive-autosar", "ros2-dds", "sdv", "adas-comm", "ota", "v2x", "cybersecurity", "micro-autobox"]
     },
     {
       "level": 7,

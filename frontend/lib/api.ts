@@ -74,14 +74,10 @@ export const search = (q: string) =>
 
 // ---- interactive (need backend) ----
 export const chat = (question: string) => {
-  if (!HAS_BACKEND) {
-    return Promise.resolve({
-      answer:
-        "（このサイトは記事閲覧専用モードで公開されています。AIチャットはバックエンド接続時に利用できます。）",
-      sources: [] as Ref[],
-    });
-  }
-  return fetch(`${BASE}/api/chat`, {
+  // Always use the Next.js API route (/api/chat) which works on Vercel.
+  // Falls back to the Python backend if NEXT_PUBLIC_API_BASE is set.
+  const chatUrl = HAS_BACKEND ? `${BASE}/api/chat` : "/api/chat";
+  return fetch(chatUrl, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ question }),

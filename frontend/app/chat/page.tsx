@@ -8,6 +8,28 @@ import { useStudyPanel } from "@/lib/study-context";
 
 type Msg = { role: "user" | "ai"; text: string; sources?: Ref[] };
 
+function renderAnswer(text: string) {
+  const lines = text.split("\n");
+  return lines.map((line, i) => {
+    if (line.startsWith("## ")) {
+      return (
+        <p key={i} className="font-bold text-sky-700 mt-4 mb-1 border-b border-sky-100 pb-1">
+          {line.replace("## ", "")}
+        </p>
+      );
+    }
+    if (line.startsWith("- ") || line.startsWith("* ")) {
+      return (
+        <li key={i} className="ml-4 list-disc">
+          {line.replace(/^[-*] /, "")}
+        </li>
+      );
+    }
+    if (line.trim() === "") return <br key={i} />;
+    return <p key={i}>{line}</p>;
+  });
+}
+
 export default function ChatPage() {
   const router = useRouter();
   const { setPanel } = useStudyPanel();
@@ -62,7 +84,7 @@ export default function ChatPage() {
             <span className="font-semibold mr-2">
               {m.role === "user" ? "🙋 あなた" : "🤖 Copilot"}
             </span>
-            {m.text}
+            {m.role === "ai" ? <div className="space-y-0.5">{renderAnswer(m.text)}</div> : m.text}
             {m.role === "ai" && m.sources && m.sources.length > 0 && (
               <div className="mt-3 pt-2 border-t flex flex-wrap gap-2">
                 <span className="text-xs text-slate-400 w-full">📚 参考記事:</span>

@@ -59,6 +59,8 @@ _CATEGORY_MAP = {
     "howto-tshark-filter": "Howto",
     "howto-vlan-check": "Howto",
     "howto-pcap-analyze": "Howto",
+    "micro-autobox": "SDV",
+    "ipv4-ipv6": "TCP/IP",
 }
 
 

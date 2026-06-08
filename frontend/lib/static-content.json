@@ -240,6 +240,36 @@
 "favorite": false
 },
 {
+"slug": "ipv4-ipv6",
+"title": "IPv4 と IPv6",
+"level": 2,
+"category": "TCP/IP",
+"tags": [
+"ip",
+"tcp-ip",
+"addressing",
+"routing",
+"ipv6"
+],
+"related": [
+"ip",
+"subnet",
+"dhcp",
+"ethernet"
+],
+"next": [
+"tcp",
+"udp",
+"vlan"
+],
+"difficulty": "初級",
+"updated": "2026-06-08",
+"excerpt": "**IPv4**（Internet Protocol version 4）と**IPv6**（Internet Protocol version 6）はどちらもネットワーク層でデバイスを識別し、パケットを届けるプロトコルです。アドレス枯渇問",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "lin",
 "title": "LIN バス",
 "level": 2,
@@ -1154,6 +1184,37 @@
 "views": 0,
 "completed": false,
 "favorite": false
+},
+{
+"slug": "micro-autobox",
+"title": "MicroAutoBox（dSPACE）",
+"level": 6,
+"category": "SDV",
+"tags": [
+"adas",
+"testing",
+"hil",
+"dspace",
+"autosar",
+"rapid-prototyping"
+],
+"related": [
+"autosar",
+"adaptive-autosar",
+"can",
+"ethernet",
+"uds"
+],
+"next": [
+"ota",
+"adaptive-autosar"
+],
+"difficulty": "上級",
+"updated": "2026-06-08",
+"excerpt": "**MicroAutoBox**（マイクロオートボックス）は、**dSPACE社**が提供する**ラピッドコントロールプロトタイピング（RCP）**および**ハードウェアインザループ（HiL）テスト**向けのリアルタイムコントローラです。A",
+"views": 0,
+"completed": false,
+"favorite": false
 }
 ],
 "bySlug": {
@@ -1634,6 +1695,68 @@
 "completed": false,
 "favorite": false
 },
+"ipv4-ipv6": {
+"slug": "ipv4-ipv6",
+"title": "IPv4 と IPv6",
+"level": 2,
+"category": "TCP/IP",
+"tags": [
+"ip",
+"tcp-ip",
+"addressing",
+"routing",
+"ipv6"
+],
+"related": [
+"ip",
+"subnet",
+"dhcp",
+"ethernet"
+],
+"next": [
+"tcp",
+"udp",
+"vlan"
+],
+"difficulty": "初級",
+"updated": "2026-06-08",
+"html": "<h2>概要</h2>\n<p><strong>IPv4</strong>（Internet Protocol version 4）と<strong>IPv6</strong>（Internet Protocol version 6）はどちらもネットワーク層でデバイスを識別し、パケットを届けるプロトコルです。アドレス枯渇問題を解決するためIPv6が設計されましたが、現在は両者が共存しています。</p>\n<h2>アドレス空間の違い</h2>\n<table>\n<thead>\n<tr>\n<th>項目</th>\n<th>IPv4</th>\n<th>IPv6</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>アドレス長</td>\n<td><strong>32ビット</strong></td>\n<td><strong>128ビット</strong></td>\n</tr>\n<tr>\n<td>表記</td>\n<td><code>192.168.1.10</code></td>\n<td><code>fe80::1a2b:3c4d:5e6f:7a8b</code></td>\n</tr>\n<tr>\n<td>総アドレス数</td>\n<td>約<strong>43億</strong></td>\n<td>約<strong>340澗</strong>（340兆×1兆×1兆）</td>\n</tr>\n<tr>\n<td>プレフィックス例</td>\n<td><code>192.168.1.0/24</code></td>\n<td><code>fd00::/8</code>（ユニークローカル）</td>\n</tr>\n</tbody>\n</table>\n<h2>ヘッダの違い</h2>\n<p><strong>IPv4ヘッダ</strong>（20〜60バイト）にはチェックサムや断片化フィールドが含まれていますが、<strong>IPv6ヘッダ</strong>は<strong>40バイト固定</strong>でシンプルです。チェックサムは削除され、断片化はエンドポイントが行います。これにより<strong>ルータの処理負荷が軽減</strong>されます。</p>\n<h2>主な改善点（IPv6）</h2>\n<ul>\n<li><strong>アドレス自動設定（SLAAC）</strong>: DHCPなしでアドレスを自動生成</li>\n<li><strong>IPsec標準サポート</strong>: セキュリティが設計段階から組み込まれている</li>\n<li><strong>マルチキャスト強化</strong>: ブロードキャストを廃止し、マルチキャストに統一</li>\n<li><strong>フロールーベル</strong>: リアルタイムトラフィックにQoS優先度を付与</li>\n<li><strong>拡張ヘッダ</strong>: オプションを拡張ヘッダに分離し、基本ヘッダをシンプルに</li>\n</ul>\n<h2>車載ネットワークでの使い分け</h2>\n<p>現在の車載Ethernetは主に<strong>IPv4</strong>が使用されていますが、V2X・クラウド連携・5Gを活用する次世代SDVでは<strong>IPv6</strong>への移行が進んでいます。</p>\n<table>\n<thead>\n<tr>\n<th>用途</th>\n<th>プロトコル</th>\n<th>理由</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>車内ECU間通信</td>\n<td>IPv4</td>\n<td>既存AUTOSAR・SOME/IP実装</td>\n</tr>\n<tr>\n<td>DoIP診断</td>\n<td>IPv4</td>\n<td>ISO 13400規格で定義</td>\n</tr>\n<tr>\n<td>V2X通信</td>\n<td>IPv6</td>\n<td>アドレス枯渇対策・モバイルIPv6</td>\n</tr>\n<tr>\n<td>OTAクラウド接続</td>\n<td>IPv4/IPv6</td>\n<td>デュアルスタック</td>\n</tr>\n<tr>\n<td>5G通信</td>\n<td>IPv6優先</td>\n<td>3GPP標準</td>\n</tr>\n</tbody>\n</table>\n<h2>移行戦略：デュアルスタック</h2>\n<p>多くのゲートウェイECUは<strong>デュアルスタック</strong>（IPv4とIPv6を同時に動作）で構成されており、段階的にIPv6へ移行できます。</p>\n<pre><code>ゲートウェイECU\n├── eth0: 192.168.1.1/24 (IPv4 ← 車内ECU向け)\n└── eth1: fd00::1/64 (IPv6 ← クラウド/V2X向け)\n</code></pre>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">graph TD\n  subgraph IPv4[&quot;IPv4 アドレス (32bit)&quot;]\n    A[&quot;192 . 168 . 1 . 10\\nネットワーク部 | ホスト部&quot;]\n  end\n  subgraph IPv6[&quot;IPv6 アドレス (128bit)&quot;]\n    B[&quot;fe80::1a2b:3c4d:5e6f:7a8b\\n(128bit = 32桁 16進数)&quot;]\n  end\n  GW[&quot;ゲートウェイECU\\n(デュアルスタック)&quot;]\n  ECU[&quot;車内ECU群\\n(IPv4: 192.168.x.x)&quot;] --&gt;|&quot;SOME/IP / DoIP&quot;| GW\n  GW --&gt;|&quot;IPv6 + 5G&quot;| CLOUD[&quot;クラウド / V2X\\nサーバー&quot;]\n</code></pre>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "ip",
+"title": "IP"
+},
+{
+"slug": "subnet",
+"title": "サブネット / **CIDR**"
+},
+{
+"slug": "dhcp",
+"title": "DHCP"
+},
+{
+"slug": "ethernet",
+"title": "Ethernet"
+}
+],
+"next_full": [
+{
+"slug": "tcp",
+"title": "TCP"
+},
+{
+"slug": "udp",
+"title": "UDP"
+},
+{
+"slug": "vlan",
+"title": "VLAN"
+}
+],
+"completed": false,
+"favorite": false
+},
 "lin": {
 "slug": "lin",
 "title": "LIN バス",
@@ -1751,6 +1874,10 @@
 {
 "slug": "ip",
 "title": "IP"
+},
+{
+"slug": "ipv4-ipv6",
+"title": "IPv4 と IPv6"
 }
 ],
 "related_full": [
@@ -1803,6 +1930,10 @@
 "updated": "2026-06-08",
 "html": "<h2>概要</h2>\n<p>UDP(User Datagram Protocol)は<strong>コネクションレス</strong>で、再送や順序保証を持たない軽量なトランスポート層プロトコルです。ハンドシェイクなしで即座に送れるため、<strong>低遅延</strong>・低オーバーヘッドが特長です。</p>\n<h2>なぜ必要か</h2>\n<p><strong>リアルタイム</strong>性が信頼性より重要な場面があります。例えば映像やセンサーストリームでは、1フレーム届かなくても再送を待つより次のデータを送る方が有益です。UDPはそうした用途に最適です。</p>\n<h2>自動運転での利用例</h2>\n<p>ADAS ECU間の<strong>低遅延</strong>通信、SOME/IPのイベント通知やサービスディスカバリ(SOME/IP-SD)、カメラ映像ストリームなどで多用されます。遅延が安全に直結する自動運転では、UDPの低遅延性が活きます。</p>\n<h2>関連用語</h2>\n<p>信頼性重視の <a class=\"term-link\" data-slug=\"tcp\" href=\"/glossary/tcp\">TCP</a> と対をなし、通信エンドポイントは <a class=\"term-link\" data-slug=\"socket\" href=\"/glossary/socket\">Socket</a> と <a class=\"term-link\" data-slug=\"port\" href=\"/glossary/port\">Port</a> で表します。車載では <a class=\"term-link\" data-slug=\"some-ip\" href=\"/glossary/some-ip\">SOME/IP</a> がUDP上で動きます。</p>\n<h2>次に学ぶべき内容</h2>\n<p>通信の宛先を細かく指定する <a class=\"term-link\" data-slug=\"port\" href=\"/glossary/port\">Port</a> を学びましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  LIDAR[&quot;LiDARセンサECU&quot;] --&gt;|UDPデータグラム\n点群データ| ADC[&quot;ADASドメインコントローラ&quot;]\n  subgraph UDP[&quot;UDPの特徴&quot;]\n    F1[&quot;コネクションレス&quot;] --- F2[&quot;低遅延&quot;] --- F3[&quot;順序保証なし&quot;]\n  end\n</code></pre>",
 "prereq_full": [
+{
+"slug": "ipv4-ipv6",
+"title": "IPv4 と IPv6"
+},
 {
 "slug": "tcp",
 "title": "TCP"
@@ -1859,7 +1990,12 @@
 ],
 "updated": "2026-06-08",
 "html": "<h2>概要</h2>\n<p>VLAN(Virtual LAN / <strong>IEEE 802.1Q</strong>)は、1本の物理 <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> を論理的に複数のネットワークに分割する技術です。フレームに「<strong>VLANタグ</strong>」を付けることで、同じケーブル上でもグループごとに通信を分離できます。</p>\n<h2>なぜ必要か</h2>\n<p>1つの物理網に異なる目的のトラフィックが混在すると、セキュリティやリアルタイム性に問題が出ます。VLANで論理的に分けることで、不要な通信の混入を防ぎ、帯域と安全性を確保できます。</p>\n<h2>自動運転での利用例</h2>\n<p>車載Ethernetでは、制御系・情報系(インフォテインメント)・診断系などをVLANで分離するのが一般的です。これにより、映像ストリームが制御通信を圧迫するのを防ぎ、安全に関わるトラフィックを保護します。</p>\n<h2>関連用語</h2>\n<p>土台が <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a>、宛先識別が <a class=\"term-link\" data-slug=\"mac-address\" href=\"/glossary/mac-address\">MAC Address</a>、時間保証と組み合わせる技術が <a class=\"term-link\" data-slug=\"tsn\" href=\"/glossary/tsn\">TSN(Time-Sensitive Networking)</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>リアルタイム性を保証する <a class=\"term-link\" data-slug=\"tsn\" href=\"/glossary/tsn\">TSN(Time-Sensitive Networking)</a> を学びましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  SW[&quot;Ethernetスイッチ&quot;]\n  subgraph VLAN10[&quot;VLAN 10 (ADASドメイン)&quot;]\n    CAM[カメラECU]\n    ADC[ADASコントローラ]\n  end\n  subgraph VLAN20[&quot;VLAN 20 (IVI・診断)&quot;]\n    IVI[IVIシステム]\n    TCU[テレマティクスECU]\n  end\n  CAM --- SW\n  ADC --- SW\n  IVI --- SW\n  TCU --- SW\n</code></pre>",
-"prereq_full": [],
+"prereq_full": [
+{
+"slug": "ipv4-ipv6",
+"title": "IPv4 と IPv6"
+}
+],
 "related_full": [
 {
 "slug": "ethernet",
@@ -2900,7 +3036,12 @@
 ],
 "updated": "2026-06-08",
 "html": "<h2>概要</h2>\n<p>Adaptive AUTOSARは、高性能プロセッサ上でLinux等のOSを動かしながら、機能安全と柔軟なソフトウェア配置を両立する車載ミドルウェア標準です。Classic AUTOSARが静的なマイコン向けであるのに対し、Adaptiveは動的なサービス追加・OTA更新・AI推論を想定して設計されています。</p>\n<h2>なぜ必要か</h2>\n<p>ADAS・自動運転ではGPU/NPU搭載の<strong>高性能SoC</strong>が必須となり、Classic AUTOSARのリアルタイムOSでは対応できません。Adaptive AUTOSARは<strong>POSIX</strong>準拠OS上で動き、アプリケーションを「Adaptive Application(AA)」として疎結合で組み合わせる設計を可能にします。</p>\n<h2>主要コンポーネント</h2>\n<ul>\n<li><strong><em>*ara::</em>*com</strong> — SOME/IPまたはDDSを使ったサービス通信API</li>\n<li><strong><em>*ara::</em>*exec</strong> — アプリケーションのライフサイクル管理(起動/停止)</li>\n<li><strong><em>*ara::</em>*diag</strong> — UDS診断のアダプティブ対応</li>\n<li><strong><em>*ara::</em>*update</strong> — OTA更新フレームワーク</li>\n<li><strong><em>*ara::</em>*crypto</strong> — 暗号化・鍵管理</li>\n</ul>\n<h2>自動運転での利用例</h2>\n<p>ADAS Domain Controllerに Adaptive AUTOSAR を採用し、物体認識・経路計画・車線維持の各機能を独立したAdaptive Applicationとして展開します。OTAでアルゴリズムを更新でき、フィールドでの機能改善が可能になります。通信は <a class=\"term-link\" data-slug=\"some-ip\" href=\"/glossary/some-ip\">SOME/IP</a> または <a class=\"term-link\" data-slug=\"ros2-dds\" href=\"/glossary/ros2-dds\">ROS2 DDS</a> で行われます。</p>\n<h2>関連用語</h2>\n<p>Classic版の <a class=\"term-link\" data-slug=\"autosar\" href=\"/glossary/autosar\">AUTOSAR</a> と対になる存在です。通信ミドルウェアとして <a class=\"term-link\" data-slug=\"some-ip\" href=\"/glossary/some-ip\">SOME/IP</a> を使い、ソフト定義車両全体の文脈は <a class=\"term-link\" data-slug=\"sdv\" href=\"/glossary/sdv\">SDV(<strong>ソフトウェア定義車両</strong>)</a> を参照。</p>\n<h2>次に学ぶべき内容</h2>\n<p>Adaptive AUTOSARが実現する <a class=\"term-link\" data-slug=\"sdv\" href=\"/glossary/sdv\">SDV(<strong>ソフトウェア定義車両</strong>)</a> の全体像を学びましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">graph TD\n  AA[&quot;Adaptive Application\n(物体認識 / 経路計画 / 車線維持)&quot;]\n  ARA[&quot;ara:: API\n(com / exec / diag / update / crypto)&quot;]\n  OS[&quot;POSIX OS (Linux / QNX)&quot;]\n  HW[&quot;高性能SoC (GPU / NPU搭載)&quot;]\n  AA --&gt; ARA --&gt; OS --&gt; HW\n</code></pre>",
-"prereq_full": [],
+"prereq_full": [
+{
+"slug": "micro-autobox",
+"title": "MicroAutoBox（dSPACE）"
+}
+],
 "related_full": [
 {
 "slug": "autosar",
@@ -3111,7 +3252,12 @@
 ],
 "updated": "2026-06-08",
 "html": "<h2>概要</h2>\n<p>OTA(Over-The-Air)更新は、無線通信を通じて車両のソフトウェア・ファームウェアをリモートで書き換える仕組みです。販売店に持ち込まずに最新機能の追加やバグ修正が可能となり、SDVの中核技術の一つです。</p>\n<h2>なぜ必要か</h2>\n<p>現代の車両はソフトウェアが数億行に達し、リコール対応や機能改善のたびにディーラー来店を強いていては運用コストが膨大になります。OTAにより、クラウドからECUへ直接パッチを配布し、ユーザーへの負担なく常に最新状態を維持できます。</p>\n<h2>OTAの流れ</h2>\n<ol>\n<li><strong>クラウドサーバー</strong>が<strong>差分更新</strong>パッケージ(Delta)を生成</li>\n<li><strong>Telematics Control Unit(TCU)</strong> が4G/5G経由でパッケージを受信・検証(署名確認)</li>\n<li><strong>OTA Manager</strong> がパッケージを各ドメインコントローラへ転送</li>\n<li>各ECUが <a class=\"term-link\" data-slug=\"uds\" href=\"/glossary/uds\">UDS (統合診断サービス)</a> のDownloadサービスを使ってファームウェアを書き換え</li>\n<li><strong>整合性チェック</strong>後にECUをリセット・起動</li>\n</ol>\n<h2>セキュリティ要件</h2>\n<p>改ざんされたファームウェアの書き込みを防ぐため、コード署名(RSA/ECDSA)と<strong>TLS</strong>暗号化が必須です。書き換え失敗時の<strong>ロールバック</strong>機能も安全設計の重要要素です。</p>\n<h2>自動運転での利用例</h2>\n<p>ADAS認識アルゴリズムのモデル更新、地図データの差分配信、法規制対応のパラメータ調整をOTAで実施します。Adaptive AUTOSARの <a class=\"term-link\" data-slug=\"adaptive-autosar\" href=\"/glossary/adaptive-autosar\">Adaptive AUTOSAR</a> はOTA更新を標準コンポーネントとして組み込んでいます。</p>\n<h2>関連用語</h2>\n<p>全体像は <a class=\"term-link\" data-slug=\"sdv\" href=\"/glossary/sdv\">SDV(<strong>ソフトウェア定義車両</strong>)</a>、書き換え手順は <a class=\"term-link\" data-slug=\"uds\" href=\"/glossary/uds\">UDS (統合診断サービス)</a>、ソフトウェア基盤は <a class=\"term-link\" data-slug=\"adaptive-autosar\" href=\"/glossary/adaptive-autosar\">Adaptive AUTOSAR</a> を参照。</p>\n<h2>次に学ぶべき内容</h2>\n<p>OTAを支える <a class=\"term-link\" data-slug=\"sdv\" href=\"/glossary/sdv\">SDV(<strong>ソフトウェア定義車両</strong>)</a> アーキテクチャ全体を理解しましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">sequenceDiagram\n  participant Cloud as OTAクラウドサーバー\n  participant TCU as テレマティクスECU\n  participant OTA as OTAマネージャー\n  participant ECU as ターゲットECU\n  Cloud-&gt;&gt;TCU: 差分パッケージ配信 (TLS暗号化)\n  TCU-&gt;&gt;TCU: 署名検証 (RSA/ECDSA)\n  TCU-&gt;&gt;OTA: パッケージ転送\n  OTA-&gt;&gt;ECU: UDS Download (0x34/0x36/0x37)\n  ECU-&gt;&gt;OTA: 整合性チェック完了\n  ECU-&gt;&gt;ECU: リセット・新FW起動\n</code></pre>",
-"prereq_full": [],
+"prereq_full": [
+{
+"slug": "micro-autobox",
+"title": "MicroAutoBox（dSPACE）"
+}
+],
 "related_full": [
 {
 "slug": "sdv",
@@ -3544,6 +3690,69 @@
 ],
 "completed": false,
 "favorite": false
+},
+"micro-autobox": {
+"slug": "micro-autobox",
+"title": "MicroAutoBox（dSPACE）",
+"level": 6,
+"category": "SDV",
+"tags": [
+"adas",
+"testing",
+"hil",
+"dspace",
+"autosar",
+"rapid-prototyping"
+],
+"related": [
+"autosar",
+"adaptive-autosar",
+"can",
+"ethernet",
+"uds"
+],
+"next": [
+"ota",
+"adaptive-autosar"
+],
+"difficulty": "上級",
+"updated": "2026-06-08",
+"html": "<h2>概要</h2>\n<p><strong>MicroAutoBox</strong>（マイクロオートボックス）は、<strong>dSPACE社</strong>が提供する<strong>ラピッドコントロールプロトタイピング（RCP）</strong>および<strong>ハードウェアインザループ（HiL）テスト</strong>向けのリアルタイムコントローラです。ADASや自動運転アルゴリズムを実車または実機環境で素早く検証するために広く使用されています。</p>\n<h2>主な機能</h2>\n<ul>\n<li><strong>リアルタイムOS</strong>（RTOSベース）で制御アルゴリズムをマイクロ秒単位で実行</li>\n<li><strong>Simulink/MATLAB</strong>モデルから自動コード生成（AUTOSAR対応）</li>\n<li><strong>CAN、CAN FD、LIN、FlexRay、Ethernet</strong>など主要な車載バスをサポート</li>\n<li><strong>FPGA拡張ボード</strong>（MicroAutoBox III）でセンサ処理や高速I/Oに対応</li>\n<li><strong>dSPACE SCALEXIO</strong>との組み合わせでフルHiLテスト環境を構築可能</li>\n</ul>\n<h2>世代と仕様</h2>\n<table>\n<thead>\n<tr>\n<th>モデル</th>\n<th>プロセッサ</th>\n<th>Ethernet</th>\n<th>CAN/FD</th>\n<th>主な用途</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>MicroAutoBox II</td>\n<td>PowerPC</td>\n<td>なし</td>\n<td>あり</td>\n<td>従来RCP</td>\n</tr>\n<tr>\n<td>MicroAutoBox III</td>\n<td>マルチコアARM</td>\n<td>最大4ポート</td>\n<td>あり</td>\n<td>ADAS/SDV RCP</td>\n</tr>\n</tbody>\n</table>\n<p><strong>MicroAutoBox III</strong>では車載Ethernet（100BASE-T1/1000BASE-T1）に対応し、カメラ・LiDARなどの高帯域センサデータを扱うADASプロトタイピングに適しています。</p>\n<h2>開発フロー</h2>\n<ol>\n<li><strong>Simulinkでモデル設計</strong> → 制御アルゴリズムをブロック線図で作成</li>\n<li><strong>自動コード生成</strong> → dSPACE RTI（Real-Time Interface）でCコード生成</li>\n<li><strong>MicroAutoBoxへ書き込み</strong> → リアルタイム実行</li>\n<li><strong>ControlDeskで監視・調整</strong> → パラメータをオンラインで変更・ログ取得</li>\n<li><strong>実車/実機テスト</strong> → 実際の車両ECUや模擬環境と接続して検証</li>\n</ol>\n<h2>自動運転・ADASでの利用</h2>\n<ul>\n<li><strong>センサフュージョンアルゴリズム</strong>の実車プロトタイピング（カメラ+レーダ統合）</li>\n<li><strong>車線維持・緊急ブレーキ（AEB）</strong>などの機能安全ロジック検証</li>\n<li><strong>DoIP/UDS診断</strong>の動作確認（ゲートウェイとして機能）</li>\n<li><strong>AUTOSAR Classic/Adaptive</strong>ソフトウェアコンポーネントの事前検証</li>\n<li>量産前に数週間でアルゴリズム改善サイクルを回せるのが最大のメリット</li>\n</ul>\n<h2>競合ツール</h2>\n<table>\n<thead>\n<tr>\n<th>ツール</th>\n<th>メーカー</th>\n<th>特徴</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>MicroAutoBox</td>\n<td>dSPACE</td>\n<td>最もシェアが高い</td>\n</tr>\n<tr>\n<td>SpeedGoat</td>\n<td>Speedgoat</td>\n<td>Simulinkネイティブ</td>\n</tr>\n<tr>\n<td>PROVEtech:HiL</td>\n<td>ETAS</td>\n<td>AUTOSAR特化</td>\n</tr>\n<tr>\n<td>VT System</td>\n<td>Vector</td>\n<td>車載バス特化</td>\n</tr>\n</tbody>\n</table>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  SIM[&quot;Simulink\\nモデル設計&quot;] --&gt;|&quot;dSPACE RTI\\n自動コード生成&quot;| MAB[&quot;MicroAutoBox III\\n(リアルタイム実行)&quot;]\n  MAB --&gt;|&quot;CAN/CAN FD&quot;| ECU[&quot;量産ECU\\n(ブレーキ/パワステ)&quot;]\n  MAB --&gt;|&quot;Ethernet\\n(100BASE-T1)&quot;| CAM[&quot;カメラ/LiDARセンサ&quot;]\n  PC[&quot;開発PC\\n(ControlDesk)&quot;] --&gt;|&quot;パラメータ調整\\n・ログ取得&quot;| MAB\n  subgraph HiL[&quot;HiL環境&quot;]\n    MAB\n    ECU\n    CAM\n  end\n</code></pre>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "autosar",
+"title": "AUTOSAR"
+},
+{
+"slug": "adaptive-autosar",
+"title": "Adaptive AUTOSAR"
+},
+{
+"slug": "can",
+"title": "CAN"
+},
+{
+"slug": "ethernet",
+"title": "Ethernet"
+},
+{
+"slug": "uds",
+"title": "UDS (統合診断サービス)"
+}
+],
+"next_full": [
+{
+"slug": "ota",
+"title": "OTA更新 (Over-The-Air)"
+},
+{
+"slug": "adaptive-autosar",
+"title": "Adaptive AUTOSAR"
+}
+],
+"completed": false,
+"favorite": false
 }
 },
 "recommend": {
@@ -3769,6 +3978,32 @@
 {
 "slug": "dhcp",
 "title": "DHCP"
+}
+],
+"ipv4-ipv6": [
+{
+"slug": "ip",
+"title": "IP"
+},
+{
+"slug": "subnet",
+"title": "サブネット / **CIDR**"
+},
+{
+"slug": "dhcp",
+"title": "DHCP"
+},
+{
+"slug": "ethernet",
+"title": "Ethernet"
+},
+{
+"slug": "tcp",
+"title": "TCP"
+},
+{
+"slug": "udp",
+"title": "UDP"
 }
 ],
 "lin": [
@@ -4589,6 +4824,10 @@
 "title": "Ethernet"
 },
 {
+"slug": "micro-autobox",
+"title": "MicroAutoBox（dSPACE）"
+},
+{
 "slug": "v2x",
 "title": "V2X通信 (Vehicle-to-Everything)"
 }
@@ -4658,6 +4897,32 @@
 "slug": "adaptive-autosar",
 "title": "Adaptive AUTOSAR"
 }
+],
+"micro-autobox": [
+{
+"slug": "adaptive-autosar",
+"title": "Adaptive AUTOSAR"
+},
+{
+"slug": "autosar",
+"title": "AUTOSAR"
+},
+{
+"slug": "can",
+"title": "CAN"
+},
+{
+"slug": "ethernet",
+"title": "Ethernet"
+},
+{
+"slug": "uds",
+"title": "UDS (統合診断サービス)"
+},
+{
+"slug": "ota",
+"title": "OTA更新 (Over-The-Air)"
+}
 ]
 },
 "roadmap": {
@@ -4697,6 +4962,11 @@
 {
 "slug": "ip",
 "title": "IP",
+"completed": false
+},
+{
+"slug": "ipv4-ipv6",
+"title": "IPv4 と IPv6",
 "completed": false
 },
 {
@@ -4891,6 +5161,11 @@
 "slug": "cybersecurity",
 "title": "車載サイバーセキュリティ (ISO 21434)",
 "completed": false
+},
+{
+"slug": "micro-autobox",
+"title": "MicroAutoBox（dSPACE）",
+"completed": false
 }
 ]
 },
@@ -4944,7 +5219,7 @@
 ],
 "progress": {
 "completed": 0,
-"total": 46
+"total": 48
 }
 },
 "home": {
@@ -5240,6 +5515,36 @@
 "difficulty": "初級",
 "updated": "2026-06-08",
 "excerpt": "IP(Internet Protocol)はOSIのネットワーク層(L3)を担い、データを「パケット」にして送信元IPから宛先IPへ届けます。ネットワークをまたいだ転送(**ルーティング**)を可能にする中核プロトコルです。IPv4とIPv",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "ipv4-ipv6",
+"title": "IPv4 と IPv6",
+"level": 2,
+"category": "TCP/IP",
+"tags": [
+"ip",
+"tcp-ip",
+"addressing",
+"routing",
+"ipv6"
+],
+"related": [
+"ip",
+"subnet",
+"dhcp",
+"ethernet"
+],
+"next": [
+"tcp",
+"udp",
+"vlan"
+],
+"difficulty": "初級",
+"updated": "2026-06-08",
+"excerpt": "**IPv4**（Internet Protocol version 4）と**IPv6**（Internet Protocol version 6）はどちらもネットワーク層でデバイスを識別し、パケットを届けるプロトコルです。アドレス枯渇問",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -5778,6 +6083,37 @@
 ],
 "updated": "2026-06-08",
 "excerpt": "TSN(Time-Sensitive Networking)は、標準 ethernet に「時間保証」を加える一連の規格(IEEE 802.1)です。**時刻同期**・**帯域予約**・優先制御により、重要なフレームを決められた時間内に確実",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "micro-autobox",
+"title": "MicroAutoBox（dSPACE）",
+"level": 6,
+"category": "SDV",
+"tags": [
+"adas",
+"testing",
+"hil",
+"dspace",
+"autosar",
+"rapid-prototyping"
+],
+"related": [
+"autosar",
+"adaptive-autosar",
+"can",
+"ethernet",
+"uds"
+],
+"next": [
+"ota",
+"adaptive-autosar"
+],
+"difficulty": "上級",
+"updated": "2026-06-08",
+"excerpt": "**MicroAutoBox**（マイクロオートボックス）は、**dSPACE社**が提供する**ラピッドコントロールプロトタイピング（RCP）**および**ハードウェアインザループ（HiL）テスト**向けのリアルタイムコントローラです。A",
 "views": 0,
 "completed": false,
 "favorite": false
