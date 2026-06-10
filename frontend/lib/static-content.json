@@ -243,6 +243,31 @@
 "favorite": false
 },
 {
+"slug": "fastapi",
+"title": "FastAPI（高速WebAPI開発）",
+"level": 2,
+"category": "Python",
+"related": [
+"python-basics",
+"pandas",
+"llm"
+],
+"next": [],
+"tags": [
+"fastapi",
+"python",
+"api",
+"web",
+"backend"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "FastAPIはPythonの型ヒントを活かした高速なWebAPIフレームワークです。自動的なOpenAPIドキュメント生成・型バリデーション・非同期処理をサポートし、機械学習モデルや分析ツールのAPIサーバーとして最も人気があります。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "icmp",
 "title": "ICMP / **ping**",
 "level": 2,
@@ -629,6 +654,33 @@
 "favorite": false
 },
 {
+"slug": "clustering",
+"title": "クラスタリング（K-Means・DBSCAN・階層型）",
+"level": 2,
+"category": "ML",
+"related": [
+"ml-basics",
+"scikit-learn",
+"dimensionality-reduction",
+"anomaly-detection"
+],
+"next": [],
+"tags": [
+"clustering",
+"unsupervised",
+"kmeans",
+"dbscan",
+"python",
+"scikit-learn"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "クラスタリングはラベルなしデータをグループに分ける教師なし学習です。車載ネットワークでは「同じ挙動パターンのECUをグループ化」「通信フローの分類」「異常なパケットの検出」に活用されます。PythonではScikit-learnが主要ライブ",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "subnet",
 "title": "サブネット / **CIDR**",
 "level": 2,
@@ -733,6 +785,33 @@
 "favorite": false
 },
 {
+"slug": "dimensionality-reduction",
+"title": "次元削減（PCA・t-SNE・UMAP）",
+"level": 2,
+"category": "ML",
+"related": [
+"ml-basics",
+"clustering",
+"scikit-learn",
+"numpy"
+],
+"next": [],
+"tags": [
+"pca",
+"tsne",
+"umap",
+"dimensionality-reduction",
+"python",
+"scikit-learn"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "次元削減は高次元データを低次元空間に圧縮する手法です。車載ネットワークでは数百のセンサーやプロトコル特徴量を2〜3次元に圧縮して可視化・分類に使います。PCAは線形、t-SNE・UMAPは非線形な構造を保持します。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "deep-learning",
 "title": "深層学習の基礎（ニューラルネットワーク）",
 "level": 2,
@@ -754,6 +833,33 @@
 "difficulty": "初級",
 "updated": "2026-06-10",
 "excerpt": "深層学習（Deep Learning）は多層のニューラルネットワークを使って、データから特徴を自動的に学習する機械学習の手法です。画像認識・音声認識・自然言語処理で従来手法を大きく上回る精度を実現し、生成AIの基盤にもなっています。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "statistics",
+"title": "統計学の基礎（確率・分布・検定）",
+"level": 2,
+"category": "Python",
+"related": [
+"numpy",
+"pandas",
+"data-analysis",
+"seaborn"
+],
+"next": [
+"data-analysis"
+],
+"tags": [
+"statistics",
+"python",
+"scipy",
+"data-science"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "統計学はデータから「確かなこと」と「不確かなこと」を区別する学問です。機械学習の精度評価・A/Bテスト・センサーデータ分析など、データを扱うすべての場面の基盤となります。PythonではSciPyとStatsmodelsが主要ライブラリです",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -944,6 +1050,34 @@
 "difficulty": "中級",
 "updated": "2026-06-10",
 "excerpt": "LLM（Large Language Model）はTransformerをベースに、巨大なテキストコーパスで学習した言語モデルです。GPT-4・Claude・Gemini・Llama などが代表例で、翻訳・要約・コード生成・質問応答・創作",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "langchain",
+"title": "LangChain（LLMアプリ開発フレームワーク）",
+"level": 3,
+"category": "GenAI",
+"related": [
+"llm",
+"rag",
+"prompt-engineering",
+"fastapi"
+],
+"next": [],
+"tags": [
+"langchain",
+"llm",
+"rag",
+"python",
+"langchain",
+"openai",
+"claude"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"excerpt": "LangChainはLLMを使ったアプリケーション開発を簡単にするPythonフレームワークです。プロンプト管理・チェーン処理・RAG（検索拡張生成）・エージェント・ツール呼び出しを統一したAPIで扱えます。OpenAI・Anthropic",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -1470,6 +1604,58 @@
 "favorite": false
 },
 {
+"slug": "time-series-analysis",
+"title": "時系列分析（ARIMA・予測・異常検知）",
+"level": 3,
+"category": "Python",
+"related": [
+"statistics",
+"pandas",
+"numpy",
+"anomaly-detection"
+],
+"next": [],
+"tags": [
+"time-series",
+"python",
+"statsmodels",
+"arima",
+"forecasting"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"excerpt": "時系列分析は時間順に並んだデータのパターンを発見・予測する手法です。車載ネットワークのトラフィック量の変化、ECU温度のトレンド、センサーデータの周期性など、ネットワーク診断・予兆保全に不可欠です。PythonではStatsmodels・P",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "object-detection",
+"title": "物体検出（YOLO・Faster R-CNN・SSD）",
+"level": 3,
+"category": "CV",
+"related": [
+"opencv",
+"image-processing",
+"cnn",
+"deep-learning"
+],
+"next": [],
+"tags": [
+"object-detection",
+"yolo",
+"faster-rcnn",
+"pytorch",
+"computer-vision"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"excerpt": "物体検出は画像中の物体の位置（バウンディングボックス）とクラスを同時に予測するタスクです。ADAS（先進運転支援）での歩行者・車両検出、工場の外観検査、カメラ映像からの異常検知など、車載・産業分野で広く使われます。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "image-processing",
 "title": "画像前処理・特徴抽出（深層学習向け）",
 "level": 3,
@@ -1491,6 +1677,32 @@
 "difficulty": "中級",
 "updated": "2026-06-10",
 "excerpt": "深層学習で画像を扱う際には、モデルに合わせた前処理（リサイズ・正規化・データ拡張）が精度に大きく影響します。PyTorchの `torchvision.transforms` と OpenCV を組み合わせた実践的な前処理パイプラインを解説",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "anomaly-detection",
+"title": "異常検知（Isolation Forest・Autoencoder・統計的手法）",
+"level": 3,
+"category": "ML",
+"related": [
+"ml-basics",
+"statistics",
+"time-series-analysis",
+"clustering"
+],
+"next": [],
+"tags": [
+"anomaly-detection",
+"isolation-forest",
+"autoencoder",
+"python",
+"scikit-learn"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"excerpt": "異常検知は正常パターンから外れたデータを自動識別する技術です。車載ネットワークでは「不正なCAN IDのパケット」「異常なデータレート急上昇」「未知のECUからの通信」など、サイバー攻撃・故障の早期発見に重要です。ラベルなしデータで学習でき",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -1726,6 +1938,61 @@
 ],
 "updated": "2026-06-10",
 "excerpt": "V2X(Vehicle-to-Everything)は、車両が道路インフラ・他車・歩行者・クラウドとリアルタイムに情報を交換する無線通信の総称です。V2V(車々間)、V2I(路車間)、V2P(歩行者)、V2N(ネットワーク)に分類されます。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "fine-tuning",
+"title": "ファインチューニング（LoRA・QLoRA・PEFT）",
+"level": 4,
+"category": "GenAI",
+"related": [
+"llm",
+"transformer",
+"deep-learning",
+"pytorch"
+],
+"next": [],
+"tags": [
+"fine-tuning",
+"lora",
+"qlora",
+"peft",
+"llm",
+"pytorch",
+"huggingface"
+],
+"difficulty": "上級",
+"updated": "2026-06-10",
+"excerpt": "ファインチューニングは事前学習済みLLMを特定タスク・ドメインに適応させる技術です。全パラメータを更新するFull Fine-tuningに対し、LoRA（Low-Rank Adaptation）・QLoRA（量子化+LoRA）は少ないGP",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "generative-models",
+"title": "生成モデル（GAN・VAE・Diffusion）",
+"level": 4,
+"category": "DL",
+"related": [
+"deep-learning",
+"pytorch",
+"cnn",
+"transformer"
+],
+"next": [],
+"tags": [
+"gan",
+"vae",
+"diffusion",
+"generative-ai",
+"pytorch",
+"deep-learning"
+],
+"difficulty": "上級",
+"updated": "2026-06-10",
+"excerpt": "生成モデルはデータの分布を学習して新しいサンプルを生成するモデルです。GAN（Generative Adversarial Network）・VAE（Variational Autoencoder）・Diffusionモデルが三大潮流です。",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -2351,6 +2618,46 @@
 "title": "ECU上でtcpdumpキャプチャする"
 }
 ],
+"completed": false,
+"favorite": false
+},
+"fastapi": {
+"slug": "fastapi",
+"title": "FastAPI（高速WebAPI開発）",
+"level": 2,
+"category": "Python",
+"related": [
+"python-basics",
+"pandas",
+"llm"
+],
+"next": [],
+"tags": [
+"fastapi",
+"python",
+"api",
+"web",
+"backend"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>FastAPIはPythonの型ヒントを活かした高速なWebAPIフレームワークです。自動的なOpenAPIドキュメント生成・型バリデーション・非同期処理をサポートし、機械学習モデルや分析ツールのAPIサーバーとして最も人気があります。</p>\n<h2>なぜ FastAPI か</h2>\n<table>\n<thead>\n<tr>\n<th></th>\n<th>Flask</th>\n<th>Django REST</th>\n<th>FastAPI</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>速度</td>\n<td>普通</td>\n<td>普通</td>\n<td><strong>高速（Starlette/uvicorn）</strong></td>\n</tr>\n<tr>\n<td>型バリデーション</td>\n<td>手動</td>\n<td>手動</td>\n<td><strong>自動（Pydantic）</strong></td>\n</tr>\n<tr>\n<td>APIドキュメント</td>\n<td>手動</td>\n<td>手動</td>\n<td><strong>自動生成（Swagger UI）</strong></td>\n</tr>\n<tr>\n<td>非同期</td>\n<td>△</td>\n<td>△</td>\n<td><strong>ネイティブ対応</strong></td>\n</tr>\n<tr>\n<td>学習コスト</td>\n<td>低い</td>\n<td>高い</td>\n<td>低い</td>\n</tr>\n</tbody>\n</table>\n<h2>基本的なAPI</h2>\n<pre><code class=\"language-python\">from fastapi import FastAPI, HTTPException\nfrom pydantic import BaseModel, Field\nfrom typing import Optional\nimport uvicorn\n\napp = FastAPI(\n    title=&quot;Network Copilot API&quot;,\n    description=&quot;車載ネットワーク分析ツール&quot;,\n    version=&quot;1.0.0&quot;,\n)\n\n# Pydantic でリクエスト/レスポンスの型を定義\nclass PacketSummary(BaseModel):\n    src_ip:    str\n    dst_ip:    str\n    protocol:  str\n    count:     int\n    bytes_total: int\n\nclass AnalysisResult(BaseModel):\n    total_packets: int\n    duration_sec:  float\n    top_flows:     list[PacketSummary]\n    anomaly_count: int = 0\n\n# GETエンドポイント\n@app.get(&quot;/api/health&quot;)\ndef health_check():\n    return {&quot;status&quot;: &quot;ok&quot;}\n\n# パスパラメータ\n@app.get(&quot;/api/articles/{slug}&quot;, summary=&quot;記事を取得&quot;)\ndef get_article(slug: str):\n    articles = {&quot;ethernet&quot;: {&quot;title&quot;: &quot;Ethernet&quot;, &quot;category&quot;: &quot;Ethernet&quot;}}\n    if slug not in articles:\n        raise HTTPException(status_code=404, detail=f&quot;Article '{slug}' not found&quot;)\n    return articles[slug]\n\n# クエリパラメータ\n@app.get(&quot;/api/articles&quot;, summary=&quot;記事一覧&quot;)\ndef list_articles(\n    category: Optional[str] = None,\n    limit:    int = 20,\n    offset:   int = 0,\n):\n    return {&quot;category&quot;: category, &quot;limit&quot;: limit, &quot;offset&quot;: offset}\n</code></pre>\n<h2>POSTエンドポイントとバリデーション</h2>\n<pre><code class=\"language-python\">from pydantic import BaseModel, Field, validator\n\nclass PcapUploadRequest(BaseModel):\n    filename: str       = Field(..., min_length=1, max_length=255)\n    max_packets: int    = Field(default=10000, ge=1, le=100000)\n    filter_expr: str    = Field(default=&quot;&quot;, description=&quot;BPFフィルタ式&quot;)\n\n    @validator(&quot;filename&quot;)\n    def filename_must_be_pcap(cls, v):\n        if not v.endswith((&quot;.pcap&quot;, &quot;.pcapng&quot;)):\n            raise ValueError(&quot;PCAPファイルのみ対応（.pcap / .pcapng）&quot;)\n        return v\n\nclass ChatRequest(BaseModel):\n    question: str  = Field(..., min_length=1, max_length=2000)\n    model:    str  = Field(default=&quot;claude-opus-4-8&quot;)\n\nclass ChatResponse(BaseModel):\n    answer:  str\n    sources: list[dict]\n    tokens:  int\n\n@app.post(&quot;/api/chat&quot;, response_model=ChatResponse, summary=&quot;AIチャット&quot;)\nasync def chat(req: ChatRequest):\n    # 実際の処理（例: LLMを呼ぶ）\n    return ChatResponse(\n        answer=f&quot;「{req.question}」への回答です。&quot;,\n        sources=[],\n        tokens=len(req.question),\n    )\n</code></pre>\n<h2>ファイルアップロード</h2>\n<pre><code class=\"language-python\">from fastapi import UploadFile, File, Form\nimport tempfile\nimport os\n\n@app.post(&quot;/api/pcap/upload&quot;, summary=&quot;PCAPファイルをアップロード&quot;)\nasync def upload_pcap(\n    file:        UploadFile = File(...),\n    max_packets: int        = Form(default=10000),\n):\n    if not file.filename.endswith((&quot;.pcap&quot;, &quot;.pcapng&quot;)):\n        raise HTTPException(status_code=400, detail=&quot;PCAPファイルのみ対応&quot;)\n\n    # 一時ファイルに保存して処理\n    with tempfile.NamedTemporaryFile(delete=False, suffix=&quot;.pcap&quot;) as tmp:\n        content = await file.read()\n        tmp.write(content)\n        tmp_path = tmp.name\n\n    try:\n        # ここで解析処理\n        result = {&quot;filename&quot;: file.filename, &quot;size_bytes&quot;: len(content)}\n    finally:\n        os.unlink(tmp_path)\n\n    return result\n</code></pre>\n<h2>非同期処理とバックグラウンドタスク</h2>\n<pre><code class=\"language-python\">from fastapi import BackgroundTasks\nimport asyncio\nimport httpx\n\n# 非同期エンドポイント（I/O待ちがあるならasyncにする）\n@app.get(&quot;/api/external&quot;)\nasync def fetch_external():\n    async with httpx.AsyncClient() as client:\n        r = await client.get(&quot;https://api.example.com/data&quot;, timeout=5.0)\n        return r.json()\n\n# バックグラウンドタスク（レスポンスを返しながら処理続行）\ndef send_notification(email: str, message: str):\n    print(f&quot;メール送信: {email} → {message}&quot;)   # 実際はSMTPなど\n\n@app.post(&quot;/api/analyze&quot;)\nasync def analyze(background_tasks: BackgroundTasks, slug: str):\n    background_tasks.add_task(send_notification, &quot;admin@example.com&quot;,\n                              f&quot;解析完了: {slug}&quot;)\n    return {&quot;status&quot;: &quot;processing&quot;, &quot;slug&quot;: slug}\n</code></pre>\n<h2>依存性注入（Depends）</h2>\n<pre><code class=\"language-python\">from fastapi import Depends\nfrom functools import lru_cache\n\nclass Settings:\n    app_name: str = &quot;Network Copilot&quot;\n    api_key:  str = &quot;secret&quot;\n    debug:    bool = False\n\n@lru_cache\ndef get_settings() -&gt; Settings:\n    return Settings()\n\n@app.get(&quot;/api/settings&quot;)\ndef read_settings(settings: Settings = Depends(get_settings)):\n    return {&quot;app&quot;: settings.app_name, &quot;debug&quot;: settings.debug}\n\n# DB接続の依存性注入例\ndef get_db():\n    db = {&quot;conn&quot;: &quot;sqlite:///app.db&quot;}\n    try:\n        yield db\n    finally:\n        pass   # クローズ処理\n\n@app.get(&quot;/api/data&quot;)\ndef get_data(db: dict = Depends(get_db)):\n    return {&quot;db&quot;: db[&quot;conn&quot;]}\n</code></pre>\n<h2>ミドルウェアとCORS</h2>\n<pre><code class=\"language-python\">from fastapi.middleware.cors import CORSMiddleware\nfrom fastapi.middleware.gzip import GZipMiddleware\nimport time\n\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=[&quot;http://localhost:3000&quot;, &quot;https://your-app.vercel.app&quot;],\n    allow_methods=[&quot;*&quot;],\n    allow_headers=[&quot;*&quot;],\n)\napp.add_middleware(GZipMiddleware, minimum_size=1000)\n\n# リクエストのログとタイミング\nfrom starlette.middleware.base import BaseHTTPMiddleware\nfrom starlette.requests import Request\n\nclass TimingMiddleware(BaseHTTPMiddleware):\n    async def dispatch(self, request: Request, call_next):\n        t0       = time.time()\n        response = await call_next(request)\n        elapsed  = time.time() - t0\n        response.headers[&quot;X-Process-Time&quot;] = f&quot;{elapsed:.3f}&quot;\n        print(f&quot;{request.method} {request.url.path} → {response.status_code} ({elapsed*1000:.1f}ms)&quot;)\n        return response\n\napp.add_middleware(TimingMiddleware)\n</code></pre>\n<h2>サーバーの起動</h2>\n<pre><code class=\"language-bash\"># 開発サーバー（ホットリロード）\nuvicorn main:app --reload --host 0.0.0.0 --port 8000\n\n# 本番（複数ワーカー）\nuvicorn main:app --workers 4 --host 0.0.0.0 --port 8000\n</code></pre>\n<p><code>http://localhost:8000/docs</code> で Swagger UI が自動生成されます。</p>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "python-basics",
+"title": "Python基礎（変数・リスト・辞書）"
+},
+{
+"slug": "pandas",
+"title": "Pandas（DataFrame・データ操作）"
+},
+{
+"slug": "llm",
+"title": "LLM（大規模言語モデル）"
+}
+],
+"next_full": [],
 "completed": false,
 "favorite": false
 },
@@ -3137,6 +3444,52 @@
 "completed": false,
 "favorite": false
 },
+"clustering": {
+"slug": "clustering",
+"title": "クラスタリング（K-Means・DBSCAN・階層型）",
+"level": 2,
+"category": "ML",
+"related": [
+"ml-basics",
+"scikit-learn",
+"dimensionality-reduction",
+"anomaly-detection"
+],
+"next": [],
+"tags": [
+"clustering",
+"unsupervised",
+"kmeans",
+"dbscan",
+"python",
+"scikit-learn"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>クラスタリングはラベルなしデータをグループに分ける教師なし学習です。車載ネットワークでは「同じ挙動パターンのECUをグループ化」「通信フローの分類」「異常なパケットの検出」に活用されます。PythonではScikit-learnが主要ライブラリです。</p>\n<h2>K-Meansクラスタリング</h2>\n<pre><code class=\"language-python\">import numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\nfrom sklearn.cluster import KMeans, DBSCAN, AgglomerativeClustering\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.metrics import silhouette_score\n\nnp.random.seed(42)\n\n# 車載ネットワークの通信フロー特徴量（例）\nn = 300\ndata = np.vstack([\n    np.random.normal([10, 100],  [2, 20],  (n//3, 2)),   # 制御系\n    np.random.normal([50, 500],  [5, 50],  (n//3, 2)),   # 診断系\n    np.random.normal([200, 50],  [20, 5],  (n//3, 2)),   # センサー系\n])\nfeature_names = [&quot;packet_rate&quot;, &quot;payload_size&quot;]\n\nscaler = StandardScaler()\nX = scaler.fit_transform(data)\n\n# K-Meansでk=3\nkm = KMeans(n_clusters=3, random_state=42, n_init=10)\nlabels_km = km.fit_predict(X)\nprint(f&quot;シルエット係数: {silhouette_score(X, labels_km):.3f}&quot;)\n\nplt.figure(figsize=(8, 5))\nfor k in range(3):\n    mask = labels_km == k\n    plt.scatter(data[mask, 0], data[mask, 1], label=f&quot;Cluster {k}&quot;, alpha=0.6)\ncenters = scaler.inverse_transform(km.cluster_centers_)\nplt.scatter(centers[:, 0], centers[:, 1], marker=&quot;*&quot;, s=200, c=&quot;red&quot;, zorder=5, label=&quot;重心&quot;)\nplt.xlabel(&quot;Packet Rate&quot;)\nplt.ylabel(&quot;Payload Size&quot;)\nplt.legend()\nplt.title(&quot;K-Means クラスタリング&quot;)\nplt.show()\n</code></pre>\n<h2>エルボー法とシルエット分析</h2>\n<pre><code class=\"language-python\">inertias   = []\nsilhouettes = []\nk_range = range(2, 10)\n\nfor k in k_range:\n    km = KMeans(n_clusters=k, random_state=42, n_init=10)\n    labels = km.fit_predict(X)\n    inertias.append(km.inertia_)\n    silhouettes.append(silhouette_score(X, labels))\n\nfig, axes = plt.subplots(1, 2, figsize=(12, 4))\n\naxes[0].plot(k_range, inertias, &quot;bo-&quot;)\naxes[0].set_xlabel(&quot;k&quot;)\naxes[0].set_ylabel(&quot;慣性（Inertia）&quot;)\naxes[0].set_title(&quot;エルボー法&quot;)\n\naxes[1].plot(k_range, silhouettes, &quot;ro-&quot;)\naxes[1].set_xlabel(&quot;k&quot;)\naxes[1].set_ylabel(&quot;シルエット係数&quot;)\naxes[1].set_title(&quot;シルエット分析（高いほど良い）&quot;)\n\nplt.tight_layout()\nplt.show()\n</code></pre>\n<h2>DBSCANクラスタリング</h2>\n<pre><code class=\"language-python\"># 密度ベース: 外れ値を自動検出できる\ndb = DBSCAN(eps=0.3, min_samples=5)\nlabels_db = db.fit_predict(X)\n\nn_clusters = len(set(labels_db)) - (1 if -1 in labels_db else 0)\nn_noise    = (labels_db == -1).sum()\nprint(f&quot;検出クラスタ数: {n_clusters}&quot;)\nprint(f&quot;外れ値（ノイズ）: {n_noise} 点&quot;)\n\nplt.figure(figsize=(8, 5))\nunique = set(labels_db)\ncolors = plt.cm.tab10(np.linspace(0, 1, len(unique)))\nfor k, col in zip(sorted(unique), colors):\n    mask = labels_db == k\n    label = &quot;ノイズ（異常）&quot; if k == -1 else f&quot;Cluster {k}&quot;\n    marker = &quot;x&quot; if k == -1 else &quot;o&quot;\n    plt.scatter(data[mask, 0], data[mask, 1], c=[col], label=label, marker=marker, alpha=0.6)\nplt.legend()\nplt.title(&quot;DBSCAN クラスタリング&quot;)\nplt.show()\n</code></pre>\n<h2>階層型クラスタリング（デンドログラム）</h2>\n<pre><code class=\"language-python\">from scipy.cluster.hierarchy import dendrogram, linkage\n\n# サンプル数を減らしてデンドログラムを見やすくする\nsample = X[:50]\nZ = linkage(sample, method=&quot;ward&quot;)\n\nplt.figure(figsize=(14, 5))\ndendrogram(Z, leaf_rotation=90, leaf_font_size=8)\nplt.title(&quot;階層型クラスタリング（Ward法）&quot;)\nplt.ylabel(&quot;距離&quot;)\nplt.tight_layout()\nplt.show()\n\n# 指定クラスタ数でラベル付け\nagg = AgglomerativeClustering(n_clusters=3, linkage=&quot;ward&quot;)\nlabels_agg = agg.fit_predict(X)\nprint(f&quot;Agglomerative シルエット: {silhouette_score(X, labels_agg):.3f}&quot;)\n</code></pre>\n<h2>クラスタリングの比較</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  A[クラスタリング手法] --&gt; B[K-Means]\n  A --&gt; C[DBSCAN]\n  A --&gt; D[階層型]\n\n  B --&gt; B1[&quot;✅ 高速・スケーラブル\\n❌ k を事前指定\\n❌ 外れ値に弱い&quot;]\n  C --&gt; C1[&quot;✅ 外れ値を自動検出\\n✅ 非球形クラスタ対応\\n❌ 高次元データに弱い&quot;]\n  D --&gt; D1[&quot;✅ kを決めなくてよい\\n✅ デンドログラムで可視化\\n❌ 大規模データに遅い&quot;]\n</code></pre>\n<h2>実用例：ネットワークフロー分類</h2>\n<pre><code class=\"language-python\">from sklearn.pipeline import Pipeline\nfrom sklearn.decomposition import PCA\n\n# パイプラインで前処理+次元削減+クラスタリング\npipe = Pipeline([\n    (&quot;scaler&quot;, StandardScaler()),\n    (&quot;pca&quot;,    PCA(n_components=2)),\n    (&quot;km&quot;,     KMeans(n_clusters=4, random_state=42, n_init=10)),\n])\n\n# より多くの特徴量があると仮定\nnp.random.seed(0)\nX_multi = np.random.randn(500, 8)  # 8次元特徴量\npipe.fit(X_multi)\ncluster_labels = pipe.named_steps[&quot;km&quot;].labels_\n\nprint(&quot;クラスタ別件数:&quot;)\nfor k, count in zip(*np.unique(cluster_labels, return_counts=True)):\n    print(f&quot;  Cluster {k}: {count} 件&quot;)\n</code></pre>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "ml-basics",
+"title": "機械学習の基礎"
+},
+{
+"slug": "scikit-learn",
+"title": "scikit-learn（機械学習ライブラリ）"
+},
+{
+"slug": "dimensionality-reduction",
+"title": "次元削減（PCA・t-SNE・UMAP）"
+},
+{
+"slug": "anomaly-detection",
+"title": "異常検知（Isolation Forest・Autoencoder・統計的手法）"
+}
+],
+"next_full": [],
+"completed": false,
+"favorite": false
+},
 "subnet": {
 "slug": "subnet",
 "title": "サブネット / **CIDR**",
@@ -3336,6 +3689,52 @@
 "completed": false,
 "favorite": false
 },
+"dimensionality-reduction": {
+"slug": "dimensionality-reduction",
+"title": "次元削減（PCA・t-SNE・UMAP）",
+"level": 2,
+"category": "ML",
+"related": [
+"ml-basics",
+"clustering",
+"scikit-learn",
+"numpy"
+],
+"next": [],
+"tags": [
+"pca",
+"tsne",
+"umap",
+"dimensionality-reduction",
+"python",
+"scikit-learn"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>次元削減は高次元データを低次元空間に圧縮する手法です。車載ネットワークでは数百のセンサーやプロトコル特徴量を2〜3次元に圧縮して可視化・分類に使います。PCAは線形、t-SNE・UMAPは非線形な構造を保持します。</p>\n<h2>PCA（主成分分析）</h2>\n<pre><code class=\"language-python\">import numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.decomposition import PCA\nfrom sklearn.manifold import TSNE\n\nnp.random.seed(42)\n\n# 車載ECU通信ログの特徴量（10次元）\nn_samples  = 500\nn_features = 10\nlabels_true = np.repeat([0, 1, 2, 3, 4], n_samples // 5)   # 5種類のECUグループ\n\n# 各グループは異なる中心を持つ\ncenters = np.random.randn(5, n_features) * 3\nX = np.vstack([\n    np.random.randn(n_samples // 5, n_features) + centers[i]\n    for i in range(5)\n])\n\nscaler = StandardScaler()\nX_scaled = scaler.fit_transform(X)\n\n# PCA\npca = PCA()\npca.fit(X_scaled)\n\n# 寄与率\nexplained = pca.explained_variance_ratio_\ncumsum    = np.cumsum(explained)\n\nfig, axes = plt.subplots(1, 2, figsize=(12, 5))\naxes[0].bar(range(1, n_features+1), explained * 100)\naxes[0].set_xlabel(&quot;主成分&quot;)\naxes[0].set_ylabel(&quot;寄与率 (%)&quot;)\naxes[0].set_title(&quot;各主成分の寄与率&quot;)\n\naxes[1].plot(range(1, n_features+1), cumsum * 100, &quot;bo-&quot;)\naxes[1].axhline(90, color=&quot;red&quot;, linestyle=&quot;--&quot;, label=&quot;90%ライン&quot;)\naxes[1].set_xlabel(&quot;主成分数&quot;)\naxes[1].set_ylabel(&quot;累積寄与率 (%)&quot;)\naxes[1].set_title(&quot;累積寄与率&quot;)\naxes[1].legend()\nplt.tight_layout()\nplt.show()\n\nn_components_90 = (cumsum &gt;= 0.90).argmax() + 1\nprint(f&quot;90%の分散を説明するのに必要な主成分: {n_components_90}&quot;)\n</code></pre>\n<h2>PCAで2次元に圧縮・可視化</h2>\n<pre><code class=\"language-python\">pca2 = PCA(n_components=2)\nX_pca = pca2.fit_transform(X_scaled)\n\nplt.figure(figsize=(8, 6))\ncolors = plt.cm.tab10(np.linspace(0, 1, 5))\nfor i, color in enumerate(colors):\n    mask = labels_true == i\n    plt.scatter(X_pca[mask, 0], X_pca[mask, 1], c=[color], label=f&quot;ECUグループ {i}&quot;, alpha=0.6, s=30)\nplt.xlabel(f&quot;PC1 ({explained[0]*100:.1f}%)&quot;)\nplt.ylabel(f&quot;PC2 ({explained[1]*100:.1f}%)&quot;)\nplt.legend()\nplt.title(&quot;PCA 2次元可視化&quot;)\nplt.show()\n\n# 主成分の負荷量（どの特徴量が重要か）\nloadings = pd.DataFrame(\n    pca2.components_.T,\n    columns=[&quot;PC1&quot;, &quot;PC2&quot;],\n    index=[f&quot;Feature_{i}&quot; for i in range(n_features)]\n)\nprint(loadings.abs().sort_values(&quot;PC1&quot;, ascending=False))\n</code></pre>\n<h2>t-SNE（非線形次元削減）</h2>\n<pre><code class=\"language-python\">tsne = TSNE(\n    n_components=2,\n    perplexity=30,\n    n_iter=1000,\n    random_state=42,\n    learning_rate=&quot;auto&quot;,\n    init=&quot;pca&quot;,\n)\nX_tsne = tsne.fit_transform(X_scaled)\n\nplt.figure(figsize=(8, 6))\nfor i, color in enumerate(colors):\n    mask = labels_true == i\n    plt.scatter(X_tsne[mask, 0], X_tsne[mask, 1], c=[color], label=f&quot;ECUグループ {i}&quot;, alpha=0.6, s=30)\nplt.legend()\nplt.title(&quot;t-SNE 2次元可視化&quot;)\nplt.show()\n</code></pre>\n<h2>UMAP（高速・グローバル構造保持）</h2>\n<pre><code class=\"language-python\"># pip install umap-learn\nimport umap\n\nreducer = umap.UMAP(n_components=2, random_state=42, n_neighbors=15, min_dist=0.1)\nX_umap  = reducer.fit_transform(X_scaled)\n\nplt.figure(figsize=(8, 6))\nfor i, color in enumerate(colors):\n    mask = labels_true == i\n    plt.scatter(X_umap[mask, 0], X_umap[mask, 1], c=[color], label=f&quot;ECUグループ {i}&quot;, alpha=0.6, s=30)\nplt.legend()\nplt.title(&quot;UMAP 2次元可視化&quot;)\nplt.show()\n</code></pre>\n<h2>手法の比較</h2>\n<pre><code class=\"language-mermaid\">graph TD\n  A[次元削減の目的] --&gt; B{線形構造で\\n十分か?}\n  B --&gt;|Yes| C[PCA]\n  B --&gt;|No| D{速度重視?}\n  D --&gt;|Yes| E[UMAP]\n  D --&gt;|No| F[t-SNE]\n\n  C --&gt; C1[&quot;✅ 高速・解釈可能\\n✅ 逆変換可能\\n❌ 非線形パターン苦手&quot;]\n  E --&gt; E1[&quot;✅ 大規模データ対応\\n✅ グローバル構造保持\\n❌ 再現性が不安定な場合&quot;]\n  F --&gt; F1[&quot;✅ 局所構造の可視化優秀\\n❌ 低速・大規模に不向き\\n❌ グローバル構造不保持&quot;]\n</code></pre>\n<h2>オートエンコーダー（深層次元削減）</h2>\n<pre><code class=\"language-python\">import torch\nimport torch.nn as nn\n\nclass Autoencoder(nn.Module):\n    def __init__(self, input_dim=10, latent_dim=2):\n        super().__init__()\n        self.encoder = nn.Sequential(\n            nn.Linear(input_dim, 32), nn.ReLU(),\n            nn.Linear(32, 16),        nn.ReLU(),\n            nn.Linear(16, latent_dim),\n        )\n        self.decoder = nn.Sequential(\n            nn.Linear(latent_dim, 16), nn.ReLU(),\n            nn.Linear(16, 32),         nn.ReLU(),\n            nn.Linear(32, input_dim),\n        )\n\n    def forward(self, x):\n        z = self.encoder(x)\n        return self.decoder(z), z\n\nmodel = Autoencoder(input_dim=10, latent_dim=2)\noptimizer = torch.optim.Adam(model.parameters(), lr=1e-3)\ncriterion = nn.MSELoss()\n\nX_tensor = torch.FloatTensor(X_scaled)\nfor epoch in range(200):\n    recon, z = model(X_tensor)\n    loss = criterion(recon, X_tensor)\n    optimizer.zero_grad()\n    loss.backward()\n    optimizer.step()\n\nprint(f&quot;最終損失: {loss.item():.4f}&quot;)\n\nwith torch.no_grad():\n    _, X_ae = model(X_tensor)\n    X_ae = X_ae.numpy()\n\nplt.figure(figsize=(8, 6))\nfor i, color in enumerate(colors):\n    mask = labels_true == i\n    plt.scatter(X_ae[mask, 0], X_ae[mask, 1], c=[color], label=f&quot;ECUグループ {i}&quot;, alpha=0.6, s=30)\nplt.legend()\nplt.title(&quot;オートエンコーダー 潜在空間&quot;)\nplt.show()\n</code></pre>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "ml-basics",
+"title": "機械学習の基礎"
+},
+{
+"slug": "clustering",
+"title": "クラスタリング（K-Means・DBSCAN・階層型）"
+},
+{
+"slug": "scikit-learn",
+"title": "scikit-learn（機械学習ライブラリ）"
+},
+{
+"slug": "numpy",
+"title": "NumPy（配列・行列演算）"
+}
+],
+"next_full": [],
+"completed": false,
+"favorite": false
+},
 "deep-learning": {
 "slug": "deep-learning",
 "title": "深層学習の基礎（ニューラルネットワーク）",
@@ -3377,6 +3776,57 @@
 {
 "slug": "pytorch",
 "title": "PyTorch（深層学習フレームワーク）"
+}
+],
+"completed": false,
+"favorite": false
+},
+"statistics": {
+"slug": "statistics",
+"title": "統計学の基礎（確率・分布・検定）",
+"level": 2,
+"category": "Python",
+"related": [
+"numpy",
+"pandas",
+"data-analysis",
+"seaborn"
+],
+"next": [
+"data-analysis"
+],
+"tags": [
+"statistics",
+"python",
+"scipy",
+"data-science"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>統計学はデータから「確かなこと」と「不確かなこと」を区別する学問です。機械学習の精度評価・A/Bテスト・センサーデータ分析など、データを扱うすべての場面の基盤となります。PythonではSciPyとStatsmodelsが主要ライブラリです。</p>\n<h2>基本統計量</h2>\n<pre><code class=\"language-python\">import numpy as np\nimport scipy.stats as stats\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\nnp.random.seed(42)\ndata = np.random.normal(loc=170, scale=8, size=300)   # 身長データ（cm）\n\nprint(f&quot;平均:     {np.mean(data):.2f}&quot;)\nprint(f&quot;中央値:   {np.median(data):.2f}&quot;)\nprint(f&quot;標準偏差: {np.std(data, ddof=1):.2f}&quot;)   # 不偏標準偏差\nprint(f&quot;分散:     {np.var(data, ddof=1):.2f}&quot;)\nprint(f&quot;歪度:     {stats.skew(data):.4f}&quot;)         # 0 = 対称\nprint(f&quot;尖度:     {stats.kurtosis(data):.4f}&quot;)     # 0 = 正規分布\nprint(f&quot;95%信頼区間: {stats.t.interval(0.95, len(data)-1, np.mean(data), stats.sem(data))}&quot;)\n</code></pre>\n<h2>主要な確率分布</h2>\n<pre><code class=\"language-python\">fig, axes = plt.subplots(2, 3, figsize=(14, 8))\n\nx = np.linspace(-4, 4, 300)\n\n# 正規分布（連続）\naxes[0,0].plot(x, stats.norm.pdf(x), color=&quot;steelblue&quot;, lw=2)\naxes[0,0].set_title(&quot;正規分布 N(0,1)&quot;)\n\n# t分布（小標本）\nfor df in [1, 5, 30]:\n    axes[0,1].plot(x, stats.t.pdf(x, df), label=f&quot;df={df}&quot;, lw=2)\naxes[0,1].plot(x, stats.norm.pdf(x), &quot;k--&quot;, label=&quot;Normal&quot;, lw=1.5)\naxes[0,1].set_title(&quot;t分布&quot;)\naxes[0,1].legend(fontsize=8)\n\n# カイ二乗分布\nx_chi = np.linspace(0, 20, 300)\nfor df in [2, 4, 8]:\n    axes[0,2].plot(x_chi, stats.chi2.pdf(x_chi, df), label=f&quot;k={df}&quot;, lw=2)\naxes[0,2].set_title(&quot;カイ二乗分布&quot;)\naxes[0,2].legend(fontsize=8)\n\n# ポアソン分布（離散）\nk = np.arange(0, 20)\nfor lam in [1, 4, 8]:\n    axes[1,0].bar(k + lam*0.1, stats.poisson.pmf(k, lam), width=0.3, alpha=0.6, label=f&quot;λ={lam}&quot;)\naxes[1,0].set_title(&quot;ポアソン分布&quot;)\naxes[1,0].legend(fontsize=8)\n\n# 二項分布\nk = np.arange(0, 21)\nfor p in [0.3, 0.5, 0.7]:\n    axes[1,1].plot(k, stats.binom.pmf(k, 20, p), &quot;o-&quot;, label=f&quot;p={p}&quot;, lw=2)\naxes[1,1].set_title(&quot;二項分布 n=20&quot;)\naxes[1,1].legend(fontsize=8)\n\n# 一様分布\naxes[1,2].fill_between([0, 1], [1, 1], color=&quot;steelblue&quot;, alpha=0.5)\naxes[1,2].set_ylim(0, 1.5)\naxes[1,2].set_title(&quot;一様分布 U(0,1)&quot;)\n\nplt.tight_layout()\nplt.show()\n</code></pre>\n<h2>仮説検定の流れ</h2>\n<pre><code class=\"language-mermaid\">graph TD\n  A[帰無仮説 H₀ を設定&lt;br/&gt;「差がない」] --&gt; B[有意水準 α を決める&lt;br/&gt;0.05 が慣例]\n  B --&gt; C[検定統計量を計算]\n  C --&gt; D[p値を求める]\n  D --&gt; E{p値 &lt; α?}\n  E --&gt;|Yes| F[H₀ を棄却&lt;br/&gt;有意差あり]\n  E --&gt;|No| G[H₀ を採択できない&lt;br/&gt;有意差なし]\n</code></pre>\n<h2>t検定（平均の比較）</h2>\n<pre><code class=\"language-python\">group_a = np.random.normal(75, 10, 50)   # A群のスコア\ngroup_b = np.random.normal(80, 12, 50)   # B群のスコア\n\n# 独立2標本t検定\nt_stat, p_val = stats.ttest_ind(group_a, group_b, equal_var=False)  # Welchのt検定\nprint(f&quot;t統計量: {t_stat:.3f}  p値: {p_val:.4f}&quot;)\nprint(&quot;有意差あり&quot; if p_val &lt; 0.05 else &quot;有意差なし&quot;)\n\n# 対応のあるt検定（ビフォー/アフター）\nbefore = np.random.normal(70, 8, 30)\nafter  = before + np.random.normal(5, 3, 30)   # 介入後に平均+5\nt2, p2 = stats.ttest_rel(before, after)\nprint(f&quot;\\n対応t検定: t={t2:.3f}, p={p2:.4f}&quot;)\n\n# 効果量（Cohen's d）\npooled_std = np.sqrt((group_a.std()**2 + group_b.std()**2) / 2)\ncohens_d   = (group_b.mean() - group_a.mean()) / pooled_std\nprint(f&quot;効果量 Cohen's d: {cohens_d:.3f}&quot;)   # 0.2=小 0.5=中 0.8=大\n</code></pre>\n<h2>分散分析（ANOVA）</h2>\n<pre><code class=\"language-python\"># 3グループ以上の平均差を一度に検定\ngroup_c = np.random.normal(85, 10, 50)\n\nf_stat, p_anova = stats.f_oneway(group_a, group_b, group_c)\nprint(f&quot;一元配置ANOVA: F={f_stat:.3f}, p={p_anova:.4f}&quot;)\n\n# 多重比較（Tukey HSD）\nfrom statsmodels.stats.multicomp import pairwise_tukeyhsd\nimport pandas as pd\n\ndata_all    = np.concatenate([group_a, group_b, group_c])\nlabels_all  = [&quot;A&quot;]*50 + [&quot;B&quot;]*50 + [&quot;C&quot;]*50\ntukey = pairwise_tukeyhsd(data_all, labels_all, alpha=0.05)\nprint(tukey.summary())\n</code></pre>\n<h2>相関と回帰の統計的検定</h2>\n<pre><code class=\"language-python\">x = np.random.randn(100)\ny = 0.6 * x + np.random.randn(100) * 0.8\n\n# ピアソン相関係数（線形）\nr, p = stats.pearsonr(x, y)\nprint(f&quot;ピアソンr: {r:.3f}  p値: {p:.4f}&quot;)\n\n# スピアマン相関（ノンパラ）\nrho, p_s = stats.spearmanr(x, y)\nprint(f&quot;スピアマンρ: {rho:.3f}  p値: {p_s:.4f}&quot;)\n\n# 正規性の検定\n_, p_norm = stats.shapiro(x[:50])   # Shapiro-Wilk（n&lt;=50）\nprint(f&quot;Shapiro-Wilk p値: {p_norm:.4f} ({'正規' if p_norm &gt; 0.05 else '非正規'})&quot;)\n</code></pre>\n<h2>次に学ぶべき内容</h2>\n<p>時系列データの統計的分析は <a class=\"term-link\" data-slug=\"time-series-analysis\" href=\"/glossary/time-series-analysis\">時系列分析（ARIMA・予測・異常検知）</a> で学びましょう。</p>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "numpy",
+"title": "NumPy（配列・行列演算）"
+},
+{
+"slug": "pandas",
+"title": "Pandas（DataFrame・データ操作）"
+},
+{
+"slug": "data-analysis",
+"title": "データ分析の流れ（EDA）"
+},
+{
+"slug": "seaborn",
+"title": "Seaborn（統計可視化）"
+}
+],
+"next_full": [
+{
+"slug": "data-analysis",
+"title": "データ分析の流れ（EDA）"
 }
 ],
 "completed": false,
@@ -3757,6 +4207,53 @@
 "title": "プロンプトエンジニアリング"
 }
 ],
+"completed": false,
+"favorite": false
+},
+"langchain": {
+"slug": "langchain",
+"title": "LangChain（LLMアプリ開発フレームワーク）",
+"level": 3,
+"category": "GenAI",
+"related": [
+"llm",
+"rag",
+"prompt-engineering",
+"fastapi"
+],
+"next": [],
+"tags": [
+"langchain",
+"llm",
+"rag",
+"python",
+"langchain",
+"openai",
+"claude"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>LangChainはLLMを使ったアプリケーション開発を簡単にするPythonフレームワークです。プロンプト管理・チェーン処理・RAG（検索拡張生成）・エージェント・ツール呼び出しを統一したAPIで扱えます。OpenAI・Anthropic・ローカルLLMなど多様なモデルに対応します。</p>\n<h2>基本セットアップ</h2>\n<pre><code class=\"language-python\"># pip install langchain langchain-anthropic langchain-openai\nfrom langchain_anthropic import ChatAnthropic\nfrom langchain_openai import ChatOpenAI\nfrom langchain_core.messages import HumanMessage, SystemMessage, AIMessage\nfrom langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder\n\n# Anthropic Claude\nllm = ChatAnthropic(\n    model=&quot;claude-opus-4-8&quot;,\n    temperature=0.7,\n    max_tokens=1024,\n)\n\n# シンプルな呼び出し\nresponse = llm.invoke(&quot;CANバスとは何ですか？一文で説明してください。&quot;)\nprint(response.content)\n\n# メッセージリストで呼び出し\nmessages = [\n    SystemMessage(content=&quot;あなたは車載ネットワークの専門家です。&quot;),\n    HumanMessage(content=&quot;SOME/IPとは何ですか？&quot;),\n]\nresponse = llm.invoke(messages)\nprint(response.content)\n</code></pre>\n<h2>プロンプトテンプレート</h2>\n<pre><code class=\"language-python\">from langchain_core.prompts import ChatPromptTemplate\nfrom langchain_core.output_parsers import StrOutputParser\n\n# テンプレートの定義\nprompt = ChatPromptTemplate.from_messages([\n    (&quot;system&quot;, &quot;あなたは{domain}の専門家です。{tone}で回答してください。&quot;),\n    (&quot;human&quot;,  &quot;{question}&quot;),\n])\n\n# LCELチェーン（| 演算子でパイプライン構成）\nchain = prompt | llm | StrOutputParser()\n\nanswer = chain.invoke({\n    &quot;domain&quot;:   &quot;車載ネットワーク&quot;,\n    &quot;tone&quot;:     &quot;技術者向けに簡潔&quot;,\n    &quot;question&quot;: &quot;DoIPとは何ですか？&quot;,\n})\nprint(answer)\n</code></pre>\n<h2>会話履歴の管理</h2>\n<pre><code class=\"language-python\">from langchain_core.chat_history import InMemoryChatMessageHistory\nfrom langchain_core.runnables.history import RunnableWithMessageHistory\n\nstore: dict[str, InMemoryChatMessageHistory] = {}\n\ndef get_history(session_id: str) -&gt; InMemoryChatMessageHistory:\n    if session_id not in store:\n        store[session_id] = InMemoryChatMessageHistory()\n    return store[session_id]\n\nprompt_with_history = ChatPromptTemplate.from_messages([\n    (&quot;system&quot;, &quot;あなたは車載ネットワークのアシスタントです。&quot;),\n    MessagesPlaceholder(&quot;history&quot;),\n    (&quot;human&quot;, &quot;{input}&quot;),\n])\n\nchain_with_history = RunnableWithMessageHistory(\n    prompt_with_history | llm | StrOutputParser(),\n    get_history,\n    input_messages_key=&quot;input&quot;,\n    history_messages_key=&quot;history&quot;,\n)\n\nsession = {&quot;configurable&quot;: {&quot;session_id&quot;: &quot;user_001&quot;}}\nr1 = chain_with_history.invoke({&quot;input&quot;: &quot;CAN FDとは何ですか？&quot;}, config=session)\nr2 = chain_with_history.invoke({&quot;input&quot;: &quot;先ほどの話の続きで、用途は？&quot;}, config=session)\nprint(r1)\nprint(r2)\n</code></pre>\n<h2>RAGパイプラインの構築</h2>\n<pre><code class=\"language-python\">from langchain_community.vectorstores import FAISS\nfrom langchain_community.embeddings  import HuggingFaceEmbeddings\nfrom langchain_core.documents        import Document\nfrom langchain.chains                import create_retrieval_chain\nfrom langchain.chains.combine_documents import create_stuff_documents_chain\n\n# ドキュメントの準備\ndocs = [\n    Document(page_content=&quot;CAN（Controller Area Network）は車載ネットワークプロトコル。最大1Mbps。&quot;, metadata={&quot;source&quot;: &quot;can.md&quot;}),\n    Document(page_content=&quot;SOME/IPはEthernet上でのSOA通信プロトコル。BMW・Mercedes採用。&quot;,        metadata={&quot;source&quot;: &quot;some-ip.md&quot;}),\n    Document(page_content=&quot;DoIPは診断通信をEthernetで行うプロトコル。ISO 13400準拠。&quot;,            metadata={&quot;source&quot;: &quot;doip.md&quot;}),\n]\n\n# ベクトルストアの作成\nembeddings = HuggingFaceEmbeddings(model_name=&quot;sentence-transformers/all-MiniLM-L6-v2&quot;)\nvectorstore = FAISS.from_documents(docs, embeddings)\nretriever   = vectorstore.as_retriever(search_kwargs={&quot;k&quot;: 2})\n\n# RAGチェーンの組み立て\nqa_prompt = ChatPromptTemplate.from_messages([\n    (&quot;system&quot;, &quot;以下のコンテキストを使って質問に答えてください。\\n\\nコンテキスト:\\n{context}&quot;),\n    (&quot;human&quot;,  &quot;{input}&quot;),\n])\ndoc_chain = create_stuff_documents_chain(llm, qa_prompt)\nrag_chain = create_retrieval_chain(retriever, doc_chain)\n\nresult = rag_chain.invoke({&quot;input&quot;: &quot;診断通信をEthernetで行うには？&quot;})\nprint(result[&quot;answer&quot;])\nprint(&quot;参照ソース:&quot;, [d.metadata[&quot;source&quot;] for d in result[&quot;context&quot;]])\n</code></pre>\n<h2>ツール呼び出し（Function Calling）</h2>\n<pre><code class=\"language-python\">from langchain_core.tools import tool\nfrom langchain.agents import create_tool_calling_agent, AgentExecutor\n\n@tool\ndef get_protocol_info(protocol_name: str) -&gt; str:\n    &quot;&quot;&quot;車載プロトコルの技術情報を返す&quot;&quot;&quot;\n    db = {\n        &quot;CAN&quot;:    &quot;最大1Mbps, 11/29bitID, 車体系ECU制御に使用&quot;,\n        &quot;SOME/IP&quot;:&quot;Ethernet上SOA, サービス検出(SD), BMW/Daimler採用&quot;,\n        &quot;DoIP&quot;:   &quot;ISO 13400, TCP/UDP, 診断通信をEthernetで実施&quot;,\n    }\n    return db.get(protocol_name.upper(), &quot;プロトコル情報が見つかりません&quot;)\n\n@tool\ndef calculate_bus_load(message_rate: float, payload_bytes: int, bitrate_kbps: float = 500) -&gt; str:\n    &quot;&quot;&quot;CANバス負荷率を計算する&quot;&quot;&quot;\n    bits_per_frame = 47 + payload_bytes * 8    # CANフレームのオーバーヘッド込み\n    load = (message_rate * bits_per_frame) / (bitrate_kbps * 1000) * 100\n    return f&quot;バス負荷率: {load:.1f}%（{bitrate_kbps}kbps時）&quot;\n\ntools = [get_protocol_info, calculate_bus_load]\n\nagent_prompt = ChatPromptTemplate.from_messages([\n    (&quot;system&quot;, &quot;あなたは車載ネットワークのアシスタントです。ツールを使って正確に回答してください。&quot;),\n    (&quot;human&quot;, &quot;{input}&quot;),\n    MessagesPlaceholder(&quot;agent_scratchpad&quot;),\n])\n\nagent = create_tool_calling_agent(llm, tools, agent_prompt)\nexecutor = AgentExecutor(agent=agent, tools=tools, verbose=True)\n\nresult = executor.invoke({&quot;input&quot;: &quot;SOME/IPの説明と、100msg/sで8バイトのCANバス負荷率を教えて&quot;})\nprint(result[&quot;output&quot;])\n</code></pre>\n<h2>ストリーミングレスポンス</h2>\n<pre><code class=\"language-python\">from fastapi import FastAPI\nfrom fastapi.responses import StreamingResponse\n\napp = FastAPI()\n\n@app.get(&quot;/stream&quot;)\nasync def stream_answer(question: str):\n    async def generator():\n        async for chunk in llm.astream(question):\n            yield chunk.content\n\n    return StreamingResponse(generator(), media_type=&quot;text/plain&quot;)\n</code></pre>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "llm",
+"title": "LLM（大規模言語モデル）"
+},
+{
+"slug": "rag",
+"title": "RAG（検索拡張生成）"
+},
+{
+"slug": "prompt-engineering",
+"title": "プロンプトエンジニアリング"
+},
+{
+"slug": "fastapi",
+"title": "FastAPI（高速WebAPI開発）"
+}
+],
+"next_full": [],
 "completed": false,
 "favorite": false
 },
@@ -4725,6 +5222,10 @@
 {
 "slug": "seaborn",
 "title": "Seaborn（統計可視化）"
+},
+{
+"slug": "statistics",
+"title": "統計学の基礎（確率・分布・検定）"
 }
 ],
 "related_full": [
@@ -4799,6 +5300,96 @@
 "completed": false,
 "favorite": false
 },
+"time-series-analysis": {
+"slug": "time-series-analysis",
+"title": "時系列分析（ARIMA・予測・異常検知）",
+"level": 3,
+"category": "Python",
+"related": [
+"statistics",
+"pandas",
+"numpy",
+"anomaly-detection"
+],
+"next": [],
+"tags": [
+"time-series",
+"python",
+"statsmodels",
+"arima",
+"forecasting"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>時系列分析は時間順に並んだデータのパターンを発見・予測する手法です。車載ネットワークのトラフィック量の変化、ECU温度のトレンド、センサーデータの周期性など、ネットワーク診断・予兆保全に不可欠です。PythonではStatsmodels・Prophet・scikit-learnが主要ツールです。</p>\n<h2>時系列データの構造</h2>\n<pre><code class=\"language-python\">import numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport matplotlib.dates as mdates\n\nnp.random.seed(42)\n\n# 車載CANバスのトラフィック量（1時間ごと、30日間）\ndates = pd.date_range(&quot;2024-01-01&quot;, periods=720, freq=&quot;h&quot;)\ntrend     = np.linspace(100, 150, 720)                    # 上昇トレンド\nseasonal  = 20 * np.sin(2 * np.pi * np.arange(720) / 24) # 日次周期\nnoise     = np.random.normal(0, 5, 720)\ntraffic   = trend + seasonal + noise\n\nts = pd.Series(traffic, index=dates, name=&quot;CAN traffic (msg/s)&quot;)\n\nfig, axes = plt.subplots(3, 1, figsize=(12, 8))\nts.plot(ax=axes[0], title=&quot;元の時系列&quot;)\nts.rolling(24).mean().plot(ax=axes[1], title=&quot;移動平均（24h）&quot;)\nts.diff(24).plot(ax=axes[2], title=&quot;季節差分（24h）&quot;)\nplt.tight_layout()\nplt.show()\n</code></pre>\n<h2>時系列の分解</h2>\n<pre><code class=\"language-python\">from statsmodels.tsa.seasonal import seasonal_decompose\n\nresult = seasonal_decompose(ts, model=&quot;additive&quot;, period=24)\n\nfig, axes = plt.subplots(4, 1, figsize=(12, 10))\nresult.observed.plot(ax=axes[0],  title=&quot;元データ&quot;)\nresult.trend.plot(ax=axes[1],     title=&quot;トレンド&quot;)\nresult.seasonal.plot(ax=axes[2],  title=&quot;季節性&quot;)\nresult.resid.plot(ax=axes[3],     title=&quot;残差&quot;)\nplt.tight_layout()\nplt.show()\n\nprint(f&quot;季節成分の振幅: {result.seasonal.max() - result.seasonal.min():.2f}&quot;)\nprint(f&quot;残差の標準偏差: {result.resid.dropna().std():.2f}&quot;)\n</code></pre>\n<h2>定常性の検定（ADF検定）</h2>\n<pre><code class=\"language-python\">from statsmodels.tsa.stattools import adfuller, kpss\n\ndef check_stationarity(series, name=&quot;&quot;):\n    adf_stat, adf_p, _, _, crit, _ = adfuller(series.dropna())\n    print(f&quot;=== {name} ===&quot;)\n    print(f&quot;ADF統計量: {adf_stat:.4f}  p値: {adf_p:.4f}&quot;)\n    print(f&quot;臨界値(5%): {crit['5%']:.4f}&quot;)\n    print(&quot;→ 定常&quot; if adf_p &lt; 0.05 else &quot;→ 非定常（差分が必要）&quot;)\n\ncheck_stationarity(ts, &quot;元データ&quot;)\ncheck_stationarity(ts.diff(1).dropna(), &quot;1階差分&quot;)\ncheck_stationarity(ts.diff(24).dropna(), &quot;24h季節差分&quot;)\n</code></pre>\n<h2>ARIMAモデル</h2>\n<pre><code class=\"language-python\">from statsmodels.tsa.arima.model import ARIMA\nfrom statsmodels.graphics.tsaplots import plot_acf, plot_pacf\n\n# ACF/PACFでパラメータのヒントを得る\nfig, axes = plt.subplots(1, 2, figsize=(12, 4))\nplot_acf(ts.diff(1).dropna(), lags=48, ax=axes[0])\nplot_pacf(ts.diff(1).dropna(), lags=48, ax=axes[1])\nplt.tight_layout()\nplt.show()\n\n# 学習データ: 最初の700点、テスト: 残り20点\ntrain, test = ts[:700], ts[700:]\n\nmodel  = ARIMA(train, order=(2, 1, 2))\nresult = model.fit()\nprint(result.summary())\n\n# 予測\nforecast = result.forecast(steps=20)\nmae = np.abs(forecast.values - test.values).mean()\nprint(f&quot;\\nMAE: {mae:.2f}&quot;)\n\nplt.figure(figsize=(12, 4))\ntrain[-100:].plot(label=&quot;学習データ&quot;)\ntest.plot(label=&quot;実データ&quot;, color=&quot;green&quot;)\nforecast.plot(label=&quot;予測&quot;, color=&quot;red&quot;, linestyle=&quot;--&quot;)\nplt.legend()\nplt.title(&quot;ARIMAによる予測&quot;)\nplt.show()\n</code></pre>\n<h2>SARIMAXモデル（季節性あり）</h2>\n<pre><code class=\"language-python\">from statsmodels.tsa.statespace.sarimax import SARIMAX\n\n# SARIMA(p,d,q)(P,D,Q,s)\n# s=24 → 24時間周期の季節性\nmodel_sarima = SARIMAX(\n    train,\n    order=(1, 1, 1),\n    seasonal_order=(1, 1, 1, 24),\n    enforce_stationarity=False,\n    enforce_invertibility=False,\n)\nresult_sarima = model_sarima.fit(disp=False)\nforecast_sarima = result_sarima.forecast(steps=20)\n\nmae_sarima = np.abs(forecast_sarima.values - test.values).mean()\nprint(f&quot;SARIMA MAE: {mae_sarima:.2f}  (ARIMA MAE: {mae:.2f})&quot;)\n</code></pre>\n<h2>Prophetによる予測</h2>\n<pre><code class=\"language-python\"># pip install prophet\nfrom prophet import Prophet\n\ndf = ts.reset_index()\ndf.columns = [&quot;ds&quot;, &quot;y&quot;]\n\nm = Prophet(\n    yearly_seasonality=False,\n    weekly_seasonality=False,\n    daily_seasonality=True,\n    changepoint_prior_scale=0.05,\n)\nm.fit(df[:700])\n\nfuture   = m.make_future_dataframe(periods=20, freq=&quot;h&quot;)\nforecast = m.predict(future)\n\nfig = m.plot(forecast)\nfig2 = m.plot_components(forecast)\nplt.show()\n\nmae_prophet = np.abs(\n    forecast[&quot;yhat&quot;].iloc[700:].values - ts[700:].values\n).mean()\nprint(f&quot;Prophet MAE: {mae_prophet:.2f}&quot;)\n</code></pre>\n<h2>時系列クロスバリデーション</h2>\n<pre><code class=\"language-python\">from sklearn.model_selection import TimeSeriesSplit\nfrom sklearn.linear_model import Ridge\n\n# 特徴量エンジニアリング\ndef make_features(series, lags=24):\n    df = pd.DataFrame({&quot;y&quot;: series})\n    for lag in range(1, lags + 1):\n        df[f&quot;lag_{lag}&quot;] = df[&quot;y&quot;].shift(lag)\n    df[&quot;hour&quot;]    = series.index.hour\n    df[&quot;dayofweek&quot;] = series.index.dayofweek\n    return df.dropna()\n\nfeat_df = make_features(ts)\nX = feat_df.drop(&quot;y&quot;, axis=1)\ny = feat_df[&quot;y&quot;]\n\ntscv = TimeSeriesSplit(n_splits=5)\nscores = []\nfor train_idx, test_idx in tscv.split(X):\n    model = Ridge()\n    model.fit(X.iloc[train_idx], y.iloc[train_idx])\n    pred  = model.predict(X.iloc[test_idx])\n    mae   = np.abs(pred - y.iloc[test_idx].values).mean()\n    scores.append(mae)\n\nprint(f&quot;時系列CV MAE: {np.mean(scores):.2f} ± {np.std(scores):.2f}&quot;)\n</code></pre>\n<h2>次に学ぶべき内容</h2>\n<p>時系列データの異常検知は <a class=\"term-link\" data-slug=\"anomaly-detection\" href=\"/glossary/anomaly-detection\">異常検知（Isolation Forest・Autoencoder・統計的手法）</a> で学びましょう。</p>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "statistics",
+"title": "統計学の基礎（確率・分布・検定）"
+},
+{
+"slug": "pandas",
+"title": "Pandas（DataFrame・データ操作）"
+},
+{
+"slug": "numpy",
+"title": "NumPy（配列・行列演算）"
+},
+{
+"slug": "anomaly-detection",
+"title": "異常検知（Isolation Forest・Autoencoder・統計的手法）"
+}
+],
+"next_full": [],
+"completed": false,
+"favorite": false
+},
+"object-detection": {
+"slug": "object-detection",
+"title": "物体検出（YOLO・Faster R-CNN・SSD）",
+"level": 3,
+"category": "CV",
+"related": [
+"opencv",
+"image-processing",
+"cnn",
+"deep-learning"
+],
+"next": [],
+"tags": [
+"object-detection",
+"yolo",
+"faster-rcnn",
+"pytorch",
+"computer-vision"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>物体検出は画像中の物体の位置（バウンディングボックス）とクラスを同時に予測するタスクです。ADAS（先進運転支援）での歩行者・車両検出、工場の外観検査、カメラ映像からの異常検知など、車載・産業分野で広く使われます。</p>\n<h2>物体検出の基礎概念</h2>\n<pre><code class=\"language-python\">import numpy as np\nimport matplotlib.pyplot as plt\nimport matplotlib.patches as patches\n\n# バウンディングボックスの表現形式\n# XYXY形式: [x1, y1, x2, y2]（左上・右下の座標）\n# XYWH形式: [cx, cy, w, h]（中心座標・幅・高さ）\n\ndef xyxy_to_xywh(box):\n    x1, y1, x2, y2 = box\n    return [(x1+x2)/2, (y1+y2)/2, x2-x1, y2-y1]\n\ndef xywh_to_xyxy(box):\n    cx, cy, w, h = box\n    return [cx-w/2, cy-h/2, cx+w/2, cy+h/2]\n\n# IoU（Intersection over Union）- 検出精度の指標\ndef compute_iou(box1, box2):\n    &quot;&quot;&quot;box: [x1, y1, x2, y2]&quot;&quot;&quot;\n    xi1 = max(box1[0], box2[0])\n    yi1 = max(box1[1], box2[1])\n    xi2 = min(box1[2], box2[2])\n    yi2 = min(box1[3], box2[3])\n\n    inter = max(0, xi2-xi1) * max(0, yi2-yi1)\n    area1 = (box1[2]-box1[0]) * (box1[3]-box1[1])\n    area2 = (box2[2]-box2[0]) * (box2[3]-box2[1])\n    union = area1 + area2 - inter\n    return inter / union if union &gt; 0 else 0\n\ngt  = [50, 50, 200, 200]\npred = [60, 60, 210, 190]\nprint(f&quot;IoU: {compute_iou(gt, pred):.3f}&quot;)  # 0.7以上が一般的な閾値\n</code></pre>\n<h2>Non-Maximum Suppression（NMS）</h2>\n<pre><code class=\"language-python\">def nms(boxes, scores, iou_threshold=0.5):\n    &quot;&quot;&quot;複数の重複ボックスから最良のものを選ぶ&quot;&quot;&quot;\n    idxs = np.argsort(scores)[::-1]\n    keep = []\n    while len(idxs) &gt; 0:\n        best = idxs[0]\n        keep.append(best)\n        ious = np.array([compute_iou(boxes[best], boxes[i]) for i in idxs[1:]])\n        idxs = idxs[1:][ious &lt; iou_threshold]\n    return keep\n\n# 使用例\nboxes  = [[50,50,200,200], [55,55,205,205], [300,100,500,300], [310,110,510,310]]\nscores = [0.9, 0.75, 0.85, 0.6]\nkept   = nms(boxes, scores, iou_threshold=0.5)\nprint(f&quot;NMS後の検出: {kept} → スコア {[scores[i] for i in kept]}&quot;)\n</code></pre>\n<h2>YOLOv8の使い方</h2>\n<pre><code class=\"language-python\"># pip install ultralytics\nfrom ultralytics import YOLO\nimport cv2\n\n# 事前学習済みモデルのロード\nmodel = YOLO(&quot;yolov8n.pt&quot;)   # nanoモデル（最小・最速）\n\n# 推論\nresults = model(&quot;image.jpg&quot;, conf=0.5, iou=0.45)\n\nfor result in results:\n    boxes   = result.boxes.xyxy.numpy()    # バウンディングボックス\n    classes = result.boxes.cls.numpy()     # クラスID\n    confs   = result.boxes.conf.numpy()    # 信頼度スコア\n    for box, cls, conf in zip(boxes, classes, confs):\n        print(f&quot;Class: {result.names[int(cls)]}, Conf: {conf:.2f}, Box: {box.astype(int)}&quot;)\n\n# 画像への描画\nannotated = results[0].plot()   # バウンディングボックス描画済み画像\ncv2.imwrite(&quot;output.jpg&quot;, annotated)\n\n# 動画処理\nresults_stream = model(&quot;video.mp4&quot;, stream=True)\nfor frame_result in results_stream:\n    frame = frame_result.plot()\n    cv2.imshow(&quot;Detection&quot;, frame)\n    if cv2.waitKey(1) == ord(&quot;q&quot;):\n        break\n</code></pre>\n<h2>カスタムデータでファインチューニング</h2>\n<pre><code class=\"language-python\"># データセット構成（YOLO形式）\n# dataset/\n#   images/train/*.jpg\n#   images/val/*.jpg\n#   labels/train/*.txt  # 各行: class cx cy w h（0〜1正規化）\n#   dataset.yaml\n\nimport yaml\ndataset_config = {\n    &quot;path&quot;:  &quot;/path/to/dataset&quot;,\n    &quot;train&quot;: &quot;images/train&quot;,\n    &quot;val&quot;:   &quot;images/val&quot;,\n    &quot;nc&quot;:    3,                             # クラス数\n    &quot;names&quot;: [&quot;car&quot;, &quot;pedestrian&quot;, &quot;sign&quot;], # クラス名\n}\nwith open(&quot;dataset.yaml&quot;, &quot;w&quot;) as f:\n    yaml.dump(dataset_config, f)\n\n# ファインチューニング\nmodel = YOLO(&quot;yolov8n.pt&quot;)\nresults = model.train(\n    data    = &quot;dataset.yaml&quot;,\n    epochs  = 100,\n    imgsz   = 640,\n    batch   = 16,\n    lr0     = 0.01,\n    device  = &quot;cuda&quot; if __import__(&quot;torch&quot;).cuda.is_available() else &quot;cpu&quot;,\n    project = &quot;runs/detect&quot;,\n    name    = &quot;my_model&quot;,\n)\nprint(f&quot;最良mAP50: {results.results_dict['metrics/mAP50(B)']:.3f}&quot;)\n</code></pre>\n<h2>評価指標（mAP）</h2>\n<pre><code class=\"language-python\"># mAP（mean Average Precision）の計算概念\ndef average_precision(recalls, precisions):\n    &quot;&quot;&quot;AUC of Precision-Recall curve（11点補間）&quot;&quot;&quot;\n    ap = 0\n    for t in np.linspace(0, 1, 11):\n        prec_at_t = precisions[recalls &gt;= t]\n        ap += (prec_at_t.max() if len(prec_at_t) &gt; 0 else 0)\n    return ap / 11\n\n# mAP@50: IoU=0.5での各クラスAPの平均\n# mAP@50-95: IoU=0.5〜0.95の平均（COCO標準）\n</code></pre>\n<h2>主要モデルの比較</h2>\n<pre><code class=\"language-mermaid\">graph TD\n  A[物体検出モデル] --&gt; B[One-Stage]\n  A --&gt; C[Two-Stage]\n\n  B --&gt; B1[YOLO系\\nSSD系]\n  C --&gt; C1[Faster R-CNN\\nMask R-CNN]\n\n  B1 --&gt; B2[&quot;✅ リアルタイム処理（60+ FPS）\\n✅ シンプルな実装\\n❌ 小物体検出が苦手&quot;]\n  C1 --&gt; C2[&quot;✅ 高精度\\n✅ 小物体対応\\n❌ 低速（5〜10 FPS）&quot;]\n</code></pre>\n<table>\n<thead>\n<tr>\n<th>モデル</th>\n<th>mAP (COCO)</th>\n<th>FPS (GPU)</th>\n<th>用途</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>YOLOv8n</td>\n<td>37.3%</td>\n<td>480+</td>\n<td>エッジ・リアルタイム</td>\n</tr>\n<tr>\n<td>YOLOv8x</td>\n<td>53.9%</td>\n<td>60</td>\n<td>精度重視</td>\n</tr>\n<tr>\n<td>Faster R-CNN</td>\n<td>42.0%</td>\n<td>15</td>\n<td>高精度検出</td>\n</tr>\n<tr>\n<td>DETR</td>\n<td>42.0%</td>\n<td>28</td>\n<td>研究・複雑シーン</td>\n</tr>\n</tbody>\n</table>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "opencv",
+"title": "OpenCV（画像処理基礎）"
+},
+{
+"slug": "image-processing",
+"title": "画像前処理・特徴抽出（深層学習向け）"
+},
+{
+"slug": "cnn",
+"title": "CNN（畳み込みニューラルネットワーク）"
+},
+{
+"slug": "deep-learning",
+"title": "深層学習の基礎（ニューラルネットワーク）"
+}
+],
+"next_full": [],
+"completed": false,
+"favorite": false
+},
 "image-processing": {
 "slug": "image-processing",
 "title": "画像前処理・特徴抽出（深層学習向け）",
@@ -4843,6 +5434,51 @@
 {
 "slug": "data-cleaning",
 "title": "データクリーニング"
+}
+],
+"next_full": [],
+"completed": false,
+"favorite": false
+},
+"anomaly-detection": {
+"slug": "anomaly-detection",
+"title": "異常検知（Isolation Forest・Autoencoder・統計的手法）",
+"level": 3,
+"category": "ML",
+"related": [
+"ml-basics",
+"statistics",
+"time-series-analysis",
+"clustering"
+],
+"next": [],
+"tags": [
+"anomaly-detection",
+"isolation-forest",
+"autoencoder",
+"python",
+"scikit-learn"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>異常検知は正常パターンから外れたデータを自動識別する技術です。車載ネットワークでは「不正なCAN IDのパケット」「異常なデータレート急上昇」「未知のECUからの通信」など、サイバー攻撃・故障の早期発見に重要です。ラベルなしデータで学習できる教師なし手法が主流です。</p>\n<h2>統計的手法（Z-スコア・IQR）</h2>\n<pre><code class=\"language-python\">import numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\nfrom sklearn.ensemble import IsolationForest\nfrom sklearn.svm import OneClassSVM\nfrom sklearn.preprocessing import StandardScaler\n\nnp.random.seed(42)\n\n# CANバスのメッセージレート（正常）+ 異常点を混入\nnormal   = np.random.normal(100, 10, 500)\noutliers = np.array([200, 210, -50, 5, 190])\ndata     = np.concatenate([normal, outliers])\nnp.random.shuffle(data)\n\n# Z-スコア法\nz_scores = np.abs((data - data.mean()) / data.std())\nanomalies_z = data[z_scores &gt; 3]\nprint(f&quot;Z-スコア法（|z|&gt;3）: {len(anomalies_z)} 件の異常&quot;)\n\n# IQR法（外れ値に頑健）\nq1, q3 = np.percentile(data, [25, 75])\niqr = q3 - q1\nlower, upper = q1 - 1.5 * iqr, q3 + 1.5 * iqr\nanomalies_iqr = data[(data &lt; lower) | (data &gt; upper)]\nprint(f&quot;IQR法: {len(anomalies_iqr)} 件の異常&quot;)\n\nplt.figure(figsize=(10, 4))\nplt.plot(data, &quot;b.&quot;, alpha=0.4, label=&quot;正常&quot;)\nplt.axhline(upper, color=&quot;red&quot;,    linestyle=&quot;--&quot;, label=f&quot;上限 {upper:.1f}&quot;)\nplt.axhline(lower, color=&quot;orange&quot;, linestyle=&quot;--&quot;, label=f&quot;下限 {lower:.1f}&quot;)\nplt.scatter(np.where((data &lt; lower) | (data &gt; upper))[0], data[(data &lt; lower) | (data &gt; upper)],\n            color=&quot;red&quot;, s=100, zorder=5, label=&quot;異常&quot;)\nplt.legend()\nplt.title(&quot;IQR法による異常検知&quot;)\nplt.show()\n</code></pre>\n<h2>Isolation Forest</h2>\n<pre><code class=\"language-python\"># 2次元特徴量（パケットレート + ペイロードサイズ）\nn_normal  = 400\nn_anomaly = 20\nX_normal  = np.random.normal([100, 200], [10, 20], (n_normal, 2))\nX_anomaly = np.random.uniform([150, 300], [250, 500], (n_anomaly, 2))\nX = np.vstack([X_normal, X_anomaly])\ny_true = np.array([1]*n_normal + [-1]*n_anomaly)  # 1=正常, -1=異常\n\nscaler = StandardScaler()\nX_scaled = scaler.fit_transform(X)\n\niso = IsolationForest(\n    n_estimators=200,\n    contamination=0.05,   # 想定異常率\n    random_state=42,\n)\ny_pred = iso.fit_predict(X_scaled)\nscores  = iso.score_samples(X_scaled)   # 低いほど異常\n\nfrom sklearn.metrics import classification_report\nprint(classification_report(y_true, y_pred, target_names=[&quot;異常&quot;, &quot;正常&quot;]))\n\n# 決定境界の可視化\nxx, yy = np.meshgrid(np.linspace(-3, 3, 200), np.linspace(-3, 3, 200))\nZ = iso.decision_function(np.c_[xx.ravel(), yy.ravel()]).reshape(xx.shape)\n\nplt.figure(figsize=(9, 6))\nplt.contourf(xx, yy, Z, levels=20, cmap=&quot;RdYlGn&quot;, alpha=0.4)\nplt.colorbar(label=&quot;異常スコア（低=異常）&quot;)\nplt.scatter(*scaler.transform(X_normal).T, c=&quot;blue&quot;, s=20, alpha=0.5, label=&quot;正常&quot;)\nplt.scatter(*scaler.transform(X_anomaly).T, c=&quot;red&quot;, s=60, marker=&quot;x&quot;, label=&quot;異常&quot;)\nplt.legend()\nplt.title(&quot;Isolation Forest 決定境界&quot;)\nplt.show()\n</code></pre>\n<h2>One-Class SVM</h2>\n<pre><code class=\"language-python\">oc_svm = OneClassSVM(kernel=&quot;rbf&quot;, gamma=&quot;auto&quot;, nu=0.05)\noc_svm.fit(scaler.transform(X_normal))   # 正常データだけで学習\ny_pred_svm = oc_svm.predict(X_scaled)\n\nprint(&quot;One-Class SVM:&quot;)\nprint(classification_report(y_true, y_pred_svm, target_names=[&quot;異常&quot;, &quot;正常&quot;]))\n</code></pre>\n<h2>オートエンコーダーによる異常検知</h2>\n<pre><code class=\"language-python\">import torch\nimport torch.nn as nn\n\nclass AnomalyAutoencoder(nn.Module):\n    def __init__(self, in_dim=2, latent=1):\n        super().__init__()\n        self.enc = nn.Sequential(nn.Linear(in_dim, 16), nn.ReLU(), nn.Linear(16, latent))\n        self.dec = nn.Sequential(nn.Linear(latent, 16), nn.ReLU(), nn.Linear(16, in_dim))\n    def forward(self, x):\n        return self.dec(self.enc(x))\n\nmodel    = AnomalyAutoencoder()\nopt      = torch.optim.Adam(model.parameters(), lr=1e-3)\ncrit     = nn.MSELoss(reduction=&quot;none&quot;)\n\n# 正常データだけで訓練\nX_train  = torch.FloatTensor(scaler.transform(X_normal))\nfor _ in range(500):\n    loss = crit(model(X_train), X_train).mean()\n    opt.zero_grad(); loss.backward(); opt.step()\n\n# 再構成誤差で異常スコアを計算\nX_all   = torch.FloatTensor(X_scaled)\nwith torch.no_grad():\n    recon   = model(X_all)\n    errors  = crit(recon, X_all).mean(dim=1).numpy()\n\nthreshold = np.percentile(errors[:n_normal], 95)\ny_ae = np.where(errors &gt; threshold, -1, 1)\n\nprint(f&quot;再構成誤差閾値: {threshold:.4f}&quot;)\nprint(classification_report(y_true, y_ae, target_names=[&quot;異常&quot;, &quot;正常&quot;]))\n</code></pre>\n<h2>時系列での異常検知（移動ウィンドウ）</h2>\n<pre><code class=\"language-python\"># ECU温度センサーの時系列\nt = np.linspace(0, 50, 500)\ntemp = 80 + 5 * np.sin(t) + np.random.normal(0, 1, 500)\n# 異常注入: 急激な温度上昇\ntemp[200:210] += 30\n\nwindow = 30\nrolling_mean = pd.Series(temp).rolling(window).mean()\nrolling_std  = pd.Series(temp).rolling(window).std()\nz_roll = (pd.Series(temp) - rolling_mean) / (rolling_std + 1e-6)\n\nplt.figure(figsize=(12, 5))\nplt.plot(temp, label=&quot;温度&quot;, alpha=0.8)\nplt.fill_between(range(len(temp)),\n                 rolling_mean - 3*rolling_std,\n                 rolling_mean + 3*rolling_std,\n                 alpha=0.2, color=&quot;green&quot;, label=&quot;正常範囲 ±3σ&quot;)\nanomaly_idx = np.where(np.abs(z_roll) &gt; 3)[0]\nplt.scatter(anomaly_idx, temp[anomaly_idx], color=&quot;red&quot;, s=80, zorder=5, label=&quot;検知異常&quot;)\nplt.legend()\nplt.title(&quot;移動ウィンドウ Z-スコアによる時系列異常検知&quot;)\nplt.show()\n</code></pre>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "ml-basics",
+"title": "機械学習の基礎"
+},
+{
+"slug": "statistics",
+"title": "統計学の基礎（確率・分布・検定）"
+},
+{
+"slug": "time-series-analysis",
+"title": "時系列分析（ARIMA・予測・異常検知）"
+},
+{
+"slug": "clustering",
+"title": "クラスタリング（K-Means・DBSCAN・階層型）"
 }
 ],
 "next_full": [],
@@ -5352,6 +5988,99 @@
 "title": "車載サイバーセキュリティ (ISO 21434)"
 }
 ],
+"completed": false,
+"favorite": false
+},
+"fine-tuning": {
+"slug": "fine-tuning",
+"title": "ファインチューニング（LoRA・QLoRA・PEFT）",
+"level": 4,
+"category": "GenAI",
+"related": [
+"llm",
+"transformer",
+"deep-learning",
+"pytorch"
+],
+"next": [],
+"tags": [
+"fine-tuning",
+"lora",
+"qlora",
+"peft",
+"llm",
+"pytorch",
+"huggingface"
+],
+"difficulty": "上級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>ファインチューニングは事前学習済みLLMを特定タスク・ドメインに適応させる技術です。全パラメータを更新するFull Fine-tuningに対し、LoRA（Low-Rank Adaptation）・QLoRA（量子化+LoRA）は少ないGPUメモリで効率よく学習できます。車載ネットワークの専門用語を理解するモデルの作成などに活用できます。</p>\n<h2>Fine-tuning の全体像</h2>\n<pre><code class=\"language-mermaid\">graph TD\n  A[事前学習済みLLM\\nLlama/Mistral/etc] --&gt; B{学習方法}\n  B --&gt; C[Full Fine-tuning]\n  B --&gt; D[LoRA]\n  B --&gt; E[QLoRA]\n\n  C --&gt; C1[&quot;✅ 高品質\\n❌ GPU 80GB+\\n❌ 全重み保存&quot;]\n  D --&gt; D1[&quot;✅ GPU 16〜40GB\\n✅ 少ないパラメータ\\n✅ 元モデル変更なし&quot;]\n  E --&gt; E1[&quot;✅ GPU 8〜16GB\\n✅ 4bit量子化\\n△ 少し精度低下&quot;]\n</code></pre>\n<h2>LoRAの仕組み</h2>\n<pre><code class=\"language-python\">import torch\nimport torch.nn as nn\n\nclass LoRALinear(nn.Module):\n    &quot;&quot;&quot;Linear層にLoRAアダプターを追加&quot;&quot;&quot;\n    def __init__(self, in_features, out_features, rank=4, alpha=16):\n        super().__init__()\n        self.weight = nn.Parameter(\n            torch.randn(out_features, in_features) * 0.02, requires_grad=False\n        )  # 元の重み（凍結）\n        self.lora_A = nn.Parameter(torch.randn(rank, in_features) * 0.02)\n        self.lora_B = nn.Parameter(torch.zeros(out_features, rank))\n        self.scale  = alpha / rank   # スケーリング係数\n\n    def forward(self, x):\n        base   = x @ self.weight.T\n        lora   = x @ self.lora_A.T @ self.lora_B.T * self.scale\n        return base + lora   # 元の出力 + LoRAの出力を加算\n\n# パラメータ数の比較\nin_dim, out_dim, rank = 4096, 4096, 8\nfull_params = in_dim * out_dim\nlora_params = rank * in_dim + out_dim * rank\nprint(f&quot;Full: {full_params:,} params&quot;)\nprint(f&quot;LoRA: {lora_params:,} params ({lora_params/full_params*100:.1f}%)&quot;)\n</code></pre>\n<h2>HuggingFace PEFTによるLoRA</h2>\n<pre><code class=\"language-python\"># pip install peft transformers accelerate bitsandbytes\nfrom transformers import AutoModelForCausalLM, AutoTokenizer, TrainingArguments\nfrom peft import LoraConfig, get_peft_model, TaskType\n\nmodel_name = &quot;meta-llama/Llama-3.2-1B&quot;\n\n# モデルのロード\nmodel     = AutoModelForCausalLM.from_pretrained(model_name, torch_dtype=torch.float16)\ntokenizer = AutoTokenizer.from_pretrained(model_name)\n\n# LoRA設定\nlora_config = LoraConfig(\n    task_type     = TaskType.CAUSAL_LM,\n    r             = 8,            # ランク: 小さいほど省メモリ（4〜64）\n    lora_alpha    = 32,           # スケーリング (alpha/r が実効スケール)\n    target_modules= [&quot;q_proj&quot;, &quot;v_proj&quot;, &quot;k_proj&quot;, &quot;o_proj&quot;],\n    lora_dropout  = 0.05,\n    bias          = &quot;none&quot;,\n)\n\nmodel = get_peft_model(model, lora_config)\nmodel.print_trainable_parameters()\n# trainable params: ~3M || all params: ~1.2B (0.26%)\n</code></pre>\n<h2>QLoRAによる4bit量子化ファインチューニング</h2>\n<pre><code class=\"language-python\">from transformers import BitsAndBytesConfig\nfrom peft import prepare_model_for_kbit_training\n\n# 4bit量子化設定\nbnb_config = BitsAndBytesConfig(\n    load_in_4bit              = True,\n    bnb_4bit_use_double_quant = True,      # 二重量子化（さらにメモリ削減）\n    bnb_4bit_quant_type       = &quot;nf4&quot;,     # Normal Float 4bit\n    bnb_4bit_compute_dtype    = torch.bfloat16,\n)\n\nmodel_4bit = AutoModelForCausalLM.from_pretrained(\n    model_name,\n    quantization_config = bnb_config,\n    device_map          = &quot;auto&quot;,\n)\nmodel_4bit = prepare_model_for_kbit_training(model_4bit)\nmodel_4bit = get_peft_model(model_4bit, lora_config)\n</code></pre>\n<h2>データセットの準備とSFTTrainer</h2>\n<pre><code class=\"language-python\">from datasets import Dataset\nfrom trl import SFTTrainer\n\n# 車載ネットワーク専門知識のデータセット（例）\ndata = [\n    {&quot;text&quot;: &quot;### 質問: CANバスの最大速度は？\\n### 回答: CAN 2.0は最大1Mbps、CAN FDは最大8Mbpsです。&quot;},\n    {&quot;text&quot;: &quot;### 質問: DoIPとは何ですか？\\n### 回答: Diagnostics over IP（DoIP）はISO 13400で規定されたEthernetベースの診断プロトコルです。&quot;},\n    {&quot;text&quot;: &quot;### 質問: SOME/IPの用途は？\\n### 回答: SOME/IPはEthernet上でのSOA（サービス指向アーキテクチャ）通信を実現するプロトコルで、車載Ethernetに採用されています。&quot;},\n]\ndataset = Dataset.from_list(data)\n\n# SFTTrainerで訓練\ntraining_args = TrainingArguments(\n    output_dir            = &quot;./lora_output&quot;,\n    num_train_epochs      = 3,\n    per_device_train_batch_size = 4,\n    gradient_accumulation_steps = 4,\n    learning_rate         = 2e-4,\n    fp16                  = True,\n    logging_steps         = 10,\n    save_strategy         = &quot;epoch&quot;,\n    optim                 = &quot;paged_adamw_8bit&quot;,   # 省メモリオプティマイザー\n)\n\ntrainer = SFTTrainer(\n    model           = model_4bit,\n    train_dataset   = dataset,\n    args            = training_args,\n    dataset_text_field = &quot;text&quot;,\n    max_seq_length  = 512,\n)\ntrainer.train()\ntrainer.save_model(&quot;./lora_output/final&quot;)\n</code></pre>\n<h2>LoRAアダプターのマージと推論</h2>\n<pre><code class=\"language-python\">from peft import PeftModel\n\n# 元モデル + LoRAアダプターをマージ\nbase_model   = AutoModelForCausalLM.from_pretrained(model_name, torch_dtype=torch.float16)\nmerged_model = PeftModel.from_pretrained(base_model, &quot;./lora_output/final&quot;)\nmerged_model = merged_model.merge_and_unload()   # アダプターをマージして通常のモデルに\nmerged_model.save_pretrained(&quot;./merged_model&quot;)\ntokenizer.save_pretrained(&quot;./merged_model&quot;)\n\n# 推論\ninputs = tokenizer(&quot;### 質問: SOME/IPとは？\\n### 回答:&quot;, return_tensors=&quot;pt&quot;)\nwith torch.no_grad():\n    output = merged_model.generate(**inputs, max_new_tokens=100, temperature=0.7)\nprint(tokenizer.decode(output[0], skip_special_tokens=True))\n</code></pre>\n<h2>GPU メモリ目安</h2>\n<table>\n<thead>\n<tr>\n<th>手法</th>\n<th>モデル規模</th>\n<th>GPU VRAM</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Full FT</td>\n<td>7B</td>\n<td>80GB以上</td>\n</tr>\n<tr>\n<td>LoRA</td>\n<td>7B</td>\n<td>24〜40GB</td>\n</tr>\n<tr>\n<td>QLoRA (4bit)</td>\n<td>7B</td>\n<td>10〜16GB</td>\n</tr>\n<tr>\n<td>QLoRA (4bit)</td>\n<td>13B</td>\n<td>16〜24GB</td>\n</tr>\n<tr>\n<td>QLoRA (4bit)</td>\n<td>70B</td>\n<td>48〜80GB</td>\n</tr>\n</tbody>\n</table>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "llm",
+"title": "LLM（大規模言語モデル）"
+},
+{
+"slug": "transformer",
+"title": "Transformerアーキテクチャ"
+},
+{
+"slug": "deep-learning",
+"title": "深層学習の基礎（ニューラルネットワーク）"
+},
+{
+"slug": "pytorch",
+"title": "PyTorch（深層学習フレームワーク）"
+}
+],
+"next_full": [],
+"completed": false,
+"favorite": false
+},
+"generative-models": {
+"slug": "generative-models",
+"title": "生成モデル（GAN・VAE・Diffusion）",
+"level": 4,
+"category": "DL",
+"related": [
+"deep-learning",
+"pytorch",
+"cnn",
+"transformer"
+],
+"next": [],
+"tags": [
+"gan",
+"vae",
+"diffusion",
+"generative-ai",
+"pytorch",
+"deep-learning"
+],
+"difficulty": "上級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>生成モデルはデータの分布を学習して新しいサンプルを生成するモデルです。GAN（Generative Adversarial Network）・VAE（Variational Autoencoder）・Diffusionモデルが三大潮流です。ネットワークセキュリティではデータ拡張・合成トラフィック生成・異常サンプル生成に活用されます。</p>\n<h2>GAN（敵対的生成ネットワーク）</h2>\n<pre><code class=\"language-python\">import torch\nimport torch.nn as nn\nimport torch.optim as optim\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# シンプルなGANで1次元分布を学習\n# 本物データ: 正規分布 N(4, 1.5)\ndef real_data_sampler(n):\n    return torch.FloatTensor(np.random.normal(4, 1.5, (n, 1)))\n\n# Generator: ノイズ → データ\nclass Generator(nn.Module):\n    def __init__(self, z_dim=8):\n        super().__init__()\n        self.net = nn.Sequential(\n            nn.Linear(z_dim, 32), nn.LeakyReLU(0.2),\n            nn.Linear(32, 32),    nn.LeakyReLU(0.2),\n            nn.Linear(32, 1),\n        )\n    def forward(self, z): return self.net(z)\n\n# Discriminator: データ → 本物/偽物スコア\nclass Discriminator(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.net = nn.Sequential(\n            nn.Linear(1, 32),  nn.LeakyReLU(0.2),\n            nn.Linear(32, 32), nn.LeakyReLU(0.2),\n            nn.Linear(32, 1),  nn.Sigmoid(),\n        )\n    def forward(self, x): return self.net(x)\n\nz_dim = 8\nG = Generator(z_dim=z_dim)\nD = Discriminator()\nopt_G = optim.Adam(G.parameters(), lr=2e-4, betas=(0.5, 0.999))\nopt_D = optim.Adam(D.parameters(), lr=2e-4, betas=(0.5, 0.999))\ncriterion = nn.BCELoss()\n\ng_losses, d_losses = [], []\n\nfor epoch in range(2000):\n    batch_size = 128\n    # ---- Discriminatorの更新 ----\n    real = real_data_sampler(batch_size)\n    z    = torch.randn(batch_size, z_dim)\n    fake = G(z).detach()\n\n    d_loss = criterion(D(real), torch.ones(batch_size, 1)) + \\\n             criterion(D(fake), torch.zeros(batch_size, 1))\n    opt_D.zero_grad(); d_loss.backward(); opt_D.step()\n\n    # ---- Generatorの更新 ----\n    z    = torch.randn(batch_size, z_dim)\n    fake = G(z)\n    g_loss = criterion(D(fake), torch.ones(batch_size, 1))\n    opt_G.zero_grad(); g_loss.backward(); opt_G.step()\n\n    g_losses.append(g_loss.item())\n    d_losses.append(d_loss.item())\n\n# 結果の可視化\nwith torch.no_grad():\n    z     = torch.randn(1000, z_dim)\n    fakes = G(z).numpy().flatten()\n\nplt.figure(figsize=(10, 4))\nplt.subplot(1, 2, 1)\nplt.hist(real_data_sampler(1000).numpy(), bins=50, alpha=0.5, label=&quot;本物&quot;, density=True)\nplt.hist(fakes, bins=50, alpha=0.5, label=&quot;生成&quot;, density=True)\nplt.legend(); plt.title(&quot;GANによる分布学習&quot;)\n\nplt.subplot(1, 2, 2)\nplt.plot(g_losses, label=&quot;G Loss&quot;, alpha=0.5)\nplt.plot(d_losses, label=&quot;D Loss&quot;, alpha=0.5)\nplt.legend(); plt.title(&quot;学習曲線&quot;)\nplt.tight_layout(); plt.show()\n</code></pre>\n<h2>VAE（変分オートエンコーダー）</h2>\n<pre><code class=\"language-python\">class VAE(nn.Module):\n    def __init__(self, input_dim=784, latent_dim=2):\n        super().__init__()\n        # Encoder\n        self.fc_enc = nn.Sequential(nn.Linear(input_dim, 256), nn.ReLU())\n        self.fc_mu  = nn.Linear(256, latent_dim)\n        self.fc_var = nn.Linear(256, latent_dim)\n        # Decoder\n        self.fc_dec = nn.Sequential(\n            nn.Linear(latent_dim, 256), nn.ReLU(),\n            nn.Linear(256, input_dim),  nn.Sigmoid(),\n        )\n\n    def encode(self, x):\n        h = self.fc_enc(x)\n        return self.fc_mu(h), self.fc_var(h)\n\n    def reparameterize(self, mu, log_var):\n        std = torch.exp(0.5 * log_var)\n        eps = torch.randn_like(std)\n        return mu + eps * std\n\n    def decode(self, z):\n        return self.fc_dec(z)\n\n    def forward(self, x):\n        mu, log_var = self.encode(x)\n        z = self.reparameterize(mu, log_var)\n        x_recon = self.decode(z)\n        return x_recon, mu, log_var\n\ndef vae_loss(x_recon, x, mu, log_var):\n    recon = nn.functional.binary_cross_entropy(x_recon, x, reduction=&quot;sum&quot;)\n    kl    = -0.5 * torch.sum(1 + log_var - mu.pow(2) - log_var.exp())\n    return recon + kl\n\n# 簡単なデモ（ランダムデータ）\nvae = VAE(input_dim=20, latent_dim=2)\nopt = optim.Adam(vae.parameters(), lr=1e-3)\n\nfor _ in range(200):\n    x = torch.rand(64, 20)\n    x_recon, mu, log_var = vae(x)\n    loss = vae_loss(x_recon, x, mu, log_var)\n    opt.zero_grad(); loss.backward(); opt.step()\n\nprint(f&quot;VAE最終損失: {loss.item():.2f}&quot;)\n\n# 潜在空間からサンプリング\nwith torch.no_grad():\n    z_sample = torch.randn(10, 2)\n    generated = vae.decode(z_sample)\n    print(f&quot;生成サンプル形状: {generated.shape}&quot;)\n</code></pre>\n<h2>Diffusionモデルの概念</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  A[本物のデータ x₀] --&gt;|ノイズを少しずつ加算&lt;br/&gt;Forward Process q| B[ノイズだらけ xT]\n  B --&gt;|ノイズを少しずつ除去&lt;br/&gt;Reverse Process pθ| C[生成データ x̂₀]\n\n  D[U-Net ε_θ] --&gt;|各ステップの&lt;br/&gt;ノイズを予測| B\n</code></pre>\n<pre><code class=\"language-python\"># Diffusionモデルの簡略実装\nclass SimpleUNet(nn.Module):\n    &quot;&quot;&quot;超シンプルな1Dノイズ除去ネット（概念説明用）&quot;&quot;&quot;\n    def __init__(self, dim=16, t_emb=8):\n        super().__init__()\n        self.t_embed = nn.Embedding(1000, t_emb)\n        self.net = nn.Sequential(\n            nn.Linear(dim + t_emb, 64), nn.SiLU(),\n            nn.Linear(64, 64),          nn.SiLU(),\n            nn.Linear(64, dim),\n        )\n    def forward(self, x, t):\n        t_emb = self.t_embed(t)\n        return self.net(torch.cat([x, t_emb], dim=-1))\n\n# ノイズスケジュール\nT = 1000\nbetas   = torch.linspace(1e-4, 0.02, T)\nalphas  = 1 - betas\nalpha_bar = torch.cumprod(alphas, dim=0)\n\ndef forward_diffusion(x0, t):\n    &quot;&quot;&quot;t ステップ後のノイズ付きサンプル&quot;&quot;&quot;\n    sqrt_ab  = alpha_bar[t].sqrt().unsqueeze(-1)\n    sqrt_1ab = (1 - alpha_bar[t]).sqrt().unsqueeze(-1)\n    eps = torch.randn_like(x0)\n    return sqrt_ab * x0 + sqrt_1ab * eps, eps\n\n# 訓練ループ（概念）\nnet = SimpleUNet(dim=16)\nopt = optim.Adam(net.parameters(), lr=1e-3)\nfor step in range(100):\n    x0 = torch.randn(32, 16)\n    t  = torch.randint(0, T, (32,))\n    xt, eps = forward_diffusion(x0, t)\n    eps_pred = net(xt, t)\n    loss = (eps_pred - eps).pow(2).mean()\n    opt.zero_grad(); loss.backward(); opt.step()\nprint(f&quot;Diffusion訓練損失: {loss.item():.4f}&quot;)\n</code></pre>\n<h2>GAN vs VAE vs Diffusion 比較</h2>\n<table>\n<thead>\n<tr>\n<th></th>\n<th>GAN</th>\n<th>VAE</th>\n<th>Diffusion</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>生成品質</td>\n<td>高（シャープ）</td>\n<td>中（ぼやける）</td>\n<td><strong>最高</strong></td>\n</tr>\n<tr>\n<td>学習安定性</td>\n<td>不安定</td>\n<td>安定</td>\n<td><strong>安定</strong></td>\n</tr>\n<tr>\n<td>多様性</td>\n<td>低（mode collapse）</td>\n<td>中</td>\n<td><strong>高</strong></td>\n</tr>\n<tr>\n<td>推論速度</td>\n<td><strong>高速</strong></td>\n<td><strong>高速</strong></td>\n<td>低速（多ステップ）</td>\n</tr>\n<tr>\n<td>潜在空間</td>\n<td>構造不明</td>\n<td><strong>解釈可能</strong></td>\n<td>なし</td>\n</tr>\n<tr>\n<td>代表例</td>\n<td>StyleGAN</td>\n<td>β-VAE</td>\n<td>Stable Diffusion</td>\n</tr>\n</tbody>\n</table>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "deep-learning",
+"title": "深層学習の基礎（ニューラルネットワーク）"
+},
+{
+"slug": "pytorch",
+"title": "PyTorch（深層学習フレームワーク）"
+},
+{
+"slug": "cnn",
+"title": "CNN（畳み込みニューラルネットワーク）"
+},
+{
+"slug": "transformer",
+"title": "Transformerアーキテクチャ"
+}
+],
+"next_full": [],
 "completed": false,
 "favorite": false
 },
@@ -5944,6 +6673,32 @@
 "title": "サブネット / **CIDR**"
 }
 ],
+"fastapi": [
+{
+"slug": "python-basics",
+"title": "Python基礎（変数・リスト・辞書）"
+},
+{
+"slug": "pandas",
+"title": "Pandas（DataFrame・データ操作）"
+},
+{
+"slug": "llm",
+"title": "LLM（大規模言語モデル）"
+},
+{
+"slug": "anomaly-detection",
+"title": "異常検知（Isolation Forest・Autoencoder・統計的手法）"
+},
+{
+"slug": "classification",
+"title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
+},
+{
+"slug": "clustering",
+"title": "クラスタリング（K-Means・DBSCAN・階層型）"
+}
+],
 "icmp": [
 {
 "slug": "ip",
@@ -6114,16 +6869,16 @@
 "title": "NumPy（配列・行列演算）"
 },
 {
+"slug": "anomaly-detection",
+"title": "異常検知（Isolation Forest・Autoencoder・統計的手法）"
+},
+{
 "slug": "classification",
 "title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
 },
 {
-"slug": "data-analysis",
-"title": "データ分析の流れ（EDA）"
-},
-{
-"slug": "data-cleaning",
-"title": "データクリーニング"
+"slug": "clustering",
+"title": "クラスタリング（K-Means・DBSCAN・階層型）"
 }
 ],
 "pandas": [
@@ -6188,8 +6943,8 @@
 "title": "tcpdump"
 },
 {
-"slug": "classification",
-"title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
+"slug": "anomaly-detection",
+"title": "異常検知（Isolation Forest・Autoencoder・統計的手法）"
 }
 ],
 "tcp": [
@@ -6310,6 +7065,32 @@
 "title": "勾配ブースティング（XGBoost・LightGBM）"
 },
 {
+"slug": "anomaly-detection",
+"title": "異常検知（Isolation Forest・Autoencoder・統計的手法）"
+}
+],
+"clustering": [
+{
+"slug": "scikit-learn",
+"title": "scikit-learn（機械学習ライブラリ）"
+},
+{
+"slug": "dimensionality-reduction",
+"title": "次元削減（PCA・t-SNE・UMAP）"
+},
+{
+"slug": "anomaly-detection",
+"title": "異常検知（Isolation Forest・Autoencoder・統計的手法）"
+},
+{
+"slug": "ml-basics",
+"title": "機械学習の基礎"
+},
+{
+"slug": "classification",
+"title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
+},
+{
 "slug": "data-analysis",
 "title": "データ分析の流れ（EDA）"
 }
@@ -6372,6 +7153,14 @@
 "title": "LLM（大規模言語モデル）"
 },
 {
+"slug": "langchain",
+"title": "LangChain（LLMアプリ開発フレームワーク）"
+},
+{
+"slug": "fine-tuning",
+"title": "ファインチューニング（LoRA・QLoRA・PEFT）"
+},
+{
 "slug": "transformer",
 "title": "Transformerアーキテクチャ"
 }
@@ -6402,6 +7191,32 @@
 "title": "データクリーニング"
 }
 ],
+"dimensionality-reduction": [
+{
+"slug": "clustering",
+"title": "クラスタリング（K-Means・DBSCAN・階層型）"
+},
+{
+"slug": "scikit-learn",
+"title": "scikit-learn（機械学習ライブラリ）"
+},
+{
+"slug": "ml-basics",
+"title": "機械学習の基礎"
+},
+{
+"slug": "numpy",
+"title": "NumPy（配列・行列演算）"
+},
+{
+"slug": "anomaly-detection",
+"title": "異常検知（Isolation Forest・Autoencoder・統計的手法）"
+},
+{
+"slug": "classification",
+"title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
+}
+],
 "deep-learning": [
 {
 "slug": "pytorch",
@@ -6426,6 +7241,32 @@
 {
 "slug": "linear-regression",
 "title": "線形回帰"
+}
+],
+"statistics": [
+{
+"slug": "data-analysis",
+"title": "データ分析の流れ（EDA）"
+},
+{
+"slug": "seaborn",
+"title": "Seaborn（統計可視化）"
+},
+{
+"slug": "numpy",
+"title": "NumPy（配列・行列演算）"
+},
+{
+"slug": "pandas",
+"title": "Pandas（DataFrame・データ操作）"
+},
+{
+"slug": "classification",
+"title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
+},
+{
+"slug": "data-cleaning",
+"title": "データクリーニング"
 }
 ],
 "linear-regression": [
@@ -6498,12 +7339,12 @@
 "title": "OpenCV（画像処理基礎）"
 },
 {
-"slug": "image-processing",
-"title": "画像前処理・特徴抽出（深層学習向け）"
+"slug": "generative-models",
+"title": "生成モデル（GAN・VAE・Diffusion）"
 },
 {
-"slug": "transformer",
-"title": "Transformerアーキテクチャ"
+"slug": "image-processing",
+"title": "画像前処理・特徴抽出（深層学習向け）"
 }
 ],
 "howto-doip-connect": [
@@ -6598,8 +7439,42 @@
 "title": "RAG（検索拡張生成）"
 },
 {
+"slug": "fine-tuning",
+"title": "ファインチューニング（LoRA・QLoRA・PEFT）"
+},
+{
+"slug": "langchain",
+"title": "LangChain（LLMアプリ開発フレームワーク）"
+},
+{
 "slug": "rnn-lstm",
 "title": "RNN・LSTM（系列データのモデリング）"
+}
+],
+"langchain": [
+{
+"slug": "rag",
+"title": "RAG（検索拡張生成）"
+},
+{
+"slug": "prompt-engineering",
+"title": "プロンプトエンジニアリング"
+},
+{
+"slug": "llm",
+"title": "LLM（大規模言語モデル）"
+},
+{
+"slug": "fastapi",
+"title": "FastAPI（高速WebAPI開発）"
+},
+{
+"slug": "anomaly-detection",
+"title": "異常検知（Isolation Forest・Autoencoder・統計的手法）"
+},
+{
+"slug": "classification",
+"title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
 }
 ],
 "pcap": [
@@ -6668,16 +7543,16 @@
 "title": "RNN・LSTM（系列データのモデリング）"
 },
 {
+"slug": "generative-models",
+"title": "生成モデル（GAN・VAE・Diffusion）"
+},
+{
 "slug": "image-processing",
 "title": "画像前処理・特徴抽出（深層学習向け）"
 },
 {
-"slug": "classification",
-"title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
-},
-{
-"slug": "data-analysis",
-"title": "データ分析の流れ（EDA）"
+"slug": "anomaly-detection",
+"title": "異常検知（Isolation Forest・Autoencoder・統計的手法）"
 }
 ],
 "rag": [
@@ -6692,6 +7567,14 @@
 {
 "slug": "transformer",
 "title": "Transformerアーキテクチャ"
+},
+{
+"slug": "langchain",
+"title": "LangChain（LLMアプリ開発フレームワーク）"
+},
+{
+"slug": "fine-tuning",
+"title": "ファインチューニング（LoRA・QLoRA・PEFT）"
 }
 ],
 "rnn-lstm": [
@@ -6712,12 +7595,12 @@
 "title": "CNN（畳み込みニューラルネットワーク）"
 },
 {
-"slug": "image-processing",
-"title": "画像前処理・特徴抽出（深層学習向け）"
+"slug": "generative-models",
+"title": "生成モデル（GAN・VAE・Diffusion）"
 },
 {
-"slug": "llm",
-"title": "LLM（大規模言語モデル）"
+"slug": "image-processing",
+"title": "画像前処理・特徴抽出（深層学習向け）"
 }
 ],
 "scapy-pcap": [
@@ -6760,16 +7643,16 @@
 "title": "Pandas（DataFrame・データ操作）"
 },
 {
+"slug": "statistics",
+"title": "統計学の基礎（確率・分布・検定）"
+},
+{
 "slug": "classification",
 "title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
 },
 {
 "slug": "data-cleaning",
 "title": "データクリーニング"
-},
-{
-"slug": "gradient-boosting",
-"title": "勾配ブースティング（XGBoost・LightGBM）"
 }
 ],
 "socket": [
@@ -6788,6 +7671,10 @@
 {
 "slug": "udp",
 "title": "UDP"
+},
+{
+"slug": "fastapi",
+"title": "FastAPI（高速WebAPI開発）"
 }
 ],
 "transformer": [
@@ -6808,12 +7695,12 @@
 "title": "CNN（畳み込みニューラルネットワーク）"
 },
 {
-"slug": "image-processing",
-"title": "画像前処理・特徴抽出（深層学習向け）"
+"slug": "generative-models",
+"title": "生成モデル（GAN・VAE・Diffusion）"
 },
 {
-"slug": "prompt-engineering",
-"title": "プロンプトエンジニアリング"
+"slug": "image-processing",
+"title": "画像前処理・特徴抽出（深層学習向け）"
 }
 ],
 "uds": [
@@ -7102,6 +7989,58 @@
 "title": "データクリーニング"
 }
 ],
+"time-series-analysis": [
+{
+"slug": "statistics",
+"title": "統計学の基礎（確率・分布・検定）"
+},
+{
+"slug": "pandas",
+"title": "Pandas（DataFrame・データ操作）"
+},
+{
+"slug": "numpy",
+"title": "NumPy（配列・行列演算）"
+},
+{
+"slug": "anomaly-detection",
+"title": "異常検知（Isolation Forest・Autoencoder・統計的手法）"
+},
+{
+"slug": "classification",
+"title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
+},
+{
+"slug": "clustering",
+"title": "クラスタリング（K-Means・DBSCAN・階層型）"
+}
+],
+"object-detection": [
+{
+"slug": "cnn",
+"title": "CNN（畳み込みニューラルネットワーク）"
+},
+{
+"slug": "opencv",
+"title": "OpenCV（画像処理基礎）"
+},
+{
+"slug": "image-processing",
+"title": "画像前処理・特徴抽出（深層学習向け）"
+},
+{
+"slug": "deep-learning",
+"title": "深層学習の基礎（ニューラルネットワーク）"
+},
+{
+"slug": "fine-tuning",
+"title": "ファインチューニング（LoRA・QLoRA・PEFT）"
+},
+{
+"slug": "generative-models",
+"title": "生成モデル（GAN・VAE・Diffusion）"
+}
+],
 "image-processing": [
 {
 "slug": "cnn",
@@ -7120,12 +8059,38 @@
 "title": "データクリーニング"
 },
 {
-"slug": "rnn-lstm",
-"title": "RNN・LSTM（系列データのモデリング）"
+"slug": "generative-models",
+"title": "生成モデル（GAN・VAE・Diffusion）"
 },
 {
-"slug": "deep-learning",
-"title": "深層学習の基礎（ニューラルネットワーク）"
+"slug": "rnn-lstm",
+"title": "RNN・LSTM（系列データのモデリング）"
+}
+],
+"anomaly-detection": [
+{
+"slug": "clustering",
+"title": "クラスタリング（K-Means・DBSCAN・階層型）"
+},
+{
+"slug": "ml-basics",
+"title": "機械学習の基礎"
+},
+{
+"slug": "statistics",
+"title": "統計学の基礎（確率・分布・検定）"
+},
+{
+"slug": "time-series-analysis",
+"title": "時系列分析（ARIMA・予測・異常検知）"
+},
+{
+"slug": "dimensionality-reduction",
+"title": "次元削減（PCA・t-SNE・UMAP）"
+},
+{
+"slug": "scikit-learn",
+"title": "scikit-learn（機械学習ライブラリ）"
 }
 ],
 "autosar": [
@@ -7360,6 +8325,58 @@
 {
 "slug": "adas-comm",
 "title": "ADAS通信"
+}
+],
+"fine-tuning": [
+{
+"slug": "llm",
+"title": "LLM（大規模言語モデル）"
+},
+{
+"slug": "pytorch",
+"title": "PyTorch（深層学習フレームワーク）"
+},
+{
+"slug": "transformer",
+"title": "Transformerアーキテクチャ"
+},
+{
+"slug": "deep-learning",
+"title": "深層学習の基礎（ニューラルネットワーク）"
+},
+{
+"slug": "cnn",
+"title": "CNN（畳み込みニューラルネットワーク）"
+},
+{
+"slug": "generative-models",
+"title": "生成モデル（GAN・VAE・Diffusion）"
+}
+],
+"generative-models": [
+{
+"slug": "pytorch",
+"title": "PyTorch（深層学習フレームワーク）"
+},
+{
+"slug": "cnn",
+"title": "CNN（畳み込みニューラルネットワーク）"
+},
+{
+"slug": "deep-learning",
+"title": "深層学習の基礎（ニューラルネットワーク）"
+},
+{
+"slug": "transformer",
+"title": "Transformerアーキテクチャ"
+},
+{
+"slug": "image-processing",
+"title": "画像前処理・特徴抽出（深層学習向け）"
+},
+{
+"slug": "rnn-lstm",
+"title": "RNN・LSTM（系列データのモデリング）"
 }
 ],
 "cybersecurity": [
@@ -9188,6 +10205,31 @@
 "favorite": false
 },
 {
+"slug": "fastapi",
+"title": "FastAPI（高速WebAPI開発）",
+"level": 2,
+"category": "Python",
+"related": [
+"python-basics",
+"pandas",
+"llm"
+],
+"next": [],
+"tags": [
+"fastapi",
+"python",
+"api",
+"web",
+"backend"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "FastAPIはPythonの型ヒントを活かした高速なWebAPIフレームワークです。自動的なOpenAPIドキュメント生成・型バリデーション・非同期処理をサポートし、機械学習モデルや分析ツールのAPIサーバーとして最も人気があります。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "matplotlib",
 "title": "Matplotlib（グラフ描画）",
 "level": 2,
@@ -9293,6 +10335,33 @@
 "favorite": false
 },
 {
+"slug": "statistics",
+"title": "統計学の基礎（確率・分布・検定）",
+"level": 2,
+"category": "Python",
+"related": [
+"numpy",
+"pandas",
+"data-analysis",
+"seaborn"
+],
+"next": [
+"data-analysis"
+],
+"tags": [
+"statistics",
+"python",
+"scipy",
+"data-science"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "統計学はデータから「確かなこと」と「不確かなこと」を区別する学問です。機械学習の精度評価・A/Bテスト・センサーデータ分析など、データを扱うすべての場面の基盤となります。PythonではSciPyとStatsmodelsが主要ライブラリです",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "seaborn",
 "title": "Seaborn（統計可視化）",
 "level": 3,
@@ -9341,6 +10410,32 @@
 "difficulty": "中級",
 "updated": "2026-06-10",
 "excerpt": "EDA（Exploratory Data Analysis：探索的データ分析）は、機械学習・統計モデリングの**前に必ず行う**データ理解の工程です。数値の羅列から「傾向」「外れ値」「相関」「欠損パターン」を発見し、仮説を立てて次のアクショ",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "time-series-analysis",
+"title": "時系列分析（ARIMA・予測・異常検知）",
+"level": 3,
+"category": "Python",
+"related": [
+"statistics",
+"pandas",
+"numpy",
+"anomaly-detection"
+],
+"next": [],
+"tags": [
+"time-series",
+"python",
+"statsmodels",
+"arima",
+"forecasting"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"excerpt": "時系列分析は時間順に並んだデータのパターンを発見・予測する手法です。車載ネットワークのトラフィック量の変化、ECU温度のトレンド、センサーデータの周期性など、ネットワーク診断・予兆保全に不可欠です。PythonではStatsmodels・P",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -9404,6 +10499,33 @@
 "favorite": false
 },
 {
+"slug": "clustering",
+"title": "クラスタリング（K-Means・DBSCAN・階層型）",
+"level": 2,
+"category": "ML",
+"related": [
+"ml-basics",
+"scikit-learn",
+"dimensionality-reduction",
+"anomaly-detection"
+],
+"next": [],
+"tags": [
+"clustering",
+"unsupervised",
+"kmeans",
+"dbscan",
+"python",
+"scikit-learn"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "クラスタリングはラベルなしデータをグループに分ける教師なし学習です。車載ネットワークでは「同じ挙動パターンのECUをグループ化」「通信フローの分類」「異常なパケットの検出」に活用されます。PythonではScikit-learnが主要ライブ",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "classification",
 "title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）",
 "level": 2,
@@ -9427,6 +10549,33 @@
 "difficulty": "初級",
 "updated": "2026-06-10",
 "excerpt": "分類（Classification）は入力データが「どのクラスに属するか」を予測するタスクです。スパム判定・故障検知・画像認識などに使います。代表的な4つのアルゴリズムを比較しながら解説します。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "dimensionality-reduction",
+"title": "次元削減（PCA・t-SNE・UMAP）",
+"level": 2,
+"category": "ML",
+"related": [
+"ml-basics",
+"clustering",
+"scikit-learn",
+"numpy"
+],
+"next": [],
+"tags": [
+"pca",
+"tsne",
+"umap",
+"dimensionality-reduction",
+"python",
+"scikit-learn"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "次元削減は高次元データを低次元空間に圧縮する手法です。車載ネットワークでは数百のセンサーやプロトコル特徴量を2〜3次元に圧縮して可視化・分類に使います。PCAは線形、t-SNE・UMAPは非線形な構造を保持します。",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -9479,6 +10628,32 @@
 "difficulty": "中級",
 "updated": "2026-06-10",
 "excerpt": "勾配ブースティング（Gradient Boosting）は、弱い決定木を順番に積み重ねて強力なモデルを作るアンサンブル手法です。Kaggle等のデータコンペで最もよく優勝するアルゴリズムで、表形式データの精度最高峰とされています。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "anomaly-detection",
+"title": "異常検知（Isolation Forest・Autoencoder・統計的手法）",
+"level": 3,
+"category": "ML",
+"related": [
+"ml-basics",
+"statistics",
+"time-series-analysis",
+"clustering"
+],
+"next": [],
+"tags": [
+"anomaly-detection",
+"isolation-forest",
+"autoencoder",
+"python",
+"scikit-learn"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"excerpt": "異常検知は正常パターンから外れたデータを自動識別する技術です。車載ネットワークでは「不正なCAN IDのパケット」「異常なデータレート急上昇」「未知のECUからの通信」など、サイバー攻撃・故障の早期発見に重要です。ラベルなしデータで学習でき",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -9595,6 +10770,33 @@
 "views": 0,
 "completed": false,
 "favorite": false
+},
+{
+"slug": "generative-models",
+"title": "生成モデル（GAN・VAE・Diffusion）",
+"level": 4,
+"category": "DL",
+"related": [
+"deep-learning",
+"pytorch",
+"cnn",
+"transformer"
+],
+"next": [],
+"tags": [
+"gan",
+"vae",
+"diffusion",
+"generative-ai",
+"pytorch",
+"deep-learning"
+],
+"difficulty": "上級",
+"updated": "2026-06-10",
+"excerpt": "生成モデルはデータの分布を学習して新しいサンプルを生成するモデルです。GAN（Generative Adversarial Network）・VAE（Variational Autoencoder）・Diffusionモデルが三大潮流です。",
+"views": 0,
+"completed": false,
+"favorite": false
 }
 ]
 },
@@ -9656,6 +10858,34 @@
 "favorite": false
 },
 {
+"slug": "langchain",
+"title": "LangChain（LLMアプリ開発フレームワーク）",
+"level": 3,
+"category": "GenAI",
+"related": [
+"llm",
+"rag",
+"prompt-engineering",
+"fastapi"
+],
+"next": [],
+"tags": [
+"langchain",
+"llm",
+"rag",
+"python",
+"langchain",
+"openai",
+"claude"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"excerpt": "LangChainはLLMを使ったアプリケーション開発を簡単にするPythonフレームワークです。プロンプト管理・チェーン処理・RAG（検索拡張生成）・エージェント・ツール呼び出しを統一したAPIで扱えます。OpenAI・Anthropic",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "rag",
 "title": "RAG（検索拡張生成）",
 "level": 3,
@@ -9706,6 +10936,34 @@
 "views": 0,
 "completed": false,
 "favorite": false
+},
+{
+"slug": "fine-tuning",
+"title": "ファインチューニング（LoRA・QLoRA・PEFT）",
+"level": 4,
+"category": "GenAI",
+"related": [
+"llm",
+"transformer",
+"deep-learning",
+"pytorch"
+],
+"next": [],
+"tags": [
+"fine-tuning",
+"lora",
+"qlora",
+"peft",
+"llm",
+"pytorch",
+"huggingface"
+],
+"difficulty": "上級",
+"updated": "2026-06-10",
+"excerpt": "ファインチューニングは事前学習済みLLMを特定タスク・ドメインに適応させる技術です。全パラメータを更新するFull Fine-tuningに対し、LoRA（Low-Rank Adaptation）・QLoRA（量子化+LoRA）は少ないGP",
+"views": 0,
+"completed": false,
+"favorite": false
 }
 ]
 },
@@ -9734,6 +10992,32 @@
 "difficulty": "初級",
 "updated": "2026-06-10",
 "excerpt": "OpenCV（Open Source Computer Vision Library）はC++/Python対応の高速な画像処理ライブラリです。画像の読み込み・変換・フィルタリング・エッジ検出・物体検出まで、コンピュータビジョンに必要な操作",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "object-detection",
+"title": "物体検出（YOLO・Faster R-CNN・SSD）",
+"level": 3,
+"category": "CV",
+"related": [
+"opencv",
+"image-processing",
+"cnn",
+"deep-learning"
+],
+"next": [],
+"tags": [
+"object-detection",
+"yolo",
+"faster-rcnn",
+"pytorch",
+"computer-vision"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"excerpt": "物体検出は画像中の物体の位置（バウンディングボックス）とクラスを同時に予測するタスクです。ADAS（先進運転支援）での歩行者・車両検出、工場の外観検査、カメラ映像からの異常検知など、車載・産業分野で広く使われます。",
 "views": 0,
 "completed": false,
 "favorite": false

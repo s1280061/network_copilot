@@ -92,6 +92,20 @@ _CATEGORY_MAP = {
     "seaborn": "Python",
     "data-cleaning": "Python",
     "data-analysis": "Python",
+    "statistics": "Python",
+    "fastapi": "Python",
+    "time-series-analysis": "Python",
+    # ML additional
+    "clustering": "ML",
+    "dimensionality-reduction": "ML",
+    "anomaly-detection": "ML",
+    # DL additional
+    "generative-models": "DL",
+    # CV additional
+    "object-detection": "CV",
+    # GenAI additional
+    "langchain": "GenAI",
+    "fine-tuning": "GenAI",
 }
 
 
