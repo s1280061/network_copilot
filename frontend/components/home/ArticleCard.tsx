@@ -1,27 +1,23 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { ArticleMeta } from "@/lib/types";
+import Thumbnail, { categoryStyle } from "@/components/Thumbnail";
 
 export default function ArticleCard({ a }: { a: ArticleMeta }) {
+  const style = categoryStyle(a.category);
+
   return (
     <Link
       href={`/glossary/${a.slug}`}
       className="block w-64 shrink-0 border rounded-xl bg-white overflow-hidden hover:border-sky-400 hover:shadow-md transition"
     >
-      <div className="relative w-full h-36 bg-slate-100">
-        <Image
-          src={`/thumbnails/${a.slug}.jpg`}
-          alt={a.title}
-          fill
-          className="object-cover"
-          onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
-        />
-      </div>
+      {/* thumbnail (image if present, else colored banner) */}
+      <Thumbnail slug={a.slug} category={a.category} className="h-24 w-full" />
+
       <div className="p-4">
         <div className="flex items-center gap-2 mb-2">
-          <span className="text-xs px-2 py-0.5 rounded-full bg-slate-100 text-slate-600">
+          <span className={`text-xs px-2 py-0.5 rounded-full ${style.bg} ${style.text}`}>
             {a.category}
           </span>
           {a.completed && <span className="text-xs text-green-600">✓</span>}

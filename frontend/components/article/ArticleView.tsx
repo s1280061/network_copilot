@@ -2,7 +2,6 @@
 
 import { useEffect, useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 import mermaid from "mermaid";
 import {
   getArticle,
@@ -14,6 +13,7 @@ import {
 import { Article, Ref } from "@/lib/types";
 import { useStudyPanel } from "@/lib/study-context";
 import { recordView } from "@/lib/profile";
+import Thumbnail from "@/components/Thumbnail";
 
 mermaid.initialize({ startOnLoad: false, theme: "default", securityLevel: "loose" });
 
@@ -104,17 +104,14 @@ export default function ArticleView({ slug }: { slug: string }) {
 
   return (
     <article>
-      <div className="relative w-full rounded-xl overflow-hidden bg-black mb-6" style={{ aspectRatio: "1376/768", maxHeight: "200px" }}>
-        <Image
-          src={`/thumbnails/${article.slug}.jpg`}
-          alt={article.title}
-          fill
-          className="object-contain"
-          onError={(e) => {
-            (e.currentTarget as HTMLImageElement).parentElement!.style.display = "none";
-          }}
-        />
-      </div>
+      {/* note-style header image (falls back to a colored banner) */}
+      <Thumbnail
+        slug={article.slug}
+        category={article.category}
+        className="w-full h-48 sm:h-64 rounded-xl mb-6"
+        iconClassName="text-6xl"
+      />
+
       <div className="flex items-start justify-between gap-4 mb-4">
         <div>
           <span className="text-xs font-semibold text-sky-600">

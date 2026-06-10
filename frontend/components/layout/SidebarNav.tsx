@@ -14,6 +14,7 @@ const NAV = [
   { href: "/favorites", label: "お気に入り", icon: "⭐" },
   { href: "/history", label: "学習履歴", icon: "📝" },
   { href: "/profile", label: "プロフィール", icon: "👤" },
+  { href: "/python", label: "Python DS", icon: "🐍" },
 ];
 
 export default function SidebarNav() {
