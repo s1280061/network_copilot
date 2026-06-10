@@ -96,6 +96,32 @@
 "favorite": false
 },
 {
+"slug": "ml-basics",
+"title": "機械学習の基礎",
+"level": 1,
+"category": "ML",
+"related": [
+"scikit-learn",
+"linear-regression",
+"classification"
+],
+"next": [
+"scikit-learn"
+],
+"tags": [
+"ml",
+"machine-learning",
+"python",
+"data-science"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "機械学習（Machine Learning）とは、データからパターンを自動的に学習してタスクを解くアルゴリズムの総称です。ルールをプログラマが手書きするのではなく、大量のデータから「ルールそのもの」をコンピュータが見つけます。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "communication-basics",
 "title": "通信とは",
 "level": 1,
@@ -420,6 +446,35 @@
 "favorite": false
 },
 {
+"slug": "scapy-basics",
+"title": "Scapy基礎（パケット作成・送受信）",
+"level": 2,
+"category": "PCAP",
+"related": [
+"pcap",
+"wireshark",
+"tcpdump",
+"scapy-pcap",
+"scapy-automotive"
+],
+"next": [
+"scapy-pcap"
+],
+"tags": [
+"scapy",
+"python",
+"pcap",
+"network",
+"packet"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "Scapyは**Pythonでパケットを作成・送信・受信・解析できる**ネットワーク操作ライブラリです。Wiresharkが「見るだけ」のツールとすれば、Scapyは「作って送れる」双方向のツールです。ネットワーク診断・セキュリティテスト・",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "tcp",
 "title": "TCP",
 "level": 2,
@@ -521,6 +576,33 @@
 "favorite": false
 },
 {
+"slug": "scikit-learn",
+"title": "scikit-learn（機械学習ライブラリ）",
+"level": 2,
+"category": "ML",
+"related": [
+"ml-basics",
+"linear-regression",
+"classification",
+"data-cleaning"
+],
+"next": [
+"linear-regression"
+],
+"tags": [
+"ml",
+"scikit-learn",
+"python",
+"data-science"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "scikit-learn（sklearn）はPythonで最も広く使われる機械学習ライブラリです。回帰・分類・クラスタリング・次元削減・前処理・モデル評価まで、一貫したAPIで扱えます。`fit()` で学習、`predict()` で予測",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "subnet",
 "title": "サブネット / **CIDR**",
 "level": 2,
@@ -566,6 +648,60 @@
 "difficulty": "初級",
 "updated": "2026-06-10",
 "excerpt": "データクリーニングは分析・機械学習の前処理として必須のステップです。現実のデータは欠損値・重複・型の不整合・表記ゆれを必ず含んでいます。「ゴミを入れればゴミが出る（GIGO）」という言葉の通り、前処理の質がそのまま分析精度に直結します。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "classification",
+"title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）",
+"level": 2,
+"category": "ML",
+"related": [
+"ml-basics",
+"scikit-learn",
+"linear-regression",
+"gradient-boosting"
+],
+"next": [
+"gradient-boosting"
+],
+"tags": [
+"ml",
+"classification",
+"python",
+"sklearn",
+"data-science"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "分類（Classification）は入力データが「どのクラスに属するか」を予測するタスクです。スパム判定・故障検知・画像認識などに使います。代表的な4つのアルゴリズムを比較しながら解説します。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "linear-regression",
+"title": "線形回帰",
+"level": 2,
+"category": "ML",
+"related": [
+"ml-basics",
+"scikit-learn",
+"classification"
+],
+"next": [
+"classification"
+],
+"tags": [
+"ml",
+"regression",
+"python",
+"data-science"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "線形回帰は「入力 X から連続値 y を予測する」最もシンプルな機械学習モデルです。数値の予測（売上・気温・価格など）に使います。モデルの解釈性が高く、まず試すべきベースラインです。",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -724,6 +860,35 @@
 ],
 "updated": "2026-06-10",
 "excerpt": "PTP(Precision Time Protocol、**IEEE 1588**)は、ネットワーク上の複数ノードの時刻をナノ秒精度で同期するプロトコルです。**グランドマスター**クロックが基準時刻を発信し、スレーブノードが遅延を計測しな",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "scapy-pcap",
+"title": "ScapyによるPCAP解析",
+"level": 3,
+"category": "PCAP",
+"related": [
+"scapy-basics",
+"wireshark",
+"tcpdump",
+"pcap",
+"scapy-automotive"
+],
+"next": [
+"scapy-automotive"
+],
+"tags": [
+"scapy",
+"python",
+"pcap",
+"analysis",
+"network"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"excerpt": "ScapyはPCAPファイルの読み書き・フィルタリング・統計集計・プロトコル解析をPythonコードで自動化できます。Wiresharkが手動の目視分析なら、Scapyは**バッチ処理・大量ファイルの自動解析**に強みがあります。",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -1039,6 +1204,32 @@
 "favorite": false
 },
 {
+"slug": "gradient-boosting",
+"title": "勾配ブースティング（XGBoost・LightGBM）",
+"level": 3,
+"category": "ML",
+"related": [
+"classification",
+"scikit-learn",
+"ml-basics"
+],
+"next": [],
+"tags": [
+"ml",
+"xgboost",
+"lightgbm",
+"boosting",
+"python",
+"data-science"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"excerpt": "勾配ブースティング（Gradient Boosting）は、弱い決定木を順番に積み重ねて強力なモデルを作るアンサンブル手法です。Kaggle等のデータコンペで最もよく優勝するアルゴリズムで、表形式データの精度最高峰とされています。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "autosar",
 "title": "AUTOSAR",
 "level": 4,
@@ -1212,6 +1403,36 @@
 "difficulty": "上級",
 "updated": "2026-06-10",
 "excerpt": "SOME/IP(Scalable service-Oriented MiddlewarE over IP)は、車載ECU同士が「サービス」をやり取りするためのIP上のミドルウェアです。メソッド呼び出し(RPC)、イベント通知(Pub/Sub",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "scapy-automotive",
+"title": "Scapy Automotive（CAN・DoIP・UDS解析）",
+"level": 4,
+"category": "PCAP",
+"related": [
+"scapy-basics",
+"scapy-pcap",
+"can",
+"doip",
+"uds",
+"some-ip"
+],
+"next": [],
+"tags": [
+"scapy",
+"automotive",
+"can",
+"doip",
+"uds",
+"python",
+"pcap"
+],
+"difficulty": "上級",
+"updated": "2026-06-10",
+"excerpt": "ScapyはEthernetだけでなく、**車載通信プロトコル（CAN・ISO-TP・UDS・DoIP・SOME/IP）**もサポートします。`scapy.contrib.automotive` モジュールを使うと、車載診断や通信テストをP",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -1581,6 +1802,52 @@
 {
 "slug": "numpy",
 "title": "NumPy（配列・行列演算）"
+}
+],
+"completed": false,
+"favorite": false
+},
+"ml-basics": {
+"slug": "ml-basics",
+"title": "機械学習の基礎",
+"level": 1,
+"category": "ML",
+"related": [
+"scikit-learn",
+"linear-regression",
+"classification"
+],
+"next": [
+"scikit-learn"
+],
+"tags": [
+"ml",
+"machine-learning",
+"python",
+"data-science"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>機械学習（Machine Learning）とは、データからパターンを自動的に学習してタスクを解くアルゴリズムの総称です。ルールをプログラマが手書きするのではなく、大量のデータから「ルールそのもの」をコンピュータが見つけます。</p>\n<h2>機械学習の3つのパラダイム</h2>\n<pre><code class=\"language-mermaid\">graph TD\n  A[機械学習] --&gt; B[教師あり学習&lt;br/&gt;Supervised Learning]\n  A --&gt; C[教師なし学習&lt;br/&gt;Unsupervised Learning]\n  A --&gt; D[強化学習&lt;br/&gt;Reinforcement Learning]\n  B --&gt; B1[回帰: 数値を予測&lt;br/&gt;例: 価格・気温]\n  B --&gt; B2[分類: クラスを判定&lt;br/&gt;例: スパム/正常]\n  C --&gt; C1[クラスタリング&lt;br/&gt;例: 顧客セグメント]\n  C --&gt; C2[次元削減&lt;br/&gt;例: PCA]\n  D --&gt; D1[エージェントが報酬を&lt;br/&gt;最大化するよう行動]\n</code></pre>\n<h2>教師あり学習（最も頻繁に使う）</h2>\n<p>学習データに「正解ラベル（y）」が付いている。</p>\n<pre><code class=\"language-python\">import numpy as np\nfrom sklearn.linear_model import LinearRegression\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.metrics import mean_squared_error\n\n# 特徴量 X と正解ラベル y を用意\nX = np.array([[1], [2], [3], [4], [5], [6], [7], [8]])\ny = np.array([2.1, 4.0, 5.9, 8.2, 9.8, 12.1, 14.0, 16.2])\n\n# 訓練データとテストデータに分割（8:2）\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.2, random_state=42\n)\n\n# モデルを学習\nmodel = LinearRegression()\nmodel.fit(X_train, y_train)\n\n# テストデータで評価\ny_pred = model.predict(X_test)\nrmse = mean_squared_error(y_test, y_pred) ** 0.5\nprint(f&quot;RMSE: {rmse:.3f}&quot;)\n</code></pre>\n<h2>機械学習の一般的なワークフロー</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  A[データ収集] --&gt; B[EDA・前処理]\n  B --&gt; C[特徴量エンジニアリング]\n  C --&gt; D[モデル選択・学習]\n  D --&gt; E[評価・チューニング]\n  E --&gt; F[デプロイ・モニタリング]\n  E --&gt;|改善| B\n</code></pre>\n<h2>過学習と汎化</h2>\n<pre><code class=\"language-python\">import matplotlib.pyplot as plt\nfrom sklearn.preprocessing import PolynomialFeatures\nfrom sklearn.pipeline import make_pipeline\n\nnp.random.seed(0)\nX = np.sort(np.random.rand(20, 1), axis=0)\ny = np.sin(2 * np.pi * X).ravel() + np.random.randn(20) * 0.2\n\nfig, axes = plt.subplots(1, 3, figsize=(14, 4))\n\nfor ax, degree, title in zip(axes, [1, 4, 15],\n                              [&quot;次数1: 過小適合&quot;, &quot;次数4: 適切&quot;, &quot;次数15: 過学習&quot;]):\n    model = make_pipeline(PolynomialFeatures(degree), LinearRegression())\n    model.fit(X, y)\n    X_plot = np.linspace(0, 1, 200).reshape(-1, 1)\n    ax.scatter(X, y, color=&quot;steelblue&quot;, s=30)\n    ax.plot(X_plot, model.predict(X_plot), color=&quot;tomato&quot;)\n    ax.set_title(title)\n    ax.set_ylim(-2, 2)\n\nplt.tight_layout()\nplt.show()\n</code></pre>\n<h2>評価指標の使い分け</h2>\n<table>\n<thead>\n<tr>\n<th>タスク</th>\n<th>指標</th>\n<th>意味</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>回帰</td>\n<td>RMSE</td>\n<td>予測誤差の大きさ（単位同じ）</td>\n</tr>\n<tr>\n<td>回帰</td>\n<td>MAE</td>\n<td>外れ値に強い平均絶対誤差</td>\n</tr>\n<tr>\n<td>回帰</td>\n<td>R²</td>\n<td>1に近いほど良い（説明率）</td>\n</tr>\n<tr>\n<td>分類</td>\n<td>Accuracy</td>\n<td>正解率（クラス不均衡に弱い）</td>\n</tr>\n<tr>\n<td>分類</td>\n<td>F1スコア</td>\n<td>適合率と再現率の調和平均</td>\n</tr>\n<tr>\n<td>分類</td>\n<td>AUC-ROC</td>\n<td>閾値なしの総合性能</td>\n</tr>\n</tbody>\n</table>\n<h2>次に学ぶべき内容</h2>\n<p>実際にモデルを動かす <a class=\"term-link\" data-slug=\"scikit-learn\" href=\"/glossary/scikit-learn\">scikit-learn（機械学習ライブラリ）</a> から始めましょう。</p>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "scikit-learn",
+"title": "scikit-learn（機械学習ライブラリ）"
+},
+{
+"slug": "linear-regression",
+"title": "線形回帰"
+},
+{
+"slug": "classification",
+"title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
+}
+],
+"next_full": [
+{
+"slug": "scikit-learn",
+"title": "scikit-learn（機械学習ライブラリ）"
 }
 ],
 "completed": false,
@@ -2225,6 +2492,63 @@
 "completed": false,
 "favorite": false
 },
+"scapy-basics": {
+"slug": "scapy-basics",
+"title": "Scapy基礎（パケット作成・送受信）",
+"level": 2,
+"category": "PCAP",
+"related": [
+"pcap",
+"wireshark",
+"tcpdump",
+"scapy-pcap",
+"scapy-automotive"
+],
+"next": [
+"scapy-pcap"
+],
+"tags": [
+"scapy",
+"python",
+"pcap",
+"network",
+"packet"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>Scapyは<strong>Pythonでパケットを作成・送信・受信・解析できる</strong>ネットワーク操作ライブラリです。Wiresharkが「見るだけ」のツールとすれば、Scapyは「作って送れる」双方向のツールです。ネットワーク診断・セキュリティテスト・プロトコル検証・PCAP解析に使います。</p>\n<h2>なぜ使うか</h2>\n<p>Wiresharkはキャプチャ・表示に特化していますが、「特定パケットを生成して応答を確認したい」「PCAPからプロトコル別に統計を出したい」という場合はScapyが適しています。PythonのロジックとネットワークI/Oを自然に組み合わせられます。</p>\n<h2>インストールと起動</h2>\n<pre><code class=\"language-bash\">pip install scapy\n# Linuxではroot権限が必要なことが多い\nsudo python3 -c &quot;from scapy.all import *; print('OK')&quot;\n</code></pre>\n<h2>レイヤー構造</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  A[Ether&lt;br/&gt;L2 Ethernet] --&gt; B[IP&lt;br/&gt;L3 IP]\n  B --&gt; C[TCP / UDP&lt;br/&gt;L4]\n  C --&gt; D[Raw / payload&lt;br/&gt;アプリ]\n</code></pre>\n<p>Scapy のパケットはこのレイヤーを <code>/</code> で重ねて組み立てます。</p>\n<h2>パケットを作る</h2>\n<pre><code class=\"language-python\">from scapy.all import *\n\n# Ethernet フレーム\neth = Ether(dst=&quot;ff:ff:ff:ff:ff:ff&quot;, src=&quot;00:11:22:33:44:55&quot;)\n\n# IP パケット\nip  = IP(src=&quot;192.168.1.1&quot;, dst=&quot;192.168.1.100&quot;, ttl=64)\n\n# UDP セグメント\nudp = UDP(sport=12345, dport=53)\n\n# ペイロード\npayload = Raw(b&quot;Hello, Network!&quot;)\n\n# レイヤーを重ねる\npkt = eth / ip / udp / payload\n\n# パケット構造を確認\npkt.show()\n# ###[ Ethernet ]###\n#   dst = ff:ff:ff:ff:ff:ff\n#   src = 00:11:22:33:44:55\n# ###[ IP ]###\n#      src = 192.168.1.1\n#      dst = 192.168.1.100\n# ###[ UDP ]###\n#         sport= 12345\n#         dport= domain\n# ###[ Raw ]###\n#             load = 'Hello, Network!'\n\n# 16進数でダンプ\nhexdump(pkt)\nprint(f&quot;パケットサイズ: {len(pkt)} バイト&quot;)\n</code></pre>\n<h2>各フィールドの参照</h2>\n<pre><code class=\"language-python\">pkt = IP(src=&quot;10.0.0.1&quot;, dst=&quot;10.0.0.2&quot;) / TCP(dport=80, flags=&quot;S&quot;)\n\n# フィールドにアクセス\nprint(pkt[IP].src)      # 10.0.0.1\nprint(pkt[TCP].dport)   # 80\nprint(pkt[TCP].flags)   # S (SYN)\n\n# レイヤーの確認\nprint(pkt.haslayer(TCP))  # True\nprint(pkt.haslayer(UDP))  # False\n\n# TTLを書き換え\npkt[IP].ttl = 128\n</code></pre>\n<h2>パケットを送信する</h2>\n<pre><code class=\"language-python\"># L3 で送信（IPルーティングを使う）\nsend(IP(dst=&quot;8.8.8.8&quot;) / ICMP())\n\n# L2 で送信（インターフェース指定）\nsendp(Ether() / IP(dst=&quot;192.168.1.1&quot;) / ICMP(), iface=&quot;eth0&quot;)\n\n# 送信して応答を受信（L3）\nresponse = sr1(IP(dst=&quot;8.8.8.8&quot;) / ICMP(), timeout=2)\nif response:\n    response.show()\n\n# 複数パケット送信・複数応答受信\nanswered, unanswered = sr(\n    [IP(dst=&quot;8.8.8.8&quot;) / ICMP() for _ in range(3)],\n    timeout=2\n)\n</code></pre>\n<h2>ICMPパケットで疎通確認（ping）</h2>\n<pre><code class=\"language-python\">def ping(host: str, count: int = 3) -&gt; dict:\n    results = {&quot;sent&quot;: 0, &quot;received&quot;: 0, &quot;rtts&quot;: []}\n    for i in range(count):\n        pkt = IP(dst=host) / ICMP(seq=i)\n        t_start = time.time()\n        reply   = sr1(pkt, timeout=1, verbose=False)\n        results[&quot;sent&quot;] += 1\n        if reply and reply.haslayer(ICMP) and reply[ICMP].type == 0:\n            rtt = (time.time() - t_start) * 1000\n            results[&quot;received&quot;] += 1\n            results[&quot;rtts&quot;].append(rtt)\n    results[&quot;loss_rate&quot;] = 1 - results[&quot;received&quot;] / results[&quot;sent&quot;]\n    if results[&quot;rtts&quot;]:\n        results[&quot;avg_rtt&quot;] = sum(results[&quot;rtts&quot;]) / len(results[&quot;rtts&quot;])\n    return results\n\nimport time\nresult = ping(&quot;8.8.8.8&quot;)\nprint(f&quot;損失率: {result['loss_rate']*100:.0f}%&quot;)\nprint(f&quot;平均RTT: {result.get('avg_rtt', 'N/A'):.1f} ms&quot;)\n</code></pre>\n<h2>TCPハンドシェイクを手動で行う</h2>\n<pre><code class=\"language-python\"># SYN 送信\nip  = IP(dst=&quot;example.com&quot;)\nsyn = TCP(sport=RandShort(), dport=80, flags=&quot;S&quot;, seq=1000)\n\nsyn_ack = sr1(ip / syn, timeout=3, verbose=False)\nif syn_ack and syn_ack.haslayer(TCP):\n    print(f&quot;SYN-ACK 受信: seq={syn_ack[TCP].seq}, ack={syn_ack[TCP].ack}&quot;)\n\n    # ACK 送信（ハンドシェイク完了）\n    ack = TCP(sport=syn.sport, dport=80,\n              flags=&quot;A&quot;,\n              seq=syn_ack[TCP].ack,\n              ack=syn_ack[TCP].seq + 1)\n    send(ip / ack, verbose=False)\n    print(&quot;TCP ハンドシェイク完了&quot;)\n</code></pre>\n<h2>パケットのキャプチャ</h2>\n<pre><code class=\"language-python\"># 10パケットをキャプチャ\npkts = sniff(iface=&quot;eth0&quot;, count=10)\n\n# フィルタ付きキャプチャ（BPFフィルタ構文）\nhttp_pkts = sniff(iface=&quot;eth0&quot;, filter=&quot;tcp port 80&quot;, count=20)\n\n# コールバック処理（リアルタイム処理）\ndef process_pkt(pkt):\n    if pkt.haslayer(IP):\n        print(f&quot;{pkt[IP].src} → {pkt[IP].dst}&quot;)\n\nsniff(iface=&quot;eth0&quot;, prn=process_pkt, count=50)\n\n# PCAPファイルに保存\nwrpcap(&quot;capture.pcap&quot;, pkts)\n</code></pre>\n<h2>次に学ぶべき内容</h2>\n<p>PCAPファイルの解析を <a class=\"term-link\" data-slug=\"scapy-pcap\" href=\"/glossary/scapy-pcap\">ScapyによるPCAP解析</a> で詳しく学びましょう。</p>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "pcap",
+"title": "PCAP"
+},
+{
+"slug": "wireshark",
+"title": "Wireshark"
+},
+{
+"slug": "tcpdump",
+"title": "tcpdump"
+},
+{
+"slug": "scapy-pcap",
+"title": "ScapyによるPCAP解析"
+},
+{
+"slug": "scapy-automotive",
+"title": "Scapy Automotive（CAN・DoIP・UDS解析）"
+}
+],
+"next_full": [
+{
+"slug": "scapy-pcap",
+"title": "ScapyによるPCAP解析"
+}
+],
+"completed": false,
+"favorite": false
+},
 "tcp": {
 "slug": "tcp",
 "title": "TCP",
@@ -2445,6 +2769,62 @@
 "completed": false,
 "favorite": false
 },
+"scikit-learn": {
+"slug": "scikit-learn",
+"title": "scikit-learn（機械学習ライブラリ）",
+"level": 2,
+"category": "ML",
+"related": [
+"ml-basics",
+"linear-regression",
+"classification",
+"data-cleaning"
+],
+"next": [
+"linear-regression"
+],
+"tags": [
+"ml",
+"scikit-learn",
+"python",
+"data-science"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>scikit-learn（sklearn）はPythonで最も広く使われる機械学習ライブラリです。回帰・分類・クラスタリング・次元削減・前処理・モデル評価まで、一貫したAPIで扱えます。<code>fit()</code> で学習、<code>predict()</code> で予測という統一インターフェースが特徴です。</p>\n<h2>なぜ使うか</h2>\n<p>PyTorch/TensorFlowはニューラルネットワーク向けですが、scikit-learnは<strong>表形式データ（テーブルデータ）に強い</strong>ライブラリです。決定木・SVM・ランダムフォレストなど古典的な手法を数行で試せ、特徴量エンジニアリング・交差検証・パイプラインも完備しています。</p>\n<h2>共通のAPI設計</h2>\n<pre><code class=\"language-python\"># すべてのモデルが同じインターフェース\nmodel.fit(X_train, y_train)     # 学習\nmodel.predict(X_test)           # 予測\nmodel.score(X_test, y_test)     # スコア評価\nmodel.predict_proba(X_test)     # 確率（分類のみ）\n</code></pre>\n<h2>データの前処理</h2>\n<pre><code class=\"language-python\">import numpy as np\nimport pandas as pd\nfrom sklearn.preprocessing import (\n    StandardScaler, MinMaxScaler, LabelEncoder, OneHotEncoder\n)\nfrom sklearn.impute import SimpleImputer\n\n# 欠損値補完\nimp = SimpleImputer(strategy=&quot;median&quot;)\nX_filled = imp.fit_transform(X)\n\n# 標準化（平均0・分散1）→ SVM・ロジスティック回帰・ニューラルネットに必須\nscaler = StandardScaler()\nX_scaled = scaler.fit_transform(X_train)\nX_test_scaled = scaler.transform(X_test)   # testはfit不要！\n\n# 正規化（0〜1に収める）\nminmax = MinMaxScaler()\nX_norm = minmax.fit_transform(X_train)\n\n# カテゴリ変数をワンホットエンコード\nenc = OneHotEncoder(sparse_output=False, drop=&quot;first&quot;)\nX_cat = enc.fit_transform(df[[&quot;city&quot;, &quot;type&quot;]])\n</code></pre>\n<h2>訓練/テスト分割と交差検証</h2>\n<pre><code class=\"language-python\">from sklearn.model_selection import (\n    train_test_split, cross_val_score, KFold, StratifiedKFold\n)\n\n# 単純な分割\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.2, random_state=42, stratify=y  # stratify: クラス比率を維持\n)\n\n# k-fold 交差検証（過学習の検出に有効）\nfrom sklearn.ensemble import RandomForestClassifier\nmodel = RandomForestClassifier(n_estimators=100, random_state=42)\n\ncv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)\nscores = cross_val_score(model, X, y, cv=cv, scoring=&quot;f1_macro&quot;)\nprint(f&quot;CV F1: {scores.mean():.3f} ± {scores.std():.3f}&quot;)\n</code></pre>\n<h2>Pipeline — 前処理とモデルを一体化</h2>\n<pre><code class=\"language-python\">from sklearn.pipeline import Pipeline\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.linear_model import LogisticRegression\n\n# パイプラインにまとめると test の変換漏れ・データリークを防げる\npipe = Pipeline([\n    (&quot;imputer&quot;, SimpleImputer(strategy=&quot;median&quot;)),\n    (&quot;scaler&quot;,  StandardScaler()),\n    (&quot;model&quot;,   LogisticRegression(max_iter=1000)),\n])\n\npipe.fit(X_train, y_train)\ny_pred = pipe.predict(X_test)\n</code></pre>\n<h2>ColumnTransformer — 列ごとに異なる前処理</h2>\n<pre><code class=\"language-python\">from sklearn.compose import ColumnTransformer\nfrom sklearn.preprocessing import StandardScaler, OneHotEncoder\nfrom sklearn.pipeline import Pipeline\nfrom sklearn.ensemble import GradientBoostingClassifier\n\nnum_cols = [&quot;age&quot;, &quot;income&quot;, &quot;score&quot;]\ncat_cols = [&quot;city&quot;, &quot;occupation&quot;]\n\npreprocessor = ColumnTransformer([\n    (&quot;num&quot;, StandardScaler(),                    num_cols),\n    (&quot;cat&quot;, OneHotEncoder(drop=&quot;first&quot;),         cat_cols),\n])\n\npipe = Pipeline([\n    (&quot;prep&quot;,  preprocessor),\n    (&quot;model&quot;, GradientBoostingClassifier()),\n])\n\npipe.fit(X_train, y_train)\nprint(pipe.score(X_test, y_test))\n</code></pre>\n<h2>ハイパーパラメータチューニング</h2>\n<pre><code class=\"language-python\">from sklearn.model_selection import GridSearchCV, RandomizedSearchCV\nfrom sklearn.ensemble import RandomForestClassifier\n\nparam_grid = {\n    &quot;model__n_estimators&quot;:  [100, 200, 300],\n    &quot;model__max_depth&quot;:     [None, 5, 10],\n    &quot;model__min_samples_split&quot;: [2, 5],\n}\n\ngs = GridSearchCV(pipe, param_grid, cv=5, scoring=&quot;f1_macro&quot;, n_jobs=-1)\ngs.fit(X_train, y_train)\nprint(f&quot;最良パラメータ: {gs.best_params_}&quot;)\nprint(f&quot;最良スコア:     {gs.best_score_:.3f}&quot;)\n</code></pre>\n<h2>モデル評価の全体像</h2>\n<pre><code class=\"language-python\">from sklearn.metrics import (\n    classification_report, confusion_matrix,\n    roc_auc_score, ConfusionMatrixDisplay\n)\nimport matplotlib.pyplot as plt\n\ny_pred  = pipe.predict(X_test)\ny_proba = pipe.predict_proba(X_test)[:, 1]\n\n# 詳細レポート\nprint(classification_report(y_test, y_pred, target_names=[&quot;Neg&quot;, &quot;Pos&quot;]))\n\n# 混同行列\nfig, ax = plt.subplots(figsize=(4, 3))\nConfusionMatrixDisplay.from_predictions(y_test, y_pred, ax=ax)\nplt.tight_layout()\nplt.show()\n\n# AUC-ROC\nprint(f&quot;AUC: {roc_auc_score(y_test, y_proba):.3f}&quot;)\n</code></pre>\n<h2>scikit-learn の全体マップ</h2>\n<pre><code class=\"language-mermaid\">graph TD\n  A[データ] --&gt; B[前処理&lt;br/&gt;Imputer / Scaler / Encoder]\n  B --&gt; C[Pipeline / ColumnTransformer]\n  C --&gt; D{タスク}\n  D --&gt; E[回帰&lt;br/&gt;Linear / Ridge / SVR / RF]\n  D --&gt; F[分類&lt;br/&gt;Logistic / SVM / RF / GBM]\n  D --&gt; G[クラスタリング&lt;br/&gt;KMeans / DBSCAN]\n  D --&gt; H[次元削減&lt;br/&gt;PCA / TSNE]\n  E &amp; F &amp; G --&gt; I[評価&lt;br/&gt;cross_val_score / GridSearchCV]\n</code></pre>\n<h2>次に学ぶべき内容</h2>\n<p>回帰の基礎となる <a class=\"term-link\" data-slug=\"linear-regression\" href=\"/glossary/linear-regression\">線形回帰</a> を学びましょう。</p>",
+"prereq_full": [
+{
+"slug": "ml-basics",
+"title": "機械学習の基礎"
+}
+],
+"related_full": [
+{
+"slug": "ml-basics",
+"title": "機械学習の基礎"
+},
+{
+"slug": "linear-regression",
+"title": "線形回帰"
+},
+{
+"slug": "classification",
+"title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
+},
+{
+"slug": "data-cleaning",
+"title": "データクリーニング"
+}
+],
+"next_full": [
+{
+"slug": "linear-regression",
+"title": "線形回帰"
+}
+],
+"completed": false,
+"favorite": false
+},
 "subnet": {
 "slug": "subnet",
 "title": "サブネット / **CIDR**",
@@ -2535,6 +2915,114 @@
 {
 "slug": "data-analysis",
 "title": "データ分析の流れ（EDA）"
+}
+],
+"completed": false,
+"favorite": false
+},
+"classification": {
+"slug": "classification",
+"title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）",
+"level": 2,
+"category": "ML",
+"related": [
+"ml-basics",
+"scikit-learn",
+"linear-regression",
+"gradient-boosting"
+],
+"next": [
+"gradient-boosting"
+],
+"tags": [
+"ml",
+"classification",
+"python",
+"sklearn",
+"data-science"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>分類（Classification）は入力データが「どのクラスに属するか」を予測するタスクです。スパム判定・故障検知・画像認識などに使います。代表的な4つのアルゴリズムを比較しながら解説します。</p>\n<h2>アルゴリズムの使い分け</h2>\n<pre><code class=\"language-mermaid\">graph TD\n  A[分類タスク] --&gt; B{解釈性が必要?}\n  B --&gt;|Yes| C{特徴量の数}\n  C --&gt;|少ない| D[ロジスティック回帰]\n  C --&gt;|多い| E[決定木 / ランダムフォレスト]\n  B --&gt;|No| F{データ量}\n  F --&gt;|〜数万| G[SVM]\n  F --&gt;|数万〜| H[ランダムフォレスト&lt;br/&gt;GBM / XGBoost]\n</code></pre>\n<h2>共通セットアップ</h2>\n<pre><code class=\"language-python\">import numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\nfrom sklearn.datasets import make_classification\nfrom sklearn.model_selection import train_test_split, cross_val_score\nfrom sklearn.metrics import classification_report, roc_auc_score\nfrom sklearn.preprocessing import StandardScaler\n\n# サンプルデータ生成（2クラス分類）\nX, y = make_classification(\n    n_samples=1000, n_features=20, n_informative=10,\n    n_redundant=5, random_state=42\n)\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.2, stratify=y, random_state=42\n)\n</code></pre>\n<h2>1. ロジスティック回帰</h2>\n<pre><code class=\"language-python\">from sklearn.linear_model import LogisticRegression\nfrom sklearn.pipeline import make_pipeline\n\nlr = make_pipeline(StandardScaler(), LogisticRegression(max_iter=1000))\nlr.fit(X_train, y_train)\n\nprint(classification_report(y_test, lr.predict(X_test)))\nprint(f&quot;AUC: {roc_auc_score(y_test, lr.predict_proba(X_test)[:,1]):.3f}&quot;)\n\n# 係数から重要な特徴量を確認\ncoef = lr.named_steps[&quot;logisticregression&quot;].coef_[0]\nfeat_importance = pd.Series(np.abs(coef)).sort_values(ascending=False)\nprint(&quot;上位特徴量:&quot;, feat_importance.head(5))\n</code></pre>\n<p><strong>向いている場面:</strong> 特徴量が少ない・線形分離しやすい・確率が必要</p>\n<h2>2. 決定木</h2>\n<pre><code class=\"language-python\">from sklearn.tree import DecisionTreeClassifier, plot_tree\n\ndt = DecisionTreeClassifier(max_depth=4, min_samples_leaf=10, random_state=42)\ndt.fit(X_train, y_train)\nprint(classification_report(y_test, dt.predict(X_test)))\n\n# 木の可視化\nfig, ax = plt.subplots(figsize=(16, 6))\nplot_tree(dt, max_depth=2, filled=True, feature_names=[f&quot;f{i}&quot; for i in range(20)],\n          class_names=[&quot;0&quot;, &quot;1&quot;], ax=ax)\nplt.show()\n\n# 特徴量重要度\nimportances = pd.Series(dt.feature_importances_).sort_values(ascending=False)\nprint(&quot;上位特徴量:&quot;, importances.head(5))\n</code></pre>\n<p><strong>向いている場面:</strong> ルールを人間が読む必要がある・欠損値に強い・前処理不要</p>\n<h2>3. サポートベクターマシン（SVM）</h2>\n<pre><code class=\"language-python\">from sklearn.svm import SVC\n\nsvm = make_pipeline(StandardScaler(), SVC(C=1.0, kernel=&quot;rbf&quot;, probability=True))\nsvm.fit(X_train, y_train)\nprint(classification_report(y_test, svm.predict(X_test)))\nprint(f&quot;AUC: {roc_auc_score(y_test, svm.predict_proba(X_test)[:,1]):.3f}&quot;)\n</code></pre>\n<p><strong>向いている場面:</strong> 高次元・中規模データ・マージン最大化が重要</p>\n<h2>4. ランダムフォレスト</h2>\n<pre><code class=\"language-python\">from sklearn.ensemble import RandomForestClassifier\n\nrf = RandomForestClassifier(\n    n_estimators=200,\n    max_depth=None,\n    min_samples_leaf=5,\n    n_jobs=-1,\n    random_state=42,\n)\nrf.fit(X_train, y_train)\nprint(classification_report(y_test, rf.predict(X_test)))\nprint(f&quot;AUC: {roc_auc_score(y_test, rf.predict_proba(X_test)[:,1]):.3f}&quot;)\n\n# 特徴量重要度\nimportances = pd.Series(\n    rf.feature_importances_,\n    index=[f&quot;f{i}&quot; for i in range(20)]\n).sort_values(ascending=False)\n\nimportances.head(10).plot(kind=&quot;barh&quot;, figsize=(6, 4))\nplt.title(&quot;特徴量重要度（Random Forest）&quot;)\nplt.tight_layout()\nplt.show()\n</code></pre>\n<p><strong>向いている場面:</strong> 大量の特徴量・外れ値・欠損値・高精度が必要</p>\n<h2>モデル比較</h2>\n<pre><code class=\"language-python\">from sklearn.linear_model import LogisticRegression\nfrom sklearn.tree import DecisionTreeClassifier\nfrom sklearn.svm import SVC\nfrom sklearn.ensemble import RandomForestClassifier\n\nmodels = {\n    &quot;LogisticReg&quot;:    make_pipeline(StandardScaler(), LogisticRegression(max_iter=1000)),\n    &quot;DecisionTree&quot;:   DecisionTreeClassifier(max_depth=5, random_state=42),\n    &quot;SVM&quot;:            make_pipeline(StandardScaler(), SVC(probability=True)),\n    &quot;RandomForest&quot;:   RandomForestClassifier(n_estimators=100, n_jobs=-1, random_state=42),\n}\n\nresults = {}\nfor name, model in models.items():\n    scores = cross_val_score(model, X, y, cv=5, scoring=&quot;roc_auc&quot;)\n    results[name] = scores\n    print(f&quot;{name:20s}: {scores.mean():.3f} ± {scores.std():.3f}&quot;)\n\n# 箱ひげ図で比較\nimport seaborn as sns\nsns.boxplot(data=pd.DataFrame(results))\nplt.title(&quot;5-Fold CV AUC の比較&quot;)\nplt.ylabel(&quot;AUC&quot;)\nplt.show()\n</code></pre>\n<h2>クラス不均衡への対応</h2>\n<pre><code class=\"language-python\">from sklearn.utils import class_weight\nfrom sklearn.ensemble import RandomForestClassifier\n\n# クラスの比率を自動で調整\nrf_balanced = RandomForestClassifier(\n    class_weight=&quot;balanced&quot;,\n    n_estimators=200,\n    random_state=42,\n)\nrf_balanced.fit(X_train, y_train)\n\n# または手動で重みを指定\nweights = class_weight.compute_class_weight(&quot;balanced&quot;, classes=np.unique(y), y=y)\nweight_dict = dict(enumerate(weights))\n</code></pre>\n<h2>次に学ぶべき内容</h2>\n<p>最高精度を目指す <a class=\"term-link\" data-slug=\"gradient-boosting\" href=\"/glossary/gradient-boosting\">勾配ブースティング（XGBoost・LightGBM）</a>（XGBoost / LightGBM）を学びましょう。</p>",
+"prereq_full": [
+{
+"slug": "linear-regression",
+"title": "線形回帰"
+}
+],
+"related_full": [
+{
+"slug": "ml-basics",
+"title": "機械学習の基礎"
+},
+{
+"slug": "scikit-learn",
+"title": "scikit-learn（機械学習ライブラリ）"
+},
+{
+"slug": "linear-regression",
+"title": "線形回帰"
+},
+{
+"slug": "gradient-boosting",
+"title": "勾配ブースティング（XGBoost・LightGBM）"
+}
+],
+"next_full": [
+{
+"slug": "gradient-boosting",
+"title": "勾配ブースティング（XGBoost・LightGBM）"
+}
+],
+"completed": false,
+"favorite": false
+},
+"linear-regression": {
+"slug": "linear-regression",
+"title": "線形回帰",
+"level": 2,
+"category": "ML",
+"related": [
+"ml-basics",
+"scikit-learn",
+"classification"
+],
+"next": [
+"classification"
+],
+"tags": [
+"ml",
+"regression",
+"python",
+"data-science"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>線形回帰は「入力 X から連続値 y を予測する」最もシンプルな機械学習モデルです。数値の予測（売上・気温・価格など）に使います。モデルの解釈性が高く、まず試すべきベースラインです。</p>\n<h2>なぜ必要か</h2>\n<p>複雑なモデル（ランダムフォレスト・ニューラルネット）は精度は高いが解釈が難しい。線形回帰は「どの特徴量がどれだけ予測に効いているか」が係数から直接読み取れ、ビジネス上の説明責任を果たしやすいという強みがあります。</p>\n<h2>単回帰（特徴量が1つ）</h2>\n<pre><code class=\"language-python\">import numpy as np\nimport matplotlib.pyplot as plt\nfrom sklearn.linear_model import LinearRegression\nfrom sklearn.metrics import mean_squared_error, r2_score\n\nnp.random.seed(42)\n# 広告費（万円）→ 売上（万円）\nad_spend = np.random.uniform(10, 100, 80).reshape(-1, 1)\nsales    = 3.2 * ad_spend.ravel() + np.random.randn(80) * 40 + 50\n\nfrom sklearn.model_selection import train_test_split\nX_train, X_test, y_train, y_test = train_test_split(\n    ad_spend, sales, test_size=0.2, random_state=42\n)\n\nmodel = LinearRegression()\nmodel.fit(X_train, y_train)\n\nprint(f&quot;傾き（係数）: {model.coef_[0]:.2f}&quot;)   # 広告費1万円増 → 売上+??万円\nprint(f&quot;切片        : {model.intercept_:.2f}&quot;)\n\ny_pred = model.predict(X_test)\nprint(f&quot;RMSE: {mean_squared_error(y_test, y_pred)**0.5:.2f}&quot;)\nprint(f&quot;R²  : {r2_score(y_test, y_pred):.3f}&quot;)\n\n# 可視化\nfig, ax = plt.subplots(figsize=(7, 5))\nax.scatter(X_test, y_test, alpha=0.6, label=&quot;実測値&quot;)\nax.plot(np.sort(X_test, axis=0),\n        model.predict(np.sort(X_test, axis=0)),\n        color=&quot;tomato&quot;, linewidth=2, label=&quot;回帰直線&quot;)\nax.set_xlabel(&quot;広告費（万円）&quot;)\nax.set_ylabel(&quot;売上（万円）&quot;)\nax.set_title(&quot;単回帰：広告費 vs 売上&quot;)\nax.legend()\nplt.tight_layout()\nplt.show()\n</code></pre>\n<h2>重回帰（特徴量が複数）</h2>\n<pre><code class=\"language-python\">import pandas as pd\nfrom sklearn.linear_model import LinearRegression\n\ndf = pd.DataFrame({\n    &quot;広告費&quot;:     np.random.uniform(10, 100, 200),\n    &quot;店舗面積&quot;:   np.random.uniform(50, 300, 200),\n    &quot;スタッフ数&quot;: np.random.randint(2, 20, 200),\n})\ndf[&quot;売上&quot;] = (\n    3.0 * df[&quot;広告費&quot;]\n  + 0.5 * df[&quot;店舗面積&quot;]\n  + 15  * df[&quot;スタッフ数&quot;]\n  + np.random.randn(200) * 50\n  + 100\n)\n\nX = df[[&quot;広告費&quot;, &quot;店舗面積&quot;, &quot;スタッフ数&quot;]]\ny = df[&quot;売上&quot;]\n\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)\n\nmodel = LinearRegression()\nmodel.fit(X_train, y_train)\n\n# 係数を見て「どの変数が効いているか」を確認\ncoef_df = pd.Series(model.coef_, index=X.columns).sort_values(key=abs, ascending=False)\nprint(coef_df)\n</code></pre>\n<h2>正則化 — Ridge（L2）と Lasso（L1）</h2>\n<pre><code class=\"language-python\">from sklearn.linear_model import Ridge, Lasso, ElasticNet\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.pipeline import make_pipeline\n\n# 特徴量が多い・多重共線性がある場合は正則化が有効\n\n# Ridge: 全係数を小さく抑える（特徴量が多い場合）\nridge = make_pipeline(StandardScaler(), Ridge(alpha=1.0))\nridge.fit(X_train, y_train)\n\n# Lasso: 不要な特徴量の係数を0にする（自動特徴量選択）\nlasso = make_pipeline(StandardScaler(), Lasso(alpha=0.1))\nlasso.fit(X_train, y_train)\n\n# ElasticNet: RidgeとLassoの混合\nenet = make_pipeline(StandardScaler(), ElasticNet(alpha=0.1, l1_ratio=0.5))\nenet.fit(X_train, y_train)\n\nfor name, m in [(&quot;Ridge&quot;, ridge), (&quot;Lasso&quot;, lasso), (&quot;ElasticNet&quot;, enet)]:\n    r2 = r2_score(y_test, m.predict(X_test))\n    print(f&quot;{name}: R²={r2:.3f}&quot;)\n</code></pre>\n<h2>残差分析（モデルの診断）</h2>\n<pre><code class=\"language-python\">y_pred    = model.predict(X_test)\nresiduals = y_test - y_pred\n\nfig, axes = plt.subplots(1, 2, figsize=(11, 4))\n\n# 残差プロット（ランダムに散らばっていれば正常）\naxes[0].scatter(y_pred, residuals, alpha=0.5)\naxes[0].axhline(0, color=&quot;red&quot;, linestyle=&quot;--&quot;)\naxes[0].set_xlabel(&quot;予測値&quot;)\naxes[0].set_ylabel(&quot;残差&quot;)\naxes[0].set_title(&quot;残差プロット&quot;)\n\n# 残差の分布（正規分布に近いほど良い）\naxes[1].hist(residuals, bins=25, color=&quot;steelblue&quot;, edgecolor=&quot;white&quot;)\naxes[1].set_title(&quot;残差のヒストグラム&quot;)\n\nplt.tight_layout()\nplt.show()\n</code></pre>\n<h2>多項式回帰（非線形関係を線形モデルで近似）</h2>\n<pre><code class=\"language-python\">from sklearn.preprocessing import PolynomialFeatures\nfrom sklearn.pipeline import make_pipeline\n\nX_nl  = np.linspace(-3, 3, 100).reshape(-1, 1)\ny_nl  = X_nl.ravel() ** 2 + np.random.randn(100) * 0.5\n\nmodel_poly = make_pipeline(\n    PolynomialFeatures(degree=2, include_bias=False),\n    LinearRegression()\n)\nmodel_poly.fit(X_nl, y_nl)\nprint(f&quot;R²: {model_poly.score(X_nl, y_nl):.3f}&quot;)\n</code></pre>\n<h2>評価指標のまとめ</h2>\n<table>\n<thead>\n<tr>\n<th>指標</th>\n<th>数式の意味</th>\n<th>特徴</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>MSE</td>\n<td>誤差の二乗平均</td>\n<td>大きな誤差にペナルティ</td>\n</tr>\n<tr>\n<td>RMSE</td>\n<td>MSEの平方根</td>\n<td>y と同じ単位で解釈しやすい</td>\n</tr>\n<tr>\n<td>MAE</td>\n<td>誤差の絶対値平均</td>\n<td>外れ値に強い</td>\n</tr>\n<tr>\n<td>R²</td>\n<td>1 − SS_res/SS_tot</td>\n<td>0〜1、1が完全予測</td>\n</tr>\n</tbody>\n</table>\n<h2>次に学ぶべき内容</h2>\n<p>カテゴリを予測する <a class=\"term-link\" data-slug=\"classification\" href=\"/glossary/classification\">分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）</a> へ進みましょう。</p>",
+"prereq_full": [
+{
+"slug": "scikit-learn",
+"title": "scikit-learn（機械学習ライブラリ）"
+}
+],
+"related_full": [
+{
+"slug": "ml-basics",
+"title": "機械学習の基礎"
+},
+{
+"slug": "scikit-learn",
+"title": "scikit-learn（機械学習ライブラリ）"
+},
+{
+"slug": "classification",
+"title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
+}
+],
+"next_full": [
+{
+"slug": "classification",
+"title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
 }
 ],
 "completed": false,
@@ -2851,6 +3339,68 @@
 {
 "slug": "tsn",
 "title": "TSN(Time-Sensitive Networking)"
+}
+],
+"completed": false,
+"favorite": false
+},
+"scapy-pcap": {
+"slug": "scapy-pcap",
+"title": "ScapyによるPCAP解析",
+"level": 3,
+"category": "PCAP",
+"related": [
+"scapy-basics",
+"wireshark",
+"tcpdump",
+"pcap",
+"scapy-automotive"
+],
+"next": [
+"scapy-automotive"
+],
+"tags": [
+"scapy",
+"python",
+"pcap",
+"analysis",
+"network"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>ScapyはPCAPファイルの読み書き・フィルタリング・統計集計・プロトコル解析をPythonコードで自動化できます。Wiresharkが手動の目視分析なら、Scapyは<strong>バッチ処理・大量ファイルの自動解析</strong>に強みがあります。</p>\n<h2>なぜ使うか</h2>\n<p>数百MBのPCAPを毎日解析したい、特定パターンのパケットを抽出して集計したい、という場合はScapyのスクリプトが最適です。Wiresharkのエクスポート＋Excelより圧倒的に高速かつ再現性があります。</p>\n<h2>PCAPの読み込み</h2>\n<pre><code class=\"language-python\">from scapy.all import rdpcap, PcapReader\n\n# 全パケットを一括読み込み（小〜中規模）\npkts = rdpcap(&quot;capture.pcap&quot;)\nprint(f&quot;総パケット数: {len(pkts)}&quot;)\nprint(f&quot;最初のパケット: {pkts[0].summary()}&quot;)\n\n# 大きなファイルはイテレータで省メモリ処理\nwith PcapReader(&quot;large.pcap&quot;) as reader:\n    for i, pkt in enumerate(reader):\n        if i &gt;= 100:\n            break\n        print(pkt.summary())\n</code></pre>\n<h2>基本的な統計を取る</h2>\n<pre><code class=\"language-python\">from scapy.all import rdpcap, IP, TCP, UDP, Ether\nfrom collections import Counter\nimport pandas as pd\n\npkts = rdpcap(&quot;capture.pcap&quot;)\n\n# プロトコル分布\nprotocols = Counter()\nfor pkt in pkts:\n    if pkt.haslayer(&quot;IP&quot;):\n        if pkt.haslayer(&quot;TCP&quot;):\n            protocols[&quot;TCP&quot;] += 1\n        elif pkt.haslayer(&quot;UDP&quot;):\n            protocols[&quot;UDP&quot;] += 1\n        elif pkt.haslayer(&quot;ICMP&quot;):\n            protocols[&quot;ICMP&quot;] += 1\n        else:\n            protocols[&quot;Other IP&quot;] += 1\n    elif pkt.haslayer(&quot;ARP&quot;):\n        protocols[&quot;ARP&quot;] += 1\n    else:\n        protocols[&quot;Other&quot;] += 1\n\nprint(pd.Series(protocols).sort_values(ascending=False))\n\n# 送受信アドレスのトップ10\nsrc_ips = Counter(pkt[IP].src for pkt in pkts if pkt.haslayer(IP))\ndst_ips = Counter(pkt[IP].dst for pkt in pkts if pkt.haslayer(IP))\nprint(&quot;送信元 Top10:&quot;)\nprint(pd.Series(src_ips.most_common(10)))\n</code></pre>\n<h2>通信ペアとフロー分析</h2>\n<pre><code class=\"language-python\">from collections import defaultdict\n\nflows = defaultdict(lambda: {&quot;count&quot;: 0, &quot;bytes&quot;: 0})\n\nfor pkt in pkts:\n    if pkt.haslayer(IP) and (pkt.haslayer(TCP) or pkt.haslayer(UDP)):\n        layer = TCP if pkt.haslayer(TCP) else UDP\n        key = (\n            pkt[IP].src, pkt[layer].sport,\n            pkt[IP].dst, pkt[layer].dport,\n            &quot;TCP&quot; if pkt.haslayer(TCP) else &quot;UDP&quot;,\n        )\n        flows[key][&quot;count&quot;] += 1\n        flows[key][&quot;bytes&quot;] += len(pkt)\n\n# DataFrame に変換して集計\ndf_flows = pd.DataFrame([\n    {&quot;src_ip&quot;: k[0], &quot;sport&quot;: k[1], &quot;dst_ip&quot;: k[2], &quot;dport&quot;: k[3],\n     &quot;proto&quot;: k[4], &quot;packets&quot;: v[&quot;count&quot;], &quot;bytes&quot;: v[&quot;bytes&quot;]}\n    for k, v in flows.items()\n])\n\nprint(df_flows.sort_values(&quot;bytes&quot;, ascending=False).head(10))\n</code></pre>\n<h2>タイムスタンプを使った時系列分析</h2>\n<pre><code class=\"language-python\">import matplotlib.pyplot as plt\nimport numpy as np\n\n# タイムスタンプと転送量を取得\ntimestamps = [float(pkt.time) for pkt in pkts if pkt.haslayer(IP)]\nsizes      = [len(pkt) for pkt in pkts if pkt.haslayer(IP)]\n\nif timestamps:\n    t0  = min(timestamps)\n    rel = [t - t0 for t in timestamps]\n\n    # 1秒ごとのパケット数をカウント\n    bins = np.arange(0, max(rel) + 1, 1.0)\n    counts, edges = np.histogram(rel, bins=bins)\n\n    fig, axes = plt.subplots(2, 1, figsize=(12, 6))\n    axes[0].bar(edges[:-1], counts, width=0.9, color=&quot;steelblue&quot;)\n    axes[0].set_xlabel(&quot;時刻（秒）&quot;)\n    axes[0].set_ylabel(&quot;パケット数/秒&quot;)\n    axes[0].set_title(&quot;パケット到着レート&quot;)\n\n    # バイト数の時系列\n    axes[1].scatter(rel, sizes, s=1, alpha=0.3, color=&quot;coral&quot;)\n    axes[1].set_xlabel(&quot;時刻（秒）&quot;)\n    axes[1].set_ylabel(&quot;パケットサイズ（バイト）&quot;)\n    axes[1].set_title(&quot;パケットサイズの時系列&quot;)\n\n    plt.tight_layout()\n    plt.show()\n</code></pre>\n<h2>HTTPリクエスト/レスポンスを抽出する</h2>\n<pre><code class=\"language-python\">from scapy.all import TCP, Raw\n\ndef extract_http(pkts):\n    requests  = []\n    responses = []\n\n    for pkt in pkts:\n        if not (pkt.haslayer(TCP) and pkt.haslayer(Raw)):\n            continue\n        payload = pkt[Raw].load\n        try:\n            text = payload.decode(&quot;utf-8&quot;, errors=&quot;ignore&quot;)\n        except Exception:\n            continue\n\n        if text.startswith((&quot;GET &quot;, &quot;POST &quot;, &quot;PUT &quot;, &quot;DELETE &quot;, &quot;HEAD &quot;)):\n            lines  = text.split(&quot;\\r\\n&quot;)\n            method, path, *_ = lines[0].split(&quot; &quot;, 2) + [&quot;&quot;, &quot;&quot;]\n            host   = next((l.split(&quot;: &quot;)[1] for l in lines if l.startswith(&quot;Host:&quot;)), &quot;&quot;)\n            requests.append({\n                &quot;src&quot;: pkt[IP].src, &quot;dst&quot;: pkt[IP].dst,\n                &quot;method&quot;: method, &quot;host&quot;: host, &quot;path&quot;: path,\n            })\n        elif text.startswith(&quot;HTTP/&quot;):\n            status = text.split(&quot;\\r\\n&quot;)[0]\n            responses.append({&quot;src&quot;: pkt[IP].src, &quot;status&quot;: status})\n\n    return pd.DataFrame(requests), pd.DataFrame(responses)\n\nreq_df, res_df = extract_http(pkts)\nprint(req_df.head())\n</code></pre>\n<h2>異常パケットの検出</h2>\n<pre><code class=\"language-python\">anomalies = []\n\nfor pkt in pkts:\n    reason = []\n\n    # TTLが異常に低い\n    if pkt.haslayer(IP) and pkt[IP].ttl &lt; 5:\n        reason.append(f&quot;低TTL={pkt[IP].ttl}&quot;)\n\n    # パケットサイズが極端に大きい\n    if len(pkt) &gt; 9000:\n        reason.append(f&quot;巨大パケット={len(pkt)}B&quot;)\n\n    # TCPフラグの異常な組み合わせ（NULL/XMAS スキャン）\n    if pkt.haslayer(TCP):\n        flags = pkt[TCP].flags\n        if flags == 0:\n            reason.append(&quot;NULLスキャン疑い&quot;)\n        if int(flags) == 0x29:  # FIN+PSH+URG\n            reason.append(&quot;XMASスキャン疑い&quot;)\n\n    if reason:\n        anomalies.append({\n            &quot;time&quot;:   float(pkt.time),\n            &quot;src&quot;:    pkt[IP].src if pkt.haslayer(IP) else &quot;N/A&quot;,\n            &quot;reason&quot;: &quot; / &quot;.join(reason),\n        })\n\ndf_anomaly = pd.DataFrame(anomalies)\nif not df_anomaly.empty:\n    print(f&quot;異常パケット: {len(df_anomaly)} 件&quot;)\n    print(df_anomaly.head(10))\n</code></pre>\n<h2>PCAPの書き出しとフィルタリング</h2>\n<pre><code class=\"language-python\">from scapy.all import wrpcap\n\n# 特定の条件でフィルタして保存\ntcp_pkts  = [p for p in pkts if p.haslayer(TCP)]\nhttp_pkts = [p for p in pkts if p.haslayer(TCP) and p.haslayer(Raw)\n             and b&quot;HTTP&quot; in p[Raw].load]\n\nwrpcap(&quot;tcp_only.pcap&quot;,  tcp_pkts)\nwrpcap(&quot;http_only.pcap&quot;, http_pkts)\nprint(f&quot;TCP: {len(tcp_pkts)}, HTTP: {len(http_pkts)} パケットを保存&quot;)\n</code></pre>\n<h2>次に学ぶべき内容</h2>\n<p>車載通信（CAN/DoIP）の解析を <a class=\"term-link\" data-slug=\"scapy-automotive\" href=\"/glossary/scapy-automotive\">Scapy Automotive（CAN・DoIP・UDS解析）</a> で学びましょう。</p>",
+"prereq_full": [
+{
+"slug": "scapy-basics",
+"title": "Scapy基礎（パケット作成・送受信）"
+}
+],
+"related_full": [
+{
+"slug": "scapy-basics",
+"title": "Scapy基礎（パケット作成・送受信）"
+},
+{
+"slug": "wireshark",
+"title": "Wireshark"
+},
+{
+"slug": "tcpdump",
+"title": "tcpdump"
+},
+{
+"slug": "pcap",
+"title": "PCAP"
+},
+{
+"slug": "scapy-automotive",
+"title": "Scapy Automotive（CAN・DoIP・UDS解析）"
+}
+],
+"next_full": [
+{
+"slug": "scapy-automotive",
+"title": "Scapy Automotive（CAN・DoIP・UDS解析）"
 }
 ],
 "completed": false,
@@ -3487,6 +4037,52 @@
 "completed": false,
 "favorite": false
 },
+"gradient-boosting": {
+"slug": "gradient-boosting",
+"title": "勾配ブースティング（XGBoost・LightGBM）",
+"level": 3,
+"category": "ML",
+"related": [
+"classification",
+"scikit-learn",
+"ml-basics"
+],
+"next": [],
+"tags": [
+"ml",
+"xgboost",
+"lightgbm",
+"boosting",
+"python",
+"data-science"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>勾配ブースティング（Gradient Boosting）は、弱い決定木を順番に積み重ねて強力なモデルを作るアンサンブル手法です。Kaggle等のデータコンペで最もよく優勝するアルゴリズムで、表形式データの精度最高峰とされています。</p>\n<h2>なぜ強いか</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  A[Tree 1&lt;br/&gt;粗い予測] --&gt;|誤差を渡す| B[Tree 2&lt;br/&gt;誤差を補正]\n  B --&gt;|誤差を渡す| C[Tree 3&lt;br/&gt;さらに補正]\n  C --&gt; D[... N本]\n  D --&gt; E[最終予測&lt;br/&gt;合計]\n</code></pre>\n<p>各木が「前の木の残差（誤差）」を学習するため、少しずつ精度が上がります。ランダムフォレストが並列で独立した木を作るのに対し、ブースティングは<strong>直列で誤差を修正していく</strong>点が違います。</p>\n<h2>XGBoost</h2>\n<pre><code class=\"language-python\">import xgboost as xgb\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.metrics import roc_auc_score, classification_report\nimport numpy as np\n\nfrom sklearn.datasets import make_classification\nX, y = make_classification(n_samples=5000, n_features=30, random_state=42)\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\n\n# 基本的な使い方（scikit-learn API）\nmodel_xgb = xgb.XGBClassifier(\n    n_estimators   = 500,\n    learning_rate  = 0.05,\n    max_depth      = 6,\n    subsample      = 0.8,\n    colsample_bytree = 0.8,\n    use_label_encoder = False,\n    eval_metric    = &quot;logloss&quot;,\n    random_state   = 42,\n)\n\n# early_stopping: 検証スコアが改善しなくなったら止める\nmodel_xgb.fit(\n    X_train, y_train,\n    eval_set=[(X_test, y_test)],\n    verbose=False,\n)\n\ny_pred  = model_xgb.predict(X_test)\ny_proba = model_xgb.predict_proba(X_test)[:, 1]\nprint(classification_report(y_test, y_pred))\nprint(f&quot;AUC: {roc_auc_score(y_test, y_proba):.4f}&quot;)\n</code></pre>\n<h2>LightGBM（XGBより高速）</h2>\n<pre><code class=\"language-python\">import lightgbm as lgb\n\nmodel_lgb = lgb.LGBMClassifier(\n    n_estimators    = 1000,\n    learning_rate   = 0.05,\n    num_leaves      = 31,\n    max_depth       = -1,        # 制限なし（num_leavesで制御）\n    subsample       = 0.8,\n    colsample_bytree = 0.8,\n    random_state    = 42,\n    n_jobs          = -1,\n)\n\nmodel_lgb.fit(\n    X_train, y_train,\n    eval_set=[(X_test, y_test)],\n    callbacks=[lgb.early_stopping(50), lgb.log_evaluation(100)],\n)\n\nprint(f&quot;AUC: {roc_auc_score(y_test, model_lgb.predict_proba(X_test)[:,1]):.4f}&quot;)\n</code></pre>\n<h2>特徴量重要度の可視化</h2>\n<pre><code class=\"language-python\">import pandas as pd\nimport matplotlib.pyplot as plt\n\nfeat_names = [f&quot;feature_{i}&quot; for i in range(30)]\n\n# XGBoost\nxgb_imp = pd.Series(model_xgb.feature_importances_, index=feat_names)\nlgb_imp = pd.Series(model_lgb.feature_importances_, index=feat_names)\n\nfig, axes = plt.subplots(1, 2, figsize=(12, 5))\n\nxgb_imp.sort_values().tail(15).plot(kind=&quot;barh&quot;, ax=axes[0], color=&quot;steelblue&quot;)\naxes[0].set_title(&quot;XGBoost 特徴量重要度&quot;)\n\nlgb_imp.sort_values().tail(15).plot(kind=&quot;barh&quot;, ax=axes[1], color=&quot;mediumseagreen&quot;)\naxes[1].set_title(&quot;LightGBM 特徴量重要度&quot;)\n\nplt.tight_layout()\nplt.show()\n</code></pre>\n<h2>ハイパーパラメータチューニング（Optuna）</h2>\n<pre><code class=\"language-python\">import optuna\noptuna.logging.set_verbosity(optuna.logging.WARNING)\n\ndef objective(trial):\n    params = {\n        &quot;n_estimators&quot;:    trial.suggest_int(&quot;n_estimators&quot;, 100, 1000),\n        &quot;learning_rate&quot;:   trial.suggest_float(&quot;learning_rate&quot;, 0.01, 0.3, log=True),\n        &quot;max_depth&quot;:       trial.suggest_int(&quot;max_depth&quot;, 3, 9),\n        &quot;num_leaves&quot;:      trial.suggest_int(&quot;num_leaves&quot;, 15, 127),\n        &quot;subsample&quot;:       trial.suggest_float(&quot;subsample&quot;, 0.5, 1.0),\n        &quot;colsample_bytree&quot;:trial.suggest_float(&quot;colsample_bytree&quot;, 0.5, 1.0),\n        &quot;random_state&quot;:    42,\n        &quot;n_jobs&quot;:          -1,\n    }\n    model = lgb.LGBMClassifier(**params)\n    score = cross_val_score(model, X_train, y_train, cv=3, scoring=&quot;roc_auc&quot;).mean()\n    return score\n\nfrom sklearn.model_selection import cross_val_score\nstudy = optuna.create_study(direction=&quot;maximize&quot;)\nstudy.optimize(objective, n_trials=50)\n\nprint(f&quot;Best AUC: {study.best_value:.4f}&quot;)\nprint(f&quot;Best params: {study.best_params}&quot;)\n</code></pre>\n<h2>SHAP — モデルの予測根拠を説明する</h2>\n<pre><code class=\"language-python\">import shap\n\nexplainer = shap.TreeExplainer(model_lgb)\nshap_values = explainer.shap_values(X_test[:200])\n\n# 全特徴量の影響をまとめて表示\nshap.summary_plot(shap_values[1], X_test[:200],\n                  feature_names=feat_names, show=False)\nplt.tight_layout()\nplt.show()\n\n# 個別予測の説明\nshap.force_plot(\n    explainer.expected_value[1],\n    shap_values[1][0],\n    X_test[0],\n    feature_names=feat_names,\n)\n</code></pre>\n<h2>XGBoost vs LightGBM 比較</h2>\n<table>\n<thead>\n<tr>\n<th>項目</th>\n<th>XGBoost</th>\n<th>LightGBM</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>学習速度</td>\n<td>普通</td>\n<td><strong>速い</strong>（Leaf-wise成長）</td>\n</tr>\n<tr>\n<td>メモリ</td>\n<td>普通</td>\n<td><strong>少ない</strong></td>\n</tr>\n<tr>\n<td>大規模データ</td>\n<td>可</td>\n<td><strong>得意</strong></td>\n</tr>\n<tr>\n<td>カテゴリ変数</td>\n<td>手動エンコード</td>\n<td><strong>ネイティブ対応</strong></td>\n</tr>\n<tr>\n<td>欠損値</td>\n<td>自動処理</td>\n<td>自動処理</td>\n</tr>\n</tbody>\n</table>",
+"prereq_full": [
+{
+"slug": "classification",
+"title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
+}
+],
+"related_full": [
+{
+"slug": "classification",
+"title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
+},
+{
+"slug": "scikit-learn",
+"title": "scikit-learn（機械学習ライブラリ）"
+},
+{
+"slug": "ml-basics",
+"title": "機械学習の基礎"
+}
+],
+"next_full": [],
+"completed": false,
+"favorite": false
+},
 "autosar": {
 "slug": "autosar",
 "title": "AUTOSAR",
@@ -3872,6 +4468,68 @@
 "title": "AUTOSAR"
 }
 ],
+"completed": false,
+"favorite": false
+},
+"scapy-automotive": {
+"slug": "scapy-automotive",
+"title": "Scapy Automotive（CAN・DoIP・UDS解析）",
+"level": 4,
+"category": "PCAP",
+"related": [
+"scapy-basics",
+"scapy-pcap",
+"can",
+"doip",
+"uds",
+"some-ip"
+],
+"next": [],
+"tags": [
+"scapy",
+"automotive",
+"can",
+"doip",
+"uds",
+"python",
+"pcap"
+],
+"difficulty": "上級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>ScapyはEthernetだけでなく、<strong>車載通信プロトコル（CAN・ISO-TP・UDS・DoIP・SOME/IP）</strong>もサポートします。<code>scapy.contrib.automotive</code> モジュールを使うと、車載診断や通信テストをPythonで自動化できます。</p>\n<h2>なぜ使うか</h2>\n<p>車載ECUの診断・テストは従来ベンダーツールに依存していましたが、Scapyを使えばオープンソースで自動化できます。CANトレースの解析・UDSコマンドの送受信・DoIPセッションの確立などを、テストスクリプトに組み込めます。</p>\n<h2>セットアップ</h2>\n<pre><code class=\"language-python\"># 車載モジュールのインポート\nfrom scapy.contrib.automotive.can import CAN\nfrom scapy.contrib.automotive.isotp import ISOTP\nfrom scapy.contrib.automotive.uds import UDS, UDS_RDBI, UDS_SA\nfrom scapy.contrib.automotive.doip import DoIP\nfrom scapy.layers.inet import IP, TCP, UDP\nfrom scapy.all import *\n\n# SocketCAN インターフェース（Linux vcan0 など）\n# sudo modprobe vcan\n# sudo ip link add dev vcan0 type vcan\n# sudo ip link set up vcan0\n</code></pre>\n<h2>CAN フレームの作成と解析</h2>\n<pre><code class=\"language-python\">from scapy.contrib.automotive.can import CAN\n\n# 標準CAN フレーム（11bit ID）\ncan_frame = CAN(\n    identifier = 0x123,    # CAN ID\n    length     = 8,\n    data       = b&quot;\\x02\\x10\\x03\\x00\\x00\\x00\\x00\\x00&quot;\n)\ncan_frame.show()\n# ###[ CAN ]###\n#   flags    = 0\n#   identifier= 0x123\n#   length   = 8\n#   data     = b'\\x02\\x10\\x03\\x00\\x00\\x00\\x00\\x00'\n\n# 拡張CAN フレーム（29bit ID）\ncan_ext = CAN(\n    flags      = 4,        # Extended ID フラグ\n    identifier = 0x18DAF101,\n    length     = 3,\n    data       = b&quot;\\x01\\x3E\\x00&quot;\n)\n</code></pre>\n<h2>CANトレースファイルの解析</h2>\n<pre><code class=\"language-python\">from scapy.all import rdpcap\nfrom scapy.contrib.automotive.can import CAN\nfrom collections import Counter\nimport pandas as pd\n\npkts = rdpcap(&quot;can_trace.pcap&quot;)\n\n# CAN IDとデータの分布\nrecords = []\nfor pkt in pkts:\n    if pkt.haslayer(CAN):\n        c = pkt[CAN]\n        records.append({\n            &quot;time&quot;:  float(pkt.time),\n            &quot;id&quot;:    hex(c.identifier),\n            &quot;len&quot;:   c.length,\n            &quot;data&quot;:  c.data.hex(),\n        })\n\ndf = pd.DataFrame(records)\nprint(f&quot;総フレーム数: {len(df)}&quot;)\nprint(f&quot;\\nCAN ID分布:&quot;)\nprint(df[&quot;id&quot;].value_counts().head(10))\n\n# バス負荷の時系列\ndf[&quot;time_bin&quot;] = (df[&quot;time&quot;] - df[&quot;time&quot;].min()).astype(int)\nbus_load = df.groupby(&quot;time_bin&quot;).size()\nbus_load.plot(figsize=(10, 3), title=&quot;CAN バス負荷（フレーム数/秒）&quot;)\nimport matplotlib.pyplot as plt\nplt.show()\n</code></pre>\n<h2>ISO-TP（CAN上の多バイトメッセージ）</h2>\n<pre><code class=\"language-python\">from scapy.contrib.automotive.isotp import ISOTPSocket, ISOTP\n\n# ISO-TP ソケット（vcan0 上）\nsock = ISOTPSocket(&quot;vcan0&quot;, tx_id=0x7E0, rx_id=0x7E8)\n\n# UDS メッセージを ISO-TP で送信\nuds_request = bytes.fromhex(&quot;1003&quot;)  # DiagnosticSessionControl: ExtendedSession\nsock.send(ISOTP(data=uds_request))\n\nresponse = sock.recv(timeout=1)\nif response:\n    print(f&quot;応答: {response[ISOTP].data.hex()}&quot;)\nsock.close()\n</code></pre>\n<h2>UDS（統合診断サービス）の操作</h2>\n<pre><code class=\"language-python\">from scapy.contrib.automotive.uds import (\n    UDS, UDS_DSC, UDS_RDBI, UDS_SA, UDS_WDBI\n)\n\n# DiagnosticSessionControl — 拡張診断セッションへ移行\ndsc = UDS() / UDS_DSC(diagnosticSessionType=0x03)\nprint(dsc.show2())\n\n# ReadDataByIdentifier — ECU情報を読む\nrdbi = UDS() / UDS_RDBI(identifiers=[0xF190])  # VIN番号\nprint(rdbi.show2())\n\n# SecurityAccess — セキュリティ解除\nsa_req  = UDS() / UDS_SA(securityAccessType=0x01)  # requestSeed\nsa_send = UDS() / UDS_SA(securityAccessType=0x02,   # sendKey\n                          securityKey=b&quot;\\xAB\\xCD\\xEF\\x00&quot;)\n\n# UDS レスポンスの解析\ndef parse_uds_response(data: bytes) -&gt; dict:\n    if not data:\n        return {}\n    sid  = data[0]\n    body = data[1:]\n    if sid == 0x50:   # Positive response to DSC\n        return {&quot;service&quot;: &quot;DSC_Positive&quot;, &quot;session&quot;: body[0]}\n    elif sid == 0x7F: # Negative response\n        return {&quot;service&quot;: &quot;NRC&quot;, &quot;requested_sid&quot;: body[0], &quot;nrc&quot;: hex(body[1])}\n    elif sid == 0x62: # Positive response to RDBI\n        return {&quot;service&quot;: &quot;RDBI_Positive&quot;, &quot;did&quot;: body[:2].hex(), &quot;data&quot;: body[2:].hex()}\n    return {&quot;raw&quot;: data.hex()}\n</code></pre>\n<h2>DoIP（Diagnostics over IP）セッション</h2>\n<pre><code class=\"language-python\">from scapy.contrib.automotive.doip import DoIP\nfrom scapy.layers.inet import IP, TCP\n\n# DoIP はTCPポート 13400 を使用\n# VehicleIdentificationRequest\nvehicle_id_req = (\n    IP(dst=&quot;192.168.1.100&quot;) /\n    TCP(dport=13400) /\n    DoIP(payload_type=0x0001)  # VehicleIdentificationRequest\n)\n\n# RoutingActivationRequest → UDS 通信路を開く\nrouting_act = (\n    IP(dst=&quot;192.168.1.100&quot;) /\n    TCP(dport=13400) /\n    DoIP(\n        payload_type    = 0x0005,  # RoutingActivationRequest\n        source_address  = 0x0E00,  # テスタ論理アドレス\n        activation_type = 0x00,\n    )\n)\n\n# DoIP 上で UDS を送る（DiagnosticMessage）\nuds_over_doip = (\n    IP(dst=&quot;192.168.1.100&quot;) /\n    TCP(dport=13400) /\n    DoIP(\n        payload_type   = 0x8001,   # DiagnosticMessage\n        source_address = 0x0E00,\n        target_address = 0x1001,   # ECUの論理アドレス\n    ) /\n    UDS() / UDS_DSC(diagnosticSessionType=0x03)\n)\ndoip_pkt = IP(dst=&quot;192.168.1.100&quot;)/TCP(dport=13400)/routing_act\n</code></pre>\n<h2>DoIP PCAPからのダイアログ再構成</h2>\n<pre><code class=\"language-python\">from scapy.all import rdpcap\nfrom scapy.contrib.automotive.doip import DoIP\n\ndef analyze_doip_trace(pcap_file: str) -&gt; pd.DataFrame:\n    pkts = rdpcap(pcap_file)\n    dialogs = []\n\n    for pkt in pkts:\n        if not pkt.haslayer(DoIP):\n            continue\n        d = pkt[DoIP]\n        payload_type = d.payload_type\n        entry = {\n            &quot;time&quot;:         float(pkt.time),\n            &quot;src&quot;:          pkt[IP].src if pkt.haslayer(IP) else &quot;&quot;,\n            &quot;dst&quot;:          pkt[IP].dst if pkt.haslayer(IP) else &quot;&quot;,\n            &quot;payload_type&quot;: hex(payload_type),\n            &quot;description&quot;:  {\n                0x0001: &quot;VehicleIDRequest&quot;,\n                0x0004: &quot;VehicleIDResponse&quot;,\n                0x0005: &quot;RoutingActivationReq&quot;,\n                0x0006: &quot;RoutingActivationRes&quot;,\n                0x8001: &quot;DiagnosticMessage&quot;,\n                0x8002: &quot;DiagMsgPositiveAck&quot;,\n                0x8003: &quot;DiagMsgNegativeAck&quot;,\n            }.get(payload_type, f&quot;Unknown(0x{payload_type:04X})&quot;),\n        }\n        dialogs.append(entry)\n\n    return pd.DataFrame(dialogs)\n</code></pre>\n<h2>CAN解析のフロー</h2>\n<pre><code class=\"language-mermaid\">sequenceDiagram\n  participant T as テスタPC\n  participant G as ゲートウェイECU\n  participant E as ターゲットECU\n\n  T-&gt;&gt;G: DoIP RoutingActivationRequest\n  G-&gt;&gt;T: RoutingActivationResponse\n  T-&gt;&gt;G: DiagnosticMessage (UDS DSC 0x03)\n  G-&gt;&gt;E: ISO-TP (UDS DSC 0x03)\n  E-&gt;&gt;G: ISO-TP (UDS Positive Response)\n  G-&gt;&gt;T: DiagnosticMessage (UDS 0x50 0x03)\n  T-&gt;&gt;G: DiagnosticMessage (UDS RDBI 0xF190)\n  G-&gt;&gt;E: ISO-TP (UDS RDBI 0xF190)\n  E-&gt;&gt;G: ISO-TP (VIN データ)\n  G-&gt;&gt;T: DiagnosticMessage (VIN: XXXXXXXXXXXXXXX)\n</code></pre>",
+"prereq_full": [
+{
+"slug": "scapy-pcap",
+"title": "ScapyによるPCAP解析"
+}
+],
+"related_full": [
+{
+"slug": "scapy-basics",
+"title": "Scapy基礎（パケット作成・送受信）"
+},
+{
+"slug": "scapy-pcap",
+"title": "ScapyによるPCAP解析"
+},
+{
+"slug": "can",
+"title": "CAN"
+},
+{
+"slug": "doip",
+"title": "DoIP(Diagnostics over IP)"
+},
+{
+"slug": "uds",
+"title": "UDS (統合診断サービス)"
+},
+{
+"slug": "some-ip",
+"title": "SOME/IP"
+}
+],
+"next_full": [],
 "completed": false,
 "favorite": false
 },
@@ -4372,6 +5030,10 @@
 "title": "Pandas（DataFrame・データ操作）"
 },
 {
+"slug": "classification",
+"title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
+},
+{
 "slug": "data-analysis",
 "title": "データ分析の流れ（EDA）"
 },
@@ -4380,12 +5042,34 @@
 "title": "データクリーニング"
 },
 {
-"slug": "matplotlib",
-"title": "Matplotlib（グラフ描画）"
+"slug": "gradient-boosting",
+"title": "勾配ブースティング（XGBoost・LightGBM）"
+}
+],
+"ml-basics": [
+{
+"slug": "scikit-learn",
+"title": "scikit-learn（機械学習ライブラリ）"
 },
 {
-"slug": "seaborn",
-"title": "Seaborn（統計可視化）"
+"slug": "linear-regression",
+"title": "線形回帰"
+},
+{
+"slug": "classification",
+"title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
+},
+{
+"slug": "gradient-boosting",
+"title": "勾配ブースティング（XGBoost・LightGBM）"
+},
+{
+"slug": "data-analysis",
+"title": "データ分析の流れ（EDA）"
+},
+{
+"slug": "data-cleaning",
+"title": "データクリーニング"
 }
 ],
 "communication-basics": [
@@ -4612,16 +5296,16 @@
 "title": "Pandas（DataFrame・データ操作）"
 },
 {
+"slug": "classification",
+"title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
+},
+{
 "slug": "data-analysis",
 "title": "データ分析の流れ（EDA）"
 },
 {
 "slug": "data-cleaning",
 "title": "データクリーニング"
-},
-{
-"slug": "python-basics",
-"title": "Python基礎（変数・リスト・辞書）"
 }
 ],
 "numpy": [
@@ -4638,16 +5322,16 @@
 "title": "Matplotlib（グラフ描画）"
 },
 {
+"slug": "classification",
+"title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
+},
+{
 "slug": "data-analysis",
 "title": "データ分析の流れ（EDA）"
 },
 {
 "slug": "data-cleaning",
 "title": "データクリーニング"
-},
-{
-"slug": "seaborn",
-"title": "Seaborn（統計可視化）"
 }
 ],
 "pandas": [
@@ -4664,16 +5348,16 @@
 "title": "NumPy（配列・行列演算）"
 },
 {
+"slug": "classification",
+"title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
+},
+{
 "slug": "data-analysis",
 "title": "データ分析の流れ（EDA）"
 },
 {
-"slug": "python-basics",
-"title": "Python基礎（変数・リスト・辞書）"
-},
-{
-"slug": "seaborn",
-"title": "Seaborn（統計可視化）"
+"slug": "gradient-boosting",
+"title": "勾配ブースティング（XGBoost・LightGBM）"
 }
 ],
 "port": [
@@ -4688,6 +5372,32 @@
 {
 "slug": "udp",
 "title": "UDP"
+}
+],
+"scapy-basics": [
+{
+"slug": "scapy-pcap",
+"title": "ScapyによるPCAP解析"
+},
+{
+"slug": "scapy-automotive",
+"title": "Scapy Automotive（CAN・DoIP・UDS解析）"
+},
+{
+"slug": "pcap",
+"title": "PCAP"
+},
+{
+"slug": "wireshark",
+"title": "Wireshark"
+},
+{
+"slug": "tcpdump",
+"title": "tcpdump"
+},
+{
+"slug": "classification",
+"title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
 }
 ],
 "tcp": [
@@ -4786,6 +5496,32 @@
 "title": "pcapから車載通信パターンを読む"
 }
 ],
+"scikit-learn": [
+{
+"slug": "linear-regression",
+"title": "線形回帰"
+},
+{
+"slug": "ml-basics",
+"title": "機械学習の基礎"
+},
+{
+"slug": "classification",
+"title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
+},
+{
+"slug": "data-cleaning",
+"title": "データクリーニング"
+},
+{
+"slug": "gradient-boosting",
+"title": "勾配ブースティング（XGBoost・LightGBM）"
+},
+{
+"slug": "data-analysis",
+"title": "データ分析の流れ（EDA）"
+}
+],
 "subnet": [
 {
 "slug": "dhcp",
@@ -4822,16 +5558,68 @@
 "title": "NumPy（配列・行列演算）"
 },
 {
-"slug": "matplotlib",
-"title": "Matplotlib（グラフ描画）"
+"slug": "classification",
+"title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
 },
 {
-"slug": "python-basics",
-"title": "Python基礎（変数・リスト・辞書）"
+"slug": "gradient-boosting",
+"title": "勾配ブースティング（XGBoost・LightGBM）"
 },
 {
-"slug": "seaborn",
-"title": "Seaborn（統計可視化）"
+"slug": "linear-regression",
+"title": "線形回帰"
+}
+],
+"classification": [
+{
+"slug": "gradient-boosting",
+"title": "勾配ブースティング（XGBoost・LightGBM）"
+},
+{
+"slug": "ml-basics",
+"title": "機械学習の基礎"
+},
+{
+"slug": "scikit-learn",
+"title": "scikit-learn（機械学習ライブラリ）"
+},
+{
+"slug": "linear-regression",
+"title": "線形回帰"
+},
+{
+"slug": "data-analysis",
+"title": "データ分析の流れ（EDA）"
+},
+{
+"slug": "data-cleaning",
+"title": "データクリーニング"
+}
+],
+"linear-regression": [
+{
+"slug": "classification",
+"title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
+},
+{
+"slug": "ml-basics",
+"title": "機械学習の基礎"
+},
+{
+"slug": "scikit-learn",
+"title": "scikit-learn（機械学習ライブラリ）"
+},
+{
+"slug": "gradient-boosting",
+"title": "勾配ブースティング（XGBoost・LightGBM）"
+},
+{
+"slug": "data-analysis",
+"title": "データ分析の流れ（EDA）"
+},
+{
+"slug": "data-cleaning",
+"title": "データクリーニング"
 }
 ],
 "avtp": [
@@ -4990,6 +5778,32 @@
 "title": "ARP"
 }
 ],
+"scapy-pcap": [
+{
+"slug": "scapy-automotive",
+"title": "Scapy Automotive（CAN・DoIP・UDS解析）"
+},
+{
+"slug": "scapy-basics",
+"title": "Scapy基礎（パケット作成・送受信）"
+},
+{
+"slug": "wireshark",
+"title": "Wireshark"
+},
+{
+"slug": "tcpdump",
+"title": "tcpdump"
+},
+{
+"slug": "pcap",
+"title": "PCAP"
+},
+{
+"slug": "data-analysis",
+"title": "データ分析の流れ（EDA）"
+}
+],
 "seaborn": [
 {
 "slug": "data-analysis",
@@ -5004,16 +5818,16 @@
 "title": "Pandas（DataFrame・データ操作）"
 },
 {
+"slug": "classification",
+"title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
+},
+{
 "slug": "data-cleaning",
 "title": "データクリーニング"
 },
 {
-"slug": "numpy",
-"title": "NumPy（配列・行列演算）"
-},
-{
-"slug": "python-basics",
-"title": "Python基礎（変数・リスト・辞書）"
+"slug": "gradient-boosting",
+"title": "勾配ブースティング（XGBoost・LightGBM）"
 }
 ],
 "socket": [
@@ -5082,8 +5896,8 @@
 "title": "ECUへの**ping****疎通確認**手順"
 },
 {
-"slug": "xcp",
-"title": "XCP (測定・校正プロトコル)"
+"slug": "scapy-automotive",
+"title": "Scapy Automotive（CAN・DoIP・UDS解析）"
 }
 ],
 "wireshark": [
@@ -5290,8 +6104,34 @@
 "title": "データクリーニング"
 },
 {
-"slug": "python-basics",
-"title": "Python基礎（変数・リスト・辞書）"
+"slug": "classification",
+"title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
+}
+],
+"gradient-boosting": [
+{
+"slug": "classification",
+"title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
+},
+{
+"slug": "scikit-learn",
+"title": "scikit-learn（機械学習ライブラリ）"
+},
+{
+"slug": "ml-basics",
+"title": "機械学習の基礎"
+},
+{
+"slug": "linear-regression",
+"title": "線形回帰"
+},
+{
+"slug": "data-analysis",
+"title": "データ分析の流れ（EDA）"
+},
+{
+"slug": "data-cleaning",
+"title": "データクリーニング"
 }
 ],
 "autosar": [
@@ -5474,6 +6314,32 @@
 {
 "slug": "arp",
 "title": "ARP"
+}
+],
+"scapy-automotive": [
+{
+"slug": "scapy-basics",
+"title": "Scapy基礎（パケット作成・送受信）"
+},
+{
+"slug": "scapy-pcap",
+"title": "ScapyによるPCAP解析"
+},
+{
+"slug": "can",
+"title": "CAN"
+},
+{
+"slug": "doip",
+"title": "DoIP(Diagnostics over IP)"
+},
+{
+"slug": "uds",
+"title": "UDS (統合診断サービス)"
+},
+{
+"slug": "some-ip",
+"title": "SOME/IP"
 }
 ],
 "v2x": [
@@ -6373,6 +7239,35 @@
 "name": "PCAP",
 "articles": [
 {
+"slug": "scapy-basics",
+"title": "Scapy基礎（パケット作成・送受信）",
+"level": 2,
+"category": "PCAP",
+"related": [
+"pcap",
+"wireshark",
+"tcpdump",
+"scapy-pcap",
+"scapy-automotive"
+],
+"next": [
+"scapy-pcap"
+],
+"tags": [
+"scapy",
+"python",
+"pcap",
+"network",
+"packet"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "Scapyは**Pythonでパケットを作成・送信・受信・解析できる**ネットワーク操作ライブラリです。Wiresharkが「見るだけ」のツールとすれば、Scapyは「作って送れる」双方向のツールです。ネットワーク診断・セキュリティテスト・",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "pcap",
 "title": "PCAP",
 "level": 3,
@@ -6393,6 +7288,35 @@
 "difficulty": "中級",
 "updated": "2026-06-10",
 "excerpt": "PCAP(Packet Capture)は、キャプチャしたパケットを保存するファイル形式です(拡張子 `.pcap` / `.**pcapng**`)。各パケットの**タイムスタンプ**と生データが記録され、後から繰り返し解析できます。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "scapy-pcap",
+"title": "ScapyによるPCAP解析",
+"level": 3,
+"category": "PCAP",
+"related": [
+"scapy-basics",
+"wireshark",
+"tcpdump",
+"pcap",
+"scapy-automotive"
+],
+"next": [
+"scapy-automotive"
+],
+"tags": [
+"scapy",
+"python",
+"pcap",
+"analysis",
+"network"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"excerpt": "ScapyはPCAPファイルの読み書き・フィルタリング・統計集計・プロトコル解析をPythonコードで自動化できます。Wiresharkが手動の目視分析なら、Scapyは**バッチ処理・大量ファイルの自動解析**に強みがあります。",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -6488,6 +7412,36 @@
 ],
 "updated": "2026-06-10",
 "excerpt": "tsharkは、wireshark のコマンドライン版です。Wiresharkと同じ強力なプロトコル解析(ディセクタ)を持ちつつ、CLIで動くため**自動化**やバッチ処理に向いています。**表示フィルタ**で欲しい情報だけを抽出できます。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "scapy-automotive",
+"title": "Scapy Automotive（CAN・DoIP・UDS解析）",
+"level": 4,
+"category": "PCAP",
+"related": [
+"scapy-basics",
+"scapy-pcap",
+"can",
+"doip",
+"uds",
+"some-ip"
+],
+"next": [],
+"tags": [
+"scapy",
+"automotive",
+"can",
+"doip",
+"uds",
+"python",
+"pcap"
+],
+"difficulty": "上級",
+"updated": "2026-06-10",
+"excerpt": "ScapyはEthernetだけでなく、**車載通信プロトコル（CAN・ISO-TP・UDS・DoIP・SOME/IP）**もサポートします。`scapy.contrib.automotive` モジュールを使うと、車載診断や通信テストをP",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -7393,6 +8347,144 @@
 "difficulty": "中級",
 "updated": "2026-06-10",
 "excerpt": "EDA（Exploratory Data Analysis：探索的データ分析）は、機械学習・統計モデリングの**前に必ず行う**データ理解の工程です。数値の羅列から「傾向」「外れ値」「相関」「欠損パターン」を発見し、仮説を立てて次のアクショ",
+"views": 0,
+"completed": false,
+"favorite": false
+}
+]
+},
+{
+"name": "ML",
+"articles": [
+{
+"slug": "ml-basics",
+"title": "機械学習の基礎",
+"level": 1,
+"category": "ML",
+"related": [
+"scikit-learn",
+"linear-regression",
+"classification"
+],
+"next": [
+"scikit-learn"
+],
+"tags": [
+"ml",
+"machine-learning",
+"python",
+"data-science"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "機械学習（Machine Learning）とは、データからパターンを自動的に学習してタスクを解くアルゴリズムの総称です。ルールをプログラマが手書きするのではなく、大量のデータから「ルールそのもの」をコンピュータが見つけます。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "scikit-learn",
+"title": "scikit-learn（機械学習ライブラリ）",
+"level": 2,
+"category": "ML",
+"related": [
+"ml-basics",
+"linear-regression",
+"classification",
+"data-cleaning"
+],
+"next": [
+"linear-regression"
+],
+"tags": [
+"ml",
+"scikit-learn",
+"python",
+"data-science"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "scikit-learn（sklearn）はPythonで最も広く使われる機械学習ライブラリです。回帰・分類・クラスタリング・次元削減・前処理・モデル評価まで、一貫したAPIで扱えます。`fit()` で学習、`predict()` で予測",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "classification",
+"title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）",
+"level": 2,
+"category": "ML",
+"related": [
+"ml-basics",
+"scikit-learn",
+"linear-regression",
+"gradient-boosting"
+],
+"next": [
+"gradient-boosting"
+],
+"tags": [
+"ml",
+"classification",
+"python",
+"sklearn",
+"data-science"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "分類（Classification）は入力データが「どのクラスに属するか」を予測するタスクです。スパム判定・故障検知・画像認識などに使います。代表的な4つのアルゴリズムを比較しながら解説します。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "linear-regression",
+"title": "線形回帰",
+"level": 2,
+"category": "ML",
+"related": [
+"ml-basics",
+"scikit-learn",
+"classification"
+],
+"next": [
+"classification"
+],
+"tags": [
+"ml",
+"regression",
+"python",
+"data-science"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "線形回帰は「入力 X から連続値 y を予測する」最もシンプルな機械学習モデルです。数値の予測（売上・気温・価格など）に使います。モデルの解釈性が高く、まず試すべきベースラインです。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "gradient-boosting",
+"title": "勾配ブースティング（XGBoost・LightGBM）",
+"level": 3,
+"category": "ML",
+"related": [
+"classification",
+"scikit-learn",
+"ml-basics"
+],
+"next": [],
+"tags": [
+"ml",
+"xgboost",
+"lightgbm",
+"boosting",
+"python",
+"data-science"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"excerpt": "勾配ブースティング（Gradient Boosting）は、弱い決定木を順番に積み重ねて強力なモデルを作るアンサンブル手法です。Kaggle等のデータコンペで最もよく優勝するアルゴリズムで、表形式データの精度最高峰とされています。",
 "views": 0,
 "completed": false,
 "favorite": false

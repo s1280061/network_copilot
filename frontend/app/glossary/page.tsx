@@ -6,7 +6,7 @@ import { getArticles, search as apiSearch } from "@/lib/api";
 import { Article, SearchHit } from "@/lib/types";
 import Thumbnail, { categoryStyle } from "@/components/Thumbnail";
 
-const CATEGORIES = ["Ethernet", "TCP/IP", "PCAP", "SOME/IP", "AUTOSAR", "SDV", "Automotive Bus", "Diagnostics", "Security", "Howto", "Python"];
+const CATEGORIES = ["Ethernet", "TCP/IP", "PCAP", "SOME/IP", "AUTOSAR", "SDV", "Automotive Bus", "Diagnostics", "Security", "Howto", "Python", "ML"];
 
 export default function GlossaryPage() {
   const [items, setItems] = useState<Article[]>([]);
