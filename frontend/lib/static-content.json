@@ -1488,6 +1488,65 @@
 "favorite": false
 },
 {
+"slug": "blip",
+"title": "BLIP / BLIP-2（視覚言語モデルの最前線）",
+"level": 3,
+"category": "CV",
+"related": [
+"clip",
+"image-processing",
+"transformer",
+"llm",
+"rag"
+],
+"next": [],
+"tags": [
+"blip",
+"blip2",
+"vision-language",
+"image-captioning",
+"vqa",
+"salesforce",
+"cv"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"excerpt": "BLIP（Bootstrapping Language-Image Pre-training）はSalesforce Researchが2022年に発表した視覚言語モデルです。CLIPの「ベクトル類似度」に留まらず、**画像キャプション生成",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "clip",
+"title": "CLIP（画像とテキストの対照学習）",
+"level": 3,
+"category": "CV",
+"related": [
+"image-processing",
+"cnn",
+"transformer",
+"llm",
+"blip"
+],
+"next": [
+"blip"
+],
+"tags": [
+"clip",
+"openai",
+"contrastive-learning",
+"vision-language",
+"zero-shot",
+"cv"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"excerpt": "CLIP（Contrastive Language-Image Pre-Training）はOpenAIが2021年に発表した視覚言語モデルです。4億枚の画像とテキストのペアで学習し、**テキストで画像を検索**・**ゼロショット画像分類*",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "cnn",
 "title": "CNN（畳み込みニューラルネットワーク）",
 "level": 3,
@@ -5567,6 +5626,121 @@
 "completed": false,
 "favorite": false
 },
+"blip": {
+"slug": "blip",
+"title": "BLIP / BLIP-2（視覚言語モデルの最前線）",
+"level": 3,
+"category": "CV",
+"related": [
+"clip",
+"image-processing",
+"transformer",
+"llm",
+"rag"
+],
+"next": [],
+"tags": [
+"blip",
+"blip2",
+"vision-language",
+"image-captioning",
+"vqa",
+"salesforce",
+"cv"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>BLIP（Bootstrapping Language-Image Pre-training）はSalesforce Researchが2022年に発表した視覚言語モデルです。CLIPの「ベクトル類似度」に留まらず、<strong>画像キャプション生成</strong>・<strong>VQA（視覚的質問応答）</strong>・<strong>画像検索</strong>を一つのモデルで実現します。BLIP-2（2023）はFrozen LLMと視覚エンコーダーを橋渡しするQ-Formerを導入し、GPT-4V的なマルチモーダル対話の基盤となりました。</p>\n<h2>BLIP vs BLIP-2 のアーキテクチャ</h2>\n<pre><code class=\"language-mermaid\">graph TD\n  subgraph BLIP\n    A1[Image Encoder\\nViT-L/14] --&gt; B1[ITC\\n画像テキスト対照]\n    A1 --&gt; C1[ITM\\n画像テキストマッチング]\n    A1 --&gt; D1[LM\\n言語モデル生成]\n  end\n\n  subgraph BLIP-2\n    A2[Frozen\\nImage Encoder\\nViT-g/14] --&gt; B2[Q-Former\\n32クエリトークン]\n    B2 --&gt; C2[Frozen LLM\\nOPT / Flan-T5 / Vicuna]\n    B2 --&gt; D2[テキスト生成\\n対話・VQA]\n  end\n</code></pre>\n<pre><code class=\"language-python\">import torch\nfrom transformers import BlipProcessor, BlipForConditionalGeneration\nfrom transformers import Blip2Processor, Blip2ForConditionalGeneration\nfrom PIL import Image\nimport requests\n\n# BLIP: シンプルな画像キャプション生成\ndef load_blip():\n    model_name = &quot;Salesforce/blip-image-captioning-base&quot;\n    processor = BlipProcessor.from_pretrained(model_name)\n    model = BlipForConditionalGeneration.from_pretrained(\n        model_name, torch_dtype=torch.float16\n    )\n    return model, processor\n\n# BLIP-2: LLM連携マルチモーダル\ndef load_blip2():\n    model_name = &quot;Salesforce/blip2-opt-2.7b&quot;   # or blip2-flan-t5-xl\n    processor = Blip2Processor.from_pretrained(model_name)\n    model = Blip2ForConditionalGeneration.from_pretrained(\n        model_name, torch_dtype=torch.float16\n    )\n    return model, processor\n</code></pre>\n<h2>画像キャプション生成</h2>\n<pre><code class=\"language-python\">def generate_caption(image, model, processor, prompt=None, max_new_tokens=100):\n    &quot;&quot;&quot;\n    画像からキャプションを生成\n    prompt を与えると条件付きキャプション生成（BLIP の特徴）\n    &quot;&quot;&quot;\n    device = next(model.parameters()).device\n\n    if prompt:\n        inputs = processor(image, text=prompt, return_tensors=&quot;pt&quot;).to(device, torch.float16)\n    else:\n        inputs = processor(image, return_tensors=&quot;pt&quot;).to(device, torch.float16)\n\n    with torch.no_grad():\n        ids = model.generate(\n            **inputs,\n            max_new_tokens=max_new_tokens,\n            num_beams=5,\n            repetition_penalty=1.3,\n        )\n    caption = processor.decode(ids[0], skip_special_tokens=True)\n    return caption\n\n# 条件付きキャプション vs 無条件キャプションの違い\n# image = Image.open(&quot;car.jpg&quot;)\n# model, proc = load_blip()\n\n# 無条件キャプション → 画像全体の説明\n# print(generate_caption(image, model, proc))\n# → &quot;a red sports car parked on the street&quot;\n\n# 条件付きキャプション → 特定の側面に注目\n# print(generate_caption(image, model, proc, prompt=&quot;the color of the car is&quot;))\n# → &quot;the color of the car is red&quot;\n</code></pre>\n<h2>VQA（視覚的質問応答）</h2>\n<pre><code class=\"language-python\">def visual_qa(image, question, model, processor):\n    &quot;&quot;&quot;\n    画像に関する自然言語の質問に答える\n    VQA: Visual Question Answering\n    &quot;&quot;&quot;\n    device = next(model.parameters()).device\n    inputs = processor(image, question, return_tensors=&quot;pt&quot;).to(device, torch.float16)\n\n    with torch.no_grad():\n        ids = model.generate(**inputs, max_new_tokens=50)\n    answer = processor.decode(ids[0], skip_special_tokens=True)\n    return answer\n\n# 使用例\n# image = Image.open(&quot;dashboard.jpg&quot;)\n# model, proc = load_blip()\n\n# 車載ダッシュボード画像への質問応答\nquestions = [\n    &quot;What is the speed shown on the speedometer?&quot;,\n    &quot;Is the fuel gauge showing low fuel?&quot;,\n    &quot;What warning lights are on?&quot;,\n    &quot;What gear is the transmission in?&quot;,\n]\n# for q in questions:\n#     print(f&quot;Q: {q}&quot;)\n#     print(f&quot;A: {visual_qa(image, q, model, proc)}&quot;)\n#     print()\n</code></pre>\n<h2>BLIP-2 のマルチモーダル対話</h2>\n<pre><code class=\"language-python\">def blip2_chat(image, conversation_history, model, processor):\n    &quot;&quot;&quot;\n    BLIP-2 による画像についての会話\n    conversation_history: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;...&quot;}, ...]\n    &quot;&quot;&quot;\n    device = next(model.parameters()).device\n\n    # 会話履歴をプロンプトに変換\n    prompt = &quot;&quot;\n    for turn in conversation_history:\n        if turn[&quot;role&quot;] == &quot;user&quot;:\n            prompt += f&quot;Question: {turn['content']} Answer:&quot;\n        else:\n            prompt += f&quot; {turn['content']}\\nQuestion:&quot;\n\n    inputs = processor(image, text=prompt, return_tensors=&quot;pt&quot;).to(device, torch.float16)\n\n    with torch.no_grad():\n        ids = model.generate(\n            **inputs,\n            max_new_tokens=200,\n            do_sample=False,\n        )\n    response = processor.decode(ids[0], skip_special_tokens=True)\n    # プロンプト部分を除いた応答を返す\n    if &quot;Answer:&quot; in response:\n        response = response.split(&quot;Answer:&quot;)[-1].strip()\n    return response\n\n# 多ターン会話の例（自動車診断ユースケース）\n# image = Image.open(&quot;engine_bay.jpg&quot;)\n# model, proc = load_blip2()\n\nconversation = [\n    {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;What do you see in this image?&quot;},\n    # → &quot;I see an engine bay of a car with several components visible...&quot;\n    {&quot;role&quot;: &quot;assistant&quot;, &quot;content&quot;: &quot;I see an engine bay with several components.&quot;},\n    {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Is there any visible damage or leaks?&quot;},\n    # → &quot;I can see what appears to be oil residue near the...&quot;\n]\n# response = blip2_chat(image, conversation, model, proc)\n# print(response)\n</code></pre>\n<h2>Q-Formerの仕組み</h2>\n<pre><code class=\"language-python\">import torch.nn as nn\n\nclass SimpleQFormer(nn.Module):\n    &quot;&quot;&quot;\n    BLIP-2 の Q-Former の概念実装\n    固定した学習可能クエリが視覚特徴から情報を抽出し\n    LLMが扱いやすい形に変換する\n    &quot;&quot;&quot;\n    def __init__(self, num_query_tokens=32, hidden_dim=768, num_heads=12):\n        super().__init__()\n        # 学習可能なクエリトークン（視覚特徴を要約）\n        self.query_tokens = nn.Parameter(torch.zeros(1, num_query_tokens, hidden_dim))\n        nn.init.normal_(self.query_tokens, std=0.02)\n\n        # Cross-Attention: クエリが画像特徴に注目\n        self.cross_attn = nn.MultiheadAttention(hidden_dim, num_heads, batch_first=True)\n\n        # Self-Attention: クエリ間の関係\n        self.self_attn  = nn.MultiheadAttention(hidden_dim, num_heads, batch_first=True)\n\n        self.ffn = nn.Sequential(\n            nn.Linear(hidden_dim, hidden_dim * 4),\n            nn.GELU(),\n            nn.Linear(hidden_dim * 4, hidden_dim),\n        )\n        self.norm1 = nn.LayerNorm(hidden_dim)\n        self.norm2 = nn.LayerNorm(hidden_dim)\n        self.norm3 = nn.LayerNorm(hidden_dim)\n\n    def forward(self, image_features):\n        &quot;&quot;&quot;\n        image_features: [B, N_patches, D] 固定した画像エンコーダーの出力\n        戻り値: [B, num_query_tokens, D] LLMへ渡す圧縮された視覚表現\n        &quot;&quot;&quot;\n        B = image_features.size(0)\n        queries = self.query_tokens.expand(B, -1, -1)\n\n        # Cross-Attention: 画像の情報をクエリに集約\n        q, _ = self.cross_attn(queries, image_features, image_features)\n        queries = self.norm1(queries + q)\n\n        # Self-Attention: クエリ間の関係を整理\n        q, _ = self.self_attn(queries, queries, queries)\n        queries = self.norm2(queries + q)\n\n        # FFN\n        queries = self.norm3(queries + self.ffn(queries))\n        return queries\n\n# 動作確認\nqformer = SimpleQFormer(num_query_tokens=32, hidden_dim=768)\nB, N_patches, D = 2, 256, 768   # ViT-g/14 の出力（16x16 patches）\nimg_feat = torch.randn(B, N_patches, D)\nout = qformer(img_feat)\nprint(f&quot;入力 (画像特徴): {img_feat.shape}&quot;)     # [2, 256, 768]\nprint(f&quot;出力 (Q-Former): {out.shape}&quot;)           # [2, 32, 768]\nprint(&quot;→ 256トークンの視覚情報を32トークンに圧縮してLLMへ渡す&quot;)\n</code></pre>\n<h2>画像−テキスト検索（Retrieval）</h2>\n<pre><code class=\"language-python\">def build_multimodal_retrieval(image_paths, captions, model, processor):\n    &quot;&quot;&quot;\n    BLIP による双方向検索インデックス構築\n    - テキストから画像を検索\n    - 画像からテキストを検索\n    &quot;&quot;&quot;\n    device = next(model.parameters()).device\n\n    # 画像埋め込みの計算\n    img_embeddings = []\n    for path in image_paths:\n        img = Image.open(path).convert(&quot;RGB&quot;)\n        inputs = processor(images=img, return_tensors=&quot;pt&quot;).to(device)\n        with torch.no_grad():\n            feat = model.get_image_features(**inputs)\n        img_embeddings.append(feat)\n    img_embeddings = torch.cat(img_embeddings)\n\n    # テキスト埋め込みの計算\n    txt_embeddings = []\n    for caption in captions:\n        inputs = processor(text=caption, return_tensors=&quot;pt&quot;,\n                          truncation=True, max_length=77).to(device)\n        with torch.no_grad():\n            feat = model.get_text_features(**inputs)\n        txt_embeddings.append(feat)\n    txt_embeddings = torch.cat(txt_embeddings)\n\n    return img_embeddings, txt_embeddings\n\n# 応用例: 車載カメラ映像のシーン検索\n# queries = [\n#     &quot;pedestrian crossing the road&quot;,\n#     &quot;construction zone ahead&quot;,\n#     &quot;slippery road sign&quot;,\n#     &quot;emergency vehicle approaching&quot;,\n# ]\n</code></pre>\n<h2>BLIP を使ったデータセット構築</h2>\n<pre><code class=\"language-python\"># BLIP の実用的なユースケース:\n# 大量の画像に自動でキャプションを付けてデータセットを作る\n\ndef auto_caption_dataset(image_dir, output_json, model, processor, batch_size=8):\n    &quot;&quot;&quot;\n    画像ディレクトリの全画像にキャプションを自動生成\n    fine-tuning 用データセット構築に活用\n    &quot;&quot;&quot;\n    import json\n    from pathlib import Path\n\n    image_paths = list(Path(image_dir).glob(&quot;**/*.jpg&quot;)) + \\\n                  list(Path(image_dir).glob(&quot;**/*.png&quot;))\n\n    dataset = []\n    for i in range(0, len(image_paths), batch_size):\n        batch_paths = image_paths[i:i+batch_size]\n        images = [Image.open(p).convert(&quot;RGB&quot;) for p in batch_paths]\n\n        inputs = processor(images=images, return_tensors=&quot;pt&quot;, padding=True)\n        with torch.no_grad():\n            ids = model.generate(**inputs, max_new_tokens=80, num_beams=3)\n\n        for path, id_seq in zip(batch_paths, ids):\n            caption = processor.decode(id_seq, skip_special_tokens=True)\n            dataset.append({&quot;image&quot;: str(path), &quot;caption&quot;: caption})\n\n        if (i // batch_size) % 10 == 0:\n            print(f&quot;処理済: {i+len(batch_paths)}/{len(image_paths)}&quot;)\n\n    with open(output_json, &quot;w&quot;, encoding=&quot;utf-8&quot;) as f:\n        json.dump(dataset, f, ensure_ascii=False, indent=2)\n    print(f&quot;データセット保存完了: {output_json} ({len(dataset)} 件)&quot;)\n</code></pre>\n<h2>CLIP vs BLIP vs BLIP-2 まとめ</h2>\n<table>\n<thead>\n<tr>\n<th>特性</th>\n<th>CLIP</th>\n<th>BLIP</th>\n<th>BLIP-2</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>発表</td>\n<td>2021 OpenAI</td>\n<td>2022 Salesforce</td>\n<td>2023 Salesforce</td>\n</tr>\n<tr>\n<td>タスク</td>\n<td>検索・分類</td>\n<td>検索・分類・生成</td>\n<td>検索・生成・対話</td>\n</tr>\n<tr>\n<td>テキスト生成</td>\n<td>❌</td>\n<td>✅（キャプション）</td>\n<td>✅（LLM連携）</td>\n</tr>\n<tr>\n<td>VQA</td>\n<td>△（分類形式のみ）</td>\n<td>✅</td>\n<td>✅（自由記述）</td>\n</tr>\n<tr>\n<td>対話</td>\n<td>❌</td>\n<td>❌</td>\n<td>✅</td>\n</tr>\n<tr>\n<td>ベースモデル</td>\n<td>ViT/ResNet + Transformer</td>\n<td>ViT + BERT系</td>\n<td>Frozen ViT + Q-Former + LLM</td>\n</tr>\n<tr>\n<td>パラメータ数</td>\n<td>400M</td>\n<td>200M</td>\n<td>4〜12B</td>\n</tr>\n<tr>\n<td>主な用途</td>\n<td>画像検索・SD条件付け</td>\n<td>キャプション・VQA</td>\n<td>マルチモーダル対話</td>\n</tr>\n</tbody>\n</table>",
+"prereq_full": [
+{
+"slug": "clip",
+"title": "CLIP（画像とテキストの対照学習）"
+}
+],
+"related_full": [
+{
+"slug": "clip",
+"title": "CLIP（画像とテキストの対照学習）"
+},
+{
+"slug": "image-processing",
+"title": "画像前処理・特徴抽出（深層学習向け）"
+},
+{
+"slug": "transformer",
+"title": "Transformerアーキテクチャ"
+},
+{
+"slug": "llm",
+"title": "LLM（大規模言語モデル）"
+},
+{
+"slug": "rag",
+"title": "RAG（検索拡張生成）"
+}
+],
+"next_full": [],
+"completed": false,
+"favorite": false
+},
+"clip": {
+"slug": "clip",
+"title": "CLIP（画像とテキストの対照学習）",
+"level": 3,
+"category": "CV",
+"related": [
+"image-processing",
+"cnn",
+"transformer",
+"llm",
+"blip"
+],
+"next": [
+"blip"
+],
+"tags": [
+"clip",
+"openai",
+"contrastive-learning",
+"vision-language",
+"zero-shot",
+"cv"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>CLIP（Contrastive Language-Image Pre-Training）はOpenAIが2021年に発表した視覚言語モデルです。4億枚の画像とテキストのペアで学習し、<strong>テキストで画像を検索</strong>・<strong>ゼロショット画像分類</strong>・<strong>画像キャプション評価</strong>など、「言語で視覚を操る」タスクを可能にしました。Stable DiffusionなどのDiffusionモデルにも組み込まれています。</p>\n<h2>CLIPのアーキテクチャ</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  A[&quot;画像\\n(car.jpg)&quot;] --&gt; B[&quot;Image Encoder\\n(ViT / ResNet)&quot;]\n  C[&quot;テキスト\\n'a photo of a car'&quot;] --&gt; D[&quot;Text Encoder\\n(Transformer)&quot;]\n  B --&gt; E[&quot;画像埋め込み\\n[512次元]&quot;]\n  D --&gt; F[&quot;テキスト埋め込み\\n[512次元]&quot;]\n  E --&gt; G[&quot;コサイン類似度\\n計算&quot;]\n  F --&gt; G\n  G --&gt; H[&quot;対照損失\\n(Contrastive Loss)&quot;]\n</code></pre>\n<pre><code class=\"language-python\">import torch\nimport torch.nn.functional as F\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# CLIPの中心アイデア: 画像とテキストを同じ埋め込み空間に写像する\n# 対応するペアは近く、対応しないペアは遠くなるように学習\n\n# 対照学習の損失関数（InfoNCE Loss）\ndef contrastive_loss(image_embeddings, text_embeddings, temperature=0.07):\n    &quot;&quot;&quot;\n    CLIP の対照損失\n    image_embeddings: [N, D] 正規化済み画像埋め込み\n    text_embeddings:  [N, D] 正規化済みテキスト埋め込み\n    N: バッチサイズ, D: 埋め込み次元\n    &quot;&quot;&quot;\n    # コサイン類似度行列 [N, N]\n    logits = torch.mm(image_embeddings, text_embeddings.T) / temperature\n    # 対角成分が正例（i番目の画像とi番目のテキストが対応）\n    labels = torch.arange(len(image_embeddings))\n    # 画像→テキスト と テキスト→画像 の双方向損失\n    loss_i2t = F.cross_entropy(logits,   labels)\n    loss_t2i = F.cross_entropy(logits.T, labels)\n    return (loss_i2t + loss_t2i) / 2\n\n# デモ（ランダムな埋め込みで動作確認）\nN, D = 4, 512\nimg_emb = F.normalize(torch.randn(N, D), dim=-1)\ntxt_emb = F.normalize(torch.randn(N, D), dim=-1)\nloss = contrastive_loss(img_emb, txt_emb)\nprint(f&quot;対照損失: {loss.item():.4f}  (理論最小値 ≈ {np.log(N):.4f})&quot;)\n</code></pre>\n<h2>CLIPを使ったゼロショット分類</h2>\n<pre><code class=\"language-python\"># pip install transformers torch pillow\nfrom transformers import CLIPProcessor, CLIPModel\nfrom PIL import Image\nimport requests\n\nmodel = CLIPModel.from_pretrained(&quot;openai/clip-vit-base-patch32&quot;)\nprocessor = CLIPProcessor.from_pretrained(&quot;openai/clip-vit-base-patch32&quot;)\nmodel.eval()\n\ndef zero_shot_classify(image_path_or_url, candidate_labels):\n    &quot;&quot;&quot;\n    CLIPによるゼロショット画像分類\n    学習時に一度も見ていないクラスも分類できる\n    &quot;&quot;&quot;\n    # 画像の読み込み\n    if image_path_or_url.startswith(&quot;http&quot;):\n        image = Image.open(requests.get(image_path_or_url, stream=True).raw)\n    else:\n        image = Image.open(image_path_or_url)\n\n    # プロンプトテンプレート（&quot;a photo of a {label}&quot; が精度向上）\n    texts = [f&quot;a photo of a {label}&quot; for label in candidate_labels]\n\n    inputs = processor(\n        text=texts,\n        images=image,\n        return_tensors=&quot;pt&quot;,\n        padding=True,\n    )\n\n    with torch.no_grad():\n        outputs = model(**inputs)\n        logits = outputs.logits_per_image   # [1, num_labels]\n        probs  = logits.softmax(dim=-1)[0]\n\n    results = sorted(zip(candidate_labels, probs.tolist()),\n                     key=lambda x: x[1], reverse=True)\n    return results\n\n# 使用例（任意の画像で試せる）\nlabels = [&quot;cat&quot;, &quot;dog&quot;, &quot;car&quot;, &quot;bicycle&quot;, &quot;airplane&quot;, &quot;ship&quot;]\n# results = zero_shot_classify(&quot;test.jpg&quot;, labels)\n# for label, prob in results:\n#     print(f&quot;  {label:12s}: {prob*100:.1f}%&quot;)\n</code></pre>\n<h2>画像−テキスト類似度の可視化</h2>\n<pre><code class=\"language-python\">def visualize_similarity(images, texts, model, processor):\n    &quot;&quot;&quot;画像とテキストの類似度行列を可視化&quot;&quot;&quot;\n    inputs = processor(\n        text=texts,\n        images=images,\n        return_tensors=&quot;pt&quot;,\n        padding=True,\n    )\n    with torch.no_grad():\n        image_features = model.get_image_features(pixel_values=inputs[&quot;pixel_values&quot;])\n        text_features  = model.get_text_features(\n            input_ids=inputs[&quot;input_ids&quot;],\n            attention_mask=inputs[&quot;attention_mask&quot;],\n        )\n    # 正規化してコサイン類似度を計算\n    image_features = F.normalize(image_features, dim=-1)\n    text_features  = F.normalize(text_features,  dim=-1)\n    similarity = (image_features @ text_features.T).numpy()\n\n    # ヒートマップ表示\n    fig, ax = plt.subplots(figsize=(8, 6))\n    im = ax.imshow(similarity, cmap=&quot;Blues&quot;, vmin=0, vmax=1)\n    ax.set_xticks(range(len(texts)))\n    ax.set_xticklabels(texts, rotation=30, ha=&quot;right&quot;, fontsize=9)\n    ax.set_yticks(range(len(images)))\n    ax.set_yticklabels([f&quot;image_{i}&quot; for i in range(len(images))])\n    for i in range(len(images)):\n        for j in range(len(texts)):\n            ax.text(j, i, f&quot;{similarity[i,j]:.2f}&quot;, ha=&quot;center&quot;, va=&quot;center&quot;,\n                    color=&quot;white&quot; if similarity[i,j] &gt; 0.6 else &quot;black&quot;, fontsize=9)\n    plt.colorbar(im)\n    plt.title(&quot;CLIP 画像−テキスト 類似度行列&quot;)\n    plt.tight_layout()\n    plt.show()\n    return similarity\n</code></pre>\n<h2>画像検索（テキストクエリ）</h2>\n<pre><code class=\"language-python\">import os\nfrom pathlib import Path\n\ndef build_image_index(image_dir, model, processor, device=&quot;cpu&quot;):\n    &quot;&quot;&quot;画像ディレクトリをインデックス化&quot;&quot;&quot;\n    model = model.to(device)\n    image_paths = list(Path(image_dir).glob(&quot;*.jpg&quot;)) + \\\n                  list(Path(image_dir).glob(&quot;*.png&quot;))\n\n    embeddings = []\n    for path in image_paths:\n        image = Image.open(path).convert(&quot;RGB&quot;)\n        inputs = processor(images=image, return_tensors=&quot;pt&quot;).to(device)\n        with torch.no_grad():\n            feat = model.get_image_features(**inputs)\n            feat = F.normalize(feat, dim=-1)\n        embeddings.append(feat.cpu())\n\n    return image_paths, torch.cat(embeddings, dim=0)\n\ndef search_images(query_text, image_paths, image_embeddings, model, processor, top_k=5):\n    &quot;&quot;&quot;テキストクエリで画像を検索&quot;&quot;&quot;\n    inputs = processor(text=[query_text], return_tensors=&quot;pt&quot;, padding=True)\n    with torch.no_grad():\n        text_feat = model.get_text_features(**inputs)\n        text_feat = F.normalize(text_feat, dim=-1)\n\n    similarities = (image_embeddings @ text_feat.T).squeeze()\n    top_indices  = similarities.argsort(descending=True)[:top_k]\n\n    print(f&quot;クエリ: '{query_text}'&quot;)\n    for idx in top_indices:\n        print(f&quot;  {image_paths[idx].name}: {similarities[idx]:.4f}&quot;)\n    return [image_paths[i] for i in top_indices]\n\n# 使用例:\n# paths, embs = build_image_index(&quot;./my_images&quot;, model, processor)\n# results = search_images(&quot;a red sports car at night&quot;, paths, embs, model, processor)\n</code></pre>\n<h2>Stable Diffusion での CLIP の役割</h2>\n<pre><code class=\"language-python\"># CLIP は Stable Diffusion のテキスト条件付けに使われる\n# テキスト → CLIPテキストエンコーダー → 埋め込み → U-Net の条件\n# 画像品質の評価指標 CLIP Score にも使われる\n\ndef clip_score(image, generated_caption, model, processor):\n    &quot;&quot;&quot;\n    CLIP Score: 生成画像とキャプションの整合性評価\n    高いほど「キャプション通りの画像が生成されている」\n    &quot;&quot;&quot;\n    inputs = processor(\n        text=[generated_caption],\n        images=image,\n        return_tensors=&quot;pt&quot;,\n        padding=True,\n    )\n    with torch.no_grad():\n        outputs = model(**inputs)\n        # logits_per_image は image-text の類似度スコア\n        score = outputs.logits_per_image.item()\n    return score\n\n# CLIP Score の解釈\nprint(&quot;CLIP Score の目安:&quot;)\nprint(&quot;  &gt; 35: 非常に良い整合性（テキスト通りの画像）&quot;)\nprint(&quot;  25〜35: 良い整合性&quot;)\nprint(&quot;  &lt; 25: テキストと画像が乖離&quot;)\n</code></pre>\n<h2>CLIPの限界と発展</h2>\n<table>\n<thead>\n<tr>\n<th>課題</th>\n<th>内容</th>\n<th>発展モデル</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>細粒度な属性理解</td>\n<td>「赤い車の左側のドア」など</td>\n<td>BLIP-2, LLaVA</td>\n</tr>\n<tr>\n<td>カウント・位置関係</td>\n<td>「3匹の猫」の正確な識別が苦手</td>\n<td>OWL-ViT</td>\n</tr>\n<tr>\n<td>日本語</td>\n<td>英語ベースの学習</td>\n<td>Japanese CLIP（rinna）</td>\n</tr>\n<tr>\n<td>動画</td>\n<td>静止画のみ</td>\n<td>VideoCLIP, CLIP4Clip</td>\n</tr>\n<tr>\n<td>医療画像</td>\n<td>ドメイン特化が必要</td>\n<td>BioViL, MedCLIP</td>\n</tr>\n</tbody>\n</table>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "image-processing",
+"title": "画像前処理・特徴抽出（深層学習向け）"
+},
+{
+"slug": "cnn",
+"title": "CNN（畳み込みニューラルネットワーク）"
+},
+{
+"slug": "transformer",
+"title": "Transformerアーキテクチャ"
+},
+{
+"slug": "llm",
+"title": "LLM（大規模言語モデル）"
+},
+{
+"slug": "blip",
+"title": "BLIP / BLIP-2（視覚言語モデルの最前線）"
+}
+],
+"next_full": [
+{
+"slug": "blip",
+"title": "BLIP / BLIP-2（視覚言語モデルの最前線）"
+}
+],
+"completed": false,
+"favorite": false
+},
 "cnn": {
 "slug": "cnn",
 "title": "CNN（畳み込みニューラルネットワーク）",
@@ -9557,6 +9731,54 @@
 "title": "ARP"
 }
 ],
+"blip": [
+{
+"slug": "clip",
+"title": "CLIP（画像とテキストの対照学習）"
+},
+{
+"slug": "image-processing",
+"title": "画像前処理・特徴抽出（深層学習向け）"
+},
+{
+"slug": "transformer",
+"title": "Transformerアーキテクチャ"
+},
+{
+"slug": "llm",
+"title": "LLM（大規模言語モデル）"
+},
+{
+"slug": "rag",
+"title": "RAG（検索拡張生成）"
+}
+],
+"clip": [
+{
+"slug": "blip",
+"title": "BLIP / BLIP-2（視覚言語モデルの最前線）"
+},
+{
+"slug": "image-processing",
+"title": "画像前処理・特徴抽出（深層学習向け）"
+},
+{
+"slug": "cnn",
+"title": "CNN（畳み込みニューラルネットワーク）"
+},
+{
+"slug": "transformer",
+"title": "Transformerアーキテクチャ"
+},
+{
+"slug": "llm",
+"title": "LLM（大規模言語モデル）"
+},
+{
+"slug": "langchain",
+"title": "LangChain（LLMアプリ開発フレームワーク）"
+}
+],
 "cnn": [
 {
 "slug": "rnn-lstm",
@@ -13254,6 +13476,65 @@
 "difficulty": "初級",
 "updated": "2026-06-10",
 "excerpt": "OpenCV（Open Source Computer Vision Library）はC++/Python対応の高速な画像処理ライブラリです。画像の読み込み・変換・フィルタリング・エッジ検出・物体検出まで、コンピュータビジョンに必要な操作",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "blip",
+"title": "BLIP / BLIP-2（視覚言語モデルの最前線）",
+"level": 3,
+"category": "CV",
+"related": [
+"clip",
+"image-processing",
+"transformer",
+"llm",
+"rag"
+],
+"next": [],
+"tags": [
+"blip",
+"blip2",
+"vision-language",
+"image-captioning",
+"vqa",
+"salesforce",
+"cv"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"excerpt": "BLIP（Bootstrapping Language-Image Pre-training）はSalesforce Researchが2022年に発表した視覚言語モデルです。CLIPの「ベクトル類似度」に留まらず、**画像キャプション生成",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "clip",
+"title": "CLIP（画像とテキストの対照学習）",
+"level": 3,
+"category": "CV",
+"related": [
+"image-processing",
+"cnn",
+"transformer",
+"llm",
+"blip"
+],
+"next": [
+"blip"
+],
+"tags": [
+"clip",
+"openai",
+"contrastive-learning",
+"vision-language",
+"zero-shot",
+"cv"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"excerpt": "CLIP（Contrastive Language-Image Pre-Training）はOpenAIが2021年に発表した視覚言語モデルです。4億枚の画像とテキストのペアで学習し、**テキストで画像を検索**・**ゼロショット画像分類*",
 "views": 0,
 "completed": false,
 "favorite": false

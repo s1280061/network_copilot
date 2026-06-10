@@ -103,6 +103,8 @@ _CATEGORY_MAP = {
     "generative-models": "DL",
     # CV additional
     "object-detection": "CV",
+    "clip": "CV",
+    "blip": "CV",
     # GenAI additional
     "langchain": "GenAI",
     "fine-tuning": "GenAI",
