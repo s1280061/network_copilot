@@ -9,7 +9,10 @@ tags: [python, pandas, dataframe, data-science]
 ---
 
 ## 概要
-PandasはExcel的な表形式データを扱うライブラリです。`DataFrame`（表）と`Series`（列）が中心で、CSVの読み込み・集計・結合・整形を数行のコードで行えます。
+PandasはExcel的な**表形式データ**を扱うライブラリです。中心となるデータ構造は `DataFrame`（2次元の表）と `Series`（1列）で、CSVの読み込み・集計・結合・整形を数行のコードで行えます。実務のデータ分析作業の大半はPandasで完結します。
+
+## なぜ必要か
+生データはCSV・Excel・データベースで提供されることがほとんどで、欠損値・型の不一致・重複などの問題を必ず含みます。NumPy配列だけでは列名の管理やテーブル結合が困難です。Pandasはそれらを直感的に扱えるAPIを提供し、NumPy・Matplotlibとシームレスに連携します。
 
 ## DataFrameの作成
 
@@ -18,76 +21,167 @@ import pandas as pd
 
 # 辞書から作成
 df = pd.DataFrame({
-    "name":  ["Alice", "Bob", "Carol", "Dave"],
-    "age":   [25, 30, 22, 35],
-    "score": [88, 92, 78, 95],
+    "name":       ["Alice", "Bob", "Carol", "Dave", "Eve"],
+    "department": ["開発", "営業", "開発", "マーケ", "営業"],
+    "score":      [88, 72, 95, 60, 83],
+    "age":        [25, 30, 22, 35, 28],
 })
 
 print(df)
-#     name  age  score
-# 0  Alice   25     88
-# 1    Bob   30     92
-# 2  Carol   22     78
-# 3   Dave   35     95
+#     name department  score  age
+# 0  Alice         開発     88   25
+# 1    Bob         営業     72   30
+# 2  Carol         開発     95   22
+# 3   Dave       マーケ     60   35
+# 4    Eve         営業     83   28
 ```
 
 ## CSVの読み書き
 
 ```python
-df = pd.read_csv("data.csv")       # 読み込み
-df.to_csv("output.csv", index=False)  # 書き出し
+# 読み込み
+df = pd.read_csv("sales.csv", encoding="utf-8")
+df = pd.read_csv("sales.csv", parse_dates=["date"])  # 日付列を自動パース
+
+# Excel
+df = pd.read_excel("data.xlsx", sheet_name="Sheet1")
+
+# 書き出し
+df.to_csv("output.csv", index=False)
+df.to_excel("output.xlsx", index=False)
 ```
 
-## 基本的な確認
+## 基本確認
 
 ```python
-df.head()        # 先頭5行
-df.tail(3)       # 末尾3行
-df.shape         # (行数, 列数)
-df.info()        # 型・欠損値の概要
-df.describe()    # 数値列の基本統計量
+df.shape          # (5, 4)  → (行数, 列数)
+df.dtypes         # 各列の型
+df.info()         # 型・欠損数・メモリ使用量
+df.describe()     # 数値列の基本統計量（平均・標準偏差・四分位数）
+df.head(3)        # 先頭3行
+df.tail(3)        # 末尾3行
+df.isnull().sum() # 各列の欠損数
 ```
 
-## 列の選択とフィルタ
+## 列・行の選択
 
 ```python
 # 1列選択（Series）
 print(df["score"])
 
-# 複数列
+# 複数列選択（DataFrame）
 print(df[["name", "score"]])
 
 # 条件フィルタ
-high = df[df["score"] >= 90]
-young_high = df[(df["age"] < 30) & (df["score"] >= 80)]
-```
+high_score   = df[df["score"] >= 80]
+dev_high     = df[(df["department"] == "開発") & (df["score"] >= 80)]
+specific_age = df[df["age"].between(25, 30)]
 
-## 集計・グループ化
-
-```python
-# 単純集計
-print(df["score"].mean())   # 88.25
-print(df["score"].max())    # 95
-
-# グループ集計
-grouped = df.groupby("department")["score"].agg(["mean", "max", "count"])
-```
-
-## 欠損値の処理
-
-```python
-df.isnull().sum()            # 欠損数を確認
-df.dropna()                  # 欠損行を削除
-df.fillna(0)                 # 0で埋める
-df["age"].fillna(df["age"].mean())  # 平均で補完
+# loc（ラベル） / iloc（番号）
+df.loc[0, "score"]          # 0行目 score列
+df.iloc[0:3, 1:3]           # 0〜2行・1〜2列
 ```
 
 ## 列の追加・変換
 
 ```python
-df["grade"] = df["score"].apply(lambda x: "A" if x >= 90 else "B")
-df["age_double"] = df["age"] * 2
+# 新しい列を計算して追加
+df["score_scaled"] = df["score"] / 100
+df["grade"]        = df["score"].apply(lambda x: "A" if x >= 90 else ("B" if x >= 70 else "C"))
+df["name_upper"]   = df["name"].str.upper()
+
+# 条件分岐列（np.where が便利）
+import numpy as np
+df["passed"] = np.where(df["score"] >= 70, True, False)
+```
+
+## グループ集計
+
+```python
+# 部署ごとの平均スコア
+print(df.groupby("department")["score"].mean())
+# department
+# マーケ    60.0
+# 営業      77.5
+# 開発      91.5
+
+# 複数の集計関数を同時に適用
+summary = df.groupby("department")["score"].agg(
+    平均="mean", 最大="max", 件数="count"
+)
+print(summary)
+
+# 複数列でグループ化
+df.groupby(["department", "grade"])["score"].mean()
+
+# pivot_table（Excelのピボットと同等）
+pivot = df.pivot_table(
+    values="score",
+    index="department",
+    columns="grade",
+    aggfunc="count",
+    fill_value=0,
+)
+```
+
+## ソートと順位
+
+```python
+# 降順ソート
+df_sorted = df.sort_values("score", ascending=False)
+
+# 複数列ソート
+df_sorted = df.sort_values(["department", "score"], ascending=[True, False])
+
+# 順位列を追加
+df["rank"] = df["score"].rank(ascending=False, method="min").astype(int)
+```
+
+## テーブルの結合
+
+```python
+dept_info = pd.DataFrame({
+    "department": ["開発", "営業", "マーケ"],
+    "budget":     [500, 300, 200],
+})
+
+# SQL的なJOIN
+merged = df.merge(dept_info, on="department", how="left")
+
+# 縦に積み重ね（UNION ALL）
+combined = pd.concat([df_q1, df_q2], ignore_index=True)
+```
+
+## 時系列データ
+
+```python
+ts = pd.DataFrame({
+    "date":  pd.date_range("2024-01-01", periods=90, freq="D"),
+    "sales": np.random.randint(100, 500, 90),
+})
+ts = ts.set_index("date")
+
+# リサンプリング（日次→週次平均）
+weekly  = ts["sales"].resample("W").mean()
+monthly = ts["sales"].resample("ME").sum()
+
+# 移動平均
+ts["ma7"]  = ts["sales"].rolling(7).mean()
+ts["ma30"] = ts["sales"].rolling(30).mean()
+```
+
+## DataFrameの処理フロー
+
+```mermaid
+graph TD
+  A[CSV / Excel / DB] -->|read_csv / read_excel| B[DataFrame]
+  B --> C[概要確認<br/>shape / info / describe]
+  C --> D[欠損・重複処理]
+  D --> E[列変換 / 特徴量追加]
+  E --> F[フィルタ / グループ集計]
+  F --> G[Matplotlib / Seaborn で可視化]
+  F --> H[機械学習モデルへ]
 ```
 
 ## 次に学ぶべき内容
-DataFrameのデータを [[matplotlib]] でグラフ化する方法を学びましょう。
+DataFrameを [[matplotlib]] でグラフ化する方法を学びましょう。
