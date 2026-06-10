@@ -18,7 +18,7 @@
 ],
 "category": "Ethernet",
 "difficulty": "初級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "Ethernetは有線LANの標準技術で、OSIの物理層・データリンク層(L1/L2)を担います。データを「**フレーム**」という単位にまとめ、mac-address を使って同じネットワーク内の機器へ届けます。",
 "views": 0,
 "completed": false,
@@ -40,7 +40,7 @@
 ],
 "category": "Ethernet",
 "difficulty": "初級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "MACアドレスは、ネットワーク機器に割り当てられた**48ビット**の物理アドレスです(例: `00:1A:2B:3C:4D:5E`)。ethernet フレームの送信元・宛先として使われ、同じネットワーク内で「どの機器宛か」を識別します。",
 "views": 0,
 "completed": false,
@@ -65,8 +65,32 @@
 ],
 "category": "TCP/IP",
 "difficulty": "初級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "OSI参照モデルは、通信機能を7つの階層に分けて整理した概念モデルです。下から順に、**物理層**・**データリンク層**・**ネットワーク層**・**トランスポート層**・セッション層・プレゼンテーション層・**アプリケーション層**。各",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "python-basics",
+"title": "Python基礎（変数・リスト・辞書）",
+"level": 1,
+"category": "Python",
+"related": [
+"numpy",
+"pandas"
+],
+"next": [
+"numpy"
+],
+"tags": [
+"python",
+"basics",
+"data-science"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "Pythonはシンプルな文法と豊富なライブラリにより、データサイエンスの標準言語となっています。コードが英語に近い読みやすさを持ち、初心者でも数日で実用的なデータ処理が書けます。変数・リスト・辞書・制御構文を押さえておくと、NumPyやPa",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -87,7 +111,7 @@
 ],
 "category": "TCP/IP",
 "difficulty": "初級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "通信とは、ある機器から別の機器へ「データ」を届けることです。届ける相手・順番・形式を双方が約束しておくことで、初めて意味のあるやり取りが成立します。この約束ごとを **プロトコル** と呼びます。",
 "views": 0,
 "completed": false,
@@ -112,7 +136,7 @@
 "l3",
 "automotive"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "ARP(**Address Resolution Protocol**)は、IPアドレスから対応する mac-address を調べるためのプロトコルです。「このIPの機器のMACは?」とネットワークに問い合わせ(ARPリクエスト)、該当機",
 "views": 0,
 "completed": false,
@@ -135,7 +159,7 @@
 "tags": [
 "l3"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "DHCP(Dynamic Host Configuration Protocol)は、機器に ip アドレスやサブネットマスク、ゲートウェイ、DNSサーバなどのネットワーク設定を自動で配布する仕組みです。手動設定の手間とミスを無くします。",
 "views": 0,
 "completed": false,
@@ -158,7 +182,7 @@
 "tags": [
 "l7"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "DNS(Domain Name System)は、人間が読みやすい**ドメイン名**(例 `example.com`)を、機器が使う ip アドレスに変換する「インターネットの電話帳」です。問い合わせは主に udp 上で高速に行われます。",
 "views": 0,
 "completed": false,
@@ -186,7 +210,7 @@
 "diagnostics",
 "icmp"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "診断PCや別ECUから対象ECUへ**ping**を使って**疎通確認**する手順と、応答がない場合のトラブルシュート手順を説明します。",
 "views": 0,
 "completed": false,
@@ -209,7 +233,7 @@
 "l3",
 "tool"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "ICMP(Internet Control Message Protocol)は、ip 通信のエラー通知や制御メッセージをやり取りするプロトコルです。最も身近な用途が `**ping**` で、相手に到達できるか・往復にどれだけ時間がかかる",
 "views": 0,
 "completed": false,
@@ -233,7 +257,7 @@
 ],
 "category": "TCP/IP",
 "difficulty": "初級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "IP(Internet Protocol)はOSIのネットワーク層(L3)を担い、データを「パケット」にして送信元IPから宛先IPへ届けます。ネットワークをまたいだ転送(**ルーティング**)を可能にする中核プロトコルです。IPv4とIPv",
 "views": 0,
 "completed": false,
@@ -263,7 +287,7 @@
 "vlan"
 ],
 "difficulty": "初級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "**IPv4**（Internet Protocol version 4）と**IPv6**（Internet Protocol version 6）はどちらもネットワーク層でデバイスを識別し、パケットを届けるプロトコルです。アドレス枯渇問",
 "views": 0,
 "completed": false,
@@ -288,8 +312,86 @@
 "bus",
 "l2"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "LIN(Local Interconnect Network)は、**低コスト**・低速な車載シリアルバスです。1本のワイヤで最大19.2 kbpsの通信を行い、**マスター/スレーブ**構成で動作します。CANより安価で、シート調整・ドア",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "matplotlib",
+"title": "Matplotlib（グラフ描画）",
+"level": 2,
+"category": "Python",
+"related": [
+"numpy",
+"pandas",
+"seaborn"
+],
+"next": [
+"seaborn"
+],
+"tags": [
+"python",
+"matplotlib",
+"visualization",
+"data-science"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "Matplotlibはデータを視覚化する基本ライブラリです。折れ線グラフ・棒グラフ・散布図・ヒストグラム・円グラフなど幅広いグラフを、細部まで自由にカスタマイズして作成できます。PandasやSeabornの `plot()` も内部でMa",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "numpy",
+"title": "NumPy（配列・行列演算）",
+"level": 2,
+"category": "Python",
+"related": [
+"python-basics",
+"pandas",
+"matplotlib"
+],
+"next": [
+"pandas"
+],
+"tags": [
+"python",
+"numpy",
+"array",
+"data-science"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "NumPyはPythonで数値計算を高速に行う基盤ライブラリです。中心となる `ndarray`（N次元配列）はC言語で実装されており、Pythonのリストと比べて**10〜100倍以上の速度**で数値処理を行えます。PandasもMatp",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "pandas",
+"title": "Pandas（DataFrame・データ操作）",
+"level": 2,
+"category": "Python",
+"related": [
+"numpy",
+"matplotlib",
+"data-cleaning"
+],
+"next": [
+"matplotlib"
+],
+"tags": [
+"python",
+"pandas",
+"dataframe",
+"data-science"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "PandasはExcel的な**表形式データ**を扱うライブラリです。中心となるデータ構造は `DataFrame`（2次元の表）と `Series`（1列）で、CSVの読み込み・集計・結合・整形を数行のコードで行えます。実務のデータ分析作",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -311,7 +413,7 @@
 ],
 "category": "TCP/IP",
 "difficulty": "初級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "**ポート番号**は、1台の機器内で動く複数の通信を区別するための16ビットの番号(**0〜65535**)です。IPアドレスが「建物の住所」なら、ポートは「部屋番号」に相当します。",
 "views": 0,
 "completed": false,
@@ -335,7 +437,7 @@
 ],
 "category": "TCP/IP",
 "difficulty": "初級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "TCP(Transmission Control Protocol)はコネクション型のトランスポート層プロトコルです。3wayハンドシェイクで接続を確立し、**再送制御**・順序保証・**フロー制御**により「データが確実に正しい順で届く」",
 "views": 0,
 "completed": false,
@@ -361,7 +463,7 @@
 ],
 "category": "TCP/IP",
 "difficulty": "初級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "UDP(User Datagram Protocol)は**コネクションレス**で、再送や順序保証を持たない軽量なトランスポート層プロトコルです。ハンドシェイクなしで即座に送れるため、**低遅延**・低オーバーヘッドが特長です。",
 "views": 0,
 "completed": false,
@@ -385,7 +487,7 @@
 "l2",
 "automotive"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "VLAN(Virtual LAN / **IEEE 802.1Q**)は、1本の物理 ethernet を論理的に複数のネットワークに分割する技術です。フレームに「**VLANタグ**」を付けることで、同じケーブル上でもグループごとに通信を",
 "views": 0,
 "completed": false,
@@ -412,7 +514,7 @@
 "vlan",
 "ethernet"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "車載EthernetのキャプチャデータにVLANタグ(**IEEE 802.1Q**)が含まれているかをWiresharkで確認し、VLANごとにトラフィックを分離して解析する手順を説明します。",
 "views": 0,
 "completed": false,
@@ -435,8 +537,35 @@
 "tags": [
 "l3"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "サブネットは、ip アドレス空間を小さなネットワークに区切る考え方です。「ネットワーク部」と「ホスト部」を**サブネットマスク**(例 `255.255.255.0` / **CIDR**表記 `/24`)で分け、どこまでが同じネットワーク",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "data-cleaning",
+"title": "データクリーニング",
+"level": 2,
+"category": "Python",
+"related": [
+"pandas",
+"numpy",
+"data-analysis"
+],
+"next": [
+"data-analysis"
+],
+"tags": [
+"python",
+"pandas",
+"cleaning",
+"preprocessing",
+"data-science"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "データクリーニングは分析・機械学習の前処理として必須のステップです。現実のデータは欠損値・重複・型の不整合・表記ゆれを必ず含んでいます。「ゴミを入れればゴミが出る（GIGO）」という言葉の通り、前処理の質がそのまま分析精度に直結します。",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -462,7 +591,7 @@
 "video",
 "automotive"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "AVTP(Audio Video Transport Protocol、**IEEE 1722**)は、車載Ethernet上で映像・音声ストリームをリアルタイム転送するプロトコルです。カメラ映像をサラウンドビューモニター(SVM)に表示し",
 "views": 0,
 "completed": false,
@@ -490,7 +619,7 @@
 "doip",
 "automotive"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "診断PCからDoIP(Diagnostics over IP)を使ってゲートウェイECUへ接続し、UDS診断を開始するまでの手順を説明します。",
 "views": 0,
 "completed": false,
@@ -517,7 +646,7 @@
 "cli",
 "pcap"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "Linux搭載のECUやゲートウェイECU上で tcpdump を使い、車載Ethernetパケットをキャプチャしてpcapファイルに保存する手順を説明します。",
 "views": 0,
 "completed": false,
@@ -543,7 +672,7 @@
 "bus",
 "realtime"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "FlexRayは、時分割多重(**TDMA**)方式を採用した高速・高信頼性の車載バスです。最大10 Mbpsの速度と、**決定論的**タイミング(遅延上限が保証)が特徴です。冗長チャネル構成によりフォールトトレランスも実現します。",
 "views": 0,
 "completed": false,
@@ -568,7 +697,7 @@
 ],
 "category": "PCAP",
 "difficulty": "中級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "PCAP(Packet Capture)は、キャプチャしたパケットを保存するファイル形式です(拡張子 `.pcap` / `.**pcapng**`)。各パケットの**タイムスタンプ**と生データが記録され、後から繰り返し解析できます。",
 "views": 0,
 "completed": false,
@@ -593,8 +722,35 @@
 "timing",
 "automotive"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "PTP(Precision Time Protocol、**IEEE 1588**)は、ネットワーク上の複数ノードの時刻をナノ秒精度で同期するプロトコルです。**グランドマスター**クロックが基準時刻を発信し、スレーブノードが遅延を計測しな",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "seaborn",
+"title": "Seaborn（統計可視化）",
+"level": 3,
+"category": "Python",
+"related": [
+"matplotlib",
+"pandas",
+"data-analysis"
+],
+"next": [
+"data-analysis"
+],
+"tags": [
+"python",
+"seaborn",
+"visualization",
+"statistics",
+"data-science"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"excerpt": "SeabornはMatplotlibをベースにした統計可視化ライブラリです。Pandasの `DataFrame` を直接受け取り、複雑な統計グラフを少ないコードで美しく描けます。箱ひげ図・バイオリンプロット・ペアプロット・ヒートマップなど",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -617,7 +773,7 @@
 ],
 "category": "PCAP",
 "difficulty": "中級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "**ソケット**は、IPアドレスとポート番号の組で表される「通信のエンドポイント(出入口)」であり、プログラムがネットワーク通信を行うためのAPIでもあります。アプリはソケットを開いてデータを読み書きします。",
 "views": 0,
 "completed": false,
@@ -643,7 +799,7 @@
 "automotive",
 "iso14229"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "UDS(Unified Diagnostic Services、ISO 14229)は、ECUを診断・プログラムするための標準プロトコルです。「**サービスID**」と呼ばれる命令コードで、故障コード(DTC)の読み出し、メモリへの書き込み",
 "views": 0,
 "completed": false,
@@ -670,7 +826,7 @@
 "uds",
 "automotive"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "UDS (ISO 14229) の `ReadDTCInformation` サービス(0x19)を使って、ECUに記録された故障コード(DTC: Diagnostic Trouble Code)を読み出す手順を説明します。",
 "views": 0,
 "completed": false,
@@ -693,7 +849,7 @@
 ],
 "category": "PCAP",
 "difficulty": "中級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "Wiresharkは、ネットワークを流れるパケットをキャプチャして可視化する定番の解析ツールです。各パケットを osi の層ごとに分解し、Ethernet/IP/TCP/UDPの中身を人間が読める形で表示します。",
 "views": 0,
 "completed": false,
@@ -719,7 +875,7 @@
 "tool",
 "some-ip"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "Wiresharkを使って、車載EthernetのSOME/IPパケットを可視化・解析する手順を説明します。",
 "views": 0,
 "completed": false,
@@ -745,7 +901,7 @@
 "automotive",
 "calibration"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "XCP(Universal Measurement and Calibration Protocol、ASAM MCD-1 XCP)は、ECU内部の変数をリアルタイムに測定・書き換えするためのプロトコルです。開発中のECUに対してキャリブレ",
 "views": 0,
 "completed": false,
@@ -774,7 +930,7 @@
 "pcap",
 "analysis"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "車両ネットワークのpcapファイルを受け取ったとき、何から確認すればよいかの分析ステップと、よく見るべきポイントを説明します。",
 "views": 0,
 "completed": false,
@@ -798,7 +954,7 @@
 "tool",
 "cli"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "tcpdumpは、コマンドラインでパケットをキャプチャ・表示する定番ツールです。GUIの wireshark と違い、サーバや組み込み機器など画面の無い環境でも動き、結果を pcap ファイルに保存できます。",
 "views": 0,
 "completed": false,
@@ -822,7 +978,7 @@
 "tool",
 "cli"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "tsharkは、wireshark のコマンドライン版です。Wiresharkと同じ強力なプロトコル解析(ディセクタ)を持ちつつ、CLIで動くため**自動化**やバッチ処理に向いています。**表示フィルタ**で欲しい情報だけを抽出できます。",
 "views": 0,
 "completed": false,
@@ -850,8 +1006,34 @@
 "cli",
 "tshark"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "tshark(Wiresharkのコマンドライン版)を使って、pcapファイルや生トラフィックから特定の車載プロトコルを素早く抽出・解析する実践的なコマンドを紹介します。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "data-analysis",
+"title": "データ分析の流れ（EDA）",
+"level": 3,
+"category": "Python",
+"related": [
+"pandas",
+"matplotlib",
+"seaborn",
+"numpy",
+"data-cleaning"
+],
+"next": [],
+"tags": [
+"python",
+"eda",
+"data-science",
+"analysis"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"excerpt": "EDA（Exploratory Data Analysis：探索的データ分析）は、機械学習・統計モデリングの**前に必ず行う**データ理解の工程です。数値の羅列から「傾向」「外れ値」「相関」「欠損パターン」を発見し、仮説を立てて次のアクショ",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -875,7 +1057,7 @@
 ],
 "category": "AUTOSAR",
 "difficulty": "上級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "AUTOSAR(AUTomotive Open System ARchitecture)は、車載ソフトウェアの標準アーキテクチャです。ハードに依存しない再利用可能なソフト開発を目指します。従来制御向けの **Classic Platform",
 "views": 0,
 "completed": false,
@@ -902,7 +1084,7 @@
 "middleware",
 "autosar"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "Adaptive AUTOSARは、高性能プロセッサ上でLinux等のOSを動かしながら、機能安全と柔軟なソフトウェア配置を両立する車載ミドルウェア標準です。Classic AUTOSARが静的なマイコン向けであるのに対し、Adaptive",
 "views": 0,
 "completed": false,
@@ -926,7 +1108,7 @@
 ],
 "category": "AUTOSAR",
 "difficulty": "上級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "CAN(Controller Area Network)は、自動車向けに開発された堅牢なシリアル通信バスです。各メッセージはIDを持ち、宛先ではなく「内容」で識別されるブロードキャスト方式。ノイズに強く、配線がシンプルなのが特長です。CAN",
 "views": 0,
 "completed": false,
@@ -950,7 +1132,7 @@
 "automotive",
 "bus"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "CAN FD(CAN with Flexible Data-rate)は、従来の can を拡張した規格です。1フレームで運べるデータ量を8バイトから**最大64バイト**へ拡大し、データ部分の通信速度も高速化しました。既存のCAN資産を活",
 "views": 0,
 "completed": false,
@@ -975,7 +1157,7 @@
 "automotive",
 "diagnostics"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "DoIP(Diagnostics over IP / ISO 13400)は、車載診断通信(UDS)を ip ネットワーク上で行うための規格です。従来CAN上で行っていた診断を、高帯域なEthernetとIPで実現し、大量データの高速なやり",
 "views": 0,
 "completed": false,
@@ -1003,7 +1185,7 @@
 "security",
 "automotive"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "OTA(Over-The-Air)更新は、無線通信を通じて車両のソフトウェア・ファームウェアをリモートで書き換える仕組みです。販売店に持ち込まずに最新機能の追加やバグ修正が可能となり、SDVの中核技術の一つです。",
 "views": 0,
 "completed": false,
@@ -1028,7 +1210,7 @@
 ],
 "category": "SOME/IP",
 "difficulty": "上級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "SOME/IP(Scalable service-Oriented MiddlewarE over IP)は、車載ECU同士が「サービス」をやり取りするためのIP上のミドルウェアです。メソッド呼び出し(RPC)、イベント通知(Pub/Sub",
 "views": 0,
 "completed": false,
@@ -1055,7 +1237,7 @@
 "v2x",
 "adas"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "V2X(Vehicle-to-Everything)は、車両が道路インフラ・他車・歩行者・クラウドとリアルタイムに情報を交換する無線通信の総称です。V2V(車々間)、V2I(路車間)、V2P(歩行者)、V2N(ネットワーク)に分類されます。",
 "views": 0,
 "completed": false,
@@ -1082,7 +1264,7 @@
 "automotive",
 "iso21434"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "車載サイバーセキュリティとは、外部からの不正アクセス・改ざん・盗聴から車両の電子システムを守る技術と管理体系の総称です。ISO 21434は自動車サイバーセキュリティの国際標準であり、開発〜廃棄まで全ライフサイクルでのリスク管理を義務付けて",
 "views": 0,
 "completed": false,
@@ -1105,7 +1287,7 @@
 ],
 "category": "SDV",
 "difficulty": "上級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "ADAS通信とは、先進運転支援システム(ADAS)を構成するセンサー・コンピュータ・アクチュエータ間のデータ通信全般を指します。カメラ・レーダー・LiDARの大量データを、低遅延かつ高信頼に運ぶことが求められます。",
 "views": 0,
 "completed": false,
@@ -1130,7 +1312,7 @@
 ],
 "category": "SDV",
 "difficulty": "上級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "ROS2(Robot Operating System 2)は、ロボット・自動運転ソフト開発のフレームワークです。その通信基盤に **DDS(Data Distribution Service)** を採用し、Pub/Sub型でノード間がデ",
 "views": 0,
 "completed": false,
@@ -1154,7 +1336,7 @@
 ],
 "category": "SDV",
 "difficulty": "上級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "SDV(Software Defined Vehicle)は、車両の機能をソフトウェアで定義・更新できるようにする設計思想です。ハード固定の機能群から、**OTA**で継続的に進化するソフト中心の車へ——スマートフォンのような体験を車にもた",
 "views": 0,
 "completed": false,
@@ -1179,7 +1361,7 @@
 "automotive",
 "realtime"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "TSN(Time-Sensitive Networking)は、標準 ethernet に「時間保証」を加える一連の規格(IEEE 802.1)です。**時刻同期**・**帯域予約**・優先制御により、重要なフレームを決められた時間内に確実",
 "views": 0,
 "completed": false,
@@ -1210,7 +1392,7 @@
 "adaptive-autosar"
 ],
 "difficulty": "上級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "**MicroAutoBox**（マイクロオートボックス）は、**dSPACE社**が提供する**ラピッドコントロールプロトタイピング（RCP）**および**ハードウェアインザループ（HiL）テスト**向けのリアルタイムコントローラです。A",
 "views": 0,
 "completed": false,
@@ -1236,7 +1418,7 @@
 ],
 "category": "Ethernet",
 "difficulty": "初級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>概要</h2>\n<p>Ethernetは有線LANの標準技術で、OSIの物理層・データリンク層(L1/L2)を担います。データを「<strong>フレーム</strong>」という単位にまとめ、<a class=\"term-link\" data-slug=\"mac-address\" href=\"/glossary/mac-address\">MAC Address</a> を使って同じネットワーク内の機器へ届けます。</p>\n<h2>なぜ必要か</h2>\n<p>高帯域・低コスト・成熟した技術であり、PCからデータセンターまで世界中で使われています。車載でも、従来のCANでは足りない大容量データ(カメラ映像など)を運ぶバックボーンとして採用が進んでいます。</p>\n<h2>自動運転での利用例</h2>\n<p>車載Ethernet(<strong>100BASE-T1</strong> / <strong>1000BASE-T1</strong> など)は1対のツイストペアで高速通信を実現し、カメラ・LiDAR・SOME/IP通信を1本の物理網に集約します。VLANで制御系と情報系のトラフィックを分離するのも一般的です。</p>\n<h2>関連用語</h2>\n<p><strong>フレーム</strong>の宛先には <a class=\"term-link\" data-slug=\"mac-address\" href=\"/glossary/mac-address\">MAC Address</a> が使われ、その上に <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a> が載ります。階層全体像は <a class=\"term-link\" data-slug=\"osi\" href=\"/glossary/osi\">OSI参照モデル</a> を参照。</p>\n<h2>次に学ぶべき内容</h2>\n<p>Ethernetが宛先判定に使う <a class=\"term-link\" data-slug=\"mac-address\" href=\"/glossary/mac-address\">MAC Address</a> を学びましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  subgraph EthernetFrame[&quot;Ethernet フレーム&quot;]\n    DA[&quot;宛先MAC (6B)&quot;] --- SA[&quot;送信元MAC (6B)&quot;] --- ET[&quot;EtherType (2B)&quot;] --- PL[&quot;ペイロード (46-1500B)&quot;] --- FCS[&quot;FCS (4B)&quot;]\n  end\n  CAM[カメラECU] --&gt;|フレーム送信| SW[Ethernetスイッチ]\n  SW --&gt;|転送| ADC[ADASコントローラ]\n</code></pre>",
 "prereq_full": [
 {
@@ -1283,7 +1465,7 @@
 ],
 "category": "Ethernet",
 "difficulty": "初級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>概要</h2>\n<p>MACアドレスは、ネットワーク機器に割り当てられた<strong>48ビット</strong>の物理アドレスです(例: <code>00:1A:2B:3C:4D:5E</code>)。<a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> フレームの送信元・宛先として使われ、同じネットワーク内で「どの機器宛か」を識別します。</p>\n<h2>なぜ必要か</h2>\n<p>IPアドレスが「論理的な住所」なら、MACアドレスは「機器固有の番号」です。最終的にデータを物理的に届けるには、IPに対応するMACを知る必要があります(この変換がARP)。</p>\n<h2>自動運転での利用例</h2>\n<p>車載Ethernetスイッチは、各ポートに繋がるECUのMACアドレスを学習してフレームを適切なポートだけに転送します。これにより不要なトラフィックを抑え、帯域と安全性を確保します。</p>\n<h2>関連用語</h2>\n<p>MACは <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> フレームの中に入り、その上位の論理アドレスが <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>論理的な住所である <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a> へ進みましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  subgraph MAC[&quot;MACアドレス (48bit = 6オクテット)&quot;]\n    OUI[&quot;OUI (24bit)\nメーカー識別&quot;] --- NIC[&quot;NIC固有番号 (24bit)&quot;]\n  end\n  ECU1[&quot;TCU\n02:00:1A:BC:DE:F0&quot;] --&gt;|Ethernetフレーム| SW[スイッチ]\n  SW --&gt; ECU2[&quot;ゲートウェイECU\n02:00:1A:BC:DE:F1&quot;]\n</code></pre>",
 "prereq_full": [
 {
@@ -1329,7 +1511,7 @@
 ],
 "category": "TCP/IP",
 "difficulty": "初級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>概要</h2>\n<p>OSI参照モデルは、通信機能を7つの階層に分けて整理した概念モデルです。下から順に、<strong>物理層</strong>・<strong>データリンク層</strong>・<strong>ネットワーク層</strong>・<strong>トランスポート層</strong>・セッション層・プレゼンテーション層・<strong>アプリケーション層</strong>。各層が「自分の役割」だけに集中できるよう分業しています。</p>\n<h2>なぜ必要か</h2>\n<p>障害解析やプロトコル設計のときに「どの層の問題か」を切り分ける共通言語になります。例えば「ケーブル断線」は<strong>物理層</strong>、「IPが届かない」は<strong>ネットワーク層</strong>、というように問題の所在を素早く特定できます。</p>\n<h2>自動運転での利用例</h2>\n<p>車載Ethernetのトラブルシュートでは、L1(配線/信号)→L2(フレーム)→L3(IP)→L4(TCP/UDP)と層ごとに切り分けます。SOME/IPの不具合がアプリ層なのか下位層なのかを判断する基礎にもなります。</p>\n<h2>関連用語</h2>\n<p><strong>データリンク層</strong>の代表が <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a>、<strong>ネットワーク層</strong>が <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a>、<strong>トランスポート層</strong>が <a class=\"term-link\" data-slug=\"tcp\" href=\"/glossary/tcp\">TCP</a> と <a class=\"term-link\" data-slug=\"udp\" href=\"/glossary/udp\">UDP</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>最も身近な<strong>データリンク層</strong>、<a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> へ進みましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">graph TD\n  L7[&quot;7. アプリケーション層　(SOME/IP, DoIP)&quot;]\n  L6[&quot;6. プレゼンテーション層　(暗号化・変換)&quot;]\n  L5[&quot;5. セッション層　(接続管理)&quot;]\n  L4[&quot;4. トランスポート層　(TCP / UDP)&quot;]\n  L3[&quot;3. ネットワーク層　(IP)&quot;]\n  L2[&quot;2. データリンク層　(Ethernet フレーム)&quot;]\n  L1[&quot;1. 物理層　(100BASE-T1 ケーブル)&quot;]\n  L7 --&gt; L6 --&gt; L5 --&gt; L4 --&gt; L3 --&gt; L2 --&gt; L1\n</code></pre>",
 "prereq_full": [
 {
@@ -1364,6 +1546,46 @@
 "completed": false,
 "favorite": false
 },
+"python-basics": {
+"slug": "python-basics",
+"title": "Python基礎（変数・リスト・辞書）",
+"level": 1,
+"category": "Python",
+"related": [
+"numpy",
+"pandas"
+],
+"next": [
+"numpy"
+],
+"tags": [
+"python",
+"basics",
+"data-science"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>Pythonはシンプルな文法と豊富なライブラリにより、データサイエンスの標準言語となっています。コードが英語に近い読みやすさを持ち、初心者でも数日で実用的なデータ処理が書けます。変数・リスト・辞書・制御構文を押さえておくと、NumPyやPandasへスムーズに移行できます。</p>\n<h2>なぜ必要か</h2>\n<p>機械学習・統計分析・グラフ描画はすべてPythonコードで記述します。「変数に何が入っているか」「リストをどう操作するか」という基礎が曖昧だと、ライブラリのエラー原因が掴めません。土台を固めることで、複雑なデータ処理もスムーズに書けるようになります。</p>\n<h2>変数と型</h2>\n<pre><code class=\"language-python\"># 主要なデータ型\nx     = 42          # int（整数）\ny     = 3.14        # float（小数）\nname  = &quot;Alice&quot;     # str（文字列）\nflag  = True        # bool（真偽値）\n\nprint(type(x))      # &lt;class 'int'&gt;\n\n# f文字列（Python 3.6+）で整形出力\nprint(f&quot;{name} のスコアは {x} 点（{y:.1f} 換算）&quot;)\n# → Alice のスコアは 42 点（3.1 換算）\n</code></pre>\n<h2>リスト — 順序付きコレクション</h2>\n<pre><code class=\"language-python\">scores = [90, 85, 72, 95, 60]\n\n# インデックスとスライス\nprint(scores[0])        # 90（先頭）\nprint(scores[-1])       # 60（末尾）\nprint(scores[1:4])      # [85, 72, 95]\n\n# 追加・削除\nscores.append(88)       # 末尾に追加\nscores.insert(0, 100)   # 先頭に挿入\nscores.remove(60)       # 値を指定して削除\n\n# リスト内包表記（Pythonらしい書き方）\npassed  = [s for s in scores if s &gt;= 80]   # 合格者のみ\ndoubled = [s * 2 for s in scores]          # 全スコア2倍\n\n# 集計\nprint(f&quot;最高: {max(scores)}, 最低: {min(scores)}, 合計: {sum(scores)}&quot;)\n</code></pre>\n<h2>辞書 — キーと値のマッピング</h2>\n<pre><code class=\"language-python\">sensor = {\n    &quot;id&quot;:    &quot;sensor_01&quot;,\n    &quot;type&quot;:  &quot;temperature&quot;,\n    &quot;value&quot;: 36.5,\n    &quot;unit&quot;:  &quot;celsius&quot;,\n}\n\n# 値の取得\nprint(sensor[&quot;value&quot;])                    # 36.5\nprint(sensor.get(&quot;location&quot;, &quot;unknown&quot;))  # キーが無ければデフォルト値\n\n# 追加・更新\nsensor[&quot;timestamp&quot;] = &quot;2025-01-15T09:00:00&quot;\nsensor[&quot;value&quot;]     = 37.1\n\n# 全キー・値を走査\nfor key, val in sensor.items():\n    print(f&quot;  {key}: {val}&quot;)\n\n# 辞書のリスト（テーブルデータの最も基本的な表現）\nreadings = [\n    {&quot;id&quot;: &quot;s01&quot;, &quot;value&quot;: 36.5},\n    {&quot;id&quot;: &quot;s02&quot;, &quot;value&quot;: 40.2},\n    {&quot;id&quot;: &quot;s03&quot;, &quot;value&quot;: 35.8},\n]\nhigh_temp = [r for r in readings if r[&quot;value&quot;] &gt; 38]\n</code></pre>\n<h2>制御構文</h2>\n<pre><code class=\"language-python\"># if / elif / else\nscore = 75\nif score &gt;= 90:\n    grade = &quot;A&quot;\nelif score &gt;= 70:\n    grade = &quot;B&quot;\nelse:\n    grade = &quot;C&quot;\n\n# for ループ（enumerate で番号付き）\nnames = [&quot;Alice&quot;, &quot;Bob&quot;, &quot;Carol&quot;]\nfor i, name in enumerate(names, start=1):\n    print(f&quot;{i}. {name}&quot;)\n\n# while ループ\nn = 1\nwhile n &lt;= 5:\n    print(n)\n    n += 1\n</code></pre>\n<h2>関数</h2>\n<pre><code class=\"language-python\">def calc_stats(data: list[float]) -&gt; dict:\n    &quot;&quot;&quot;リストの基本統計量を返す&quot;&quot;&quot;\n    n   = len(data)\n    avg = sum(data) / n\n    mn  = min(data)\n    mx  = max(data)\n    return {&quot;count&quot;: n, &quot;mean&quot;: avg, &quot;min&quot;: mn, &quot;max&quot;: mx}\n\nresult = calc_stats([88, 72, 95, 60, 83])\nprint(result)\n# → {'count': 5, 'mean': 79.6, 'min': 60, 'max': 95}\n</code></pre>\n<h2>よく使う組み込み関数</h2>\n<table>\n<thead>\n<tr>\n<th>関数</th>\n<th>用途</th>\n<th>例</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>len()</code></td>\n<td>要素数</td>\n<td><code>len([1,2,3])</code> → 3</td>\n</tr>\n<tr>\n<td><code>range()</code></td>\n<td>連番生成</td>\n<td><code>list(range(5))</code> → [0,1,2,3,4]</td>\n</tr>\n<tr>\n<td><code>zip()</code></td>\n<td>複数リストを組み合わせ</td>\n<td><code>zip(a, b)</code></td>\n</tr>\n<tr>\n<td><code>enumerate()</code></td>\n<td>インデックス付きfor</td>\n<td><code>enumerate(lst)</code></td>\n</tr>\n<tr>\n<td><code>sorted()</code></td>\n<td>ソート（元リスト変更なし）</td>\n<td><code>sorted(lst, reverse=True)</code></td>\n</tr>\n<tr>\n<td><code>isinstance()</code></td>\n<td>型チェック</td>\n<td><code>isinstance(x, int)</code></td>\n</tr>\n</tbody>\n</table>\n<h2>データ構造の使い分け</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  A[データの形] --&gt; B{順序が必要?}\n  B --&gt;|Yes| C[リスト list]\n  B --&gt;|No| D{重複不要?}\n  D --&gt;|Yes| E[セット set]\n  D --&gt;|No| F{キーで引く?}\n  F --&gt;|Yes| G[辞書 dict]\n  F --&gt;|No| H[タプル tuple]\n</code></pre>\n<h2>次に学ぶべき内容</h2>\n<p>大量の数値データを高速処理する <a class=\"term-link\" data-slug=\"numpy\" href=\"/glossary/numpy\">NumPy（配列・行列演算）</a> へ進みましょう。</p>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "numpy",
+"title": "NumPy（配列・行列演算）"
+},
+{
+"slug": "pandas",
+"title": "Pandas（DataFrame・データ操作）"
+}
+],
+"next_full": [
+{
+"slug": "numpy",
+"title": "NumPy（配列・行列演算）"
+}
+],
+"completed": false,
+"favorite": false
+},
 "communication-basics": {
 "slug": "communication-basics",
 "title": "通信とは",
@@ -1380,7 +1602,7 @@
 ],
 "category": "TCP/IP",
 "difficulty": "初級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>概要</h2>\n<p>通信とは、ある機器から別の機器へ「データ」を届けることです。届ける相手・順番・形式を双方が約束しておくことで、初めて意味のあるやり取りが成立します。この約束ごとを <strong>プロトコル</strong> と呼びます。</p>\n<h2>なぜ必要か</h2>\n<p>車には数十〜百を超える ECU(電子制御ユニット)が積まれており、センサーの値や制御指令を互いにやり取りしています。共通のルールが無ければ、ブレーキ指令もカメラ映像も「ただのビット列」にしか見えません。通信の基礎は、すべての<strong>車載ネットワーク</strong>の出発点です。</p>\n<h2>自動運転での利用例</h2>\n<p>カメラECUが検出した歩行者情報を、制御ECUへ送る——この単純なやり取りも「どの形式で・どの順で・誰宛に」というルールに支えられています。自動運転では遅延や欠損が安全に直結するため、通信の信頼性設計が極めて重要です。</p>\n<h2>関連用語</h2>\n<p>通信の階層モデルを整理したのが <a class=\"term-link\" data-slug=\"osi\" href=\"/glossary/osi\">OSI参照モデル</a> です。物理的な配線レベルでは <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> が使われます。</p>\n<h2>次に学ぶべき内容</h2>\n<p>まずは通信を7つの層に分けて考える <a class=\"term-link\" data-slug=\"osi\" href=\"/glossary/osi\">OSI参照モデル</a> を学びましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  A[センサECU] --&gt;|データ送信| G[ゲートウェイECU]\n  G --&gt;|転送| B[制御ECU]\n  G --&gt;|転送| C[IVIシステム]\n  B --&gt;|制御指令| D[アクチュエータ]\n</code></pre>",
 "prereq_full": [],
 "related_full": [
@@ -1421,7 +1643,7 @@
 "l3",
 "automotive"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>概要</h2>\n<p>ARP(<strong>Address Resolution Protocol</strong>)は、IPアドレスから対応する <a class=\"term-link\" data-slug=\"mac-address\" href=\"/glossary/mac-address\">MAC Address</a> を調べるためのプロトコルです。「このIPの機器のMACは?」とネットワークに問い合わせ(ARPリクエスト)、該当機器が自分のMACを返答(ARPリプライ)します。</p>\n<h2>なぜ必要か</h2>\n<p><a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a> は論理的な宛先を示しますが、<a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> が実際にフレームを届けるには物理アドレスであるMACが必要です。ARPはこの「IP→MAC」の橋渡しを担う、L3とL2をつなぐ重要な仕組みです。</p>\n<h2>自動運転での利用例</h2>\n<p>車載Ethernetでも、ECU同士がIP通信を始める前にARPでMACを解決します。解析時にARPの様子を見ると、どのECUがどのIPを持ち、いつ通信を開始したかが分かります。ARPが返らない場合は相手ECUの不在や設定ミスを疑います。</p>\n<h2>関連用語</h2>\n<p>解決対象が <a class=\"term-link\" data-slug=\"mac-address\" href=\"/glossary/mac-address\">MAC Address</a>、問い合わせの元になるのが <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a>、フレームを運ぶのが <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>ARPが補助する論理アドレス <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a> の仕組みを復習しましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">sequenceDiagram\n  participant A as 診断PC (192.168.1.100)\n  participant N as ネットワーク(ブロードキャスト)\n  participant B as IVI ECU (192.168.1.3)\n  A-&gt;&gt;N: ARP Request: 192.168.1.3のMACは?\n  N-&gt;&gt;B: (全ノードへ転送)\n  B-&gt;&gt;A: ARP Reply: 02:00:1A:BC:DE:03\n  Note over A: ARPテーブルに記録\n</code></pre>",
 "prereq_full": [],
 "related_full": [
@@ -1464,7 +1686,7 @@
 "tags": [
 "l3"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>概要</h2>\n<p>DHCP(Dynamic Host Configuration Protocol)は、機器に <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a> アドレスやサブネットマスク、ゲートウェイ、DNSサーバなどのネットワーク設定を自動で配布する仕組みです。手動設定の手間とミスを無くします。</p>\n<h2>なぜ必要か</h2>\n<p>多数の機器に一つずつIPを手で設定するのは現実的ではありません。DHCPサーバが空きアドレスを貸し出すことで、機器は接続するだけでネットワークに参加できます。</p>\n<h2>自動運転での利用例</h2>\n<p>車載ネットワークでは多くのECUが固定IP(静的設定)を使いますが、診断ツールの接続やインフォテインメント機器など、動的にIPを割り当てたい場面でDHCPが利用されます。</p>\n<h2>関連用語</h2>\n<p>配布対象が <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a>、区切りの概念が <a class=\"term-link\" data-slug=\"subnet\" href=\"/glossary/subnet\">サブネット / <strong>CIDR</strong></a>、名前解決が <a class=\"term-link\" data-slug=\"dns\" href=\"/glossary/dns\">DNS</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>名前からIPを引く <a class=\"term-link\" data-slug=\"dns\" href=\"/glossary/dns\">DNS</a> を学びましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">sequenceDiagram\n  participant C as IVIシステム (新規起動)\n  participant S as DHCPサーバー (ゲートウェイ)\n  C-&gt;&gt;S: DHCP Discover (ブロードキャスト)\n  S-&gt;&gt;C: DHCP Offer (IP: 192.168.1.50 提案)\n  C-&gt;&gt;S: DHCP Request (192.168.1.50 要求)\n  S-&gt;&gt;C: DHCP ACK (IP・サブネット・GW 確定)\n</code></pre>",
 "prereq_full": [
 {
@@ -1512,7 +1734,7 @@
 "tags": [
 "l7"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>概要</h2>\n<p>DNS(Domain Name System)は、人間が読みやすい<strong>ドメイン名</strong>(例 <code>example.com</code>)を、機器が使う <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a> アドレスに変換する「インターネットの電話帳」です。問い合わせは主に <a class=\"term-link\" data-slug=\"udp\" href=\"/glossary/udp\">UDP</a> 上で高速に行われます。</p>\n<h2>なぜ必要か</h2>\n<p>人はIPアドレスの数字を覚えられません。DNSが名前とIPを対応づけることで、私たちは名前だけでサービスにアクセスできます。設定変更時もIPが変わるだけでよく、名前は維持できます。</p>\n<h2>自動運転での利用例</h2>\n<p>クラウド連携(OTA更新やテレマティクス)を行う車載システムでは、接続先サーバをDNSで解決します。社内開発環境でも、ECUやテスト機をホスト名で扱うためにDNSが使われます。</p>\n<h2>関連用語</h2>\n<p>変換先が <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a>、問い合わせの土台が <a class=\"term-link\" data-slug=\"udp\" href=\"/glossary/udp\">UDP</a>、設定配布元が <a class=\"term-link\" data-slug=\"dhcp\" href=\"/glossary/dhcp\">DHCP</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>通信の出入口 <a class=\"term-link\" data-slug=\"socket\" href=\"/glossary/socket\">Socket</a> を学びましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">sequenceDiagram\n  participant IVI as IVIシステム (クライアント)\n  participant GW as DNSサーバー (ゲートウェイ)\n  participant Cloud as 外部DNSサーバー\n  IVI-&gt;&gt;GW: クエリ: backend.service の IP は?\n  GW-&gt;&gt;Cloud: 再帰クエリ (キャッシュなし時)\n  Cloud-&gt;&gt;GW: 10.0.0.5\n  GW-&gt;&gt;IVI: 応答: 10.0.0.5\n</code></pre>",
 "prereq_full": [
 {
@@ -1565,7 +1787,7 @@
 "diagnostics",
 "icmp"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>やること</h2>\n<p>診断PCや別ECUから対象ECUへ<strong>ping</strong>を使って<strong>疎通確認</strong>する手順と、応答がない場合のトラブルシュート手順を説明します。</p>\n<h2>前提条件</h2>\n<ul>\n<li>診断PCと対象ECUが同じEthernetセグメント(またはルータ経由で到達可能)に接続</li>\n<li>対象ECUのIPアドレスが判明している</li>\n</ul>\n<h2>ステップ1: 基本ping</h2>\n<pre><code class=\"language-bash\"># Windows\nping 192.168.1.10\n\n# Linux / macOS\nping 192.168.1.10\n\n# 回数指定 (Linuxは -c、Windowsは -n)\nping -c 4 192.168.1.10\n</code></pre>\n<p>正常応答例：</p>\n<pre><code>64 bytes from 192.168.1.10: icmp_seq=1 ttl=64 time=0.8 ms\n</code></pre>\n<h2>ステップ2: 応答がない場合のチェックリスト</h2>\n<h3>L1/L2 チェック（物理・データリンク）</h3>\n<pre><code class=\"language-bash\"># リンクアップ確認\nip link show eth0\n# → state UP なら物理接続OK\n\n# ARPテーブルを確認 (pingの前にARPが解決されているか)\narp -n\n# または\nip neigh show\n</code></pre>\n<p><a class=\"term-link\" data-slug=\"arp\" href=\"/glossary/arp\">ARP</a> が解決できていない場合はケーブル/スイッチポートの問題です。</p>\n<h3>L3 チェック（IPアドレス・サブネット）</h3>\n<pre><code class=\"language-bash\"># 自分のIPアドレス確認\nip addr show eth0\n\n# サブネットの確認 (192.168.1.0/24 同士か？)\nip route show\n</code></pre>\n<p>自分が <code>192.168.1.x/24</code>、相手が <code>10.0.0.x/24</code> なら異なるサブネット。<br />\n→ ルータまたは <a class=\"term-link\" data-slug=\"vlan\" href=\"/glossary/vlan\">VLAN</a> の設定を確認。</p>\n<h3>ファイアウォール/ECU側設定チェック</h3>\n<p>一部の車載ECUはICMPに応答しない設定(セキュリティ要件)になっています。<br />\nその場合は <a class=\"term-link\" data-slug=\"howto-doip-connect\" href=\"/glossary/howto-doip-connect\">DoIP診断接続の手順</a> のようにアプリ層で疎通を確認します。</p>\n<h2>ステップ3: 詳細診断 — traceroute</h2>\n<pre><code class=\"language-bash\"># Linux\ntraceroute 192.168.1.10\n\n# Windows\ntracert 192.168.1.10\n</code></pre>\n<p>どのホップで止まっているか特定できます。</p>\n<h2>ステップ4: ARP で存在確認</h2>\n<p><strong>ping</strong>が届かなくても<strong>ARP</strong>で機器の存在は確認できます：</p>\n<pre><code class=\"language-bash\"># arping (L2レベルの疎通確認)\narping -I eth0 192.168.1.10\n</code></pre>\n<p><strong>ARP</strong>には応答するが<strong>ping</strong>に応答しない → ECU側でICMP無効化の可能性。</p>\n<h2>関連用語</h2>\n<p><strong>疎通確認</strong>の仕組みは <a class=\"term-link\" data-slug=\"icmp\" href=\"/glossary/icmp\">ICMP / <strong>ping</strong></a>、アドレス解決は <a class=\"term-link\" data-slug=\"arp\" href=\"/glossary/arp\">ARP</a>、サブネット設計は <a class=\"term-link\" data-slug=\"subnet\" href=\"/glossary/subnet\">サブネット / <strong>CIDR</strong></a> を参照。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">flowchart TD\n  START[&quot;ping 192.168.1.10&quot;] --&gt; RES{応答あり?}\n  RES --&gt;|Yes| OK[&quot;疎通OK\nL1-L3正常&quot;]\n  RES --&gt;|No| L1[&quot;ip link show\nリンクUP確認&quot;]\n  L1 --&gt; L2{UP?}\n  L2 --&gt;|No| PHY[&quot;ケーブル/スイッチ確認&quot;]\n  L2 --&gt;|Yes| ARP[&quot;arp -n\nARPテーブル確認&quot;]\n  ARP --&gt; ARP2{MACあり?}\n  ARP2 --&gt;|No| SUB[&quot;サブネット確認\nip addr show&quot;]\n  ARP2 --&gt;|Yes| ICMP[&quot;ECU側ICMP無効化\n→ DoIP等で確認&quot;]\n</code></pre>",
 "prereq_full": [],
 "related_full": [
@@ -1616,7 +1838,7 @@
 "l3",
 "tool"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>概要</h2>\n<p>ICMP(Internet Control Message Protocol)は、<a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a> 通信のエラー通知や制御メッセージをやり取りするプロトコルです。最も身近な用途が <code>**ping**</code> で、相手に到達できるか・往復にどれだけ時間がかかるかを調べます。</p>\n<h2>なぜ必要か</h2>\n<p>通信がうまくいかないとき、まず「相手まで届くのか」を確認する必要があります。ICMP(<strong>ping</strong>)は到達性と遅延を手早く確認できる、ネットワーク診断の第一歩です。</p>\n<h2>自動運転での利用例</h2>\n<p>車載Ethernetの立ち上げ時、各ECUに<strong>ping</strong>を打って到達性とIP設定を確認します。応答が無ければ配線・IP・VLAN設定のいずれかを疑う、という切り分けの起点になります。</p>\n<h2>関連用語</h2>\n<p>土台が <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a>、通信の中身を観測するのが <a class=\"term-link\" data-slug=\"wireshark\" href=\"/glossary/wireshark\">Wireshark</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>IPアドレスの範囲を扱う <a class=\"term-link\" data-slug=\"subnet\" href=\"/glossary/subnet\">サブネット / <strong>CIDR</strong></a> を学びましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">sequenceDiagram\n  participant PC as 診断ワークステーション\n  participant ECU as 車載ECU (LiDAR)\n  PC-&gt;&gt;ECU: ICMP Echo Request (ping)\n  ECU-&gt;&gt;PC: ICMP Echo Reply\n  Note over PC: RTT = 0.8ms → 正常\n  PC-&gt;&gt;ECU: ICMP Echo Request\n  Note over PC,ECU: タイムアウト → ECU不在 or IP設定ミス\n</code></pre>",
 "prereq_full": [],
 "related_full": [
@@ -1656,7 +1878,7 @@
 ],
 "category": "TCP/IP",
 "difficulty": "初級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>概要</h2>\n<p>IP(Internet Protocol)はOSIのネットワーク層(L3)を担い、データを「パケット」にして送信元IPから宛先IPへ届けます。ネットワークをまたいだ転送(<strong>ルーティング</strong>)を可能にする中核プロトコルです。IPv4とIPv6があります。</p>\n<h2>なぜ必要か</h2>\n<p><a class=\"term-link\" data-slug=\"mac-address\" href=\"/glossary/mac-address\">MAC Address</a> は同じネットワーク内でしか使えませんが、IPは異なるネットワーク間でも宛先を指定できます。車内の複数ドメイン(<strong>サブネット</strong>)をまたいだECU間通信には不可欠です。</p>\n<h2>自動運転での利用例</h2>\n<p>車載Ethernetでは各ECUに<strong>IPアドレス</strong>が割り当てられ、SOME/IPやDoIP診断通信がIP上で動きます。ゾーンアーキテクチャでは、ゾーンごとに<strong>サブネット</strong>を分けて管理することもあります。</p>\n<h2>関連用語</h2>\n<p>IPの上で動く代表的なプロトコルが <a class=\"term-link\" data-slug=\"tcp\" href=\"/glossary/tcp\">TCP</a> と <a class=\"term-link\" data-slug=\"udp\" href=\"/glossary/udp\">UDP</a> です。下位の物理転送は <a class=\"term-link\" data-slug=\"mac-address\" href=\"/glossary/mac-address\">MAC Address</a> と <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> が担います。</p>\n<h2>次に学ぶべき内容</h2>\n<p>信頼性の高い通信を実現する <a class=\"term-link\" data-slug=\"tcp\" href=\"/glossary/tcp\">TCP</a> を学びましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  CAM[&quot;カメラECU\n192.168.1.10&quot;] --&gt;|IPパケット| GW[&quot;ゲートウェイECU\nルーティング&quot;]\n  GW --&gt; IVI[&quot;IVIシステム\n10.0.0.20&quot;]\n  subgraph Packet[&quot;IPパケットヘッダ&quot;]\n    SRC[&quot;送信元: 192.168.1.10&quot;] --- DST[&quot;宛先: 10.0.0.20&quot;] --- TTL[&quot;TTL: 64&quot;]\n  end\n</code></pre>",
 "prereq_full": [
 {
@@ -1719,7 +1941,7 @@
 "vlan"
 ],
 "difficulty": "初級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>概要</h2>\n<p><strong>IPv4</strong>（Internet Protocol version 4）と<strong>IPv6</strong>（Internet Protocol version 6）はどちらもネットワーク層でデバイスを識別し、パケットを届けるプロトコルです。アドレス枯渇問題を解決するためIPv6が設計されましたが、現在は両者が共存しています。</p>\n<h2>アドレス空間の違い</h2>\n<table>\n<thead>\n<tr>\n<th>項目</th>\n<th>IPv4</th>\n<th>IPv6</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>アドレス長</td>\n<td><strong>32ビット</strong></td>\n<td><strong>128ビット</strong></td>\n</tr>\n<tr>\n<td>表記</td>\n<td><code>192.168.1.10</code></td>\n<td><code>fe80::1a2b:3c4d:5e6f:7a8b</code></td>\n</tr>\n<tr>\n<td>総アドレス数</td>\n<td>約<strong>43億</strong></td>\n<td>約<strong>340澗</strong>（340兆×1兆×1兆）</td>\n</tr>\n<tr>\n<td>プレフィックス例</td>\n<td><code>192.168.1.0/24</code></td>\n<td><code>fd00::/8</code>（ユニークローカル）</td>\n</tr>\n</tbody>\n</table>\n<h2>ヘッダの違い</h2>\n<p><strong>IPv4ヘッダ</strong>（20〜60バイト）にはチェックサムや断片化フィールドが含まれていますが、<strong>IPv6ヘッダ</strong>は<strong>40バイト固定</strong>でシンプルです。チェックサムは削除され、断片化はエンドポイントが行います。これにより<strong>ルータの処理負荷が軽減</strong>されます。</p>\n<h2>主な改善点（IPv6）</h2>\n<ul>\n<li><strong>アドレス自動設定（SLAAC）</strong>: DHCPなしでアドレスを自動生成</li>\n<li><strong>IPsec標準サポート</strong>: セキュリティが設計段階から組み込まれている</li>\n<li><strong>マルチキャスト強化</strong>: ブロードキャストを廃止し、マルチキャストに統一</li>\n<li><strong>フロールーベル</strong>: リアルタイムトラフィックにQoS優先度を付与</li>\n<li><strong>拡張ヘッダ</strong>: オプションを拡張ヘッダに分離し、基本ヘッダをシンプルに</li>\n</ul>\n<h2>車載ネットワークでの使い分け</h2>\n<p>現在の車載Ethernetは主に<strong>IPv4</strong>が使用されていますが、V2X・クラウド連携・5Gを活用する次世代SDVでは<strong>IPv6</strong>への移行が進んでいます。</p>\n<table>\n<thead>\n<tr>\n<th>用途</th>\n<th>プロトコル</th>\n<th>理由</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>車内ECU間通信</td>\n<td>IPv4</td>\n<td>既存AUTOSAR・SOME/IP実装</td>\n</tr>\n<tr>\n<td>DoIP診断</td>\n<td>IPv4</td>\n<td>ISO 13400規格で定義</td>\n</tr>\n<tr>\n<td>V2X通信</td>\n<td>IPv6</td>\n<td>アドレス枯渇対策・モバイルIPv6</td>\n</tr>\n<tr>\n<td>OTAクラウド接続</td>\n<td>IPv4/IPv6</td>\n<td>デュアルスタック</td>\n</tr>\n<tr>\n<td>5G通信</td>\n<td>IPv6優先</td>\n<td>3GPP標準</td>\n</tr>\n</tbody>\n</table>\n<h2>移行戦略：デュアルスタック</h2>\n<p>多くのゲートウェイECUは<strong>デュアルスタック</strong>（IPv4とIPv6を同時に動作）で構成されており、段階的にIPv6へ移行できます。</p>\n<pre><code>ゲートウェイECU\n├── eth0: 192.168.1.1/24 (IPv4 ← 車内ECU向け)\n└── eth1: fd00::1/64 (IPv6 ← クラウド/V2X向け)\n</code></pre>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">graph TD\n  subgraph IPv4[&quot;IPv4 アドレス (32bit)&quot;]\n    A[&quot;192 . 168 . 1 . 10\\nネットワーク部 | ホスト部&quot;]\n  end\n  subgraph IPv6[&quot;IPv6 アドレス (128bit)&quot;]\n    B[&quot;fe80::1a2b:3c4d:5e6f:7a8b\\n(128bit = 32桁 16進数)&quot;]\n  end\n  GW[&quot;ゲートウェイECU\\n(デュアルスタック)&quot;]\n  ECU[&quot;車内ECU群\\n(IPv4: 192.168.x.x)&quot;] --&gt;|&quot;SOME/IP / DoIP&quot;| GW\n  GW --&gt;|&quot;IPv6 + 5G&quot;| CLOUD[&quot;クラウド / V2X\\nサーバー&quot;]\n</code></pre>",
 "prereq_full": [],
 "related_full": [
@@ -1776,7 +1998,7 @@
 "bus",
 "l2"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>概要</h2>\n<p>LIN(Local Interconnect Network)は、<strong>低コスト</strong>・低速な車載シリアルバスです。1本のワイヤで最大19.2 kbpsの通信を行い、<strong>マスター/スレーブ</strong>構成で動作します。CANより安価で、シート調整・ドアミラー・ワイパーなどシンプルな制御に使われます。</p>\n<h2>なぜ必要か</h2>\n<p>CANは信頼性が高い反面、トランシーバーや配線コストが高めです。LINは<strong>シングルワイヤ</strong>で12V電源ラインを使い回せるため、費用対効果の高い補助バスとして普及しました。1台の車に40本以上のLINバスが搭載されることもあります。</p>\n<h2>仕組み</h2>\n<p>マスターECUがヘッダ(Break+Sync+ID)を送り、スレーブがIDに応じてレスポンスを返します。スレーブはアドレスを持たず、IDで自分への呼びかけを認識します。衝突検知機構はなく、マスターがスケジューリングを管理します。</p>\n<h2>自動運転での利用例</h2>\n<p>ADAS ECUが主カメラをEthernetで制御する一方、サイドミラーの角度調整モーターはLINで制御するという混在構成が一般的です。LINは帯域が低いため、センサデータの転送ではなくアクチュエータ制御に限定されます。</p>\n<h2>関連用語</h2>\n<p>帯域が必要な用途は <a class=\"term-link\" data-slug=\"can\" href=\"/glossary/can\">CAN</a> や <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> へ移行します。高速化版として <a class=\"term-link\" data-slug=\"can-fd\" href=\"/glossary/can-fd\">CAN FD</a> があります。</p>\n<h2>次に学ぶべき内容</h2>\n<p>より高速で信頼性の高い <a class=\"term-link\" data-slug=\"can\" href=\"/glossary/can\">CAN</a> へ進みましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">sequenceDiagram\n  participant M as マスターECU\n  participant S1 as スレーブ1 (ミラーモーター)\n  participant S2 as スレーブ2 (シート調整)\n  M-&gt;&gt;S1: ヘッダ (Break + Sync + ID=0x10)\n  S1-&gt;&gt;M: レスポンス (モーター角度データ)\n  M-&gt;&gt;S2: ヘッダ (ID=0x20)\n  S2-&gt;&gt;M: レスポンス (シート位置データ)\n  Note over M: スケジュール管理はマスターのみ\n</code></pre>",
 "prereq_full": [],
 "related_full": [
@@ -1802,6 +2024,159 @@
 "completed": false,
 "favorite": false
 },
+"matplotlib": {
+"slug": "matplotlib",
+"title": "Matplotlib（グラフ描画）",
+"level": 2,
+"category": "Python",
+"related": [
+"numpy",
+"pandas",
+"seaborn"
+],
+"next": [
+"seaborn"
+],
+"tags": [
+"python",
+"matplotlib",
+"visualization",
+"data-science"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>Matplotlibはデータを視覚化する基本ライブラリです。折れ線グラフ・棒グラフ・散布図・ヒストグラム・円グラフなど幅広いグラフを、細部まで自由にカスタマイズして作成できます。PandasやSeabornの <code>plot()</code> も内部でMatplotlibを使っています。</p>\n<h2>なぜ必要か</h2>\n<p>数値の羅列では気づけない傾向・外れ値・周期性も、グラフにすれば一目で把握できます。分析レポート・論文・プレゼン資料にグラフを貼るためには、PNG/PDF出力できるMatplotlibが必須です。まず「どのグラフをいつ使うか」を覚え、その後細かいスタイル調整を覚えるのが近道です。</p>\n<h2>グラフの使い分け</h2>\n<table>\n<thead>\n<tr>\n<th>グラフ</th>\n<th>用途</th>\n<th>関数</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>折れ線グラフ</td>\n<td>時系列・連続変化</td>\n<td><code>plot()</code></td>\n</tr>\n<tr>\n<td>棒グラフ</td>\n<td>カテゴリ比較</td>\n<td><code>bar()</code> / <code>barh()</code></td>\n</tr>\n<tr>\n<td>散布図</td>\n<td>2変数の相関</td>\n<td><code>scatter()</code></td>\n</tr>\n<tr>\n<td>ヒストグラム</td>\n<td>分布の確認</td>\n<td><code>hist()</code></td>\n</tr>\n<tr>\n<td>箱ひげ図</td>\n<td>分布・外れ値の比較</td>\n<td><code>boxplot()</code></td>\n</tr>\n<tr>\n<td>円グラフ</td>\n<td>割合</td>\n<td><code>pie()</code></td>\n</tr>\n</tbody>\n</table>\n<h2>基本構造（Figure と Axes）</h2>\n<pre><code class=\"language-python\">import matplotlib.pyplot as plt\nimport numpy as np\n\n# Figure（用紙）に Axes（グラフ領域）を配置するのが基本\nfig, ax = plt.subplots(figsize=(8, 4))\n\nx = np.linspace(0, 2 * np.pi, 200)\nax.plot(x, np.sin(x), label=&quot;sin(x)&quot;, color=&quot;royalblue&quot;, linewidth=2)\nax.plot(x, np.cos(x), label=&quot;cos(x)&quot;, color=&quot;tomato&quot;,    linewidth=2, linestyle=&quot;--&quot;)\n\nax.set_title(&quot;三角関数&quot;)\nax.set_xlabel(&quot;x（ラジアン）&quot;)\nax.set_ylabel(&quot;y&quot;)\nax.legend()\nax.grid(True, alpha=0.4)\n\nplt.tight_layout()\nplt.savefig(&quot;trigonometric.png&quot;, dpi=150)\nplt.show()\n</code></pre>\n<h2>折れ線グラフ — 時系列データ</h2>\n<pre><code class=\"language-python\">import pandas as pd\n\ndates  = pd.date_range(&quot;2024-01&quot;, periods=12, freq=&quot;ME&quot;)\nsales  = [120, 135, 128, 145, 160, 175, 168, 182, 155, 170, 190, 210]\nbudget = [130] * 12  # 目標値\n\nfig, ax = plt.subplots(figsize=(10, 4))\nax.plot(dates, sales,  marker=&quot;o&quot;, label=&quot;実績&quot;, color=&quot;steelblue&quot;)\nax.plot(dates, budget, linestyle=&quot;--&quot;, label=&quot;目標&quot;, color=&quot;gray&quot;)\n\n# 目標超過の月を塗りつぶし\nax.fill_between(dates, sales, budget,\n                where=[s &gt; b for s, b in zip(sales, budget)],\n                alpha=0.15, color=&quot;green&quot;, label=&quot;超過分&quot;)\n\nax.set_title(&quot;月次売上 vs 目標&quot;)\nax.set_ylabel(&quot;売上（万円）&quot;)\nax.legend()\nax.grid(axis=&quot;y&quot;, alpha=0.3)\nplt.tight_layout()\nplt.show()\n</code></pre>\n<h2>棒グラフ — カテゴリ比較</h2>\n<pre><code class=\"language-python\">categories = [&quot;開発&quot;, &quot;営業&quot;, &quot;マーケ&quot;, &quot;CS&quot;, &quot;HR&quot;]\nq1_scores  = [88, 72, 65, 80, 77]\nq2_scores  = [91, 78, 70, 83, 74]\n\nx   = np.arange(len(categories))\nw   = 0.35\n\nfig, ax = plt.subplots(figsize=(8, 5))\nbar1 = ax.bar(x - w/2, q1_scores, w, label=&quot;Q1&quot;, color=&quot;steelblue&quot;)\nbar2 = ax.bar(x + w/2, q2_scores, w, label=&quot;Q2&quot;, color=&quot;coral&quot;)\n\n# 棒の上に数値を表示\nax.bar_label(bar1, padding=3)\nax.bar_label(bar2, padding=3)\n\nax.set_xticks(x)\nax.set_xticklabels(categories)\nax.set_ylabel(&quot;スコア&quot;)\nax.set_title(&quot;部署別スコア（Q1 vs Q2）&quot;)\nax.legend()\nax.set_ylim(0, 110)\nplt.tight_layout()\nplt.show()\n</code></pre>\n<h2>散布図 — 相関の可視化</h2>\n<pre><code class=\"language-python\">np.random.seed(42)\nn = 80\n\n# 勉強時間とスコアに相関を持たせる\nstudy_hours = np.random.uniform(1, 10, n)\nscores      = 50 + 5 * study_hours + np.random.randn(n) * 8\n\nfig, ax = plt.subplots(figsize=(7, 5))\nsc = ax.scatter(study_hours, scores,\n                c=scores, cmap=&quot;viridis&quot;, alpha=0.7, edgecolors=&quot;white&quot;)\n\n# 回帰直線を重ねる\nz  = np.polyfit(study_hours, scores, 1)\np  = np.poly1d(z)\nxs = np.linspace(1, 10, 100)\nax.plot(xs, p(xs), &quot;r--&quot;, alpha=0.8, label=f&quot;回帰: y={z[0]:.1f}x+{z[1]:.1f}&quot;)\n\nplt.colorbar(sc, ax=ax, label=&quot;スコア&quot;)\nax.set_xlabel(&quot;勉強時間（時間/日）&quot;)\nax.set_ylabel(&quot;テストスコア&quot;)\nax.set_title(&quot;勉強時間とスコアの関係&quot;)\nax.legend()\nplt.tight_layout()\nplt.show()\n</code></pre>\n<h2>ヒストグラム — 分布の確認</h2>\n<pre><code class=\"language-python\">np.random.seed(0)\ndata_a = np.random.normal(70, 10, 300)   # グループA\ndata_b = np.random.normal(60, 15, 300)   # グループB\n\nfig, ax = plt.subplots(figsize=(8, 5))\nax.hist(data_a, bins=30, alpha=0.6, color=&quot;steelblue&quot;, label=&quot;グループA&quot;)\nax.hist(data_b, bins=30, alpha=0.6, color=&quot;coral&quot;,     label=&quot;グループB&quot;)\n\n# 平均線を引く\nax.axvline(data_a.mean(), color=&quot;blue&quot;, linestyle=&quot;--&quot;, linewidth=1.5,\n           label=f&quot;A平均: {data_a.mean():.1f}&quot;)\nax.axvline(data_b.mean(), color=&quot;red&quot;,  linestyle=&quot;--&quot;, linewidth=1.5,\n           label=f&quot;B平均: {data_b.mean():.1f}&quot;)\n\nax.set_xlabel(&quot;スコア&quot;)\nax.set_ylabel(&quot;頻度&quot;)\nax.set_title(&quot;スコア分布の比較&quot;)\nax.legend()\nplt.tight_layout()\nplt.show()\n</code></pre>\n<h2>複数グラフを並べる（subplots）</h2>\n<pre><code class=\"language-python\">fig, axes = plt.subplots(2, 2, figsize=(12, 8))\nfig.suptitle(&quot;データ分析ダッシュボード&quot;, fontsize=14)\n\n# [0,0] 折れ線\naxes[0, 0].plot(range(12), sales, marker=&quot;o&quot;)\naxes[0, 0].set_title(&quot;月次売上&quot;)\n\n# [0,1] ヒストグラム\naxes[0, 1].hist(data_a, bins=20)\naxes[0, 1].set_title(&quot;スコア分布&quot;)\n\n# [1,0] 棒グラフ\naxes[1, 0].bar(categories, q1_scores, color=&quot;steelblue&quot;)\naxes[1, 0].set_title(&quot;部署別スコア&quot;)\n\n# [1,1] 散布図\naxes[1, 1].scatter(study_hours, scores, alpha=0.5)\naxes[1, 1].set_title(&quot;勉強時間 vs スコア&quot;)\n\nplt.tight_layout()\nplt.savefig(&quot;dashboard.png&quot;, dpi=150, bbox_inches=&quot;tight&quot;)\nplt.show()\n</code></pre>\n<h2>グラフのスタイル設定</h2>\n<pre><code class=\"language-python\"># テーマを適用\nplt.style.use(&quot;seaborn-v0_8-whitegrid&quot;)   # 白地グリッド（見やすい）\nplt.style.use(&quot;ggplot&quot;)                    # R の ggplot風\n\n# フォントを日本語対応させる（環境に応じて設定）\nplt.rcParams[&quot;font.family&quot;] = &quot;IPAexGothic&quot;   # Linux\nplt.rcParams[&quot;font.family&quot;] = &quot;MS Gothic&quot;     # Windows\n</code></pre>\n<h2>Matplotlibのレイヤー構造</h2>\n<pre><code class=\"language-mermaid\">graph TD\n  A[Figure 用紙全体] --&gt; B[Axes グラフ領域 1]\n  A --&gt; C[Axes グラフ領域 2]\n  B --&gt; D[Line / Bar / Scatter など]\n  B --&gt; E[Title / Label / Legend]\n  B --&gt; F[Tick / Grid / Spine]\n</code></pre>\n<h2>次に学ぶべき内容</h2>\n<p>より少ないコードで統計グラフを美しく描ける <a class=\"term-link\" data-slug=\"seaborn\" href=\"/glossary/seaborn\">Seaborn（統計可視化）</a> を学びましょう。</p>",
+"prereq_full": [
+{
+"slug": "pandas",
+"title": "Pandas（DataFrame・データ操作）"
+}
+],
+"related_full": [
+{
+"slug": "numpy",
+"title": "NumPy（配列・行列演算）"
+},
+{
+"slug": "pandas",
+"title": "Pandas（DataFrame・データ操作）"
+},
+{
+"slug": "seaborn",
+"title": "Seaborn（統計可視化）"
+}
+],
+"next_full": [
+{
+"slug": "seaborn",
+"title": "Seaborn（統計可視化）"
+}
+],
+"completed": false,
+"favorite": false
+},
+"numpy": {
+"slug": "numpy",
+"title": "NumPy（配列・行列演算）",
+"level": 2,
+"category": "Python",
+"related": [
+"python-basics",
+"pandas",
+"matplotlib"
+],
+"next": [
+"pandas"
+],
+"tags": [
+"python",
+"numpy",
+"array",
+"data-science"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>NumPyはPythonで数値計算を高速に行う基盤ライブラリです。中心となる <code>ndarray</code>（N次元配列）はC言語で実装されており、Pythonのリストと比べて<strong>10〜100倍以上の速度</strong>で数値処理を行えます。PandasもMatplotlibも、内部ではNumPyを使っています。</p>\n<h2>なぜ必要か</h2>\n<p>Pythonのリストで100万件のデータをループ処理すると数秒かかりますが、NumPy配列なら数ミリ秒です。「ブロードキャスト」という仕組みにより、forループなしで配列全体に演算を適用できます。データサイエンス・機械学習の全工程でNumPyは土台になります。</p>\n<h2>配列の作成</h2>\n<pre><code class=\"language-python\">import numpy as np\n\n# リストから生成\na = np.array([1, 2, 3, 4, 5])\nprint(a.dtype)   # int64\nprint(a.shape)   # (5,)\nprint(a.ndim)    # 1（1次元）\n\n# 2次元配列（行列）\nmatrix = np.array([[1, 2, 3],\n                   [4, 5, 6]])\nprint(matrix.shape)  # (2, 3) → 2行3列\n\n# 便利な生成関数\nnp.zeros((3, 4))          # 3行4列のゼロ行列\nnp.ones(5)                # [1. 1. 1. 1. 1.]\nnp.eye(3)                 # 3×3 単位行列\nnp.arange(0, 10, 2)       # [0 2 4 6 8]（stepあり）\nnp.linspace(0, 1, 5)      # [0.   0.25 0.5  0.75 1.  ]（等間隔）\nnp.random.seed(42)\nnp.random.randn(3, 3)     # 標準正規分布の3×3行列\n</code></pre>\n<h2>ブロードキャスト — forループ不要の一括演算</h2>\n<pre><code class=\"language-python\">temps = np.array([36.5, 37.2, 38.1, 36.8, 37.5])  # 5人の体温\n\n# リスト全体にまとめて演算（ループ不要）\nprint(temps - 37.0)       # 平均との差：[-0.5  0.2  1.1 -0.2  0.5]\nprint(temps * 9/5 + 32)   # 摂氏→華氏：[97.7 98.96 100.58 98.24 99.5]\n\n# 2つの配列を要素ごとに演算\nbefore = np.array([80, 75, 90, 60])\nafter  = np.array([85, 78, 88, 70])\ndiff   = after - before                # [-5  3  2  10] → 差分\nprint(diff.mean(), diff.std())         # 平均・標準偏差\n</code></pre>\n<h2>インデックス・スライス・条件フィルタ</h2>\n<pre><code class=\"language-python\">data = np.array([10, 20, 30, 40, 50, 60, 70])\n\n# 基本スライス\nprint(data[2])        # 30\nprint(data[1:5])      # [20 30 40 50]\nprint(data[::-1])     # [70 60 50 40 30 20 10]（逆順）\n\n# 2次元配列のスライス\nmat = np.arange(12).reshape(3, 4)\n# [[ 0  1  2  3]\n#  [ 4  5  6  7]\n#  [ 8  9 10 11]]\nprint(mat[1, :])      # [4 5 6 7]（2行目全列）\nprint(mat[:, 2])      # [2 6 10]（全行3列目）\nprint(mat[0:2, 1:3])  # [[1 2],[5 6]]（部分行列）\n\n# ブールインデックス（条件フィルタ）\nscores = np.array([55, 88, 72, 95, 40, 67])\nmask   = scores &gt;= 70\nprint(scores[mask])        # [88 72 95 67]\nprint(scores[scores &lt; 60]) # [55 40]\n</code></pre>\n<h2>統計・集計</h2>\n<pre><code class=\"language-python\">data = np.array([4, 7, 13, 2, 8, 11, 5, 9, 3, 6])\n\nprint(f&quot;件数  : {len(data)}&quot;)\nprint(f&quot;合計  : {np.sum(data)}&quot;)\nprint(f&quot;平均  : {np.mean(data):.2f}&quot;)\nprint(f&quot;中央値: {np.median(data)}&quot;)\nprint(f&quot;標準偏差: {np.std(data):.2f}&quot;)\nprint(f&quot;分散  : {np.var(data):.2f}&quot;)\nprint(f&quot;最小  : {np.min(data)}  最大: {np.max(data)}&quot;)\nprint(f&quot;25%ile: {np.percentile(data, 25)}&quot;)\nprint(f&quot;75%ile: {np.percentile(data, 75)}&quot;)\n\n# 2次元配列の軸指定集計\nmat = np.array([[1, 2, 3],\n                [4, 5, 6]])\nprint(mat.sum(axis=0))  # 列ごとの合計: [5 7 9]\nprint(mat.sum(axis=1))  # 行ごとの合計: [6 15]\n</code></pre>\n<h2>形状変換</h2>\n<pre><code class=\"language-python\">a = np.arange(12)          # [0 1 2 ... 11]\nb = a.reshape(3, 4)        # 3行4列に変換\nc = b.flatten()            # 1次元に戻す\nd = b.T                    # 転置（4行3列）\n\n# 結合\nx = np.array([1, 2, 3])\ny = np.array([4, 5, 6])\nprint(np.concatenate([x, y]))          # [1 2 3 4 5 6]\nprint(np.vstack([x, y]))               # 縦に結合 → (2,3)\nprint(np.column_stack([x, y]))         # 横に結合 → (3,2)\n</code></pre>\n<h2>行列演算</h2>\n<pre><code class=\"language-python\">A = np.array([[1, 2], [3, 4]])\nB = np.array([[5, 6], [7, 8]])\n\nprint(A @ B)                    # 行列積\n# [[19 22]\n#  [43 50]]\n\nprint(np.linalg.det(A))         # 行列式: -2.0\nprint(np.linalg.inv(A))         # 逆行列\nvals, vecs = np.linalg.eig(A)   # 固有値・固有ベクトル\n</code></pre>\n<h2>NumPy vs Pythonリストの速度比較</h2>\n<pre><code class=\"language-python\">import time\n\nn = 1_000_000\n\n# Pythonリスト\nlst = list(range(n))\nt0  = time.time()\nresult = [x * 2 for x in lst]\nprint(f&quot;list: {time.time() - t0:.3f}s&quot;)   # 約 0.08s\n\n# NumPy\narr = np.arange(n)\nt0  = time.time()\nresult = arr * 2\nprint(f&quot;numpy: {time.time() - t0:.4f}s&quot;)  # 約 0.002s → 約40倍速い\n</code></pre>\n<h2>処理の流れ</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  A[Pythonリスト] --&gt;|np.array| B[ndarray]\n  B --&gt; C[演算・スライス・統計]\n  C --&gt; D[Pandas DataFrame]\n  C --&gt; E[Matplotlib グラフ]\n  C --&gt; F[機械学習モデル入力]\n</code></pre>\n<h2>次に学ぶべき内容</h2>\n<p>NumPy配列の上に表形式のデータ操作機能を持つ <a class=\"term-link\" data-slug=\"pandas\" href=\"/glossary/pandas\">Pandas（DataFrame・データ操作）</a> を学びましょう。</p>",
+"prereq_full": [
+{
+"slug": "python-basics",
+"title": "Python基礎（変数・リスト・辞書）"
+}
+],
+"related_full": [
+{
+"slug": "python-basics",
+"title": "Python基礎（変数・リスト・辞書）"
+},
+{
+"slug": "pandas",
+"title": "Pandas（DataFrame・データ操作）"
+},
+{
+"slug": "matplotlib",
+"title": "Matplotlib（グラフ描画）"
+}
+],
+"next_full": [
+{
+"slug": "pandas",
+"title": "Pandas（DataFrame・データ操作）"
+}
+],
+"completed": false,
+"favorite": false
+},
+"pandas": {
+"slug": "pandas",
+"title": "Pandas（DataFrame・データ操作）",
+"level": 2,
+"category": "Python",
+"related": [
+"numpy",
+"matplotlib",
+"data-cleaning"
+],
+"next": [
+"matplotlib"
+],
+"tags": [
+"python",
+"pandas",
+"dataframe",
+"data-science"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>PandasはExcel的な<strong>表形式データ</strong>を扱うライブラリです。中心となるデータ構造は <code>DataFrame</code>（2次元の表）と <code>Series</code>（1列）で、CSVの読み込み・集計・結合・整形を数行のコードで行えます。実務のデータ分析作業の大半はPandasで完結します。</p>\n<h2>なぜ必要か</h2>\n<p>生データはCSV・Excel・データベースで提供されることがほとんどで、欠損値・型の不一致・重複などの問題を必ず含みます。NumPy配列だけでは列名の管理やテーブル結合が困難です。Pandasはそれらを直感的に扱えるAPIを提供し、NumPy・Matplotlibとシームレスに連携します。</p>\n<h2>DataFrameの作成</h2>\n<pre><code class=\"language-python\">import pandas as pd\n\n# 辞書から作成\ndf = pd.DataFrame({\n    &quot;name&quot;:       [&quot;Alice&quot;, &quot;Bob&quot;, &quot;Carol&quot;, &quot;Dave&quot;, &quot;Eve&quot;],\n    &quot;department&quot;: [&quot;開発&quot;, &quot;営業&quot;, &quot;開発&quot;, &quot;マーケ&quot;, &quot;営業&quot;],\n    &quot;score&quot;:      [88, 72, 95, 60, 83],\n    &quot;age&quot;:        [25, 30, 22, 35, 28],\n})\n\nprint(df)\n#     name department  score  age\n# 0  Alice         開発     88   25\n# 1    Bob         営業     72   30\n# 2  Carol         開発     95   22\n# 3   Dave       マーケ     60   35\n# 4    Eve         営業     83   28\n</code></pre>\n<h2>CSVの読み書き</h2>\n<pre><code class=\"language-python\"># 読み込み\ndf = pd.read_csv(&quot;sales.csv&quot;, encoding=&quot;utf-8&quot;)\ndf = pd.read_csv(&quot;sales.csv&quot;, parse_dates=[&quot;date&quot;])  # 日付列を自動パース\n\n# Excel\ndf = pd.read_excel(&quot;data.xlsx&quot;, sheet_name=&quot;Sheet1&quot;)\n\n# 書き出し\ndf.to_csv(&quot;output.csv&quot;, index=False)\ndf.to_excel(&quot;output.xlsx&quot;, index=False)\n</code></pre>\n<h2>基本確認</h2>\n<pre><code class=\"language-python\">df.shape          # (5, 4)  → (行数, 列数)\ndf.dtypes         # 各列の型\ndf.info()         # 型・欠損数・メモリ使用量\ndf.describe()     # 数値列の基本統計量（平均・標準偏差・四分位数）\ndf.head(3)        # 先頭3行\ndf.tail(3)        # 末尾3行\ndf.isnull().sum() # 各列の欠損数\n</code></pre>\n<h2>列・行の選択</h2>\n<pre><code class=\"language-python\"># 1列選択（Series）\nprint(df[&quot;score&quot;])\n\n# 複数列選択（DataFrame）\nprint(df[[&quot;name&quot;, &quot;score&quot;]])\n\n# 条件フィルタ\nhigh_score   = df[df[&quot;score&quot;] &gt;= 80]\ndev_high     = df[(df[&quot;department&quot;] == &quot;開発&quot;) &amp; (df[&quot;score&quot;] &gt;= 80)]\nspecific_age = df[df[&quot;age&quot;].between(25, 30)]\n\n# loc（ラベル） / iloc（番号）\ndf.loc[0, &quot;score&quot;]          # 0行目 score列\ndf.iloc[0:3, 1:3]           # 0〜2行・1〜2列\n</code></pre>\n<h2>列の追加・変換</h2>\n<pre><code class=\"language-python\"># 新しい列を計算して追加\ndf[&quot;score_scaled&quot;] = df[&quot;score&quot;] / 100\ndf[&quot;grade&quot;]        = df[&quot;score&quot;].apply(lambda x: &quot;A&quot; if x &gt;= 90 else (&quot;B&quot; if x &gt;= 70 else &quot;C&quot;))\ndf[&quot;name_upper&quot;]   = df[&quot;name&quot;].str.upper()\n\n# 条件分岐列（np.where が便利）\nimport numpy as np\ndf[&quot;passed&quot;] = np.where(df[&quot;score&quot;] &gt;= 70, True, False)\n</code></pre>\n<h2>グループ集計</h2>\n<pre><code class=\"language-python\"># 部署ごとの平均スコア\nprint(df.groupby(&quot;department&quot;)[&quot;score&quot;].mean())\n# department\n# マーケ    60.0\n# 営業      77.5\n# 開発      91.5\n\n# 複数の集計関数を同時に適用\nsummary = df.groupby(&quot;department&quot;)[&quot;score&quot;].agg(\n    平均=&quot;mean&quot;, 最大=&quot;max&quot;, 件数=&quot;count&quot;\n)\nprint(summary)\n\n# 複数列でグループ化\ndf.groupby([&quot;department&quot;, &quot;grade&quot;])[&quot;score&quot;].mean()\n\n# pivot_table（Excelのピボットと同等）\npivot = df.pivot_table(\n    values=&quot;score&quot;,\n    index=&quot;department&quot;,\n    columns=&quot;grade&quot;,\n    aggfunc=&quot;count&quot;,\n    fill_value=0,\n)\n</code></pre>\n<h2>ソートと順位</h2>\n<pre><code class=\"language-python\"># 降順ソート\ndf_sorted = df.sort_values(&quot;score&quot;, ascending=False)\n\n# 複数列ソート\ndf_sorted = df.sort_values([&quot;department&quot;, &quot;score&quot;], ascending=[True, False])\n\n# 順位列を追加\ndf[&quot;rank&quot;] = df[&quot;score&quot;].rank(ascending=False, method=&quot;min&quot;).astype(int)\n</code></pre>\n<h2>テーブルの結合</h2>\n<pre><code class=\"language-python\">dept_info = pd.DataFrame({\n    &quot;department&quot;: [&quot;開発&quot;, &quot;営業&quot;, &quot;マーケ&quot;],\n    &quot;budget&quot;:     [500, 300, 200],\n})\n\n# SQL的なJOIN\nmerged = df.merge(dept_info, on=&quot;department&quot;, how=&quot;left&quot;)\n\n# 縦に積み重ね（UNION ALL）\ncombined = pd.concat([df_q1, df_q2], ignore_index=True)\n</code></pre>\n<h2>時系列データ</h2>\n<pre><code class=\"language-python\">ts = pd.DataFrame({\n    &quot;date&quot;:  pd.date_range(&quot;2024-01-01&quot;, periods=90, freq=&quot;D&quot;),\n    &quot;sales&quot;: np.random.randint(100, 500, 90),\n})\nts = ts.set_index(&quot;date&quot;)\n\n# リサンプリング（日次→週次平均）\nweekly  = ts[&quot;sales&quot;].resample(&quot;W&quot;).mean()\nmonthly = ts[&quot;sales&quot;].resample(&quot;ME&quot;).sum()\n\n# 移動平均\nts[&quot;ma7&quot;]  = ts[&quot;sales&quot;].rolling(7).mean()\nts[&quot;ma30&quot;] = ts[&quot;sales&quot;].rolling(30).mean()\n</code></pre>\n<h2>DataFrameの処理フロー</h2>\n<pre><code class=\"language-mermaid\">graph TD\n  A[CSV / Excel / DB] --&gt;|read_csv / read_excel| B[DataFrame]\n  B --&gt; C[概要確認&lt;br/&gt;shape / info / describe]\n  C --&gt; D[欠損・重複処理]\n  D --&gt; E[列変換 / 特徴量追加]\n  E --&gt; F[フィルタ / グループ集計]\n  F --&gt; G[Matplotlib / Seaborn で可視化]\n  F --&gt; H[機械学習モデルへ]\n</code></pre>\n<h2>次に学ぶべき内容</h2>\n<p>DataFrameを <a class=\"term-link\" data-slug=\"matplotlib\" href=\"/glossary/matplotlib\">Matplotlib（グラフ描画）</a> でグラフ化する方法を学びましょう。</p>",
+"prereq_full": [
+{
+"slug": "numpy",
+"title": "NumPy（配列・行列演算）"
+}
+],
+"related_full": [
+{
+"slug": "numpy",
+"title": "NumPy（配列・行列演算）"
+},
+{
+"slug": "matplotlib",
+"title": "Matplotlib（グラフ描画）"
+},
+{
+"slug": "data-cleaning",
+"title": "データクリーニング"
+}
+],
+"next_full": [
+{
+"slug": "matplotlib",
+"title": "Matplotlib（グラフ描画）"
+}
+],
+"completed": false,
+"favorite": false
+},
 "port": {
 "slug": "port",
 "title": "Port",
@@ -1819,7 +2194,7 @@
 ],
 "category": "TCP/IP",
 "difficulty": "初級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>概要</h2>\n<p><strong>ポート番号</strong>は、1台の機器内で動く複数の通信を区別するための16ビットの番号(<strong>0〜65535</strong>)です。IPアドレスが「建物の住所」なら、ポートは「部屋番号」に相当します。</p>\n<h2>なぜ必要か</h2>\n<p>1つのECUが同時に複数の通信(診断・SOME/IP・映像など)を扱うとき、どのデータがどのアプリ宛かを区別する必要があります。<strong>ポート番号</strong>がその振り分けを可能にします。</p>\n<h2>自動運転での利用例</h2>\n<p>SOME/IPのサービスディスカバリは UDP 30490 番、DoIP診断は <strong>13400</strong> 番、というように用途ごとにポートが決まっています。PCAP解析でポートを見れば、どの通信かを推測できます。</p>\n<h2>関連用語</h2>\n<p>IPアドレスとポートの組が <a class=\"term-link\" data-slug=\"socket\" href=\"/glossary/socket\">Socket</a> です。ポートは <a class=\"term-link\" data-slug=\"tcp\" href=\"/glossary/tcp\">TCP</a> と <a class=\"term-link\" data-slug=\"udp\" href=\"/glossary/udp\">UDP</a> の両方で使われます。</p>\n<h2>次に学ぶべき内容</h2>\n<p>IPとポートを組み合わせた通信の出入口、<a class=\"term-link\" data-slug=\"socket\" href=\"/glossary/socket\">Socket</a> を学びましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  TCU[&quot;TCU (10.0.0.1)&quot;] --&gt;|&quot;:8080 OTAサービス&quot;| DIAG[診断PC]\n  TCU --&gt;|&quot;:13400 DoIP診断&quot;| DIAG\n  TCU --&gt;|&quot;:5555 ログ収集&quot;| LOGGER[データロガーECU]\n</code></pre>",
 "prereq_full": [
 {
@@ -1868,7 +2243,7 @@
 ],
 "category": "TCP/IP",
 "difficulty": "初級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>概要</h2>\n<p>TCP(Transmission Control Protocol)はコネクション型のトランスポート層プロトコルです。3wayハンドシェイクで接続を確立し、<strong>再送制御</strong>・順序保証・<strong>フロー制御</strong>により「データが確実に正しい順で届く」ことを保証します。</p>\n<h2>なぜ必要か</h2>\n<p>通信路ではパケットの欠落や順序入れ替わりが起こります。TCPはこれを自動で補正するため、アプリは信頼性を意識せずにデータを送れます。確実性が求められる場面の定番です。</p>\n<h2>自動運転での利用例</h2>\n<p>車載診断通信の DoIP(Diagnostics over IP)や、大きなファイル/ソフトウェア更新(OTA)の転送に使われます。SOME/IPでも、大きなペイロードや確実性が必要な通信はTCP上で行われます。</p>\n<h2>関連用語</h2>\n<p>対照的な軽量プロトコルが <a class=\"term-link\" data-slug=\"udp\" href=\"/glossary/udp\">UDP</a>、通信の入り口が <a class=\"term-link\" data-slug=\"port\" href=\"/glossary/port\">Port</a> と <a class=\"term-link\" data-slug=\"socket\" href=\"/glossary/socket\">Socket</a>、土台が <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>低遅延を優先する <a class=\"term-link\" data-slug=\"udp\" href=\"/glossary/udp\">UDP</a> との違いを学びましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">sequenceDiagram\n  participant C as 診断PC\n  participant S as ゲートウェイECU\n  C-&gt;&gt;S: SYN\n  S-&gt;&gt;C: SYN-ACK\n  C-&gt;&gt;S: ACK (接続確立)\n  C-&gt;&gt;S: DATA (UDSリクエスト)\n  S-&gt;&gt;C: ACK + DATA (UDS応答)\n  C-&gt;&gt;S: FIN\n  S-&gt;&gt;C: FIN-ACK\n</code></pre>",
 "prereq_full": [
 {
@@ -1927,7 +2302,7 @@
 ],
 "category": "TCP/IP",
 "difficulty": "初級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>概要</h2>\n<p>UDP(User Datagram Protocol)は<strong>コネクションレス</strong>で、再送や順序保証を持たない軽量なトランスポート層プロトコルです。ハンドシェイクなしで即座に送れるため、<strong>低遅延</strong>・低オーバーヘッドが特長です。</p>\n<h2>なぜ必要か</h2>\n<p><strong>リアルタイム</strong>性が信頼性より重要な場面があります。例えば映像やセンサーストリームでは、1フレーム届かなくても再送を待つより次のデータを送る方が有益です。UDPはそうした用途に最適です。</p>\n<h2>自動運転での利用例</h2>\n<p>ADAS ECU間の<strong>低遅延</strong>通信、SOME/IPのイベント通知やサービスディスカバリ(SOME/IP-SD)、カメラ映像ストリームなどで多用されます。遅延が安全に直結する自動運転では、UDPの低遅延性が活きます。</p>\n<h2>関連用語</h2>\n<p>信頼性重視の <a class=\"term-link\" data-slug=\"tcp\" href=\"/glossary/tcp\">TCP</a> と対をなし、通信エンドポイントは <a class=\"term-link\" data-slug=\"socket\" href=\"/glossary/socket\">Socket</a> と <a class=\"term-link\" data-slug=\"port\" href=\"/glossary/port\">Port</a> で表します。車載では <a class=\"term-link\" data-slug=\"some-ip\" href=\"/glossary/some-ip\">SOME/IP</a> がUDP上で動きます。</p>\n<h2>次に学ぶべき内容</h2>\n<p>通信の宛先を細かく指定する <a class=\"term-link\" data-slug=\"port\" href=\"/glossary/port\">Port</a> を学びましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  LIDAR[&quot;LiDARセンサECU&quot;] --&gt;|UDPデータグラム\n点群データ| ADC[&quot;ADASドメインコントローラ&quot;]\n  subgraph UDP[&quot;UDPの特徴&quot;]\n    F1[&quot;コネクションレス&quot;] --- F2[&quot;低遅延&quot;] --- F3[&quot;順序保証なし&quot;]\n  end\n</code></pre>",
 "prereq_full": [
 {
@@ -1988,7 +2363,7 @@
 "l2",
 "automotive"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>概要</h2>\n<p>VLAN(Virtual LAN / <strong>IEEE 802.1Q</strong>)は、1本の物理 <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> を論理的に複数のネットワークに分割する技術です。フレームに「<strong>VLANタグ</strong>」を付けることで、同じケーブル上でもグループごとに通信を分離できます。</p>\n<h2>なぜ必要か</h2>\n<p>1つの物理網に異なる目的のトラフィックが混在すると、セキュリティやリアルタイム性に問題が出ます。VLANで論理的に分けることで、不要な通信の混入を防ぎ、帯域と安全性を確保できます。</p>\n<h2>自動運転での利用例</h2>\n<p>車載Ethernetでは、制御系・情報系(インフォテインメント)・診断系などをVLANで分離するのが一般的です。これにより、映像ストリームが制御通信を圧迫するのを防ぎ、安全に関わるトラフィックを保護します。</p>\n<h2>関連用語</h2>\n<p>土台が <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a>、宛先識別が <a class=\"term-link\" data-slug=\"mac-address\" href=\"/glossary/mac-address\">MAC Address</a>、時間保証と組み合わせる技術が <a class=\"term-link\" data-slug=\"tsn\" href=\"/glossary/tsn\">TSN(Time-Sensitive Networking)</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>リアルタイム性を保証する <a class=\"term-link\" data-slug=\"tsn\" href=\"/glossary/tsn\">TSN(Time-Sensitive Networking)</a> を学びましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  SW[&quot;Ethernetスイッチ&quot;]\n  subgraph VLAN10[&quot;VLAN 10 (ADASドメイン)&quot;]\n    CAM[カメラECU]\n    ADC[ADASコントローラ]\n  end\n  subgraph VLAN20[&quot;VLAN 20 (IVI・診断)&quot;]\n    IVI[IVIシステム]\n    TCU[テレマティクスECU]\n  end\n  CAM --- SW\n  ADC --- SW\n  IVI --- SW\n  TCU --- SW\n</code></pre>",
 "prereq_full": [
 {
@@ -2040,7 +2415,7 @@
 "vlan",
 "ethernet"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>やること</h2>\n<p>車載EthernetのキャプチャデータにVLANタグ(<strong>IEEE 802.1Q</strong>)が含まれているかをWiresharkで確認し、VLANごとにトラフィックを分離して解析する手順を説明します。</p>\n<h2>前提条件</h2>\n<ul>\n<li>Wiresharkインストール済み</li>\n<li>VLANタグ付きトラフィックのpcapファイル、または<strong>トランクポート</strong>への接続</li>\n</ul>\n<h2>ステップ1: VLANタグを確認する</h2>\n<p>pcapを開いてパケットを選択し、下部の詳細ペインを確認します：</p>\n<pre><code>Ethernet II\n  ▶ 802.1Q Virtual LAN, PRI: 0, DEI: 0, ID: 10\n      VLAN ID: 10\n      Type: IPv4\n</code></pre>\n<p><code>802.1Q Virtual LAN</code> の行があればVLANタグ付きです。</p>\n<h2>ステップ2: VLAN IDでフィルタ</h2>\n<pre><code># VLAN 10 のパケットだけ表示\nvlan.id == 10\n\n# VLAN 20 かつ SOME/IP\nvlan.id == 20 &amp;&amp; someip\n\n# VLANタグ付きパケット全体\nvlan\n</code></pre>\n<h2>ステップ3: 複数VLANの通信量を比較</h2>\n<p><code>Statistics</code> → <code>IO Graph</code> を開いて：</p>\n<ul>\n<li>グラフ1: フィルタ <code>**vlan.id** == 10</code> (ADASドメイン)</li>\n<li>グラフ2: フィルタ <code>**vlan.id** == 20</code> (IVIドメイン)</li>\n</ul>\n<p>時系列で各ドメインのトラフィック量を比較できます。</p>\n<h2>ステップ4: tsharkでVLAN IDを一覧化</h2>\n<pre><code class=\"language-bash\"># pcap内の全VLAN IDを集計\ntshark -r capture.pcap -Y &quot;vlan&quot; \\\n  -T fields -e vlan.id | sort | uniq -c | sort -rn\n\n# 出力例:\n# 1523  10\n#  487  20\n#   34  30\n</code></pre>\n<h2>VLANが見えない場合</h2>\n<p>キャプチャポイントがアクセスポート(タグなし)の場合、VLANタグは除去されています。VLANタグを観測するにはスイッチの<strong>トランクポート</strong>(タグ付きポート)かミラーポートに接続してキャプチャする必要があります。</p>\n<h2>車載での典型的なVLAN構成</h2>\n<table>\n<thead>\n<tr>\n<th>VLAN ID</th>\n<th>ドメイン</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>10</td>\n<td>ADASカメラ・LiDAR</td>\n</tr>\n<tr>\n<td>20</td>\n<td>インフォテインメント(IVI)</td>\n</tr>\n<tr>\n<td>30</td>\n<td>診断(DoIP)</td>\n</tr>\n<tr>\n<td>99</td>\n<td>管理用</td>\n</tr>\n</tbody>\n</table>\n<p>各ドメインが混在していないかをWiresharkで確認することがセキュリティ監査の第一歩です。</p>\n<h2>関連用語</h2>\n<p>VLANの概念は <a class=\"term-link\" data-slug=\"vlan\" href=\"/glossary/vlan\">VLAN</a>、Wiresharkの基本は <a class=\"term-link\" data-slug=\"wireshark\" href=\"/glossary/wireshark\">Wireshark</a>、高度なフィルタは <a class=\"term-link\" data-slug=\"howto-tshark-filter\" href=\"/glossary/howto-tshark-filter\">tsharkで車載通信をフィルタ・解析する</a> を参照。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  TRUNK[&quot;スイッチ\nトランクポート&quot;] --&gt;|VLANタグ付きフレーム| PC[&quot;Wireshark&quot;]\n  PC --&gt;|&quot;フィルタ: vlan.id == 10&quot;| ADAS[&quot;VLAN10 (ADAS)\nトラフィック&quot;]\n  PC --&gt;|&quot;フィルタ: vlan.id == 20&quot;| IVI[&quot;VLAN20 (IVI)\nトラフィック&quot;]\n</code></pre>",
 "prereq_full": [],
 "related_full": [
@@ -2087,7 +2462,7 @@
 "tags": [
 "l3"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>概要</h2>\n<p>サブネットは、<a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a> アドレス空間を小さなネットワークに区切る考え方です。「ネットワーク部」と「ホスト部」を<strong>サブネットマスク</strong>(例 <code>255.255.255.0</code> / <strong>CIDR</strong>表記 <code>/24</code>)で分け、どこまでが同じネットワークかを定めます。</p>\n<h2>なぜ必要か</h2>\n<p>すべての機器を1つの巨大なネットワークに置くと、通信効率も管理性も悪化します。サブネットで適切に区切ることで、ブロードキャストの範囲を限定し、ルーティングや管理をしやすくします。</p>\n<h2>自動運転での利用例</h2>\n<p>ゾーンアーキテクチャの車両では、ゾーンごとにサブネットを割り当てて管理することがあります。あるECUと別ECUが「同じサブネットか」で、直接通信できるかルータ越しかが決まります。</p>\n<h2>関連用語</h2>\n<p>区切る対象が <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a>、アドレス自動割り当てが <a class=\"term-link\" data-slug=\"dhcp\" href=\"/glossary/dhcp\">DHCP</a>、同一サブネット内の到達に使うのが <a class=\"term-link\" data-slug=\"mac-address\" href=\"/glossary/mac-address\">MAC Address</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>IPアドレスを自動配布する <a class=\"term-link\" data-slug=\"dhcp\" href=\"/glossary/dhcp\">DHCP</a> を学びましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">graph TD\n  GW[&quot;ゲートウェイECU&quot;]\n  subgraph A[&quot;Network A: 192.168.1.0/24 (ADAS)&quot;]\n    CAM[&quot;カメラECU .10&quot;]\n    LID[&quot;LiDARセンサ .11&quot;]\n  end\n  subgraph B[&quot;Network B: 10.0.0.0/8 (IVI)&quot;]\n    IVI[&quot;IVIシステム .20&quot;]\n    TCU[&quot;TCU .50&quot;]\n  end\n  GW --- CAM\n  GW --- LID\n  GW --- IVI\n  GW --- TCU\n</code></pre>",
 "prereq_full": [
 {
@@ -2118,6 +2493,53 @@
 "completed": false,
 "favorite": false
 },
+"data-cleaning": {
+"slug": "data-cleaning",
+"title": "データクリーニング",
+"level": 2,
+"category": "Python",
+"related": [
+"pandas",
+"numpy",
+"data-analysis"
+],
+"next": [
+"data-analysis"
+],
+"tags": [
+"python",
+"pandas",
+"cleaning",
+"preprocessing",
+"data-science"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>データクリーニングは分析・機械学習の前処理として必須のステップです。現実のデータは欠損値・重複・型の不整合・表記ゆれを必ず含んでいます。「ゴミを入れればゴミが出る（GIGO）」という言葉の通り、前処理の質がそのまま分析精度に直結します。</p>\n<h2>なぜ必要か</h2>\n<p>実務データの80〜90%のケースで、何らかのクリーニングが必要といわれています。欠損値を放置したまま平均を計算すれば誤った値になり、重複行があれば集計が2倍になります。機械学習モデルはNaN（欠損値）があると学習できないため、特に前処理は避けられません。</p>\n<h2>クリーニングの全体フロー</h2>\n<pre><code class=\"language-mermaid\">graph TD\n  A[生データ読み込み] --&gt; B[欠損値の確認・処理]\n  B --&gt; C[重複行の確認・削除]\n  C --&gt; D[型変換]\n  D --&gt; E[文字列の正規化]\n  E --&gt; F[外れ値の確認・処理]\n  F --&gt; G[カテゴリ変数のエンコード]\n  G --&gt; H[クリーンなデータセット]\n</code></pre>\n<h2>1. 欠損値の確認</h2>\n<pre><code class=\"language-python\">import pandas as pd\nimport numpy as np\n\ndf = pd.read_csv(&quot;raw_data.csv&quot;)\n\n# 全体の欠損数\nprint(df.isnull().sum())\n\n# 欠損率（%）を降順で表示\nmissing_rate = (df.isnull().mean() * 100).sort_values(ascending=False)\nprint(missing_rate[missing_rate &gt; 0])\n\n# 欠損パターンを可視化（seaborn を使う場合）\nimport seaborn as sns\nimport matplotlib.pyplot as plt\nsns.heatmap(df.isnull(), cbar=False, yticklabels=False, cmap=&quot;viridis&quot;)\nplt.title(&quot;欠損マップ（黄=欠損）&quot;)\nplt.show()\n</code></pre>\n<h2>2. 欠損値の処理</h2>\n<pre><code class=\"language-python\"># ① 削除（欠損が少ない場合）\ndf_drop = df.dropna()                          # 欠損行をすべて削除\ndf_drop = df.dropna(subset=[&quot;price&quot;, &quot;age&quot;])   # 特定列が欠損の行のみ削除\ndf_drop = df.drop(columns=[&quot;col_70pct_null&quot;])  # 欠損率が高い列を削除\n\n# ② 数値列の補完\ndf[&quot;age&quot;].fillna(df[&quot;age&quot;].median(), inplace=True)        # 中央値\ndf[&quot;income&quot;].fillna(df[&quot;income&quot;].mean(), inplace=True)    # 平均\ndf[&quot;score&quot;].fillna(df[&quot;score&quot;].mode()[0], inplace=True)   # 最頻値\n\n# ③ カテゴリ列の補完\ndf[&quot;city&quot;].fillna(&quot;Unknown&quot;, inplace=True)\n\n# ④ 時系列は前後の値で補完\ndf.fillna(method=&quot;ffill&quot;, inplace=True)   # 前の値で埋める\ndf.fillna(method=&quot;bfill&quot;, inplace=True)   # 後の値で埋める\n\n# ⑤ グループ内の統計値で補完（より精度が高い）\ndf[&quot;price&quot;] = df.groupby(&quot;category&quot;)[&quot;price&quot;].transform(\n    lambda x: x.fillna(x.median())\n)\n</code></pre>\n<h2>3. 重複行の処理</h2>\n<pre><code class=\"language-python\">print(f&quot;重複行数: {df.duplicated().sum()}&quot;)\n\n# 特定の列で重複判定\nprint(f&quot;user_id重複: {df.duplicated(subset=['user_id']).sum()}&quot;)\n\n# 重複を確認（最初の1件を残す）\ndf_unique = df.drop_duplicates()\ndf_unique = df.drop_duplicates(subset=[&quot;user_id&quot;], keep=&quot;first&quot;)\n\n# どんな重複があるか確認\nprint(df[df.duplicated(keep=False)].sort_values(&quot;user_id&quot;))\n</code></pre>\n<h2>4. 型変換</h2>\n<pre><code class=\"language-python\"># 文字列を数値に変換（変換できない値はNaNにする）\ndf[&quot;price&quot;]  = pd.to_numeric(df[&quot;price&quot;], errors=&quot;coerce&quot;)\ndf[&quot;score&quot;]  = pd.to_numeric(df[&quot;score&quot;], errors=&quot;coerce&quot;)\n\n# 文字列を日付に変換\ndf[&quot;date&quot;]   = pd.to_datetime(df[&quot;date&quot;], format=&quot;%Y-%m-%d&quot;, errors=&quot;coerce&quot;)\n\n# 日付から特徴量を抽出\ndf[&quot;year&quot;]   = df[&quot;date&quot;].dt.year\ndf[&quot;month&quot;]  = df[&quot;date&quot;].dt.month\ndf[&quot;day&quot;]    = df[&quot;date&quot;].dt.day\ndf[&quot;dow&quot;]    = df[&quot;date&quot;].dt.day_of_week      # 0=月曜\ndf[&quot;is_weekend&quot;] = df[&quot;dow&quot;].isin([5, 6])\n\n# カテゴリ型に変換（メモリ節約・高速集計）\ndf[&quot;status&quot;] = df[&quot;status&quot;].astype(&quot;category&quot;)\n</code></pre>\n<h2>5. 文字列のクリーニング</h2>\n<pre><code class=\"language-python\"># 前後の空白・改行を除去\ndf[&quot;name&quot;]  = df[&quot;name&quot;].str.strip()\ndf[&quot;email&quot;] = df[&quot;email&quot;].str.strip().str.lower()\n\n# 表記ゆれを統一\ndf[&quot;gender&quot;] = df[&quot;gender&quot;].str.replace(&quot;男性&quot;, &quot;M&quot;).str.replace(&quot;女性&quot;, &quot;F&quot;)\n\n# 正規表現で不要な文字を削除\ndf[&quot;phone&quot;]  = df[&quot;phone&quot;].str.replace(r&quot;[^\\d]&quot;, &quot;&quot;, regex=True)   # 数字以外を削除\ndf[&quot;postal&quot;] = df[&quot;postal&quot;].str.replace(r&quot;[-\\s]&quot;, &quot;&quot;, regex=True)  # ハイフン削除\n\n# 特定パターンを含む行を除外\ndf = df[~df[&quot;name&quot;].str.contains(&quot;test|dummy|temp&quot;, case=False, na=False)]\n\n# 文字数が異常な行を除外\ndf = df[df[&quot;name&quot;].str.len().between(1, 50)]\n</code></pre>\n<h2>6. 外れ値の確認と処理</h2>\n<pre><code class=\"language-python\"># 箱ひげ図で外れ値を確認\nimport seaborn as sns\nsns.boxplot(data=df, y=&quot;price&quot;)\nplt.show()\n\n# IQR法で外れ値を検出\ndef detect_outliers_iqr(series: pd.Series) -&gt; pd.Series:\n    Q1, Q3 = series.quantile([0.25, 0.75])\n    IQR = Q3 - Q1\n    lower, upper = Q1 - 1.5 * IQR, Q3 + 1.5 * IQR\n    return (series &lt; lower) | (series &gt; upper)\n\nis_outlier = detect_outliers_iqr(df[&quot;price&quot;])\nprint(f&quot;外れ値: {is_outlier.sum()} 件 / {len(df)} 件&quot;)\n\n# 処理方法①: 削除\ndf_clean = df[~is_outlier]\n\n# 処理方法②: クリッピング（上限・下限で切り詰める）\nQ1, Q3 = df[&quot;price&quot;].quantile([0.25, 0.75])\nIQR    = Q3 - Q1\ndf[&quot;price&quot;] = df[&quot;price&quot;].clip(lower=Q1 - 1.5*IQR, upper=Q3 + 1.5*IQR)\n</code></pre>\n<h2>7. カテゴリ変数のエンコード</h2>\n<pre><code class=\"language-python\"># ① Label Encoding（順序がある場合：Low/Mid/High など）\ngrade_map = {&quot;C&quot;: 0, &quot;B&quot;: 1, &quot;A&quot;: 2}\ndf[&quot;grade_enc&quot;] = df[&quot;grade&quot;].map(grade_map)\n\n# ② One-Hot Encoding（順序がないカテゴリ）\ndf = pd.get_dummies(df, columns=[&quot;city&quot;, &quot;status&quot;], drop_first=True)\n\n# ③ 頻度エンコード（カーディナリティが高い場合）\nfreq_map = df[&quot;category&quot;].value_counts(normalize=True)\ndf[&quot;category_freq&quot;] = df[&quot;category&quot;].map(freq_map)\n</code></pre>\n<h2>クリーニング前後のチェックリスト</h2>\n<pre><code class=\"language-python\">def data_quality_report(df: pd.DataFrame) -&gt; None:\n    print(f&quot;=== データ品質レポート ===&quot;)\n    print(f&quot;行数: {len(df):,}  列数: {df.shape[1]}&quot;)\n    print(f&quot;\\n【欠損】&quot;)\n    missing = df.isnull().sum()\n    print(missing[missing &gt; 0].to_string())\n    print(f&quot;\\n【重複行】{df.duplicated().sum()} 件&quot;)\n    print(f&quot;\\n【各列の型】&quot;)\n    print(df.dtypes.to_string())\n\ndata_quality_report(df)\n</code></pre>\n<h2>次に学ぶべき内容</h2>\n<p>クリーンになったデータを <a class=\"term-link\" data-slug=\"data-analysis\" href=\"/glossary/data-analysis\">データ分析の流れ（EDA）</a> でEDA（探索的データ分析）してみましょう。</p>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "pandas",
+"title": "Pandas（DataFrame・データ操作）"
+},
+{
+"slug": "numpy",
+"title": "NumPy（配列・行列演算）"
+},
+{
+"slug": "data-analysis",
+"title": "データ分析の流れ（EDA）"
+}
+],
+"next_full": [
+{
+"slug": "data-analysis",
+"title": "データ分析の流れ（EDA）"
+}
+],
+"completed": false,
+"favorite": false
+},
 "avtp": {
 "slug": "avtp",
 "title": "AVTP (車載映像・音声転送プロトコル)",
@@ -2139,7 +2561,7 @@
 "video",
 "automotive"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>概要</h2>\n<p>AVTP(Audio Video Transport Protocol、<strong>IEEE 1722</strong>)は、車載Ethernet上で映像・音声ストリームをリアルタイム転送するプロトコルです。カメラ映像をサラウンドビューモニター(SVM)に表示したり、マイク音声をデジタルオーディオバスに流す用途に使われます。</p>\n<h2>なぜ必要か</h2>\n<p>カメラの生映像(1080p@30fpsで約1 Gbps)をECU間で転送する場合、通常のTCP/IPでは遅延・ジッターが問題になります。AVTPはタイムスタンプ付きのストリームをEthernetフレームに直接マッピングし、<a class=\"term-link\" data-slug=\"ptp\" href=\"/glossary/ptp\">PTP (精密時刻同期 / <strong>IEEE 1588</strong>)</a> 時刻同期と組み合わせてマイクロ秒精度の低遅延転送を実現します。</p>\n<h2>仕組み</h2>\n<ul>\n<li>Ethernetフレームの EtherType <strong>0x22F0</strong> を使用</li>\n<li>各フレームにavtp_timestampを付与(gPTP基準時刻)</li>\n<li>受信側は一定バッファで再生タイミングを合わせる(Presentation Time)</li>\n</ul>\n<h2>主なサブタイプ</h2>\n<ul>\n<li><strong>CVF (Compressed Video Format)</strong> — H.264/H.265圧縮映像</li>\n<li><strong>CRF (Clock Reference Format)</strong> — 時刻同期専用ストリーム</li>\n<li><strong>AAF (AVTP Audio Format)</strong> — PCM音声</li>\n</ul>\n<h2>自動運転での利用例</h2>\n<p>全周囲カメラ(6〜8台)の映像をAVTPでADAS Domain Controllerへ集約し、センサフュージョンに使います。<a class=\"term-link\" data-slug=\"tsn\" href=\"/glossary/tsn\">TSN(Time-Sensitive Networking)</a> の帯域予約(CBS: Credit-Based Shaper)と組み合わせることで、映像フレームの遅延上限を保証します。</p>\n<h2>関連用語</h2>\n<p>時刻同期は <a class=\"term-link\" data-slug=\"ptp\" href=\"/glossary/ptp\">PTP (精密時刻同期 / <strong>IEEE 1588</strong>)</a>、帯域保証は <a class=\"term-link\" data-slug=\"tsn\" href=\"/glossary/tsn\">TSN(Time-Sensitive Networking)</a>、ベースはもちろん <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>映像転送の帯域保証を実現する <a class=\"term-link\" data-slug=\"tsn\" href=\"/glossary/tsn\">TSN(Time-Sensitive Networking)</a> を深く理解しましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  CAM[&quot;カメラECU×6&quot;] --&gt;|&quot;AVTP (EtherType 0x22F0)\ngPTPタイムスタンプ付き&quot;| SW[&quot;TSN対応\nEthernetスイッチ&quot;]\n  SW --&gt;|&quot;帯域予約 (CBS)&quot;| ADC[&quot;ADASドメイン\nコントローラ&quot;]\n  ADC --&gt;|センサフュージョン| CTRL[&quot;車両制御&quot;]\n  subgraph Format[&quot;AVTPサブタイプ&quot;]\n    CVF[&quot;CVF: H.264映像&quot;] --- AAF[&quot;AAF: PCM音声&quot;] --- CRF[&quot;CRF: 時刻参照&quot;]\n  end\n</code></pre>",
 "prereq_full": [],
 "related_full": [
@@ -2191,7 +2613,7 @@
 "doip",
 "automotive"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>やること</h2>\n<p>診断PCからDoIP(Diagnostics over IP)を使ってゲートウェイECUへ接続し、UDS診断を開始するまでの手順を説明します。</p>\n<h2>前提条件</h2>\n<ul>\n<li>診断PCと車両ゲートウェイECUがEthernetで接続</li>\n<li>診断ツール (ETAS INCA、Vector CANoe、またはPythonスクリプト)</li>\n<li>対象ECUのIPアドレスと<strong>論理アドレス</strong>(Logical Address)が判明</li>\n</ul>\n<h2>DoIPの接続フロー</h2>\n<pre><code>診断PC ──[UDP 13400]──→ ECU : Vehicle Discovery (broadcast)\n診断PC ←──────────────── ECU : Vehicle Announcement (IP + Logical Address)\n診断PC ──[TCP 13400]──→ ECU : Routing Activation Request\n診断PC ←────────────────ECU : Routing Activation Response (成功)\n診断PC ──[TCP 13400]──→ ECU : UDS Request (例: ReadDTC)\n診断PC ←────────────────ECU : UDS Response\n</code></pre>\n<h2>ステップ1: ECUのIPアドレスを探す</h2>\n<pre><code class=\"language-python\"># Python (doipclient ライブラリ使用)\nimport doipclient\n\n# UDP 13400 でブロードキャスト送信し、応答を収集\nclient = doipclient.DoIPClient(&quot;192.168.1.255&quot;, 13400)\nresult = client.request_vehicle_identity()\nprint(result)  # VIN, IPアドレス, 論理アドレス が返る\n</code></pre>\n<p>または手動でDoIPゲートウェイのIPが分かっている場合は直接指定します。</p>\n<h2>ステップ2: Routing Activation</h2>\n<pre><code class=\"language-python\">client = doipclient.DoIPClient(&quot;192.168.1.1&quot;, 13400)\n\n# Routing Activation (診断セッションの入り口)\nresponse = client.request_activation(0x00)  # 0x00 = Default Activation\nprint(f&quot;Activation result: {response.activation_response_code}&quot;)\n# 0x10 = Routing successfully activated\n</code></pre>\n<h2>ステップ3: UDSリクエストを送る</h2>\n<pre><code class=\"language-python\"># DiagnosticSessionControl — 拡張診断セッションへ切り替え\n# UDS: 0x10 0x03\nresp = client.send_doip(\n    source_address=0x0E00,   # 診断PC論理アドレス\n    target_address=0x0001,   # ゲートウェイECU論理アドレス\n    uds_message=bytes([0x10, 0x03])\n)\nprint(resp.hex())  # 50 03 = PositiveResponse\n</code></pre>\n<h2>ステップ4: Wiresharkで確認</h2>\n<pre><code># WiresharkでDoIPセッションを確認するフィルタ\ntcp.port == 13400\n</code></pre>\n<p><strong>Routing Activation</strong> → UDS Request → UDS Response の流れが見えれば接続成功です。</p>\n<h2>よくあるエラー</h2>\n<table>\n<thead>\n<tr>\n<th>エラーコード</th>\n<th>原因</th>\n<th>対処</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0x00 (Denied)</td>\n<td>認証失敗 / アドレス不一致</td>\n<td><strong>論理アドレス</strong>を確認</td>\n</tr>\n<tr>\n<td><strong>TCP接続</strong>タイムアウト</td>\n<td>IPアドレスが違う / ファイアウォール</td>\n<td><a class=\"term-link\" data-slug=\"howto-ping-ecu\" href=\"/glossary/howto-ping-ecu\">howto-ping-ecu</a> で疎通確認</td>\n</tr>\n<tr>\n<td>NRC 0x25</td>\n<td>ECUがプログラミングセッション以外では拒否</td>\n<td>セッション種別を確認</td>\n</tr>\n</tbody>\n</table>\n<h2>関連用語</h2>\n<p>プロトコル詳細は <a class=\"term-link\" data-slug=\"doip\" href=\"/glossary/doip\">DoIP(Diagnostics over IP)</a>、UDSサービスの意味は <a class=\"term-link\" data-slug=\"uds\" href=\"/glossary/uds\">UDS (統合診断サービス)</a>、通信の確認は <a class=\"term-link\" data-slug=\"wireshark\" href=\"/glossary/wireshark\">Wireshark</a> を参照。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">sequenceDiagram\n  participant PC as 診断PC\n  participant GW as ゲートウェイECU\n  PC-&gt;&gt;GW: Vehicle Discovery (UDP 13400 ブロードキャスト)\n  GW-&gt;&gt;PC: Vehicle Announcement (IP + 論理アドレス)\n  PC-&gt;&gt;GW: Routing Activation Request (TCP 13400)\n  GW-&gt;&gt;PC: Routing Activation Response (0x10: 成功)\n  PC-&gt;&gt;GW: UDS DiagnosticSessionControl (10 03)\n  GW-&gt;&gt;PC: PositiveResponse (50 03)\n</code></pre>",
 "prereq_full": [
 {
@@ -2251,7 +2673,7 @@
 "cli",
 "pcap"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>やること</h2>\n<p>Linux搭載のECUやゲートウェイECU上で tcpdump を使い、車載Ethernetパケットをキャプチャしてpcapファイルに保存する手順を説明します。</p>\n<h2>前提条件</h2>\n<ul>\n<li>対象ECUにSSHまたはシリアルコンソールでログイン可能</li>\n<li>ECU上にtcpdump(またはbusybox tcpdump)がインストール済み</li>\n<li>解析用PCとのファイル転送手段(SCP/USB)</li>\n</ul>\n<h2>ステップ1: インターフェース確認</h2>\n<pre><code class=\"language-bash\"># 利用可能なネットワークインターフェースを確認\nip link show\n# または\nifconfig -a\n</code></pre>\n<p>車載EthernetはECUによって <code>eth0</code>、<code>eth1</code>、<code>br0</code> などになっています。</p>\n<h2>ステップ2: 基本キャプチャ</h2>\n<pre><code class=\"language-bash\"># eth0 の全パケットを capture.pcap に保存\ntcpdump -i eth0 -w /tmp/capture.pcap\n\n# ファイルサイズ上限付き (100MB)\ntcpdump -i eth0 -w /tmp/capture.pcap -C 100\n\n# 指定パケット数でキャプチャ停止\ntcpdump -i eth0 -w /tmp/capture.pcap -c 10000\n</code></pre>\n<h2>ステップ3: フィルタ付きキャプチャ</h2>\n<pre><code class=\"language-bash\"># SOME/IP-SD のみ (UDP 30490)\ntcpdump -i eth0 -w /tmp/someip_sd.pcap 'udp port 30490'\n\n# DoIP のみ (TCP/UDP 13400)\ntcpdump -i eth0 -w /tmp/doip.pcap 'port 13400'\n\n# 特定IPとの通信のみ\ntcpdump -i eth0 -w /tmp/ecu.pcap 'host 192.168.1.10'\n\n# ICMPのみ (疎通確認)\ntcpdump -i eth0 -w /tmp/icmp.pcap 'icmp'\n</code></pre>\n<h2>ステップ4: キャプチャファイルをPCへ転送</h2>\n<pre><code class=\"language-bash\"># SCP でPCへコピー (PC側から実行)\nscp user@192.168.1.50:/tmp/capture.pcap ./\n\n# ECU側から送る場合\nscp /tmp/capture.pcap analyst@192.168.0.100:/captures/\n</code></pre>\n<h2>ステップ5: Wiresharkで開く</h2>\n<p>転送した <code>.pcap</code> ファイルをWiresharkで開いて解析します。<br />\n[[howto<strong>-w</strong>ireshark-someip]] の手順でSOME/IPフィルタをかけると効率的です。</p>\n<h2>バックグラウンドでの長時間キャプチャ</h2>\n<pre><code class=\"language-bash\"># nohupで端末切断後も継続\nnohup tcpdump -i eth0 -w /tmp/long_cap.pcap &amp;\n\n# 停止するとき\nkill $(pgrep tcpdump)\n</code></pre>\n<h2>関連用語</h2>\n<p>コマンドの詳細は <a class=\"term-link\" data-slug=\"tcpdump\" href=\"/glossary/tcpdump\">tcpdump</a>、キャプチャファイルの形式は <a class=\"term-link\" data-slug=\"pcap\" href=\"/glossary/pcap\">PCAP</a>、高度なフィルタは <a class=\"term-link\" data-slug=\"tshark\" href=\"/glossary/tshark\">tshark</a> を参照。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  NW[&quot;車載Ethernet\n(eth0)&quot;] --&gt;|&quot;tcpdump -i eth0 -w cap.pcap&quot;| ECU[&quot;組み込みECU\n(Linux)&quot;]\n  ECU --&gt;|SCP転送| PC[&quot;診断PC&quot;]\n  PC --&gt; WS[&quot;Wireshark\n/ tshark 解析&quot;]\n</code></pre>",
 "prereq_full": [
 {
@@ -2305,7 +2727,7 @@
 "bus",
 "realtime"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>概要</h2>\n<p>FlexRayは、時分割多重(<strong>TDMA</strong>)方式を採用した高速・高信頼性の車載バスです。最大10 Mbpsの速度と、<strong>決定論的</strong>タイミング(遅延上限が保証)が特徴です。冗長チャネル構成によりフォールトトレランスも実現します。</p>\n<h2>なぜ必要か</h2>\n<p>ステアリングやブレーキといった機能安全(ASIL-D)が要求される制御では、「このメッセージは必ず○ms以内に届く」という保証が必要です。CANはCSMA/CAバスなので遅延が確率的ですが、FlexRayの<strong>TDMA</strong>は各ノードに固定タイムスロットを割り当てるため遅延が上限保証されます。</p>\n<h2>仕組み</h2>\n<p>通信サイクルは<strong>静的セグメント</strong>(<strong>TDMA</strong>)と<strong>動的セグメント</strong>(FTDMA)に分かれます。安全クリティカルなデータは静的セグメントで確実に送り、優先度の低いデータは動的セグメントで柔軟に送ります。</p>\n<h2>自動運転での利用例</h2>\n<p>電子式パワーステアリング(EPS)やESCなどの制御ECUはFlexRayで連携し、最悪応答時間を保証します。ただし10 Mbpsではセンサの大容量データに不足するため、カメラ・LiDARはEthernetに移行しています。</p>\n<h2>関連用語</h2>\n<p>Ethernet上でFlexRayと同等の時刻保証を実現するのが <a class=\"term-link\" data-slug=\"tsn\" href=\"/glossary/tsn\">TSN(Time-Sensitive Networking)</a> です。速度向上版CANとして <a class=\"term-link\" data-slug=\"can-fd\" href=\"/glossary/can-fd\">CAN FD</a> も並行して使われます。</p>\n<h2>次に学ぶべき内容</h2>\n<p>Ethernet上でリアルタイム性を保証する <a class=\"term-link\" data-slug=\"tsn\" href=\"/glossary/tsn\">TSN(Time-Sensitive Networking)</a> を学びましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  subgraph Cycle[&quot;FlexRay 通信サイクル&quot;]\n    ST[&quot;静的セグメント\n(TDMA固定スロット)\n安全クリティカルデータ&quot;] --- DY[&quot;動的セグメント\n(FTDMA)\n優先度付きデータ&quot;]\n  end\n  EPS[&quot;電子式パワー\nステアリング&quot;] --&gt;|&quot;スロット固定\n遅延上限保証&quot;| ST\n  ESC[&quot;ESC&quot;] --&gt;|&quot;スロット固定&quot;| ST\n  BCM[&quot;ボディ制御ECU&quot;] --&gt;|&quot;空きスロット使用&quot;| DY\n</code></pre>",
 "prereq_full": [],
 "related_full": [
@@ -2354,7 +2776,7 @@
 ],
 "category": "PCAP",
 "difficulty": "中級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>概要</h2>\n<p>PCAP(Packet Capture)は、キャプチャしたパケットを保存するファイル形式です(拡張子 <code>.pcap</code> / <code>.**pcapng**</code>)。各パケットの<strong>タイムスタンプ</strong>と生データが記録され、後から繰り返し解析できます。</p>\n<h2>なぜ必要か</h2>\n<p>通信は一瞬で流れ去ります。PCAPに保存しておけば、現場で取得したデータを持ち帰って詳細解析したり、チームで共有したり、回帰テストに使ったりできます。本アプリの「PCAP解析」機能もこの形式を読み込みます。</p>\n<h2>自動運転での利用例</h2>\n<p>車両テストで取得した車載Ethernetのキャプチャを <code>.pcap</code> で保存し、SOME/IPの通信シーケンスやプロトコル構成をオフラインで解析します。本アプリにアップロードすると、使用プロトコルを抽出して関連学習記事を推薦します。</p>\n<h2>関連用語</h2>\n<p>キャプチャに使うツールが <a class=\"term-link\" data-slug=\"wireshark\" href=\"/glossary/wireshark\">Wireshark</a>、中身として現れるのが <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> / <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a> / <a class=\"term-link\" data-slug=\"tcp\" href=\"/glossary/tcp\">TCP</a> / <a class=\"term-link\" data-slug=\"udp\" href=\"/glossary/udp\">UDP</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>ここから車載特有の世界へ。まずは <a class=\"term-link\" data-slug=\"can\" href=\"/glossary/can\">CAN</a> を学びましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  ETH[&quot;車載Ethernet&quot;] --&gt;|パケットキャプチャ| LOGGER[&quot;診断ロガーECU&quot;]\n  LOGGER --&gt;|pcapファイル保存| FILE[&quot;vehicle_traffic.pcap&quot;]\n  subgraph Structure[&quot;pcapファイル構造&quot;]\n    GH[&quot;グローバルヘッダ&quot;] --- PH[&quot;パケットヘッダ×N&quot;] --- DATA[&quot;パケットデータ×N&quot;]\n  end\n  FILE --&gt; WS[&quot;Wireshark / tshark\nで開いて解析&quot;]\n</code></pre>",
 "prereq_full": [
 {
@@ -2408,7 +2830,7 @@
 "timing",
 "automotive"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>概要</h2>\n<p>PTP(Precision Time Protocol、<strong>IEEE 1588</strong>)は、ネットワーク上の複数ノードの時刻をナノ秒精度で同期するプロトコルです。<strong>グランドマスター</strong>クロックが基準時刻を発信し、スレーブノードが遅延を計測しながら追従します。車載向けには <strong>gPTP</strong>(IEEE 802.1AS)が使われます。</p>\n<h2>なぜ必要か</h2>\n<p>センサフュージョンでは、カメラ・LiDAR・レーダーの各フレームが同一時刻基準で記録されている必要があります。各ECUのクロックがバラバラだと、異なるセンサのデータを「同時刻のスナップショット」として合成できず、物体位置の計算が狂います。</p>\n<h2>仕組み</h2>\n<ol>\n<li>マスターが <strong>Sync</strong> メッセージを送信(送信タイムスタンプ t1 を付与)</li>\n<li>スレーブが受信タイムスタンプ t2 を記録</li>\n<li>スレーブが <strong>Delay_Req</strong> を送信、マスターが t3 を記録し Delay_Resp で返送</li>\n<li>スレーブが t4 を記録し、4つのタイムスタンプからオフセットと遅延を計算して補正</li>\n</ol>\n<h2>自動運転での利用例</h2>\n<p>ADAS Domain Controller が <strong>gPTP</strong> <strong>グランドマスター</strong>となり、接続されたカメラ・LiDAR・レーダーの全ECUを<strong>サブマイクロ秒</strong>精度で同期します。これによりセンサフュージョンアルゴリズムへ渡すデータの時刻整合性が保証されます。<a class=\"term-link\" data-slug=\"tsn\" href=\"/glossary/tsn\">TSN(Time-Sensitive Networking)</a> の時刻スケジューリングも gPTP を前提とします。</p>\n<h2>関連用語</h2>\n<p><a class=\"term-link\" data-slug=\"tsn\" href=\"/glossary/tsn\">TSN(Time-Sensitive Networking)</a> は<strong>gPTP</strong>による時刻同期を基盤として動作します。同期パケットの転送には <a class=\"term-link\" data-slug=\"udp\" href=\"/glossary/udp\">UDP</a> / <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> が使われます。</p>\n<h2>次に学ぶべき内容</h2>\n<p>時刻同期を活用したリアルタイムスケジューリング、<a class=\"term-link\" data-slug=\"tsn\" href=\"/glossary/tsn\">TSN(Time-Sensitive Networking)</a> を学びましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">sequenceDiagram\n  participant M as グランドマスター (ADASコントローラ)\n  participant S as スレーブECU (カメラ)\n  M-&gt;&gt;S: Sync (t1タイムスタンプ付き)\n  Note over S: t2 = 受信時刻を記録\n  S-&gt;&gt;M: Delay_Req (t3タイムスタンプ)\n  M-&gt;&gt;S: Delay_Resp (t3を返送)\n  Note over S: t4 = 受信時刻&lt;br/&gt;オフセット = ((t2-t1)-(t4-t3))/2&lt;br/&gt;サブマイクロ秒精度で補正\n</code></pre>",
 "prereq_full": [],
 "related_full": [
@@ -2434,6 +2856,58 @@
 "completed": false,
 "favorite": false
 },
+"seaborn": {
+"slug": "seaborn",
+"title": "Seaborn（統計可視化）",
+"level": 3,
+"category": "Python",
+"related": [
+"matplotlib",
+"pandas",
+"data-analysis"
+],
+"next": [
+"data-analysis"
+],
+"tags": [
+"python",
+"seaborn",
+"visualization",
+"statistics",
+"data-science"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>SeabornはMatplotlibをベースにした統計可視化ライブラリです。Pandasの <code>DataFrame</code> を直接受け取り、複雑な統計グラフを少ないコードで美しく描けます。箱ひげ図・バイオリンプロット・ペアプロット・ヒートマップなど、データの分布や相関を直感的に把握する場面で力を発揮します。</p>\n<h2>なぜ必要か</h2>\n<p>Matplotlibでは散布図に色分け・回帰直線・信頼区間を追加しようとすると数十行になりますが、Seabornなら <code>sns.lmplot()</code> の1行で済みます。「データを素早く多角的に見る」EDA（探索的分析）フェーズでは、Seabornのほうが圧倒的に高速です。</p>\n<h2>基本セットアップ</h2>\n<pre><code class=\"language-python\">import seaborn as sns\nimport matplotlib.pyplot as plt\nimport pandas as pd\nimport numpy as np\n\n# テーマ設定\nsns.set_theme(style=&quot;whitegrid&quot;, palette=&quot;muted&quot;, font_scale=1.1)\n\n# 組み込みデータセットを使って動作確認\ntips = sns.load_dataset(&quot;tips&quot;)    # レストランのチップデータ\niris = sns.load_dataset(&quot;iris&quot;)    # アヤメの計測データ\nprint(tips.head(3))\n</code></pre>\n<h2>分布を見る — histplot / kdeplot / rugplot</h2>\n<pre><code class=\"language-python\">fig, axes = plt.subplots(1, 3, figsize=(14, 4))\n\n# ヒストグラム + KDE（密度曲線）\nsns.histplot(data=tips, x=&quot;total_bill&quot;, kde=True,\n             bins=20, color=&quot;steelblue&quot;, ax=axes[0])\naxes[0].set_title(&quot;ヒストグラム + KDE&quot;)\n\n# KDE のみ（グループ別）\nsns.kdeplot(data=tips, x=&quot;tip&quot;, hue=&quot;sex&quot;,\n            fill=True, alpha=0.4, ax=axes[1])\naxes[1].set_title(&quot;KDE（性別比較）&quot;)\n\n# rug plot（実データの分布）\nsns.histplot(data=tips, x=&quot;total_bill&quot;, kde=True, ax=axes[2])\nsns.rugplot(data=tips, x=&quot;total_bill&quot;, ax=axes[2], color=&quot;red&quot;, height=0.05)\naxes[2].set_title(&quot;ヒストグラム + rug&quot;)\n\nplt.tight_layout()\nplt.show()\n</code></pre>\n<h2>カテゴリ比較 — boxplot / violinplot / barplot</h2>\n<pre><code class=\"language-python\">fig, axes = plt.subplots(1, 3, figsize=(15, 5))\n\n# 箱ひげ図（中央値・四分位・外れ値）\nsns.boxplot(data=tips, x=&quot;day&quot;, y=&quot;total_bill&quot;,\n            hue=&quot;sex&quot;, palette=&quot;pastel&quot;, ax=axes[0])\naxes[0].set_title(&quot;箱ひげ図&quot;)\n\n# バイオリンプロット（分布の形状も見える）\nsns.violinplot(data=tips, x=&quot;day&quot;, y=&quot;tip&quot;,\n               inner=&quot;quartile&quot;, palette=&quot;muted&quot;, ax=axes[1])\naxes[1].set_title(&quot;バイオリンプロット&quot;)\n\n# 棒グラフ（平均 + 95%CI）\nsns.barplot(data=tips, x=&quot;day&quot;, y=&quot;total_bill&quot;,\n            hue=&quot;sex&quot;, palette=&quot;Set2&quot;, ax=axes[2])\naxes[2].set_title(&quot;平均 + 信頼区間&quot;)\n\nplt.tight_layout()\nplt.show()\n</code></pre>\n<h2>散布図と回帰 — scatterplot / lmplot / regplot</h2>\n<pre><code class=\"language-python\"># 基本の散布図（hue で色分け、size で点の大きさを変える）\nfig, axes = plt.subplots(1, 2, figsize=(12, 5))\n\nsns.scatterplot(data=tips, x=&quot;total_bill&quot;, y=&quot;tip&quot;,\n                hue=&quot;sex&quot;, size=&quot;size&quot;, sizes=(40, 200),\n                alpha=0.7, ax=axes[0])\naxes[0].set_title(&quot;散布図（性別・人数）&quot;)\n\n# 回帰直線 + 信頼区間を自動で描画\nsns.regplot(data=tips, x=&quot;total_bill&quot;, y=&quot;tip&quot;,\n            scatter_kws={&quot;alpha&quot;: 0.4}, ax=axes[1])\naxes[1].set_title(&quot;散布図 + 回帰直線&quot;)\n\nplt.tight_layout()\nplt.show()\n</code></pre>\n<h2>相関行列 — heatmap</h2>\n<pre><code class=\"language-python\"># 数値列の相関係数を計算\ncorr = tips[[&quot;total_bill&quot;, &quot;tip&quot;, &quot;size&quot;]].corr()\n\nfig, ax = plt.subplots(figsize=(6, 5))\nsns.heatmap(\n    corr,\n    annot=True,           # 数値を表示\n    fmt=&quot;.2f&quot;,\n    cmap=&quot;RdBu_r&quot;,        # 赤（正）→白→青（負）\n    vmin=-1, vmax=1,\n    square=True,\n    linewidths=0.5,\n    ax=ax,\n)\nax.set_title(&quot;相関係数マトリクス&quot;)\nplt.tight_layout()\nplt.show()\n</code></pre>\n<h2>ペアプロット — pairplot</h2>\n<pre><code class=\"language-python\"># 全数値列の組み合わせを一気に可視化（EDAで最初に使う）\ng = sns.pairplot(\n    iris,\n    hue=&quot;species&quot;,          # 種ごとに色分け\n    diag_kind=&quot;kde&quot;,        # 対角線はKDE（&quot;hist&quot;でも可）\n    plot_kws={&quot;alpha&quot;: 0.6},\n)\ng.figure.suptitle(&quot;Iris データのペアプロット&quot;, y=1.02)\nplt.show()\n</code></pre>\n<h2>クラスタリングの可視化 — clustermap</h2>\n<pre><code class=\"language-python\"># 行と列をクラスタリングして並べ替えるヒートマップ\npivot = tips.pivot_table(\n    index=&quot;day&quot;, columns=&quot;time&quot;, values=&quot;total_bill&quot;, aggfunc=&quot;mean&quot;\n)\nsns.clustermap(pivot, annot=True, fmt=&quot;.1f&quot;,\n               cmap=&quot;YlOrRd&quot;, figsize=(6, 5))\nplt.show()\n</code></pre>\n<h2>よく使う関数の整理</h2>\n<pre><code class=\"language-mermaid\">graph TD\n  A[目的] --&gt; B{1変数の分布?}\n  B --&gt;|Yes| C[histplot / kdeplot]\n  A --&gt; D{カテゴリ比較?}\n  D --&gt;|分布の形| E[violinplot]\n  D --&gt;|要約統計| F[boxplot / barplot]\n  A --&gt; G{2変数の関係?}\n  G --&gt;|相関| H[scatterplot / regplot]\n  G --&gt;|全ペア| I[pairplot]\n  A --&gt; J{行列・相関?}\n  J --&gt;|Yes| K[heatmap / clustermap]\n</code></pre>\n<h2>次に学ぶべき内容</h2>\n<p>可視化スキルを活かして、データ全体を体系的に調べる <a class=\"term-link\" data-slug=\"data-analysis\" href=\"/glossary/data-analysis\">データ分析の流れ（EDA）</a> へ進みましょう。</p>",
+"prereq_full": [
+{
+"slug": "matplotlib",
+"title": "Matplotlib（グラフ描画）"
+}
+],
+"related_full": [
+{
+"slug": "matplotlib",
+"title": "Matplotlib（グラフ描画）"
+},
+{
+"slug": "pandas",
+"title": "Pandas（DataFrame・データ操作）"
+},
+{
+"slug": "data-analysis",
+"title": "データ分析の流れ（EDA）"
+}
+],
+"next_full": [
+{
+"slug": "data-analysis",
+"title": "データ分析の流れ（EDA）"
+}
+],
+"completed": false,
+"favorite": false
+},
 "socket": {
 "slug": "socket",
 "title": "Socket",
@@ -2452,7 +2926,7 @@
 ],
 "category": "PCAP",
 "difficulty": "中級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>概要</h2>\n<p><strong>ソケット</strong>は、IPアドレスとポート番号の組で表される「通信のエンドポイント(出入口)」であり、プログラムがネットワーク通信を行うためのAPIでもあります。アプリはソケットを開いてデータを読み書きします。</p>\n<h2>なぜ必要か</h2>\n<p>OSやネットワークの複雑さを隠し、アプリ開発者が「ファイルの読み書き」に近い感覚で通信を扱えるようにするのが<strong>ソケット</strong>です。TCP/UDP通信を実装する際の基本単位です。</p>\n<h2>自動運転での利用例</h2>\n<p>ECU上のアプリはUDP/TCP<strong>ソケット</strong>を開いて他ECUと通信します。SOME/IPミドルウェアも内部ではソケットを使ってメッセージを送受信しています。</p>\n<h2>関連用語</h2>\n<p><strong>ソケット</strong>は <a class=\"term-link\" data-slug=\"port\" href=\"/glossary/port\">Port</a> と IP の組で表され、<a class=\"term-link\" data-slug=\"tcp\" href=\"/glossary/tcp\">TCP</a> / <a class=\"term-link\" data-slug=\"udp\" href=\"/glossary/udp\">UDP</a> のどちらでも使えます。通信の中身を観測するには <a class=\"term-link\" data-slug=\"wireshark\" href=\"/glossary/wireshark\">Wireshark</a> を使います。</p>\n<h2>次に学ぶべき内容</h2>\n<p>通信を実際に「見る」ためのツール、<a class=\"term-link\" data-slug=\"wireshark\" href=\"/glossary/wireshark\">Wireshark</a> へ進みましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">sequenceDiagram\n  participant App as DoIPアプリ (クライアント)\n  participant OS as OS ソケット層\n  participant ECU as ゲートウェイECU\n  App-&gt;&gt;OS: socket() + connect(192.168.1.1:13400)\n  OS-&gt;&gt;ECU: TCP SYN\n  ECU-&gt;&gt;OS: SYN-ACK\n  OS-&gt;&gt;App: 接続完了\n  App-&gt;&gt;OS: send(UDSリクエスト)\n  OS-&gt;&gt;ECU: TCP DATA\n  ECU-&gt;&gt;OS: TCP DATA (UDS応答)\n  OS-&gt;&gt;App: recv() → 応答データ\n</code></pre>",
 "prereq_full": [
 {
@@ -2511,7 +2985,7 @@
 "automotive",
 "iso14229"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>概要</h2>\n<p>UDS(Unified Diagnostic Services、ISO 14229)は、ECUを診断・プログラムするための標準プロトコルです。「<strong>サービスID</strong>」と呼ばれる命令コードで、故障コード(DTC)の読み出し、メモリへの書き込み、ECUのリセットなどを行います。</p>\n<h2>なぜ必要か</h2>\n<p>車両には数十〜百を超えるECUが搭載されており、それぞれのメーカー独自プロトコルでは診断機器の対応コストが爆発します。UDSは共通言語として、工場・販売店・開発者が同じ手順でECUを診断できる仕組みを提供します。</p>\n<h2>主なサービス</h2>\n<ul>\n<li><strong>0x10</strong> DiagnosticSessionControl — <strong>診断セッション</strong>の切り替え(デフォルト/拡張/プログラミング)</li>\n<li><strong>0x11</strong> ECUReset — ECUのリセット</li>\n<li><strong>0x19</strong> ReadDTCInformation — 故障コードの読み出し</li>\n<li><strong>0x22</strong> ReadDataByIdentifier(DID) — センサ値・設定値の読み出し</li>\n<li><strong>0x2E</strong> WriteDataByIdentifier — 設定値の書き込み</li>\n<li><strong>0x34/0x36/0x37</strong> RequestDownload/TransferData/RequestTransferExit — ファームウェア書き換え</li>\n</ul>\n<h2>自動運転での利用例</h2>\n<p>ADAS ECUの開発中、カメラやLiDARのキャリブレーションパラメータをUDS 0x2Eで書き込みます。また走行テスト後にADAS故障コードをUDS <strong>0x19</strong>で読み出し、誤検知や通信エラーの原因を特定します。<a class=\"term-link\" data-slug=\"doip\" href=\"/glossary/doip\">DoIP(Diagnostics over IP)</a> を使えばEthernetケーブル1本でUDS診断が可能です。</p>\n<h2>関連用語</h2>\n<p>UDSの転送路として <a class=\"term-link\" data-slug=\"doip\" href=\"/glossary/doip\">DoIP(Diagnostics over IP)</a>(Ethernet経由)や <a class=\"term-link\" data-slug=\"can\" href=\"/glossary/can\">CAN</a> が使われます。TCP/IP上の接続管理には <a class=\"term-link\" data-slug=\"socket\" href=\"/glossary/socket\">Socket</a> が必要です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>EthernetでUDSを運ぶ仕組み、<a class=\"term-link\" data-slug=\"doip\" href=\"/glossary/doip\">DoIP(Diagnostics over IP)</a> を学びましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">sequenceDiagram\n  participant PC as 診断ツール\n  participant ECU as ターゲットECU\n  PC-&gt;&gt;ECU: 10 03 (ExtendedDiagnosticSession)\n  ECU-&gt;&gt;PC: 50 03 (PositiveResponse)\n  PC-&gt;&gt;ECU: 19 02 08 (ReadDTC, confirmedDTC)\n  ECU-&gt;&gt;PC: 59 02 08 [DTC1][DTC2]... (故障コード一覧)\n  PC-&gt;&gt;ECU: 22 F1 90 (ReadDID: VIN番号)\n  ECU-&gt;&gt;PC: 62 F1 90 [17バイトVIN]\n</code></pre>",
 "prereq_full": [
 {
@@ -2567,7 +3041,7 @@
 "uds",
 "automotive"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>やること</h2>\n<p>UDS (ISO 14229) の <code>ReadDTCInformation</code> サービス(0x19)を使って、ECUに記録された故障コード(DTC: Diagnostic Trouble Code)を読み出す手順を説明します。</p>\n<h2>前提条件</h2>\n<ul>\n<li>DoIP または CAN 経由でECUへ接続済み(<a class=\"term-link\" data-slug=\"howto-doip-connect\" href=\"/glossary/howto-doip-connect\">DoIP診断接続の手順</a> 参照)</li>\n<li>ECUがデフォルトまたは<strong>拡張診断セッション</strong>にある</li>\n</ul>\n<h2>DTCとは</h2>\n<p>DTCは <code>P0123</code> のような5桁コードで、故障内容を示します：\n- <strong>P</strong> = Powertrain / <strong>C</strong> = Chassis / <strong>B</strong> = Body / <strong>U</strong> = Network\n- <code>P0123</code> = Throttle Position Sensor / Pedal Position Sensor A Circuit High</p>\n<h2>ステップ1: 診断セッション切り替え</h2>\n<p>まず<strong>拡張診断セッション</strong>(0x03)に切り替えます：</p>\n<pre><code>送信: 10 03         (DiagnosticSessionControl, ExtendedDiagnosticSession)\n応答: 50 03 00 19 01 F4   (PositiveResponse)\n</code></pre>\n<h2>ステップ2: 全DTCを読む (subfunction 0x02)</h2>\n<pre><code>送信: 19 02 08\n      ↑  ↑  ↑\n      |  |  StatusMask: 0x08 = confirmedDTC\n      |  subfunction: 0x02 = reportDTCByStatusMask\n      Service ID: 0x19\n\n応答: 59 02 08 [DTCRecord...] [DTCRecord...]\n      各DTCRecord = 3バイトDTCコード + 1バイトStatus\n</code></pre>\n<p>Pythonでのバイト列例：</p>\n<pre><code class=\"language-python\">request = bytes([0x19, 0x02, 0x08])\nresponse = send_uds(request)\n\n# レスポンスを解析\ndtc_list = response[3:]   # 先頭3バイト(59 02 08)を除く\nfor i in range(0, len(dtc_list), 4):\n    dtc = dtc_list[i:i+3].hex().upper()\n    status = dtc_list[i+3]\n    print(f&quot;DTC: {dtc}, Status: {status:#04x}&quot;)\n</code></pre>\n<h2>ステップ3: DTCの件数だけ確認 (subfunction 0x01)</h2>\n<pre><code>送信: 19 01 08     (reportNumberOfDTCByStatusMask)\n応答: 59 01 08 FF 00 05   → DTCが5件\n</code></pre>\n<h2>ステップ4: スナップショットデータを読む</h2>\n<p>特定のDTCが発生した瞬間の車両状態を取得：</p>\n<pre><code>送信: 19 04 [DTC3バイト] FF   (reportDTCSnapshotRecordByDTCNumber)\n応答: DTC発生時の各センサ値・車速・電圧などのDID値\n</code></pre>\n<h2>ステップ5: DTCをクリアする</h2>\n<pre><code>送信: 14 FF FF FF   (ClearDiagnosticInformation, 全DTC対象)\n応答: 54            (PositiveResponse)\n</code></pre>\n<h2>注意</h2>\n<p>量産車のECUではセキュリティアクセス(0x27)認証が必要なサービスがあります。認証なしで<strong>0x14</strong>を送ると NRC <code>0x33</code>(SecurityAccessDenied) が返ります。</p>\n<h2>関連用語</h2>\n<p>プロトコルの概要は <a class=\"term-link\" data-slug=\"uds\" href=\"/glossary/uds\">UDS (統合診断サービス)</a>、接続手順は <a class=\"term-link\" data-slug=\"howto-doip-connect\" href=\"/glossary/howto-doip-connect\">DoIP診断接続の手順</a>、CANバス経由の場合は <a class=\"term-link\" data-slug=\"can\" href=\"/glossary/can\">CAN</a> を参照。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">sequenceDiagram\n  participant PC as 診断ツール\n  participant ECU as ゲートウェイECU\n  PC-&gt;&gt;ECU: 10 03 (拡張診断セッション)\n  ECU-&gt;&gt;PC: 50 03 ✓\n  PC-&gt;&gt;ECU: 19 01 08 (DTC件数確認)\n  ECU-&gt;&gt;PC: 59 01 08 FF 00 05 (5件)\n  PC-&gt;&gt;ECU: 19 02 08 (全DTC読み出し)\n  ECU-&gt;&gt;PC: 59 02 08 [DTC×5]\n  PC-&gt;&gt;ECU: 14 FF FF FF (DTC全クリア)\n  ECU-&gt;&gt;PC: 54 ✓\n</code></pre>",
 "prereq_full": [
 {
@@ -2619,7 +3093,7 @@
 ],
 "category": "PCAP",
 "difficulty": "中級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>概要</h2>\n<p>Wiresharkは、ネットワークを流れるパケットをキャプチャして可視化する定番の解析ツールです。各パケットを <a class=\"term-link\" data-slug=\"osi\" href=\"/glossary/osi\">OSI参照モデル</a> の層ごとに分解し、Ethernet/IP/TCP/UDPの中身を人間が読める形で表示します。</p>\n<h2>なぜ必要か</h2>\n<p>通信トラブルは「実際に何が流れているか」を見ないと解決できません。Wiresharkはフィルタリングや統計機能で、膨大なパケットから問題を絞り込めます。学習用にも、教科書の知識を実物で確認できる強力な手段です。</p>\n<h2>自動運転での利用例</h2>\n<p>車載Ethernetの開発・検証では、SOME/IPやDoIPの通信が仕様通りか、遅延や再送が無いかをWiresharkで確認します。キャプチャ結果は <a class=\"term-link\" data-slug=\"pcap\" href=\"/glossary/pcap\">PCAP</a> ファイルとして保存・共有されます。</p>\n<h2>関連用語</h2>\n<p>キャプチャ結果の保存形式が <a class=\"term-link\" data-slug=\"pcap\" href=\"/glossary/pcap\">PCAP</a>、解析対象の最下層が <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> と <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>キャプチャの保存形式であり、本アプリで解析できる <a class=\"term-link\" data-slug=\"pcap\" href=\"/glossary/pcap\">PCAP</a> を学びましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  ECU[&quot;車載ゲートウェイECU&quot;] --&gt;|Ethernet| PC[&quot;Wireshark\n(診断ワークステーション)&quot;]\n  PC --&gt; PL[&quot;パケット一覧\nDoIP / SOME/IP / CAN&quot;]\n  PL --&gt; PD[&quot;パケット詳細\nプロトコル解析&quot;]\n  PD --&gt; PB[&quot;バイト列\n16進数生データ&quot;]\n</code></pre>",
 "prereq_full": [
 {
@@ -2670,7 +3144,7 @@
 "tool",
 "some-ip"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>やること</h2>\n<p>Wiresharkを使って、車載EthernetのSOME/IPパケットを可視化・解析する手順を説明します。</p>\n<h2>前提条件</h2>\n<ul>\n<li>Wireshark 4.x インストール済み</li>\n<li>解析対象のpcapファイル、またはEthernetインターフェースへの接続</li>\n</ul>\n<h2>ステップ1: SOME/IP ディセクタを有効化</h2>\n<p>Wiresharkは標準でSOME/IPに対応しています。</p>\n<ol>\n<li><code>Edit</code> → <code>Preferences</code> → <code>Protocols</code> → <code>SOMEIP</code> を開く</li>\n<li>UDPポート <strong>30490</strong>（SOME/IP-SD）と任意のサービスポートを登録</li>\n<li><code>SOMEIP-SD</code> も同様に有効化</li>\n</ol>\n<h2>ステップ2: キャプチャ or ファイルを開く</h2>\n<pre><code># pcapファイルを開く場合\nFile → Open → vehicle_capture.pcap\n\n# ライブキャプチャの場合\nCapture → Interfaces → 対象インターフェースを選択 → Start\n</code></pre>\n<h2>ステップ3: SOME/IP でフィルタ</h2>\n<p>Wireshark のフィルタバーに以下を入力：</p>\n<pre><code>someip\n</code></pre>\n<p>SD(サービスディスカバリ)だけ見たい場合：</p>\n<pre><code>someip.messageid == 0xffff8100\n</code></pre>\n<p>特定のService IDで絞り込む：</p>\n<pre><code>someip.serviceid == 0x1234\n</code></pre>\n<h2>ステップ4: パケット詳細を読む</h2>\n<p>パケットを選択すると下部に詳細が展開されます：</p>\n<ul>\n<li><strong>Service ID</strong> — どのサービスか</li>\n<li><strong>Method ID</strong> — メソッド呼び出し(0x0xxx) or イベント(0x8xxx)</li>\n<li><strong>Message Type</strong> — REQUEST / RESPONSE / NOTIFICATION</li>\n<li><strong>Payload</strong> — 実データ(16進数 + 型定義があれば自動デコード)</li>\n</ul>\n<h2>ステップ5: 統計を確認</h2>\n<p><code>Statistics</code> → <code>Endpoints</code> でECUごとの通信量を把握。<br />\n<code>Statistics</code> → <code>**IO Graph**</code> でSOME/IPトラフィックの時系列変化を確認できます。</p>\n<h2>よくあるトラブル</h2>\n<table>\n<thead>\n<tr>\n<th>症状</th>\n<th>確認ポイント</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>パケットが <code>UDP</code> のまま</td>\n<td>ポート設定が未登録</td>\n</tr>\n<tr>\n<td>Payloadが読めない</td>\n<td>SOME/IPの型定義(FIBEX/arxml)をインポートしていない</td>\n</tr>\n<tr>\n<td>SDパケットだけ見える</td>\n<td>サービスが起動していない — ECUの状態確認</td>\n</tr>\n</tbody>\n</table>\n<h2>関連用語</h2>\n<p><a class=\"term-link\" data-slug=\"wireshark\" href=\"/glossary/wireshark\">Wireshark</a> の基本操作、<a class=\"term-link\" data-slug=\"some-ip\" href=\"/glossary/some-ip\">SOME/IP</a> のプロトコル仕様、<a class=\"term-link\" data-slug=\"pcap\" href=\"/glossary/pcap\">PCAP</a> ファイルの扱い方。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  PCAP[&quot;vehicle.pcap\nまたはLiveキャプチャ&quot;] --&gt; WS[&quot;Wireshark&quot;]\n  WS --&gt;|&quot;フィルタ: someip&quot;| LIST[&quot;SOME/IPパケット一覧&quot;]\n  LIST --&gt; DET[&quot;パケット詳細\nService ID / Method ID&quot;]\n  DET --&gt; STATS[&quot;Statistics\n→ IO Graph / Endpoints&quot;]\n</code></pre>",
 "prereq_full": [],
 "related_full": [
@@ -2720,7 +3194,7 @@
 "automotive",
 "calibration"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>概要</h2>\n<p>XCP(Universal Measurement and Calibration Protocol、ASAM MCD-1 XCP)は、ECU内部の変数をリアルタイムに測定・書き換えするためのプロトコルです。開発中のECUに対してキャリブレーションツール(INCA、CANape等)から接続し、センサゲイン・制御パラメータをオンザフライで調整します。</p>\n<h2>なぜ必要か</h2>\n<p>ADAS・エンジン制御のパラメータは数千〜数万に及び、都度ファームウェアを焼き直していたら開発期間が爆発します。XCPは実行中のECUメモリに直接アクセスし、ループを回しながらパラメータを調整できるため、HILシミュレーションや試験車両での開発効率を劇的に向上させます。</p>\n<h2>仕組み</h2>\n<p>マスター(PC側ツール)がスレーブ(ECU)に CONNECT コマンドを送り、セッションを確立します。その後：\n- <strong>DAQ (Data Acquisition)</strong> — ECU変数を一定周期でPCへ送信\n- <strong>STIM (Stimulation)</strong> — PC側からECUに変数を書き込む\n- <strong>SET_CAL_PAGE / COPY_CAL_PAGE</strong> — キャリブレーションページの切り替え</p>\n<h2>転送路</h2>\n<p>XCPはトランスポート層を選ばない設計で、CAN(XCP on CAN)、Ethernet(XCP on UDP/TCP)、USB、FlexRayに対応します。近年の高性能ECUではXCP on Ethernetが主流です。</p>\n<h2>自動運転での利用例</h2>\n<p>ADAS Domain Controllerの物体認識閾値・センサフュージョン重みをXCPで実車走行中にリアルタイム調整し、ログを取りながら最適パラメータを探索します。<a class=\"term-link\" data-slug=\"uds\" href=\"/glossary/uds\">UDS (統合診断サービス)</a> が量産診断向けなのに対し、XCPは開発・テスト工程専用です。</p>\n<h2>関連用語</h2>\n<p>量産診断は <a class=\"term-link\" data-slug=\"uds\" href=\"/glossary/uds\">UDS (統合診断サービス)</a>、転送基盤は <a class=\"term-link\" data-slug=\"udp\" href=\"/glossary/udp\">UDP</a> / <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> または <a class=\"term-link\" data-slug=\"can\" href=\"/glossary/can\">CAN</a> を使います。</p>\n<h2>次に学ぶべき内容</h2>\n<p>量産診断の標準プロトコル <a class=\"term-link\" data-slug=\"uds\" href=\"/glossary/uds\">UDS (統合診断サービス)</a> と比較して理解を深めましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">sequenceDiagram\n  participant Tool as キャリブレーションツール (INCA/CANape)\n  participant ECU as ADASドメインコントローラ\n  Tool-&gt;&gt;ECU: CONNECT\n  ECU-&gt;&gt;Tool: PositiveResponse (セッション確立)\n  Tool-&gt;&gt;ECU: SET_DAQ_LIST (測定変数リスト登録)\n  Tool-&gt;&gt;ECU: START_STOP_DAQ (計測開始)\n  ECU-&gt;&gt;Tool: DAQパケット (センサ値 1kHz で送信)\n  Tool-&gt;&gt;ECU: DOWNLOAD (パラメータ書き換え)\n  Note over Tool,ECU: リアルタイムに閾値を調整しながらログ取得\n</code></pre>",
 "prereq_full": [],
 "related_full": [
@@ -2773,7 +3247,7 @@
 "pcap",
 "analysis"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>やること</h2>\n<p>車両ネットワークのpcapファイルを受け取ったとき、何から確認すればよいかの分析ステップと、よく見るべきポイントを説明します。</p>\n<h2>前提条件</h2>\n<ul>\n<li>Wireshark / tshark インストール済み</li>\n<li>解析対象のpcapファイル</li>\n</ul>\n<h2>ステップ1: 全体像を把握する (最初の5分)</h2>\n<pre><code class=\"language-bash\"># パケット数・期間・平均レートを確認\ntshark -r capture.pcap -q -z io,stat,0\n\n# プロトコル分布\ntshark -r capture.pcap -q -z io,phs\n\n# エンドポイント一覧\ntshark -r capture.pcap -q -z endpoints,ip\n</code></pre>\n<p>どのプロトコルが何%を占めるかを把握してから詳細に入ります。</p>\n<h2>ステップ2: ARPテーブルを再現する</h2>\n<pre><code class=\"language-bash\"># ARP応答からIP-MACの対応表を作成\ntshark -r capture.pcap -Y &quot;arp.opcode == 2&quot; \\\n  -T fields -e arp.src.proto_ipv4 -e arp.src.hw_mac \\\n  -E separator=&quot; =&gt; &quot; | sort | uniq\n</code></pre>\n<p>どのIPがどのECUか(MAC OUI等で推定)を特定します。</p>\n<h2>ステップ3: サービスディスカバリを確認 (SOME/IP-SD)</h2>\n<pre><code class=\"language-bash\"># SDのOfferServiceを抽出 (どのサービスが公開されているか)\ntshark -r capture.pcap -Y &quot;someip.type == 0x01&quot; \\\n  -T fields -e ip.src -e someip.sd.entry.srv.id\n</code></pre>\n<p>車内にどんなサービスが存在するかのマップを描けます。</p>\n<h2>ステップ4: 異常パターンを探す</h2>\n<h3>ARP嵐</h3>\n<pre><code class=\"language-bash\"># 短時間に同一IPへのARP要求が多発しているか\ntshark -r capture.pcap -Y &quot;arp.opcode == 1&quot; \\\n  -T fields -e frame.time_relative -e arp.dst.proto_ipv4 | head -50\n</code></pre>\n<h3>TCPリトライ</h3>\n<pre><code class=\"language-bash\"># TCP再送パケット (通信品質問題のサイン)\ntshark -r capture.pcap -Y &quot;tcp.analysis.retransmission&quot; \\\n  -T fields -e ip.src -e ip.dst -e tcp.stream | sort | uniq -c | sort -rn\n</code></pre>\n<h3>未解決ARP(ECU不在の疑い)</h3>\n<pre><code class=\"language-bash\"># ARPリクエストを送ったが応答がないもの\ntshark -r capture.pcap -Y &quot;arp.opcode == 1&quot; \\\n  -T fields -e arp.dst.proto_ipv4 &gt; arp_req.txt\n\ntshark -r capture.pcap -Y &quot;arp.opcode == 2&quot; \\\n  -T fields -e arp.src.proto_ipv4 &gt; arp_rep.txt\n\n# arp_req.txtにあってarp_rep.txtにないIPが「応答なし」\n</code></pre>\n<h2>ステップ5: タイムライン作成</h2>\n<pre><code class=\"language-bash\"># CSV出力でExcelに取り込む\ntshark -r capture.pcap \\\n  -T fields -e frame.time_epoch \\\n  -e ip.src -e ip.dst -e _ws.col.Protocol -e frame.len \\\n  -E header=y -E separator=, &gt; timeline.csv\n</code></pre>\n<p>Excelのピボットテーブルで「時間別 × プロトコル別 × ECU別」のヒートマップを作ると通信パターンの全体像が見えます。</p>\n<h2>チェックリスト</h2>\n<ul>\n<li>[ ] ARPで全ECUのIPを特定した</li>\n<li>[ ] <strong>プロトコル分布</strong>で想定外のトラフィックがないか確認</li>\n<li>[ ] SOME/IP-SDでサービス一覧を把握した</li>\n<li>[ ] TCPリトライ・未解決ARPなど異常がないか確認</li>\n<li>[ ] DoIPポート(13400)への想定外アクセスがないか確認</li>\n</ul>\n<h2>関連用語</h2>\n<p>pcapの形式は <a class=\"term-link\" data-slug=\"pcap\" href=\"/glossary/pcap\">PCAP</a>、GUIでの解析は <a class=\"term-link\" data-slug=\"wireshark\" href=\"/glossary/wireshark\">Wireshark</a>、コマンドライン解析は <a class=\"term-link\" data-slug=\"howto-tshark-filter\" href=\"/glossary/howto-tshark-filter\">tsharkで車載通信をフィルタ・解析する</a> を参照。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">flowchart TD\n  PCAP[&quot;vehicle_capture.pcap&quot;]\n  PCAP --&gt;|&quot;tshark -z io,phs&quot;| PROTO[&quot;プロトコル分布\n把握&quot;]\n  PCAP --&gt;|&quot;ARP opcode==2&quot;| IPTBL[&quot;IP/MACテーブル\n再現&quot;]\n  PCAP --&gt;|&quot;someip.type==0x01&quot;| SVC[&quot;公開サービス\n一覧&quot;]\n  PCAP --&gt;|&quot;tcp.analysis.retransmission&quot;| ERR[&quot;異常パターン\n検出&quot;]\n  PROTO &amp; IPTBL &amp; SVC &amp; ERR --&gt; RPT[&quot;解析レポート&quot;]\n</code></pre>",
 "prereq_full": [],
 "related_full": [
@@ -2824,7 +3298,7 @@
 "tool",
 "cli"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>概要</h2>\n<p>tcpdumpは、コマンドラインでパケットをキャプチャ・表示する定番ツールです。GUIの <a class=\"term-link\" data-slug=\"wireshark\" href=\"/glossary/wireshark\">Wireshark</a> と違い、サーバや組み込み機器など画面の無い環境でも動き、結果を <a class=\"term-link\" data-slug=\"pcap\" href=\"/glossary/pcap\">PCAP</a> ファイルに保存できます。</p>\n<h2>なぜ必要か</h2>\n<p>現場の機器に直接GUIを入れられないことは多々あります。tcpdumpなら <code>tcpdump **-i** eth0 **-w** capture.pcap</code> のように軽量にキャプチャでき、取得したファイルを後でWiresharkで詳細解析する、という流れが作れます。</p>\n<h2>自動運転での利用例</h2>\n<p>車載のLinuxベースECU(AUTOSAR Adaptiveなど)上でtcpdumpを動かし、SOME/IPやDoIPの通信を <code>.pcap</code> で採取します。採取データは本アプリのPCAP解析にもそのままアップロードできます。</p>\n<h2>関連用語</h2>\n<p>保存形式が <a class=\"term-link\" data-slug=\"pcap\" href=\"/glossary/pcap\">PCAP</a>、GUI版が <a class=\"term-link\" data-slug=\"wireshark\" href=\"/glossary/wireshark\">Wireshark</a>、Wireshark系CLIが <a class=\"term-link\" data-slug=\"tshark\" href=\"/glossary/tshark\">tshark</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>Wireshark由来のCLI <a class=\"term-link\" data-slug=\"tshark\" href=\"/glossary/tshark\">tshark</a> を学びましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  NW[&quot;車両ネットワーク\nTCP/UDP/DoIP&quot;] --&gt; ECU[&quot;組み込みECU\n(Linux OS)&quot;]\n  ECU --&gt;|&quot;tcpdump -i eth0 -w cap.pcap&quot;| FILE[&quot;capture.pcap&quot;]\n  FILE --&gt;|SCP転送| PC[&quot;診断PC\nWireshark解析&quot;]\n</code></pre>",
 "prereq_full": [],
 "related_full": [
@@ -2868,7 +3342,7 @@
 "tool",
 "cli"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>概要</h2>\n<p>tsharkは、<a class=\"term-link\" data-slug=\"wireshark\" href=\"/glossary/wireshark\">Wireshark</a> のコマンドライン版です。Wiresharkと同じ強力なプロトコル解析(ディセクタ)を持ちつつ、CLIで動くため<strong>自動化</strong>やバッチ処理に向いています。<strong>表示フィルタ</strong>で欲しい情報だけを抽出できます。</p>\n<h2>なぜ必要か</h2>\n<p><a class=\"term-link\" data-slug=\"wireshark\" href=\"/glossary/wireshark\">Wireshark</a> のGUIは対話的解析に最適ですが、大量の <a class=\"term-link\" data-slug=\"pcap\" href=\"/glossary/pcap\">PCAP</a> を機械的に処理したり、CI/テストに組み込むにはCLIが必要です。tsharkはWireshark並の解析力をスクリプトから使えます。</p>\n<h2>自動運転での利用例</h2>\n<p>回帰テストで「採取したPCAPにSOME/IPのエラーが含まれていないか」を tshark のフィルタで自動チェックする、といった使い方ができます。例えば SOME/IP のメッセージ種別だけを抽出して集計する処理を<strong>自動化</strong>できます。</p>\n<h2>関連用語</h2>\n<p>GUI版が <a class=\"term-link\" data-slug=\"wireshark\" href=\"/glossary/wireshark\">Wireshark</a>、軽量キャプチャが <a class=\"term-link\" data-slug=\"tcpdump\" href=\"/glossary/tcpdump\">tcpdump</a>、対象ファイルが <a class=\"term-link\" data-slug=\"pcap\" href=\"/glossary/pcap\">PCAP</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>車載診断通信 <a class=\"term-link\" data-slug=\"doip\" href=\"/glossary/doip\">DoIP(Diagnostics over IP)</a> を学びましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  PCAP[&quot;vehicle_capture.pcap&quot;] --&gt;|&quot;tshark -r -Y someip&quot;| FILTER[&quot;フィルタ済みパケット&quot;]\n  FILTER --&gt;|&quot;-T fields -e someip.serviceid&quot;| CSV[&quot;service_id 一覧&quot;]\n  PCAP --&gt;|&quot;-q -z io,phs&quot;| STATS[&quot;プロトコル統計&quot;]\n</code></pre>",
 "prereq_full": [
 {
@@ -2921,7 +3395,7 @@
 "cli",
 "tshark"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>やること</h2>\n<p>tshark(Wiresharkのコマンドライン版)を使って、pcapファイルや生トラフィックから特定の車載プロトコルを素早く抽出・解析する実践的なコマンドを紹介します。</p>\n<h2>前提条件</h2>\n<ul>\n<li>tshark インストール済み (<code>sudo apt install tshark</code> または Wireshark同梱)</li>\n<li>解析対象のpcapファイル or キャプチャ可能なインターフェース</li>\n</ul>\n<h2>基本構文</h2>\n<pre><code class=\"language-bash\">tshark -r &lt;ファイル&gt; -Y &lt;表示フィルタ&gt; -T fields -e &lt;フィールド&gt;\n</code></pre>\n<h2>SOME/IP の解析</h2>\n<pre><code class=\"language-bash\"># SOME/IP パケットの一覧\ntshark -r capture.pcap -Y &quot;someip&quot;\n\n# Service ID と Method ID を抽出\ntshark -r capture.pcap -Y &quot;someip&quot; \\\n  -T fields -e frame.number -e ip.src -e ip.dst \\\n  -e someip.serviceid -e someip.methodid -e someip.msgtype \\\n  -E header=y -E separator=,\n\n# 特定サービスIDだけ\ntshark -r capture.pcap -Y &quot;someip.serviceid == 0x1234&quot;\n</code></pre>\n<h2>DoIP の解析</h2>\n<pre><code class=\"language-bash\"># DoIP パケット一覧 (TCP/UDP 13400)\ntshark -r capture.pcap -Y &quot;doip&quot;\n\n# Routing Activationだけ\ntshark -r capture.pcap -Y &quot;doip.type == 0x0005&quot;\n\n# UDSペイロードを16進数で表示\ntshark -r capture.pcap -Y &quot;doip&quot; -T fields -e doip.diag.payload\n</code></pre>\n<h2>ARP の解析</h2>\n<pre><code class=\"language-bash\"># ARP要求・応答を全表示\ntshark -r capture.pcap -Y &quot;arp&quot; -V\n\n# ARPが解決できていないリクエストだけ (応答なし)\ntshark -r capture.pcap -Y &quot;arp.opcode == 1&quot; \\\n  -T fields -e arp.src.proto_ipv4 -e arp.dst.proto_ipv4\n</code></pre>\n<h2>通信量の集計</h2>\n<pre><code class=\"language-bash\"># IPアドレスごとのパケット数\ntshark -r capture.pcap -q -z endpoints,ip\n\n# プロトコルごとの割合\ntshark -r capture.pcap -q -z io,phs\n\n# 1秒ごとのビットレート\ntshark -r capture.pcap -q -z io,stat,1\n</code></pre>\n<h2>リアルタイムキャプチャ + フィルタ</h2>\n<pre><code class=\"language-bash\"># eth0 をリアルタイム解析してSOME/IPだけ表示\ntshark -i eth0 -Y &quot;someip&quot; \\\n  -T fields -e ip.src -e someip.serviceid -e someip.methodid\n</code></pre>\n<h2>pcapをCSVに変換</h2>\n<pre><code class=\"language-bash\">tshark -r capture.pcap \\\n  -T fields \\\n  -e frame.time_relative \\\n  -e ip.src -e ip.dst \\\n  -e _ws.col.Protocol \\\n  -e frame.len \\\n  -E header=y -E separator=, &gt; output.csv\n</code></pre>\n<p>Excelで開いて通信量の時系列分析ができます。</p>\n<h2>関連用語</h2>\n<p>GUIで同じことをする場合は <a class=\"term-link\" data-slug=\"wireshark\" href=\"/glossary/wireshark\">Wireshark</a>、コマンドラインでの簡易キャプチャは <a class=\"term-link\" data-slug=\"tcpdump\" href=\"/glossary/tcpdump\">tcpdump</a>、pcapの形式は <a class=\"term-link\" data-slug=\"pcap\" href=\"/glossary/pcap\">PCAP</a> を参照。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  PCAP[&quot;capture.pcap&quot;] --&gt;|&quot;-Y someip&quot;| F1[&quot;SOME/IPパケット&quot;]\n  PCAP --&gt;|&quot;-Y doip&quot;| F2[&quot;DoIPパケット&quot;]\n  PCAP --&gt;|&quot;-z endpoints,ip&quot;| STATS[&quot;IPエンドポイント統計&quot;]\n  F1 --&gt;|&quot;-T fields -e someip.serviceid&quot;| CSV[&quot;ServiceID一覧 (CSV)&quot;]\n  STATS --&gt; XLS[&quot;Excel分析&quot;]\n</code></pre>",
 "prereq_full": [
 {
@@ -2955,6 +3429,64 @@
 "completed": false,
 "favorite": false
 },
+"data-analysis": {
+"slug": "data-analysis",
+"title": "データ分析の流れ（EDA）",
+"level": 3,
+"category": "Python",
+"related": [
+"pandas",
+"matplotlib",
+"seaborn",
+"numpy",
+"data-cleaning"
+],
+"next": [],
+"tags": [
+"python",
+"eda",
+"data-science",
+"analysis"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>EDA（Exploratory Data Analysis：探索的データ分析）は、機械学習・統計モデリングの<strong>前に必ず行う</strong>データ理解の工程です。数値の羅列から「傾向」「外れ値」「相関」「欠損パターン」を発見し、仮説を立てて次のアクションを決めます。コードよりも「何を見るか」の思考が重要です。</p>\n<h2>なぜ必要か</h2>\n<p>データを見ずにモデルを作ると「なぜ精度が低いか」が分かりません。EDAで「価格列に10倍の外れ値がある」「年齢列に30%欠損がある」「AとBが強く相関している」を把握しておけば、前処理と特徴量エンジニアリングの方針が決まります。30分のEDAが数日のデバッグを防ぎます。</p>\n<h2>EDAの全体ステップ</h2>\n<pre><code class=\"language-mermaid\">graph TD\n  A[データ読み込み] --&gt; B[概要把握&lt;br/&gt;shape / dtypes / head]\n  B --&gt; C[欠損・重複の確認]\n  C --&gt; D[数値列の分布&lt;br/&gt;describe / histogram]\n  D --&gt; E[カテゴリ列の値カウント]\n  E --&gt; F[相関分析&lt;br/&gt;heatmap / scatter]\n  F --&gt; G[外れ値の確認&lt;br/&gt;boxplot / IQR]\n  G --&gt; H[グループ別比較&lt;br/&gt;groupby / boxplot]\n  H --&gt; I[時系列チェック（あれば）]\n  I --&gt; J[仮説・前処理方針を整理]\n</code></pre>\n<h2>1. 読み込みと概要把握</h2>\n<pre><code class=\"language-python\">import pandas as pd\nimport numpy as np\nimport seaborn as sns\nimport matplotlib.pyplot as plt\nfrom matplotlib import rcParams\n\n# 日本語フォント設定（環境に応じて変更）\n# rcParams[&quot;font.family&quot;] = &quot;IPAexGothic&quot;\n\nsns.set_theme(style=&quot;whitegrid&quot;)\n\ndf = pd.read_csv(&quot;dataset.csv&quot;, parse_dates=[&quot;date&quot;])\n\nprint(f&quot;サイズ: {df.shape}&quot;)        # (行数, 列数)\nprint(f&quot;\\n【型と欠損】&quot;)\nprint(df.info())\nprint(f&quot;\\n【先頭5行】&quot;)\ndisplay(df.head())\nprint(f&quot;\\n【基本統計量】&quot;)\ndisplay(df.describe().round(2))\n</code></pre>\n<h2>2. 欠損の可視化</h2>\n<pre><code class=\"language-python\">missing = df.isnull().mean().sort_values(ascending=False)\nmissing = missing[missing &gt; 0]\n\nif len(missing) == 0:\n    print(&quot;欠損なし&quot;)\nelse:\n    fig, ax = plt.subplots(figsize=(8, max(3, len(missing) * 0.4)))\n    missing.plot(kind=&quot;barh&quot;, color=&quot;coral&quot;, ax=ax)\n    ax.set_xlabel(&quot;欠損率&quot;)\n    ax.set_title(&quot;列ごとの欠損率&quot;)\n    ax.axvline(0.3, color=&quot;red&quot;, linestyle=&quot;--&quot;, label=&quot;30%ライン&quot;)\n    ax.legend()\n    plt.tight_layout()\n    plt.show()\n    print(f&quot;\\n欠損率 30% 超: {list(missing[missing &gt; 0.3].index)}&quot;)\n</code></pre>\n<h2>3. 数値列の分布を一括確認</h2>\n<pre><code class=\"language-python\">num_cols = df.select_dtypes(include=&quot;number&quot;).columns.tolist()\nn = len(num_cols)\ncols = 3\nrows = (n + cols - 1) // cols\n\nfig, axes = plt.subplots(rows, cols, figsize=(15, rows * 3.5))\naxes = axes.flatten()\n\nfor i, col in enumerate(num_cols):\n    sns.histplot(df[col].dropna(), kde=True, ax=axes[i], color=&quot;steelblue&quot;)\n    axes[i].set_title(col)\n    axes[i].set_xlabel(&quot;&quot;)\n    # 歪みを表示\n    skew = df[col].skew()\n    axes[i].text(0.98, 0.95, f&quot;歪度: {skew:.2f}&quot;,\n                 transform=axes[i].transAxes, ha=&quot;right&quot;, va=&quot;top&quot;, fontsize=9)\n\n# 余ったAxesを非表示\nfor j in range(i + 1, len(axes)):\n    axes[j].set_visible(False)\n\nplt.suptitle(&quot;数値列の分布&quot;, y=1.01)\nplt.tight_layout()\nplt.show()\n</code></pre>\n<h2>4. カテゴリ列の値カウント</h2>\n<pre><code class=\"language-python\">cat_cols = df.select_dtypes(include=[&quot;object&quot;, &quot;category&quot;]).columns\n\nfor col in cat_cols:\n    vc = df[col].value_counts()\n    print(f&quot;\\n■ {col}  (ユニーク数: {vc.nunique()})&quot;)\n    print(vc.head(10).to_string())\n\n    # カーディナリティが低い列は棒グラフで表示\n    if len(vc) &lt;= 15:\n        fig, ax = plt.subplots(figsize=(7, 3))\n        vc.plot(kind=&quot;bar&quot;, ax=ax, color=&quot;steelblue&quot;, edgecolor=&quot;white&quot;)\n        ax.set_title(f&quot;{col} の値分布&quot;)\n        ax.set_xlabel(&quot;&quot;)\n        plt.xticks(rotation=45, ha=&quot;right&quot;)\n        plt.tight_layout()\n        plt.show()\n</code></pre>\n<h2>5. 相関分析</h2>\n<pre><code class=\"language-python\">corr = df[num_cols].corr()\n\n# ヒートマップ\nfig, ax = plt.subplots(figsize=(max(6, len(num_cols)), max(5, len(num_cols) - 1)))\nmask = np.triu(np.ones_like(corr, dtype=bool))  # 上三角を隠す\nsns.heatmap(\n    corr,\n    mask=mask,\n    annot=True,\n    fmt=&quot;.2f&quot;,\n    cmap=&quot;RdBu_r&quot;,\n    vmin=-1, vmax=1,\n    square=True,\n    linewidths=0.5,\n    ax=ax,\n)\nax.set_title(&quot;相関係数（下三角）&quot;)\nplt.tight_layout()\nplt.show()\n\n# ターゲット列との相関を降順表示（あれば）\ntarget = &quot;price&quot;   # ← 目的変数のカラム名\nif target in corr:\n    print(f&quot;\\n{target} との相関（絶対値降順）&quot;)\n    print(corr[target].drop(target).abs().sort_values(ascending=False))\n</code></pre>\n<h2>6. 外れ値の一括確認</h2>\n<pre><code class=\"language-python\">def iqr_bounds(s: pd.Series):\n    Q1, Q3 = s.quantile([0.25, 0.75])\n    IQR = Q3 - Q1\n    return Q1 - 1.5*IQR, Q3 + 1.5*IQR\n\n# 箱ひげ図で一括表示\nfig, axes = plt.subplots(1, len(num_cols), figsize=(3 * len(num_cols), 4))\nif len(num_cols) == 1:\n    axes = [axes]\nfor ax, col in zip(axes, num_cols):\n    sns.boxplot(y=df[col], ax=ax, color=&quot;lightblue&quot;)\n    ax.set_title(col)\nplt.suptitle(&quot;外れ値チェック（箱ひげ図）&quot;)\nplt.tight_layout()\nplt.show()\n\n# 数値で集計\nprint(&quot;\\n■ 外れ値カウント（IQR法）&quot;)\nfor col in num_cols:\n    lo, hi = iqr_bounds(df[col].dropna())\n    n_out = ((df[col] &lt; lo) | (df[col] &gt; hi)).sum()\n    rate  = n_out / len(df) * 100\n    if n_out &gt; 0:\n        print(f&quot;  {col}: {n_out} 件 ({rate:.1f}%)&quot;)\n</code></pre>\n<h2>7. グループ別比較</h2>\n<pre><code class=\"language-python\"># 例: カテゴリ別の目的変数分布\ntarget = &quot;price&quot;\ngroup  = &quot;category&quot;\n\nif target in df.columns and group in df.columns:\n    fig, axes = plt.subplots(1, 2, figsize=(12, 4))\n\n    # 棒グラフ（平均 + CI）\n    sns.barplot(data=df, x=group, y=target, palette=&quot;Set2&quot;, ax=axes[0])\n    axes[0].set_title(f&quot;{group} 別 {target}（平均）&quot;)\n    axes[0].tick_params(axis=&quot;x&quot;, rotation=45)\n\n    # バイオリンプロット（分布の形状）\n    sns.violinplot(data=df, x=group, y=target, palette=&quot;muted&quot;,\n                   inner=&quot;quartile&quot;, ax=axes[1])\n    axes[1].set_title(f&quot;{group} 別 {target}（分布）&quot;)\n    axes[1].tick_params(axis=&quot;x&quot;, rotation=45)\n\n    plt.tight_layout()\n    plt.show()\n\n    # 数値集計\n    print(df.groupby(group)[target].agg([&quot;mean&quot;,&quot;median&quot;,&quot;std&quot;,&quot;count&quot;]).round(2))\n</code></pre>\n<h2>8. 時系列チェック</h2>\n<pre><code class=\"language-python\">date_col = &quot;date&quot;   # 日付列名\nval_col  = &quot;sales&quot;  # 数値列名\n\nif date_col in df.columns:\n    ts = df.set_index(date_col)[val_col].sort_index()\n\n    fig, axes = plt.subplots(3, 1, figsize=(12, 9))\n\n    # 全体トレンド\n    ts.plot(ax=axes[0], color=&quot;steelblue&quot;)\n    ts.rolling(30).mean().plot(ax=axes[0], color=&quot;red&quot;, label=&quot;30日移動平均&quot;)\n    axes[0].set_title(&quot;時系列トレンド&quot;)\n    axes[0].legend()\n\n    # 月次集計\n    ts.resample(&quot;ME&quot;).mean().plot(kind=&quot;bar&quot;, ax=axes[1], color=&quot;teal&quot;, edgecolor=&quot;white&quot;)\n    axes[1].set_title(&quot;月次平均&quot;)\n\n    # 曜日・月ごとのボックスプロット\n    df[&quot;dow&quot;] = df[date_col].dt.day_name()\n    sns.boxplot(data=df, x=&quot;dow&quot;, y=val_col,\n                order=[&quot;Monday&quot;,&quot;Tuesday&quot;,&quot;Wednesday&quot;,&quot;Thursday&quot;,&quot;Friday&quot;,&quot;Saturday&quot;,&quot;Sunday&quot;],\n                ax=axes[2])\n    axes[2].set_title(&quot;曜日別分布&quot;)\n    axes[2].tick_params(axis=&quot;x&quot;, rotation=45)\n\n    plt.tight_layout()\n    plt.show()\n</code></pre>\n<h2>EDAチェックリスト</h2>\n<table>\n<thead>\n<tr>\n<th>項目</th>\n<th>確認ポイント</th>\n<th>対処</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>shape</td>\n<td>想定行数か</td>\n<td>データ取得の見直し</td>\n</tr>\n<tr>\n<td>dtypes</td>\n<td>数値列がobjectになっていないか</td>\n<td>型変換</td>\n</tr>\n<tr>\n<td>欠損率</td>\n<td>30%超の列がないか</td>\n<td>列削除 or 補完戦略</td>\n</tr>\n<tr>\n<td>重複行</td>\n<td>完全重複・キー重複</td>\n<td>drop_duplicates</td>\n</tr>\n<tr>\n<td>分布</td>\n<td>正規分布か・歪みが大きいか</td>\n<td>対数変換など</td>\n</tr>\n<tr>\n<td>外れ値</td>\n<td>IQR法で何件か・記録ミスか</td>\n<td>IQRクリップ or 削除</td>\n</tr>\n<tr>\n<td>相関</td>\n<td>目的変数と相関の高い変数は</td>\n<td>特徴量候補にする</td>\n</tr>\n<tr>\n<td>カテゴリ</td>\n<td>値の偏りが極端でないか</td>\n<td>リサンプリング</td>\n</tr>\n<tr>\n<td>時系列</td>\n<td>トレンド・季節性があるか</td>\n<td>時間特徴量の追加</td>\n</tr>\n</tbody>\n</table>",
+"prereq_full": [
+{
+"slug": "data-cleaning",
+"title": "データクリーニング"
+},
+{
+"slug": "seaborn",
+"title": "Seaborn（統計可視化）"
+}
+],
+"related_full": [
+{
+"slug": "pandas",
+"title": "Pandas（DataFrame・データ操作）"
+},
+{
+"slug": "matplotlib",
+"title": "Matplotlib（グラフ描画）"
+},
+{
+"slug": "seaborn",
+"title": "Seaborn（統計可視化）"
+},
+{
+"slug": "numpy",
+"title": "NumPy（配列・行列演算）"
+},
+{
+"slug": "data-cleaning",
+"title": "データクリーニング"
+}
+],
+"next_full": [],
+"completed": false,
+"favorite": false
+},
 "autosar": {
 "slug": "autosar",
 "title": "AUTOSAR",
@@ -2974,7 +3506,7 @@
 ],
 "category": "AUTOSAR",
 "difficulty": "上級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>概要</h2>\n<p>AUTOSAR(AUTomotive Open System ARchitecture)は、車載ソフトウェアの標準アーキテクチャです。ハードに依存しない再利用可能なソフト開発を目指します。従来制御向けの <strong>Classic Platform</strong> と、高性能・サービス指向の <strong>Adaptive Platform</strong> があります。</p>\n<h2>なぜ必要か</h2>\n<p>車載ソフトは大規模・長寿命・多サプライヤで開発されます。共通の標準が無いと互換性や再利用が困難です。AUTOSARは層構造とインターフェースを標準化し、ECU間・サプライヤ間の連携を可能にします。</p>\n<h2>自動運転での利用例</h2>\n<p>Adaptive Platform は POSIX ベースで、<a class=\"term-link\" data-slug=\"some-ip\" href=\"/glossary/some-ip\">SOME/IP</a> によるサービス指向通信を前提とします。自動運転のような高性能・動的なアプリは Adaptive 上で構築され、Classic(CAN中心)と共存します。</p>\n<h2>関連用語</h2>\n<p>通信手段として <a class=\"term-link\" data-slug=\"some-ip\" href=\"/glossary/some-ip\">SOME/IP</a> と <a class=\"term-link\" data-slug=\"can\" href=\"/glossary/can\">CAN</a>、次世代の通信ミドルウェアとして <a class=\"term-link\" data-slug=\"ros2-dds\" href=\"/glossary/ros2-dds\">ROS2 DDS</a>、車両全体の方向性として <a class=\"term-link\" data-slug=\"sdv\" href=\"/glossary/sdv\">SDV(<strong>ソフトウェア定義車両</strong>)</a> があります。</p>\n<h2>次に学ぶべき内容</h2>\n<p>ロボティクス由来の通信基盤、<a class=\"term-link\" data-slug=\"ros2-dds\" href=\"/glossary/ros2-dds\">ROS2 DDS</a> へ進みましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">graph TD\n  APP[&quot;アプリケーション層\n(Brake Control / Lights Control)&quot;]\n  RTE[&quot;RTE: Runtime Environment\n(上位・下位の橋渡し)&quot;]\n  BSW[&quot;Basic Software (BSW)\nServices / Communication / Memory / I/O&quot;]\n  MCU[&quot;マイクロコントローラ&quot;]\n  APP --&gt; RTE --&gt; BSW --&gt; MCU\n</code></pre>",
 "prereq_full": [
 {
@@ -3034,7 +3566,7 @@
 "middleware",
 "autosar"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>概要</h2>\n<p>Adaptive AUTOSARは、高性能プロセッサ上でLinux等のOSを動かしながら、機能安全と柔軟なソフトウェア配置を両立する車載ミドルウェア標準です。Classic AUTOSARが静的なマイコン向けであるのに対し、Adaptiveは動的なサービス追加・OTA更新・AI推論を想定して設計されています。</p>\n<h2>なぜ必要か</h2>\n<p>ADAS・自動運転ではGPU/NPU搭載の<strong>高性能SoC</strong>が必須となり、Classic AUTOSARのリアルタイムOSでは対応できません。Adaptive AUTOSARは<strong>POSIX</strong>準拠OS上で動き、アプリケーションを「Adaptive Application(AA)」として疎結合で組み合わせる設計を可能にします。</p>\n<h2>主要コンポーネント</h2>\n<ul>\n<li><strong><em>*ara::</em>*com</strong> — SOME/IPまたはDDSを使ったサービス通信API</li>\n<li><strong><em>*ara::</em>*exec</strong> — アプリケーションのライフサイクル管理(起動/停止)</li>\n<li><strong><em>*ara::</em>*diag</strong> — UDS診断のアダプティブ対応</li>\n<li><strong><em>*ara::</em>*update</strong> — OTA更新フレームワーク</li>\n<li><strong><em>*ara::</em>*crypto</strong> — 暗号化・鍵管理</li>\n</ul>\n<h2>自動運転での利用例</h2>\n<p>ADAS Domain Controllerに Adaptive AUTOSAR を採用し、物体認識・経路計画・車線維持の各機能を独立したAdaptive Applicationとして展開します。OTAでアルゴリズムを更新でき、フィールドでの機能改善が可能になります。通信は <a class=\"term-link\" data-slug=\"some-ip\" href=\"/glossary/some-ip\">SOME/IP</a> または <a class=\"term-link\" data-slug=\"ros2-dds\" href=\"/glossary/ros2-dds\">ROS2 DDS</a> で行われます。</p>\n<h2>関連用語</h2>\n<p>Classic版の <a class=\"term-link\" data-slug=\"autosar\" href=\"/glossary/autosar\">AUTOSAR</a> と対になる存在です。通信ミドルウェアとして <a class=\"term-link\" data-slug=\"some-ip\" href=\"/glossary/some-ip\">SOME/IP</a> を使い、ソフト定義車両全体の文脈は <a class=\"term-link\" data-slug=\"sdv\" href=\"/glossary/sdv\">SDV(<strong>ソフトウェア定義車両</strong>)</a> を参照。</p>\n<h2>次に学ぶべき内容</h2>\n<p>Adaptive AUTOSARが実現する <a class=\"term-link\" data-slug=\"sdv\" href=\"/glossary/sdv\">SDV(<strong>ソフトウェア定義車両</strong>)</a> の全体像を学びましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">graph TD\n  AA[&quot;Adaptive Application\n(物体認識 / 経路計画 / 車線維持)&quot;]\n  ARA[&quot;ara:: API\n(com / exec / diag / update / crypto)&quot;]\n  OS[&quot;POSIX OS (Linux / QNX)&quot;]\n  HW[&quot;高性能SoC (GPU / NPU搭載)&quot;]\n  AA --&gt; ARA --&gt; OS --&gt; HW\n</code></pre>",
 "prereq_full": [
 {
@@ -3091,7 +3623,7 @@
 ],
 "category": "AUTOSAR",
 "difficulty": "上級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>概要</h2>\n<p>CAN(Controller Area Network)は、自動車向けに開発された堅牢なシリアル通信バスです。各メッセージはIDを持ち、宛先ではなく「内容」で識別されるブロードキャスト方式。ノイズに強く、配線がシンプルなのが特長です。CAN FDは高速・大容量化した拡張版です。</p>\n<h2>なぜ必要か</h2>\n<p>車内には多数のECUがあり、限られた配線で確実に制御信号をやり取りする必要があります。CANは数十年にわたり車載制御通信の標準として使われ、エンジン・ブレーキ・ボディ系などを支えてきました。</p>\n<h2>自動運転での利用例</h2>\n<p>CANは今も車両制御の基幹で広く使われますが、カメラ映像のような大容量データには帯域が不足します。そこで高帯域の <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> と組み合わせ、制御系はCAN、情報系はEthernetという役割分担が進んでいます。</p>\n<h2>関連用語</h2>\n<p>高帯域な車載通信が <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a>、IP上のサービス通信が <a class=\"term-link\" data-slug=\"some-ip\" href=\"/glossary/some-ip\">SOME/IP</a>、これらを束ねる標準が <a class=\"term-link\" data-slug=\"autosar\" href=\"/glossary/autosar\">AUTOSAR</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>IP上のサービス指向通信、<a class=\"term-link\" data-slug=\"some-ip\" href=\"/glossary/some-ip\">SOME/IP</a> へ進みましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  ECU1[&quot;エンジンECU&quot;] --&gt;|CANフレーム| BUS[&quot;CAN バス\n(ツイストペア)&quot;]\n  ECU2[&quot;ブレーキECU&quot;] --&gt;|CANフレーム| BUS\n  BUS --&gt; ECU3[&quot;インスツルメント\nクラスタECU&quot;]\n  BUS --&gt; ECU4[&quot;トランスミッション\nECU&quot;]\n  subgraph Frame[&quot;CAN フレーム&quot;]\n    ID[&quot;ID (11bit)&quot;] --- DLC[&quot;DLC&quot;] --- DATA[&quot;データ (最大8B)&quot;] --- CRC[&quot;CRC&quot;]\n  end\n</code></pre>",
 "prereq_full": [
 {
@@ -3144,7 +3676,7 @@
 "automotive",
 "bus"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>概要</h2>\n<p>CAN FD(CAN with Flexible Data-rate)は、従来の <a class=\"term-link\" data-slug=\"can\" href=\"/glossary/can\">CAN</a> を拡張した規格です。1フレームで運べるデータ量を8バイトから<strong>最大64バイト</strong>へ拡大し、データ部分の通信速度も高速化しました。既存のCAN資産を活かしつつ帯域を底上げします。</p>\n<h2>なぜ必要か</h2>\n<p>ECUの高機能化でやり取りするデータが増え、従来CANの8バイト・低速では不足するようになりました。CAN FDは配線や開発資産を大きく変えずに、より多くのデータを速く送れるようにします。</p>\n<h2>自動運転での利用例</h2>\n<p>カメラ映像のような大容量は <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> が担いますが、制御系の中量データではCAN FDが活躍します。CAN→CAN FD→Ethernetと、データ量に応じて通信方式を使い分けるのが現代の車載ネットワーク設計です。</p>\n<h2>関連用語</h2>\n<p>基礎が <a class=\"term-link\" data-slug=\"can\" href=\"/glossary/can\">CAN</a>、高帯域通信が <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a>、統合する標準が <a class=\"term-link\" data-slug=\"autosar\" href=\"/glossary/autosar\">AUTOSAR</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>これらを束ねる車載ソフト標準 <a class=\"term-link\" data-slug=\"autosar\" href=\"/glossary/autosar\">AUTOSAR</a> を学びましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  subgraph Classic[&quot;Classic CAN (最大8B)&quot;]\n    C1[&quot;ブレーキECU&quot;] --&gt;|&quot;8B @ 1Mbps&quot;| GW[&quot;ゲートウェイ\nECU&quot;]\n  end\n  subgraph FD[&quot;CAN FD (最大64B)&quot;]\n    GW --&gt;|&quot;64B @ 5Mbps\nデータフェーズ&quot;| CAM[&quot;カメラECU&quot;]\n    GW --&gt; RAD[&quot;レーダーECU&quot;]\n  end\n</code></pre>",
 "prereq_full": [],
 "related_full": [
@@ -3189,7 +3721,7 @@
 "automotive",
 "diagnostics"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>概要</h2>\n<p>DoIP(Diagnostics over IP / ISO 13400)は、車載診断通信(UDS)を <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a> ネットワーク上で行うための規格です。従来CAN上で行っていた診断を、高帯域なEthernetとIPで実現し、大量データの高速なやり取りを可能にします。</p>\n<h2>なぜ必要か</h2>\n<p>ソフトウェア更新(OTA)や大容量ログの取得など、現代の診断は従来のCANでは帯域が不足します。DoIPはIP上で診断を行うことで、高速・大容量の診断・書き換えを可能にします。</p>\n<h2>自動運転での利用例</h2>\n<p>ECUのファームウェア更新や故障診断を、車載Ethernet経由で高速に実施します。DoIPは信頼性が必要なため主に <a class=\"term-link\" data-slug=\"tcp\" href=\"/glossary/tcp\">TCP</a> 上で動作し、ポート13400番が標準として使われます。</p>\n<h2>関連用語</h2>\n<p>土台が <a class=\"term-link\" data-slug=\"tcp\" href=\"/glossary/tcp\">TCP</a> / <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a>、サービス通信が <a class=\"term-link\" data-slug=\"some-ip\" href=\"/glossary/some-ip\">SOME/IP</a>、標準フレームワークが <a class=\"term-link\" data-slug=\"autosar\" href=\"/glossary/autosar\">AUTOSAR</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>サービス指向通信の中核 <a class=\"term-link\" data-slug=\"some-ip\" href=\"/glossary/some-ip\">SOME/IP</a> を学びましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">sequenceDiagram\n  participant PC as 診断ワークステーション\n  participant GW as ゲートウェイECU (DoIPエンティティ)\n  participant ECU as ターゲットECU\n  PC-&gt;&gt;GW: Vehicle Discovery (UDP 13400)\n  GW-&gt;&gt;PC: Vehicle Announcement (IP + 論理アドレス)\n  PC-&gt;&gt;GW: Routing Activation Request (TCP 13400)\n  GW-&gt;&gt;PC: Routing Activation Response (成功)\n  PC-&gt;&gt;GW: UDS Request (診断コマンド)\n  GW-&gt;&gt;ECU: UDS転送 (CAN/Ethernet)\n  ECU-&gt;&gt;GW: UDS Response\n  GW-&gt;&gt;PC: UDS Response転送\n</code></pre>",
 "prereq_full": [
 {
@@ -3250,7 +3782,7 @@
 "security",
 "automotive"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>概要</h2>\n<p>OTA(Over-The-Air)更新は、無線通信を通じて車両のソフトウェア・ファームウェアをリモートで書き換える仕組みです。販売店に持ち込まずに最新機能の追加やバグ修正が可能となり、SDVの中核技術の一つです。</p>\n<h2>なぜ必要か</h2>\n<p>現代の車両はソフトウェアが数億行に達し、リコール対応や機能改善のたびにディーラー来店を強いていては運用コストが膨大になります。OTAにより、クラウドからECUへ直接パッチを配布し、ユーザーへの負担なく常に最新状態を維持できます。</p>\n<h2>OTAの流れ</h2>\n<ol>\n<li><strong>クラウドサーバー</strong>が<strong>差分更新</strong>パッケージ(Delta)を生成</li>\n<li><strong>Telematics Control Unit(TCU)</strong> が4G/5G経由でパッケージを受信・検証(署名確認)</li>\n<li><strong>OTA Manager</strong> がパッケージを各ドメインコントローラへ転送</li>\n<li>各ECUが <a class=\"term-link\" data-slug=\"uds\" href=\"/glossary/uds\">UDS (統合診断サービス)</a> のDownloadサービスを使ってファームウェアを書き換え</li>\n<li><strong>整合性チェック</strong>後にECUをリセット・起動</li>\n</ol>\n<h2>セキュリティ要件</h2>\n<p>改ざんされたファームウェアの書き込みを防ぐため、コード署名(RSA/ECDSA)と<strong>TLS</strong>暗号化が必須です。書き換え失敗時の<strong>ロールバック</strong>機能も安全設計の重要要素です。</p>\n<h2>自動運転での利用例</h2>\n<p>ADAS認識アルゴリズムのモデル更新、地図データの差分配信、法規制対応のパラメータ調整をOTAで実施します。Adaptive AUTOSARの <a class=\"term-link\" data-slug=\"adaptive-autosar\" href=\"/glossary/adaptive-autosar\">Adaptive AUTOSAR</a> はOTA更新を標準コンポーネントとして組み込んでいます。</p>\n<h2>関連用語</h2>\n<p>全体像は <a class=\"term-link\" data-slug=\"sdv\" href=\"/glossary/sdv\">SDV(<strong>ソフトウェア定義車両</strong>)</a>、書き換え手順は <a class=\"term-link\" data-slug=\"uds\" href=\"/glossary/uds\">UDS (統合診断サービス)</a>、ソフトウェア基盤は <a class=\"term-link\" data-slug=\"adaptive-autosar\" href=\"/glossary/adaptive-autosar\">Adaptive AUTOSAR</a> を参照。</p>\n<h2>次に学ぶべき内容</h2>\n<p>OTAを支える <a class=\"term-link\" data-slug=\"sdv\" href=\"/glossary/sdv\">SDV(<strong>ソフトウェア定義車両</strong>)</a> アーキテクチャ全体を理解しましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">sequenceDiagram\n  participant Cloud as OTAクラウドサーバー\n  participant TCU as テレマティクスECU\n  participant OTA as OTAマネージャー\n  participant ECU as ターゲットECU\n  Cloud-&gt;&gt;TCU: 差分パッケージ配信 (TLS暗号化)\n  TCU-&gt;&gt;TCU: 署名検証 (RSA/ECDSA)\n  TCU-&gt;&gt;OTA: パッケージ転送\n  OTA-&gt;&gt;ECU: UDS Download (0x34/0x36/0x37)\n  ECU-&gt;&gt;OTA: 整合性チェック完了\n  ECU-&gt;&gt;ECU: リセット・新FW起動\n</code></pre>",
 "prereq_full": [
 {
@@ -3304,7 +3836,7 @@
 ],
 "category": "SOME/IP",
 "difficulty": "上級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>概要</h2>\n<p>SOME/IP(Scalable service-Oriented MiddlewarE over IP)は、車載ECU同士が「サービス」をやり取りするためのIP上のミドルウェアです。メソッド呼び出し(RPC)、イベント通知(Pub/Sub)、<strong>サービスディスカバリ</strong>(<strong>SOME/IP-SD</strong>)を提供します。</p>\n<h2>なぜ必要か</h2>\n<p>ゾーン/ドメイン型アーキテクチャでは、ECUが提供する機能を他のECUが柔軟に利用したくなります。SOME/IPは「どのECUがどのサービスを提供するか」を動的に発見し、IP上で疎結合な通信を実現します。</p>\n<h2>自動運転での利用例</h2>\n<p>カメラECUが提供する物体検出サービスを、複数の制御ECUが購読(subscribe)して受け取る、といった使い方をします。低遅延通知は <a class=\"term-link\" data-slug=\"udp\" href=\"/glossary/udp\">UDP</a>、大きなデータや確実性が必要な通信は <a class=\"term-link\" data-slug=\"tcp\" href=\"/glossary/tcp\">TCP</a> 上で行われます。<strong>SOME/IP-SD</strong>は UDP 30490 番を使います。</p>\n<h2>関連用語</h2>\n<p>土台のトランスポートが <a class=\"term-link\" data-slug=\"udp\" href=\"/glossary/udp\">UDP</a> / <a class=\"term-link\" data-slug=\"tcp\" href=\"/glossary/tcp\">TCP</a>、上位の標準フレームワークが <a class=\"term-link\" data-slug=\"autosar\" href=\"/glossary/autosar\">AUTOSAR</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>これらを統合する車載ソフト標準、<a class=\"term-link\" data-slug=\"autosar\" href=\"/glossary/autosar\">AUTOSAR</a> を学びましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">sequenceDiagram\n  participant C as クライアントECU (インフォテインメント)\n  participant S as サーバーECU (ゲートウェイ)\n  Note over C,S: SOME/IP-SD サービスディスカバリ\n  S-&gt;&gt;C: OfferService (Service ID: 0x1234)\n  C-&gt;&gt;S: SubscribeEventgroup\n  S-&gt;&gt;C: SubscribeEventgroupAck\n  Note over C,S: 通常通信\n  C-&gt;&gt;S: Request (Method 0x0001)\n  S-&gt;&gt;C: Response\n  S-&gt;&gt;C: Notification (イベント通知)\n</code></pre>",
 "prereq_full": [
 {
@@ -3364,7 +3896,7 @@
 "v2x",
 "adas"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>概要</h2>\n<p>V2X(Vehicle-to-Everything)は、車両が道路インフラ・他車・歩行者・クラウドとリアルタイムに情報を交換する無線通信の総称です。V2V(車々間)、V2I(路車間)、V2P(歩行者)、V2N(ネットワーク)に分類されます。</p>\n<h2>なぜ必要か</h2>\n<p>カメラやLiDARは「見える範囲」しか認識できませんが、V2Xは見通し外の情報(交差点の対向車、信号の切り替えタイミング)を事前に取得できます。人間の反射速度を超える数百ms先の危険回避を可能にし、ADAS・自動運転の安全性を根本から向上させます。</p>\n<h2>主な技術方式</h2>\n<ul>\n<li><strong><em>*DSRC</em>* / IEEE 802.11p (WAVE)</strong> — 5.9 GHz帯、低遅延(&lt; 10 ms)、インフラ不要のアドホック通信</li>\n<li><strong><em>*C-V2X</em>* (Cellular V2X)</strong> — LTE/5G基地局を利用、広域カバレッジ、サービス品質保証</li>\n<li><strong>5G NR-V2X</strong> — 超低遅延・高信頼で自動運転レベル4以上を想定</li>\n</ul>\n<h2>主なユースケース</h2>\n<ul>\n<li><strong>ETSI ITS / SAE J2735</strong> 標準メッセージ: CAM(位置・速度)、DENM(危険警告)</li>\n<li>交差点での出会い頭衝突防止(V2I信号情報)</li>\n<li>緊急車両接近通知(V2V)</li>\n<li>路面状況・落下物情報の共有(V2N)</li>\n</ul>\n<h2>自動運転での利用例</h2>\n<p>自動運転レベル4以上では、センサだけでなくV2Xによる協調認識が安全マージンを大幅に向上させます。信号情報活用(GLOSA)により、最適速度で信号を通過して燃費改善も実現します。</p>\n<h2>関連用語</h2>\n<p>V2X通信のセキュリティには <a class=\"term-link\" data-slug=\"cybersecurity\" href=\"/glossary/cybersecurity\">車載サイバーセキュリティ (ISO 21434)</a> の理解が必須です。パケット転送の基盤は <a class=\"term-link\" data-slug=\"udp\" href=\"/glossary/udp\">UDP</a> / <a class=\"term-link\" data-slug=\"ip\" href=\"/glossary/ip\">IP</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>V2X通信を含む車載ネットワーク全体のセキュリティ、<a class=\"term-link\" data-slug=\"cybersecurity\" href=\"/glossary/cybersecurity\">車載サイバーセキュリティ (ISO 21434)</a> を学びましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">graph TD\n  V[&quot;自車両&quot;]\n  V2V[&quot;V2V\n(車々間通信)\n他車の位置・速度&quot;]\n  V2I[&quot;V2I\n(路車間通信)\n信号・道路情報&quot;]\n  V2P[&quot;V2P\n(歩行者通信)\n歩行者スマホ&quot;]\n  V2N[&quot;V2N\n(ネットワーク)\n地図・OTA・遠隔監視&quot;]\n  V --- V2V\n  V --- V2I\n  V --- V2P\n  V --- V2N\n</code></pre>",
 "prereq_full": [
 {
@@ -3420,7 +3952,7 @@
 "automotive",
 "iso21434"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>概要</h2>\n<p>車載サイバーセキュリティとは、外部からの不正アクセス・改ざん・盗聴から車両の電子システムを守る技術と管理体系の総称です。ISO 21434は自動車サイバーセキュリティの国際標準であり、開発〜廃棄まで全ライフサイクルでのリスク管理を義務付けています。</p>\n<h2>なぜ必要か</h2>\n<p>現代の車はインターネット・Bluetooth・V2Xなど多数の外部インターフェースを持ち、遠隔から制御を乗っ取られるリスクが現実となっています。2015年のJeep Cherokee遠隔操作事件は世界に衝撃を与え、UN-R155/UN-R156規制により2022年以降のEU型式認証でサイバーセキュリティ対策が必須となりました。</p>\n<h2>主な脅威と対策</h2>\n<table>\n<thead>\n<tr>\n<th>脅威</th>\n<th>対策</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>不正診断アクセス</td>\n<td>UDS認証(Security Access)、SecOC</td>\n</tr>\n<tr>\n<td>OTA改ざん</td>\n<td>コード署名、TLS<strong>暗号化</strong></td>\n</tr>\n<tr>\n<td>CAN bus注入</td>\n<td>CANの分離、侵入検知(IDS)</td>\n</tr>\n<tr>\n<td>外部ネット侵入</td>\n<td><strong>ファイアウォール</strong>、VLANセグメント</td>\n</tr>\n<tr>\n<td>盗聴</td>\n<td>TLS/DTLS、鍵管理(HSM)</td>\n</tr>\n</tbody>\n</table>\n<h2>SecOC (Secure Onboard Communication)</h2>\n<p>AUTOSAR準拠のCAN/Ethernet通信に認証コード(MAC)を付与する仕組みです。改ざんされたメッセージを受信側で検知できます。</p>\n<h2>自動運転での利用例</h2>\n<p>ADAS ECUはHSM(Hardware Security Module)内で鍵を管理し、SecOCで制御コマンドを認証します。外部ネットワークとの境界には<strong>ファイアウォール</strong>機能付きゲートウェイを配置し、<a class=\"term-link\" data-slug=\"vlan\" href=\"/glossary/vlan\">VLAN</a> でADASネットワークとインフォテインメントを分離します。</p>\n<h2>関連用語</h2>\n<p>ネットワーク分離は <a class=\"term-link\" data-slug=\"vlan\" href=\"/glossary/vlan\">VLAN</a>、通信経路の保護は <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> 上のTLS、外部通信は <a class=\"term-link\" data-slug=\"v2x\" href=\"/glossary/v2x\">V2X通信 (Vehicle-to-Everything)</a> / <a class=\"term-link\" data-slug=\"ota\" href=\"/glossary/ota\">OTA更新 (Over-The-Air)</a> を参照。</p>\n<h2>次に学ぶべき内容</h2>\n<p>外部との無線通信 <a class=\"term-link\" data-slug=\"v2x\" href=\"/glossary/v2x\">V2X通信 (Vehicle-to-Everything)</a> のセキュリティ要件を確認しましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">graph TD\n  EXT[&quot;外部インターフェース\n(V2X / OTA / Bluetooth / USB)&quot;]\n  FW[&quot;ファイアウォール\n(ゲートウェイECU)&quot;]\n  VLAN[&quot;VLANセグメント\nADAS / IVI / 診断を分離&quot;]\n  IDS[&quot;IDS (侵入検知)\n異常トラフィック監視&quot;]\n  SECOCC[&quot;SecOC\n(通信メッセージ認証)&quot;]\n  EXT --&gt;|フィルタリング| FW --&gt; VLAN --&gt; IDS --&gt; SECOCC\n</code></pre>",
 "prereq_full": [
 {
@@ -3476,7 +4008,7 @@
 ],
 "category": "SDV",
 "difficulty": "上級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>概要</h2>\n<p>ADAS通信とは、先進運転支援システム(ADAS)を構成するセンサー・コンピュータ・アクチュエータ間のデータ通信全般を指します。カメラ・レーダー・LiDARの大量データを、低遅延かつ高信頼に運ぶことが求められます。</p>\n<h2>なぜ必要か</h2>\n<p>ADAS/自動運転では、認識→判断→制御のループを短い周期で回す必要があり、通信の遅延・ジッタ・欠損が安全性に直結します。そのため帯域・リアルタイム性・冗長性を考慮した通信設計が不可欠です。</p>\n<h2>自動運転での利用例</h2>\n<p>高帯域な <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> をバックボーンに、低遅延通知は <a class=\"term-link\" data-slug=\"udp\" href=\"/glossary/udp\">UDP</a> ベースの <a class=\"term-link\" data-slug=\"some-ip\" href=\"/glossary/some-ip\">SOME/IP</a> で、時刻同期にはTSN(Time-Sensitive Networking)を用います。これらを束ねた車両像が <a class=\"term-link\" data-slug=\"sdv\" href=\"/glossary/sdv\">SDV(<strong>ソフトウェア定義車両</strong>)</a> です。安全のため通信経路を二重化することもあります。</p>\n<h2>関連用語</h2>\n<p>基盤技術は <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> / <a class=\"term-link\" data-slug=\"udp\" href=\"/glossary/udp\">UDP</a> / <a class=\"term-link\" data-slug=\"some-ip\" href=\"/glossary/some-ip\">SOME/IP</a>、上位概念が <a class=\"term-link\" data-slug=\"sdv\" href=\"/glossary/sdv\">SDV(<strong>ソフトウェア定義車両</strong>)</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>ロードマップは一周しました。気になった用語をクリックして、Wikipedia風に知識を深めましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  LID[&quot;LiDARセンサ&quot;] --&gt;|&quot;UDP/AVTP\n点群データ&quot;| ADC[&quot;ADASドメイン\nコントローラ&quot;]\n  CAM1[&quot;前方カメラECU&quot;] --&gt;|&quot;AVTP\n映像ストリーム&quot;| ADC\n  CAM2[&quot;後方カメラECU&quot;] --&gt;|&quot;AVTP&quot;| ADC\n  RAD[&quot;レーダーセンサ&quot;] --&gt;|&quot;SOME/IP\n物体リスト&quot;| ADC\n  ADC --&gt;|&quot;センサフュージョン\n結果&quot;| CTRL[&quot;車両制御ECU&quot;]\n</code></pre>",
 "prereq_full": [
 {
@@ -3529,7 +4061,7 @@
 ],
 "category": "SDV",
 "difficulty": "上級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>概要</h2>\n<p>ROS2(Robot Operating System 2)は、ロボット・自動運転ソフト開発のフレームワークです。その通信基盤に <strong>DDS(Data Distribution Service)</strong> を採用し、Pub/Sub型でノード間がデータをやり取りします。リアルタイム性と分散性に優れます。</p>\n<h2>なぜ必要か</h2>\n<p>自動運転ソフトは多数のモジュール(認識・計画・制御)が並行動作し、大量のデータを低遅延で共有する必要があります。DDSは発見・<strong>QoS</strong>制御・多対多通信を標準で備え、こうした要求に応えます。</p>\n<h2>自動運転での利用例</h2>\n<p>Autowareなどの自動運転スタックはROS2上で構築され、LiDAR点群やカメラ画像、車両状態をDDSで配信します。車載では <a class=\"term-link\" data-slug=\"some-ip\" href=\"/glossary/some-ip\">SOME/IP</a> とDDSが用途で使い分けられ、両者の橋渡し(ゲートウェイ)も検討されます。</p>\n<h2>関連用語</h2>\n<p>車載のサービス通信が <a class=\"term-link\" data-slug=\"some-ip\" href=\"/glossary/some-ip\">SOME/IP</a>、土台のトランスポートが <a class=\"term-link\" data-slug=\"udp\" href=\"/glossary/udp\">UDP</a>、全体の潮流が <a class=\"term-link\" data-slug=\"sdv\" href=\"/glossary/sdv\">SDV(<strong>ソフトウェア定義車両</strong>)</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>これらが向かう先、<a class=\"term-link\" data-slug=\"sdv\" href=\"/glossary/sdv\">SDV(<strong>ソフトウェア定義車両</strong>)</a>(ソフトウェア定義車両)を学びましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  subgraph ADAS[&quot;ADASコンピュータ&quot;]\n    CAM_NODE[&quot;カメラノード\n(Publisher)&quot;] --&gt;|&quot;/image_raw&quot;| DDS[&quot;DDS データバス&quot;]\n    DDS --&gt; PERC[&quot;認識ノード\n(Subscriber)&quot;]\n    PERC --&gt;|&quot;/objects&quot;| DDS\n    DDS --&gt; PLAN[&quot;計画ノード\n(Subscriber)&quot;]\n  end\n  LID[&quot;LiDARセンサ&quot;] --&gt; CAM_NODE\n</code></pre>",
 "prereq_full": [
 {
@@ -3582,7 +4114,7 @@
 ],
 "category": "SDV",
 "difficulty": "上級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>概要</h2>\n<p>SDV(Software Defined Vehicle)は、車両の機能をソフトウェアで定義・更新できるようにする設計思想です。ハード固定の機能群から、<strong>OTA</strong>で継続的に進化するソフト中心の車へ——スマートフォンのような体験を車にもたらします。</p>\n<h2>なぜ必要か</h2>\n<p>自動運転やコネクテッド機能は、出荷後も改善・追加が必要です。多数のECUに分散した固定機能では限界があるため、高性能な集中型コンピュータと高帯域ネットワークで、ソフト更新を前提とした設計へ移行しています。</p>\n<h2>自動運転での利用例</h2>\n<p>SDVでは<strong>ゾーンアーキテクチャ</strong>+車載 <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> バックボーン上に、<a class=\"term-link\" data-slug=\"autosar\" href=\"/glossary/autosar\">AUTOSAR</a> Adaptive や <a class=\"term-link\" data-slug=\"ros2-dds\" href=\"/glossary/ros2-dds\">ROS2 DDS</a> ベースのアプリが載り、<strong>OTA</strong>で自動運転機能が更新されます。通信の中心は <a class=\"term-link\" data-slug=\"adas-comm\" href=\"/glossary/adas-comm\">ADAS通信</a> で扱うサービス指向通信です。</p>\n<h2>関連用語</h2>\n<p>基盤の通信が <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a>、ソフト標準が <a class=\"term-link\" data-slug=\"autosar\" href=\"/glossary/autosar\">AUTOSAR</a>、ADAS固有の通信設計が <a class=\"term-link\" data-slug=\"adas-comm\" href=\"/glossary/adas-comm\">ADAS通信</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>最後に、ADAS特有の通信要件をまとめた <a class=\"term-link\" data-slug=\"adas-comm\" href=\"/glossary/adas-comm\">ADAS通信</a> を学びましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">graph TD\n  CLOUD[&quot;クラウドサービス\n(OTA / 診断 / データ収集)&quot;]\n  HPC[&quot;車両コンピューティングプラットフォーム\n(HPC / Adaptive AUTOSAR / ROS2)&quot;]\n  HW[&quot;車両ハードウェア\n(ECU / センサ / アクチュエータ)&quot;]\n  CLOUD &lt;--&gt;|&quot;4G/5G&quot;| HPC\n  HPC &lt;--&gt;|&quot;Ethernet / CAN&quot;| HW\n</code></pre>",
 "prereq_full": [
 {
@@ -3644,7 +4176,7 @@
 "automotive",
 "realtime"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>概要</h2>\n<p>TSN(Time-Sensitive Networking)は、標準 <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a> に「時間保証」を加える一連の規格(IEEE 802.1)です。<strong>時刻同期</strong>・<strong>帯域予約</strong>・優先制御により、重要なフレームを決められた時間内に確実に届けます。</p>\n<h2>なぜ必要か</h2>\n<p>通常のEthernetはベストエフォートで、遅延やジッタが保証されません。しかし自動運転の制御通信は「いつ届くか」が安全に直結します。TSNはEthernetにリアルタイムLAN並みの確定性を与え、この要求に応えます。</p>\n<h2>自動運転での利用例</h2>\n<p>カメラ・センサーの大容量データと、安全に関わる制御コマンドを同じEthernetバックボーンでTSNにより共存させます。<a class=\"term-link\" data-slug=\"vlan\" href=\"/glossary/vlan\">VLAN</a> による分離と組み合わせ、制御フレームの遅延を上限内に抑えます。これが <a class=\"term-link\" data-slug=\"sdv\" href=\"/glossary/sdv\">SDV(<strong>ソフトウェア定義車両</strong>)</a> の通信基盤を支えます。</p>\n<h2>関連用語</h2>\n<p>土台が <a class=\"term-link\" data-slug=\"ethernet\" href=\"/glossary/ethernet\">Ethernet</a>、論理分離が <a class=\"term-link\" data-slug=\"vlan\" href=\"/glossary/vlan\">VLAN</a>、応用先が <a class=\"term-link\" data-slug=\"adas-comm\" href=\"/glossary/adas-comm\">ADAS通信</a> と <a class=\"term-link\" data-slug=\"sdv\" href=\"/glossary/sdv\">SDV(<strong>ソフトウェア定義車両</strong>)</a> です。</p>\n<h2>次に学ぶべき内容</h2>\n<p>ADAS通信全体の要件 <a class=\"term-link\" data-slug=\"adas-comm\" href=\"/glossary/adas-comm\">ADAS通信</a> を学びましょう。</p>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">sequenceDiagram\n  participant SW as TSN対応スイッチ\n  participant CTRL as ブレーキ制御ECU\n  participant IVI as IVIシステム\n  Note over SW: gPTP時刻同期 (PTP)\n  SW-&gt;&gt;CTRL: 制御データ (タイムスロット予約済み・遅延保証)\n  SW-&gt;&gt;IVI: 映像データ (ベストエフォート)\n  Note over CTRL: 最悪遅延 &lt; 500μs 保証\n</code></pre>",
 "prereq_full": [
 {
@@ -3716,7 +4248,7 @@
 "adaptive-autosar"
 ],
 "difficulty": "上級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "html": "<h2>概要</h2>\n<p><strong>MicroAutoBox</strong>（マイクロオートボックス）は、<strong>dSPACE社</strong>が提供する<strong>ラピッドコントロールプロトタイピング（RCP）</strong>および<strong>ハードウェアインザループ（HiL）テスト</strong>向けのリアルタイムコントローラです。ADASや自動運転アルゴリズムを実車または実機環境で素早く検証するために広く使用されています。</p>\n<h2>主な機能</h2>\n<ul>\n<li><strong>リアルタイムOS</strong>（RTOSベース）で制御アルゴリズムをマイクロ秒単位で実行</li>\n<li><strong>Simulink/MATLAB</strong>モデルから自動コード生成（AUTOSAR対応）</li>\n<li><strong>CAN、CAN FD、LIN、FlexRay、Ethernet</strong>など主要な車載バスをサポート</li>\n<li><strong>FPGA拡張ボード</strong>（MicroAutoBox III）でセンサ処理や高速I/Oに対応</li>\n<li><strong>dSPACE SCALEXIO</strong>との組み合わせでフルHiLテスト環境を構築可能</li>\n</ul>\n<h2>世代と仕様</h2>\n<table>\n<thead>\n<tr>\n<th>モデル</th>\n<th>プロセッサ</th>\n<th>Ethernet</th>\n<th>CAN/FD</th>\n<th>主な用途</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>MicroAutoBox II</td>\n<td>PowerPC</td>\n<td>なし</td>\n<td>あり</td>\n<td>従来RCP</td>\n</tr>\n<tr>\n<td>MicroAutoBox III</td>\n<td>マルチコアARM</td>\n<td>最大4ポート</td>\n<td>あり</td>\n<td>ADAS/SDV RCP</td>\n</tr>\n</tbody>\n</table>\n<p><strong>MicroAutoBox III</strong>では車載Ethernet（100BASE-T1/1000BASE-T1）に対応し、カメラ・LiDARなどの高帯域センサデータを扱うADASプロトタイピングに適しています。</p>\n<h2>開発フロー</h2>\n<ol>\n<li><strong>Simulinkでモデル設計</strong> → 制御アルゴリズムをブロック線図で作成</li>\n<li><strong>自動コード生成</strong> → dSPACE RTI（Real-Time Interface）でCコード生成</li>\n<li><strong>MicroAutoBoxへ書き込み</strong> → リアルタイム実行</li>\n<li><strong>ControlDeskで監視・調整</strong> → パラメータをオンラインで変更・ログ取得</li>\n<li><strong>実車/実機テスト</strong> → 実際の車両ECUや模擬環境と接続して検証</li>\n</ol>\n<h2>自動運転・ADASでの利用</h2>\n<ul>\n<li><strong>センサフュージョンアルゴリズム</strong>の実車プロトタイピング（カメラ+レーダ統合）</li>\n<li><strong>車線維持・緊急ブレーキ（AEB）</strong>などの機能安全ロジック検証</li>\n<li><strong>DoIP/UDS診断</strong>の動作確認（ゲートウェイとして機能）</li>\n<li><strong>AUTOSAR Classic/Adaptive</strong>ソフトウェアコンポーネントの事前検証</li>\n<li>量産前に数週間でアルゴリズム改善サイクルを回せるのが最大のメリット</li>\n</ul>\n<h2>競合ツール</h2>\n<table>\n<thead>\n<tr>\n<th>ツール</th>\n<th>メーカー</th>\n<th>特徴</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>MicroAutoBox</td>\n<td>dSPACE</td>\n<td>最もシェアが高い</td>\n</tr>\n<tr>\n<td>SpeedGoat</td>\n<td>Speedgoat</td>\n<td>Simulinkネイティブ</td>\n</tr>\n<tr>\n<td>PROVEtech:HiL</td>\n<td>ETAS</td>\n<td>AUTOSAR特化</td>\n</tr>\n<tr>\n<td>VT System</td>\n<td>Vector</td>\n<td>車載バス特化</td>\n</tr>\n</tbody>\n</table>\n<h2>図解</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  SIM[&quot;Simulink\\nモデル設計&quot;] --&gt;|&quot;dSPACE RTI\\n自動コード生成&quot;| MAB[&quot;MicroAutoBox III\\n(リアルタイム実行)&quot;]\n  MAB --&gt;|&quot;CAN/CAN FD&quot;| ECU[&quot;量産ECU\\n(ブレーキ/パワステ)&quot;]\n  MAB --&gt;|&quot;Ethernet\\n(100BASE-T1)&quot;| CAM[&quot;カメラ/LiDARセンサ&quot;]\n  PC[&quot;開発PC\\n(ControlDesk)&quot;] --&gt;|&quot;パラメータ調整\\n・ログ取得&quot;| MAB\n  subgraph HiL[&quot;HiL環境&quot;]\n    MAB\n    ECU\n    CAM\n  end\n</code></pre>",
 "prereq_full": [],
 "related_full": [
@@ -3824,6 +4356,36 @@
 {
 "slug": "communication-basics",
 "title": "通信とは"
+},
+{
+"slug": "python-basics",
+"title": "Python基礎（変数・リスト・辞書）"
+}
+],
+"python-basics": [
+{
+"slug": "numpy",
+"title": "NumPy（配列・行列演算）"
+},
+{
+"slug": "pandas",
+"title": "Pandas（DataFrame・データ操作）"
+},
+{
+"slug": "data-analysis",
+"title": "データ分析の流れ（EDA）"
+},
+{
+"slug": "data-cleaning",
+"title": "データクリーニング"
+},
+{
+"slug": "matplotlib",
+"title": "Matplotlib（グラフ描画）"
+},
+{
+"slug": "seaborn",
+"title": "Seaborn（統計可視化）"
 }
 ],
 "communication-basics": [
@@ -3834,6 +4396,10 @@
 {
 "slug": "ethernet",
 "title": "Ethernet"
+},
+{
+"slug": "python-basics",
+"title": "Python基礎（変数・リスト・辞書）"
 }
 ],
 "arp": [
@@ -4032,6 +4598,84 @@
 "title": "VLAN"
 }
 ],
+"matplotlib": [
+{
+"slug": "seaborn",
+"title": "Seaborn（統計可視化）"
+},
+{
+"slug": "numpy",
+"title": "NumPy（配列・行列演算）"
+},
+{
+"slug": "pandas",
+"title": "Pandas（DataFrame・データ操作）"
+},
+{
+"slug": "data-analysis",
+"title": "データ分析の流れ（EDA）"
+},
+{
+"slug": "data-cleaning",
+"title": "データクリーニング"
+},
+{
+"slug": "python-basics",
+"title": "Python基礎（変数・リスト・辞書）"
+}
+],
+"numpy": [
+{
+"slug": "pandas",
+"title": "Pandas（DataFrame・データ操作）"
+},
+{
+"slug": "python-basics",
+"title": "Python基礎（変数・リスト・辞書）"
+},
+{
+"slug": "matplotlib",
+"title": "Matplotlib（グラフ描画）"
+},
+{
+"slug": "data-analysis",
+"title": "データ分析の流れ（EDA）"
+},
+{
+"slug": "data-cleaning",
+"title": "データクリーニング"
+},
+{
+"slug": "seaborn",
+"title": "Seaborn（統計可視化）"
+}
+],
+"pandas": [
+{
+"slug": "matplotlib",
+"title": "Matplotlib（グラフ描画）"
+},
+{
+"slug": "data-cleaning",
+"title": "データクリーニング"
+},
+{
+"slug": "numpy",
+"title": "NumPy（配列・行列演算）"
+},
+{
+"slug": "data-analysis",
+"title": "データ分析の流れ（EDA）"
+},
+{
+"slug": "python-basics",
+"title": "Python基礎（変数・リスト・辞書）"
+},
+{
+"slug": "seaborn",
+"title": "Seaborn（統計可視化）"
+}
+],
 "port": [
 {
 "slug": "socket",
@@ -4162,6 +4806,32 @@
 {
 "slug": "icmp",
 "title": "ICMP / **ping**"
+}
+],
+"data-cleaning": [
+{
+"slug": "data-analysis",
+"title": "データ分析の流れ（EDA）"
+},
+{
+"slug": "pandas",
+"title": "Pandas（DataFrame・データ操作）"
+},
+{
+"slug": "numpy",
+"title": "NumPy（配列・行列演算）"
+},
+{
+"slug": "matplotlib",
+"title": "Matplotlib（グラフ描画）"
+},
+{
+"slug": "python-basics",
+"title": "Python基礎（変数・リスト・辞書）"
+},
+{
+"slug": "seaborn",
+"title": "Seaborn（統計可視化）"
 }
 ],
 "avtp": [
@@ -4318,6 +4988,32 @@
 {
 "slug": "arp",
 "title": "ARP"
+}
+],
+"seaborn": [
+{
+"slug": "data-analysis",
+"title": "データ分析の流れ（EDA）"
+},
+{
+"slug": "matplotlib",
+"title": "Matplotlib（グラフ描画）"
+},
+{
+"slug": "pandas",
+"title": "Pandas（DataFrame・データ操作）"
+},
+{
+"slug": "data-cleaning",
+"title": "データクリーニング"
+},
+{
+"slug": "numpy",
+"title": "NumPy（配列・行列演算）"
+},
+{
+"slug": "python-basics",
+"title": "Python基礎（変数・リスト・辞書）"
 }
 ],
 "socket": [
@@ -4570,6 +5266,32 @@
 {
 "slug": "doip",
 "title": "DoIP(Diagnostics over IP)"
+}
+],
+"data-analysis": [
+{
+"slug": "pandas",
+"title": "Pandas（DataFrame・データ操作）"
+},
+{
+"slug": "matplotlib",
+"title": "Matplotlib（グラフ描画）"
+},
+{
+"slug": "seaborn",
+"title": "Seaborn（統計可視化）"
+},
+{
+"slug": "numpy",
+"title": "NumPy（配列・行列演算）"
+},
+{
+"slug": "data-cleaning",
+"title": "データクリーニング"
+},
+{
+"slug": "python-basics",
+"title": "Python基礎（変数・リスト・辞書）"
 }
 ],
 "autosar": [
@@ -5245,7 +5967,7 @@
 ],
 "category": "Ethernet",
 "difficulty": "初級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "Ethernetは有線LANの標準技術で、OSIの物理層・データリンク層(L1/L2)を担います。データを「**フレーム**」という単位にまとめ、mac-address を使って同じネットワーク内の機器へ届けます。",
 "views": 0,
 "completed": false,
@@ -5267,7 +5989,7 @@
 ],
 "category": "Ethernet",
 "difficulty": "初級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "MACアドレスは、ネットワーク機器に割り当てられた**48ビット**の物理アドレスです(例: `00:1A:2B:3C:4D:5E`)。ethernet フレームの送信元・宛先として使われ、同じネットワーク内で「どの機器宛か」を識別します。",
 "views": 0,
 "completed": false,
@@ -5292,7 +6014,7 @@
 "l3",
 "automotive"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "ARP(**Address Resolution Protocol**)は、IPアドレスから対応する mac-address を調べるためのプロトコルです。「このIPの機器のMACは?」とネットワークに問い合わせ(ARPリクエスト)、該当機",
 "views": 0,
 "completed": false,
@@ -5316,7 +6038,7 @@
 "l2",
 "automotive"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "VLAN(Virtual LAN / **IEEE 802.1Q**)は、1本の物理 ethernet を論理的に複数のネットワークに分割する技術です。フレームに「**VLANタグ**」を付けることで、同じケーブル上でもグループごとに通信を",
 "views": 0,
 "completed": false,
@@ -5343,7 +6065,7 @@
 "video",
 "automotive"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "AVTP(Audio Video Transport Protocol、**IEEE 1722**)は、車載Ethernet上で映像・音声ストリームをリアルタイム転送するプロトコルです。カメラ映像をサラウンドビューモニター(SVM)に表示し",
 "views": 0,
 "completed": false,
@@ -5368,7 +6090,7 @@
 "timing",
 "automotive"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "PTP(Precision Time Protocol、**IEEE 1588**)は、ネットワーク上の複数ノードの時刻をナノ秒精度で同期するプロトコルです。**グランドマスター**クロックが基準時刻を発信し、スレーブノードが遅延を計測しな",
 "views": 0,
 "completed": false,
@@ -5398,7 +6120,7 @@
 ],
 "category": "TCP/IP",
 "difficulty": "初級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "OSI参照モデルは、通信機能を7つの階層に分けて整理した概念モデルです。下から順に、**物理層**・**データリンク層**・**ネットワーク層**・**トランスポート層**・セッション層・プレゼンテーション層・**アプリケーション層**。各",
 "views": 0,
 "completed": false,
@@ -5420,7 +6142,7 @@
 ],
 "category": "TCP/IP",
 "difficulty": "初級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "通信とは、ある機器から別の機器へ「データ」を届けることです。届ける相手・順番・形式を双方が約束しておくことで、初めて意味のあるやり取りが成立します。この約束ごとを **プロトコル** と呼びます。",
 "views": 0,
 "completed": false,
@@ -5443,7 +6165,7 @@
 "tags": [
 "l3"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "DHCP(Dynamic Host Configuration Protocol)は、機器に ip アドレスやサブネットマスク、ゲートウェイ、DNSサーバなどのネットワーク設定を自動で配布する仕組みです。手動設定の手間とミスを無くします。",
 "views": 0,
 "completed": false,
@@ -5466,7 +6188,7 @@
 "tags": [
 "l7"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "DNS(Domain Name System)は、人間が読みやすい**ドメイン名**(例 `example.com`)を、機器が使う ip アドレスに変換する「インターネットの電話帳」です。問い合わせは主に udp 上で高速に行われます。",
 "views": 0,
 "completed": false,
@@ -5489,7 +6211,7 @@
 "l3",
 "tool"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "ICMP(Internet Control Message Protocol)は、ip 通信のエラー通知や制御メッセージをやり取りするプロトコルです。最も身近な用途が `**ping**` で、相手に到達できるか・往復にどれだけ時間がかかる",
 "views": 0,
 "completed": false,
@@ -5513,7 +6235,7 @@
 ],
 "category": "TCP/IP",
 "difficulty": "初級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "IP(Internet Protocol)はOSIのネットワーク層(L3)を担い、データを「パケット」にして送信元IPから宛先IPへ届けます。ネットワークをまたいだ転送(**ルーティング**)を可能にする中核プロトコルです。IPv4とIPv",
 "views": 0,
 "completed": false,
@@ -5543,7 +6265,7 @@
 "vlan"
 ],
 "difficulty": "初級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "**IPv4**（Internet Protocol version 4）と**IPv6**（Internet Protocol version 6）はどちらもネットワーク層でデバイスを識別し、パケットを届けるプロトコルです。アドレス枯渇問",
 "views": 0,
 "completed": false,
@@ -5566,7 +6288,7 @@
 ],
 "category": "TCP/IP",
 "difficulty": "初級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "**ポート番号**は、1台の機器内で動く複数の通信を区別するための16ビットの番号(**0〜65535**)です。IPアドレスが「建物の住所」なら、ポートは「部屋番号」に相当します。",
 "views": 0,
 "completed": false,
@@ -5590,7 +6312,7 @@
 ],
 "category": "TCP/IP",
 "difficulty": "初級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "TCP(Transmission Control Protocol)はコネクション型のトランスポート層プロトコルです。3wayハンドシェイクで接続を確立し、**再送制御**・順序保証・**フロー制御**により「データが確実に正しい順で届く」",
 "views": 0,
 "completed": false,
@@ -5616,7 +6338,7 @@
 ],
 "category": "TCP/IP",
 "difficulty": "初級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "UDP(User Datagram Protocol)は**コネクションレス**で、再送や順序保証を持たない軽量なトランスポート層プロトコルです。ハンドシェイクなしで即座に送れるため、**低遅延**・低オーバーヘッドが特長です。",
 "views": 0,
 "completed": false,
@@ -5639,7 +6361,7 @@
 "tags": [
 "l3"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "サブネットは、ip アドレス空間を小さなネットワークに区切る考え方です。「ネットワーク部」と「ホスト部」を**サブネットマスク**(例 `255.255.255.0` / **CIDR**表記 `/24`)で分け、どこまでが同じネットワーク",
 "views": 0,
 "completed": false,
@@ -5669,7 +6391,7 @@
 ],
 "category": "PCAP",
 "difficulty": "中級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "PCAP(Packet Capture)は、キャプチャしたパケットを保存するファイル形式です(拡張子 `.pcap` / `.**pcapng**`)。各パケットの**タイムスタンプ**と生データが記録され、後から繰り返し解析できます。",
 "views": 0,
 "completed": false,
@@ -5693,7 +6415,7 @@
 ],
 "category": "PCAP",
 "difficulty": "中級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "**ソケット**は、IPアドレスとポート番号の組で表される「通信のエンドポイント(出入口)」であり、プログラムがネットワーク通信を行うためのAPIでもあります。アプリはソケットを開いてデータを読み書きします。",
 "views": 0,
 "completed": false,
@@ -5716,7 +6438,7 @@
 ],
 "category": "PCAP",
 "difficulty": "中級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "Wiresharkは、ネットワークを流れるパケットをキャプチャして可視化する定番の解析ツールです。各パケットを osi の層ごとに分解し、Ethernet/IP/TCP/UDPの中身を人間が読める形で表示します。",
 "views": 0,
 "completed": false,
@@ -5740,7 +6462,7 @@
 "tool",
 "cli"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "tcpdumpは、コマンドラインでパケットをキャプチャ・表示する定番ツールです。GUIの wireshark と違い、サーバや組み込み機器など画面の無い環境でも動き、結果を pcap ファイルに保存できます。",
 "views": 0,
 "completed": false,
@@ -5764,7 +6486,7 @@
 "tool",
 "cli"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "tsharkは、wireshark のコマンドライン版です。Wiresharkと同じ強力なプロトコル解析(ディセクタ)を持ちつつ、CLIで動くため**自動化**やバッチ処理に向いています。**表示フィルタ**で欲しい情報だけを抽出できます。",
 "views": 0,
 "completed": false,
@@ -5794,7 +6516,7 @@
 "automotive",
 "diagnostics"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "DoIP(Diagnostics over IP / ISO 13400)は、車載診断通信(UDS)を ip ネットワーク上で行うための規格です。従来CAN上で行っていた診断を、高帯域なEthernetとIPで実現し、大量データの高速なやり",
 "views": 0,
 "completed": false,
@@ -5819,7 +6541,7 @@
 ],
 "category": "SOME/IP",
 "difficulty": "上級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "SOME/IP(Scalable service-Oriented MiddlewarE over IP)は、車載ECU同士が「サービス」をやり取りするためのIP上のミドルウェアです。メソッド呼び出し(RPC)、イベント通知(Pub/Sub",
 "views": 0,
 "completed": false,
@@ -5849,7 +6571,7 @@
 ],
 "category": "AUTOSAR",
 "difficulty": "上級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "AUTOSAR(AUTomotive Open System ARchitecture)は、車載ソフトウェアの標準アーキテクチャです。ハードに依存しない再利用可能なソフト開発を目指します。従来制御向けの **Classic Platform",
 "views": 0,
 "completed": false,
@@ -5876,7 +6598,7 @@
 "middleware",
 "autosar"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "Adaptive AUTOSARは、高性能プロセッサ上でLinux等のOSを動かしながら、機能安全と柔軟なソフトウェア配置を両立する車載ミドルウェア標準です。Classic AUTOSARが静的なマイコン向けであるのに対し、Adaptive",
 "views": 0,
 "completed": false,
@@ -5900,7 +6622,7 @@
 ],
 "category": "AUTOSAR",
 "difficulty": "上級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "CAN(Controller Area Network)は、自動車向けに開発された堅牢なシリアル通信バスです。各メッセージはIDを持ち、宛先ではなく「内容」で識別されるブロードキャスト方式。ノイズに強く、配線がシンプルなのが特長です。CAN",
 "views": 0,
 "completed": false,
@@ -5924,7 +6646,7 @@
 "automotive",
 "bus"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "CAN FD(CAN with Flexible Data-rate)は、従来の can を拡張した規格です。1フレームで運べるデータ量を8バイトから**最大64バイト**へ拡大し、データ部分の通信速度も高速化しました。既存のCAN資産を活",
 "views": 0,
 "completed": false,
@@ -5957,7 +6679,7 @@
 "security",
 "automotive"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "OTA(Over-The-Air)更新は、無線通信を通じて車両のソフトウェア・ファームウェアをリモートで書き換える仕組みです。販売店に持ち込まずに最新機能の追加やバグ修正が可能となり、SDVの中核技術の一つです。",
 "views": 0,
 "completed": false,
@@ -5984,7 +6706,7 @@
 "v2x",
 "adas"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "V2X(Vehicle-to-Everything)は、車両が道路インフラ・他車・歩行者・クラウドとリアルタイムに情報を交換する無線通信の総称です。V2V(車々間)、V2I(路車間)、V2P(歩行者)、V2N(ネットワーク)に分類されます。",
 "views": 0,
 "completed": false,
@@ -6007,7 +6729,7 @@
 ],
 "category": "SDV",
 "difficulty": "上級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "ADAS通信とは、先進運転支援システム(ADAS)を構成するセンサー・コンピュータ・アクチュエータ間のデータ通信全般を指します。カメラ・レーダー・LiDARの大量データを、低遅延かつ高信頼に運ぶことが求められます。",
 "views": 0,
 "completed": false,
@@ -6032,7 +6754,7 @@
 ],
 "category": "SDV",
 "difficulty": "上級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "ROS2(Robot Operating System 2)は、ロボット・自動運転ソフト開発のフレームワークです。その通信基盤に **DDS(Data Distribution Service)** を採用し、Pub/Sub型でノード間がデ",
 "views": 0,
 "completed": false,
@@ -6056,7 +6778,7 @@
 ],
 "category": "SDV",
 "difficulty": "上級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "SDV(Software Defined Vehicle)は、車両の機能をソフトウェアで定義・更新できるようにする設計思想です。ハード固定の機能群から、**OTA**で継続的に進化するソフト中心の車へ——スマートフォンのような体験を車にもた",
 "views": 0,
 "completed": false,
@@ -6081,7 +6803,7 @@
 "automotive",
 "realtime"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "TSN(Time-Sensitive Networking)は、標準 ethernet に「時間保証」を加える一連の規格(IEEE 802.1)です。**時刻同期**・**帯域予約**・優先制御により、重要なフレームを決められた時間内に確実",
 "views": 0,
 "completed": false,
@@ -6112,7 +6834,7 @@
 "adaptive-autosar"
 ],
 "difficulty": "上級",
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "**MicroAutoBox**（マイクロオートボックス）は、**dSPACE社**が提供する**ラピッドコントロールプロトタイピング（RCP）**および**ハードウェアインザループ（HiL）テスト**向けのリアルタイムコントローラです。A",
 "views": 0,
 "completed": false,
@@ -6142,7 +6864,7 @@
 "bus",
 "l2"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "LIN(Local Interconnect Network)は、**低コスト**・低速な車載シリアルバスです。1本のワイヤで最大19.2 kbpsの通信を行い、**マスター/スレーブ**構成で動作します。CANより安価で、シート調整・ドア",
 "views": 0,
 "completed": false,
@@ -6168,7 +6890,7 @@
 "bus",
 "realtime"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "FlexRayは、時分割多重(**TDMA**)方式を採用した高速・高信頼性の車載バスです。最大10 Mbpsの速度と、**決定論的**タイミング(遅延上限が保証)が特徴です。冗長チャネル構成によりフォールトトレランスも実現します。",
 "views": 0,
 "completed": false,
@@ -6199,7 +6921,7 @@
 "automotive",
 "iso14229"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "UDS(Unified Diagnostic Services、ISO 14229)は、ECUを診断・プログラムするための標準プロトコルです。「**サービスID**」と呼ばれる命令コードで、故障コード(DTC)の読み出し、メモリへの書き込み",
 "views": 0,
 "completed": false,
@@ -6225,7 +6947,7 @@
 "automotive",
 "calibration"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "XCP(Universal Measurement and Calibration Protocol、ASAM MCD-1 XCP)は、ECU内部の変数をリアルタイムに測定・書き換えするためのプロトコルです。開発中のECUに対してキャリブレ",
 "views": 0,
 "completed": false,
@@ -6257,7 +6979,7 @@
 "automotive",
 "iso21434"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "車載サイバーセキュリティとは、外部からの不正アクセス・改ざん・盗聴から車両の電子システムを守る技術と管理体系の総称です。ISO 21434は自動車サイバーセキュリティの国際標準であり、開発〜廃棄まで全ライフサイクルでのリスク管理を義務付けて",
 "views": 0,
 "completed": false,
@@ -6290,7 +7012,7 @@
 "diagnostics",
 "icmp"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "診断PCや別ECUから対象ECUへ**ping**を使って**疎通確認**する手順と、応答がない場合のトラブルシュート手順を説明します。",
 "views": 0,
 "completed": false,
@@ -6317,7 +7039,7 @@
 "vlan",
 "ethernet"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "車載EthernetのキャプチャデータにVLANタグ(**IEEE 802.1Q**)が含まれているかをWiresharkで確認し、VLANごとにトラフィックを分離して解析する手順を説明します。",
 "views": 0,
 "completed": false,
@@ -6345,7 +7067,7 @@
 "doip",
 "automotive"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "診断PCからDoIP(Diagnostics over IP)を使ってゲートウェイECUへ接続し、UDS診断を開始するまでの手順を説明します。",
 "views": 0,
 "completed": false,
@@ -6372,7 +7094,7 @@
 "cli",
 "pcap"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "Linux搭載のECUやゲートウェイECU上で tcpdump を使い、車載Ethernetパケットをキャプチャしてpcapファイルに保存する手順を説明します。",
 "views": 0,
 "completed": false,
@@ -6399,7 +7121,7 @@
 "uds",
 "automotive"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "UDS (ISO 14229) の `ReadDTCInformation` サービス(0x19)を使って、ECUに記録された故障コード(DTC: Diagnostic Trouble Code)を読み出す手順を説明します。",
 "views": 0,
 "completed": false,
@@ -6425,7 +7147,7 @@
 "tool",
 "some-ip"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "Wiresharkを使って、車載EthernetのSOME/IPパケットを可視化・解析する手順を説明します。",
 "views": 0,
 "completed": false,
@@ -6454,7 +7176,7 @@
 "pcap",
 "analysis"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "車両ネットワークのpcapファイルを受け取ったとき、何から確認すればよいかの分析ステップと、よく見るべきポイントを説明します。",
 "views": 0,
 "completed": false,
@@ -6482,8 +7204,195 @@
 "cli",
 "tshark"
 ],
-"updated": "2026-06-08",
+"updated": "2026-06-10",
 "excerpt": "tshark(Wiresharkのコマンドライン版)を使って、pcapファイルや生トラフィックから特定の車載プロトコルを素早く抽出・解析する実践的なコマンドを紹介します。",
+"views": 0,
+"completed": false,
+"favorite": false
+}
+]
+},
+{
+"name": "Python",
+"articles": [
+{
+"slug": "python-basics",
+"title": "Python基礎（変数・リスト・辞書）",
+"level": 1,
+"category": "Python",
+"related": [
+"numpy",
+"pandas"
+],
+"next": [
+"numpy"
+],
+"tags": [
+"python",
+"basics",
+"data-science"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "Pythonはシンプルな文法と豊富なライブラリにより、データサイエンスの標準言語となっています。コードが英語に近い読みやすさを持ち、初心者でも数日で実用的なデータ処理が書けます。変数・リスト・辞書・制御構文を押さえておくと、NumPyやPa",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "matplotlib",
+"title": "Matplotlib（グラフ描画）",
+"level": 2,
+"category": "Python",
+"related": [
+"numpy",
+"pandas",
+"seaborn"
+],
+"next": [
+"seaborn"
+],
+"tags": [
+"python",
+"matplotlib",
+"visualization",
+"data-science"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "Matplotlibはデータを視覚化する基本ライブラリです。折れ線グラフ・棒グラフ・散布図・ヒストグラム・円グラフなど幅広いグラフを、細部まで自由にカスタマイズして作成できます。PandasやSeabornの `plot()` も内部でMa",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "numpy",
+"title": "NumPy（配列・行列演算）",
+"level": 2,
+"category": "Python",
+"related": [
+"python-basics",
+"pandas",
+"matplotlib"
+],
+"next": [
+"pandas"
+],
+"tags": [
+"python",
+"numpy",
+"array",
+"data-science"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "NumPyはPythonで数値計算を高速に行う基盤ライブラリです。中心となる `ndarray`（N次元配列）はC言語で実装されており、Pythonのリストと比べて**10〜100倍以上の速度**で数値処理を行えます。PandasもMatp",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "pandas",
+"title": "Pandas（DataFrame・データ操作）",
+"level": 2,
+"category": "Python",
+"related": [
+"numpy",
+"matplotlib",
+"data-cleaning"
+],
+"next": [
+"matplotlib"
+],
+"tags": [
+"python",
+"pandas",
+"dataframe",
+"data-science"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "PandasはExcel的な**表形式データ**を扱うライブラリです。中心となるデータ構造は `DataFrame`（2次元の表）と `Series`（1列）で、CSVの読み込み・集計・結合・整形を数行のコードで行えます。実務のデータ分析作",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "data-cleaning",
+"title": "データクリーニング",
+"level": 2,
+"category": "Python",
+"related": [
+"pandas",
+"numpy",
+"data-analysis"
+],
+"next": [
+"data-analysis"
+],
+"tags": [
+"python",
+"pandas",
+"cleaning",
+"preprocessing",
+"data-science"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "データクリーニングは分析・機械学習の前処理として必須のステップです。現実のデータは欠損値・重複・型の不整合・表記ゆれを必ず含んでいます。「ゴミを入れればゴミが出る（GIGO）」という言葉の通り、前処理の質がそのまま分析精度に直結します。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "seaborn",
+"title": "Seaborn（統計可視化）",
+"level": 3,
+"category": "Python",
+"related": [
+"matplotlib",
+"pandas",
+"data-analysis"
+],
+"next": [
+"data-analysis"
+],
+"tags": [
+"python",
+"seaborn",
+"visualization",
+"statistics",
+"data-science"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"excerpt": "SeabornはMatplotlibをベースにした統計可視化ライブラリです。Pandasの `DataFrame` を直接受け取り、複雑な統計グラフを少ないコードで美しく描けます。箱ひげ図・バイオリンプロット・ペアプロット・ヒートマップなど",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "data-analysis",
+"title": "データ分析の流れ（EDA）",
+"level": 3,
+"category": "Python",
+"related": [
+"pandas",
+"matplotlib",
+"seaborn",
+"numpy",
+"data-cleaning"
+],
+"next": [],
+"tags": [
+"python",
+"eda",
+"data-science",
+"analysis"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"excerpt": "EDA（Exploratory Data Analysis：探索的データ分析）は、機械学習・統計モデリングの**前に必ず行う**データ理解の工程です。数値の羅列から「傾向」「外れ値」「相関」「欠損パターン」を発見し、仮説を立てて次のアクショ",
 "views": 0,
 "completed": false,
 "favorite": false
