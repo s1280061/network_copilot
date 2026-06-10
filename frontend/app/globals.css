@@ -2,21 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Article rendering (HTML from backend markdown) */
+/* ============================================================
+   Article prose styles
+   ============================================================ */
 .prose-article {
   @apply text-slate-700 leading-relaxed;
 }
 .prose-article h2 {
-  @apply text-lg font-bold mt-6 mb-2 text-slate-900;
+  @apply text-lg font-bold mt-8 mb-3 text-slate-900 border-b border-slate-200 pb-1;
 }
 .prose-article h3 {
-  @apply text-base font-semibold mt-4 mb-1 text-slate-900;
+  @apply text-base font-semibold mt-5 mb-2 text-slate-800;
 }
 .prose-article p {
-  @apply my-3;
+  @apply my-3 leading-7;
 }
 .prose-article ul {
   @apply list-disc list-inside my-3 space-y-1;
+}
+.prose-article ol {
+  @apply list-decimal list-inside my-3 space-y-1;
 }
 .prose-article a {
   @apply text-sky-600 underline decoration-sky-300 underline-offset-2;
@@ -25,6 +30,158 @@
   @apply font-medium cursor-pointer hover:text-sky-700 hover:decoration-sky-500;
 }
 
+/* インラインコード */
+.prose-article :not(pre) > code {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', ui-monospace, monospace;
+  font-size: 0.82em;
+  background: #1e1e2e;
+  color: #cdd6f4;
+  padding: 0.15em 0.45em;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+/* テーブル */
+.prose-article table {
+  @apply w-full my-5 text-sm border-collapse rounded-lg overflow-hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+.prose-article thead tr {
+  background: #1e1e2e;
+  color: #cdd6f4;
+}
+.prose-article th {
+  @apply px-4 py-2 text-left font-semibold;
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+}
+.prose-article td {
+  @apply px-4 py-2 border-t border-slate-100;
+}
+.prose-article tbody tr:nth-child(even) {
+  background: #f8f9ff;
+}
+.prose-article tbody tr:hover {
+  background: #eff6ff;
+}
+
+/* ============================================================
+   IDE-style code blocks
+   ============================================================ */
+
+/* コードブロック全体のラッパー */
+.prose-article pre.hljs-wrapped {
+  position: relative;
+  margin: 1.5rem 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #1e1e2e;       /* Catppuccin Mocha base */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255,255,255,0.06);
+}
+
+/* macOS 風のウィンドウバー */
+.prose-article pre.hljs-wrapped::before {
+  content: "";
+  display: block;
+  height: 36px;
+  background: #181825;       /* Catppuccin Mocha mantle */
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  background-image: radial-gradient(circle, #f38ba8 6px, transparent 6px),
+                    radial-gradient(circle, #f9e2af 6px, transparent 6px),
+                    radial-gradient(circle, #a6e3a1 6px, transparent 6px);
+  background-position: 16px 50%, 32px 50%, 48px 50%;
+  background-repeat: no-repeat;
+}
+
+/* highlight.js の code 要素 */
+.prose-article pre.hljs-wrapped > code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1.1rem 1.4rem 1.2rem;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', ui-monospace, monospace;
+  font-size: 0.82rem;
+  line-height: 1.7;
+  background: transparent;
+  color: #cdd6f4;            /* Catppuccin Mocha text */
+  tab-size: 4;
+}
+
+/* 言語バッジ */
+.hljs-lang-badge {
+  position: absolute;
+  top: 0;
+  right: 52px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #6c7086;            /* Catppuccin overlay0 */
+  letter-spacing: 0.06em;
+  text-transform: lowercase;
+  pointer-events: none;
+}
+
+/* コピーボタン */
+.hljs-copy-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 36px;
+  padding: 0 14px;
+  background: transparent;
+  border: none;
+  border-left: 1px solid rgba(255,255,255,0.06);
+  color: #6c7086;
+  font-size: 0.7rem;
+  font-family: system-ui, sans-serif;
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s;
+  letter-spacing: 0.02em;
+}
+.hljs-copy-btn:hover {
+  color: #cdd6f4;
+  background: rgba(255,255,255,0.05);
+}
+
+/* ============================================================
+   Catppuccin Mocha カラーテーマ（highlight.js トークン）
+   ============================================================ */
+.prose-article .hljs-keyword,
+.prose-article .hljs-selector-tag,
+.prose-article .hljs-literal        { color: #cba6f7; font-weight: 600; }   /* mauve - キーワード */
+.prose-article .hljs-name           { color: #89b4fa; }                      /* blue */
+.prose-article .hljs-attr           { color: #89dceb; }                      /* sky */
+.prose-article .hljs-string,
+.prose-article .hljs-addition       { color: #a6e3a1; }                      /* green - 文字列 */
+.prose-article .hljs-number         { color: #fab387; }                      /* peach - 数値 */
+.prose-article .hljs-comment        { color: #585b70; font-style: italic; }  /* surface2 - コメント */
+.prose-article .hljs-variable,
+.prose-article .hljs-template-variable { color: #f38ba8; }                   /* red */
+.prose-article .hljs-built_in,
+.prose-article .hljs-type           { color: #89dceb; }                      /* sky - 組み込み型 */
+.prose-article .hljs-function,
+.prose-article .hljs-title          { color: #89b4fa; font-weight: 600; }    /* blue - 関数名 */
+.prose-article .hljs-class          { color: #f9e2af; }                      /* yellow - クラス */
+.prose-article .hljs-operator,
+.prose-article .hljs-punctuation    { color: #89dceb; }                      /* sky */
+.prose-article .hljs-params         { color: #cdd6f4; }                      /* text */
+.prose-article .hljs-regexp         { color: #a6e3a1; }                      /* green */
+.prose-article .hljs-symbol         { color: #f5c2e7; }                      /* pink */
+.prose-article .hljs-decorator      { color: #f5c2e7; }                      /* pink - デコレータ */
+.prose-article .hljs-meta           { color: #f9e2af; }                      /* yellow */
+.prose-article .hljs-tag            { color: #f38ba8; }                      /* red */
+.prose-article .hljs-selector-class,
+.prose-article .hljs-selector-id    { color: #fab387; }                      /* peach */
+.prose-article .hljs-emphasis       { font-style: italic; }
+.prose-article .hljs-strong         { font-weight: 700; }
+.prose-article .hljs-deletion       { color: #f38ba8; text-decoration: line-through; }
+
+/* ============================================================
+   Utilities
+   ============================================================ */
 .line-clamp-2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;
