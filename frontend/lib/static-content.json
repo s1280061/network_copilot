@@ -397,6 +397,32 @@
 "favorite": false
 },
 {
+"slug": "opencv",
+"title": "OpenCV（画像処理基礎）",
+"level": 2,
+"category": "CV",
+"related": [
+"image-processing",
+"cnn",
+"numpy"
+],
+"next": [
+"image-processing"
+],
+"tags": [
+"opencv",
+"computer-vision",
+"python",
+"image-processing"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "OpenCV（Open Source Computer Vision Library）はC++/Python対応の高速な画像処理ライブラリです。画像の読み込み・変換・フィルタリング・エッジ検出・物体検出まで、コンピュータビジョンに必要な操作",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "pandas",
 "title": "Pandas（DataFrame・データ操作）",
 "level": 2,
@@ -653,6 +679,32 @@
 "favorite": false
 },
 {
+"slug": "prompt-engineering",
+"title": "プロンプトエンジニアリング",
+"level": 2,
+"category": "GenAI",
+"related": [
+"llm",
+"rag"
+],
+"next": [
+"rag"
+],
+"tags": [
+"prompt",
+"llm",
+"genai",
+"claude",
+"gpt"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "プロンプトエンジニアリングはLLMに対して質の高い出力を得るための入力設計技術です。同じモデルでもプロンプトの書き方で出力の質が大きく変わります。コスト・速度・精度すべてに影響するため、LLMを使うすべての開発者に必須のスキルです。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "classification",
 "title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）",
 "level": 2,
@@ -676,6 +728,32 @@
 "difficulty": "初級",
 "updated": "2026-06-10",
 "excerpt": "分類（Classification）は入力データが「どのクラスに属するか」を予測するタスクです。スパム判定・故障検知・画像認識などに使います。代表的な4つのアルゴリズムを比較しながら解説します。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "deep-learning",
+"title": "深層学習の基礎（ニューラルネットワーク）",
+"level": 2,
+"category": "DL",
+"related": [
+"ml-basics",
+"pytorch",
+"cnn"
+],
+"next": [
+"pytorch"
+],
+"tags": [
+"deep-learning",
+"neural-network",
+"python",
+"ml"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "深層学習（Deep Learning）は多層のニューラルネットワークを使って、データから特徴を自動的に学習する機械学習の手法です。画像認識・音声認識・自然言語処理で従来手法を大きく上回る精度を実現し、生成AIの基盤にもなっています。",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -729,6 +807,34 @@
 ],
 "updated": "2026-06-10",
 "excerpt": "AVTP(Audio Video Transport Protocol、**IEEE 1722**)は、車載Ethernet上で映像・音声ストリームをリアルタイム転送するプロトコルです。カメラ映像をサラウンドビューモニター(SVM)に表示し",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "cnn",
+"title": "CNN（畳み込みニューラルネットワーク）",
+"level": 3,
+"category": "DL",
+"related": [
+"pytorch",
+"deep-learning",
+"opencv",
+"rnn-lstm"
+],
+"next": [
+"rnn-lstm"
+],
+"tags": [
+"cnn",
+"deep-learning",
+"pytorch",
+"image",
+"computer-vision"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"excerpt": "CNN（Convolutional Neural Network）は画像データに特化したニューラルネットワークです。畳み込み層・プーリング層を積み重ね、画像の局所パターン（エッジ→テクスチャ→形状→物体）を階層的に学習します。画像分類・物体",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -815,6 +921,34 @@
 "favorite": false
 },
 {
+"slug": "llm",
+"title": "LLM（大規模言語モデル）",
+"level": 3,
+"category": "GenAI",
+"related": [
+"transformer",
+"prompt-engineering",
+"rag"
+],
+"next": [
+"prompt-engineering"
+],
+"tags": [
+"llm",
+"gpt",
+"bert",
+"genai",
+"nlp",
+"transformer"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"excerpt": "LLM（Large Language Model）はTransformerをベースに、巨大なテキストコーパスで学習した言語モデルです。GPT-4・Claude・Gemini・Llama などが代表例で、翻訳・要約・コード生成・質問応答・創作",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "pcap",
 "title": "PCAP",
 "level": 3,
@@ -860,6 +994,85 @@
 ],
 "updated": "2026-06-10",
 "excerpt": "PTP(Precision Time Protocol、**IEEE 1588**)は、ネットワーク上の複数ノードの時刻をナノ秒精度で同期するプロトコルです。**グランドマスター**クロックが基準時刻を発信し、スレーブノードが遅延を計測しな",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "pytorch",
+"title": "PyTorch（深層学習フレームワーク）",
+"level": 3,
+"category": "DL",
+"related": [
+"deep-learning",
+"cnn",
+"rnn-lstm"
+],
+"next": [
+"cnn"
+],
+"tags": [
+"pytorch",
+"deep-learning",
+"python",
+"neural-network"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"excerpt": "PyTorchはFacebook（Meta）が開発した深層学習フレームワークです。NumPy的なテンソル演算＋自動微分（autograd）＋GPU対応を提供し、研究・実務の両方で最も広く使われています。「書いたコードがそのまま動く」動的計算",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "rag",
+"title": "RAG（検索拡張生成）",
+"level": 3,
+"category": "GenAI",
+"related": [
+"llm",
+"prompt-engineering",
+"transformer"
+],
+"next": [],
+"tags": [
+"rag",
+"llm",
+"vector-db",
+"embedding",
+"genai"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"excerpt": "RAG（Retrieval-Augmented Generation）は、外部の知識ベース（ドキュメント・DB）から関連情報を検索してLLMのプロンプトに追加する手法です。LLMの学習データにない最新情報・社内専用知識を扱えるようになります",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "rnn-lstm",
+"title": "RNN・LSTM（系列データのモデリング）",
+"level": 3,
+"category": "DL",
+"related": [
+"deep-learning",
+"pytorch",
+"transformer"
+],
+"next": [
+"transformer"
+],
+"tags": [
+"rnn",
+"lstm",
+"deep-learning",
+"pytorch",
+"time-series",
+"nlp"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"excerpt": "RNN（Recurrent Neural Network）は系列データ（時系列・テキスト・音声）を扱うために設計されたニューラルネットワークです。前のタイムステップの出力を次のステップの入力として使うことで、「文脈」を保持します。LSTMは",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -940,6 +1153,33 @@
 "difficulty": "中級",
 "updated": "2026-06-10",
 "excerpt": "**ソケット**は、IPアドレスとポート番号の組で表される「通信のエンドポイント(出入口)」であり、プログラムがネットワーク通信を行うためのAPIでもあります。アプリはソケットを開いてデータを読み書きします。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "transformer",
+"title": "Transformerアーキテクチャ",
+"level": 3,
+"category": "GenAI",
+"related": [
+"rnn-lstm",
+"llm",
+"deep-learning"
+],
+"next": [
+"llm"
+],
+"tags": [
+"transformer",
+"attention",
+"deep-learning",
+"nlp",
+"genai"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"excerpt": "Transformerは2017年のGoogle論文「Attention Is All You Need」で発表されたアーキテクチャです。RNN/LSTMを使わず**Self-Attentionのみ**で系列を処理し、並列計算が可能なため大",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -1225,6 +1465,32 @@
 "difficulty": "中級",
 "updated": "2026-06-10",
 "excerpt": "勾配ブースティング（Gradient Boosting）は、弱い決定木を順番に積み重ねて強力なモデルを作るアンサンブル手法です。Kaggle等のデータコンペで最もよく優勝するアルゴリズムで、表形式データの精度最高峰とされています。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "image-processing",
+"title": "画像前処理・特徴抽出（深層学習向け）",
+"level": 3,
+"category": "CV",
+"related": [
+"opencv",
+"cnn",
+"pytorch",
+"data-cleaning"
+],
+"next": [],
+"tags": [
+"image-processing",
+"cv",
+"pytorch",
+"augmentation",
+"deep-learning"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"excerpt": "深層学習で画像を扱う際には、モデルに合わせた前処理（リサイズ・正規化・データ拡張）が精度に大きく影響します。PyTorchの `torchvision.transforms` と OpenCV を組み合わせた実践的な前処理パイプラインを解説",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -2393,6 +2659,52 @@
 "completed": false,
 "favorite": false
 },
+"opencv": {
+"slug": "opencv",
+"title": "OpenCV（画像処理基礎）",
+"level": 2,
+"category": "CV",
+"related": [
+"image-processing",
+"cnn",
+"numpy"
+],
+"next": [
+"image-processing"
+],
+"tags": [
+"opencv",
+"computer-vision",
+"python",
+"image-processing"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>OpenCV（Open Source Computer Vision Library）はC++/Python対応の高速な画像処理ライブラリです。画像の読み込み・変換・フィルタリング・エッジ検出・物体検出まで、コンピュータビジョンに必要な操作がほぼすべて揃っています。</p>\n<h2>なぜ使うか</h2>\n<p>カメラ画像の前処理・特徴抽出・リアルタイム処理にはOpenCVが最速です。딥러닝での推論前の前処理（リサイズ・正規化）にも使い、自動運転の開発現場でも定番のライブラリです。</p>\n<h2>基本操作</h2>\n<pre><code class=\"language-python\">import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# 画像の読み込み（OpenCVはBGR形式で読む）\nimg_bgr = cv2.imread(&quot;photo.jpg&quot;)\nimg_rgb = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB)   # matplotlib表示用\n\nprint(f&quot;形状: {img_bgr.shape}&quot;)   # (H, W, C) = (height, width, 3)\nprint(f&quot;dtype: {img_bgr.dtype}&quot;)  # uint8\n\n# グレースケール変換\ngray = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2GRAY)\n\n# 表示\nfig, axes = plt.subplots(1, 2, figsize=(10, 4))\naxes[0].imshow(img_rgb)\naxes[0].set_title(&quot;カラー（RGB）&quot;)\naxes[1].imshow(gray, cmap=&quot;gray&quot;)\naxes[1].set_title(&quot;グレースケール&quot;)\nplt.tight_layout()\nplt.show()\n\n# 保存\ncv2.imwrite(&quot;output.jpg&quot;, img_bgr)\n</code></pre>\n<h2>リサイズ・クロップ・回転</h2>\n<pre><code class=\"language-python\">h, w = img_bgr.shape[:2]\n\n# リサイズ\nresized = cv2.resize(img_bgr, (256, 256))\n# アスペクト比を維持してリサイズ\nscale   = 256 / max(h, w)\nresized_ar = cv2.resize(img_bgr, None, fx=scale, fy=scale)\n\n# クロップ（スライスで切り出す）\ny1, y2, x1, x2 = 100, 300, 50, 250\ncropped = img_bgr[y1:y2, x1:x2]\n\n# 回転\ncenter  = (w // 2, h // 2)\nM       = cv2.getRotationMatrix2D(center, angle=30, scale=1.0)\nrotated = cv2.warpAffine(img_bgr, M, (w, h))\n\n# 水平・垂直反転\nflip_h = cv2.flip(img_bgr, 1)   # 水平\nflip_v = cv2.flip(img_bgr, 0)   # 垂直\n</code></pre>\n<h2>色空間と閾値処理</h2>\n<pre><code class=\"language-python\"># HSV空間での色抽出（例: 赤色を検出）\nimg_hsv = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2HSV)\n\n# 赤色の範囲（HSV）\nlower_red1 = np.array([0,   120, 70])\nupper_red1 = np.array([10,  255, 255])\nlower_red2 = np.array([170, 120, 70])\nupper_red2 = np.array([180, 255, 255])\n\nmask1 = cv2.inRange(img_hsv, lower_red1, upper_red1)\nmask2 = cv2.inRange(img_hsv, lower_red2, upper_red2)\nmask  = cv2.bitwise_or(mask1, mask2)\n\nred_region = cv2.bitwise_and(img_bgr, img_bgr, mask=mask)\n\n# 2値化（グレースケール画像に適用）\n_, binary_fixed  = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY)\nbinary_otsu      = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)[1]\nadaptive_binary  = cv2.adaptiveThreshold(gray, 255,\n                                          cv2.ADAPTIVE_THRESH_GAUSSIAN_C,\n                                          cv2.THRESH_BINARY, 11, 2)\n</code></pre>\n<h2>フィルタリング（ノイズ除去・ぼかし）</h2>\n<pre><code class=\"language-python\"># ガウシアンブラー（ノイズ除去）\nblur_gauss = cv2.GaussianBlur(img_bgr, (7, 7), sigmaX=0)\n\n# メディアンフィルタ（胡椒ノイズに強い）\nblur_median = cv2.medianBlur(img_bgr, 5)\n\n# バイラテラルフィルタ（エッジを保ちつつノイズ除去）\nblur_bilateral = cv2.bilateralFilter(img_bgr, d=9, sigmaColor=75, sigmaSpace=75)\n\n# シャープニング（アンシャープマスク）\nblurred = cv2.GaussianBlur(img_bgr, (5, 5), 0)\nsharpened = cv2.addWeighted(img_bgr, 1.5, blurred, -0.5, 0)\n</code></pre>\n<h2>エッジ検出</h2>\n<pre><code class=\"language-python\"># Canny エッジ検出（最もよく使われる）\nedges_canny = cv2.Canny(gray, threshold1=50, threshold2=150)\n\n# Sobel（x/y方向の勾配）\nsobel_x = cv2.Sobel(gray, cv2.CV_64F, 1, 0, ksize=3)\nsobel_y = cv2.Sobel(gray, cv2.CV_64F, 0, 1, ksize=3)\nsobel   = cv2.magnitude(sobel_x, sobel_y)\n\n# Laplacian\nlaplacian = cv2.Laplacian(gray, cv2.CV_64F)\n\nfig, axes = plt.subplots(1, 3, figsize=(14, 4))\nfor ax, img, title in zip(axes,\n    [edges_canny, np.uint8(np.abs(sobel)), np.uint8(np.abs(laplacian))],\n    [&quot;Canny&quot;, &quot;Sobel&quot;, &quot;Laplacian&quot;]):\n    ax.imshow(img, cmap=&quot;gray&quot;)\n    ax.set_title(title)\nplt.tight_layout()\nplt.show()\n</code></pre>\n<h2>輪郭検出と物体検出</h2>\n<pre><code class=\"language-python\"># 2値化 → 輪郭を検出\ncontours, hierarchy = cv2.findContours(binary_otsu,\n                                        cv2.RETR_EXTERNAL,\n                                        cv2.CHAIN_APPROX_SIMPLE)\n\n# 面積で小さい輪郭を除去\nlarge_contours = [c for c in contours if cv2.contourArea(c) &gt; 500]\nprint(f&quot;検出輪郭数: {len(large_contours)}&quot;)\n\n# 輪郭を描画\ncanvas = img_rgb.copy()\ncv2.drawContours(canvas, large_contours, -1, (0, 255, 0), 2)\n\n# バウンディングボックスを描画\nfor c in large_contours:\n    x, y, w, h = cv2.boundingRect(c)\n    cv2.rectangle(canvas, (x, y), (x+w, y+h), (255, 0, 0), 2)\n\nplt.imshow(canvas)\nplt.title(&quot;輪郭 + バウンディングボックス&quot;)\nplt.show()\n</code></pre>\n<h2>カメラキャプチャとリアルタイム処理</h2>\n<pre><code class=\"language-python\">cap = cv2.VideoCapture(0)   # 0: デフォルトカメラ\n\nwhile cap.isOpened():\n    ret, frame = cap.read()\n    if not ret:\n        break\n\n    gray   = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)\n    edges  = cv2.Canny(gray, 50, 150)\n    output = cv2.cvtColor(edges, cv2.COLOR_GRAY2BGR)\n\n    # FPS表示\n    cv2.putText(output, &quot;Edge Detection&quot;,\n                (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 0), 2)\n\n    cv2.imshow(&quot;Edge Detection&quot;, output)\n    if cv2.waitKey(1) &amp; 0xFF == ord(&quot;q&quot;):\n        break\n\ncap.release()\ncv2.destroyAllWindows()\n</code></pre>\n<h2>次に学ぶべき内容</h2>\n<p>深層学習と組み合わせた高度な <a class=\"term-link\" data-slug=\"image-processing\" href=\"/glossary/image-processing\">画像前処理・特徴抽出（深層学習向け）</a> を学びましょう。</p>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "image-processing",
+"title": "画像前処理・特徴抽出（深層学習向け）"
+},
+{
+"slug": "cnn",
+"title": "CNN（畳み込みニューラルネットワーク）"
+},
+{
+"slug": "numpy",
+"title": "NumPy（配列・行列演算）"
+}
+],
+"next_full": [
+{
+"slug": "image-processing",
+"title": "画像前処理・特徴抽出（深層学習向け）"
+}
+],
+"completed": false,
+"favorite": false
+},
 "pandas": {
 "slug": "pandas",
 "title": "Pandas（DataFrame・データ操作）",
@@ -2920,6 +3232,53 @@
 "completed": false,
 "favorite": false
 },
+"prompt-engineering": {
+"slug": "prompt-engineering",
+"title": "プロンプトエンジニアリング",
+"level": 2,
+"category": "GenAI",
+"related": [
+"llm",
+"rag"
+],
+"next": [
+"rag"
+],
+"tags": [
+"prompt",
+"llm",
+"genai",
+"claude",
+"gpt"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>プロンプトエンジニアリングはLLMに対して質の高い出力を得るための入力設計技術です。同じモデルでもプロンプトの書き方で出力の質が大きく変わります。コスト・速度・精度すべてに影響するため、LLMを使うすべての開発者に必須のスキルです。</p>\n<h2>基本原則</h2>\n<pre><code class=\"language-mermaid\">graph TD\n  A[良いプロンプト] --&gt; B[役割を与える&lt;br/&gt;Role]\n  A --&gt; C[文脈を説明する&lt;br/&gt;Context]\n  A --&gt; D[具体的な指示&lt;br/&gt;Instruction]\n  A --&gt; E[出力形式を指定&lt;br/&gt;Format]\n  A --&gt; F[例を示す&lt;br/&gt;Few-shot]\n</code></pre>\n<h2>役割を与える（Role Prompting）</h2>\n<pre><code class=\"language-python\">import anthropic\nclient = anthropic.Anthropic()\n\n# 悪い例\nbad_response = client.messages.create(\n    model=&quot;claude-opus-4-8&quot;,\n    max_tokens=256,\n    messages=[{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;TCP について教えて&quot;}]\n)\n\n# 良い例: 役割＋対象読者＋制約を明示\ngood_response = client.messages.create(\n    model=&quot;claude-opus-4-8&quot;,\n    max_tokens=512,\n    system=&quot;あなたは車載ネットワークの専門エンジニアです。組み込みエンジニア向けに、実践的で簡潔な技術説明をします。専門用語は使いますが、初回登場時に括弧で説明を付けてください。&quot;,\n    messages=[{\n        &quot;role&quot;: &quot;user&quot;,\n        &quot;content&quot;: &quot;車載診断でTCPが使われる場面と、UDPと使い分ける理由を教えてください。&quot;\n    }]\n)\nprint(good_response.content[0].text)\n</code></pre>\n<h2>Few-Shot プロンプティング</h2>\n<pre><code class=\"language-python\"># 例を示すことでフォーマットと品質を制御する\nfew_shot_prompt = &quot;&quot;&quot;以下の形式でパケット情報を要約してください。\n\n例1:\n入力: src=192.168.1.1, dst=192.168.1.100, proto=TCP, dport=80, size=1460\n要約: 192.168.1.1 → 192.168.1.100 へのHTTPリクエスト（1460B）\n\n例2:\n入力: src=10.0.0.1, dst=255.255.255.255, proto=UDP, dport=67, size=300\n要約: 10.0.0.1 からのDHCP Discoverブロードキャスト（300B）\n\n入力: src=172.16.0.5, dst=172.16.0.1, proto=TCP, dport=13400, size=64\n要約:&quot;&quot;&quot;\n\nresponse = client.messages.create(\n    model=&quot;claude-opus-4-8&quot;,\n    max_tokens=128,\n    messages=[{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: few_shot_prompt}]\n)\nprint(response.content[0].text)\n# → 172.16.0.5 → 172.16.0.1 へのDoIP接続リクエスト（64B）\n</code></pre>\n<h2>Chain-of-Thought（CoT）推論</h2>\n<pre><code class=\"language-python\"># 「ステップバイステップで考えて」と指示するだけで精度が上がる\ncot_prompt = &quot;&quot;&quot;以下のネットワーク障害を分析してください。\n\n症状:\n- 車両起動後30秒でCANバスがエラーフレームで埋まる\n- 特定のECU（ID: 0x123）からのメッセージが増加\n- バス負荷が95%超\n\n段階的に原因を考えてください:\n1. まず考えられる原因をすべて列挙\n2. 各原因の可能性を評価\n3. 最も可能性の高い原因と確認手順を提示&quot;&quot;&quot;\n\nresponse = client.messages.create(\n    model=&quot;claude-opus-4-8&quot;,\n    max_tokens=1024,\n    messages=[{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: cot_prompt}]\n)\n</code></pre>\n<h2>構造化出力（JSON）</h2>\n<pre><code class=\"language-python\">import json\n\njson_prompt = &quot;&quot;&quot;以下のPCAPサマリーを解析し、JSON形式で返してください。\n\nPCAPサマリー:\n- キャプチャ時間: 30秒\n- 総パケット: 15,234\n- プロトコル: TCP 45%, UDP 35%, ARP 10%, ICMP 10%\n- 最多通信ペア: 192.168.1.1 ↔ 192.168.1.100 (8,432パケット)\n- 異常: TTL=1のパケットが23件\n\nJSON形式:\n{\n  &quot;duration_sec&quot;: &lt;数値&gt;,\n  &quot;total_packets&quot;: &lt;数値&gt;,\n  &quot;protocols&quot;: {&quot;TCP&quot;: &lt;割合&gt;, ...},\n  &quot;top_pair&quot;: {&quot;src&quot;: ..., &quot;dst&quot;: ..., &quot;count&quot;: ...},\n  &quot;anomalies&quot;: [{&quot;type&quot;: ..., &quot;count&quot;: ..., &quot;severity&quot;: &quot;low|medium|high&quot;}]\n}&quot;&quot;&quot;\n\nresponse = client.messages.create(\n    model=&quot;claude-opus-4-8&quot;,\n    max_tokens=512,\n    messages=[{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: json_prompt}]\n)\nresult = json.loads(response.content[0].text)\nprint(result)\n</code></pre>\n<h2>プロンプトテンプレート管理</h2>\n<pre><code class=\"language-python\">from string import Template\n\n# テンプレート化して再利用しやすくする\nANALYSIS_TEMPLATE = Template(&quot;&quot;&quot;\nあなたは$role です。\n\n## コンテキスト\n$context\n\n## タスク\n$task\n\n## 出力形式\n$output_format\n\n## 制約\n- $constraint1\n- $constraint2\n&quot;&quot;&quot;)\n\nprompt = ANALYSIS_TEMPLATE.substitute(\n    role      = &quot;車載ネットワークの診断専門エンジニア&quot;,\n    context   = &quot;車両の定期診断レポートを作成しています&quot;,\n    task      = &quot;以下のDTCリストから重大度を評価し、優先順位をつけてください: P0300, U0100, B2477&quot;,\n    output_format = &quot;マークダウンの表形式（DTC | 内容 | 重大度 | 推奨対応）&quot;,\n    constraint1 = &quot;重大度は高・中・低の3段階&quot;,\n    constraint2 = &quot;推奨対応は1行以内&quot;,\n)\n</code></pre>\n<h2>プロンプトのベストプラクティス</h2>\n<table>\n<thead>\n<tr>\n<th>原則</th>\n<th>悪い例</th>\n<th>良い例</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>具体性</td>\n<td>「説明して」</td>\n<td>「200字以内で初心者向けに説明して」</td>\n</tr>\n<tr>\n<td>役割</td>\n<td>（なし）</td>\n<td>「あなたは〇〇の専門家です」</td>\n</tr>\n<tr>\n<td>形式</td>\n<td>「まとめて」</td>\n<td>「箇条書き・表・コードブロックで」</td>\n</tr>\n<tr>\n<td>否定禁止</td>\n<td>「専門用語を使わないで」</td>\n<td>「中学生にも分かる言葉を使って」</td>\n</tr>\n<tr>\n<td>例示</td>\n<td>（なし）</td>\n<td>「例：〇〇のような形式で」</td>\n</tr>\n</tbody>\n</table>\n<h2>次に学ぶべき内容</h2>\n<p>LLMに最新・専用知識を与える <a class=\"term-link\" data-slug=\"rag\" href=\"/glossary/rag\">RAG（検索拡張生成）</a> を学びましょう。</p>",
+"prereq_full": [
+{
+"slug": "llm",
+"title": "LLM（大規模言語モデル）"
+}
+],
+"related_full": [
+{
+"slug": "llm",
+"title": "LLM（大規模言語モデル）"
+},
+{
+"slug": "rag",
+"title": "RAG（検索拡張生成）"
+}
+],
+"next_full": [
+{
+"slug": "rag",
+"title": "RAG（検索拡張生成）"
+}
+],
+"completed": false,
+"favorite": false
+},
 "classification": {
 "slug": "classification",
 "title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）",
@@ -2972,6 +3331,52 @@
 {
 "slug": "gradient-boosting",
 "title": "勾配ブースティング（XGBoost・LightGBM）"
+}
+],
+"completed": false,
+"favorite": false
+},
+"deep-learning": {
+"slug": "deep-learning",
+"title": "深層学習の基礎（ニューラルネットワーク）",
+"level": 2,
+"category": "DL",
+"related": [
+"ml-basics",
+"pytorch",
+"cnn"
+],
+"next": [
+"pytorch"
+],
+"tags": [
+"deep-learning",
+"neural-network",
+"python",
+"ml"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>深層学習（Deep Learning）は多層のニューラルネットワークを使って、データから特徴を自動的に学習する機械学習の手法です。画像認識・音声認識・自然言語処理で従来手法を大きく上回る精度を実現し、生成AIの基盤にもなっています。</p>\n<h2>ニューラルネットワークの仕組み</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  A[入力層&lt;br/&gt;x₁, x₂, x₃] --&gt; B[隠れ層1&lt;br/&gt;n=128]\n  B --&gt; C[隠れ層2&lt;br/&gt;n=64]\n  C --&gt; D[出力層&lt;br/&gt;y]\n  style A fill:#dbeafe\n  style D fill:#fce7f3\n</code></pre>\n<p>各ノードは「重み付き和 → 活性化関数」を計算します：</p>\n<pre><code>z = w₁x₁ + w₂x₂ + ... + b\ny = activation(z)\n</code></pre>\n<h2>活性化関数の比較</h2>\n<pre><code class=\"language-python\">import numpy as np\nimport matplotlib.pyplot as plt\n\nx = np.linspace(-5, 5, 200)\n\nactivations = {\n    &quot;ReLU&quot;:    np.maximum(0, x),\n    &quot;Sigmoid&quot;: 1 / (1 + np.exp(-x)),\n    &quot;Tanh&quot;:    np.tanh(x),\n    &quot;Leaky ReLU&quot;: np.where(x &gt;= 0, x, 0.01 * x),\n}\n\nfig, axes = plt.subplots(1, 4, figsize=(14, 3))\nfor ax, (name, y) in zip(axes, activations.items()):\n    ax.plot(x, y, linewidth=2, color=&quot;steelblue&quot;)\n    ax.axhline(0, color=&quot;gray&quot;, linewidth=0.5)\n    ax.axvline(0, color=&quot;gray&quot;, linewidth=0.5)\n    ax.set_title(name)\n    ax.grid(True, alpha=0.3)\nplt.tight_layout()\nplt.show()\n</code></pre>\n<table>\n<thead>\n<tr>\n<th>関数</th>\n<th>特徴</th>\n<th>主な用途</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>ReLU</td>\n<td>勾配消失しにくい・高速</td>\n<td>隠れ層のデファクト</td>\n</tr>\n<tr>\n<td>Sigmoid</td>\n<td>出力 0〜1</td>\n<td>二値分類の出力層</td>\n</tr>\n<tr>\n<td>Softmax</td>\n<td>確率分布に変換</td>\n<td>多クラス分類の出力層</td>\n</tr>\n<tr>\n<td>Tanh</td>\n<td>出力 -1〜1</td>\n<td>RNN の隠れ状態</td>\n</tr>\n</tbody>\n</table>\n<h2>順伝播（Forward Pass）を自分で実装</h2>\n<pre><code class=\"language-python\">import numpy as np\n\nclass NeuralNetwork:\n    def __init__(self, layer_sizes: list[int]):\n        self.weights = []\n        self.biases  = []\n        for i in range(len(layer_sizes) - 1):\n            w = np.random.randn(layer_sizes[i], layer_sizes[i+1]) * 0.1\n            b = np.zeros((1, layer_sizes[i+1]))\n            self.weights.append(w)\n            self.biases.append(b)\n\n    def relu(self, x):\n        return np.maximum(0, x)\n\n    def softmax(self, x):\n        e = np.exp(x - x.max(axis=1, keepdims=True))\n        return e / e.sum(axis=1, keepdims=True)\n\n    def forward(self, X):\n        a = X\n        for i, (w, b) in enumerate(zip(self.weights, self.biases)):\n            z = a @ w + b\n            a = self.softmax(z) if i == len(self.weights) - 1 else self.relu(z)\n        return a\n\n# 3入力 → 128 → 64 → 3クラス分類\nnn = NeuralNetwork([3, 128, 64, 3])\nX  = np.random.randn(10, 3)\ny  = nn.forward(X)\nprint(f&quot;出力形状: {y.shape}&quot;)   # (10, 3)\nprint(f&quot;各行の和: {y.sum(axis=1)}&quot;)  # すべて 1.0\n</code></pre>\n<h2>損失関数</h2>\n<pre><code class=\"language-python\"># 交差エントロピー（分類）\ndef cross_entropy(y_pred, y_true):\n    eps = 1e-9\n    return -np.sum(y_true * np.log(y_pred + eps)) / len(y_pred)\n\n# 平均二乗誤差（回帰）\ndef mse(y_pred, y_true):\n    return np.mean((y_pred - y_true) ** 2)\n</code></pre>\n<h2>誤差逆伝播（Backpropagation）の直感</h2>\n<pre><code class=\"language-mermaid\">graph RL\n  D[Loss] --&gt;|∂L/∂y| C[出力層]\n  C --&gt;|∂L/∂W₂| B[隠れ層2]\n  B --&gt;|∂L/∂W₁| A[隠れ層1]\n  A --&gt;|連鎖律で重みを更新| X[入力]\n</code></pre>\n<p>損失をすべての重みで偏微分し、<strong>勾配降下法</strong>で重みを更新します：\n<code>W ← W − lr × ∂L/∂W</code></p>\n<h2>学習率と最適化アルゴリズム</h2>\n<table>\n<thead>\n<tr>\n<th>オプティマイザ</th>\n<th>特徴</th>\n<th>推奨場面</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>SGD</td>\n<td>シンプル・安定</td>\n<td>画像分類（momentum付き）</td>\n</tr>\n<tr>\n<td>Adam</td>\n<td>学習率自動調整</td>\n<td>多くのタスクでデファクト</td>\n</tr>\n<tr>\n<td>AdamW</td>\n<td>Adamに正則化</td>\n<td>Transformer系</td>\n</tr>\n<tr>\n<td>RMSprop</td>\n<td>RNN に強い</td>\n<td>時系列・RNN</td>\n</tr>\n</tbody>\n</table>\n<h2>次に学ぶべき内容</h2>\n<p>PyTorchを使って実際にネットワークを書く <a class=\"term-link\" data-slug=\"pytorch\" href=\"/glossary/pytorch\">PyTorch（深層学習フレームワーク）</a> を学びましょう。</p>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "ml-basics",
+"title": "機械学習の基礎"
+},
+{
+"slug": "pytorch",
+"title": "PyTorch（深層学習フレームワーク）"
+},
+{
+"slug": "cnn",
+"title": "CNN（畳み込みニューラルネットワーク）"
+}
+],
+"next_full": [
+{
+"slug": "pytorch",
+"title": "PyTorch（深層学習フレームワーク）"
 }
 ],
 "completed": false,
@@ -3074,6 +3479,63 @@
 {
 "slug": "tsn",
 "title": "TSN(Time-Sensitive Networking)"
+}
+],
+"completed": false,
+"favorite": false
+},
+"cnn": {
+"slug": "cnn",
+"title": "CNN（畳み込みニューラルネットワーク）",
+"level": 3,
+"category": "DL",
+"related": [
+"pytorch",
+"deep-learning",
+"opencv",
+"rnn-lstm"
+],
+"next": [
+"rnn-lstm"
+],
+"tags": [
+"cnn",
+"deep-learning",
+"pytorch",
+"image",
+"computer-vision"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>CNN（Convolutional Neural Network）は画像データに特化したニューラルネットワークです。畳み込み層・プーリング層を積み重ね、画像の局所パターン（エッジ→テクスチャ→形状→物体）を階層的に学習します。画像分類・物体検出・セグメンテーションの基盤技術です。</p>\n<h2>なぜ全結合層ではダメか</h2>\n<p>256×256の画像を全結合層に入力すると入力次元が65,536になり、パラメータ数が爆発します。CNNは<strong>局所受容野（畳み込み）と重み共有</strong>で、位置によらず同じフィルタを適用するため、大幅にパラメータ数を削減できます。</p>\n<h2>畳み込みの仕組み</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  A[入力 H×W×C] --&gt; B[Conv Layer&lt;br/&gt;フィルタK×K×C×F]\n  B --&gt; C[特徴マップ H'×W'×F]\n  C --&gt; D[Pooling&lt;br/&gt;空間サイズを縮小]\n  D --&gt; E[次のConv...]\n  E --&gt; F[Flatten → FC]\n  F --&gt; G[出力（クラス確率）]\n</code></pre>\n<h2>PyTorchでCNNを実装</h2>\n<pre><code class=\"language-python\">import torch\nimport torch.nn as nn\nimport torch.nn.functional as F\n\nclass CNN(nn.Module):\n    def __init__(self, n_classes: int = 10):\n        super().__init__()\n        # 畳み込みブロック1\n        self.conv1 = nn.Conv2d(3, 32, kernel_size=3, padding=1)\n        self.bn1   = nn.BatchNorm2d(32)\n        # 畳み込みブロック2\n        self.conv2 = nn.Conv2d(32, 64, kernel_size=3, padding=1)\n        self.bn2   = nn.BatchNorm2d(64)\n        # 畳み込みブロック3\n        self.conv3 = nn.Conv2d(64, 128, kernel_size=3, padding=1)\n        self.bn3   = nn.BatchNorm2d(128)\n        # プーリング・ドロップアウト\n        self.pool    = nn.MaxPool2d(2, 2)\n        self.dropout = nn.Dropout2d(0.3)\n        # 全結合層（入力32×32 → 3回pool → 4×4×128）\n        self.fc1 = nn.Linear(128 * 4 * 4, 256)\n        self.fc2 = nn.Linear(256, n_classes)\n\n    def forward(self, x):\n        # (B, 3, 32, 32) → (B, 32, 32, 32) → (B, 32, 16, 16)\n        x = self.pool(F.relu(self.bn1(self.conv1(x))))\n        # → (B, 64, 8, 8)\n        x = self.pool(F.relu(self.bn2(self.conv2(x))))\n        # → (B, 128, 4, 4)\n        x = self.pool(F.relu(self.bn3(self.conv3(x))))\n        x = self.dropout(x)\n        x = x.view(x.size(0), -1)       # Flatten\n        x = F.relu(self.fc1(x))\n        return self.fc2(x)\n\nmodel = CNN(n_classes=10)\nx = torch.randn(8, 3, 32, 32)          # バッチ8枚・3ch・32×32\nprint(model(x).shape)                   # (8, 10)\nprint(f&quot;パラメータ数: {sum(p.numel() for p in model.parameters()):,}&quot;)\n</code></pre>\n<h2>CIFAR-10 でのトレーニング</h2>\n<pre><code class=\"language-python\">import torchvision\nimport torchvision.transforms as transforms\nfrom torch.utils.data import DataLoader\nimport torch.optim as optim\n\ntransform_train = transforms.Compose([\n    transforms.RandomCrop(32, padding=4),      # データ拡張\n    transforms.RandomHorizontalFlip(),\n    transforms.ColorJitter(0.2, 0.2, 0.2),\n    transforms.ToTensor(),\n    transforms.Normalize((0.4914, 0.4822, 0.4465),\n                         (0.2023, 0.1994, 0.2010)),\n])\ntransform_val = transforms.Compose([\n    transforms.ToTensor(),\n    transforms.Normalize((0.4914, 0.4822, 0.4465),\n                         (0.2023, 0.1994, 0.2010)),\n])\n\ntrain_set = torchvision.datasets.CIFAR10(root=&quot;./data&quot;, train=True,\n                                          download=True, transform=transform_train)\nval_set   = torchvision.datasets.CIFAR10(root=&quot;./data&quot;, train=False,\n                                          download=True, transform=transform_val)\ntrain_loader = DataLoader(train_set, batch_size=128, shuffle=True,  num_workers=2)\nval_loader   = DataLoader(val_set,   batch_size=256, shuffle=False, num_workers=2)\n\ndevice    = &quot;cuda&quot; if torch.cuda.is_available() else &quot;cpu&quot;\nmodel     = CNN(10).to(device)\ncriterion = nn.CrossEntropyLoss(label_smoothing=0.1)\noptimizer = optim.AdamW(model.parameters(), lr=3e-4, weight_decay=1e-3)\nscheduler = optim.lr_scheduler.OneCycleLR(\n    optimizer, max_lr=3e-3, epochs=50, steps_per_epoch=len(train_loader)\n)\n</code></pre>\n<h2>転移学習（Transfer Learning）</h2>\n<pre><code class=\"language-python\">import torchvision.models as models\n\n# ImageNetで事前学習済みのResNet18を使う\nbackbone = models.resnet18(weights=models.ResNet18_Weights.DEFAULT)\n\n# 最終層だけ自分のクラス数に置き換える\nn_classes = 5\nbackbone.fc = nn.Linear(backbone.fc.in_features, n_classes)\n\n# バックボーンを固定して最終層だけ学習（Fine-tuning）\nfor param in backbone.parameters():\n    param.requires_grad = False\nfor param in backbone.fc.parameters():\n    param.requires_grad = True\n\noptimizer_ft = optim.Adam(filter(lambda p: p.requires_grad, backbone.parameters()),\n                          lr=1e-3)\n\n# --- 数エポック後に全層を解放して細かくチューニング ---\nfor param in backbone.parameters():\n    param.requires_grad = True\noptimizer_full = optim.AdamW(backbone.parameters(), lr=1e-4, weight_decay=1e-3)\n</code></pre>\n<h2>フィルタの可視化</h2>\n<pre><code class=\"language-python\">import matplotlib.pyplot as plt\nimport numpy as np\n\n# 最初の畳み込み層のフィルタを可視化\nfilters = model.conv1.weight.data.cpu().numpy()  # (32, 3, 3, 3)\n\nfig, axes = plt.subplots(4, 8, figsize=(12, 6))\nfor i, ax in enumerate(axes.flatten()):\n    if i &gt;= len(filters):\n        ax.axis(&quot;off&quot;)\n        continue\n    f = filters[i]\n    f = (f - f.min()) / (f.max() - f.min() + 1e-8)\n    ax.imshow(f.transpose(1, 2, 0))\n    ax.axis(&quot;off&quot;)\nplt.suptitle(&quot;Conv1 フィルタ（32個）&quot;)\nplt.tight_layout()\nplt.show()\n</code></pre>\n<h2>代表的なCNNアーキテクチャ</h2>\n<table>\n<thead>\n<tr>\n<th>モデル</th>\n<th>年</th>\n<th>特徴</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>AlexNet</td>\n<td>2012</td>\n<td>Deep Learning ブレイクスルー</td>\n</tr>\n<tr>\n<td>VGG16</td>\n<td>2014</td>\n<td>3×3畳み込みの積み重ね</td>\n</tr>\n<tr>\n<td>ResNet</td>\n<td>2015</td>\n<td>スキップ接続で100層超え可能</td>\n</tr>\n<tr>\n<td>EfficientNet</td>\n<td>2019</td>\n<td>精度・速度のトレードオフが最良</td>\n</tr>\n<tr>\n<td>ConvNeXt</td>\n<td>2022</td>\n<td>Transformerの設計思想をCNNに</td>\n</tr>\n</tbody>\n</table>\n<h2>次に学ぶべき内容</h2>\n<p>時系列・系列データを扱う <a class=\"term-link\" data-slug=\"rnn-lstm\" href=\"/glossary/rnn-lstm\">RNN・LSTM（系列データのモデリング）</a> を学びましょう。</p>",
+"prereq_full": [
+{
+"slug": "pytorch",
+"title": "PyTorch（深層学習フレームワーク）"
+}
+],
+"related_full": [
+{
+"slug": "pytorch",
+"title": "PyTorch（深層学習フレームワーク）"
+},
+{
+"slug": "deep-learning",
+"title": "深層学習の基礎（ニューラルネットワーク）"
+},
+{
+"slug": "opencv",
+"title": "OpenCV（画像処理基礎）"
+},
+{
+"slug": "rnn-lstm",
+"title": "RNN・LSTM（系列データのモデリング）"
+}
+],
+"next_full": [
+{
+"slug": "rnn-lstm",
+"title": "RNN・LSTM（系列データのモデリング）"
 }
 ],
 "completed": false,
@@ -3245,6 +3707,59 @@
 "completed": false,
 "favorite": false
 },
+"llm": {
+"slug": "llm",
+"title": "LLM（大規模言語モデル）",
+"level": 3,
+"category": "GenAI",
+"related": [
+"transformer",
+"prompt-engineering",
+"rag"
+],
+"next": [
+"prompt-engineering"
+],
+"tags": [
+"llm",
+"gpt",
+"bert",
+"genai",
+"nlp",
+"transformer"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>LLM（Large Language Model）はTransformerをベースに、巨大なテキストコーパスで学習した言語モデルです。GPT-4・Claude・Gemini・Llama などが代表例で、翻訳・要約・コード生成・質問応答・創作など多様なタスクを単一モデルでこなします。</p>\n<h2>LLMの仕組み</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  A[テキスト入力] --&gt; B[Tokenize&lt;br/&gt;→ Token ID列]\n  B --&gt; C[Transformer Decoder&lt;br/&gt;N層のAttention]\n  C --&gt; D[次のトークンの&lt;br/&gt;確率分布]\n  D --&gt; E[Sampling&lt;br/&gt;→ 出力テキスト]\n  E --&gt;|自己回帰| C\n</code></pre>\n<p>LLMは「次の単語（トークン）を予測する」タスクを繰り返して文章を生成します（自己回帰生成）。</p>\n<h2>HuggingFace Transformers で LLM を使う</h2>\n<pre><code class=\"language-python\">from transformers import AutoTokenizer, AutoModelForCausalLM\nimport torch\n\n# モデルの読み込み（例：小さなGPT-2）\nmodel_id = &quot;gpt2&quot;\ntokenizer = AutoTokenizer.from_pretrained(model_id)\nmodel     = AutoModelForCausalLM.from_pretrained(model_id)\nmodel.eval()\n\n# テキスト生成\nprompt = &quot;The future of autonomous vehicles is&quot;\ninputs = tokenizer(prompt, return_tensors=&quot;pt&quot;)\n\nwith torch.no_grad():\n    output = model.generate(\n        **inputs,\n        max_new_tokens  = 100,\n        temperature     = 0.8,        # 高いほど多様・低いほど確実\n        top_p           = 0.9,        # nucleus sampling\n        do_sample       = True,\n        repetition_penalty = 1.1,\n    )\n\nprint(tokenizer.decode(output[0], skip_special_tokens=True))\n</code></pre>\n<h2>テキスト分類・埋め込み（BERT系）</h2>\n<pre><code class=\"language-python\">from transformers import AutoTokenizer, AutoModel\nimport torch\nimport torch.nn.functional as F\n\n# Sentence-BERT: 文をベクトル化\nmodel_id  = &quot;sentence-transformers/all-MiniLM-L6-v2&quot;\ntokenizer = AutoTokenizer.from_pretrained(model_id)\nmodel     = AutoModel.from_pretrained(model_id)\nmodel.eval()\n\ndef encode(texts: list[str]) -&gt; torch.Tensor:\n    enc = tokenizer(texts, padding=True, truncation=True,\n                    max_length=256, return_tensors=&quot;pt&quot;)\n    with torch.no_grad():\n        out = model(**enc).last_hidden_state\n    # mean pooling\n    mask    = enc[&quot;attention_mask&quot;].unsqueeze(-1).float()\n    vectors = (out * mask).sum(1) / mask.sum(1)\n    return F.normalize(vectors, dim=-1)\n\nsentences = [\n    &quot;CAN bus is used for in-vehicle communication&quot;,\n    &quot;Ethernet enables high-bandwidth automotive networks&quot;,\n    &quot;Python is a popular programming language&quot;,\n]\nvecs  = encode(sentences)\nsims  = vecs @ vecs.T\nprint(&quot;コサイン類似度行列:&quot;)\nprint(sims.numpy().round(3))\n</code></pre>\n<h2>Anthropic Claude API の使い方</h2>\n<pre><code class=\"language-python\">import anthropic\n\nclient = anthropic.Anthropic(api_key=&quot;your-api-key&quot;)\n\n# テキスト生成\nmessage = client.messages.create(\n    model=&quot;claude-opus-4-8&quot;,\n    max_tokens=1024,\n    messages=[\n        {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;車載Ethernetと従来CANの違いを200字で説明してください。&quot;}\n    ]\n)\nprint(message.content[0].text)\n\n# ストリーミング\nwith client.messages.stream(\n    model=&quot;claude-opus-4-8&quot;,\n    max_tokens=512,\n    messages=[{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;DoIPプロトコルの仕組みを説明してください。&quot;}]\n) as stream:\n    for text in stream.text_stream:\n        print(text, end=&quot;&quot;, flush=True)\n</code></pre>\n<h2>OpenAI API の使い方</h2>\n<pre><code class=\"language-python\">from openai import OpenAI\n\nclient = OpenAI(api_key=&quot;your-api-key&quot;)\n\n# Chat Completion\nresponse = client.chat.completions.create(\n    model=&quot;gpt-4o&quot;,\n    messages=[\n        {&quot;role&quot;: &quot;system&quot;, &quot;content&quot;: &quot;あなたは車載ネットワークの専門家です。&quot;},\n        {&quot;role&quot;: &quot;user&quot;,   &quot;content&quot;: &quot;SOME/IPとDDSの主な違いを教えてください。&quot;},\n    ],\n    temperature=0.3,\n    max_tokens=512,\n)\nprint(response.choices[0].message.content)\n\n# 埋め込みベクトルの生成\nemb_response = client.embeddings.create(\n    model=&quot;text-embedding-3-small&quot;,\n    input=&quot;Ethernet is a family of wired computer networking technologies&quot;,\n)\nvector = emb_response.data[0].embedding\nprint(f&quot;次元数: {len(vector)}&quot;)  # 1536\n</code></pre>\n<h2>トークナイザーの仕組み</h2>\n<pre><code class=\"language-python\">from transformers import AutoTokenizer\n\ntokenizer = AutoTokenizer.from_pretrained(&quot;gpt2&quot;)\n\ntext  = &quot;Hello, I am learning about neural networks!&quot;\ntokens = tokenizer.tokenize(text)\nids    = tokenizer.encode(text)\n\nprint(&quot;トークン:&quot;, tokens)\nprint(&quot;ID:     &quot;, ids)\nprint(f&quot;文字数: {len(text)}  トークン数: {len(tokens)}&quot;)\n\n# 日本語（トークン数が多くなりやすい）\njtext  = &quot;深層学習は大変便利な技術です。&quot;\njtokens = tokenizer.tokenize(jtext)\nprint(f&quot;日本語トークン数: {len(jtokens)}&quot;)\n</code></pre>\n<h2>LLMの評価指標</h2>\n<table>\n<thead>\n<tr>\n<th>指標</th>\n<th>意味</th>\n<th>用途</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Perplexity</td>\n<td>低いほど自然な文章</td>\n<td>言語モデリング</td>\n</tr>\n<tr>\n<td>BLEU</td>\n<td>参照文との n-gram 一致率</td>\n<td>翻訳・要約</td>\n</tr>\n<tr>\n<td>ROUGE</td>\n<td>再現率ベースの重なり</td>\n<td>要約評価</td>\n</tr>\n<tr>\n<td>BERTScore</td>\n<td>意味的類似度</td>\n<td>生成テキストの質</td>\n</tr>\n<tr>\n<td>Human Eval</td>\n<td>人手評価</td>\n<td>コード生成</td>\n</tr>\n</tbody>\n</table>\n<h2>次に学ぶべき内容</h2>\n<p>LLMへの指示の出し方 <a class=\"term-link\" data-slug=\"prompt-engineering\" href=\"/glossary/prompt-engineering\">プロンプトエンジニアリング</a> と、知識を外部から与える <a class=\"term-link\" data-slug=\"rag\" href=\"/glossary/rag\">RAG（検索拡張生成）</a> を学びましょう。</p>",
+"prereq_full": [
+{
+"slug": "transformer",
+"title": "Transformerアーキテクチャ"
+}
+],
+"related_full": [
+{
+"slug": "transformer",
+"title": "Transformerアーキテクチャ"
+},
+{
+"slug": "prompt-engineering",
+"title": "プロンプトエンジニアリング"
+},
+{
+"slug": "rag",
+"title": "RAG（検索拡張生成）"
+}
+],
+"next_full": [
+{
+"slug": "prompt-engineering",
+"title": "プロンプトエンジニアリング"
+}
+],
+"completed": false,
+"favorite": false
+},
 "pcap": {
 "slug": "pcap",
 "title": "PCAP",
@@ -3339,6 +3854,155 @@
 {
 "slug": "tsn",
 "title": "TSN(Time-Sensitive Networking)"
+}
+],
+"completed": false,
+"favorite": false
+},
+"pytorch": {
+"slug": "pytorch",
+"title": "PyTorch（深層学習フレームワーク）",
+"level": 3,
+"category": "DL",
+"related": [
+"deep-learning",
+"cnn",
+"rnn-lstm"
+],
+"next": [
+"cnn"
+],
+"tags": [
+"pytorch",
+"deep-learning",
+"python",
+"neural-network"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>PyTorchはFacebook（Meta）が開発した深層学習フレームワークです。NumPy的なテンソル演算＋自動微分（autograd）＋GPU対応を提供し、研究・実務の両方で最も広く使われています。「書いたコードがそのまま動く」動的計算グラフが特徴です。</p>\n<h2>なぜ PyTorch か</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  A[PyTorch] --&gt; B[動的計算グラフ&lt;br/&gt;デバッグしやすい]\n  A --&gt; C[NumPy互換テンソル&lt;br/&gt;学習コスト低い]\n  A --&gt; D[GPU/MPS対応&lt;br/&gt;高速計算]\n  A --&gt; E[Hugging Face等&lt;br/&gt;豊富なエコシステム]\n</code></pre>\n<h2>テンソルの基本</h2>\n<pre><code class=\"language-python\">import torch\nimport numpy as np\n\n# テンソル作成\na = torch.tensor([1.0, 2.0, 3.0])\nb = torch.zeros(3, 4)\nc = torch.randn(2, 3)          # 標準正規分布\n\n# NumPy との相互変換\narr = np.array([1.0, 2.0, 3.0])\nt   = torch.from_numpy(arr)    # NumPy → Tensor\nn   = t.numpy()                # Tensor → NumPy（CPU のみ）\n\n# デバイス指定\ndevice = &quot;cuda&quot; if torch.cuda.is_available() else &quot;cpu&quot;\nt_gpu  = t.to(device)\n\n# 形状操作\nx = torch.randn(4, 6)\nprint(x.shape)              # torch.Size([4, 6])\nprint(x.reshape(2, 12))     # reshape\nprint(x.transpose(0, 1))    # 転置\nprint(x.unsqueeze(0).shape) # (1, 4, 6) → バッチ次元を追加\n</code></pre>\n<h2>自動微分（autograd）</h2>\n<pre><code class=\"language-python\"># requires_grad=True で勾配計算を有効化\nx = torch.tensor(3.0, requires_grad=True)\ny = x ** 2 + 2 * x + 1    # y = x² + 2x + 1\n\ny.backward()               # 逆伝播\nprint(x.grad)              # dy/dx = 2x + 2 = 8.0\n\n# 複数変数\na = torch.tensor(2.0, requires_grad=True)\nb = torch.tensor(3.0, requires_grad=True)\nL = (a * b + b ** 2).sum()\nL.backward()\nprint(a.grad, b.grad)      # ∂L/∂a=3.0, ∂L/∂b=8.0\n</code></pre>\n<h2>ニューラルネットワークの定義（nn.Module）</h2>\n<pre><code class=\"language-python\">import torch.nn as nn\nimport torch.nn.functional as F\n\nclass MLP(nn.Module):\n    def __init__(self, in_features: int, hidden: int, n_classes: int):\n        super().__init__()\n        self.fc1 = nn.Linear(in_features, hidden)\n        self.fc2 = nn.Linear(hidden, hidden // 2)\n        self.fc3 = nn.Linear(hidden // 2, n_classes)\n        self.dropout = nn.Dropout(0.3)\n        self.bn1     = nn.BatchNorm1d(hidden)\n\n    def forward(self, x):\n        x = F.relu(self.bn1(self.fc1(x)))\n        x = self.dropout(x)\n        x = F.relu(self.fc2(x))\n        x = self.fc3(x)       # 出力層はActivation不要（CrossEntropyLoss内で適用）\n        return x\n\nmodel = MLP(in_features=20, hidden=128, n_classes=3)\nprint(model)\nprint(f&quot;パラメータ数: {sum(p.numel() for p in model.parameters()):,}&quot;)\n</code></pre>\n<h2>訓練ループ</h2>\n<pre><code class=\"language-python\">from torch.utils.data import DataLoader, TensorDataset\nimport torch.optim as optim\n\n# データ準備\nX = torch.randn(1000, 20)\ny = torch.randint(0, 3, (1000,))\ndataset    = TensorDataset(X, y)\ntrain_set, val_set = torch.utils.data.random_split(dataset, [800, 200])\ntrain_loader = DataLoader(train_set, batch_size=64, shuffle=True)\nval_loader   = DataLoader(val_set,   batch_size=64)\n\n# モデル・損失・オプティマイザ\nmodel     = MLP(20, 128, 3).to(device)\ncriterion = nn.CrossEntropyLoss()\noptimizer = optim.AdamW(model.parameters(), lr=1e-3, weight_decay=1e-4)\nscheduler = optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=30)\n\n# 学習ループ\nhistory = {&quot;train_loss&quot;: [], &quot;val_loss&quot;: [], &quot;val_acc&quot;: []}\n\nfor epoch in range(30):\n    # --- 訓練フェーズ ---\n    model.train()\n    train_loss = 0\n    for Xb, yb in train_loader:\n        Xb, yb = Xb.to(device), yb.to(device)\n        optimizer.zero_grad()\n        loss = criterion(model(Xb), yb)\n        loss.backward()\n        optimizer.step()\n        train_loss += loss.item()\n\n    # --- 検証フェーズ ---\n    model.eval()\n    val_loss, correct, total = 0, 0, 0\n    with torch.no_grad():\n        for Xb, yb in val_loader:\n            Xb, yb = Xb.to(device), yb.to(device)\n            out  = model(Xb)\n            val_loss += criterion(out, yb).item()\n            correct  += (out.argmax(1) == yb).sum().item()\n            total    += len(yb)\n\n    scheduler.step()\n    history[&quot;train_loss&quot;].append(train_loss / len(train_loader))\n    history[&quot;val_loss&quot;].append(val_loss   / len(val_loader))\n    history[&quot;val_acc&quot;].append(correct / total)\n\n    if (epoch + 1) % 5 == 0:\n        print(f&quot;Epoch {epoch+1:3d} | loss={history['train_loss'][-1]:.4f} | val_acc={history['val_acc'][-1]:.3f}&quot;)\n</code></pre>\n<h2>学習曲線の可視化</h2>\n<pre><code class=\"language-python\">import matplotlib.pyplot as plt\n\nfig, (ax1, ax2) = plt.subplots(1, 2, figsize=(11, 4))\n\nax1.plot(history[&quot;train_loss&quot;], label=&quot;Train Loss&quot;)\nax1.plot(history[&quot;val_loss&quot;],   label=&quot;Val Loss&quot;)\nax1.set_title(&quot;Loss曲線&quot;)\nax1.set_xlabel(&quot;Epoch&quot;)\nax1.legend()\n\nax2.plot(history[&quot;val_acc&quot;], color=&quot;green&quot;)\nax2.set_title(&quot;Validation Accuracy&quot;)\nax2.set_xlabel(&quot;Epoch&quot;)\nax2.set_ylim(0, 1)\n\nplt.tight_layout()\nplt.show()\n</code></pre>\n<h2>モデルの保存と読み込み</h2>\n<pre><code class=\"language-python\"># 重みのみ保存（推奨）\ntorch.save(model.state_dict(), &quot;model.pth&quot;)\n\n# 読み込み\nmodel_loaded = MLP(20, 128, 3)\nmodel_loaded.load_state_dict(torch.load(&quot;model.pth&quot;, map_location=&quot;cpu&quot;))\nmodel_loaded.eval()\n\n# 推論\nwith torch.no_grad():\n    x_new = torch.randn(1, 20)\n    pred  = model_loaded(x_new).argmax(1).item()\n    print(f&quot;予測クラス: {pred}&quot;)\n</code></pre>\n<h2>次に学ぶべき内容</h2>\n<p>画像を扱う <a class=\"term-link\" data-slug=\"cnn\" href=\"/glossary/cnn\">CNN（畳み込みニューラルネットワーク）</a> を学びましょう。</p>",
+"prereq_full": [
+{
+"slug": "deep-learning",
+"title": "深層学習の基礎（ニューラルネットワーク）"
+}
+],
+"related_full": [
+{
+"slug": "deep-learning",
+"title": "深層学習の基礎（ニューラルネットワーク）"
+},
+{
+"slug": "cnn",
+"title": "CNN（畳み込みニューラルネットワーク）"
+},
+{
+"slug": "rnn-lstm",
+"title": "RNN・LSTM（系列データのモデリング）"
+}
+],
+"next_full": [
+{
+"slug": "cnn",
+"title": "CNN（畳み込みニューラルネットワーク）"
+}
+],
+"completed": false,
+"favorite": false
+},
+"rag": {
+"slug": "rag",
+"title": "RAG（検索拡張生成）",
+"level": 3,
+"category": "GenAI",
+"related": [
+"llm",
+"prompt-engineering",
+"transformer"
+],
+"next": [],
+"tags": [
+"rag",
+"llm",
+"vector-db",
+"embedding",
+"genai"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>RAG（Retrieval-Augmented Generation）は、外部の知識ベース（ドキュメント・DB）から関連情報を検索してLLMのプロンプトに追加する手法です。LLMの学習データにない最新情報・社内専用知識を扱えるようになります。</p>\n<h2>なぜRAGが必要か</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  A[質問] --&gt; B{LLM単体}\n  B --&gt;|古い知識| C[不正確・ハルシネーション]\n  A --&gt; D{RAG}\n  D --&gt; E[ベクトル検索で&lt;br/&gt;関連文書を取得]\n  E --&gt; F[文書+質問を&lt;br/&gt;LLMに渡す]\n  F --&gt; G[根拠ある正確な回答]\n</code></pre>\n<p>LLMは学習後の情報を知らず、社内文書も知りません。RAGはそれを補完します。</p>\n<h2>RAGのパイプライン全体</h2>\n<pre><code class=\"language-python\"># ステップ1: ドキュメントを分割・埋め込み・保存（インデックス構築）\n# ステップ2: クエリを埋め込み・類似文書を検索（Retrieval）\n# ステップ3: 文書+クエリをLLMに渡して回答生成（Generation）\n</code></pre>\n<h2>ステップ1: ドキュメントの前処理とチャンク分割</h2>\n<pre><code class=\"language-python\">import re\nfrom pathlib import Path\n\ndef load_and_chunk(filepath: str, chunk_size: int = 400,\n                   overlap: int = 80) -&gt; list[dict]:\n    text = Path(filepath).read_text(encoding=&quot;utf-8&quot;)\n\n    # マークダウンのコードブロックは分割しない\n    # 段落で分割してから結合\n    paragraphs = re.split(r&quot;\\n\\n+&quot;, text)\n    chunks = []\n    buf    = &quot;&quot;\n\n    for para in paragraphs:\n        if len(buf) + len(para) &lt; chunk_size:\n            buf += para + &quot;\\n\\n&quot;\n        else:\n            if buf.strip():\n                chunks.append({&quot;text&quot;: buf.strip(), &quot;source&quot;: filepath})\n            # オーバーラップ: 前のチャンクの末尾を次に引き継ぐ\n            buf = buf[-overlap:] + para + &quot;\\n\\n&quot;\n\n    if buf.strip():\n        chunks.append({&quot;text&quot;: buf.strip(), &quot;source&quot;: filepath})\n\n    return chunks\n\nchunks = load_and_chunk(&quot;docs/ethernet.md&quot;)\nprint(f&quot;{len(chunks)} チャンク生成&quot;)\n</code></pre>\n<h2>ステップ2: 埋め込みとベクトルDBへの保存</h2>\n<pre><code class=\"language-python\">import numpy as np\nfrom sentence_transformers import SentenceTransformer\n\n# 埋め込みモデル（無料・ローカルで動く）\nembed_model = SentenceTransformer(&quot;sentence-transformers/all-MiniLM-L6-v2&quot;)\n\ndef embed_texts(texts: list[str]) -&gt; np.ndarray:\n    return embed_model.encode(texts, normalize_embeddings=True,\n                              batch_size=32, show_progress_bar=True)\n\n# すべてのチャンクを埋め込み\ntexts     = [c[&quot;text&quot;]   for c in chunks]\nsources   = [c[&quot;source&quot;] for c in chunks]\nembeddings = embed_texts(texts)\n\nprint(f&quot;埋め込み形状: {embeddings.shape}&quot;)  # (N, 384)\n\n# --- FAISS を使ったベクトルインデックス ---\nimport faiss\n\ndim   = embeddings.shape[1]\nindex = faiss.IndexFlatIP(dim)         # 内積=コサイン類似度（正規化済み）\nindex.add(embeddings.astype(&quot;float32&quot;))\nprint(f&quot;インデックス件数: {index.ntotal}&quot;)\n\n# 保存\nfaiss.write_index(index, &quot;knowledge.index&quot;)\nimport json\nwith open(&quot;knowledge_meta.json&quot;, &quot;w&quot;) as f:\n    json.dump({&quot;texts&quot;: texts, &quot;sources&quot;: sources}, f, ensure_ascii=False)\n</code></pre>\n<h2>ステップ3: 検索と回答生成</h2>\n<pre><code class=\"language-python\">import faiss\nimport json\nimport anthropic\n\n# インデックスとメタデータを読み込み\nindex = faiss.read_index(&quot;knowledge.index&quot;)\nwith open(&quot;knowledge_meta.json&quot;) as f:\n    meta = json.load(f)\n\nclient = anthropic.Anthropic()\n\ndef retrieve(query: str, k: int = 5) -&gt; list[dict]:\n    q_vec = embed_model.encode([query], normalize_embeddings=True).astype(&quot;float32&quot;)\n    scores, indices = index.search(q_vec, k)\n    results = []\n    for score, idx in zip(scores[0], indices[0]):\n        if idx &gt;= 0:\n            results.append({\n                &quot;text&quot;:   meta[&quot;texts&quot;][idx],\n                &quot;source&quot;: meta[&quot;sources&quot;][idx],\n                &quot;score&quot;:  float(score),\n            })\n    return results\n\ndef rag_query(question: str, k: int = 5) -&gt; str:\n    docs = retrieve(question, k)\n\n    context = &quot;\\n\\n---\\n\\n&quot;.join(\n        f&quot;[出典: {d['source']}]\\n{d['text']}&quot;\n        for d in docs\n    )\n\n    prompt = f&quot;&quot;&quot;以下の参考文書を元に質問に答えてください。\n文書にない情報は「文書には記載がありません」と答えてください。\n\n## 参考文書\n{context}\n\n## 質問\n{question}&quot;&quot;&quot;\n\n    response = client.messages.create(\n        model=&quot;claude-opus-4-8&quot;,\n        max_tokens=1024,\n        messages=[{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: prompt}]\n    )\n    return response.content[0].text\n\nanswer = rag_query(&quot;車載EthernetでVLANを使う理由は？&quot;)\nprint(answer)\n</code></pre>\n<h2>検索精度を上げる工夫</h2>\n<pre><code class=\"language-python\"># 1. ハイブリッド検索（ベクトル + キーワード）\nfrom rank_bm25 import BM25Okapi\n\ntokenized = [t.split() for t in texts]\nbm25      = BM25Okapi(tokenized)\n\ndef hybrid_search(query: str, k: int = 5, alpha: float = 0.5) -&gt; list[dict]:\n    # ベクトル検索スコア\n    q_vec       = embed_model.encode([query], normalize_embeddings=True).astype(&quot;float32&quot;)\n    vec_scores, vec_idx = index.search(q_vec, k * 3)\n    vec_map     = {int(i): float(s) for s, i in zip(vec_scores[0], vec_idx[0]) if i &gt;= 0}\n\n    # BM25スコア\n    bm25_scores = bm25.get_scores(query.split())\n    bm25_top    = np.argsort(bm25_scores)[::-1][:k * 3]\n    bm25_norm   = bm25_scores / (bm25_scores.max() + 1e-9)\n\n    # スコアを結合（RRF: Reciprocal Rank Fusion も有効）\n    all_idx = set(list(vec_map.keys()) + list(bm25_top))\n    combined = {}\n    for i in all_idx:\n        v = vec_map.get(i, 0.0)\n        b = float(bm25_norm[i]) if i &lt; len(bm25_norm) else 0.0\n        combined[i] = alpha * v + (1 - alpha) * b\n\n    top_k = sorted(combined, key=combined.get, reverse=True)[:k]\n    return [{&quot;text&quot;: texts[i], &quot;source&quot;: sources[i], &quot;score&quot;: combined[i]} for i in top_k]\n</code></pre>\n<h2>RAGの評価指標</h2>\n<table>\n<thead>\n<tr>\n<th>指標</th>\n<th>意味</th>\n<th>ツール</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Faithfulness</td>\n<td>回答が文書に忠実か</td>\n<td>RAGAS</td>\n</tr>\n<tr>\n<td>Answer Relevancy</td>\n<td>質問への回答率</td>\n<td>RAGAS</td>\n</tr>\n<tr>\n<td>Context Recall</td>\n<td>必要な文書を取得できているか</td>\n<td>RAGAS</td>\n</tr>\n<tr>\n<td>MRR</td>\n<td>正解が何番目に来るか</td>\n<td>手動評価</td>\n</tr>\n</tbody>\n</table>",
+"prereq_full": [
+{
+"slug": "prompt-engineering",
+"title": "プロンプトエンジニアリング"
+}
+],
+"related_full": [
+{
+"slug": "llm",
+"title": "LLM（大規模言語モデル）"
+},
+{
+"slug": "prompt-engineering",
+"title": "プロンプトエンジニアリング"
+},
+{
+"slug": "transformer",
+"title": "Transformerアーキテクチャ"
+}
+],
+"next_full": [],
+"completed": false,
+"favorite": false
+},
+"rnn-lstm": {
+"slug": "rnn-lstm",
+"title": "RNN・LSTM（系列データのモデリング）",
+"level": 3,
+"category": "DL",
+"related": [
+"deep-learning",
+"pytorch",
+"transformer"
+],
+"next": [
+"transformer"
+],
+"tags": [
+"rnn",
+"lstm",
+"deep-learning",
+"pytorch",
+"time-series",
+"nlp"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>RNN（Recurrent Neural Network）は系列データ（時系列・テキスト・音声）を扱うために設計されたニューラルネットワークです。前のタイムステップの出力を次のステップの入力として使うことで、「文脈」を保持します。LSTMはRNNの長期依存問題を解決した改良版です。</p>\n<h2>RNN vs LSTM vs GRU</h2>\n<pre><code class=\"language-mermaid\">graph TD\n  A[系列データ] --&gt; B{長期依存が必要?}\n  B --&gt;|No・短い系列| C[SimpleRNN]\n  B --&gt;|Yes| D{パラメータ節約?}\n  D --&gt;|No| E[LSTM&lt;br/&gt;入力・忘却・出力ゲート]\n  D --&gt;|Yes| F[GRU&lt;br/&gt;リセット・更新ゲート]\n</code></pre>\n<h2>LSTM の仕組み（直感的理解）</h2>\n<p>LSTMは3つのゲートで「何を覚え・何を忘れ・何を出力するか」を制御します：</p>\n<table>\n<thead>\n<tr>\n<th>ゲート</th>\n<th>役割</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>忘却ゲート</td>\n<td>過去の記憶をどれだけ捨てるか</td>\n</tr>\n<tr>\n<td>入力ゲート</td>\n<td>新しい情報をどれだけ追加するか</td>\n</tr>\n<tr>\n<td>出力ゲート</td>\n<td>セル状態からどれだけ出力するか</td>\n</tr>\n</tbody>\n</table>\n<h2>PyTorchで時系列予測</h2>\n<pre><code class=\"language-python\">import torch\nimport torch.nn as nn\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# サインカーブにノイズを加えた時系列データ\nt     = np.linspace(0, 8 * np.pi, 1000)\ndata  = np.sin(t) + 0.1 * np.random.randn(len(t))\n\n# スライディングウィンドウでサンプル作成\ndef make_sequences(data, seq_len=50):\n    X, y = [], []\n    for i in range(len(data) - seq_len):\n        X.append(data[i : i + seq_len])\n        y.append(data[i + seq_len])\n    return (torch.tensor(np.array(X), dtype=torch.float32).unsqueeze(-1),\n            torch.tensor(np.array(y), dtype=torch.float32))\n\nX, y  = make_sequences(data)\nsplit = int(len(X) * 0.8)\nX_train, X_test = X[:split], X[split:]\ny_train, y_test = y[:split], y[split:]\n\nclass LSTMForecaster(nn.Module):\n    def __init__(self, input_size=1, hidden_size=64, num_layers=2, dropout=0.2):\n        super().__init__()\n        self.lstm = nn.LSTM(\n            input_size, hidden_size, num_layers,\n            batch_first=True, dropout=dropout\n        )\n        self.fc = nn.Linear(hidden_size, 1)\n\n    def forward(self, x):\n        out, _ = self.lstm(x)\n        return self.fc(out[:, -1, :]).squeeze(-1)  # 最終タイムステップだけ使う\n\nmodel     = LSTMForecaster()\ncriterion = nn.MSELoss()\noptimizer = torch.optim.Adam(model.parameters(), lr=1e-3)\n\nfrom torch.utils.data import TensorDataset, DataLoader\nloader = DataLoader(TensorDataset(X_train, y_train), batch_size=64, shuffle=True)\n\nfor epoch in range(50):\n    model.train()\n    for Xb, yb in loader:\n        optimizer.zero_grad()\n        loss = criterion(model(Xb), yb)\n        loss.backward()\n        optimizer.step()\n    if (epoch + 1) % 10 == 0:\n        model.eval()\n        with torch.no_grad():\n            val_loss = criterion(model(X_test), y_test).item()\n        print(f&quot;Epoch {epoch+1}: val_loss={val_loss:.4f}&quot;)\n</code></pre>\n<h2>テキスト分類への応用</h2>\n<pre><code class=\"language-python\">import torch.nn as nn\n\nclass TextClassifier(nn.Module):\n    def __init__(self, vocab_size, embed_dim, hidden_size, n_classes):\n        super().__init__()\n        self.embed = nn.Embedding(vocab_size, embed_dim, padding_idx=0)\n        self.lstm  = nn.LSTM(embed_dim, hidden_size, batch_first=True,\n                             bidirectional=True, num_layers=2, dropout=0.3)\n        self.fc    = nn.Linear(hidden_size * 2, n_classes)  # bidirectional×2\n        self.drop  = nn.Dropout(0.4)\n\n    def forward(self, x):\n        emb  = self.drop(self.embed(x))           # (B, T, embed_dim)\n        out, (hn, _) = self.lstm(emb)\n        # 順方向と逆方向の最終隠れ状態を結合\n        hn   = torch.cat([hn[-2], hn[-1]], dim=-1)  # (B, hidden*2)\n        return self.fc(self.drop(hn))\n\nmodel = TextClassifier(vocab_size=10000, embed_dim=128,\n                       hidden_size=256, n_classes=2)\nx = torch.randint(0, 10000, (32, 100))   # バッチ32・長さ100\nprint(model(x).shape)                    # (32, 2)\n</code></pre>\n<h2>予測結果の可視化</h2>\n<pre><code class=\"language-python\">model.eval()\nwith torch.no_grad():\n    preds = model(X_test).numpy()\n\nactual = y_test.numpy()\ntime   = np.arange(len(actual))\n\nplt.figure(figsize=(12, 4))\nplt.plot(time, actual, label=&quot;実測値&quot;, alpha=0.8)\nplt.plot(time, preds,  label=&quot;予測値&quot;, alpha=0.8, linestyle=&quot;--&quot;)\nplt.title(&quot;LSTMによる時系列予測&quot;)\nplt.legend()\nplt.tight_layout()\nplt.show()\n</code></pre>\n<h2>次に学ぶべき内容</h2>\n<p>系列モデルの現在の主流となった <a class=\"term-link\" data-slug=\"transformer\" href=\"/glossary/transformer\">Transformerアーキテクチャ</a> を学びましょう。</p>",
+"prereq_full": [
+{
+"slug": "cnn",
+"title": "CNN（畳み込みニューラルネットワーク）"
+}
+],
+"related_full": [
+{
+"slug": "deep-learning",
+"title": "深層学習の基礎（ニューラルネットワーク）"
+},
+{
+"slug": "pytorch",
+"title": "PyTorch（深層学習フレームワーク）"
+},
+{
+"slug": "transformer",
+"title": "Transformerアーキテクチャ"
+}
+],
+"next_full": [
+{
+"slug": "transformer",
+"title": "Transformerアーキテクチャ"
 }
 ],
 "completed": false,
@@ -3510,6 +4174,58 @@
 {
 "slug": "wireshark",
 "title": "Wireshark"
+}
+],
+"completed": false,
+"favorite": false
+},
+"transformer": {
+"slug": "transformer",
+"title": "Transformerアーキテクチャ",
+"level": 3,
+"category": "GenAI",
+"related": [
+"rnn-lstm",
+"llm",
+"deep-learning"
+],
+"next": [
+"llm"
+],
+"tags": [
+"transformer",
+"attention",
+"deep-learning",
+"nlp",
+"genai"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>Transformerは2017年のGoogle論文「Attention Is All You Need」で発表されたアーキテクチャです。RNN/LSTMを使わず<strong>Self-Attentionのみ</strong>で系列を処理し、並列計算が可能なため大規模データへの学習が劇的に速くなりました。GPT・BERT・LLMすべての基盤技術です。</p>\n<h2>なぜTransformerが強いか</h2>\n<table>\n<thead>\n<tr>\n<th></th>\n<th>RNN/LSTM</th>\n<th>Transformer</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>並列計算</td>\n<td>✗（逐次処理）</td>\n<td>✅（全位置同時）</td>\n</tr>\n<tr>\n<td>長距離依存</td>\n<td>△（勾配消失）</td>\n<td>✅（Attentionで直接参照）</td>\n</tr>\n<tr>\n<td>学習速度</td>\n<td>遅い</td>\n<td><strong>速い</strong></td>\n</tr>\n<tr>\n<td>スケール</td>\n<td>小〜中</td>\n<td><strong>大規模GPUに最適</strong></td>\n</tr>\n</tbody>\n</table>\n<h2>Self-Attentionの直感</h2>\n<p>「I saw a bank near the river」の <code>bank</code> の意味は文脈で決まります。Self-Attentionは各単語が他のすべての単語を参照して「どこを注目するか」を重みで表現します。</p>\n<pre><code class=\"language-mermaid\">graph LR\n  A[Query Q] --&gt; D[Attention Score&lt;br/&gt;QKᵀ / √d]\n  B[Key K]   --&gt; D\n  D --&gt; E[Softmax → 重み]\n  E --&gt; F[重み × Value V&lt;br/&gt;= Context Vector]\n  C[Value V] --&gt; F\n</code></pre>\n<h2>Scaled Dot-Product Attention を実装</h2>\n<pre><code class=\"language-python\">import torch\nimport torch.nn as nn\nimport torch.nn.functional as F\nimport math\n\ndef scaled_dot_product_attention(Q, K, V, mask=None):\n    &quot;&quot;&quot;\n    Q, K, V: (batch, heads, seq_len, d_k)\n    &quot;&quot;&quot;\n    d_k    = Q.size(-1)\n    scores = torch.matmul(Q, K.transpose(-2, -1)) / math.sqrt(d_k)\n    if mask is not None:\n        scores = scores.masked_fill(mask == 0, float(&quot;-inf&quot;))\n    weights = F.softmax(scores, dim=-1)\n    return torch.matmul(weights, V), weights\n</code></pre>\n<h2>Multi-Head Attention</h2>\n<pre><code class=\"language-python\">class MultiHeadAttention(nn.Module):\n    def __init__(self, d_model: int, n_heads: int):\n        super().__init__()\n        assert d_model % n_heads == 0\n        self.d_k    = d_model // n_heads\n        self.n_heads = n_heads\n        self.W_q = nn.Linear(d_model, d_model)\n        self.W_k = nn.Linear(d_model, d_model)\n        self.W_v = nn.Linear(d_model, d_model)\n        self.W_o = nn.Linear(d_model, d_model)\n\n    def split_heads(self, x):                          # (B, T, D) → (B, H, T, d_k)\n        B, T, D = x.size()\n        return x.view(B, T, self.n_heads, self.d_k).transpose(1, 2)\n\n    def forward(self, Q, K, V, mask=None):\n        Q = self.split_heads(self.W_q(Q))\n        K = self.split_heads(self.W_k(K))\n        V = self.split_heads(self.W_v(V))\n        attn, weights = scaled_dot_product_attention(Q, K, V, mask)\n        attn = attn.transpose(1, 2).contiguous().view(Q.size(0), -1, self.n_heads * self.d_k)\n        return self.W_o(attn)\n</code></pre>\n<h2>Transformer Encoder Block</h2>\n<pre><code class=\"language-python\">class FeedForward(nn.Module):\n    def __init__(self, d_model, d_ff, dropout=0.1):\n        super().__init__()\n        self.net = nn.Sequential(\n            nn.Linear(d_model, d_ff),\n            nn.GELU(),\n            nn.Dropout(dropout),\n            nn.Linear(d_ff, d_model),\n        )\n    def forward(self, x): return self.net(x)\n\n\nclass EncoderBlock(nn.Module):\n    def __init__(self, d_model=256, n_heads=8, d_ff=1024, dropout=0.1):\n        super().__init__()\n        self.attn = MultiHeadAttention(d_model, n_heads)\n        self.ff   = FeedForward(d_model, d_ff, dropout)\n        self.ln1  = nn.LayerNorm(d_model)\n        self.ln2  = nn.LayerNorm(d_model)\n        self.drop = nn.Dropout(dropout)\n\n    def forward(self, x, mask=None):\n        # Pre-LN (より安定した学習)\n        x = x + self.drop(self.attn(self.ln1(x), self.ln1(x), self.ln1(x), mask))\n        x = x + self.drop(self.ff(self.ln2(x)))\n        return x\n\n\nclass TransformerEncoder(nn.Module):\n    def __init__(self, vocab_size, d_model=256, n_heads=8,\n                 n_layers=6, d_ff=1024, max_len=512, n_classes=2):\n        super().__init__()\n        self.embed    = nn.Embedding(vocab_size, d_model)\n        self.pos_enc  = nn.Embedding(max_len, d_model)\n        self.blocks   = nn.ModuleList([EncoderBlock(d_model, n_heads, d_ff) for _ in range(n_layers)])\n        self.ln       = nn.LayerNorm(d_model)\n        self.head     = nn.Linear(d_model, n_classes)\n\n    def forward(self, x):\n        B, T    = x.shape\n        pos     = torch.arange(T, device=x.device).unsqueeze(0)\n        h       = self.embed(x) + self.pos_enc(pos)\n        for block in self.blocks:\n            h = block(h)\n        return self.head(self.ln(h[:, 0]))   # [CLS]トークンを使って分類\n\nmodel = TransformerEncoder(vocab_size=30000, n_classes=5)\nx     = torch.randint(0, 30000, (8, 128))\nprint(model(x).shape)   # (8, 5)\n</code></pre>\n<h2>位置エンコーディング（Sinusoidal）</h2>\n<pre><code class=\"language-python\">import numpy as np\nimport matplotlib.pyplot as plt\n\ndef sinusoidal_encoding(max_len=100, d_model=64):\n    pos = np.arange(max_len).reshape(-1, 1)\n    dim = np.arange(0, d_model, 2)\n    enc = np.zeros((max_len, d_model))\n    enc[:, 0::2] = np.sin(pos / 10000 ** (dim / d_model))\n    enc[:, 1::2] = np.cos(pos / 10000 ** (dim / d_model))\n    return enc\n\npe = sinusoidal_encoding()\nplt.figure(figsize=(10, 4))\nplt.imshow(pe[:50, :], cmap=&quot;RdBu&quot;, aspect=&quot;auto&quot;)\nplt.colorbar()\nplt.title(&quot;位置エンコーディング（50×64）&quot;)\nplt.xlabel(&quot;次元&quot;)\nplt.ylabel(&quot;位置&quot;)\nplt.tight_layout()\nplt.show()\n</code></pre>\n<h2>次に学ぶべき内容</h2>\n<p>TransformerをスケールアップしたモデルがLLMです。<a class=\"term-link\" data-slug=\"llm\" href=\"/glossary/llm\">LLM（大規模言語モデル）</a> を学びましょう。</p>",
+"prereq_full": [
+{
+"slug": "rnn-lstm",
+"title": "RNN・LSTM（系列データのモデリング）"
+}
+],
+"related_full": [
+{
+"slug": "rnn-lstm",
+"title": "RNN・LSTM（系列データのモデリング）"
+},
+{
+"slug": "llm",
+"title": "LLM（大規模言語モデル）"
+},
+{
+"slug": "deep-learning",
+"title": "深層学習の基礎（ニューラルネットワーク）"
+}
+],
+"next_full": [
+{
+"slug": "llm",
+"title": "LLM（大規模言語モデル）"
 }
 ],
 "completed": false,
@@ -4077,6 +4793,56 @@
 {
 "slug": "ml-basics",
 "title": "機械学習の基礎"
+}
+],
+"next_full": [],
+"completed": false,
+"favorite": false
+},
+"image-processing": {
+"slug": "image-processing",
+"title": "画像前処理・特徴抽出（深層学習向け）",
+"level": 3,
+"category": "CV",
+"related": [
+"opencv",
+"cnn",
+"pytorch",
+"data-cleaning"
+],
+"next": [],
+"tags": [
+"image-processing",
+"cv",
+"pytorch",
+"augmentation",
+"deep-learning"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>深層学習で画像を扱う際には、モデルに合わせた前処理（リサイズ・正規化・データ拡張）が精度に大きく影響します。PyTorchの <code>torchvision.transforms</code> と OpenCV を組み合わせた実践的な前処理パイプラインを解説します。</p>\n<h2>前処理が重要な理由</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  A[生画像&lt;br/&gt;多様なサイズ・明るさ] --&gt; B[リサイズ&lt;br/&gt;モデル入力に統一]\n  B --&gt; C[正規化&lt;br/&gt;ピクセル値を標準化]\n  C --&gt; D[データ拡張&lt;br/&gt;汎化性能を向上]\n  D --&gt; E[モデル入力&lt;br/&gt;テンソル]\n</code></pre>\n<h2>torchvision.transforms の基本</h2>\n<pre><code class=\"language-python\">import torchvision.transforms as T\nfrom PIL import Image\nimport torch\n\n# 学習時の変換パイプライン\ntrain_transform = T.Compose([\n    T.Resize((256, 256)),\n    T.RandomCrop(224),                        # ランダムクロップ\n    T.RandomHorizontalFlip(p=0.5),\n    T.RandomRotation(degrees=15),\n    T.ColorJitter(brightness=0.3, contrast=0.3, saturation=0.2, hue=0.1),\n    T.ToTensor(),                             # PIL → [0,1] Tensor\n    T.Normalize(mean=[0.485, 0.456, 0.406],  # ImageNet 統計値\n                std =[0.229, 0.224, 0.225]),\n])\n\n# 検証・推論時（データ拡張なし）\nval_transform = T.Compose([\n    T.Resize(256),\n    T.CenterCrop(224),\n    T.ToTensor(),\n    T.Normalize([0.485, 0.456, 0.406],\n                [0.229, 0.224, 0.225]),\n])\n\n# 適用\nimg   = Image.open(&quot;photo.jpg&quot;).convert(&quot;RGB&quot;)\nx     = train_transform(img)   # (3, 224, 224) Tensor\nprint(x.shape, x.min().item(), x.max().item())\n</code></pre>\n<h2>Albumentations — 高速・高機能なデータ拡張</h2>\n<pre><code class=\"language-python\">import albumentations as A\nimport albumentations.pytorch as AP\nimport cv2\nimport numpy as np\n\n# albumentations は numpy array (H, W, C) を入力とする\ntrain_aug = A.Compose([\n    A.Resize(256, 256),\n    A.RandomCrop(224, 224),\n    A.HorizontalFlip(p=0.5),\n    A.VerticalFlip(p=0.2),\n    A.Rotate(limit=20, p=0.5),\n\n    # 色・明るさ系\n    A.RandomBrightnessContrast(p=0.4),\n    A.HueSaturationValue(p=0.3),\n    A.CLAHE(p=0.2),\n\n    # ノイズ・ブラー\n    A.GaussNoise(p=0.2),\n    A.MotionBlur(blur_limit=5, p=0.2),\n\n    # カットアウト系（物体の一部を隠す）\n    A.CoarseDropout(max_holes=8, max_height=32, max_width=32, p=0.3),\n    A.GridDistortion(p=0.1),\n\n    A.Normalize(mean=[0.485, 0.456, 0.406],\n                std =[0.229, 0.224, 0.225]),\n    AP.ToTensorV2(),\n])\n\nimg_np = cv2.cvtColor(cv2.imread(&quot;photo.jpg&quot;), cv2.COLOR_BGR2RGB)\nresult = train_aug(image=img_np)\ntensor = result[&quot;image&quot;]   # (3, 224, 224)\n</code></pre>\n<h2>カスタムDataset</h2>\n<pre><code class=\"language-python\">from torch.utils.data import Dataset, DataLoader\nfrom pathlib import Path\nfrom PIL import Image\n\nclass ImageDataset(Dataset):\n    def __init__(self, root: str, split: str = &quot;train&quot;, transform=None):\n        root_path = Path(root) / split\n        self.paths   = sorted(root_path.rglob(&quot;*.jpg&quot;))\n        self.labels  = [int(p.parent.name) for p in self.paths]  # フォルダ名=クラスID\n        self.transform = transform\n\n    def __len__(self):\n        return len(self.paths)\n\n    def __getitem__(self, idx):\n        img   = Image.open(self.paths[idx]).convert(&quot;RGB&quot;)\n        label = self.labels[idx]\n        if self.transform:\n            img = self.transform(img)\n        return img, label\n\ntrain_ds = ImageDataset(&quot;data/&quot;, split=&quot;train&quot;, transform=train_transform)\nval_ds   = ImageDataset(&quot;data/&quot;, split=&quot;val&quot;,   transform=val_transform)\n\ntrain_loader = DataLoader(train_ds, batch_size=32, shuffle=True,\n                          num_workers=4, pin_memory=True)\n</code></pre>\n<h2>画像正規化の仕組み</h2>\n<pre><code class=\"language-python\">import numpy as np\nimport matplotlib.pyplot as plt\n\n# ピクセル統計の計算（大量データから）\ndef compute_stats(loader):\n    mean = torch.zeros(3)\n    std  = torch.zeros(3)\n    n    = 0\n    for imgs, _ in loader:\n        b, c, h, w = imgs.shape\n        mean += imgs.mean([0, 2, 3]) * b\n        std  += imgs.std([0, 2, 3])  * b\n        n    += b\n    return (mean / n).tolist(), (std / n).tolist()\n\n# 独自データのmean/stdを計算\n# mean, std = compute_stats(loader_no_norm)\n\n# 正規化の前後を比較\nfig, axes = plt.subplots(1, 2, figsize=(10, 4))\nimg = Image.open(&quot;photo.jpg&quot;).convert(&quot;RGB&quot;)\nx_raw  = T.ToTensor()(img).permute(1, 2, 0).numpy()\nx_norm = val_transform(img).permute(1, 2, 0).numpy()\nx_norm = (x_norm - x_norm.min()) / (x_norm.max() - x_norm.min())   # 表示用\n\naxes[0].imshow(x_raw)\naxes[0].set_title(&quot;正規化前&quot;)\naxes[1].imshow(x_norm)\naxes[1].set_title(&quot;正規化後（表示用に逆変換）&quot;)\nplt.tight_layout()\nplt.show()\n</code></pre>\n<h2>特徴マップの可視化（Grad-CAM）</h2>\n<pre><code class=\"language-python\">import torch\nimport torchvision.models as models\n\nclass GradCAM:\n    def __init__(self, model, target_layer):\n        self.model = model\n        self.grads  = None\n        self.acts   = None\n        target_layer.register_forward_hook(\n            lambda m, i, o: setattr(self, &quot;acts&quot;, o.detach())\n        )\n        target_layer.register_backward_hook(\n            lambda m, gi, go: setattr(self, &quot;grads&quot;, go[0].detach())\n        )\n\n    def generate(self, x, class_idx=None):\n        self.model.eval()\n        logits = self.model(x)\n        if class_idx is None:\n            class_idx = logits.argmax(1).item()\n        logits[:, class_idx].sum().backward()\n\n        weights = self.grads.mean(dim=[2, 3], keepdim=True)  # GAP\n        cam     = (weights * self.acts).sum(dim=1, keepdim=True)\n        cam     = torch.relu(cam)\n        cam     = cam / (cam.max() + 1e-8)\n        return cam.squeeze().cpu().numpy()\n\n# 使用例\nbackbone   = models.resnet18(weights=models.ResNet18_Weights.DEFAULT)\ngrad_cam   = GradCAM(backbone, backbone.layer4[-1].conv2)\n\nx = val_transform(Image.open(&quot;photo.jpg&quot;)).unsqueeze(0)\nx.requires_grad_(True)\ncam = grad_cam.generate(x)\n\n# CAMを元画像に重ねる\nimport cv2\nheatmap = cv2.applyColorMap(\n    np.uint8(255 * cv2.resize(cam, (224, 224))),\n    cv2.COLORMAP_JET\n)\noriginal = np.uint8(x.squeeze().permute(1,2,0).numpy() * 255)\noverlay  = cv2.addWeighted(original, 0.6, heatmap, 0.4, 0)\n\nplt.imshow(cv2.cvtColor(overlay, cv2.COLOR_BGR2RGB))\nplt.title(&quot;Grad-CAM: モデルが注目している領域&quot;)\nplt.show()\n</code></pre>\n<h2>前処理パイプラインの設計指針</h2>\n<table>\n<thead>\n<tr>\n<th>項目</th>\n<th>推奨</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>入力サイズ</td>\n<td>224×224（ResNet系）/ 384×384（ViT系）</td>\n</tr>\n<tr>\n<td>正規化</td>\n<td>ImageNet統計値（転移学習時）、独自データ統計値（ゼロから学習時）</td>\n</tr>\n<tr>\n<td>基本拡張</td>\n<td>RandomCrop, HorizontalFlip はほぼ必須</td>\n</tr>\n<tr>\n<td>強力な拡張</td>\n<td>RandAugment, CutMix, MixUp（精度を上げたい場合）</td>\n</tr>\n<tr>\n<td>バッチサイズ</td>\n<td>32〜256（GPUメモリに合わせる）</td>\n</tr>\n<tr>\n<td>num_workers</td>\n<td>CPU コア数の半分程度</td>\n</tr>\n</tbody>\n</table>",
+"prereq_full": [
+{
+"slug": "opencv",
+"title": "OpenCV（画像処理基礎）"
+}
+],
+"related_full": [
+{
+"slug": "opencv",
+"title": "OpenCV（画像処理基礎）"
+},
+{
+"slug": "cnn",
+"title": "CNN（畳み込みニューラルネットワーク）"
+},
+{
+"slug": "pytorch",
+"title": "PyTorch（深層学習フレームワーク）"
+},
+{
+"slug": "data-cleaning",
+"title": "データクリーニング"
 }
 ],
 "next_full": [],
@@ -5334,6 +6100,32 @@
 "title": "データクリーニング"
 }
 ],
+"opencv": [
+{
+"slug": "image-processing",
+"title": "画像前処理・特徴抽出（深層学習向け）"
+},
+{
+"slug": "cnn",
+"title": "CNN（畳み込みニューラルネットワーク）"
+},
+{
+"slug": "numpy",
+"title": "NumPy（配列・行列演算）"
+},
+{
+"slug": "classification",
+"title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
+},
+{
+"slug": "data-analysis",
+"title": "データ分析の流れ（EDA）"
+},
+{
+"slug": "data-cleaning",
+"title": "データクリーニング"
+}
+],
 "pandas": [
 {
 "slug": "matplotlib",
@@ -5570,6 +6362,20 @@
 "title": "線形回帰"
 }
 ],
+"prompt-engineering": [
+{
+"slug": "rag",
+"title": "RAG（検索拡張生成）"
+},
+{
+"slug": "llm",
+"title": "LLM（大規模言語モデル）"
+},
+{
+"slug": "transformer",
+"title": "Transformerアーキテクチャ"
+}
+],
 "classification": [
 {
 "slug": "gradient-boosting",
@@ -5594,6 +6400,32 @@
 {
 "slug": "data-cleaning",
 "title": "データクリーニング"
+}
+],
+"deep-learning": [
+{
+"slug": "pytorch",
+"title": "PyTorch（深層学習フレームワーク）"
+},
+{
+"slug": "ml-basics",
+"title": "機械学習の基礎"
+},
+{
+"slug": "cnn",
+"title": "CNN（畳み込みニューラルネットワーク）"
+},
+{
+"slug": "classification",
+"title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
+},
+{
+"slug": "gradient-boosting",
+"title": "勾配ブースティング（XGBoost・LightGBM）"
+},
+{
+"slug": "linear-regression",
+"title": "線形回帰"
 }
 ],
 "linear-regression": [
@@ -5646,6 +6478,32 @@
 {
 "slug": "arp",
 "title": "ARP"
+}
+],
+"cnn": [
+{
+"slug": "rnn-lstm",
+"title": "RNN・LSTM（系列データのモデリング）"
+},
+{
+"slug": "pytorch",
+"title": "PyTorch（深層学習フレームワーク）"
+},
+{
+"slug": "deep-learning",
+"title": "深層学習の基礎（ニューラルネットワーク）"
+},
+{
+"slug": "opencv",
+"title": "OpenCV（画像処理基礎）"
+},
+{
+"slug": "image-processing",
+"title": "画像前処理・特徴抽出（深層学習向け）"
+},
+{
+"slug": "transformer",
+"title": "Transformerアーキテクチャ"
 }
 ],
 "howto-doip-connect": [
@@ -5726,6 +6584,24 @@
 "title": "Adaptive AUTOSAR"
 }
 ],
+"llm": [
+{
+"slug": "prompt-engineering",
+"title": "プロンプトエンジニアリング"
+},
+{
+"slug": "transformer",
+"title": "Transformerアーキテクチャ"
+},
+{
+"slug": "rag",
+"title": "RAG（検索拡張生成）"
+},
+{
+"slug": "rnn-lstm",
+"title": "RNN・LSTM（系列データのモデリング）"
+}
+],
 "pcap": [
 {
 "slug": "wireshark",
@@ -5776,6 +6652,72 @@
 {
 "slug": "arp",
 "title": "ARP"
+}
+],
+"pytorch": [
+{
+"slug": "cnn",
+"title": "CNN（畳み込みニューラルネットワーク）"
+},
+{
+"slug": "deep-learning",
+"title": "深層学習の基礎（ニューラルネットワーク）"
+},
+{
+"slug": "rnn-lstm",
+"title": "RNN・LSTM（系列データのモデリング）"
+},
+{
+"slug": "image-processing",
+"title": "画像前処理・特徴抽出（深層学習向け）"
+},
+{
+"slug": "classification",
+"title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
+},
+{
+"slug": "data-analysis",
+"title": "データ分析の流れ（EDA）"
+}
+],
+"rag": [
+{
+"slug": "llm",
+"title": "LLM（大規模言語モデル）"
+},
+{
+"slug": "prompt-engineering",
+"title": "プロンプトエンジニアリング"
+},
+{
+"slug": "transformer",
+"title": "Transformerアーキテクチャ"
+}
+],
+"rnn-lstm": [
+{
+"slug": "transformer",
+"title": "Transformerアーキテクチャ"
+},
+{
+"slug": "pytorch",
+"title": "PyTorch（深層学習フレームワーク）"
+},
+{
+"slug": "deep-learning",
+"title": "深層学習の基礎（ニューラルネットワーク）"
+},
+{
+"slug": "cnn",
+"title": "CNN（畳み込みニューラルネットワーク）"
+},
+{
+"slug": "image-processing",
+"title": "画像前処理・特徴抽出（深層学習向け）"
+},
+{
+"slug": "llm",
+"title": "LLM（大規模言語モデル）"
 }
 ],
 "scapy-pcap": [
@@ -5846,6 +6788,32 @@
 {
 "slug": "udp",
 "title": "UDP"
+}
+],
+"transformer": [
+{
+"slug": "llm",
+"title": "LLM（大規模言語モデル）"
+},
+{
+"slug": "rnn-lstm",
+"title": "RNN・LSTM（系列データのモデリング）"
+},
+{
+"slug": "deep-learning",
+"title": "深層学習の基礎（ニューラルネットワーク）"
+},
+{
+"slug": "cnn",
+"title": "CNN（畳み込みニューラルネットワーク）"
+},
+{
+"slug": "image-processing",
+"title": "画像前処理・特徴抽出（深層学習向け）"
+},
+{
+"slug": "prompt-engineering",
+"title": "プロンプトエンジニアリング"
 }
 ],
 "uds": [
@@ -6132,6 +7100,32 @@
 {
 "slug": "data-cleaning",
 "title": "データクリーニング"
+}
+],
+"image-processing": [
+{
+"slug": "cnn",
+"title": "CNN（畳み込みニューラルネットワーク）"
+},
+{
+"slug": "pytorch",
+"title": "PyTorch（深層学習フレームワーク）"
+},
+{
+"slug": "opencv",
+"title": "OpenCV（画像処理基礎）"
+},
+{
+"slug": "data-cleaning",
+"title": "データクリーニング"
+},
+{
+"slug": "rnn-lstm",
+"title": "RNN・LSTM（系列データのモデリング）"
+},
+{
+"slug": "deep-learning",
+"title": "深層学習の基礎（ニューラルネットワーク）"
 }
 ],
 "autosar": [
@@ -8485,6 +9479,287 @@
 "difficulty": "中級",
 "updated": "2026-06-10",
 "excerpt": "勾配ブースティング（Gradient Boosting）は、弱い決定木を順番に積み重ねて強力なモデルを作るアンサンブル手法です。Kaggle等のデータコンペで最もよく優勝するアルゴリズムで、表形式データの精度最高峰とされています。",
+"views": 0,
+"completed": false,
+"favorite": false
+}
+]
+},
+{
+"name": "DL",
+"articles": [
+{
+"slug": "deep-learning",
+"title": "深層学習の基礎（ニューラルネットワーク）",
+"level": 2,
+"category": "DL",
+"related": [
+"ml-basics",
+"pytorch",
+"cnn"
+],
+"next": [
+"pytorch"
+],
+"tags": [
+"deep-learning",
+"neural-network",
+"python",
+"ml"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "深層学習（Deep Learning）は多層のニューラルネットワークを使って、データから特徴を自動的に学習する機械学習の手法です。画像認識・音声認識・自然言語処理で従来手法を大きく上回る精度を実現し、生成AIの基盤にもなっています。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "cnn",
+"title": "CNN（畳み込みニューラルネットワーク）",
+"level": 3,
+"category": "DL",
+"related": [
+"pytorch",
+"deep-learning",
+"opencv",
+"rnn-lstm"
+],
+"next": [
+"rnn-lstm"
+],
+"tags": [
+"cnn",
+"deep-learning",
+"pytorch",
+"image",
+"computer-vision"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"excerpt": "CNN（Convolutional Neural Network）は画像データに特化したニューラルネットワークです。畳み込み層・プーリング層を積み重ね、画像の局所パターン（エッジ→テクスチャ→形状→物体）を階層的に学習します。画像分類・物体",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "pytorch",
+"title": "PyTorch（深層学習フレームワーク）",
+"level": 3,
+"category": "DL",
+"related": [
+"deep-learning",
+"cnn",
+"rnn-lstm"
+],
+"next": [
+"cnn"
+],
+"tags": [
+"pytorch",
+"deep-learning",
+"python",
+"neural-network"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"excerpt": "PyTorchはFacebook（Meta）が開発した深層学習フレームワークです。NumPy的なテンソル演算＋自動微分（autograd）＋GPU対応を提供し、研究・実務の両方で最も広く使われています。「書いたコードがそのまま動く」動的計算",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "rnn-lstm",
+"title": "RNN・LSTM（系列データのモデリング）",
+"level": 3,
+"category": "DL",
+"related": [
+"deep-learning",
+"pytorch",
+"transformer"
+],
+"next": [
+"transformer"
+],
+"tags": [
+"rnn",
+"lstm",
+"deep-learning",
+"pytorch",
+"time-series",
+"nlp"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"excerpt": "RNN（Recurrent Neural Network）は系列データ（時系列・テキスト・音声）を扱うために設計されたニューラルネットワークです。前のタイムステップの出力を次のステップの入力として使うことで、「文脈」を保持します。LSTMは",
+"views": 0,
+"completed": false,
+"favorite": false
+}
+]
+},
+{
+"name": "GenAI",
+"articles": [
+{
+"slug": "prompt-engineering",
+"title": "プロンプトエンジニアリング",
+"level": 2,
+"category": "GenAI",
+"related": [
+"llm",
+"rag"
+],
+"next": [
+"rag"
+],
+"tags": [
+"prompt",
+"llm",
+"genai",
+"claude",
+"gpt"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "プロンプトエンジニアリングはLLMに対して質の高い出力を得るための入力設計技術です。同じモデルでもプロンプトの書き方で出力の質が大きく変わります。コスト・速度・精度すべてに影響するため、LLMを使うすべての開発者に必須のスキルです。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "llm",
+"title": "LLM（大規模言語モデル）",
+"level": 3,
+"category": "GenAI",
+"related": [
+"transformer",
+"prompt-engineering",
+"rag"
+],
+"next": [
+"prompt-engineering"
+],
+"tags": [
+"llm",
+"gpt",
+"bert",
+"genai",
+"nlp",
+"transformer"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"excerpt": "LLM（Large Language Model）はTransformerをベースに、巨大なテキストコーパスで学習した言語モデルです。GPT-4・Claude・Gemini・Llama などが代表例で、翻訳・要約・コード生成・質問応答・創作",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "rag",
+"title": "RAG（検索拡張生成）",
+"level": 3,
+"category": "GenAI",
+"related": [
+"llm",
+"prompt-engineering",
+"transformer"
+],
+"next": [],
+"tags": [
+"rag",
+"llm",
+"vector-db",
+"embedding",
+"genai"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"excerpt": "RAG（Retrieval-Augmented Generation）は、外部の知識ベース（ドキュメント・DB）から関連情報を検索してLLMのプロンプトに追加する手法です。LLMの学習データにない最新情報・社内専用知識を扱えるようになります",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "transformer",
+"title": "Transformerアーキテクチャ",
+"level": 3,
+"category": "GenAI",
+"related": [
+"rnn-lstm",
+"llm",
+"deep-learning"
+],
+"next": [
+"llm"
+],
+"tags": [
+"transformer",
+"attention",
+"deep-learning",
+"nlp",
+"genai"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"excerpt": "Transformerは2017年のGoogle論文「Attention Is All You Need」で発表されたアーキテクチャです。RNN/LSTMを使わず**Self-Attentionのみ**で系列を処理し、並列計算が可能なため大",
+"views": 0,
+"completed": false,
+"favorite": false
+}
+]
+},
+{
+"name": "CV",
+"articles": [
+{
+"slug": "opencv",
+"title": "OpenCV（画像処理基礎）",
+"level": 2,
+"category": "CV",
+"related": [
+"image-processing",
+"cnn",
+"numpy"
+],
+"next": [
+"image-processing"
+],
+"tags": [
+"opencv",
+"computer-vision",
+"python",
+"image-processing"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "OpenCV（Open Source Computer Vision Library）はC++/Python対応の高速な画像処理ライブラリです。画像の読み込み・変換・フィルタリング・エッジ検出・物体検出まで、コンピュータビジョンに必要な操作",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "image-processing",
+"title": "画像前処理・特徴抽出（深層学習向け）",
+"level": 3,
+"category": "CV",
+"related": [
+"opencv",
+"cnn",
+"pytorch",
+"data-cleaning"
+],
+"next": [],
+"tags": [
+"image-processing",
+"cv",
+"pytorch",
+"augmentation",
+"deep-learning"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"excerpt": "深層学習で画像を扱う際には、モデルに合わせた前処理（リサイズ・正規化・データ拡張）が精度に大きく影響します。PyTorchの `torchvision.transforms` と OpenCV を組み合わせた実践的な前処理パイプラインを解説",
 "views": 0,
 "completed": false,
 "favorite": false

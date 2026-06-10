@@ -19,7 +19,7 @@ _FRONTMATTER_RE = re.compile(r"^---\s*\n(.*?)\n---\s*\n(.*)$", re.DOTALL)
 _LINK_RE = re.compile(r"\[\[([a-z0-9\-]+)\]\]")
 
 # note-style top categories shown on the home screen.
-CATEGORIES = ["Ethernet", "TCP/IP", "PCAP", "SOME/IP", "AUTOSAR", "SDV", "Automotive Bus", "Diagnostics", "Security", "Howto", "Python", "ML"]
+CATEGORIES = ["Ethernet", "TCP/IP", "PCAP", "SOME/IP", "AUTOSAR", "SDV", "Automotive Bus", "Diagnostics", "Security", "Howto", "Python", "ML", "DL", "GenAI", "CV"]
 
 # slug -> category (overridable via frontmatter `category`).
 _CATEGORY_MAP = {
@@ -65,6 +65,19 @@ _CATEGORY_MAP = {
     "scapy-basics":      "PCAP",
     "scapy-pcap":        "PCAP",
     "scapy-automotive":  "PCAP",
+    # Deep Learning
+    "deep-learning":   "DL",
+    "pytorch":         "DL",
+    "cnn":             "DL",
+    "rnn-lstm":        "DL",
+    # Generative AI
+    "transformer":          "GenAI",
+    "llm":                  "GenAI",
+    "prompt-engineering":   "GenAI",
+    "rag":                  "GenAI",
+    # Computer Vision
+    "opencv":              "CV",
+    "image-processing":    "CV",
     # Machine Learning
     "ml-basics":          "ML",
     "scikit-learn":       "ML",
