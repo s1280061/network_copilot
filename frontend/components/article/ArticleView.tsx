@@ -3,16 +3,9 @@
 import { useEffect, useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import mermaid from "mermaid";
-import {
-  getArticle,
-  setProgress,
-  addFavorite,
-  removeFavorite,
-  getRecommend,
-} from "@/lib/api";
+import { getArticle, getRecommend } from "@/lib/api";
 import { Article, Ref } from "@/lib/types";
 import { useStudyPanel } from "@/lib/study-context";
-import { recordView } from "@/lib/profile";
 import Thumbnail from "@/components/Thumbnail";
 
 mermaid.initialize({ startOnLoad: false, theme: "default", securityLevel: "loose" });
@@ -31,13 +24,9 @@ export default function ArticleView({ slug }: { slug: string }) {
     getArticle(slug)
       .then((a) => {
         setArticle(a);
-        recordView(a.slug);
         setPanel({
-          title: a.title,
           slug: a.slug,
-          prereq: a.prereq_full,
-          related: a.related_full,
-          next: a.next_full,
+          related: [...a.related_full, ...a.next_full],
         });
       })
       .catch(() => setError(true));
@@ -85,26 +74,18 @@ export default function ArticleView({ slug }: { slug: string }) {
     return () => document.removeEventListener("click", onClick);
   }, [router]);
 
-  async function toggleDone() {
-    if (!article) return;
-    await setProgress(article.slug, !article.completed);
-    setArticle({ ...article, completed: !article.completed });
-  }
-
-  async function toggleFav() {
-    if (!article) return;
-    if (article.favorite) await removeFavorite(article.slug);
-    else await addFavorite(article.slug, article.title);
-    setArticle({ ...article, favorite: !article.favorite });
-  }
-
   if (error)
     return <p className="text-red-600">記事が見つかりませんでした: {slug}</p>;
   if (!article) return <p className="text-slate-400">読み込み中...</p>;
 
+  const allRelated = [
+    ...article.related_full,
+    ...article.next_full,
+    ...article.prereq_full,
+  ].filter((r, i, arr) => arr.findIndex((x) => x.slug === r.slug) === i);
+
   return (
     <article>
-      {/* note-style header image (falls back to a colored banner) */}
       <Thumbnail
         slug={article.slug}
         category={article.category}
@@ -112,35 +93,12 @@ export default function ArticleView({ slug }: { slug: string }) {
         iconClassName="text-6xl"
       />
 
-      <div className="flex items-start justify-between gap-4 mb-4">
-        <div>
-          <span className="text-xs font-semibold text-sky-600">
-            Level {article.level}
-          </span>
-          <h1 className="text-2xl font-bold">{article.title}</h1>
-        </div>
-        <div className="flex gap-2 shrink-0">
-          <button
-            onClick={toggleFav}
-            className={`text-sm rounded-md px-3 py-1.5 border ${
-              article.favorite
-                ? "bg-amber-50 border-amber-300 text-amber-700"
-                : "border-slate-300 text-slate-600 hover:bg-slate-50"
-            }`}
-          >
-            {article.favorite ? "★ お気に入り" : "☆ お気に入り"}
-          </button>
-          <button
-            onClick={toggleDone}
-            className={`text-sm rounded-md px-3 py-1.5 border ${
-              article.completed
-                ? "bg-green-50 border-green-300 text-green-700"
-                : "border-slate-300 text-slate-600 hover:bg-slate-50"
-            }`}
-          >
-            {article.completed ? "✓ 学習済み" : "学習済みにする"}
-          </button>
-        </div>
+      <div className="mb-6">
+        <span className="text-xs px-2 py-0.5 rounded-full bg-slate-100 text-slate-500">
+          {article.category}
+        </span>
+        <h1 className="text-2xl font-bold mt-2">{article.title}</h1>
+        <p className="text-xs text-slate-400 mt-1">{article.updated}</p>
       </div>
 
       <div
@@ -148,33 +106,17 @@ export default function ArticleView({ slug }: { slug: string }) {
         dangerouslySetInnerHTML={{ __html: article.html }}
       />
 
-      {article.prereq_full.length > 0 && (
-        <LinkSection
-          label="前提知識"
-          items={article.prereq_full}
-          onClick={(s) => router.push(`/glossary/${s}`)}
-        />
-      )}
-
-      {article.related_full.length > 0 && (
-        <LinkSection
-          label="関連知識"
-          items={article.related_full}
-          onClick={(s) => router.push(`/glossary/${s}`)}
-        />
-      )}
-
-      {article.next_full.length > 0 && (
-        <div className="mt-6 border-t pt-4">
-          <p className="text-sm text-slate-500 mb-2">次に学ぶべき内容</p>
+      {allRelated.length > 0 && (
+        <div className="mt-10 pt-6 border-t">
+          <p className="text-sm font-semibold text-slate-600 mb-3">関連記事</p>
           <div className="flex flex-wrap gap-2">
-            {article.next_full.map((n) => (
+            {allRelated.map((it) => (
               <button
-                key={n.slug}
-                onClick={() => router.push(`/glossary/${n.slug}`)}
-                className="text-sm bg-sky-600 text-white rounded-md px-3 py-1.5 hover:bg-sky-700"
+                key={it.slug}
+                onClick={() => router.push(`/glossary/${it.slug}`)}
+                className="text-sm border rounded-full px-4 py-1.5 bg-white text-slate-700 hover:border-sky-400 hover:text-sky-600 transition"
               >
-                {n.title} →
+                {it.title}
               </button>
             ))}
           </div>
@@ -182,16 +124,14 @@ export default function ArticleView({ slug }: { slug: string }) {
       )}
 
       {recommended.length > 0 && (
-        <div className="mt-8 border-t pt-4">
-          <p className="text-sm font-semibold text-slate-700 mb-2">
-            ✨ あなたへのおすすめ
-          </p>
+        <div className="mt-8">
+          <p className="text-sm font-semibold text-slate-600 mb-3">おすすめ記事</p>
           <div className="grid sm:grid-cols-2 gap-2">
             {recommended.map((r) => (
               <button
                 key={r.slug}
                 onClick={() => router.push(`/glossary/${r.slug}`)}
-                className="text-left text-sm border rounded-lg px-3 py-2 bg-white hover:border-sky-400"
+                className="text-left text-sm border rounded-lg px-4 py-3 bg-white hover:border-sky-400 hover:shadow-sm transition"
               >
                 {r.title} →
               </button>
@@ -200,32 +140,5 @@ export default function ArticleView({ slug }: { slug: string }) {
         </div>
       )}
     </article>
-  );
-}
-
-function LinkSection({
-  label,
-  items,
-  onClick,
-}: {
-  label: string;
-  items: Ref[];
-  onClick: (slug: string) => void;
-}) {
-  return (
-    <div className="mt-6 border-t pt-4">
-      <p className="text-sm text-slate-500 mb-2">{label}</p>
-      <div className="flex flex-wrap gap-2">
-        {items.map((it) => (
-          <button
-            key={it.slug}
-            onClick={() => onClick(it.slug)}
-            className="text-sm border rounded-md px-3 py-1.5 bg-white text-slate-700 hover:border-sky-400"
-          >
-            {it.title}
-          </button>
-        ))}
-      </div>
-    </div>
   );
 }

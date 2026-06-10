@@ -6,9 +6,8 @@ import Header from "@/components/layout/Header";
 import { StudyProvider } from "@/lib/study-context";
 
 export const metadata: Metadata = {
-  title: "Network Learning Copilot",
-  description:
-    "ADAS・SDV・組み込みネットワーク技術を体系的に学べるAI教師プラットフォーム",
+  title: "Network Copilot",
+  description: "車載ネットワーク・データサイエンスの技術記事サイト",
 };
 
 export default function RootLayout({
