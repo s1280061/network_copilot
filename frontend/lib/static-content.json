@@ -123,6 +123,59 @@
 "favorite": false
 },
 {
+"slug": "automotive-torque",
+"title": "トルクと馬力（自動車工学の基礎）",
+"level": 1,
+"category": "Automotive",
+"related": [
+"automotive-engine",
+"automotive-transmission",
+"electric-power"
+],
+"next": [
+"automotive-engine"
+],
+"tags": [
+"torque",
+"horsepower",
+"power",
+"automotive",
+"engine",
+"mechanics"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "「トルク」と「馬力（出力）」は自動車の性能を語るうえで最も重要な2つの値です。カタログに必ず記載されていますが、その物理的な意味を正確に理解している人は少ないです。この2つを理解することでエンジン選択・EV設計・ギア比設計の根拠がわかります",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "engineering-drawing",
+"title": "図面の読み方（自動車部品・機械製図）",
+"level": 1,
+"category": "Automotive",
+"related": [
+"automotive-engine",
+"automotive-torque",
+"automotive-electrical"
+],
+"next": [],
+"tags": [
+"drawing",
+"blueprint",
+"manufacturing",
+"automotive",
+"mechanical"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "図面（製図）はエンジニアの共通言語です。自動車のエンジンブロック・サスペンションアーム・ハーネスコネクタなど、すべての部品は図面から作られます。図面を読む力は設計・生産・品質・実験すべての職種で必要とされます。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "ml-basics",
 "title": "機械学習の基礎",
 "level": 1,
@@ -144,6 +197,36 @@
 "difficulty": "初級",
 "updated": "2026-06-10",
 "excerpt": "機械学習（Machine Learning）とは、データからパターンを自動的に学習してタスクを解くアルゴリズムの総称です。ルールをプログラマが手書きするのではなく、大量のデータから「ルールそのもの」をコンピュータが見つけます。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "wireless-basics",
+"title": "無線通信の基礎（電波・周波数・変調）",
+"level": 1,
+"category": "Wireless",
+"related": [
+"wifi",
+"bluetooth",
+"lte-5g",
+"v2x-wireless",
+"electromagnetic-induction"
+],
+"next": [
+"wifi"
+],
+"tags": [
+"wireless",
+"radio",
+"frequency",
+"modulation",
+"antenna",
+"basics"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "無線通信は電磁波（電波）を使って情報を伝える技術です。Wi-Fi・Bluetooth・5G・車載V2X・GPSはすべて異なる周波数帯の電波を使っています。「なぜ5GHzのWi-Fiは壁に弱いのか」「なぜ5Gは速いのか」を電波の物理から理解し",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -171,6 +254,33 @@
 "difficulty": "初級",
 "updated": "2026-06-10",
 "excerpt": "複数の抵抗を組み合わせた回路には「直列」と「並列」の2種類があります。この2つの接続の違いを理解することは、電子回路設計・故障診断・車載ハーネス設計の基本です。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "automotive-engine",
+"title": "自動車エンジンの仕組み（4ストロークサイクル）",
+"level": 1,
+"category": "Automotive",
+"related": [
+"automotive-torque",
+"automotive-transmission",
+"automotive-electrical"
+],
+"next": [
+"automotive-transmission"
+],
+"tags": [
+"engine",
+"four-stroke",
+"combustion",
+"automotive",
+"powertrain"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "自動車のガソリンエンジンは「燃料の燃焼エネルギーを回転運動に変換する機械」です。4ストロークサイクルの仕組みを理解することで、燃費・出力・排気ガス・エンジン制御（ECU）すべての動作が繋がります。",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -275,6 +385,33 @@
 "favorite": false
 },
 {
+"slug": "bluetooth",
+"title": "Bluetooth（Classic/BLE）の仕組みと車載応用",
+"level": 2,
+"category": "Wireless",
+"related": [
+"wireless-basics",
+"wifi",
+"lte-5g",
+"v2x-wireless"
+],
+"next": [],
+"tags": [
+"bluetooth",
+"ble",
+"bluetooth-le",
+"automotive",
+"wireless",
+"pairing"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "BluetoothはIEEE 802.15.1を基にしたWPAN（無線個人エリアネットワーク）規格です。スマートフォンのハンズフリー通話・音楽ストリーミング・ワイヤレスイヤホン・車載診断ツールまで広く使われています。2.4GHz帯を周波数ホ",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "dhcp",
 "title": "DHCP",
 "level": 2,
@@ -349,6 +486,33 @@
 "favorite": false
 },
 {
+"slug": "ev-battery",
+"title": "EVバッテリー（リチウムイオン・BMS・充電）",
+"level": 2,
+"category": "Automotive",
+"related": [
+"automotive-electrical",
+"electric-power",
+"semiconductor",
+"capacitor"
+],
+"next": [],
+"tags": [
+"ev",
+"battery",
+"bms",
+"lithium-ion",
+"charging",
+"automotive"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "電気自動車（EV）の心臓部はリチウムイオンバッテリーパックです。スマートフォンと同じ原理ですが、容量は数万倍。電圧・容量・BMS（バッテリー管理システム）・充電方式の仕組みを理解することは、EV開発・診断の基盤です。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "fastapi",
 "title": "FastAPI（高速WebAPI開発）",
 "level": 2,
@@ -369,6 +533,33 @@
 "difficulty": "初級",
 "updated": "2026-06-10",
 "excerpt": "FastAPIはPythonの型ヒントを活かした高速なWebAPIフレームワークです。自動的なOpenAPIドキュメント生成・型バリデーション・非同期処理をサポートし、機械学習モデルや分析ツールのAPIサーバーとして最も人気があります。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "gnss",
+"title": "GPS/GNSS（全球測位システム）と自動車への応用",
+"level": 2,
+"category": "Wireless",
+"related": [
+"wireless-basics",
+"v2x-wireless",
+"lte-5g",
+"automotive-electrical"
+],
+"next": [],
+"tags": [
+"gps",
+"gnss",
+"positioning",
+"navigation",
+"automotive",
+"wireless"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "GNSS（Global Navigation Satellite System）はGPS・GLONASS・Galileo・みちびきなどの衛星測位システムの総称です。カーナビゲーション・自動運転・タクシー配車・緊急通報（eCall）に不可欠で",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -471,6 +662,36 @@
 ],
 "updated": "2026-06-10",
 "excerpt": "LIN(Local Interconnect Network)は、**低コスト**・低速な車載シリアルバスです。1本のワイヤで最大19.2 kbpsの通信を行い、**マスター/スレーブ**構成で動作します。CANより安価で、シート調整・ドア",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "lte-5g",
+"title": "LTE/5G セルラー通信の仕組みと車載応用",
+"level": 2,
+"category": "Wireless",
+"related": [
+"wireless-basics",
+"wifi",
+"v2x-wireless",
+"ota"
+],
+"next": [
+"v2x-wireless"
+],
+"tags": [
+"lte",
+"5g",
+"cellular",
+"nr",
+"automotive",
+"telematics",
+"ota"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "LTE（4G）と5Gは全国規模のモバイル通信インフラです。自動車では「テレマティクス（位置情報・盗難追跡）」「OTA（Over-the-Air）アップデート」「コネクテッドカー」「C-V2X（Cellular V2X）」に活用されています。",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -701,6 +922,33 @@
 ],
 "updated": "2026-06-10",
 "excerpt": "VLAN(Virtual LAN / **IEEE 802.1Q**)は、1本の物理 ethernet を論理的に複数のネットワークに分割する技術です。フレームに「**VLANタグ**」を付けることで、同じケーブル上でもグループごとに通信を",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "wifi",
+"title": "Wi-Fi（IEEE 802.11）の仕組みと規格",
+"level": 2,
+"category": "Wireless",
+"related": [
+"wireless-basics",
+"bluetooth",
+"lte-5g",
+"ethernet"
+],
+"next": [],
+"tags": [
+"wifi",
+"ieee80211",
+"wireless-lan",
+"802.11ax",
+"ofdm",
+"networking"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "Wi-Fi（IEEE 802.11）は世界中で使われている無線LAN規格です。「なぜ5GHzは速いが繋がりにくいのか」「Wi-Fi 6は何が違うのか」を物理層から理解しましょう。車載では駐車場の地図更新・ディーラーでの診断・路車間通信の補助",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -968,6 +1216,32 @@
 "favorite": false
 },
 {
+"slug": "automotive-transmission",
+"title": "変速機・ギア比（トランスミッション）",
+"level": 2,
+"category": "Automotive",
+"related": [
+"automotive-torque",
+"automotive-engine",
+"ev-battery"
+],
+"next": [],
+"tags": [
+"transmission",
+"gear",
+"ratio",
+"automotive",
+"powertrain",
+"cvt"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "変速機（トランスミッション）はエンジンの回転数・トルクを走行状況に合わせて最適に変換する装置です。ギア比を変えることで「発進時は大きな力」「高速時は静かな回転」を両立します。MT・AT・CVT・EVドライブの仕組みを理解しましょう。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "dimensionality-reduction",
 "title": "次元削減（PCA・t-SNE・UMAP）",
 "level": 2,
@@ -1096,6 +1370,38 @@
 "difficulty": "初級",
 "updated": "2026-06-10",
 "excerpt": "線形回帰は「入力 X から連続値 y を予測する」最もシンプルな機械学習モデルです。数値の予測（売上・気温・価格など）に使います。モデルの解釈性が高く、まず試すべきベースラインです。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "automotive-electrical",
+"title": "車載電気システム（12V/48V・ハーネス・ECU）",
+"level": 2,
+"category": "Automotive",
+"related": [
+"electricity-basics",
+"ohms-law",
+"electric-power",
+"semiconductor",
+"ev-battery"
+],
+"next": [
+"ev-battery"
+],
+"tags": [
+"automotive",
+"electrical",
+"12v",
+"48v",
+"harness",
+"ecu",
+"can",
+"electronics"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "現代の自動車には100個以上のECU（電子制御ユニット）と数kmのワイヤーハーネスが搭載されています。電気の基礎知識が車の設計・整備・診断に直結します。「電気の基礎（V=RI）」を自動車の文脈で理解しましょう。",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -1972,6 +2278,35 @@
 "favorite": false
 },
 {
+"slug": "v2x-wireless",
+"title": "車載無線通信（V2X・DSRC・C-V2X）",
+"level": 3,
+"category": "Wireless",
+"related": [
+"lte-5g",
+"wifi",
+"wireless-basics",
+"v2x",
+"automotive-electrical"
+],
+"next": [],
+"tags": [
+"v2x",
+"dsrc",
+"c-v2x",
+"vehicle-to-vehicle",
+"automotive",
+"safety",
+"wireless"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"excerpt": "V2X（Vehicle-to-Everything）は車と「あらゆるもの」が通信する技術です。車車間（V2V）・車路間（V2I）・車人間（V2P）・車クラウド（V2N）からなり、信号情報取得・衝突回避・自動運転の重要インフラです。DSRC（",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "autosar",
 "title": "AUTOSAR",
 "level": 4,
@@ -2656,6 +2991,94 @@
 "completed": false,
 "favorite": false
 },
+"automotive-torque": {
+"slug": "automotive-torque",
+"title": "トルクと馬力（自動車工学の基礎）",
+"level": 1,
+"category": "Automotive",
+"related": [
+"automotive-engine",
+"automotive-transmission",
+"electric-power"
+],
+"next": [
+"automotive-engine"
+],
+"tags": [
+"torque",
+"horsepower",
+"power",
+"automotive",
+"engine",
+"mechanics"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>「トルク」と「馬力（出力）」は自動車の性能を語るうえで最も重要な2つの値です。カタログに必ず記載されていますが、その物理的な意味を正確に理解している人は少ないです。この2つを理解することでエンジン選択・EV設計・ギア比設計の根拠がわかります。</p>\n<h2>トルクとは</h2>\n<p>トルクは「回転させる力のモーメント」です。</p>\n<p>$$\\tau = F \\times r$$</p>\n<ul>\n<li><strong>τ</strong>（タウ）：トルク [N·m（ニュートンメートル）]</li>\n<li><strong>F</strong>：力 [N]</li>\n<li><strong>r</strong>：腕の長さ（回転軸からの距離）[m]</li>\n</ul>\n<pre><code class=\"language-python\">import numpy as np\nimport matplotlib.pyplot as plt\n\n# トルクの感覚を掴む例\nexamples = {\n    &quot;ドアを開ける（端を押す, 80cm）&quot;: (20, 0.8),    # 20N × 0.8m\n    &quot;ドアを開ける（軸近くを押す, 5cm）&quot;: (20, 0.05), # 20N × 0.05m\n    &quot;ボルト締め（レンチ20cm, 50N）&quot;:  (50, 0.2),\n    &quot;インパクトレンチ&quot;:               (None, None),\n    &quot;軽自動車エンジン（最大）&quot;:        (None, None),\n    &quot;トラックエンジン（最大）&quot;:        (None, None),\n}\n\nprint(&quot;トルクの具体例:&quot;)\nprint(f&quot;  ドアノブ（端を押す）:  20N × 0.8m = {20*0.8} N·m&quot;)\nprint(f&quot;  ドアノブ（軸近く）:    20N × 0.05m = {20*0.05} N·m  （4倍の力が必要！）&quot;)\nprint(f&quot;  ボルト締め:           50N × 0.2m = {50*0.2} N·m&quot;)\nprint()\n\n# 自動車エンジンのトルク\ncar_torques = {\n    &quot;軽自動車（NA 660cc）&quot;:    60,     # N·m\n    &quot;コンパクトカー（1.5L）&quot;: 130,\n    &quot;スポーツカー（2.0L）&quot;:   300,\n    &quot;SUV（3.5L）&quot;:            380,\n    &quot;大型トラック（6L）&quot;:    2000,\n    &quot;テスラ Model S Plaid&quot;:  1420,    # EV（モーター直接）\n}\nfor name, torque in car_torques.items():\n    print(f&quot;  {name:25s}: {torque:5d} N·m&quot;)\n</code></pre>\n<h2>出力（馬力）とトルクの関係</h2>\n<p>$$P = \\tau \\times \\omega = \\tau \\times \\frac{2\\pi n}{60}$$</p>\n<ul>\n<li><strong>P</strong>：出力 [W]</li>\n<li><strong>τ</strong>：トルク [N·m]</li>\n<li><strong>ω</strong>：角速度 [rad/s]</li>\n<li><strong>n</strong>：回転数 [rpm]</li>\n</ul>\n<pre><code class=\"language-python\">def power_from_torque(torque_Nm, rpm):\n    &quot;&quot;&quot;トルクと回転数から出力を計算&quot;&quot;&quot;\n    omega = 2 * np.pi * rpm / 60\n    power_W = torque_Nm * omega\n    power_kW = power_W / 1000\n    power_PS = power_kW / 0.7355   # 1PS = 0.7355kW（メートル馬力）\n    return power_kW, power_PS\n\n# 典型的なエンジン性能を計算\nprint(&quot;=== エンジン性能の計算 ===&quot;)\nexamples = [\n    (&quot;軽自動車（660cc）&quot;,    60,  5500),\n    (&quot;普通車（2.0L）&quot;,      200,  4000),\n    (&quot;スポーツカー（2.0L）&quot;, 400,  6000),\n    (&quot;大型トラック&quot;,        2000, 1500),\n]\nfor name, torque, rpm in examples:\n    kW, PS = power_from_torque(torque, rpm)\n    print(f&quot;  {name:22s}: {torque:4d} N·m × {rpm:4d} rpm = {kW:6.1f} kW ({PS:.0f} PS)&quot;)\n</code></pre>\n<h2>トルク曲線と出力曲線</h2>\n<pre><code class=\"language-python\"># エンジン特性カーブのシミュレーション（2.0L NAエンジン）\ndef engine_curves(rpm_range):\n    &quot;&quot;&quot;典型的なNA 2.0L エンジンのトルク・出力カーブ&quot;&quot;&quot;\n    # トルクは中回転域でピーク\n    torque = (\n        150\n        + 60 * np.exp(-((rpm_range - 3500) / 1500)**2)  # ピーク at 3500rpm\n        - 20 * (rpm_range / 7000)**3                      # 高回転で低下\n    )\n    torque = np.clip(torque, 50, 220)\n    power_kW = torque * 2 * np.pi * rpm_range / 60 / 1000\n    return torque, power_kW\n\nrpm_range = np.linspace(1000, 7000, 500)\ntorque, power = engine_curves(rpm_range)\npower_PS = power / 0.7355\n\nfig, ax1 = plt.subplots(figsize=(10, 5))\nax2 = ax1.twinx()\n\nax1.plot(rpm_range, torque, &quot;r-&quot;, lw=2, label=&quot;トルク [N·m]&quot;)\nax2.plot(rpm_range, power_PS, &quot;b-&quot;, lw=2, label=&quot;出力 [PS]&quot;)\n\nax1.set_xlabel(&quot;エンジン回転数 [rpm]&quot;)\nax1.set_ylabel(&quot;トルク [N·m]&quot;, color=&quot;red&quot;)\nax2.set_ylabel(&quot;出力 [PS]&quot;, color=&quot;blue&quot;)\nax1.set_title(&quot;2.0L NAエンジン　トルク・出力カーブ&quot;)\nax1.legend(loc=&quot;upper left&quot;)\nax2.legend(loc=&quot;upper right&quot;)\nax1.grid(True, alpha=0.4)\nplt.show()\n\n# 最大値\nmax_torque = torque.max()\nmax_power  = power_PS.max()\nrpm_at_max_torque = rpm_range[torque.argmax()]\nrpm_at_max_power  = rpm_range[power_PS.argmax()]\nprint(f&quot;最大トルク: {max_torque:.0f} N·m at {rpm_at_max_torque:.0f} rpm&quot;)\nprint(f&quot;最大出力:   {max_power:.0f} PS  at {rpm_at_max_power:.0f} rpm&quot;)\n</code></pre>\n<h2>EVのトルク特性（ガソリン車との違い）</h2>\n<pre><code class=\"language-python\"># EVモーターのトルク特性\ndef ev_torque_curve(rpm_range, T_max=400, rpm_base=3000, P_max_kW=150):\n    &quot;&quot;&quot;\n    EVモーターの特性:\n    - 定トルク領域（0〜rpm_base）: 最大トルクを維持\n    - 定出力領域（rpm_base以上）: 出力一定でトルクが低下\n    &quot;&quot;&quot;\n    torque = np.where(\n        rpm_range &lt;= rpm_base,\n        T_max,\n        P_max_kW * 1000 / (2 * np.pi * rpm_range / 60)  # P = T × ω\n    )\n    return torque\n\nrpm = np.linspace(0, 10000, 500)\nT_ev     = ev_torque_curve(rpm)\nT_gas, _ = engine_curves(rpm)\nP_ev = T_ev * 2 * np.pi * rpm / 60 / 1000\n\nfig, axes = plt.subplots(1, 2, figsize=(12, 5))\naxes[0].plot(rpm, T_ev,  &quot;b-&quot;, lw=2, label=&quot;EV（永久磁石モーター）&quot;)\naxes[0].plot(rpm, T_gas, &quot;r-&quot;, lw=2, label=&quot;ガソリン2.0L NA&quot;)\naxes[0].set_xlabel(&quot;回転数 [rpm]&quot;)\naxes[0].set_ylabel(&quot;トルク [N·m]&quot;)\naxes[0].set_title(&quot;トルク曲線比較&quot;)\naxes[0].legend()\naxes[0].grid(True, alpha=0.4)\n\naxes[1].plot(rpm, P_ev / 0.7355, &quot;b-&quot;, lw=2, label=&quot;EV&quot;)\naxes[1].set_xlabel(&quot;回転数 [rpm]&quot;)\naxes[1].set_ylabel(&quot;出力 [PS]&quot;)\naxes[1].set_title(&quot;出力曲線（EV）&quot;)\naxes[1].legend()\naxes[1].grid(True, alpha=0.4)\nplt.tight_layout()\nplt.show()\n\nprint(&quot;\\nEV vs ガソリン車のトルク特性の違い:&quot;)\nprint(&quot;  EV:    0rpmから最大トルク → 発進が強烈&quot;)\nprint(&quot;  ガソリン: 中回転域でトルクピーク → ギアで回転域を維持が必要&quot;)\n</code></pre>\n<h2>駆動力と加速度</h2>\n<pre><code class=\"language-python\">def driving_force(torque_engine, gear_ratio, final_ratio, tire_radius, efficiency=0.9):\n    &quot;&quot;&quot;\n    エンジントルクから車輪の駆動力を計算\n    gear_ratio: 変速比, final_ratio: ファイナルギア比\n    tire_radius: タイヤ半径 [m]\n    &quot;&quot;&quot;\n    torque_wheel = torque_engine * gear_ratio * final_ratio * efficiency\n    force = torque_wheel / tire_radius\n    return force, torque_wheel\n\n# 1速発進時の計算\nm_car    = 1500   # 車両重量 [kg]\nT_engine = 200    # エンジントルク [N·m]\ngear1    = 3.5    # 1速変速比\nfinal    = 4.0    # ファイナルギア比\nr_tire   = 0.3    # タイヤ半径 [m]\n\nF, T_wheel = driving_force(T_engine, gear1, final, r_tire)\na = F / m_car   # a = F/m\n\nprint(f&quot;1速発進時の駆動力: {F:.0f} N&quot;)\nprint(f&quot;車輪トルク:        {T_wheel:.0f} N·m&quot;)\nprint(f&quot;加速度:            {a:.2f} m/s²&quot;)\nprint(f&quot;0→100km/h 概算:    {100/3.6/a:.1f} 秒（空気抵抗・タイヤ滑り無視）&quot;)\n</code></pre>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "automotive-engine",
+"title": "自動車エンジンの仕組み（4ストロークサイクル）"
+},
+{
+"slug": "automotive-transmission",
+"title": "変速機・ギア比（トランスミッション）"
+},
+{
+"slug": "electric-power",
+"title": "電力・電力量とジュール熱"
+}
+],
+"next_full": [
+{
+"slug": "automotive-engine",
+"title": "自動車エンジンの仕組み（4ストロークサイクル）"
+}
+],
+"completed": false,
+"favorite": false
+},
+"engineering-drawing": {
+"slug": "engineering-drawing",
+"title": "図面の読み方（自動車部品・機械製図）",
+"level": 1,
+"category": "Automotive",
+"related": [
+"automotive-engine",
+"automotive-torque",
+"automotive-electrical"
+],
+"next": [],
+"tags": [
+"drawing",
+"blueprint",
+"manufacturing",
+"automotive",
+"mechanical"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>図面（製図）はエンジニアの共通言語です。自動車のエンジンブロック・サスペンションアーム・ハーネスコネクタなど、すべての部品は図面から作られます。図面を読む力は設計・生産・品質・実験すべての職種で必要とされます。</p>\n<h2>図面の種類</h2>\n<pre><code>自動車開発で使われる図面の種類:\n\n  部品図（Detail Drawing）\n  ├── 外形図：外形寸法だけ（納品仕様書向け）\n  ├── 機械図：材質・加工精度を含む製造用図面\n  └── 電気図：ハーネス・回路図\n\n  組立図（Assembly Drawing）\n  ├── 構成を示す（どの部品がどこに付く）\n  └── 分解図（Exploded View）\n\n  工程図（Process Drawing）\n  └── 製造工程・検査手順\n</code></pre>\n<h2>三角法（第一角法 vs 第三角法）</h2>\n<pre><code class=\"language-python\"># 図の投影法を理解する\n# 日本・EU: 第一角法（ISO）\n# 米国・JIS旧来: 第三角法（ASME）→ 現在JISも第三角法推奨\n\n&quot;&quot;&quot;\n第三角法（JIS推奨）の配置:\n\n         [上面図]\n            ↑\n  [左側面図] [正面図] [右側面図]\n            ↓\n         [下面図]\n\n  → 展開した面が「その方向から見た図」になる\n  → 「右から見た図は右に置く」\n\n第一角法（ISO/EU）:\n  → 「右から見た図は左に置く」（反対）\n&quot;&quot;&quot;\n\n# 図面の記号で判断\nsymbols = {\n    &quot;第三角法&quot;: &quot;○の中に△（矢印が外向き）&quot;,\n    &quot;第一角法&quot;: &quot;○の中に台形（矢印が内向き）&quot;,\n}\nfor method, symbol in symbols.items():\n    print(f&quot;{method}: {symbol}&quot;)\n</code></pre>\n<h2>寸法線・公差の読み方</h2>\n<pre><code>寸法の記法:\n\n  50 ± 0.1      →  50mm, 許容差 ±0.1mm\n  50 +0.05/-0   →  50mm〜50.05mm（一方向公差）\n  50h7          →  50mm, はめあい公差 h7（軸）\n  50H7          →  50mm, はめあい公差 H7（穴）\n  φ20           →  直径 20mm\n  R5            →  半径 5mm\n  □30           →  正方形 30mm × 30mm\n</code></pre>\n<pre><code class=\"language-python\"># はめあい公差の計算（JIS B 0401）\n# 自動車のシャフト・ベアリングの嵌合に多用\n\ndef fit_tolerance(nominal, hole_code, shaft_code):\n    &quot;&quot;&quot;\n    穴と軸のはめあい公差（概略値）\n    nominal: 基準寸法 [mm]\n    &quot;&quot;&quot;\n    # IT公差グレードの概略（50mm基準）\n    IT_grades = {\n        5: 0.011, 6: 0.016, 7: 0.025, 8: 0.039, 9: 0.062\n    }\n\n    # 代表的なはめあい\n    fits = {\n        &quot;H7/g6&quot;: (&quot;すきまばめ&quot;, &quot;回転・摺動部（軸受など）&quot;),\n        &quot;H7/k6&quot;: (&quot;中間ばめ&quot;,  &quot;位置決め（軽圧入）&quot;),\n        &quot;H7/p6&quot;: (&quot;しまりばめ&quot;,&quot;圧入固定（リング・ブッシュ）&quot;),\n        &quot;H7/n6&quot;: (&quot;中間ばめ&quot;,  &quot;ノック穴・位置決めピン&quot;),\n    }\n\n    for fit, (fit_type, usage) in fits.items():\n        print(f&quot;  {fit:8s} → {fit_type}（{usage}）&quot;)\n\nprint(&quot;自動車部品の代表的なはめあい:&quot;)\nfit_tolerance(50, &quot;H&quot;, &quot;7&quot;)\n</code></pre>\n<h2>表面粗さ（仕上げ記号）</h2>\n<pre><code>表面粗さ記号:\n\n  Ra 0.8  → 算術平均粗さ 0.8μm（研削仕上げ）\n  Ra 1.6  → 旋削・フライス仕上げ\n  Ra 3.2  → 一般的な切削加工\n  Ra 6.3  → 粗削り\n  Ra 25   → 鋳物・プレス素材のまま\n\n自動車部品の代表例:\n  エンジンシリンダーボア: Ra 0.4〜0.8（ホーニング仕上げ）\n  クランクシャフトジャーナル: Ra 0.2〜0.4（研削）\n  ギアの歯面: Ra 0.8〜1.6（研削・シェービング）\n  外装パネル: Ra 1.6〜3.2（プレス後塗装）\n</code></pre>\n<pre><code class=\"language-python\"># 加工方法と表面粗さの対応\nmachining_roughness = {\n    &quot;超精密研削（ラッピング）&quot;: (0.006, 0.025),\n    &quot;研削（Grinding）&quot;:        (0.025, 0.8),\n    &quot;ホーニング&quot;:               (0.1,  0.8),\n    &quot;旋削・フライス（精）&quot;:    (0.4,  3.2),\n    &quot;旋削・フライス（粗）&quot;:    (3.2, 12.5),\n    &quot;プレス・鍛造&quot;:             (1.6, 12.5),\n    &quot;鋳造&quot;:                    (6.3, 25.0),\n}\nfor process, (ra_min, ra_max) in machining_roughness.items():\n    print(f&quot;  {process:25s}: Ra {ra_min}〜{ra_max} μm&quot;)\n</code></pre>\n<h2>GD&amp;T（幾何公差）</h2>\n<p>寸法公差だけでは表現できない形状・位置の誤差を規定します。</p>\n<pre><code>幾何公差記号と意味:\n\n  ⊙  真円度      → 断面の真円からの誤差\n  ⌭  円筒度      → 円柱全体の誤差\n  //  平行度      → 基準面との平行性\n  ⊥  直角度      → 基準面との垂直性\n  ◎  同軸度      → 基準軸との同心度\n  ⊕  位置度      → 理論的位置からのずれ\n  ↗  面の輪郭度  → 自由曲面の誤差\n</code></pre>\n<pre><code class=\"language-python\"># 自動車エンジンの幾何公差例\nengine_tolerances = [\n    (&quot;シリンダーボア真円度&quot;,    &quot;⊙&quot;, &quot;0.005 mm&quot;, &quot;ピストンリングのシール性&quot;),\n    (&quot;クランクシャフト同軸度&quot;,  &quot;◎&quot;, &quot;0.010 mm&quot;, &quot;振動・ベアリング寿命&quot;),\n    (&quot;シリンダーヘッド面平面度&quot;,&quot;⊠&quot;, &quot;0.050 mm&quot;, &quot;ガスケットのシール性&quot;),\n    (&quot;カムシャフト位置度&quot;,      &quot;⊕&quot;, &quot;0.020 mm&quot;, &quot;バルブタイミング精度&quot;),\n]\n\nprint(f&quot;{'部品':25s} {'公差記号':6s} {'値':10s} {'理由'}&quot;)\nprint(&quot;-&quot; * 70)\nfor part, symbol, tol, reason in engine_tolerances:\n    print(f&quot;{part:25s} {symbol:6s} {tol:10s} {reason}&quot;)\n</code></pre>\n<h2>電気図面（配線図・回路図）</h2>\n<pre><code>自動車の電気図面の種類:\n\n  回路図（Schematic）\n  └── 電気的な接続を記号で表す\n      コンポーネント記号: バッテリー=⊣⊢, ヒューズ=□\n\n  配線図（Wiring Diagram）\n  └── 実際の配線経路・色・端子番号を示す\n      例: B+ -- 0.5 R/W -- C01-3 -- ヒューズ15A --\n\n  ハーネス図（Harness Drawing）\n  └── ワイヤーハーネスの束・クリップ・グロメット位置\n</code></pre>\n<pre><code class=\"language-python\"># ワイヤーハーネスの仕様読み取り例\n# コネクタピン配置: 「C01-3」= コネクタC01の3番ピン\n# 線色コード（日本自動車メーカー例）\nwire_colors = {\n    &quot;B&quot;:  &quot;黒（Black）  → GND, 接地&quot;,\n    &quot;R&quot;:  &quot;赤（Red）    → B+電源&quot;,\n    &quot;W&quot;:  &quot;白（White）  → 信号&quot;,\n    &quot;G&quot;:  &quot;緑（Green）  → 信号&quot;,\n    &quot;Y&quot;:  &quot;黄（Yellow） → 信号&quot;,\n    &quot;L&quot;:  &quot;青（Blue）   → 信号&quot;,\n    &quot;Br&quot;: &quot;茶（Brown）  → 信号&quot;,\n    &quot;P&quot;:  &quot;ピンク       → イグニッション電源&quot;,\n    &quot;O&quot;:  &quot;橙（Orange） → ACC電源&quot;,\n}\nfor code, meaning in wire_colors.items():\n    print(f&quot;  {code:3s}: {meaning}&quot;)\n\nprint(&quot;\\n複合色の読み方:&quot;)\nprint(&quot;  R/W = 赤地に白ストライプ（Red with White stripe）&quot;)\nprint(&quot;  G/Y = 緑地に黄ストライプ&quot;)\n</code></pre>\n<h2>部品番号・改訂管理</h2>\n<pre><code>図面の標識欄（Title Block）の読み方:\n\n  ┌─────────────────────────────┐\n  │ 品番: 12345-67890            │  ← 部品番号（13桁など）\n  │ 品名: シリンダーヘッドカバー   │\n  │ 材質: ADC12（アルミダイカスト）│\n  │ 図面番号: DWG-2024-001 Rev.C  │  ← Rev=改訂番号\n  │ 縮尺: 1:2                    │  ← 実物の1/2サイズで描画\n  │ 単位: mm                     │\n  │ 設計: 山田太郎 2024.03.15    │\n  │ 承認: 鈴木花子 2024.03.20    │\n  └─────────────────────────────┘\n\nRev管理:\n  Rev.A → 初版\n  Rev.B → 1回目の変更（マイナー修正）\n  Rev.C → 2回目の変更\n  ※ Rev.が上がると旧版は廃止\n</code></pre>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "automotive-engine",
+"title": "自動車エンジンの仕組み（4ストロークサイクル）"
+},
+{
+"slug": "automotive-torque",
+"title": "トルクと馬力（自動車工学の基礎）"
+},
+{
+"slug": "automotive-electrical",
+"title": "車載電気システム（12V/48V・ハーネス・ECU）"
+}
+],
+"next_full": [],
+"completed": false,
+"favorite": false
+},
 "ml-basics": {
 "slug": "ml-basics",
 "title": "機械学習の基礎",
@@ -2697,6 +3120,64 @@
 {
 "slug": "scikit-learn",
 "title": "scikit-learn（機械学習ライブラリ）"
+}
+],
+"completed": false,
+"favorite": false
+},
+"wireless-basics": {
+"slug": "wireless-basics",
+"title": "無線通信の基礎（電波・周波数・変調）",
+"level": 1,
+"category": "Wireless",
+"related": [
+"wifi",
+"bluetooth",
+"lte-5g",
+"v2x-wireless",
+"electromagnetic-induction"
+],
+"next": [
+"wifi"
+],
+"tags": [
+"wireless",
+"radio",
+"frequency",
+"modulation",
+"antenna",
+"basics"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>無線通信は電磁波（電波）を使って情報を伝える技術です。Wi-Fi・Bluetooth・5G・車載V2X・GPSはすべて異なる周波数帯の電波を使っています。「なぜ5GHzのWi-Fiは壁に弱いのか」「なぜ5Gは速いのか」を電波の物理から理解しましょう。</p>\n<h2>電波の基本性質</h2>\n<p>$$c = f \\times \\lambda$$</p>\n<ul>\n<li><strong>c</strong>：光速 = 3 × 10⁸ m/s</li>\n<li><strong>f</strong>：周波数 [Hz]</li>\n<li><strong>λ</strong>（ラムダ）：波長 [m]</li>\n</ul>\n<pre><code class=\"language-python\">import numpy as np\nimport matplotlib.pyplot as plt\n\nc = 3e8   # 光速 [m/s]\n\n# 主要な無線通信の周波数と波長\nfreq_bands = {\n    &quot;AM ラジオ&quot;:         1e6,\n    &quot;FM ラジオ&quot;:        100e6,\n    &quot;GPS（L1）&quot;:      1575.42e6,\n    &quot;Wi-Fi 2.4GHz&quot;:   2.4e9,\n    &quot;Wi-Fi 5GHz&quot;:     5.0e9,\n    &quot;Wi-Fi 6E（6GHz）&quot;:6.0e9,\n    &quot;Bluetooth&quot;:       2.4e9,\n    &quot;4G LTE（Band1）&quot;: 2.1e9,\n    &quot;5G Sub-6GHz&quot;:     3.5e9,\n    &quot;5G ミリ波&quot;:       28e9,\n    &quot;V2X（DSRC）&quot;:     5.9e9,\n}\n\nprint(f&quot;{'通信方式':20s} {'周波数':15s} {'波長':12s}&quot;)\nprint(&quot;-&quot; * 50)\nfor name, f in freq_bands.items():\n    lam = c / f\n    if f &gt;= 1e9:   f_str = f&quot;{f/1e9:.2f} GHz&quot;\n    elif f &gt;= 1e6: f_str = f&quot;{f/1e6:.0f} MHz&quot;\n    else:          f_str = f&quot;{f/1e3:.0f} kHz&quot;\n    if lam &gt;= 1:   l_str = f&quot;{lam:.2f} m&quot;\n    else:          l_str = f&quot;{lam*100:.1f} cm&quot;\n    print(f&quot;{name:20s} {f_str:14s} {l_str}&quot;)\n</code></pre>\n<h2>電波の伝搬と減衰</h2>\n<pre><code class=\"language-python\"># 自由空間伝搬損失（フリスの式）\ndef free_space_loss_dB(f_Hz, d_m):\n    &quot;&quot;&quot;自由空間伝搬損失 [dB]&quot;&quot;&quot;\n    lam = c / f_Hz\n    L = (4 * np.pi * d_m / lam)**2\n    return 10 * np.log10(L)\n\n# 距離と周波数ごとの伝搬損失\ndistances = [10, 100, 1000]   # m\nfreqs = {\n    &quot;2.4GHz (Wi-Fi)&quot;: 2.4e9,\n    &quot;5GHz (Wi-Fi)&quot;:   5.0e9,\n    &quot;28GHz (5G mmW)&quot;: 28e9,\n}\n\nprint(&quot;=== 自由空間伝搬損失 ===&quot;)\nprint(f&quot;{'距離':8s}&quot;, end=&quot;&quot;)\nfor name in freqs: print(f&quot;  {name:18s}&quot;, end=&quot;&quot;)\nprint()\nfor d in distances:\n    print(f&quot;{d:6d} m&quot;, end=&quot;&quot;)\n    for name, f in freqs.items():\n        L = free_space_loss_dB(f, d)\n        print(f&quot;  {L:6.1f} dB         &quot;, end=&quot;&quot;)\n    print()\n\nprint(&quot;\\n→ 周波数が高いほど減衰が大きい&quot;)\nprint(&quot;→ 5GHz Wi-Fiが2.4GHzより壁に弱い理由&quot;)\nprint(&quot;→ 5Gミリ波が超高速だが屋外専用になる理由&quot;)\n</code></pre>\n<h2>変調方式</h2>\n<pre><code class=\"language-python\"># 変調: 情報を電波に乗せる方法\nt = np.linspace(0, 1, 1000)\nf_carrier = 10   # 搬送波周波数\nf_message = 1    # 信号周波数\n\ncarrier = np.cos(2 * np.pi * f_carrier * t)\nmessage = np.cos(2 * np.pi * f_message * t)\n\n# AM変調（振幅変調）\nam_modulation = 0.5\nam_signal = (1 + am_modulation * message) * carrier\n\n# FM変調（周波数変調）\nkf = 3\nphase_fm = 2 * np.pi * f_carrier * t + kf * np.cumsum(message) / 1000\nfm_signal = np.cos(phase_fm)\n\n# BPSK（位相変調の基本）\nbits = np.repeat([1, -1, 1, 1, -1, 1, -1, -1, 1, 1], 100)\nbpsk_signal = bits * carrier\n\nfig, axes = plt.subplots(4, 1, figsize=(12, 8))\naxes[0].plot(t, message, &quot;g-&quot;, lw=1.5); axes[0].set_title(&quot;元の信号（情報）&quot;); axes[0].set_ylabel(&quot;振幅&quot;)\naxes[1].plot(t, am_signal, &quot;b-&quot;, lw=1);   axes[1].set_title(&quot;AM（振幅変調）&quot;); axes[1].set_ylabel(&quot;振幅&quot;)\naxes[2].plot(t, fm_signal, &quot;r-&quot;, lw=1);   axes[2].set_title(&quot;FM（周波数変調）&quot;); axes[2].set_ylabel(&quot;振幅&quot;)\naxes[3].plot(t, bpsk_signal, &quot;m-&quot;, lw=1); axes[3].set_title(&quot;BPSK（位相変調）&quot;); axes[3].set_ylabel(&quot;振幅&quot;)\naxes[3].set_xlabel(&quot;時間&quot;)\nfor ax in axes: ax.grid(True, alpha=0.3)\nplt.tight_layout(); plt.show()\n</code></pre>\n<h2>シャノンの定理（通信容量の限界）</h2>\n<p>$$C = B \\times \\log_2\\left(1 + \\frac{S}{N}\\right)$$</p>\n<pre><code class=\"language-python\">def channel_capacity(bandwidth_Hz, snr_dB):\n    &quot;&quot;&quot;シャノン限界通信容量 [bps]&quot;&quot;&quot;\n    snr_linear = 10 ** (snr_dB / 10)\n    C = bandwidth_Hz * np.log2(1 + snr_linear)\n    return C\n\n# 各通信規格の理論上限\nprint(&quot;=== シャノン限界による通信容量上限 ===&quot;)\nscenarios = [\n    (&quot;Wi-Fi 2.4GHz（20MHz ch, SNR=25dB）&quot;, 20e6,  25),\n    (&quot;Wi-Fi 5GHz（80MHz ch, SNR=30dB）&quot;,   80e6,  30),\n    (&quot;Wi-Fi 6（160MHz ch, SNR=35dB）&quot;,    160e6,  35),\n    (&quot;5G Sub-6（100MHz ch, SNR=20dB）&quot;,   100e6,  20),\n    (&quot;5G mmW（400MHz ch, SNR=20dB）&quot;,     400e6,  20),\n    (&quot;有線 Gigabit Ethernet&quot;,             500e6,  40),\n]\nfor name, B, snr in scenarios:\n    C = channel_capacity(B, snr)\n    print(f&quot;  {name:40s}: {C/1e6:6.0f} Mbps&quot;)\n</code></pre>\n<h2>アンテナの基本</h2>\n<pre><code class=\"language-python\"># ダイポールアンテナの最適長 = λ/2\ndef dipole_length(f_Hz):\n    &quot;&quot;&quot;半波長ダイポールアンテナの長さ [cm]&quot;&quot;&quot;\n    lam = c / f_Hz\n    return lam / 2 * 100   # cm\n\nprint(&quot;アンテナの最適サイズ:&quot;)\nantennas = {\n    &quot;2.4GHz Wi-Fi&quot;:  2.4e9,\n    &quot;5GHz Wi-Fi&quot;:    5.0e9,\n    &quot;5G 3.5GHz&quot;:     3.5e9,\n    &quot;5G 28GHz&quot;:      28e9,\n    &quot;V2X 5.9GHz&quot;:    5.9e9,\n}\nfor name, f in antennas.items():\n    L = dipole_length(f)\n    print(f&quot;  {name:16s}: λ/2 = {L:.1f} cm&quot;)\n\nprint(&quot;\\n→ 周波数が高い（波長が短い）ほどアンテナを小型化できる&quot;)\nprint(&quot;→ スマートフォンに5G/Wi-Fi/Bluetoothが全部入る理由&quot;)\n</code></pre>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "wifi",
+"title": "Wi-Fi（IEEE 802.11）の仕組みと規格"
+},
+{
+"slug": "bluetooth",
+"title": "Bluetooth（Classic/BLE）の仕組みと車載応用"
+},
+{
+"slug": "lte-5g",
+"title": "LTE/5G セルラー通信の仕組みと車載応用"
+},
+{
+"slug": "v2x-wireless",
+"title": "車載無線通信（V2X・DSRC・C-V2X）"
+},
+{
+"slug": "electromagnetic-induction",
+"title": "電磁誘導とファラデーの法則"
+}
+],
+"next_full": [
+{
+"slug": "wifi",
+"title": "Wi-Fi（IEEE 802.11）の仕組みと規格"
 }
 ],
 "completed": false,
@@ -2749,6 +3230,58 @@
 {
 "slug": "electric-power",
 "title": "電力・電力量とジュール熱"
+}
+],
+"completed": false,
+"favorite": false
+},
+"automotive-engine": {
+"slug": "automotive-engine",
+"title": "自動車エンジンの仕組み（4ストロークサイクル）",
+"level": 1,
+"category": "Automotive",
+"related": [
+"automotive-torque",
+"automotive-transmission",
+"automotive-electrical"
+],
+"next": [
+"automotive-transmission"
+],
+"tags": [
+"engine",
+"four-stroke",
+"combustion",
+"automotive",
+"powertrain"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>自動車のガソリンエンジンは「燃料の燃焼エネルギーを回転運動に変換する機械」です。4ストロークサイクルの仕組みを理解することで、燃費・出力・排気ガス・エンジン制御（ECU）すべての動作が繋がります。</p>\n<h2>4ストロークサイクル</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  A[&quot;① 吸気&lt;br/&gt;ピストン下降&lt;br/&gt;吸気バルブ開&lt;br/&gt;混合気を吸い込む&quot;] --&gt; B[&quot;② 圧縮&lt;br/&gt;ピストン上昇&lt;br/&gt;全バルブ閉&lt;br/&gt;混合気を圧縮&quot;]\n  B --&gt; C[&quot;③ 燃焼（膨張）&lt;br/&gt;点火プラグ着火&lt;br/&gt;急激膨張でピストン押し下げ&lt;br/&gt;→ 仕事をする唯一の行程&quot;]\n  C --&gt; D[&quot;④ 排気&lt;br/&gt;ピストン上昇&lt;br/&gt;排気バルブ開&lt;br/&gt;排気ガスを排出&quot;]\n  D --&gt; A\n</code></pre>\n<pre><code class=\"language-python\">import numpy as np\nimport matplotlib.pyplot as plt\n\n# 4ストロークのクランク角と行程の対応\nstrokes = [\n    (  0, 180, &quot;① 吸気&quot;,    &quot;skyblue&quot;),\n    (180, 360, &quot;② 圧縮&quot;,    &quot;orange&quot;),\n    (360, 540, &quot;③ 燃焼&quot;,    &quot;red&quot;),\n    (540, 720, &quot;④ 排気&quot;,    &quot;gray&quot;),\n]\n\nfig, ax = plt.subplots(figsize=(10, 2))\nfor start, end, name, color in strokes:\n    ax.barh(0, end - start, left=start, color=color, alpha=0.7, height=0.5)\n    ax.text((start + end) / 2, 0, name, ha=&quot;center&quot;, va=&quot;center&quot;, fontsize=10)\nax.set_xlim(0, 720)\nax.set_xticks(range(0, 721, 180))\nax.set_xticklabels([&quot;0°&quot;, &quot;180°\\nTDC→BDC&quot;, &quot;360°\\nBDC→TDC&quot;, &quot;540°\\nTDC→BDC&quot;, &quot;720°&quot;])\nax.set_yticks([])\nax.set_title(&quot;4ストロークサイクル（クランク角 0〜720°）&quot;)\nplt.tight_layout()\nplt.show()\n</code></pre>\n<h2>圧縮比と熱効率</h2>\n<p>$$\\varepsilon = \\frac{V_{BDC}}{V_{TDC}}$$</p>\n<p>$$\\eta_{th} = 1 - \\frac{1}{\\varepsilon^{\\gamma - 1}}$$</p>\n<pre><code class=\"language-python\">def otto_efficiency(compression_ratio, gamma=1.4):\n    &quot;&quot;&quot;オットーサイクルの理論熱効率&quot;&quot;&quot;\n    return 1 - 1 / compression_ratio**(gamma - 1)\n\ncr_range = np.linspace(5, 20, 100)\neta = otto_efficiency(cr_range)\n\nplt.figure(figsize=(8, 4))\nplt.plot(cr_range, eta * 100, &quot;b-&quot;, lw=2)\nplt.xlabel(&quot;圧縮比 ε&quot;)\nplt.ylabel(&quot;理論熱効率 [%]&quot;)\nplt.title(&quot;圧縮比と熱効率（オットーサイクル）&quot;)\nplt.grid(True)\n\n# 代表的な圧縮比\ntypical = {\n    &quot;ガソリン（通常）&quot;: (10.5, &quot;red&quot;),\n    &quot;ガソリン（高圧縮）&quot;: (13.0, &quot;orange&quot;),\n    &quot;ディーゼル&quot;: (17.0, &quot;green&quot;),\n}\nfor name, (cr, color) in typical.items():\n    eta_val = otto_efficiency(cr) * 100\n    plt.axvline(cr, color=color, linestyle=&quot;--&quot;, alpha=0.7)\n    plt.annotate(f&quot;{name}\\nε={cr}\\nη={eta_val:.0f}%&quot;,\n                 xy=(cr, eta_val), xytext=(cr+0.2, eta_val - 5), fontsize=8)\nplt.show()\n</code></pre>\n<h2>エンジンの主要部品</h2>\n<pre><code class=\"language-python\">engine_components = {\n    &quot;シリンダーブロック&quot;: &quot;エンジン本体。シリンダー穴が加工されている。材質: 鋳鉄またはアルミ&quot;,\n    &quot;シリンダーヘッド&quot;:   &quot;燃焼室の蓋。吸排気バルブ・点火プラグ・カムシャフトを搭載&quot;,\n    &quot;ピストン&quot;:          &quot;上下運動する可動部品。アルミ合金製。ピストンリングでガスシール&quot;,\n    &quot;コンロッド&quot;:        &quot;ピストンとクランクシャフトを連結。往復運動↔回転運動を変換&quot;,\n    &quot;クランクシャフト&quot;:  &quot;コンロッドの往復を回転に変換。車の動力を取り出す主軸&quot;,\n    &quot;カムシャフト&quot;:      &quot;吸排気バルブの開閉タイミングを制御。チェーン/ベルトで駆動&quot;,\n    &quot;バルブ&quot;:           &quot;吸気・排気の開閉弁。材質: ステンレス（排気側は高温のためNi合金）&quot;,\n    &quot;点火プラグ&quot;:       &quot;混合気に電気火花で点火。消耗品（約30,000km交換）&quot;,\n    &quot;オイルポンプ&quot;:     &quot;エンジン各部に潤滑油を循環&quot;,\n    &quot;ウォーターポンプ&quot;: &quot;冷却水を循環して水温を管理（適正温度: 80〜100°C）&quot;,\n}\n\nprint(&quot;=== エンジン主要部品 ===&quot;)\nfor part, desc in engine_components.items():\n    print(f&quot;\\n【{part}】&quot;)\n    print(f&quot;  {desc}&quot;)\n</code></pre>\n<h2>排気量と出力の関係</h2>\n<p>$$V_h = \\frac{\\pi}{4} D^2 \\times L \\times N$$</p>\n<pre><code class=\"language-python\">def displacement(bore_mm, stroke_mm, cylinders):\n    &quot;&quot;&quot;排気量計算&quot;&quot;&quot;\n    bore = bore_mm / 1000   # mm → m\n    stroke = stroke_mm / 1000\n    Vh = np.pi / 4 * bore**2 * stroke * cylinders\n    return Vh * 1e6   # m³ → cc\n\n# 代表的なエンジン\nengines = [\n    (&quot;軽自動車 3気筒&quot;,     60, 68, 3),\n    (&quot;コンパクト 4気筒&quot;,   73, 89, 4),\n    (&quot;2.0L 4気筒&quot;,         83, 92, 4),\n    (&quot;V6 3.5L&quot;,            94, 83, 6),\n    (&quot;V8 5.0L&quot;,           100, 100, 8),\n    (&quot;直4 2.0L ターボ&quot;,    83, 92, 4),\n]\n\nprint(f&quot;{'エンジン':20s} {'ボア':5s} {'ストローク':8s} {'排気量':8s}&quot;)\nprint(&quot;-&quot; * 50)\nfor name, bore, stroke, cyl in engines:\n    cc = displacement(bore, stroke, cyl)\n    print(f&quot;{name:20s} {bore:3d}mm × {stroke:3d}mm = {cc:5.0f} cc&quot;)\n\n# 出力密度（比出力）の計算\nprint(&quot;\\n比出力（馬力/排気量）:&quot;)\ncompare = [\n    (&quot;軽自動車NA&quot;, 47, 660),\n    (&quot;スポーツカーNA&quot;, 220, 2000),\n    (&quot;F1エンジン（参考）&quot;, 1050, 1600),\n    (&quot;テスラModel 3（EV）&quot;, 490, None),\n]\nfor name, ps, cc in compare:\n    if cc:\n        print(f&quot;  {name:20s}: {ps/cc*1000:.1f} PS/L&quot;)\n    else:\n        print(f&quot;  {name:20s}: （排気量なし）&quot;)\n</code></pre>\n<h2>エンジン制御（ECU）との関連</h2>\n<pre><code class=\"language-python\"># ECUが制御する主要パラメータ\necu_control = {\n    &quot;燃料噴射量&quot;: {\n        &quot;センサー入力&quot;: [&quot;エアフロセンサー（吸入空気量）&quot;, &quot;O2センサー（排気λ）&quot;,\n                        &quot;スロットル開度&quot;, &quot;エンジン回転数&quot;],\n        &quot;目標&quot;: &quot;理論空燃比 A/F = 14.7（ストイキ）&quot;,\n        &quot;制御&quot;: &quot;インジェクタ開弁時間（パルス幅 μs単位）&quot;,\n    },\n    &quot;点火時期&quot;: {\n        &quot;センサー入力&quot;: [&quot;クランク角センサー（回転数・位相）&quot;, &quot;ノックセンサー（異常燃焼）&quot;,\n                        &quot;水温センサー&quot;, &quot;吸気温センサー&quot;],\n        &quot;目標&quot;: &quot;MBT（最大トルク点）付近、ノック回避&quot;,\n        &quot;制御&quot;: &quot;クランク角基準での点火タイミング（°BTDC）&quot;,\n    },\n    &quot;アイドル回転数&quot;: {\n        &quot;センサー入力&quot;: [&quot;スロットル全閉スイッチ&quot;, &quot;A/Cオン信号&quot;, &quot;電気負荷&quot;],\n        &quot;目標&quot;: &quot;700〜850 rpm（冷間時は高め）&quot;,\n        &quot;制御&quot;: &quot;ISC（アイドルスピードコントロール）バルブ&quot;,\n    },\n}\n\nfor system, info in ecu_control.items():\n    print(f&quot;\\n【{system}】&quot;)\n    print(f&quot;  入力: {', '.join(info['センサー入力'][:2])} ...&quot;)\n    print(f&quot;  目標: {info['目標']}&quot;)\n    print(f&quot;  制御: {info['制御']}&quot;)\n</code></pre>",
+"prereq_full": [
+{
+"slug": "automotive-torque",
+"title": "トルクと馬力（自動車工学の基礎）"
+}
+],
+"related_full": [
+{
+"slug": "automotive-torque",
+"title": "トルクと馬力（自動車工学の基礎）"
+},
+{
+"slug": "automotive-transmission",
+"title": "変速機・ギア比（トランスミッション）"
+},
+{
+"slug": "automotive-electrical",
+"title": "車載電気システム（12V/48V・ハーネス・ECU）"
+}
+],
+"next_full": [
+{
+"slug": "automotive-transmission",
+"title": "変速機・ギア比（トランスミッション）"
 }
 ],
 "completed": false,
@@ -2929,6 +3462,52 @@
 "completed": false,
 "favorite": false
 },
+"bluetooth": {
+"slug": "bluetooth",
+"title": "Bluetooth（Classic/BLE）の仕組みと車載応用",
+"level": 2,
+"category": "Wireless",
+"related": [
+"wireless-basics",
+"wifi",
+"lte-5g",
+"v2x-wireless"
+],
+"next": [],
+"tags": [
+"bluetooth",
+"ble",
+"bluetooth-le",
+"automotive",
+"wireless",
+"pairing"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>BluetoothはIEEE 802.15.1を基にしたWPAN（無線個人エリアネットワーク）規格です。スマートフォンのハンズフリー通話・音楽ストリーミング・ワイヤレスイヤホン・車載診断ツールまで広く使われています。2.4GHz帯を周波数ホッピングで使うのが特徴です。</p>\n<h2>Bluetooth Classic vs BLE の比較</h2>\n<pre><code class=\"language-python\">comparison = {\n    &quot;特性&quot;: [&quot;最大速度&quot;, &quot;通信距離&quot;, &quot;消費電力&quot;, &quot;接続確立時間&quot;, &quot;主な用途&quot;],\n    &quot;Bluetooth Classic&quot;: [&quot;3 Mbps（EDR）&quot;, &quot;10〜100m&quot;, &quot;高め（連続通信）&quot;,\n                          &quot;〜3秒&quot;, &quot;音声（HFP/A2DP）・データ&quot;],\n    &quot;BLE（Bluetooth LE）&quot;: [&quot;2 Mbps（BT5）&quot;, &quot;50〜400m&quot;, &quot;極低（間欠送信）&quot;,\n                            &quot;〜6ms（BT5）&quot;, &quot;センサー・IoT・位置情報&quot;],\n}\n\nfor key in comparison[&quot;特性&quot;]:\n    i = comparison[&quot;特性&quot;].index(key)\n    classic = comparison[&quot;Bluetooth Classic&quot;][i]\n    ble = comparison[&quot;BLE（Bluetooth LE）&quot;][i]\n    print(f&quot;{key:12s}: Classic={classic:25s} | BLE={ble}&quot;)\n</code></pre>\n<h2>周波数ホッピング（FHSS）</h2>\n<pre><code class=\"language-python\">import numpy as np\nimport matplotlib.pyplot as plt\n\n# Bluetooth は 2.4GHz 帯を 79 チャンネル（1MHz 間隔）に分割\n# 1秒間に 1600回ホッピング（625μs ごと）\n\nn_hops = 50\nchannels = np.arange(0, 79)\nnp.random.seed(42)\nhop_sequence = np.random.choice(channels, n_hops, replace=False)\n\nplt.figure(figsize=(12, 4))\nplt.step(range(n_hops), hop_sequence, where=&quot;post&quot;, lw=1.5, color=&quot;steelblue&quot;)\nplt.scatter(range(n_hops), hop_sequence, s=20, color=&quot;red&quot;, zorder=5)\nplt.xlabel(&quot;時間（スロット番号 × 625μs）&quot;)\nplt.ylabel(&quot;チャンネル番号（周波数）&quot;)\nplt.title(&quot;Bluetoothの周波数ホッピング（FHSS）\\n→ 干渉を受けても別チャンネルへ逃げられる&quot;)\nplt.grid(True, alpha=0.3)\nplt.show()\n\nprint(&quot;FHSSの利点:&quot;)\nprint(&quot;  ① Wi-Fi・電子レンジの干渉を回避&quot;)\nprint(&quot;  ② 盗聴が困難（どのチャンネルか予測困難）&quot;)\nprint(&quot;  ③ 複数のBluetoothデバイスが共存可能&quot;)\n</code></pre>\n<h2>BLEの通信フロー</h2>\n<pre><code class=\"language-python\"># BLEのアドバタイジング → スキャン → 接続フロー\nble_flow = &quot;&quot;&quot;\nBLE 接続確立フロー:\n\n  デバイスA（Peripheral）         デバイスB（Central）\n  例: タイヤ空気圧センサー        例: スマートフォン/車載ECU\n      ↓\n  [Advertising]                    [Scanning]\n  広告パケット送信                  チャンネルをスキャン\n  （37, 38, 39ch, 100ms間隔）\n                    ────────────→\n                     ADV_IND\n                    ←────────────\n                     SCAN_REQ       (Active Scan の場合)\n                    ────────────→\n                     SCAN_RSP\n                    ←────────────\n                     CONNECT_IND    接続要求\n      ↓\n  [Connection]                     [Connection]\n  データチャンネルに移行（0〜36ch）\n  Connection Interval: 7.5ms〜4000ms\n&quot;&quot;&quot;\nprint(ble_flow)\n</code></pre>\n<h2>GATT（汎用属性プロファイル）</h2>\n<pre><code class=\"language-python\"># BLEのデータ構造: Profile &gt; Service &gt; Characteristic\nble_gatt = {\n    &quot;タイヤ空気圧センサー（TPMS）&quot;: {\n        &quot;Service UUID&quot;: &quot;0x1816（Cycling Power）&quot;,\n        &quot;Characteristics&quot;: {\n            &quot;空気圧 [kPa]&quot;:   {&quot;UUID&quot;: &quot;0x2A6D&quot;, &quot;Properties&quot;: &quot;Notify&quot;, &quot;format&quot;: &quot;uint16&quot;},\n            &quot;温度 [0.01°C]&quot;:  {&quot;UUID&quot;: &quot;0x2A1C&quot;, &quot;Properties&quot;: &quot;Notify&quot;, &quot;format&quot;: &quot;int16&quot;},\n            &quot;バッテリー [%]&quot;:  {&quot;UUID&quot;: &quot;0x2A19&quot;, &quot;Properties&quot;: &quot;Read&quot;,   &quot;format&quot;: &quot;uint8&quot;},\n        }\n    },\n    &quot;OBD2診断ドングル（BLE版）&quot;: {\n        &quot;Service UUID&quot;: &quot;0xFFE0（カスタム）&quot;,\n        &quot;Characteristics&quot;: {\n            &quot;AT コマンド送信&quot;: {&quot;UUID&quot;: &quot;0xFFE1&quot;, &quot;Properties&quot;: &quot;Write&quot;, &quot;format&quot;: &quot;string&quot;},\n            &quot;ECU レスポンス&quot;:  {&quot;UUID&quot;: &quot;0xFFE1&quot;, &quot;Properties&quot;: &quot;Notify&quot;,&quot;format&quot;: &quot;string&quot;},\n        }\n    },\n}\n\nfor device, spec in ble_gatt.items():\n    print(f&quot;\\n【{device}】&quot;)\n    print(f&quot;  Service: {spec['Service UUID']}&quot;)\n    for char_name, char_spec in spec[&quot;Characteristics&quot;].items():\n        print(f&quot;  {char_name:18s}: {char_spec['Properties']} | {char_spec['format']}&quot;)\n</code></pre>\n<h2>Bluetooth のプロファイルと車載応用</h2>\n<pre><code class=\"language-python\">profiles = {\n    &quot;HFP（Hands-Free Profile）&quot;:      &quot;ハンズフリー通話（カーナビ・ステアリングスイッチ）&quot;,\n    &quot;A2DP（Advanced Audio Distribution）&quot;: &quot;音楽ストリーミング（CD品質〜AAC/aptX）&quot;,\n    &quot;AVRCP（AV Remote Control）&quot;:     &quot;再生/停止/曲送り（ステアリングボタン）&quot;,\n    &quot;SPP（Serial Port Profile）&quot;:     &quot;シリアル通信エミュレーション（OBD2ドングル）&quot;,\n    &quot;PBAP（Phone Book Access）&quot;:      &quot;連絡先取得（カーナビへ電話帳同期）&quot;,\n    &quot;MAP（Message Access）&quot;:          &quot;SMS/メール読み上げ&quot;,\n    &quot;BLE TPMS&quot;:                       &quot;タイヤ空気圧モニタリング（車載受信機）&quot;,\n    &quot;BLE キーレスエントリー（UWB補助）&quot;: &quot;スマートフォンを車のキーとして使用&quot;,\n    &quot;BLE RSSI測位&quot;:                   &quot;スマートパーキング・接近検知&quot;,\n}\n\nprint(&quot;Bluetooth プロファイル一覧（車載関連）:&quot;)\nfor profile, usage in profiles.items():\n    print(f&quot;  {profile:40s}: {usage}&quot;)\n</code></pre>\n<h2>Bluetooth 5.x の新機能</h2>\n<pre><code class=\"language-python\">bt_versions = {\n    &quot;BT 4.0&quot;: {&quot;year&quot;: 2010, &quot;max_range&quot;: 50,  &quot;max_speed_mbps&quot;: 1, &quot;feature&quot;: &quot;BLE導入&quot;},\n    &quot;BT 4.2&quot;: {&quot;year&quot;: 2014, &quot;max_range&quot;: 50,  &quot;max_speed_mbps&quot;: 1, &quot;feature&quot;: &quot;LE セキュア接続&quot;},\n    &quot;BT 5.0&quot;: {&quot;year&quot;: 2016, &quot;max_range&quot;: 400, &quot;max_speed_mbps&quot;: 2, &quot;feature&quot;: &quot;距離4倍・速度2倍&quot;},\n    &quot;BT 5.1&quot;: {&quot;year&quot;: 2019, &quot;max_range&quot;: 400, &quot;max_speed_mbps&quot;: 2, &quot;feature&quot;: &quot;方向探知（AoA/AoD）&quot;},\n    &quot;BT 5.2&quot;: {&quot;year&quot;: 2020, &quot;max_range&quot;: 400, &quot;max_speed_mbps&quot;: 2, &quot;feature&quot;: &quot;LE Audio（LC3コーデック）&quot;},\n    &quot;BT 5.3&quot;: {&quot;year&quot;: 2021, &quot;max_range&quot;: 400, &quot;max_speed_mbps&quot;: 2, &quot;feature&quot;: &quot;接続信頼性向上&quot;},\n    &quot;BT 5.4&quot;: {&quot;year&quot;: 2023, &quot;max_range&quot;: 400, &quot;max_speed_mbps&quot;: 2, &quot;feature&quot;: &quot;PAwR（広告型双方向）&quot;},\n}\n\nprint(f&quot;{'バージョン':8s} {'年':5s} {'距離':8s} {'速度':8s} {'主要機能'}&quot;)\nfor v, spec in bt_versions.items():\n    print(f&quot;{v:8s} {spec['year']:4d}  {spec['max_range']:4d}m   {spec['max_speed_mbps']}Mbps   {spec['feature']}&quot;)\n\nprint(&quot;\\nBT 5.1 AoA（到来角方向探知）→ 車の周囲 10cm 精度の位置検知 → 将来のデジタルキー&quot;)\n</code></pre>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "wireless-basics",
+"title": "無線通信の基礎（電波・周波数・変調）"
+},
+{
+"slug": "wifi",
+"title": "Wi-Fi（IEEE 802.11）の仕組みと規格"
+},
+{
+"slug": "lte-5g",
+"title": "LTE/5G セルラー通信の仕組みと車載応用"
+},
+{
+"slug": "v2x-wireless",
+"title": "車載無線通信（V2X・DSRC・C-V2X）"
+}
+],
+"next_full": [],
+"completed": false,
+"favorite": false
+},
 "dhcp": {
 "slug": "dhcp",
 "title": "DHCP",
@@ -3081,6 +3660,57 @@
 "completed": false,
 "favorite": false
 },
+"ev-battery": {
+"slug": "ev-battery",
+"title": "EVバッテリー（リチウムイオン・BMS・充電）",
+"level": 2,
+"category": "Automotive",
+"related": [
+"automotive-electrical",
+"electric-power",
+"semiconductor",
+"capacitor"
+],
+"next": [],
+"tags": [
+"ev",
+"battery",
+"bms",
+"lithium-ion",
+"charging",
+"automotive"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>電気自動車（EV）の心臓部はリチウムイオンバッテリーパックです。スマートフォンと同じ原理ですが、容量は数万倍。電圧・容量・BMS（バッテリー管理システム）・充電方式の仕組みを理解することは、EV開発・診断の基盤です。</p>\n<h2>リチウムイオン電池の仕組み</h2>\n<pre><code>充電時:\n  正極（NMC/LFP）← Li⁺ ← 電解液 ← 負極（黒鉛）\n                    Li⁺が正極から負極へ移動\n\n放電時（使用時）:\n  正極（NMC/LFP）→ Li⁺ → 電解液 → 負極（黒鉛）\n                    Li⁺が負極から正極へ移動\n                    電子は外部回路をモーターへ\n</code></pre>\n<pre><code class=\"language-python\">import numpy as np\nimport matplotlib.pyplot as plt\n\n# 代表的なリチウムイオン電池の正極材料比較\ncathode_materials = {\n    &quot;NMC 811&quot;:  {&quot;V_nom&quot;: 3.7, &quot;capacity&quot;: 200, &quot;cycle&quot;: 1000,  &quot;thermal&quot;: &quot;中&quot;,  &quot;cost&quot;: &quot;高&quot;, &quot;use&quot;: &quot;EV高容量&quot;},\n    &quot;NCA&quot;:      {&quot;V_nom&quot;: 3.7, &quot;capacity&quot;: 200, &quot;cycle&quot;: 1000,  &quot;thermal&quot;: &quot;低&quot;,  &quot;cost&quot;: &quot;高&quot;, &quot;use&quot;: &quot;Tesla&quot;},\n    &quot;LFP&quot;:      {&quot;V_nom&quot;: 3.2, &quot;capacity&quot;: 165, &quot;cycle&quot;: 3000,  &quot;thermal&quot;: &quot;高&quot;,  &quot;cost&quot;: &quot;低&quot;, &quot;use&quot;: &quot;BYD/CATL&quot;},\n    &quot;LTO&quot;:      {&quot;V_nom&quot;: 2.4, &quot;capacity&quot;: 130, &quot;cycle&quot;: 20000, &quot;thermal&quot;: &quot;最高&quot;,&quot;cost&quot;: &quot;最高&quot;,&quot;use&quot;: &quot;急速充電&quot;},\n}\n\nprint(f&quot;{'材料':10s} {'公称電圧':8s} {'容量mAh/g':10s} {'サイクル':8s} {'熱安定性':8s} {'用途'}&quot;)\nprint(&quot;-&quot; * 70)\nfor mat, spec in cathode_materials.items():\n    print(f&quot;{mat:10s} {spec['V_nom']:6.1f}V  {spec['capacity']:6d}    &quot;\n          f&quot;{spec['cycle']:5d}    {spec['thermal']:6s}    {spec['use']}&quot;)\n</code></pre>\n<h2>セル・モジュール・パックの構成</h2>\n<pre><code class=\"language-python\">def battery_pack_design(cell_voltage, cell_capacity_Ah, target_voltage, target_energy_kWh):\n    &quot;&quot;&quot;\n    EVバッテリーパックの設計計算\n    &quot;&quot;&quot;\n    cells_series  = round(target_voltage / cell_voltage)\n    pack_voltage  = cells_series * cell_voltage\n\n    target_Ah     = target_energy_kWh * 1000 / pack_voltage\n    cells_parallel= round(target_Ah / cell_capacity_Ah)\n    pack_capacity = cells_parallel * cell_capacity_Ah\n\n    total_cells   = cells_series * cells_parallel\n    actual_energy = pack_voltage * pack_capacity / 1000\n\n    return {\n        &quot;直列セル数&quot;: cells_series,\n        &quot;並列セル数&quot;: cells_parallel,\n        &quot;総セル数&quot;:   total_cells,\n        &quot;パック電圧&quot;:  f&quot;{pack_voltage:.0f} V&quot;,\n        &quot;パック容量&quot;:  f&quot;{pack_capacity:.0f} Ah&quot;,\n        &quot;エネルギー&quot;:  f&quot;{actual_energy:.1f} kWh&quot;,\n    }\n\n# Tesla Model 3 ロングレンジ（概算）\nprint(&quot;=== Tesla Model 3 Long Range（概算） ===&quot;)\ndesign = battery_pack_design(\n    cell_voltage=3.7,       # NCA セル公称電圧\n    cell_capacity_Ah=4.8,   # 18650型\n    target_voltage=350,     # パック電圧\n    target_energy_kWh=75,   # 75kWh パック\n)\nfor k, v in design.items():\n    print(f&quot;  {k}: {v}&quot;)\n\nprint()\n# BYD Blade Battery（LFP）\nprint(&quot;=== BYD Blade Battery（LFP）（概算） ===&quot;)\ndesign_lfp = battery_pack_design(\n    cell_voltage=3.2,\n    cell_capacity_Ah=100,   # 大型ブレードセル\n    target_voltage=320,\n    target_energy_kWh=60,\n)\nfor k, v in design_lfp.items():\n    print(f&quot;  {k}: {v}&quot;)\n</code></pre>\n<h2>BMS（バッテリー管理システム）</h2>\n<pre><code class=\"language-python\"># BMSの主要機能をシミュレーション\n\nclass SimpleBMS:\n    def __init__(self, cells_series, V_nominal=3.7, V_max=4.2, V_min=3.0):\n        self.n = cells_series\n        self.V_max  = V_max\n        self.V_min  = V_min\n        self.V_nom  = V_nominal\n\n    def estimate_soc(self, V_cell):\n        &quot;&quot;&quot;セル電圧からSOC（充電残量）を推定&quot;&quot;&quot;\n        soc = (V_cell - self.V_min) / (self.V_max - self.V_min) * 100\n        return max(0, min(100, soc))\n\n    def check_cell_balance(self, cell_voltages):\n        &quot;&quot;&quot;セルバランス確認（最大差が50mV以上でアンバランス警告）&quot;&quot;&quot;\n        V_max  = max(cell_voltages)\n        V_min  = min(cell_voltages)\n        delta  = V_max - V_min\n        status = &quot;⚠️ アンバランス&quot; if delta &gt; 0.05 else &quot;✅ 正常&quot;\n        return delta, status\n\n    def thermal_check(self, temperatures_C):\n        &quot;&quot;&quot;温度監視&quot;&quot;&quot;\n        T_max = max(temperatures_C)\n        if T_max &gt; 60:   return &quot;🔴 過熱警告 → 充電停止&quot;\n        elif T_max &gt; 45: return &quot;🟡 高温注意 → 充電電流低減&quot;\n        else:            return &quot;🟢 温度正常&quot;\n\n# シミュレーション\nbms = SimpleBMS(cells_series=96)\n\n# 各セルの電圧（バランス崩れを模擬）\ncell_voltages = np.random.normal(3.65, 0.03, 96)\ncell_voltages[10] = 3.82   # アンバランスセル\ncell_voltages[50] = 3.40   # 劣化セル\n\navg_V   = cell_voltages.mean()\npack_V  = cell_voltages.sum()\nsoc_avg = bms.estimate_soc(avg_V)\ndelta_V, balance_status = bms.check_cell_balance(cell_voltages)\n\nprint(f&quot;パック電圧:   {pack_V:.1f} V&quot;)\nprint(f&quot;平均セル電圧: {avg_V:.3f} V&quot;)\nprint(f&quot;推定SOC:     {soc_avg:.1f}%&quot;)\nprint(f&quot;セルバランス: Δ{delta_V*1000:.0f}mV → {balance_status}&quot;)\n\ntemperatures = np.random.normal(35, 3, 12)\nprint(f&quot;温度状態:    {bms.thermal_check(temperatures)}&quot;)\n</code></pre>\n<h2>充電方式（AC/DC・CHAdeMO・CCS）</h2>\n<pre><code class=\"language-python\">charging_standards = {\n    &quot;普通充電 AC（200V/16A）&quot;:  {&quot;power_kW&quot;: 3.2,  &quot;type&quot;: &quot;AC&quot;, &quot;std&quot;: &quot;SAE J1772&quot;},\n    &quot;普通充電 AC（200V/32A）&quot;:  {&quot;power_kW&quot;: 6.4,  &quot;type&quot;: &quot;AC&quot;, &quot;std&quot;: &quot;SAE J1772&quot;},\n    &quot;CHAdeMO（急速）&quot;:          {&quot;power_kW&quot;: 50,   &quot;type&quot;: &quot;DC&quot;, &quot;std&quot;: &quot;CHAdeMO 1.0（日本）&quot;},\n    &quot;CHAdeMO 2.0&quot;:              {&quot;power_kW&quot;: 400,  &quot;type&quot;: &quot;DC&quot;, &quot;std&quot;: &quot;CHAdeMO 2.0&quot;},\n    &quot;CCS Combo 1/2（急速）&quot;:    {&quot;power_kW&quot;: 50,   &quot;type&quot;: &quot;DC&quot;, &quot;std&quot;: &quot;IEC 62196 / SAE J1772&quot;},\n    &quot;CCS（ハイパワー）&quot;:         {&quot;power_kW&quot;: 350,  &quot;type&quot;: &quot;DC&quot;, &quot;std&quot;: &quot;CCS 2.0&quot;},\n    &quot;Tesla Supercharger V3&quot;:    {&quot;power_kW&quot;: 250,  &quot;type&quot;: &quot;DC&quot;, &quot;std&quot;: &quot;Tesla独自→現在CCS移行&quot;},\n    &quot;NACS（Tesla）&quot;:             {&quot;power_kW&quot;: 350,  &quot;type&quot;: &quot;DC&quot;, &quot;std&quot;: &quot;北米標準化（SAE J3400）&quot;},\n}\n\ndef charge_time(capacity_kWh, power_kW, soc_start=20, soc_end=80):\n    &quot;&quot;&quot;充電時間の計算（20%→80% の実用充電）&quot;&quot;&quot;\n    energy_needed = capacity_kWh * (soc_end - soc_start) / 100\n    # 充電末期は電流低減（CC-CVの影響）\n    effective_power = power_kW * 0.85\n    hours = energy_needed / effective_power\n    return hours * 60   # 分\n\nprint(f&quot;{'充電方式':28s} {'出力kW':8s} {'60kWh(20→80%)':14s}&quot;)\nprint(&quot;-&quot; * 60)\nfor method, spec in charging_standards.items():\n    t = charge_time(60, spec[&quot;power_kW&quot;])\n    if t &gt; 120: t_str = f&quot;{t/60:.1f}時間&quot;\n    else:       t_str = f&quot;{t:.0f}分&quot;\n    print(f&quot;{method:28s} {spec['power_kW']:5.0f}kW  {t_str}&quot;)\n</code></pre>",
+"prereq_full": [
+{
+"slug": "automotive-electrical",
+"title": "車載電気システム（12V/48V・ハーネス・ECU）"
+}
+],
+"related_full": [
+{
+"slug": "automotive-electrical",
+"title": "車載電気システム（12V/48V・ハーネス・ECU）"
+},
+{
+"slug": "electric-power",
+"title": "電力・電力量とジュール熱"
+},
+{
+"slug": "semiconductor",
+"title": "半導体の仕組み（PN接合・トランジスタ）"
+},
+{
+"slug": "capacitor",
+"title": "コンデンサ（静電容量・充放電）"
+}
+],
+"next_full": [],
+"completed": false,
+"favorite": false
+},
 "fastapi": {
 "slug": "fastapi",
 "title": "FastAPI（高速WebAPI開発）",
@@ -3115,6 +3745,52 @@
 {
 "slug": "llm",
 "title": "LLM（大規模言語モデル）"
+}
+],
+"next_full": [],
+"completed": false,
+"favorite": false
+},
+"gnss": {
+"slug": "gnss",
+"title": "GPS/GNSS（全球測位システム）と自動車への応用",
+"level": 2,
+"category": "Wireless",
+"related": [
+"wireless-basics",
+"v2x-wireless",
+"lte-5g",
+"automotive-electrical"
+],
+"next": [],
+"tags": [
+"gps",
+"gnss",
+"positioning",
+"navigation",
+"automotive",
+"wireless"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>GNSS（Global Navigation Satellite System）はGPS・GLONASS・Galileo・みちびきなどの衛星測位システムの総称です。カーナビゲーション・自動運転・タクシー配車・緊急通報（eCall）に不可欠です。「なぜGPSは位置がわかるのか」を電波と時間の物理から理解しましょう。</p>\n<h2>GPSの測位原理</h2>\n<p>$$d_i = c \\times (t_{receive} - t_{send_i})$$</p>\n<pre><code class=\"language-python\">import numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.optimize import fsolve\n\nc = 3e8   # 光速 [m/s]\n\n# GPS の仕組み: 4つ以上の衛星からの距離で位置を特定（三辺測量）\ndef gps_trilateration(sat_positions, measured_distances):\n    &quot;&quot;&quot;\n    衛星位置と測定距離から受信機の位置を計算（2D簡易版）\n    sat_positions: [(x1,y1), (x2,y2), (x3,y3)]\n    measured_distances: [d1, d2, d3]\n    &quot;&quot;&quot;\n    def equations(pos):\n        x, y = pos\n        eqs = []\n        for (sx, sy), d in zip(sat_positions, measured_distances):\n            eqs.append((x-sx)**2 + (y-sy)**2 - d**2)\n        return eqs[:2]   # 2次元なら2つの方程式\n\n    result = fsolve(equations, [0, 0])\n    return result\n\n# 例: 3衛星から測位\nsats = [(0, 40000), (35000, 0), (-35000, 0)]  # 単位: km（地上から約20000km）\nreceiver_true = (100, 200)  # 真の位置 [km]\n\n# 各衛星からの真の距離\ntrue_dists = [np.sqrt((receiver_true[0]-sx)**2 + (receiver_true[1]-sy)**2)\n              for sx, sy in sats]\n\n# ノイズを加えた擬似距離（実際はクロック誤差が主因）\nnoise = np.random.normal(0, 1, 3)  # ±1km のノイズ\nmeas_dists = [d + n for d, n in zip(true_dists, noise)]\n\nest_pos = gps_trilateration(sats, meas_dists)\nerror = np.sqrt((est_pos[0]-receiver_true[0])**2 + (est_pos[1]-receiver_true[1])**2)\nprint(f&quot;真の位置:   ({receiver_true[0]:.1f}, {receiver_true[1]:.1f}) km&quot;)\nprint(f&quot;推定位置:   ({est_pos[0]:.1f}, {est_pos[1]:.1f}) km&quot;)\nprint(f&quot;測位誤差:   {error:.2f} km&quot;)\n</code></pre>\n<h2>GNSS の種類と精度</h2>\n<pre><code class=\"language-python\">gnss_systems = {\n    &quot;GPS（米国）&quot;: {\n        &quot;衛星数&quot;: 31,\n        &quot;軌道高度_km&quot;: 20200,\n        &quot;周波数&quot;: &quot;L1=1575.42MHz, L2=1227.60MHz&quot;,\n        &quot;精度_m&quot;: 3,\n        &quot;状況&quot;: &quot;民間 SA廃止（2000年〜）&quot;,\n    },\n    &quot;GLONASS（ロシア）&quot;: {\n        &quot;衛星数&quot;: 24,\n        &quot;軌道高度_km&quot;: 19100,\n        &quot;周波数&quot;: &quot;L1=1598.0625〜1605.375MHz（FDMA）&quot;,\n        &quot;精度_m&quot;: 4,\n        &quot;状況&quot;: &quot;軍事・民間併用&quot;,\n    },\n    &quot;Galileo（EU）&quot;: {\n        &quot;衛星数&quot;: 30,\n        &quot;軌道高度_km&quot;: 23222,\n        &quot;周波数&quot;: &quot;E1=1575.42MHz, E5=1176.45MHz&quot;,\n        &quot;精度_m&quot;: 1,\n        &quot;状況&quot;: &quot;2016〜運用開始&quot;,\n    },\n    &quot;BeiDou（中国）&quot;: {\n        &quot;衛星数&quot;: 35,\n        &quot;軌道高度_km&quot;: 21528,\n        &quot;周波数&quot;: &quot;B1=1561.098MHz&quot;,\n        &quot;精度_m&quot;: 2.5,\n        &quot;状況&quot;: &quot;2020全面運用&quot;,\n    },\n    &quot;みちびき（日本）&quot;: {\n        &quot;衛星数&quot;: 4,\n        &quot;軌道高度_km&quot;: 32000,\n        &quot;周波数&quot;: &quot;L1=1575.42MHz（GPS補完）&quot;,\n        &quot;精度_m&quot;: 0.01,\n        &quot;状況&quot;: &quot;準天頂軌道・高精度（cm級）&quot;,\n    },\n}\n\nprint(f&quot;{'システム':18s} {'衛星数':6s} {'精度':6s} {'備考'}&quot;)\nprint(&quot;-&quot; * 60)\nfor name, spec in gnss_systems.items():\n    print(f&quot;{name:18s} {spec['衛星数']:4d}機  {spec['精度_m']:4.2f}m  {spec['状況']}&quot;)\n</code></pre>\n<h2>測位精度向上の技術</h2>\n<pre><code class=\"language-python\"># DGNSS / RTK の仕組み\naccuracy_methods = {\n    &quot;単独測位（GPS単体）&quot;: {\n        &quot;精度&quot;: &quot;3〜5m&quot;,\n        &quot;原理&quot;: &quot;衛星4個以上から三辺測量&quot;,\n        &quot;用途&quot;: &quot;カーナビ・スマートフォン&quot;,\n    },\n    &quot;SBAS（衛星航法補強）&quot;: {\n        &quot;精度&quot;: &quot;1〜2m&quot;,\n        &quot;原理&quot;: &quot;地上局が誤差を計算→静止衛星で補正信号を配信&quot;,\n        &quot;用途&quot;: &quot;航空・高精度ナビ（MSAS: 日本版SBAS）&quot;,\n    },\n    &quot;DGNSS（差分測位）&quot;: {\n        &quot;精度&quot;: &quot;0.5〜1m&quot;,\n        &quot;原理&quot;: &quot;既知位置の基準局との差分補正&quot;,\n        &quot;用途&quot;: &quot;測量・建設機械・農業機械&quot;,\n    },\n    &quot;RTK（リアルタイムキネマティック）&quot;: {\n        &quot;精度&quot;: &quot;1〜2cm&quot;,\n        &quot;原理&quot;: &quot;搬送波位相を使った高精度測位&quot;,\n        &quot;用途&quot;: &quot;測量・精密農業・自動運転&quot;,\n    },\n    &quot;みちびき（CLAS）&quot;: {\n        &quot;精度&quot;: &quot;6cm&quot;,\n        &quot;原理&quot;: &quot;衛星補強信号 + みちびき補強&quot;,\n        &quot;用途&quot;: &quot;自動運転・農業・ドローン（日本全国）&quot;,\n    },\n}\n\nfor method, spec in accuracy_methods.items():\n    print(f&quot;【{method}】&quot;)\n    print(f&quot;  精度: {spec['精度']}  原理: {spec['原理']}&quot;)\n    print(f&quot;  用途: {spec['用途']}&quot;)\n    print()\n</code></pre>\n<h2>自動車へのGNSS応用</h2>\n<pre><code class=\"language-python\">import datetime\n\n# eCall（欧州義務化の緊急通報システム）\ndef ecall_message(lat, lon, speed_kmh, heading_deg, timestamp):\n    &quot;&quot;&quot;MSD（Minimum Set of Data）: 事故時に自動送信&quot;&quot;&quot;\n    return {\n        &quot;messageIdentifier&quot;: 1,\n        &quot;control&quot;: {\n            &quot;automaticActivation&quot;: True,  # 自動起動 or 手動\n            &quot;testCall&quot;: False,\n        },\n        &quot;vehicleIdentificationNumber&quot;: &quot;JH4DA9350MS017849&quot;,\n        &quot;vehicleType&quot;: &quot;passenger_car&quot;,\n        &quot;timestamp&quot;: timestamp.isoformat(),\n        &quot;vehicleLocation&quot;: {\n            &quot;latitude&quot;:  lat,\n            &quot;longitude&quot;: lon,\n            &quot;positionCanBeTrusted&quot;: True,\n        },\n        &quot;vehicleDirection&quot;: heading_deg,\n        &quot;recentVehicleLocationN1&quot;: {&quot;latitude&quot;: lat - 0.001, &quot;longitude&quot;: lon},\n        &quot;numberOfPassengers&quot;: 2,\n    }\n\nimport json\nmsg = ecall_message(35.6812, 139.7671, 0, 90,\n                    datetime.datetime(2024, 3, 15, 14, 30, 0))\nprint(&quot;eCall MSD（事故時緊急通報）:&quot;)\nprint(json.dumps(msg, indent=2, ensure_ascii=False))\n\n# 自動運転での精度要件\nprint(&quot;\\n自動運転の測位精度要件:&quot;)\nrequirements = {\n    &quot;一般道（レーン維持）&quot;:      &quot;&lt; 0.1m（10cm）&quot;,\n    &quot;高速道路（車線変更）&quot;:      &quot;&lt; 0.5m&quot;,\n    &quot;駐車場（自動駐車）&quot;:        &quot;&lt; 0.02m（2cm）&quot;,\n    &quot;歩行者認識回避（法的）&quot;:   &quot;位置確定 + センサーフュージョン&quot;,\n}\nfor scenario, req in requirements.items():\n    print(f&quot;  {scenario:24s}: {req}&quot;)\n\nprint(&quot;\\n→ GNSS単体では不足 → LiDAR/カメラ/HDMAPと融合（センサーフュージョン）が必須&quot;)\n</code></pre>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "wireless-basics",
+"title": "無線通信の基礎（電波・周波数・変調）"
+},
+{
+"slug": "v2x-wireless",
+"title": "車載無線通信（V2X・DSRC・C-V2X）"
+},
+{
+"slug": "lte-5g",
+"title": "LTE/5G セルラー通信の仕組みと車載応用"
+},
+{
+"slug": "automotive-electrical",
+"title": "車載電気システム（12V/48V・ハーネス・ECU）"
 }
 ],
 "next_full": [],
@@ -3319,6 +3995,60 @@
 {
 "slug": "can",
 "title": "CAN"
+}
+],
+"completed": false,
+"favorite": false
+},
+"lte-5g": {
+"slug": "lte-5g",
+"title": "LTE/5G セルラー通信の仕組みと車載応用",
+"level": 2,
+"category": "Wireless",
+"related": [
+"wireless-basics",
+"wifi",
+"v2x-wireless",
+"ota"
+],
+"next": [
+"v2x-wireless"
+],
+"tags": [
+"lte",
+"5g",
+"cellular",
+"nr",
+"automotive",
+"telematics",
+"ota"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>LTE（4G）と5Gは全国規模のモバイル通信インフラです。自動車では「テレマティクス（位置情報・盗難追跡）」「OTA（Over-the-Air）アップデート」「コネクテッドカー」「C-V2X（Cellular V2X）」に活用されています。</p>\n<h2>LTE の基本アーキテクチャ</h2>\n<pre><code>LTE ネットワーク構成:\n\n  UE（スマートフォン/車載TCU）\n       ↕ 無線（LTE）\n  eNodeB（基地局）\n       ↕ X2インターフェース\n  EPC（コアネットワーク）\n  ├── MME（モビリティ管理）\n  ├── SGW（サービングゲートウェイ）\n  ├── PGW（PDNゲートウェイ → インターネット）\n  └── HSS（加入者データベース）\n</code></pre>\n<pre><code class=\"language-python\">import numpy as np\nimport matplotlib.pyplot as plt\n\n# LTE の周波数バンド（日本）\nlte_bands = {\n    &quot;Band 1&quot;:  {&quot;dl&quot;: (2110, 2170), &quot;ul&quot;: (1920, 1980), &quot;carrier&quot;: &quot;ドコモ・au・SB&quot;},\n    &quot;Band 3&quot;:  {&quot;dl&quot;: (1805, 1880), &quot;ul&quot;: (1710, 1785), &quot;carrier&quot;: &quot;SB・au&quot;},\n    &quot;Band 8&quot;:  {&quot;dl&quot;: ( 925,  960), &quot;ul&quot;: ( 880,  915), &quot;carrier&quot;: &quot;SB&quot;},\n    &quot;Band 19&quot;: {&quot;dl&quot;: ( 875,  890), &quot;ul&quot;: ( 830,  845), &quot;carrier&quot;: &quot;ドコモ&quot;},\n    &quot;Band 21&quot;: {&quot;dl&quot;: (1496, 1511), &quot;ul&quot;: (1448, 1463), &quot;carrier&quot;: &quot;ドコモ&quot;},\n    &quot;Band 42&quot;: {&quot;dl&quot;: (3620, 3700), &quot;ul&quot;: (3620, 3700), &quot;carrier&quot;: &quot;TDD（ドコモ等）&quot;},\n}\n\nprint(&quot;LTE 周波数バンド（日本）&quot;)\nprint(f&quot;{'バンド':10s} {'下り [MHz]':15s} {'上り [MHz]':15s} {'キャリア'}&quot;)\nfor band, spec in lte_bands.items():\n    dl = f&quot;{spec['dl'][0]}〜{spec['dl'][1]}&quot;\n    ul = f&quot;{spec['ul'][0]}〜{spec['ul'][1]}&quot;\n    print(f&quot;{band:10s} {dl:15s} {ul:15s} {spec['carrier']}&quot;)\n</code></pre>\n<h2>LTE OFDMA の仕組み</h2>\n<pre><code class=\"language-python\"># LTE は下りに OFDMA、上りに SC-FDMA を使用\n# リソースブロック（RB）= 12サブキャリア × 7シンボル = 1スロット（0.5ms）\n\ndef lte_throughput(n_rb, modulation, coding_rate, n_layers=1, bandwidth_mhz=20):\n    &quot;&quot;&quot;LTE 理論スループット計算&quot;&quot;&quot;\n    # リソースブロック数と変調方式\n    bits_per_re = {\n        &quot;QPSK&quot;: 2, &quot;16QAM&quot;: 4, &quot;64QAM&quot;: 6, &quot;256QAM&quot;: 8\n    }[modulation]\n\n    # 1TTI(1ms)の送信ビット数\n    # RB × 12sc × 14sym × bits × coding × layers\n    bits_per_tti = n_rb * 12 * 14 * bits_per_re * coding_rate * n_layers\n    throughput_mbps = bits_per_tti / 1e3   # 1000 TTI/s\n    return throughput_mbps\n\nprint(&quot;LTE カテゴリ別スループット概算（20MHz）:&quot;)\nconfigs = [\n    (&quot;Cat 4（一般端末）&quot;,  100, &quot;64QAM&quot;,  3/4, 2),\n    (&quot;Cat 6（ハイエンド）&quot;,100, &quot;64QAM&quot;,  3/4, 2),\n    (&quot;Cat 12（LTE-A）&quot;,   100, &quot;256QAM&quot;, 5/6, 4),\n]\nfor name, n_rb, mod, cr, layers in configs:\n    tp = lte_throughput(n_rb, mod, cr, layers)\n    print(f&quot;  {name:20s}: ≈{tp:.0f} Mbps&quot;)\n</code></pre>\n<h2>5G の3つのユースケース</h2>\n<pre><code class=\"language-python\">use_cases_5g = {\n    &quot;eMBB（超高速大容量）&quot;: {\n        &quot;英語&quot;:   &quot;enhanced Mobile Broadband&quot;,\n        &quot;速度&quot;:   &quot;最大20 Gbps（下り）&quot;,\n        &quot;遅延&quot;:   &quot;数ms&quot;,\n        &quot;用途&quot;:   &quot;4K/8K動画・VR/AR・車内コンテンツ配信&quot;,\n        &quot;車載&quot;:   &quot;HDマップ高速ダウンロード・映像OTA・後席エンタメ&quot;,\n    },\n    &quot;URLLC（超低遅延高信頼）&quot;: {\n        &quot;英語&quot;:   &quot;Ultra-Reliable Low Latency Communications&quot;,\n        &quot;速度&quot;:   &quot;数百Mbps&quot;,\n        &quot;遅延&quot;:   &quot;1ms以下&quot;,\n        &quot;用途&quot;:   &quot;自動運転・遠隔手術・工場制御&quot;,\n        &quot;車載&quot;:   &quot;C-V2X（車車間・路車間）・遠隔運転&quot;,\n    },\n    &quot;mMTC（大規模IoT）&quot;: {\n        &quot;英語&quot;:   &quot;massive Machine Type Communications&quot;,\n        &quot;速度&quot;:   &quot;低速&quot;,\n        &quot;遅延&quot;:   &quot;秒〜分オーダー&quot;,\n        &quot;用途&quot;:   &quot;センサーネットワーク・スマートメーター&quot;,\n        &quot;車載&quot;:   &quot;駐車場センサー・道路状況モニタリング&quot;,\n    },\n}\n\nfor category, spec in use_cases_5g.items():\n    print(f&quot;\\n【{category}】{spec['英語']}&quot;)\n    print(f&quot;  速度: {spec['速度']}  遅延: {spec['遅延']}&quot;)\n    print(f&quot;  一般用途: {spec['用途']}&quot;)\n    print(f&quot;  車載応用: {spec['車載']}&quot;)\n</code></pre>\n<h2>5G NR（New Radio）の技術</h2>\n<pre><code class=\"language-python\"># 5G NR のフレーム構造とヌメロロジー\nnumerologies = {\n    &quot;μ=0&quot;: {&quot;SCS_kHz&quot;: 15,   &quot;slot_ms&quot;: 1.0,   &quot;slots_10ms&quot;: 10,  &quot;band&quot;: &quot;Sub-1GHz&quot;},\n    &quot;μ=1&quot;: {&quot;SCS_kHz&quot;: 30,   &quot;slot_ms&quot;: 0.5,   &quot;slots_10ms&quot;: 20,  &quot;band&quot;: &quot;Sub-6GHz&quot;},\n    &quot;μ=2&quot;: {&quot;SCS_kHz&quot;: 60,   &quot;slot_ms&quot;: 0.25,  &quot;slots_10ms&quot;: 40,  &quot;band&quot;: &quot;Sub-6GHz/mmW&quot;},\n    &quot;μ=3&quot;: {&quot;SCS_kHz&quot;: 120,  &quot;slot_ms&quot;: 0.125, &quot;slots_10ms&quot;: 80,  &quot;band&quot;: &quot;mmW（24GHz+）&quot;},\n    &quot;μ=4&quot;: {&quot;SCS_kHz&quot;: 240,  &quot;slot_ms&quot;: 0.0625,&quot;slots_10ms&quot;: 160, &quot;band&quot;: &quot;mmW（将来）&quot;},\n}\n\nprint(&quot;5G NR ヌメロロジー（サブキャリア間隔の種類）&quot;)\nprint(f&quot;{'μ':4s} {'SCS':8s} {'スロット長':12s} {'用途'}&quot;)\nfor mu, spec in numerologies.items():\n    print(f&quot;{mu:4s} {spec['SCS_kHz']:5d}kHz  {spec['slot_ms']*1000:.3f}ms      {spec['band']}&quot;)\n\nprint(&quot;\\n→ μが大きいほど遅延が小さく（高周波数帯向け）&quot;)\nprint(&quot;→ URLLC（自動運転）では μ=3のmmWで1ms以下の遅延を実現&quot;)\n</code></pre>\n<h2>車載テレマティクスユニット（TCU）</h2>\n<pre><code class=\"language-python\"># TCU（Telematics Control Unit）の構成\ntcu_components = {\n    &quot;LTE/5Gモジュール&quot;: {\n        &quot;チップ&quot;: &quot;Qualcomm Snapdragon X55/X65&quot;,\n        &quot;プロトコル&quot;: &quot;TCP/IP over LTE&quot;,\n        &quot;接続先&quot;: &quot;メーカーバックエンドサーバー（クラウド）&quot;,\n    },\n    &quot;SIM（eSIM）&quot;: {\n        &quot;規格&quot;: &quot;M2M eSIM（GSMA SGP.02）&quot;,\n        &quot;特徴&quot;: &quot;物理SIM交換不要・遠隔でキャリア変更&quot;,\n        &quot;認証&quot;: &quot;USIM認証（128bit AES）&quot;,\n    },\n    &quot;GNSS（GPS）&quot;: {\n        &quot;精度&quot;: &quot;3〜5m（単独測位）&quot;,\n        &quot;活用&quot;: &quot;位置情報・走行ルート記録&quot;,\n    },\n    &quot;CANインターフェース&quot;: {\n        &quot;接続&quot;: &quot;車内CANネットワークへ接続&quot;,\n        &quot;目的&quot;: &quot;走行データ・診断データの収集&quot;,\n    },\n}\n\nfor component, spec in tcu_components.items():\n    print(f&quot;\\n【{component}】&quot;)\n    for k, v in spec.items():\n        print(f&quot;  {k}: {v}&quot;)\n\n# OTA（Over-the-Air）アップデートの通信量\nprint(&quot;\\n=== OTA 通信量の概算 ===&quot;)\nota_packages = {\n    &quot;ECUファームウェア（1個）&quot;: 50,      # MB\n    &quot;地図データ（差分）&quot;:        500,\n    &quot;地図データ（全更新）&quot;:      10000,  # 10GB\n    &quot;ナビUI更新&quot;:               200,\n}\nfor name, size_mb in ota_packages.items():\n    time_4g = size_mb / 50   # LTE 50Mbps実効\n    time_5g = size_mb / 500  # 5G 500Mbps実効\n    print(f&quot;  {name:20s}: {size_mb:6d}MB → LTE {time_4g:.1f}分 / 5G {time_5g:.1f}分&quot;)\n</code></pre>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "wireless-basics",
+"title": "無線通信の基礎（電波・周波数・変調）"
+},
+{
+"slug": "wifi",
+"title": "Wi-Fi（IEEE 802.11）の仕組みと規格"
+},
+{
+"slug": "v2x-wireless",
+"title": "車載無線通信（V2X・DSRC・C-V2X）"
+},
+{
+"slug": "ota",
+"title": "OTA更新 (Over-The-Air)"
+}
+],
+"next_full": [
+{
+"slug": "v2x-wireless",
+"title": "車載無線通信（V2X・DSRC・C-V2X）"
 }
 ],
 "completed": false,
@@ -3794,6 +4524,57 @@
 "title": "TSN(Time-Sensitive Networking)"
 }
 ],
+"completed": false,
+"favorite": false
+},
+"wifi": {
+"slug": "wifi",
+"title": "Wi-Fi（IEEE 802.11）の仕組みと規格",
+"level": 2,
+"category": "Wireless",
+"related": [
+"wireless-basics",
+"bluetooth",
+"lte-5g",
+"ethernet"
+],
+"next": [],
+"tags": [
+"wifi",
+"ieee80211",
+"wireless-lan",
+"802.11ax",
+"ofdm",
+"networking"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>Wi-Fi（IEEE 802.11）は世界中で使われている無線LAN規格です。「なぜ5GHzは速いが繋がりにくいのか」「Wi-Fi 6は何が違うのか」を物理層から理解しましょう。車載では駐車場の地図更新・ディーラーでの診断・路車間通信の補助に使われます。</p>\n<h2>Wi-Fi 規格の進化</h2>\n<pre><code class=\"language-python\">import numpy as np\n\nwifi_standards = {\n    &quot;Wi-Fi 1（802.11b）&quot;: {&quot;year&quot;: 1999, &quot;band&quot;: &quot;2.4GHz&quot;, &quot;max_mbps&quot;: 11,    &quot;tech&quot;: &quot;DSSS&quot;},\n    &quot;Wi-Fi 2（802.11a）&quot;: {&quot;year&quot;: 1999, &quot;band&quot;: &quot;5GHz&quot;,   &quot;max_mbps&quot;: 54,    &quot;tech&quot;: &quot;OFDM&quot;},\n    &quot;Wi-Fi 3（802.11g）&quot;: {&quot;year&quot;: 2003, &quot;band&quot;: &quot;2.4GHz&quot;, &quot;max_mbps&quot;: 54,    &quot;tech&quot;: &quot;OFDM&quot;},\n    &quot;Wi-Fi 4（802.11n）&quot;: {&quot;year&quot;: 2009, &quot;band&quot;: &quot;2.4/5GHz&quot;,&quot;max_mbps&quot;: 600,   &quot;tech&quot;: &quot;MIMO+OFDM&quot;},\n    &quot;Wi-Fi 5（802.11ac）&quot;:{&quot;year&quot;: 2013, &quot;band&quot;: &quot;5GHz&quot;,   &quot;max_mbps&quot;: 6934,  &quot;tech&quot;: &quot;MU-MIMO+256QAM&quot;},\n    &quot;Wi-Fi 6（802.11ax）&quot;:{&quot;year&quot;: 2019, &quot;band&quot;: &quot;2.4/5GHz&quot;,&quot;max_mbps&quot;: 9608,  &quot;tech&quot;: &quot;OFDMA+1024QAM&quot;},\n    &quot;Wi-Fi 6E&quot;:          {&quot;year&quot;: 2021, &quot;band&quot;: &quot;6GHz&quot;,    &quot;max_mbps&quot;: 9608,  &quot;tech&quot;: &quot;Wi-Fi 6 + 6GHz&quot;},\n    &quot;Wi-Fi 7（802.11be）&quot;:{&quot;year&quot;: 2024, &quot;band&quot;: &quot;2.4/5/6GHz&quot;,&quot;max_mbps&quot;: 46120,&quot;tech&quot;: &quot;MLO+4096QAM&quot;},\n}\n\nprint(f&quot;{'規格':22s} {'年':5s} {'周波数帯':10s} {'最大速度':10s} {'技術'}&quot;)\nprint(&quot;-&quot; * 75)\nfor name, spec in wifi_standards.items():\n    print(f&quot;{name:22s} {spec['year']:4d}  {spec['band']:10s} {spec['max_mbps']:6d} Mbps  {spec['tech']}&quot;)\n</code></pre>\n<h2>OFDM（直交周波数分割多重）</h2>\n<p>Wi-Fiの高速化を支える変調技術：</p>\n<pre><code class=\"language-python\">import matplotlib.pyplot as plt\n\n# OFDMは複数のサブキャリアに並列でデータを乗せる\nn_subcarriers = 52   # 802.11g の場合（データ用48 + パイロット4）\nbandwidth = 20e6     # 20MHz チャンネル\nsubcarrier_spacing = bandwidth / 64   # 312.5kHz\n\nt = np.linspace(0, 4e-6, 1000)   # 1シンボル期間（4μs）\n\nfig, ax = plt.subplots(figsize=(12, 5))\nfor i in range(0, 12):   # 最初の12サブキャリアを可視化\n    f_sub = (i + 1) * subcarrier_spacing\n    phase = np.random.choice([0, np.pi/2, np.pi, 3*np.pi/2])  # QPSK\n    wave  = np.cos(2 * np.pi * f_sub * t + phase) * 0.3\n    ax.plot(t * 1e6, wave + i, alpha=0.7, lw=1)\nax.set_xlabel(&quot;時間 [μs]&quot;)\nax.set_ylabel(&quot;サブキャリア番号&quot;)\nax.set_title(&quot;OFDM: 複数のサブキャリアが直交して並列送信&quot;)\nax.grid(True, alpha=0.3)\nplt.tight_layout()\nplt.show()\n\n# データレートの計算\ndef wifi_data_rate(n_subcarriers, bits_per_symbol, coding_rate, n_streams, symbol_duration_us):\n    &quot;&quot;&quot;Wi-Fiの理論データレート計算&quot;&quot;&quot;\n    symbols_per_second = 1e6 / symbol_duration_us\n    bits_per_ofdm_symbol = n_subcarriers * bits_per_symbol * coding_rate * n_streams\n    return bits_per_ofdm_symbol * symbols_per_second / 1e6  # Mbps\n\n# Wi-Fi 5（802.11ac, 80MHz ch, 256QAM, 3/4コーディング, 1ストリーム）\nrate = wifi_data_rate(234, 8, 3/4, 1, 3.6)  # 8bits=256QAM\nprint(f&quot;Wi-Fi 5（80MHz, 1stream）: {rate:.0f} Mbps&quot;)\n\n# Wi-Fi 6（802.11ax, 80MHz ch, 1024QAM, 5/6コーディング, 1ストリーム）\nrate6 = wifi_data_rate(234, 10, 5/6, 1, 13.6)  # 10bits=1024QAM\nprint(f&quot;Wi-Fi 6（80MHz, 1stream）: {rate6:.0f} Mbps&quot;)\n</code></pre>\n<h2>2.4GHz vs 5GHz の特性</h2>\n<pre><code class=\"language-python\">import math\n\nc = 3e8\n\ndef compare_bands():\n    bands = {\n        &quot;2.4GHz（ch1: 2412MHz）&quot;: {\n            &quot;freq&quot;: 2412e6,\n            &quot;channels&quot;: 3,       # 非重複チャンネル数（日本）\n            &quot;wall_penetration&quot;: &quot;良好&quot;,\n            &quot;interference&quot;: &quot;多い（電子レンジ・Bluetoothと干渉）&quot;,\n            &quot;range&quot;: &quot;広い（〜100m屋内）&quot;,\n        },\n        &quot;5GHz（ch36〜）&quot;: {\n            &quot;freq&quot;: 5180e6,\n            &quot;channels&quot;: 19,      # W52/W53/W56\n            &quot;wall_penetration&quot;: &quot;やや苦手（減衰大きい）&quot;,\n            &quot;interference&quot;: &quot;少ない（専用帯域が多い）&quot;,\n            &quot;range&quot;: &quot;狭い（〜50m屋内）&quot;,\n        },\n        &quot;6GHz（Wi-Fi 6E）&quot;: {\n            &quot;freq&quot;: 5945e6,\n            &quot;channels&quot;: 59,      # 最大\n            &quot;wall_penetration&quot;: &quot;苦手（新規格）&quot;,\n            &quot;interference&quot;: &quot;ほぼなし（新規割当帯域）&quot;,\n            &quot;range&quot;: &quot;短め（〜30m屋内）&quot;,\n        },\n    }\n\n    for band, props in bands.items():\n        lam = c / props[&quot;freq&quot;]\n        print(f&quot;\\n【{band}】&quot;)\n        print(f&quot;  波長:       {lam*100:.1f} cm&quot;)\n        print(f&quot;  非重複ch数: {props['channels']} ch&quot;)\n        print(f&quot;  壁越え:     {props['wall_penetration']}&quot;)\n        print(f&quot;  干渉:       {props['interference']}&quot;)\n        print(f&quot;  到達距離:   {props['range']}&quot;)\n\ncompare_bands()\n</code></pre>\n<h2>MIMOとビームフォーミング</h2>\n<pre><code class=\"language-python\"># MIMO: Multiple Input Multiple Output\n# 複数のアンテナで同時に複数ストリームを送受信\n\ndef mimo_capacity(n_tx, n_rx, snr_dB, bandwidth_Hz):\n    &quot;&quot;&quot;MIMO通信容量の概算（並列チャンネル数 = min(Tx,Rx)）&quot;&quot;&quot;\n    n_streams = min(n_tx, n_rx)\n    snr_linear = 10 ** (snr_dB / 10)\n    # 各ストリームがSNR/n_streams を使うと仮定\n    snr_per_stream = snr_linear / n_streams\n    C = bandwidth_Hz * n_streams * np.log2(1 + snr_per_stream)\n    return C / 1e6   # Mbps\n\nsnr = 25   # dB\nbw = 80e6  # 80MHz\nprint(&quot;MIMO構成ごとの通信容量（80MHz, SNR=25dB）:&quot;)\nfor n in [1, 2, 4, 8]:\n    C = mimo_capacity(n, n, snr, bw)\n    print(f&quot;  {n}×{n} MIMO: {C:.0f} Mbps&quot;)\n\n# Wi-Fi 6 の OFDMA（上り下りで複数デバイスを同時接続）\nprint(&quot;\\nOFDMA（Wi-Fi 6の革新）:&quot;)\nprint(&quot;  Wi-Fi 5以前: 1つのデバイスが帯域を占有して送信（順番待ち）&quot;)\nprint(&quot;  Wi-Fi 6:    帯域を分割して複数デバイスを同時送信（OFDMA）&quot;)\nprint(&quot;  → 混雑環境（空港・スタジアム・車内）で特に効果大&quot;)\n</code></pre>\n<h2>車載Wi-Fi（テレマティクス・OTA）</h2>\n<pre><code class=\"language-python\"># 自動車でのWi-Fi活用シーン\nautomotive_wifi = {\n    &quot;地図データOTA更新&quot;: {\n        &quot;データ量&quot;: &quot;数GB〜20GB&quot;,\n        &quot;頻度&quot;: &quot;月1〜4回&quot;,\n        &quot;接続先&quot;: &quot;ディーラー駐車場 or 自宅Wi-Fi&quot;,\n        &quot;規格&quot;: &quot;Wi-Fi 5/6（高速ダウンロード優先）&quot;,\n    },\n    &quot;ECUソフトウェアOTA&quot;: {\n        &quot;データ量&quot;: &quot;10MB〜数GB&quot;,\n        &quot;頻度&quot;: &quot;年数回&quot;,\n        &quot;接続先&quot;: &quot;ホームWi-Fi or セルラー（LTE/5G）&quot;,\n        &quot;規格&quot;: &quot;Wi-Fi 5/6 または LTE&quot;,\n    },\n    &quot;車内Wi-Fiホットスポット&quot;: {\n        &quot;データ量&quot;: &quot;乗客のストリーミング&quot;,\n        &quot;接続先&quot;: &quot;4G LTE回線をWi-Fiとして車内に提供&quot;,\n        &quot;規格&quot;: &quot;Wi-Fi 5（車内）+ LTE（外部）&quot;,\n    },\n    &quot;ディーラー診断&quot;: {\n        &quot;データ量&quot;: &quot;診断データ・ログ転送&quot;,\n        &quot;接続先&quot;: &quot;ディーラーのローカルネットワーク&quot;,\n        &quot;規格&quot;: &quot;Wi-Fi 4/5 + 専用診断ツール&quot;,\n    },\n}\n\nfor scene, info in automotive_wifi.items():\n    print(f&quot;\\n【{scene}】&quot;)\n    for k, v in info.items():\n        print(f&quot;  {k}: {v}&quot;)\n</code></pre>",
+"prereq_full": [
+{
+"slug": "wireless-basics",
+"title": "無線通信の基礎（電波・周波数・変調）"
+}
+],
+"related_full": [
+{
+"slug": "wireless-basics",
+"title": "無線通信の基礎（電波・周波数・変調）"
+},
+{
+"slug": "bluetooth",
+"title": "Bluetooth（Classic/BLE）の仕組みと車載応用"
+},
+{
+"slug": "lte-5g",
+"title": "LTE/5G セルラー通信の仕組みと車載応用"
+},
+{
+"slug": "ethernet",
+"title": "Ethernet"
+}
+],
+"next_full": [],
 "completed": false,
 "favorite": false
 },
@@ -4289,6 +5070,52 @@
 "completed": false,
 "favorite": false
 },
+"automotive-transmission": {
+"slug": "automotive-transmission",
+"title": "変速機・ギア比（トランスミッション）",
+"level": 2,
+"category": "Automotive",
+"related": [
+"automotive-torque",
+"automotive-engine",
+"ev-battery"
+],
+"next": [],
+"tags": [
+"transmission",
+"gear",
+"ratio",
+"automotive",
+"powertrain",
+"cvt"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>変速機（トランスミッション）はエンジンの回転数・トルクを走行状況に合わせて最適に変換する装置です。ギア比を変えることで「発進時は大きな力」「高速時は静かな回転」を両立します。MT・AT・CVT・EVドライブの仕組みを理解しましょう。</p>\n<h2>ギア比の基本</h2>\n<p>$$i = \\frac{n_{in}}{n_{out}} = \\frac{T_{out}}{T_{in}}$$</p>\n<pre><code class=\"language-python\">import numpy as np\nimport matplotlib.pyplot as plt\n\ndef gear_output(T_in, n_in, gear_ratio, final_ratio=4.0, efficiency=0.95):\n    &quot;&quot;&quot;変速機出力側のトルクと回転数を計算&quot;&quot;&quot;\n    T_out = T_in * gear_ratio * final_ratio * efficiency\n    n_out = n_in / (gear_ratio * final_ratio)   # rpm（タイヤの回転数）\n    return T_out, n_out\n\n# 典型的な5速MTのギア比\ngear_ratios = {\n    &quot;1速&quot;: 3.50,\n    &quot;2速&quot;: 2.05,\n    &quot;3速&quot;: 1.38,\n    &quot;4速&quot;: 1.00,\n    &quot;5速&quot;: 0.79,\n    &quot;後退&quot;: 3.80,\n}\nfinal_ratio = 4.06   # ファイナルギア比\n\nT_engine = 180   # N·m（中回転域トルク）\nn_engine = 3000  # rpm\n\nprint(f&quot;エンジン: {T_engine}N·m @ {n_engine}rpm\\n&quot;)\nprint(f&quot;{'ギア':6s} {'変速比':6s} {'車輪トルク':10s} {'車速(km/h)':12s}&quot;)\nprint(&quot;-&quot; * 50)\n\ntire_radius = 0.3   # m\n\nfor gear, ratio in gear_ratios.items():\n    if gear == &quot;後退&quot;: continue\n    T_wheel, n_wheel = gear_output(T_engine, n_engine, ratio, final_ratio)\n    # 車速計算: v = ω × r = (2πn/60) × r\n    v_ms  = (2 * np.pi * n_wheel / 60) * tire_radius\n    v_kmh = v_ms * 3.6\n    print(f&quot;{gear:4s}  {ratio:5.2f}  {T_wheel:8.0f} N·m  {v_kmh:8.1f} km/h&quot;)\n</code></pre>\n<h2>各ギアの車速−エンジン回転数の関係</h2>\n<pre><code class=\"language-python\"># 各ギアでの車速と回転数の対応\nv_range = np.linspace(0, 200, 200)   # km/h\n\nfig, ax = plt.subplots(figsize=(10, 6))\nfor gear, ratio in gear_ratios.items():\n    if gear == &quot;後退&quot;: continue\n    # v [km/h] = 2π × rpm / 60 × r_tire × 3.6 / (ratio × final)\n    rpm_vals = v_range / 3.6 / tire_radius * 60 / (2 * np.pi) * ratio * final_ratio\n    # レッドゾーン上限\n    mask = rpm_vals &lt; 7000\n    ax.plot(v_range[mask], rpm_vals[mask], lw=2, label=gear)\n\nax.axhline(6500, color=&quot;red&quot;,  linestyle=&quot;--&quot;, alpha=0.5, label=&quot;レッドゾーン&quot;)\nax.axhline(1000, color=&quot;gray&quot;, linestyle=&quot;--&quot;, alpha=0.5, label=&quot;アイドル&quot;)\nax.fill_between([0, 200], [6500, 6500], [7000, 7000], color=&quot;red&quot;, alpha=0.1)\nax.set_xlabel(&quot;車速 [km/h]&quot;)\nax.set_ylabel(&quot;エンジン回転数 [rpm]&quot;)\nax.set_title(&quot;5速MTの各ギアにおける車速−回転数特性&quot;)\nax.legend()\nax.set_ylim(0, 7500)\nax.grid(True, alpha=0.4)\nplt.tight_layout()\nplt.show()\n</code></pre>\n<h2>CVT（無段変速機）</h2>\n<pre><code class=\"language-python\"># CVTはプーリー径を連続的に変化させてギア比を無段階制御\ndef cvt_ratio(v_kmh, rpm_target=2500, final=4.0):\n    &quot;&quot;&quot;目標回転数を維持するCVTのギア比計算&quot;&quot;&quot;\n    v_ms = v_kmh / 3.6\n    n_wheel = v_ms / tire_radius * 60 / (2 * np.pi)   # 車輪rpm\n    ratio = rpm_target / (n_wheel * final)\n    return max(0.4, min(ratio, 3.5))   # CVTの変速比範囲でクリップ\n\nv_range = np.linspace(5, 180, 300)\nratios  = [cvt_ratio(v) for v in v_range]\nrpms    = [cvt_ratio(v) * v / 3.6 / tire_radius * 60 / (2*np.pi) * final_ratio\n           for v in v_range]\n\nfig, axes = plt.subplots(1, 2, figsize=(12, 4))\naxes[0].plot(v_range, ratios, &quot;g-&quot;, lw=2)\naxes[0].set_xlabel(&quot;車速 [km/h]&quot;)\naxes[0].set_ylabel(&quot;変速比&quot;)\naxes[0].set_title(&quot;CVTの変速比（目標2500rpm維持）&quot;)\naxes[0].grid(True)\n\naxes[1].plot(v_range, rpms, &quot;g-&quot;, lw=2, label=&quot;CVT&quot;)\n# MT 4速で比較\nrpm_4th = [v / 3.6 / tire_radius * 60 / (2*np.pi) * gear_ratios[&quot;4速&quot;] * final_ratio\n           for v in v_range]\naxes[1].plot(v_range, rpm_4th, &quot;b--&quot;, lw=1.5, alpha=0.7, label=&quot;MT 4速（固定）&quot;)\naxes[1].axhline(2500, color=&quot;red&quot;, linestyle=&quot;:&quot;, label=&quot;目標rpm&quot;)\naxes[1].set_xlabel(&quot;車速 [km/h]&quot;)\naxes[1].set_ylabel(&quot;エンジン回転数 [rpm]&quot;)\naxes[1].set_title(&quot;CVT vs MT のエンジン回転数&quot;)\naxes[1].legend()\naxes[1].grid(True)\nplt.tight_layout()\nplt.show()\n</code></pre>\n<h2>EVのシングルスピードドライブ</h2>\n<pre><code class=\"language-python\"># EVは変速機が不要（モーターが0rpmからトルク発生）\nprint(&quot;=== EV vs ICE の駆動系比較 ===\\n&quot;)\n\ncomponents = {\n    &quot;ガソリン車（MT）&quot;: [&quot;エンジン&quot;, &quot;クラッチ&quot;, &quot;変速機（5〜6速）&quot;,\n                        &quot;プロペラシャフト&quot;, &quot;ディファレンシャル&quot;, &quot;ドライブシャフト&quot;],\n    &quot;ガソリン車（AT）&quot;: [&quot;エンジン&quot;, &quot;トルクコンバーター&quot;, &quot;AT（6〜10速）&quot;,\n                        &quot;プロペラシャフト&quot;, &quot;ディファレンシャル&quot;, &quot;ドライブシャフト&quot;],\n    &quot;BEV（後輪駆動）&quot;:  [&quot;モーター（1つ）&quot;, &quot;シングルスピードリダクションギア&quot;,\n                        &quot;ディファレンシャル&quot;, &quot;ドライブシャフト&quot;],\n}\n\nfor car_type, parts in components.items():\n    print(f&quot;【{car_type}】&quot;)\n    for i, p in enumerate(parts):\n        arrow = &quot; → &quot; if i &lt; len(parts)-1 else &quot;&quot;\n        print(f&quot;  {p}{arrow}&quot;, end=&quot;&quot;)\n    print(&quot;\\n&quot;)\n\nprint(&quot;EVが変速機不要な理由:&quot;)\nprint(&quot;  ① モーターは0rpmから最大トルクを発生&quot;)\nprint(&quot;  ② 回転数は0〜16,000rpm超まで幅広い&quot;)\nprint(&quot;  ③ リダクションギア（減速比6〜12）1段で十分&quot;)\nprint(&quot;  → 部品点数が大幅削減 → 軽量・低コスト・高信頼性&quot;)\n</code></pre>\n<h2>トルクコンバーター（AT）</h2>\n<pre><code class=\"language-python\"># トルクコンバーター: 流体を使ったトルク増幅装置\n# ストール状態（出力側静止）では トルク比 ≈ 2〜3倍\ndef torque_converter(T_engine, slip_ratio):\n    &quot;&quot;&quot;\n    トルクコンバーターの特性（概略）\n    slip_ratio: 入出力回転比（0=ストール, 1=直結）\n    &quot;&quot;&quot;\n    # 簡易モデル: スリップが大きいほどトルク倍増\n    torque_ratio = 2.5 - 1.5 * slip_ratio   # ストール時2.5倍, 直結時1.0倍\n    efficiency   = slip_ratio * (2 - slip_ratio)  # 効率はスリップで低下\n    return T_engine * torque_ratio, efficiency\n\nslip_range = np.linspace(0, 1, 100)\nT_out_list, eff_list = zip(*[torque_converter(200, s) for s in slip_range])\n\nfig, axes = plt.subplots(1, 2, figsize=(10, 4))\naxes[0].plot(slip_range, T_out_list, &quot;r-&quot;, lw=2)\naxes[0].axhline(200, color=&quot;gray&quot;, linestyle=&quot;--&quot;, label=&quot;エンジントルク&quot;)\naxes[0].set_xlabel(&quot;速度比 (出力rpm / 入力rpm)&quot;)\naxes[0].set_ylabel(&quot;出力トルク [N·m]&quot;)\naxes[0].set_title(&quot;トルクコンバーターの出力トルク&quot;)\naxes[0].legend()\naxes[0].grid(True)\n\naxes[1].plot(slip_range, [e*100 for e in eff_list], &quot;b-&quot;, lw=2)\naxes[1].axvline(0.85, color=&quot;red&quot;, linestyle=&quot;--&quot;, label=&quot;ロックアップ点（≈85%）&quot;)\naxes[1].set_xlabel(&quot;速度比&quot;)\naxes[1].set_ylabel(&quot;効率 [%]&quot;)\naxes[1].set_title(&quot;トルクコンバーターの効率&quot;)\naxes[1].legend()\naxes[1].grid(True)\nplt.tight_layout()\nplt.show()\n</code></pre>",
+"prereq_full": [
+{
+"slug": "automotive-engine",
+"title": "自動車エンジンの仕組み（4ストロークサイクル）"
+}
+],
+"related_full": [
+{
+"slug": "automotive-torque",
+"title": "トルクと馬力（自動車工学の基礎）"
+},
+{
+"slug": "automotive-engine",
+"title": "自動車エンジンの仕組み（4ストロークサイクル）"
+},
+{
+"slug": "ev-battery",
+"title": "EVバッテリー（リチウムイオン・BMS・充電）"
+}
+],
+"next_full": [],
+"completed": false,
+"favorite": false
+},
 "dimensionality-reduction": {
 "slug": "dimensionality-reduction",
 "title": "次元削減（PCA・t-SNE・UMAP）",
@@ -4525,6 +5352,66 @@
 {
 "slug": "classification",
 "title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
+}
+],
+"completed": false,
+"favorite": false
+},
+"automotive-electrical": {
+"slug": "automotive-electrical",
+"title": "車載電気システム（12V/48V・ハーネス・ECU）",
+"level": 2,
+"category": "Automotive",
+"related": [
+"electricity-basics",
+"ohms-law",
+"electric-power",
+"semiconductor",
+"ev-battery"
+],
+"next": [
+"ev-battery"
+],
+"tags": [
+"automotive",
+"electrical",
+"12v",
+"48v",
+"harness",
+"ecu",
+"can",
+"electronics"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>現代の自動車には100個以上のECU（電子制御ユニット）と数kmのワイヤーハーネスが搭載されています。電気の基礎知識が車の設計・整備・診断に直結します。「電気の基礎（V=RI）」を自動車の文脈で理解しましょう。</p>\n<h2>車載電源システムの概要</h2>\n<pre><code>車載電源アーキテクチャ:\n\n  バッテリー（12V / 48V）\n       ↓\n  ヒューズボックス / スマートジャンクションボックス\n       ↓\n  ┌────────────────────────────┐\n  │ エンジンECU   │ ブレーキECU │\n  │ トランスミッションECU      │\n  │ ボディECU     │ エアコンECU │\n  │ メーターECU   │ エアバッグECU│\n  └────────────────────────────┘\n  すべてCAN/LIN/Ethernetネットワークで接続\n</code></pre>\n<pre><code class=\"language-python\">import numpy as np\n\n# 12V 鉛バッテリーの基本特性\nbattery = {\n    &quot;公称電圧&quot;:    12,       # V（実際は12.6V充電完了, 11.8V放電限界）\n    &quot;容量&quot;:        60,       # Ah（60Ah = 60A × 1時間 = 720Wh）\n    &quot;冷間始動電流&quot;: 550,      # CCA (Cold Cranking Amps at -18°C)\n    &quot;内部抵抗&quot;:    0.01,     # Ω（新品時）\n}\n\n# スターターモーター始動時の電圧降下\nI_starter = 200  # A（始動電流）\nR_internal = 0.01\nV_drop = I_starter * R_internal\nprint(f&quot;始動時電圧降下: {V_drop} V → バッテリー端子は {12 - V_drop} V&quot;)\n\n# 消費電流の内訳（エンジン動作中）\ncurrent_consumers = {\n    &quot;ECU群（全部）&quot;:       20,   # A\n    &quot;ヘッドライト（LED）&quot;: 5,\n    &quot;エアコンブロア&quot;:      15,\n    &quot;電動パワステ&quot;:         8,\n    &quot;ホーン&quot;:               5,   # 瞬時\n    &quot;シートヒーター&quot;:      10,\n    &quot;リアデフォッガー&quot;:    12,\n}\ntotal_I = sum(current_consumers.values())\nprint(f&quot;\\n合計消費電流: {total_I} A&quot;)\nprint(f&quot;オルタネーター必要出力: {total_I * 14.4:.0f} W（≈{total_I*14.4/1000:.1f}kW）&quot;)\n</code></pre>\n<h2>オルタネーター（発電機）</h2>\n<pre><code class=\"language-python\"># オルタネーター: エンジン駆動で14V前後の直流を発電\ndef alternator_power(engine_rpm, pulley_ratio=2.5, alt_efficiency=0.65):\n    &quot;&quot;&quot;\n    オルタネーターの発電量計算\n    pulley_ratio: エンジン/オルタネーター プーリー比\n    &quot;&quot;&quot;\n    alt_rpm = engine_rpm * pulley_ratio\n    # 代表的なオルタネーター特性（80A定格）\n    if alt_rpm &lt; 1000:\n        I_max = 0\n    elif alt_rpm &lt; 2000:\n        I_max = 80 * (alt_rpm - 1000) / 1000\n    else:\n        I_max = 80   # 定格電流 80A\n\n    P_out = 14.4 * I_max * alt_efficiency   # W\n    return alt_rpm, I_max, P_out\n\nprint(&quot;エンジン回転数とオルタネーター出力:&quot;)\nfor rpm in [600, 800, 1000, 1500, 2000, 3000]:\n    alt_rpm, I, P = alternator_power(rpm)\n    print(f&quot;  {rpm:4d} rpm → ALT {alt_rpm:.0f} rpm: {I:.0f} A, {P:.0f} W&quot;)\n</code></pre>\n<h2>ワイヤーハーネスの設計</h2>\n<pre><code class=\"language-python\"># 電線のサイズ選択（許容電流と電圧降下）\n# AWG/sq mm → 許容電流の対応\nwire_specs = {\n    &quot;0.3 sq&quot;: {&quot;I_max&quot;: 7,  &quot;R_per_m&quot;: 0.062},  # Ω/m\n    &quot;0.5 sq&quot;: {&quot;I_max&quot;: 10, &quot;R_per_m&quot;: 0.038},\n    &quot;0.85sq&quot;: {&quot;I_max&quot;: 13, &quot;R_per_m&quot;: 0.022},\n    &quot;1.25sq&quot;: {&quot;I_max&quot;: 19, &quot;R_per_m&quot;: 0.015},\n    &quot;2.0 sq&quot;: {&quot;I_max&quot;: 25, &quot;R_per_m&quot;: 0.0092},\n    &quot;3.0 sq&quot;: {&quot;I_max&quot;: 32, &quot;R_per_m&quot;: 0.0062},\n    &quot;5.0 sq&quot;: {&quot;I_max&quot;: 42, &quot;R_per_m&quot;: 0.0037},\n}\n\ndef select_wire(I_load, length_m, V_supply=12, V_drop_max=0.5):\n    &quot;&quot;&quot;\n    負荷電流と配線長から最適な電線サイズを選択\n    V_drop_max: 許容電圧降下 [V]\n    &quot;&quot;&quot;\n    print(f&quot;負荷電流: {I_load}A, 配線長: {length_m}m&quot;)\n    print(f&quot;（往復 {length_m*2}m = 電圧降下計算に使用）&quot;)\n    for sq, spec in wire_specs.items():\n        if I_load &lt;= spec[&quot;I_max&quot;]:\n            V_drop = I_load * spec[&quot;R_per_m&quot;] * length_m * 2\n            ok = &quot;✅&quot; if V_drop &lt;= V_drop_max else &quot;⚠️&quot;\n            print(f&quot;  {sq}: {V_drop:.3f}V降下 {ok}&quot;)\n            if V_drop &lt;= V_drop_max:\n                print(f&quot;  → {sq} を推奨&quot;)\n                return sq\n    return &quot;規格外（並列敷設を検討）&quot;\n\nselect_wire(I_load=10, length_m=3)\nprint()\nselect_wire(I_load=25, length_m=5)\n</code></pre>\n<h2>ECUの電源回路</h2>\n<pre><code class=\"language-python\"># ECUへの電源供給の典型パターン\necu_power_patterns = {\n    &quot;常時電源（+B）&quot;: {\n        &quot;電圧&quot;: &quot;12V（バッテリー直結）&quot;,\n        &quot;用途&quot;: &quot;メモリ保持・時計・盗難防止&quot;,\n        &quot;ECU側処理&quot;: &quot;スリープ中も微小電流消費（暗電流 5〜15mA）&quot;,\n    },\n    &quot;イグニッション電源（IG）&quot;: {\n        &quot;電圧&quot;: &quot;12V（キーON/エンジンON時）&quot;,\n        &quot;用途&quot;: &quot;ECU本体の動作電源&quot;,\n        &quot;ECU側処理&quot;: &quot;IG-ONで起動、IG-OFFで後処理してスリープ&quot;,\n    },\n    &quot;アクセサリー電源（ACC）&quot;: {\n        &quot;電圧&quot;: &quot;12V（ACC位置以降）&quot;,\n        &quot;用途&quot;: &quot;ラジオ・ナビ・パワーウィンドウ&quot;,\n        &quot;ECU側処理&quot;: &quot;エンジン停止でも動作&quot;,\n    },\n}\n\nfor power_type, info in ecu_power_patterns.items():\n    print(f&quot;【{power_type}】&quot;)\n    for k, v in info.items():\n        print(f&quot;  {k}: {v}&quot;)\n    print()\n\n# ECU内部の電源降圧\nprint(&quot;ECU内部の電圧変換:&quot;)\nprint(&quot;  12V → 5V: リニアレギュレーター or DC-DCコンバーター&quot;)\nprint(&quot;  5V  → 3.3V: LDO（Low Dropout Regulator）&quot;)\nprint(&quot;  3.3V → 1.2V: CPU コアへの供給&quot;)\nprint()\n\n# 電圧降圧の効率比較\nV_in, V_out, I_load = 12, 5, 1.0\n# リニアレギュレーター（熱で捨てる）\nP_heat_linear = (V_in - V_out) * I_load\nP_out = V_out * I_load\neta_linear = P_out / (V_in * I_load)\nprint(f&quot;リニアレギュレーター: 効率 {eta_linear*100:.0f}%（発熱 {P_heat_linear}W）&quot;)\n\n# スイッチングコンバーター（効率良好）\neta_switching = 0.90\nP_in_sw = P_out / eta_switching\nprint(f&quot;スイッチングDC-DC:   効率 {eta_switching*100:.0f}%（発熱 {P_in_sw-P_out:.1f}W）&quot;)\n</code></pre>\n<h2>48V マイルドハイブリッドシステム</h2>\n<pre><code class=\"language-python\"># 最新の自動車では 12V + 48V のデュアル電源\nsystem_48v = {\n    &quot;概要&quot;: &quot;エンジンアシスト・回生ブレーキ用の補助電源システム&quot;,\n    &quot;採用車種&quot;: &quot;Mercedes A-Class, BMW 5系, Audi A6 など&quot;,\n    &quot;メリット&quot;: [\n        &quot;回生制動で燃費 10〜15% 向上&quot;,\n        &quot;電動コンプレッサー・電動スーパーチャージャーが使える&quot;,\n        &quot;スタート/ストップの滑らかな動作&quot;,\n        &quot;完全EVより安価（バッテリー小型）&quot;,\n    ],\n    &quot;コンポーネント&quot;: {\n        &quot;BSG&quot;:    &quot;ベルト駆動スタータージェネレーター（12kW程度）&quot;,\n        &quot;48Vバッテリー&quot;: &quot;リチウムイオン 0.5〜1kWh&quot;,\n        &quot;DC-DC変換器&quot;: &quot;48V ↔ 12V 変換（双方向）&quot;,\n    },\n}\n\nprint(&quot;=== 48V マイルドハイブリッド ===&quot;)\nprint(f&quot;概要: {system_48v['概要']}&quot;)\nprint(&quot;\\nメリット:&quot;)\nfor benefit in system_48v[&quot;メリット&quot;]:\n    print(f&quot;  ・{benefit}&quot;)\nprint(&quot;\\nコンポーネント:&quot;)\nfor comp, desc in system_48v[&quot;コンポーネント&quot;].items():\n    print(f&quot;  {comp}: {desc}&quot;)\n\n# 回生エネルギーの計算\nm = 1500   # kg\nv1 = 100 / 3.6  # 100km/h → m/s\nv2 = 0\nKE = 0.5 * m * (v1**2 - v2**2)   # 運動エネルギー [J]\neta_regen = 0.60   # 回収効率\nE_recovered = KE * eta_regen\nprint(f&quot;\\n100→0km/hブレーキの回生エネルギー: {E_recovered/3600:.2f} Wh&quot;)\n</code></pre>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "electricity-basics",
+"title": "電気の基礎（電流・電圧・抵抗）"
+},
+{
+"slug": "ohms-law",
+"title": "オームの法則（V = RI）"
+},
+{
+"slug": "electric-power",
+"title": "電力・電力量とジュール熱"
+},
+{
+"slug": "semiconductor",
+"title": "半導体の仕組み（PN接合・トランジスタ）"
+},
+{
+"slug": "ev-battery",
+"title": "EVバッテリー（リチウムイオン・BMS・充電）"
+}
+],
+"next_full": [
+{
+"slug": "ev-battery",
+"title": "EVバッテリー（リチウムイオン・BMS・充電）"
 }
 ],
 "completed": false,
@@ -6231,6 +7118,63 @@
 "completed": false,
 "favorite": false
 },
+"v2x-wireless": {
+"slug": "v2x-wireless",
+"title": "車載無線通信（V2X・DSRC・C-V2X）",
+"level": 3,
+"category": "Wireless",
+"related": [
+"lte-5g",
+"wifi",
+"wireless-basics",
+"v2x",
+"automotive-electrical"
+],
+"next": [],
+"tags": [
+"v2x",
+"dsrc",
+"c-v2x",
+"vehicle-to-vehicle",
+"automotive",
+"safety",
+"wireless"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>V2X（Vehicle-to-Everything）は車と「あらゆるもの」が通信する技術です。車車間（V2V）・車路間（V2I）・車人間（V2P）・車クラウド（V2N）からなり、信号情報取得・衝突回避・自動運転の重要インフラです。DSRC（専用狭域通信）とC-V2X（セルラーV2X）の2方式があります。</p>\n<h2>V2X の種類と応用</h2>\n<pre><code class=\"language-python\">v2x_types = {\n    &quot;V2V（Vehicle to Vehicle）&quot;: {\n        &quot;相手&quot;: &quot;他車両&quot;,\n        &quot;用途&quot;: [&quot;前方衝突警告&quot;, &quot;緊急ブレーキ通知&quot;, &quot;死角車両検出&quot;],\n        &quot;必要遅延&quot;: &quot;&lt; 100ms&quot;,\n        &quot;通信距離&quot;: &quot;300〜1000m&quot;,\n    },\n    &quot;V2I（Vehicle to Infrastructure）&quot;: {\n        &quot;相手&quot;: &quot;信号機・道路センサー・標識&quot;,\n        &quot;用途&quot;: [&quot;SPAT（信号位相・タイミング情報）&quot;, &quot;速度勧告&quot;, &quot;工事情報&quot;],\n        &quot;必要遅延&quot;: &quot;&lt; 100ms&quot;,\n        &quot;通信距離&quot;: &quot;300〜1000m&quot;,\n    },\n    &quot;V2P（Vehicle to Pedestrian）&quot;: {\n        &quot;相手&quot;: &quot;歩行者・自転車のスマートフォン&quot;,\n        &quot;用途&quot;: [&quot;横断歩道手前の歩行者警告&quot;, &quot;自転車接近警告&quot;],\n        &quot;必要遅延&quot;: &quot;&lt; 50ms&quot;,\n        &quot;通信距離&quot;: &quot;100〜200m&quot;,\n    },\n    &quot;V2N（Vehicle to Network）&quot;: {\n        &quot;相手&quot;: &quot;クラウドサーバー&quot;,\n        &quot;用途&quot;: [&quot;HDマップ更新&quot;, &quot;交通情報&quot;, &quot;OTA更新&quot;, &quot;フリートマネジメント&quot;],\n        &quot;必要遅延&quot;: &quot;&lt; 1000ms&quot;,\n        &quot;通信距離&quot;: &quot;全国（セルラー）&quot;,\n    },\n}\n\nfor type_name, spec in v2x_types.items():\n    print(f&quot;【{type_name}】&quot;)\n    print(f&quot;  用途: {', '.join(spec['用途'])}&quot;)\n    print(f&quot;  要求遅延: {spec['必要遅延']}  距離: {spec['通信距離']}&quot;)\n    print()\n</code></pre>\n<h2>DSRC（専用狭域通信）/ IEEE 802.11p</h2>\n<pre><code class=\"language-python\">import numpy as np\n\n# DSRC は 5.9GHz 帯（5850〜5925MHz）を使う\n# IEEE 802.11p = OCB（Outside the Context of a BSS）通信モード\n# 接続確立なしで即座にブロードキャスト可能\n\ndsrc_spec = {\n    &quot;周波数帯&quot;:   &quot;5.9 GHz（5850〜5925 MHz）&quot;,\n    &quot;帯域幅&quot;:    &quot;10 MHz チャンネル（75MHz帯域を7ch分割）&quot;,\n    &quot;変調方式&quot;:   &quot;OFDM（IEEE 802.11a 準拠）&quot;,\n    &quot;最大速度&quot;:  &quot;27 Mbps（10MHz ch）&quot;,\n    &quot;遅延&quot;:      &quot;&lt; 2ms（接続確立不要）&quot;,\n    &quot;到達距離&quot;:  &quot;300〜1000m（見通し）&quot;,\n    &quot;採用地域&quot;:  &quot;日本（VICS/ETC2.0）、米国（WAVE）、EU（ITS-G5）&quot;,\n}\n\nprint(&quot;=== DSRC（IEEE 802.11p）仕様 ===&quot;)\nfor k, v in dsrc_spec.items():\n    print(f&quot;  {k}: {v}&quot;)\n\n# チャンネル割当（米国 WAVE 規格）\nwave_channels = {\n    &quot;CH172（5.86GHz）&quot;: &quot;Control Channel（CCH）- 安全メッセージ専用&quot;,\n    &quot;CH174（5.87GHz）&quot;: &quot;Service Channel（SCH）&quot;,\n    &quot;CH176（5.88GHz）&quot;: &quot;Service Channel&quot;,\n    &quot;CH178（5.89GHz）&quot;: &quot;Control Channel（CCH）&quot;,\n    &quot;CH180（5.90GHz）&quot;: &quot;Service Channel&quot;,\n    &quot;CH182（5.91GHz）&quot;: &quot;Service Channel&quot;,\n    &quot;CH184（5.92GHz）&quot;: &quot;Service Channel&quot;,\n}\nprint(&quot;\\n米国 WAVE チャンネル割当:&quot;)\nfor ch, desc in wave_channels.items():\n    print(f&quot;  {ch}: {desc}&quot;)\n</code></pre>\n<h2>BSM（Basic Safety Message）</h2>\n<pre><code class=\"language-python\">import json\n\n# BSM は V2V の基本安全メッセージ（SAE J2735 規格）\n# 10Hz（100ms間隔）でブロードキャスト\n\ndef generate_bsm(vehicle_id, lat, lon, speed_ms, heading_deg, accel_ms2):\n    &quot;&quot;&quot;SAE J2735 BSMの簡略版&quot;&quot;&quot;\n    return {\n        &quot;msgID&quot;: &quot;BSM&quot;,\n        &quot;coreData&quot;: {\n            &quot;id&quot;:       f&quot;{vehicle_id:08X}&quot;,    # 一時的な匿名ID\n            &quot;secMark&quot;: 0,                        # ミリ秒タイムスタンプ\n            &quot;lat&quot;:     lat,\n            &quot;lon&quot;:     lon,\n            &quot;elev&quot;:    100,                      # 標高 [0.1m]\n            &quot;accuracy&quot;: {&quot;semiMajor&quot;: 200, &quot;semiMinor&quot;: 200},\n            &quot;speed&quot;:   int(speed_ms * 50),       # 0.02m/s 単位\n            &quot;heading&quot;: int(heading_deg * 80),    # 0.0125度 単位\n            &quot;accel&quot;:   {&quot;long&quot;: int(accel_ms2 * 100)},  # 0.01m/s² 単位\n            &quot;brakes&quot;:  {&quot;wheelBrakes&quot;: &quot;0000&quot;},\n            &quot;size&quot;:    {&quot;width&quot;: 200, &quot;length&quot;: 490},   # cm\n        }\n    }\n\nbsm = generate_bsm(\n    vehicle_id=0xDEADBEEF,\n    lat=35.6812,\n    lon=139.7671,\n    speed_ms=13.9,    # 50km/h\n    heading_deg=90,\n    accel_ms2=0.0,\n)\nprint(&quot;BSM（Basic Safety Message）サンプル:&quot;)\nprint(json.dumps(bsm, indent=2))\n</code></pre>\n<h2>C-V2X（Cellular V2X）vs DSRC</h2>\n<pre><code class=\"language-python\">comparison = {\n    &quot;方式&quot;:          [&quot;C-V2X Mode 4（PC5）&quot;,    &quot;DSRC/IEEE 802.11p&quot;],\n    &quot;規格&quot;:          [&quot;3GPP Rel.14/16&quot;,          &quot;IEEE 802.11p / ETSI ITS-G5&quot;],\n    &quot;周波数&quot;:        [&quot;5.9GHz（PC5）or LTE&quot;,     &quot;5.9GHz専用&quot;],\n    &quot;接続確立&quot;:      [&quot;不要（ブロードキャスト）&quot;,  &quot;不要（OCBモード）&quot;],\n    &quot;遅延&quot;:          [&quot;&lt; 5ms（理論）&quot;,            &quot;&lt; 2ms（実績）&quot;],\n    &quot;距離&quot;:          [&quot;〜500m（PC5）&quot;,            &quot;〜1000m&quot;],\n    &quot;インフラ依存&quot;:  [&quot;不要（サイドリンク）&quot;,      &quot;不要&quot;],\n    &quot;セルラー連携&quot;:  [&quot;可能（V2N統合）&quot;,          &quot;別途LTE/5G必要&quot;],\n    &quot;普及状況&quot;:      [&quot;Audi/Ford/韓国自動車&quot;,     &quot;日本ETC2.0・米WAVE&quot;],\n    &quot;将来性&quot;:        [&quot;5G NR-V2X（Rel.16）&quot;,      &quot;DSRC+ITS-G5で継続&quot;],\n}\n\nprint(&quot;C-V2X vs DSRC 比較&quot;)\nprint(f&quot;{'項目':12s} {'C-V2X':28s} {'DSRC':28s}&quot;)\nprint(&quot;-&quot; * 70)\nfor i, item in enumerate(comparison[&quot;方式&quot;]):\n    pass  # ヘッダーは除く\n\nfor key in list(comparison.keys())[1:]:\n    print(f&quot;{key:12s} {comparison[key][0]:28s} {comparison[key][1]}&quot;)\n</code></pre>\n<h2>V2X の安全ユースケース実装例</h2>\n<pre><code class=\"language-python\"># 前方衝突警告（FCW: Forward Collision Warning）\ndef fcw_check(ego_speed_ms, ego_pos, other_pos, other_speed_ms, reaction_time=1.5):\n    &quot;&quot;&quot;\n    前方車両との衝突時間（TTC）を計算して警告\n    ego: 自車, other: 前方車両\n    &quot;&quot;&quot;\n    # 相対速度（自車が前方車に近づく速度）\n    relative_speed = ego_speed_ms - other_speed_ms\n\n    if relative_speed &lt;= 0:\n        return None, &quot;安全（前方車の方が速い）&quot;\n\n    # 2点間の距離（簡易）\n    distance = np.sqrt((ego_pos[0] - other_pos[0])**2 +\n                       (ego_pos[1] - other_pos[1])**2)\n\n    # TTC（衝突時間）\n    ttc = distance / relative_speed\n\n    # 制動距離（v²/2a, a=7m/s²）\n    braking_dist = ego_speed_ms**2 / (2 * 7)\n    safe_dist = braking_dist + reaction_time * ego_speed_ms\n\n    if ttc &lt; 1.5:\n        return ttc, &quot;🔴 緊急警告: 衝突直前&quot;\n    elif distance &lt; safe_dist:\n        return ttc, &quot;🟡 注意: 車間距離不足&quot;\n    else:\n        return ttc, &quot;🟢 安全&quot;\n\n# シミュレーション\nscenarios = [\n    (&quot;高速道路（両車110km/h等速）&quot;,   30.6, (0,0), (50,0),  30.6),\n    (&quot;前方急ブレーキ（自100km/h前60km/h）&quot;, 27.8, (0,0), (40,0), 16.7),\n    (&quot;追突直前（自100km/h前静止）&quot;,   27.8, (0,0), (30,0),  0.0),\n]\nfor name, v_ego, pos_ego, pos_other, v_other in scenarios:\n    ttc, status = fcw_check(v_ego, pos_ego, pos_other, v_other)\n    ttc_str = f&quot;{ttc:.1f}s&quot; if ttc else &quot;-&quot;\n    print(f&quot;{name}: TTC={ttc_str} → {status}&quot;)\n</code></pre>",
+"prereq_full": [
+{
+"slug": "lte-5g",
+"title": "LTE/5G セルラー通信の仕組みと車載応用"
+}
+],
+"related_full": [
+{
+"slug": "lte-5g",
+"title": "LTE/5G セルラー通信の仕組みと車載応用"
+},
+{
+"slug": "wifi",
+"title": "Wi-Fi（IEEE 802.11）の仕組みと規格"
+},
+{
+"slug": "wireless-basics",
+"title": "無線通信の基礎（電波・周波数・変調）"
+},
+{
+"slug": "v2x",
+"title": "V2X通信 (Vehicle-to-Everything)"
+},
+{
+"slug": "automotive-electrical",
+"title": "車載電気システム（12V/48V・ハーネス・ECU）"
+}
+],
+"next_full": [],
+"completed": false,
+"favorite": false
+},
 "autosar": {
 "slug": "autosar",
 "title": "AUTOSAR",
@@ -7305,12 +8249,64 @@
 "title": "交流回路（AC・RMS・インピーダンス）"
 },
 {
-"slug": "capacitor",
-"title": "コンデンサ（静電容量・充放電）"
+"slug": "automotive-electrical",
+"title": "車載電気システム（12V/48V・ハーネス・ECU）"
 },
 {
-"slug": "electric-field",
-"title": "電場とクーロンの法則"
+"slug": "capacitor",
+"title": "コンデンサ（静電容量・充放電）"
+}
+],
+"automotive-torque": [
+{
+"slug": "automotive-engine",
+"title": "自動車エンジンの仕組み（4ストロークサイクル）"
+},
+{
+"slug": "automotive-transmission",
+"title": "変速機・ギア比（トランスミッション）"
+},
+{
+"slug": "electric-power",
+"title": "電力・電力量とジュール熱"
+},
+{
+"slug": "adaptive-autosar",
+"title": "Adaptive AUTOSAR"
+},
+{
+"slug": "arp",
+"title": "ARP"
+},
+{
+"slug": "automotive-electrical",
+"title": "車載電気システム（12V/48V・ハーネス・ECU）"
+}
+],
+"engineering-drawing": [
+{
+"slug": "automotive-engine",
+"title": "自動車エンジンの仕組み（4ストロークサイクル）"
+},
+{
+"slug": "automotive-torque",
+"title": "トルクと馬力（自動車工学の基礎）"
+},
+{
+"slug": "automotive-electrical",
+"title": "車載電気システム（12V/48V・ハーネス・ECU）"
+},
+{
+"slug": "adaptive-autosar",
+"title": "Adaptive AUTOSAR"
+},
+{
+"slug": "arp",
+"title": "ARP"
+},
+{
+"slug": "automotive-transmission",
+"title": "変速機・ギア比（トランスミッション）"
 }
 ],
 "ml-basics": [
@@ -7339,6 +8335,32 @@
 "title": "データクリーニング"
 }
 ],
+"wireless-basics": [
+{
+"slug": "wifi",
+"title": "Wi-Fi（IEEE 802.11）の仕組みと規格"
+},
+{
+"slug": "bluetooth",
+"title": "Bluetooth（Classic/BLE）の仕組みと車載応用"
+},
+{
+"slug": "v2x-wireless",
+"title": "車載無線通信（V2X・DSRC・C-V2X）"
+},
+{
+"slug": "lte-5g",
+"title": "LTE/5G セルラー通信の仕組みと車載応用"
+},
+{
+"slug": "electromagnetic-induction",
+"title": "電磁誘導とファラデーの法則"
+},
+{
+"slug": "communication-basics",
+"title": "通信とは"
+}
+],
 "circuit-series-parallel": [
 {
 "slug": "electric-power",
@@ -7357,12 +8379,38 @@
 "title": "交流回路（AC・RMS・インピーダンス）"
 },
 {
-"slug": "capacitor",
-"title": "コンデンサ（静電容量・充放電）"
+"slug": "automotive-electrical",
+"title": "車載電気システム（12V/48V・ハーネス・ECU）"
 },
 {
-"slug": "electric-field",
-"title": "電場とクーロンの法則"
+"slug": "capacitor",
+"title": "コンデンサ（静電容量・充放電）"
+}
+],
+"automotive-engine": [
+{
+"slug": "automotive-transmission",
+"title": "変速機・ギア比（トランスミッション）"
+},
+{
+"slug": "automotive-torque",
+"title": "トルクと馬力（自動車工学の基礎）"
+},
+{
+"slug": "automotive-electrical",
+"title": "車載電気システム（12V/48V・ハーネス・ECU）"
+},
+{
+"slug": "adaptive-autosar",
+"title": "Adaptive AUTOSAR"
+},
+{
+"slug": "arp",
+"title": "ARP"
+},
+{
+"slug": "autosar",
+"title": "AUTOSAR"
 }
 ],
 "communication-basics": [
@@ -7381,6 +8429,10 @@
 {
 "slug": "python-basics",
 "title": "Python基礎（変数・リスト・辞書）"
+},
+{
+"slug": "wireless-basics",
+"title": "無線通信の基礎（電波・周波数・変調）"
 }
 ],
 "electric-power": [
@@ -7401,12 +8453,12 @@
 "title": "交流回路（AC・RMS・インピーダンス）"
 },
 {
-"slug": "capacitor",
-"title": "コンデンサ（静電容量・充放電）"
+"slug": "automotive-electrical",
+"title": "車載電気システム（12V/48V・ハーネス・ECU）"
 },
 {
-"slug": "electric-field",
-"title": "電場とクーロンの法則"
+"slug": "automotive-torque",
+"title": "トルクと馬力（自動車工学の基礎）"
 }
 ],
 "electricity-basics": [
@@ -7459,6 +8511,32 @@
 {
 "slug": "adaptive-autosar",
 "title": "Adaptive AUTOSAR"
+}
+],
+"bluetooth": [
+{
+"slug": "v2x-wireless",
+"title": "車載無線通信（V2X・DSRC・C-V2X）"
+},
+{
+"slug": "wireless-basics",
+"title": "無線通信の基礎（電波・周波数・変調）"
+},
+{
+"slug": "lte-5g",
+"title": "LTE/5G セルラー通信の仕組みと車載応用"
+},
+{
+"slug": "wifi",
+"title": "Wi-Fi（IEEE 802.11）の仕組みと規格"
+},
+{
+"slug": "gnss",
+"title": "GPS/GNSS（全球測位システム）と自動車への応用"
+},
+{
+"slug": "v2x",
+"title": "V2X通信 (Vehicle-to-Everything)"
 }
 ],
 "dhcp": [
@@ -7527,6 +8605,32 @@
 "title": "サブネット / **CIDR**"
 }
 ],
+"ev-battery": [
+{
+"slug": "automotive-electrical",
+"title": "車載電気システム（12V/48V・ハーネス・ECU）"
+},
+{
+"slug": "electric-power",
+"title": "電力・電力量とジュール熱"
+},
+{
+"slug": "semiconductor",
+"title": "半導体の仕組み（PN接合・トランジスタ）"
+},
+{
+"slug": "capacitor",
+"title": "コンデンサ（静電容量・充放電）"
+},
+{
+"slug": "adaptive-autosar",
+"title": "Adaptive AUTOSAR"
+},
+{
+"slug": "arp",
+"title": "ARP"
+}
+],
 "fastapi": [
 {
 "slug": "python-basics",
@@ -7551,6 +8655,32 @@
 {
 "slug": "clustering",
 "title": "クラスタリング（K-Means・DBSCAN・階層型）"
+}
+],
+"gnss": [
+{
+"slug": "v2x-wireless",
+"title": "車載無線通信（V2X・DSRC・C-V2X）"
+},
+{
+"slug": "wireless-basics",
+"title": "無線通信の基礎（電波・周波数・変調）"
+},
+{
+"slug": "lte-5g",
+"title": "LTE/5G セルラー通信の仕組みと車載応用"
+},
+{
+"slug": "automotive-electrical",
+"title": "車載電気システム（12V/48V・ハーネス・ECU）"
+},
+{
+"slug": "bluetooth",
+"title": "Bluetooth（Classic/BLE）の仕組みと車載応用"
+},
+{
+"slug": "v2x",
+"title": "V2X通信 (Vehicle-to-Everything)"
 }
 ],
 "icmp": [
@@ -7655,6 +8785,32 @@
 {
 "slug": "vlan",
 "title": "VLAN"
+}
+],
+"lte-5g": [
+{
+"slug": "v2x-wireless",
+"title": "車載無線通信（V2X・DSRC・C-V2X）"
+},
+{
+"slug": "ota",
+"title": "OTA更新 (Over-The-Air)"
+},
+{
+"slug": "wireless-basics",
+"title": "無線通信の基礎（電波・周波数・変調）"
+},
+{
+"slug": "wifi",
+"title": "Wi-Fi（IEEE 802.11）の仕組みと規格"
+},
+{
+"slug": "adaptive-autosar",
+"title": "Adaptive AUTOSAR"
+},
+{
+"slug": "arp",
+"title": "ARP"
 }
 ],
 "matplotlib": [
@@ -7871,6 +9027,24 @@
 "title": "Adaptive AUTOSAR"
 }
 ],
+"wifi": [
+{
+"slug": "wireless-basics",
+"title": "無線通信の基礎（電波・周波数・変調）"
+},
+{
+"slug": "bluetooth",
+"title": "Bluetooth（Classic/BLE）の仕組みと車載応用"
+},
+{
+"slug": "lte-5g",
+"title": "LTE/5G セルラー通信の仕組みと車載応用"
+},
+{
+"slug": "ethernet",
+"title": "Ethernet"
+}
+],
 "howto-vlan-check": [
 {
 "slug": "howto-tshark-filter",
@@ -7967,12 +9141,12 @@
 "title": "電磁誘導とファラデーの法則"
 },
 {
-"slug": "circuit-series-parallel",
-"title": "直列・並列回路と合成抵抗"
+"slug": "automotive-electrical",
+"title": "車載電気システム（12V/48V・ハーネス・ECU）"
 },
 {
-"slug": "electric-power",
-"title": "電力・電力量とジュール熱"
+"slug": "circuit-series-parallel",
+"title": "直列・並列回路と合成抵抗"
 }
 ],
 "subnet": [
@@ -8063,12 +9237,12 @@
 "title": "電力・電力量とジュール熱"
 },
 {
-"slug": "circuit-series-parallel",
-"title": "直列・並列回路と合成抵抗"
+"slug": "automotive-electrical",
+"title": "車載電気システム（12V/48V・ハーネス・ECU）"
 },
 {
-"slug": "electric-field",
-"title": "電場とクーロンの法則"
+"slug": "circuit-series-parallel",
+"title": "直列・並列回路と合成抵抗"
 }
 ],
 "classification": [
@@ -8115,12 +9289,38 @@
 "title": "交流回路（AC・RMS・インピーダンス）"
 },
 {
-"slug": "capacitor",
-"title": "コンデンサ（静電容量・充放電）"
+"slug": "automotive-electrical",
+"title": "車載電気システム（12V/48V・ハーネス・ECU）"
 },
 {
-"slug": "circuit-series-parallel",
-"title": "直列・並列回路と合成抵抗"
+"slug": "capacitor",
+"title": "コンデンサ（静電容量・充放電）"
+}
+],
+"automotive-transmission": [
+{
+"slug": "automotive-engine",
+"title": "自動車エンジンの仕組み（4ストロークサイクル）"
+},
+{
+"slug": "automotive-torque",
+"title": "トルクと馬力（自動車工学の基礎）"
+},
+{
+"slug": "ev-battery",
+"title": "EVバッテリー（リチウムイオン・BMS・充電）"
+},
+{
+"slug": "adaptive-autosar",
+"title": "Adaptive AUTOSAR"
+},
+{
+"slug": "arp",
+"title": "ARP"
+},
+{
+"slug": "automotive-electrical",
+"title": "車載電気システム（12V/48V・ハーネス・ECU）"
 }
 ],
 "dimensionality-reduction": [
@@ -8193,12 +9393,12 @@
 "title": "交流回路（AC・RMS・インピーダンス）"
 },
 {
-"slug": "capacitor",
-"title": "コンデンサ（静電容量・充放電）"
+"slug": "automotive-electrical",
+"title": "車載電気システム（12V/48V・ハーネス・ECU）"
 },
 {
-"slug": "circuit-series-parallel",
-"title": "直列・並列回路と合成抵抗"
+"slug": "capacitor",
+"title": "コンデンサ（静電容量・充放電）"
 }
 ],
 "statistics": [
@@ -8253,6 +9453,32 @@
 "title": "データクリーニング"
 }
 ],
+"automotive-electrical": [
+{
+"slug": "ev-battery",
+"title": "EVバッテリー（リチウムイオン・BMS・充電）"
+},
+{
+"slug": "ohms-law",
+"title": "オームの法則（V = RI）"
+},
+{
+"slug": "electric-power",
+"title": "電力・電力量とジュール熱"
+},
+{
+"slug": "semiconductor",
+"title": "半導体の仕組み（PN接合・トランジスタ）"
+},
+{
+"slug": "electricity-basics",
+"title": "電気の基礎（電流・電圧・抵抗）"
+},
+{
+"slug": "scapy-automotive",
+"title": "Scapy Automotive（CAN・DoIP・UDS解析）"
+}
+],
 "electric-field": [
 {
 "slug": "capacitor",
@@ -8275,8 +9501,8 @@
 "title": "交流回路（AC・RMS・インピーダンス）"
 },
 {
-"slug": "circuit-series-parallel",
-"title": "直列・並列回路と合成抵抗"
+"slug": "automotive-electrical",
+"title": "車載電気システム（12V/48V・ハーネス・ECU）"
 }
 ],
 "electromagnetic-induction": [
@@ -8293,16 +9519,16 @@
 "title": "コンデンサ（静電容量・充放電）"
 },
 {
+"slug": "automotive-electrical",
+"title": "車載電気システム（12V/48V・ハーネス・ECU）"
+},
+{
 "slug": "circuit-series-parallel",
 "title": "直列・並列回路と合成抵抗"
 },
 {
 "slug": "electric-field",
 "title": "電場とクーロンの法則"
-},
-{
-"slug": "electric-power",
-"title": "電力・電力量とジュール熱"
 }
 ],
 "avtp": [
@@ -9103,6 +10329,32 @@
 "title": "scikit-learn（機械学習ライブラリ）"
 }
 ],
+"v2x-wireless": [
+{
+"slug": "v2x",
+"title": "V2X通信 (Vehicle-to-Everything)"
+},
+{
+"slug": "lte-5g",
+"title": "LTE/5G セルラー通信の仕組みと車載応用"
+},
+{
+"slug": "wireless-basics",
+"title": "無線通信の基礎（電波・周波数・変調）"
+},
+{
+"slug": "automotive-electrical",
+"title": "車載電気システム（12V/48V・ハーネス・ECU）"
+},
+{
+"slug": "wifi",
+"title": "Wi-Fi（IEEE 802.11）の仕組みと規格"
+},
+{
+"slug": "bluetooth",
+"title": "Bluetooth（Classic/BLE）の仕組みと車載応用"
+}
+],
 "autosar": [
 {
 "slug": "ros2-dds",
@@ -9325,16 +10577,16 @@
 "title": "UDP"
 },
 {
+"slug": "v2x-wireless",
+"title": "車載無線通信（V2X・DSRC・C-V2X）"
+},
+{
 "slug": "ip",
 "title": "IP"
 },
 {
-"slug": "adaptive-autosar",
-"title": "Adaptive AUTOSAR"
-},
-{
-"slug": "adas-comm",
-"title": "ADAS通信"
+"slug": "bluetooth",
+"title": "Bluetooth（Classic/BLE）の仕組みと車載応用"
 }
 ],
 "fine-tuning": [
@@ -12323,6 +13575,351 @@
 "difficulty": "初級",
 "updated": "2026-06-10",
 "excerpt": "電磁誘導は「磁束の変化が起電力を生む」現象です。1831年にファラデーが発見したこの法則が、発電機・変圧器・非接触充電（ワイヤレス充電）・車載センサー（ABS・クランク角センサー）の原理です。",
+"views": 0,
+"completed": false,
+"favorite": false
+}
+]
+},
+{
+"name": "Automotive",
+"articles": [
+{
+"slug": "automotive-torque",
+"title": "トルクと馬力（自動車工学の基礎）",
+"level": 1,
+"category": "Automotive",
+"related": [
+"automotive-engine",
+"automotive-transmission",
+"electric-power"
+],
+"next": [
+"automotive-engine"
+],
+"tags": [
+"torque",
+"horsepower",
+"power",
+"automotive",
+"engine",
+"mechanics"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "「トルク」と「馬力（出力）」は自動車の性能を語るうえで最も重要な2つの値です。カタログに必ず記載されていますが、その物理的な意味を正確に理解している人は少ないです。この2つを理解することでエンジン選択・EV設計・ギア比設計の根拠がわかります",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "engineering-drawing",
+"title": "図面の読み方（自動車部品・機械製図）",
+"level": 1,
+"category": "Automotive",
+"related": [
+"automotive-engine",
+"automotive-torque",
+"automotive-electrical"
+],
+"next": [],
+"tags": [
+"drawing",
+"blueprint",
+"manufacturing",
+"automotive",
+"mechanical"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "図面（製図）はエンジニアの共通言語です。自動車のエンジンブロック・サスペンションアーム・ハーネスコネクタなど、すべての部品は図面から作られます。図面を読む力は設計・生産・品質・実験すべての職種で必要とされます。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "automotive-engine",
+"title": "自動車エンジンの仕組み（4ストロークサイクル）",
+"level": 1,
+"category": "Automotive",
+"related": [
+"automotive-torque",
+"automotive-transmission",
+"automotive-electrical"
+],
+"next": [
+"automotive-transmission"
+],
+"tags": [
+"engine",
+"four-stroke",
+"combustion",
+"automotive",
+"powertrain"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "自動車のガソリンエンジンは「燃料の燃焼エネルギーを回転運動に変換する機械」です。4ストロークサイクルの仕組みを理解することで、燃費・出力・排気ガス・エンジン制御（ECU）すべての動作が繋がります。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "ev-battery",
+"title": "EVバッテリー（リチウムイオン・BMS・充電）",
+"level": 2,
+"category": "Automotive",
+"related": [
+"automotive-electrical",
+"electric-power",
+"semiconductor",
+"capacitor"
+],
+"next": [],
+"tags": [
+"ev",
+"battery",
+"bms",
+"lithium-ion",
+"charging",
+"automotive"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "電気自動車（EV）の心臓部はリチウムイオンバッテリーパックです。スマートフォンと同じ原理ですが、容量は数万倍。電圧・容量・BMS（バッテリー管理システム）・充電方式の仕組みを理解することは、EV開発・診断の基盤です。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "automotive-transmission",
+"title": "変速機・ギア比（トランスミッション）",
+"level": 2,
+"category": "Automotive",
+"related": [
+"automotive-torque",
+"automotive-engine",
+"ev-battery"
+],
+"next": [],
+"tags": [
+"transmission",
+"gear",
+"ratio",
+"automotive",
+"powertrain",
+"cvt"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "変速機（トランスミッション）はエンジンの回転数・トルクを走行状況に合わせて最適に変換する装置です。ギア比を変えることで「発進時は大きな力」「高速時は静かな回転」を両立します。MT・AT・CVT・EVドライブの仕組みを理解しましょう。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "automotive-electrical",
+"title": "車載電気システム（12V/48V・ハーネス・ECU）",
+"level": 2,
+"category": "Automotive",
+"related": [
+"electricity-basics",
+"ohms-law",
+"electric-power",
+"semiconductor",
+"ev-battery"
+],
+"next": [
+"ev-battery"
+],
+"tags": [
+"automotive",
+"electrical",
+"12v",
+"48v",
+"harness",
+"ecu",
+"can",
+"electronics"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "現代の自動車には100個以上のECU（電子制御ユニット）と数kmのワイヤーハーネスが搭載されています。電気の基礎知識が車の設計・整備・診断に直結します。「電気の基礎（V=RI）」を自動車の文脈で理解しましょう。",
+"views": 0,
+"completed": false,
+"favorite": false
+}
+]
+},
+{
+"name": "Wireless",
+"articles": [
+{
+"slug": "wireless-basics",
+"title": "無線通信の基礎（電波・周波数・変調）",
+"level": 1,
+"category": "Wireless",
+"related": [
+"wifi",
+"bluetooth",
+"lte-5g",
+"v2x-wireless",
+"electromagnetic-induction"
+],
+"next": [
+"wifi"
+],
+"tags": [
+"wireless",
+"radio",
+"frequency",
+"modulation",
+"antenna",
+"basics"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "無線通信は電磁波（電波）を使って情報を伝える技術です。Wi-Fi・Bluetooth・5G・車載V2X・GPSはすべて異なる周波数帯の電波を使っています。「なぜ5GHzのWi-Fiは壁に弱いのか」「なぜ5Gは速いのか」を電波の物理から理解し",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "bluetooth",
+"title": "Bluetooth（Classic/BLE）の仕組みと車載応用",
+"level": 2,
+"category": "Wireless",
+"related": [
+"wireless-basics",
+"wifi",
+"lte-5g",
+"v2x-wireless"
+],
+"next": [],
+"tags": [
+"bluetooth",
+"ble",
+"bluetooth-le",
+"automotive",
+"wireless",
+"pairing"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "BluetoothはIEEE 802.15.1を基にしたWPAN（無線個人エリアネットワーク）規格です。スマートフォンのハンズフリー通話・音楽ストリーミング・ワイヤレスイヤホン・車載診断ツールまで広く使われています。2.4GHz帯を周波数ホ",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "gnss",
+"title": "GPS/GNSS（全球測位システム）と自動車への応用",
+"level": 2,
+"category": "Wireless",
+"related": [
+"wireless-basics",
+"v2x-wireless",
+"lte-5g",
+"automotive-electrical"
+],
+"next": [],
+"tags": [
+"gps",
+"gnss",
+"positioning",
+"navigation",
+"automotive",
+"wireless"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "GNSS（Global Navigation Satellite System）はGPS・GLONASS・Galileo・みちびきなどの衛星測位システムの総称です。カーナビゲーション・自動運転・タクシー配車・緊急通報（eCall）に不可欠で",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "lte-5g",
+"title": "LTE/5G セルラー通信の仕組みと車載応用",
+"level": 2,
+"category": "Wireless",
+"related": [
+"wireless-basics",
+"wifi",
+"v2x-wireless",
+"ota"
+],
+"next": [
+"v2x-wireless"
+],
+"tags": [
+"lte",
+"5g",
+"cellular",
+"nr",
+"automotive",
+"telematics",
+"ota"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "LTE（4G）と5Gは全国規模のモバイル通信インフラです。自動車では「テレマティクス（位置情報・盗難追跡）」「OTA（Over-the-Air）アップデート」「コネクテッドカー」「C-V2X（Cellular V2X）」に活用されています。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "wifi",
+"title": "Wi-Fi（IEEE 802.11）の仕組みと規格",
+"level": 2,
+"category": "Wireless",
+"related": [
+"wireless-basics",
+"bluetooth",
+"lte-5g",
+"ethernet"
+],
+"next": [],
+"tags": [
+"wifi",
+"ieee80211",
+"wireless-lan",
+"802.11ax",
+"ofdm",
+"networking"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "Wi-Fi（IEEE 802.11）は世界中で使われている無線LAN規格です。「なぜ5GHzは速いが繋がりにくいのか」「Wi-Fi 6は何が違うのか」を物理層から理解しましょう。車載では駐車場の地図更新・ディーラーでの診断・路車間通信の補助",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "v2x-wireless",
+"title": "車載無線通信（V2X・DSRC・C-V2X）",
+"level": 3,
+"category": "Wireless",
+"related": [
+"lte-5g",
+"wifi",
+"wireless-basics",
+"v2x",
+"automotive-electrical"
+],
+"next": [],
+"tags": [
+"v2x",
+"dsrc",
+"c-v2x",
+"vehicle-to-vehicle",
+"automotive",
+"safety",
+"wireless"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"excerpt": "V2X（Vehicle-to-Everything）は車と「あらゆるもの」が通信する技術です。車車間（V2V）・車路間（V2I）・車人間（V2P）・車クラウド（V2N）からなり、信号情報取得・衝突回避・自動運転の重要インフラです。DSRC（",
 "views": 0,
 "completed": false,
 "favorite": false

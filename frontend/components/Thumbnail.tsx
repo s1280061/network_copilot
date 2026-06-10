@@ -19,6 +19,8 @@ export const CATEGORY_STYLE: Record<
   GenAI:     { bg: "bg-pink-100",   text: "text-pink-800",   icon: "✨" },
   CV:          { bg: "bg-teal-100",    text: "text-teal-800",    icon: "👁️" },
   Electronics: { bg: "bg-amber-100",  text: "text-amber-800",   icon: "⚡" },
+  Automotive:  { bg: "bg-red-100",    text: "text-red-800",     icon: "🚗" },
+  Wireless:    { bg: "bg-cyan-100",   text: "text-cyan-800",    icon: "📡" },
 };
 
 export const DEFAULT_STYLE = {

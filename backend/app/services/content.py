@@ -19,7 +19,7 @@ _FRONTMATTER_RE = re.compile(r"^---\s*\n(.*?)\n---\s*\n(.*)$", re.DOTALL)
 _LINK_RE = re.compile(r"\[\[([a-z0-9\-]+)\]\]")
 
 # note-style top categories shown on the home screen.
-CATEGORIES = ["Ethernet", "TCP/IP", "PCAP", "SOME/IP", "AUTOSAR", "SDV", "Automotive Bus", "Diagnostics", "Security", "Howto", "Python", "ML", "DL", "GenAI", "CV", "Electronics"]
+CATEGORIES = ["Ethernet", "TCP/IP", "PCAP", "SOME/IP", "AUTOSAR", "SDV", "Automotive Bus", "Diagnostics", "Security", "Howto", "Python", "ML", "DL", "GenAI", "CV", "Electronics", "Automotive", "Wireless"]
 
 # slug -> category (overridable via frontmatter `category`).
 _CATEGORY_MAP = {
@@ -106,6 +106,20 @@ _CATEGORY_MAP = {
     # GenAI additional
     "langchain": "GenAI",
     "fine-tuning": "GenAI",
+    # Automotive
+    "engineering-drawing":       "Automotive",
+    "automotive-torque":         "Automotive",
+    "automotive-engine":         "Automotive",
+    "automotive-transmission":   "Automotive",
+    "automotive-electrical":     "Automotive",
+    "ev-battery":                "Automotive",
+    # Wireless
+    "wireless-basics":           "Wireless",
+    "wifi":                      "Wireless",
+    "bluetooth":                 "Wireless",
+    "lte-5g":                    "Wireless",
+    "v2x-wireless":              "Wireless",
+    "gnss":                      "Wireless",
     # Electronics
     "electricity-basics":        "Electronics",
     "ohms-law":                  "Electronics",
