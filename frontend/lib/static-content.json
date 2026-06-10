@@ -96,6 +96,33 @@
 "favorite": false
 },
 {
+"slug": "ohms-law",
+"title": "オームの法則（V = RI）",
+"level": 1,
+"category": "Electronics",
+"related": [
+"electricity-basics",
+"circuit-series-parallel",
+"electric-power"
+],
+"next": [
+"circuit-series-parallel"
+],
+"tags": [
+"ohms-law",
+"voltage",
+"current",
+"resistance",
+"electronics"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "オームの法則は電気の最も基本的な法則です。「電圧・電流・抵抗の関係」を一つの式で表します。1827年にゲオルク・オームが発見し、回路設計・故障診断・車載ECU開発のすべての場面で使われます。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "ml-basics",
 "title": "機械学習の基礎",
 "level": 1,
@@ -122,6 +149,33 @@
 "favorite": false
 },
 {
+"slug": "circuit-series-parallel",
+"title": "直列・並列回路と合成抵抗",
+"level": 1,
+"category": "Electronics",
+"related": [
+"ohms-law",
+"electric-power",
+"electricity-basics"
+],
+"next": [
+"electric-power"
+],
+"tags": [
+"series",
+"parallel",
+"circuit",
+"resistance",
+"electronics"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "複数の抵抗を組み合わせた回路には「直列」と「並列」の2種類があります。この2つの接続の違いを理解することは、電子回路設計・故障診断・車載ハーネス設計の基本です。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "communication-basics",
 "title": "通信とは",
 "level": 1,
@@ -139,6 +193,58 @@
 "difficulty": "初級",
 "updated": "2026-06-10",
 "excerpt": "通信とは、ある機器から別の機器へ「データ」を届けることです。届ける相手・順番・形式を双方が約束しておくことで、初めて意味のあるやり取りが成立します。この約束ごとを **プロトコル** と呼びます。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "electric-power",
+"title": "電力・電力量とジュール熱",
+"level": 1,
+"category": "Electronics",
+"related": [
+"ohms-law",
+"circuit-series-parallel",
+"electricity-basics"
+],
+"next": [],
+"tags": [
+"power",
+"energy",
+"joule-heat",
+"watt",
+"electronics"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "電力は「1秒あたりに消費するエネルギー」、電力量は「使ったエネルギーの合計」です。家電の消費電力・電池の持ち時間・抵抗の発熱量はすべてここで計算します。車載ECUの熱設計にも不可欠な知識です。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "electricity-basics",
+"title": "電気の基礎（電流・電圧・抵抗）",
+"level": 1,
+"category": "Electronics",
+"related": [
+"ohms-law",
+"circuit-series-parallel",
+"electric-power"
+],
+"next": [
+"ohms-law"
+],
+"tags": [
+"electricity",
+"current",
+"voltage",
+"resistance",
+"basics"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "電気は現代のあらゆるテクノロジーの基盤です。スマートフォン・車・コンピューターはすべて電気で動いています。「なぜ電気が流れるのか」を原子レベルから理解することが、電子工学・組み込み開発・車載ECU設計の出発点です。",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -681,6 +787,32 @@
 "favorite": false
 },
 {
+"slug": "capacitor",
+"title": "コンデンサ（静電容量・充放電）",
+"level": 2,
+"category": "Electronics",
+"related": [
+"electric-field",
+"alternating-current",
+"ohms-law",
+"electromagnetic-induction"
+],
+"next": [],
+"tags": [
+"capacitor",
+"capacitance",
+"charge",
+"rc-circuit",
+"electronics"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "コンデンサは「電荷を蓄えるデバイス」です。2枚の金属板の間に電場を生じさせてエネルギーを蓄えます。電源のノイズ除去・タイマー回路・フィルタ・DRAM・非接触ICカードなど、あらゆる電子回路に使われています。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "subnet",
 "title": "サブネット / **CIDR**",
 "level": 2,
@@ -757,6 +889,32 @@
 "favorite": false
 },
 {
+"slug": "alternating-current",
+"title": "交流回路（AC・RMS・インピーダンス）",
+"level": 2,
+"category": "Electronics",
+"related": [
+"ohms-law",
+"capacitor",
+"electromagnetic-induction",
+"electric-power"
+],
+"next": [],
+"tags": [
+"ac",
+"alternating-current",
+"rms",
+"impedance",
+"electronics"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "家庭のコンセントは「交流（AC）」です。直流（DC）と違い、電圧と電流が周期的に向きを変えます。日本では50/60Hzの正弦波交流が使われています。コンデンサ・コイルが絡む回路ではインピーダンスという概念が必要になります。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "classification",
 "title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）",
 "level": 2,
@@ -780,6 +938,31 @@
 "difficulty": "初級",
 "updated": "2026-06-10",
 "excerpt": "分類（Classification）は入力データが「どのクラスに属するか」を予測するタスクです。スパム判定・故障検知・画像認識などに使います。代表的な4つのアルゴリズムを比較しながら解説します。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "semiconductor",
+"title": "半導体の仕組み（PN接合・トランジスタ）",
+"level": 2,
+"category": "Electronics",
+"related": [
+"electricity-basics",
+"electric-field",
+"ohms-law"
+],
+"next": [],
+"tags": [
+"semiconductor",
+"transistor",
+"diode",
+"pn-junction",
+"electronics"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "半導体はスマートフォン・PC・車載ECUのすべてに使われている現代文明の基盤素材です。「どうして電流を制御できるのか」を理解することは、電子回路設計・組み込み開発の出発点です。",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -838,6 +1021,33 @@
 "favorite": false
 },
 {
+"slug": "magnetism",
+"title": "磁界・電磁力（フレミングの法則）",
+"level": 2,
+"category": "Electronics",
+"related": [
+"electricity-basics",
+"electromagnetic-induction",
+"electric-field"
+],
+"next": [
+"electromagnetic-induction"
+],
+"tags": [
+"magnetism",
+"magnetic-field",
+"fleming",
+"electronics",
+"physics"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "電気と磁気は密接に関係しています。電流が流れると磁界が生まれ、磁界の中の電流は力を受けます（電磁力）。この原理がモーター・スピーカー・変圧器・MRIのすべての基盤です。車載システムではABSセンサーやEVのモーター制御に直結します。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "statistics",
 "title": "統計学の基礎（確率・分布・検定）",
 "level": 2,
@@ -886,6 +1096,60 @@
 "difficulty": "初級",
 "updated": "2026-06-10",
 "excerpt": "線形回帰は「入力 X から連続値 y を予測する」最もシンプルな機械学習モデルです。数値の予測（売上・気温・価格など）に使います。モデルの解釈性が高く、まず試すべきベースラインです。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "electric-field",
+"title": "電場とクーロンの法則",
+"level": 2,
+"category": "Electronics",
+"related": [
+"electricity-basics",
+"capacitor",
+"ohms-law"
+],
+"next": [
+"capacitor"
+],
+"tags": [
+"electric-field",
+"coulomb",
+"charge",
+"electronics",
+"physics"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "電場（電界）は「電荷の周りに生じる力の場」です。クーロンの法則は2つの電荷の間に働く力を表します。コンデンサ・絶縁体・半導体デバイスの動作原理はすべてこの電場の概念から理解できます。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "electromagnetic-induction",
+"title": "電磁誘導とファラデーの法則",
+"level": 2,
+"category": "Electronics",
+"related": [
+"magnetism",
+"alternating-current",
+"capacitor"
+],
+"next": [
+"alternating-current"
+],
+"tags": [
+"electromagnetic-induction",
+"faraday",
+"lenz",
+"transformer",
+"electronics"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "電磁誘導は「磁束の変化が起電力を生む」現象です。1831年にファラデーが発見したこの法則が、発電機・変圧器・非接触充電（ワイヤレス充電）・車載センサー（ABS・クランク角センサー）の原理です。",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -2340,6 +2604,58 @@
 "completed": false,
 "favorite": false
 },
+"ohms-law": {
+"slug": "ohms-law",
+"title": "オームの法則（V = RI）",
+"level": 1,
+"category": "Electronics",
+"related": [
+"electricity-basics",
+"circuit-series-parallel",
+"electric-power"
+],
+"next": [
+"circuit-series-parallel"
+],
+"tags": [
+"ohms-law",
+"voltage",
+"current",
+"resistance",
+"electronics"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>オームの法則は電気の最も基本的な法則です。「電圧・電流・抵抗の関係」を一つの式で表します。1827年にゲオルク・オームが発見し、回路設計・故障診断・車載ECU開発のすべての場面で使われます。</p>\n<h2>オームの法則</h2>\n<p>$$V = R \\times I$$</p>\n<ul>\n<li><strong>V</strong>：電圧 [V（ボルト）]</li>\n<li><strong>R</strong>：抵抗 [Ω（オーム）]</li>\n<li><strong>I</strong>：電流 [A（アンペア）]</li>\n</ul>\n<pre><code>覚え方（オームの三角形）:\n\n        [ V ]\n       -------\n       [ R×I ]\n\n  V = R × I    → 電圧を求める\n  I = V ÷ R    → 電流を求める\n  R = V ÷ I    → 抵抗を求める\n</code></pre>\n<h2>計算例</h2>\n<pre><code class=\"language-python\"># オームの法則の計算\ndef ohms_law(V=None, R=None, I=None):\n    &quot;&quot;&quot;V, R, I のうち2つを与えると残り1つを返す&quot;&quot;&quot;\n    if V is None: return R * I,  &quot;V = R × I&quot;\n    if R is None: return V / I,  &quot;R = V / I&quot;\n    if I is None: return V / R,  &quot;I = V / R&quot;\n\n# 例1: 12V の電源に 4Ω の抵抗をつなぐと電流は？\nI, formula = ohms_law(V=12, R=4)\nprint(f&quot;電流 I = {I} A  ({formula})&quot;)   # → 3.0 A\n\n# 例2: 5V の電源で 0.02A 流したい。抵抗は？\nR, formula = ohms_law(V=5, I=0.02)\nprint(f&quot;抵抗 R = {R} Ω  ({formula})&quot;)   # → 250.0 Ω\n\n# 例3: 100Ω に 2A 流れている。電圧は？\nV, formula = ohms_law(R=100, I=2)\nprint(f&quot;電圧 V = {V} V  ({formula})&quot;)   # → 200.0 V\n</code></pre>\n<h2>グラフで見るオームの法則</h2>\n<pre><code class=\"language-python\">import numpy as np\nimport matplotlib.pyplot as plt\n\nfig, axes = plt.subplots(1, 2, figsize=(12, 5))\n\n# 同じ抵抗でも電圧が大きいほど電流が大きい\nV_range = np.linspace(0, 10, 100)\nfor R in [1, 2, 5, 10]:\n    I = V_range / R\n    axes[0].plot(V_range, I, label=f&quot;R = {R} Ω&quot;)\naxes[0].set_xlabel(&quot;電圧 V [V]&quot;)\naxes[0].set_ylabel(&quot;電流 I [A]&quot;)\naxes[0].set_title(&quot;電圧−電流特性&quot;)\naxes[0].legend()\naxes[0].grid(True)\n\n# 同じ電圧でも抵抗が大きいほど電流は小さい\nR_range = np.linspace(1, 50, 100)\nfor V in [5, 10, 20]:\n    I = V / R_range\n    axes[1].plot(R_range, I, label=f&quot;V = {V} V&quot;)\naxes[1].set_xlabel(&quot;抵抗 R [Ω]&quot;)\naxes[1].set_ylabel(&quot;電流 I [A]&quot;)\naxes[1].set_title(&quot;抵抗−電流特性&quot;)\naxes[1].legend()\naxes[1].grid(True)\n\nplt.tight_layout()\nplt.show()\n</code></pre>\n<h2>実際の回路での使い方</h2>\n<h3>LED に流す電流の制限抵抗</h3>\n<pre><code class=\"language-python\"># LEDを点灯させるときの抵抗計算\nV_supply = 5.0    # 電源電圧 [V]\nV_led    = 2.0    # LEDの順方向電圧降下 [V]\nI_led    = 0.020  # LEDに流したい電流 [A] = 20mA\n\n# LEDと抵抗で分担する電圧\nV_resistor = V_supply - V_led   # = 3.0 V\n\n# 必要な抵抗値\nR = V_resistor / I_led\nprint(f&quot;必要な抵抗: {R} Ω&quot;)     # → 150 Ω\nprint(f&quot;最も近い規格値: 150Ω または 180Ω を使う&quot;)\n</code></pre>\n<h3>車載システム（12V）の例</h3>\n<pre><code class=\"language-python\"># 自動車のヘッドライト（55W, 12V）の電流\nV = 12    # バッテリー電圧\nP = 55    # 電力 [W]\n\nI = P / V\nprint(f&quot;ヘッドライトの電流: {I:.2f} A&quot;)   # → 4.58 A\n\nR = V / I\nprint(f&quot;等価抵抗: {R:.2f} Ω&quot;)             # → 2.62 Ω\n\n# ECUの制御回路（3.3V, 10mA）\nV_ecu = 3.3\nI_ecu = 0.010   # 10mA\nR_ecu = V_ecu / I_ecu\nprint(f&quot;ECU制御回路の抵抗: {R_ecu} Ω&quot;)   # → 330 Ω\n</code></pre>\n<h2>抵抗のカラーコード</h2>\n<p>市販の抵抗器には色のバンドで抵抗値が書かれています。</p>\n<pre><code>4バンド抵抗の読み方:\n\n  [第1色][第2色][乗数色][許容差色]\n\n  黒=0, 茶=1, 赤=2, 橙=3, 黄=4\n  緑=5, 青=6, 紫=7, 灰=8, 白=9\n  乗数: 金=×0.1, 銀=×0.01\n  許容差: 金=±5%, 銀=±10%\n\n例: 茶・黒・赤・金 = 1, 0, ×100, ±5%\n                    = 1000 Ω = 1 kΩ ±5%\n</code></pre>\n<pre><code class=\"language-python\">COLOR_CODE = {\n    &quot;黒&quot;: 0, &quot;茶&quot;: 1, &quot;赤&quot;: 2, &quot;橙&quot;: 3, &quot;黄&quot;: 4,\n    &quot;緑&quot;: 5, &quot;青&quot;: 6, &quot;紫&quot;: 7, &quot;灰&quot;: 8, &quot;白&quot;: 9,\n}\nMULTIPLIER = {&quot;黒&quot;: 1, &quot;茶&quot;: 10, &quot;赤&quot;: 100, &quot;橙&quot;: 1e3, &quot;黄&quot;: 1e4,\n              &quot;緑&quot;: 1e5, &quot;青&quot;: 1e6, &quot;金&quot;: 0.1, &quot;銀&quot;: 0.01}\nTOLERANCE  = {&quot;金&quot;: &quot;±5%&quot;, &quot;銀&quot;: &quot;±10%&quot;, &quot;茶&quot;: &quot;±1%&quot;, &quot;赤&quot;: &quot;±2%&quot;}\n\ndef read_resistor(b1, b2, mult, tol):\n    r = (COLOR_CODE[b1] * 10 + COLOR_CODE[b2]) * MULTIPLIER[mult]\n    if r &gt;= 1e6: label = f&quot;{r/1e6:.1f} MΩ&quot;\n    elif r &gt;= 1e3: label = f&quot;{r/1e3:.1f} kΩ&quot;\n    else: label = f&quot;{r:.0f} Ω&quot;\n    return f&quot;{label} {TOLERANCE[tol]}&quot;\n\nprint(read_resistor(&quot;茶&quot;, &quot;黒&quot;, &quot;赤&quot;, &quot;金&quot;))    # → 1.0 kΩ ±5%\nprint(read_resistor(&quot;黄&quot;, &quot;紫&quot;, &quot;橙&quot;, &quot;金&quot;))    # → 47.0 kΩ ±5%\n</code></pre>\n<p>オームの法則を使った回路計算は <a class=\"term-link\" data-slug=\"circuit-series-parallel\" href=\"/glossary/circuit-series-parallel\">直列・並列回路と合成抵抗</a> で詳しく学びましょう。</p>",
+"prereq_full": [
+{
+"slug": "electricity-basics",
+"title": "電気の基礎（電流・電圧・抵抗）"
+}
+],
+"related_full": [
+{
+"slug": "electricity-basics",
+"title": "電気の基礎（電流・電圧・抵抗）"
+},
+{
+"slug": "circuit-series-parallel",
+"title": "直列・並列回路と合成抵抗"
+},
+{
+"slug": "electric-power",
+"title": "電力・電力量とジュール熱"
+}
+],
+"next_full": [
+{
+"slug": "circuit-series-parallel",
+"title": "直列・並列回路と合成抵抗"
+}
+],
+"completed": false,
+"favorite": false
+},
 "ml-basics": {
 "slug": "ml-basics",
 "title": "機械学習の基礎",
@@ -2386,6 +2702,58 @@
 "completed": false,
 "favorite": false
 },
+"circuit-series-parallel": {
+"slug": "circuit-series-parallel",
+"title": "直列・並列回路と合成抵抗",
+"level": 1,
+"category": "Electronics",
+"related": [
+"ohms-law",
+"electric-power",
+"electricity-basics"
+],
+"next": [
+"electric-power"
+],
+"tags": [
+"series",
+"parallel",
+"circuit",
+"resistance",
+"electronics"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>複数の抵抗を組み合わせた回路には「直列」と「並列」の2種類があります。この2つの接続の違いを理解することは、電子回路設計・故障診断・車載ハーネス設計の基本です。</p>\n<h2>直列回路</h2>\n<p>直列回路は抵抗を一列につないだ回路です。</p>\n<pre><code>直列回路:\n\n  +─────[R1]─────[R2]─────[R3]─────−\n  電源          ← 電流 I →\n</code></pre>\n<p><strong>直列接続のポイント:</strong>\n- 電流はすべての抵抗で同じ <code>I₁ = I₂ = I₃ = I</code>\n- 電圧は各抵抗で分担する <code>V = V₁ + V₂ + V₃</code>\n- 合成抵抗は各抵抗の和 <code>R合 = R₁ + R₂ + R₃</code></p>\n<pre><code class=\"language-python\">import numpy as np\nimport matplotlib.pyplot as plt\n\ndef series_resistance(*resistors):\n    &quot;&quot;&quot;直列合成抵抗&quot;&quot;&quot;\n    return sum(resistors)\n\ndef series_circuit(V_supply, *resistors):\n    R_total = series_resistance(*resistors)\n    I = V_supply / R_total\n    voltages = [I * R for R in resistors]\n    return {\n        &quot;R_total&quot;: R_total,\n        &quot;I&quot;: I,\n        &quot;V_each&quot;: voltages,\n    }\n\n# 例: 12V 電源に 2Ω, 4Ω, 6Ω を直列接続\nresult = series_circuit(12, 2, 4, 6)\nprint(f&quot;合成抵抗: {result['R_total']} Ω&quot;)\nprint(f&quot;電流:     {result['I']} A&quot;)\nfor i, V in enumerate(result['V_each'], 1):\n    print(f&quot;R{i} の電圧降下: {V} V&quot;)\n# → 合成抵抗: 12 Ω\n# → 電流: 1.0 A\n# → R1: 2V, R2: 4V, R3: 6V（合計 = 12V）\n</code></pre>\n<h2>並列回路</h2>\n<p>並列回路は抵抗を横に並べてつないだ回路です。</p>\n<pre><code>並列回路:\n\n  +──┬──[R1]──┬──−\n     │         │\n     ├──[R2]──┤\n     │         │\n     └──[R3]──┘\n</code></pre>\n<p><strong>並列接続のポイント:</strong>\n- 電圧はすべての抵抗で同じ <code>V₁ = V₂ = V₃ = V</code>\n- 電流は各抵抗で分かれる <code>I = I₁ + I₂ + I₃</code>\n- 合成抵抗は逆数の和の逆数 <code>1/R合 = 1/R₁ + 1/R₂ + 1/R₃</code></p>\n<pre><code class=\"language-python\">def parallel_resistance(*resistors):\n    &quot;&quot;&quot;並列合成抵抗&quot;&quot;&quot;\n    return 1 / sum(1/R for R in resistors)\n\ndef parallel_circuit(V_supply, *resistors):\n    R_total = parallel_resistance(*resistors)\n    I_each  = [V_supply / R for R in resistors]\n    I_total = sum(I_each)\n    return {\n        &quot;R_total&quot;: R_total,\n        &quot;I_total&quot;: I_total,\n        &quot;I_each&quot;: I_each,\n    }\n\n# 例: 12V 電源に 6Ω, 12Ω, 12Ω を並列接続\nresult = parallel_circuit(12, 6, 12, 12)\nprint(f&quot;合成抵抗: {result['R_total']:.2f} Ω&quot;)\nprint(f&quot;合計電流: {result['I_total']:.2f} A&quot;)\nfor i, I in enumerate(result['I_each'], 1):\n    print(f&quot;R{i} の電流: {I} A&quot;)\n# → 合成抵抗: 3.00 Ω\n# → 合計電流: 4.00 A\n# → R1: 2A, R2: 1A, R3: 1A\n</code></pre>\n<h2>直列 vs 並列まとめ</h2>\n<pre><code class=\"language-mermaid\">graph TD\n  A[複数の抵抗を接続] --&gt; B{接続方式}\n  B --&gt;|直列| C[&quot;R合 = R₁ + R₂ + …\\n電流は同じ\\n電圧は分かれる&quot;]\n  B --&gt;|並列| D[&quot;1/R合 = 1/R₁ + 1/R₂ + …\\n電圧は同じ\\n電流は分かれる&quot;]\n  C --&gt; E[&quot;合成抵抗 ＞ 最大抵抗\\n（必ず大きくなる）&quot;]\n  D --&gt; F[&quot;合成抵抗 ＜ 最小抵抗\\n（必ず小さくなる）&quot;]\n</code></pre>\n<h2>直並列混合回路</h2>\n<pre><code class=\"language-python\">def solve_mixed_circuit():\n    &quot;&quot;&quot;\n    回路図:\n      12V ─[2Ω]─┬─[3Ω]─┬─ GND\n                 ├─[6Ω]─┤\n    &quot;&quot;&quot;\n    V = 12\n    R1 = 2     # 直列抵抗\n    R2, R3 = 3, 6   # 並列部分\n\n    R_parallel = parallel_resistance(R2, R3)   # 3Ω と 6Ω の並列\n    R_total    = R1 + R_parallel                # 直列合成\n\n    I_total = V / R_total\n    V_R1    = I_total * R1\n    V_par   = I_total * R_parallel   # 並列部分の電圧\n\n    I_R2 = V_par / R2\n    I_R3 = V_par / R3\n\n    print(f&quot;並列合成抵抗: {R_parallel:.2f} Ω&quot;)\n    print(f&quot;全体合成抵抗: {R_total:.2f} Ω&quot;)\n    print(f&quot;全体電流: {I_total:.3f} A&quot;)\n    print(f&quot;R1(2Ω)の電圧: {V_R1:.2f} V&quot;)\n    print(f&quot;並列部分の電圧: {V_par:.2f} V&quot;)\n    print(f&quot;R2(3Ω)の電流: {I_R2:.3f} A&quot;)\n    print(f&quot;R3(6Ω)の電流: {I_R3:.3f} A&quot;)\n\nsolve_mixed_circuit()\n</code></pre>\n<h2>電圧分割（分圧器）</h2>\n<pre><code class=\"language-python\"># 分圧器: 大きな電圧から小さな電圧を作る\ndef voltage_divider(V_in, R1, R2):\n    &quot;&quot;&quot;R1とR2の直列でV_inを分圧&quot;&quot;&quot;\n    V_out = V_in * R2 / (R1 + R2)\n    return V_out\n\n# 例: 12V から 3.3V を作る\nR1, R2 = 2700, 1000   # 2.7kΩ と 1kΩ\nV_out = voltage_divider(12, R1, R2)\nprint(f&quot;分圧出力: {V_out:.2f} V&quot;)   # → 3.24V\n\n# センサーの読み取り（温度センサーNTC）\nimport numpy as np\nR_fixed = 10000   # 固定抵抗 10kΩ\nV_supply = 5.0\n\nR_ntc_values = np.array([50000, 25000, 10000, 5000, 2000])  # 温度で変化\nfor R_ntc in R_ntc_values:\n    V_adc = voltage_divider(V_supply, R_fixed, R_ntc)\n    print(f&quot;NTC={R_ntc/1000:.0f}kΩ → ADC電圧={V_adc:.2f}V&quot;)\n</code></pre>\n<h2>キルヒホッフの法則</h2>\n<p>複雑な回路は「キルヒホッフの法則」で解けます。</p>\n<p><strong>電流則（KCL）</strong>: 節点に流れ込む電流の総和 = 流れ出す電流の総和\n<strong>電圧則（KVL）</strong>: 閉ループの電圧の和 = 0</p>\n<pre><code class=\"language-python\"># 連立方程式で回路を解く\nimport numpy as np\n\n# 2ループ回路の例:\n# ループ1: V1=12V, R1=2Ω, R3=4Ω (電流I1)\n# ループ2: V2=6V,  R2=3Ω, R3=4Ω (電流I2)\n# KVL:\n# ループ1: 12 = 2*I1 + 4*(I1-I2) → 12 = 6*I1 - 4*I2\n# ループ2:  6 = 3*I2 + 4*(I2-I1) →  6 = -4*I1 + 7*I2\n\nA = np.array([[6, -4], [-4, 7]])\nb = np.array([12, 6])\nI = np.linalg.solve(A, b)\nprint(f&quot;I1 = {I[0]:.3f} A&quot;)\nprint(f&quot;I2 = {I[1]:.3f} A&quot;)\nprint(f&quot;R3の電流 = {I[0]-I[1]:.3f} A&quot;)\n</code></pre>",
+"prereq_full": [
+{
+"slug": "ohms-law",
+"title": "オームの法則（V = RI）"
+}
+],
+"related_full": [
+{
+"slug": "ohms-law",
+"title": "オームの法則（V = RI）"
+},
+{
+"slug": "electric-power",
+"title": "電力・電力量とジュール熱"
+},
+{
+"slug": "electricity-basics",
+"title": "電気の基礎（電流・電圧・抵抗）"
+}
+],
+"next_full": [
+{
+"slug": "electric-power",
+"title": "電力・電力量とジュール熱"
+}
+],
+"completed": false,
+"favorite": false
+},
 "communication-basics": {
 "slug": "communication-basics",
 "title": "通信とは",
@@ -2419,6 +2787,98 @@
 {
 "slug": "osi",
 "title": "OSI参照モデル"
+}
+],
+"completed": false,
+"favorite": false
+},
+"electric-power": {
+"slug": "electric-power",
+"title": "電力・電力量とジュール熱",
+"level": 1,
+"category": "Electronics",
+"related": [
+"ohms-law",
+"circuit-series-parallel",
+"electricity-basics"
+],
+"next": [],
+"tags": [
+"power",
+"energy",
+"joule-heat",
+"watt",
+"electronics"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>電力は「1秒あたりに消費するエネルギー」、電力量は「使ったエネルギーの合計」です。家電の消費電力・電池の持ち時間・抵抗の発熱量はすべてここで計算します。車載ECUの熱設計にも不可欠な知識です。</p>\n<h2>電力（P）</h2>\n<p>$$P = V \\times I$$</p>\n<ul>\n<li><strong>P</strong>：電力 [W（ワット）]</li>\n<li><strong>V</strong>：電圧 [V]</li>\n<li><strong>I</strong>：電流 [A]</li>\n</ul>\n<p>オームの法則（V = RI）を代入すると3通りの式が導けます：</p>\n<pre><code>P = V × I         （電圧と電流がわかるとき）\nP = I² × R        （電流と抵抗がわかるとき）\nP = V² ÷ R        （電圧と抵抗がわかるとき）\n</code></pre>\n<pre><code class=\"language-python\">def calc_power(V=None, I=None, R=None):\n    &quot;&quot;&quot;V, I, R のうち2つから電力を計算&quot;&quot;&quot;\n    if V is not None and I is not None:\n        return V * I,    &quot;P = V × I&quot;\n    if I is not None and R is not None:\n        return I**2 * R, &quot;P = I² × R&quot;\n    if V is not None and R is not None:\n        return V**2 / R, &quot;P = V² / R&quot;\n\nP, formula = calc_power(V=100, I=1.0)\nprint(f&quot;P = {P} W  ({formula})&quot;)   # 100W の電球\n\nP, formula = calc_power(I=5, R=2)\nprint(f&quot;P = {P} W  ({formula})&quot;)   # 5A が 2Ω を流れる → 50W\n\nP, formula = calc_power(V=12, R=4)\nprint(f&quot;P = {P} W  ({formula})&quot;)   # 12V, 4Ω → 36W\n</code></pre>\n<h2>電力量（W·h、J）</h2>\n<p>電力量は「電力 × 時間」で求まります。</p>\n<p>$$W = P \\times t$$</p>\n<pre><code class=\"language-python\"># 電力量の計算\ndef calc_energy_kwh(power_W, hours):\n    &quot;&quot;&quot;消費電力量 [kWh]&quot;&quot;&quot;\n    return power_W * hours / 1000\n\n# 家電の1日あたりの電力量\nappliances = {\n    &quot;エアコン（冷房）&quot;:  (700,  8),   # 700W × 8時間\n    &quot;冷蔵庫&quot;:          (150, 24),\n    &quot;LED電球&quot;:          (10,   5),\n    &quot;ノートPC&quot;:        (50,   6),\n    &quot;スマホ充電&quot;:       (10,   1),\n}\n\ntotal = 0\nfor name, (W, h) in appliances.items():\n    kwh = calc_energy_kwh(W, h)\n    total += kwh\n    print(f&quot;{name:18s}: {W:4d}W × {h:2d}h = {kwh:.3f} kWh&quot;)\nprint(f&quot;\\n1日の合計: {total:.3f} kWh&quot;)\nprint(f&quot;電気代（30円/kWh）: {total*30:.0f} 円/日&quot;)\n</code></pre>\n<h2>ジュール熱</h2>\n<p>電流が抵抗を流れるとき、電気エネルギーが<strong>熱</strong>に変わります。これをジュール熱といいます。</p>\n<p>$$Q = I^2 \\times R \\times t = P \\times t$$</p>\n<pre><code class=\"language-python\">import numpy as np\nimport matplotlib.pyplot as plt\n\n# 抵抗の発熱量シミュレーション\ndef joule_heat(I, R, t_seconds):\n    &quot;&quot;&quot;発熱量 [J] と温度上昇の概算&quot;&quot;&quot;\n    Q = I**2 * R * t_seconds\n    return Q\n\n# ECU基板の抵抗（1Ω, 100mA）が10分間発熱すると？\nI, R, t = 0.1, 1, 600   # 100mA, 1Ω, 600秒\nQ = joule_heat(I, R, t)\nprint(f&quot;発熱量: {Q} J&quot;)\n\n# ヒューズが切れる仕組み\n# ヒューズは一定以上の電流で溶けるように設計\nfuse_ratings = {\n    &quot;5A ヒューズ&quot;:  5,\n    &quot;10A ヒューズ&quot;: 10,\n    &quot;20A ヒューズ&quot;: 20,\n}\nR_fuse = 0.01   # ヒューズ抵抗 10mΩ\nfor name, I_rated in fuse_ratings.items():\n    P = I_rated**2 * R_fuse\n    print(f&quot;{name}: 定格電力 = {P:.2f} W&quot;)\n</code></pre>\n<h2>電池の持ち時間</h2>\n<pre><code class=\"language-python\">def battery_life(capacity_mAh, current_mA, efficiency=0.8):\n    &quot;&quot;&quot;\n    電池容量と消費電流から持ち時間を計算\n    efficiency: 取り出せるエネルギーの割合（80%が一般的）\n    &quot;&quot;&quot;\n    hours = (capacity_mAh * efficiency) / current_mA\n    return hours\n\n# スマートフォン（4000mAh）のバッテリー持ち\nscenarios = {\n    &quot;スタンバイ（10mA）&quot;:        10,\n    &quot;通常使用（200mA）&quot;:        200,\n    &quot;動画視聴（500mA）&quot;:        500,\n    &quot;高負荷ゲーム（1000mA）&quot;: 1000,\n}\ncap = 4000   # mAh\n\nfor scenario, I_mA in scenarios.items():\n    h = battery_life(cap, I_mA)\n    print(f&quot;{scenario:25s}: {h:.1f} 時間&quot;)\n\n# 車載ECU（12V, 50mAh 待機電流）\n# 1ヶ月放置するとバッテリーに与える影響\nI_ecus_total = 50    # mA（暗電流）\ndays = 30\ncharge_consumed = I_ecus_total * 24 * days / 1000   # Ah\nprint(f&quot;\\n30日間の暗電流消費: {charge_consumed:.1f} Ah&quot;)\nprint(f&quot;60Ah バッテリーへの影響: {charge_consumed/60*100:.1f}%&quot;)\n</code></pre>\n<h2>電力の単位変換まとめ</h2>\n<pre><code class=\"language-python\"># 単位変換\ndef unit_summary():\n    print(&quot;=== 電力の単位変換 ===&quot;)\n    print(&quot;1 W  = 1 J/s （1秒に1ジュール消費）&quot;)\n    print(&quot;1 kW = 1000 W&quot;)\n    print(&quot;1 MW = 10⁶ W&quot;)\n    print()\n    print(&quot;=== 電力量の単位変換 ===&quot;)\n    print(&quot;1 Wh  = 3600 J&quot;)\n    print(&quot;1 kWh = 3.6 × 10⁶ J&quot;)\n    print()\n    print(&quot;=== 代表的な電力値 ===&quot;)\n    examples = [\n        (&quot;LED電球&quot;,        &quot;10 W&quot;),\n        (&quot;白熱電球&quot;,        &quot;100 W&quot;),\n        (&quot;電子レンジ&quot;,      &quot;1000 W = 1 kW&quot;),\n        (&quot;エアコン（冷房）&quot;, &quot;700〜2500 W&quot;),\n        (&quot;電気自動車モーター&quot;,&quot;50〜200 kW&quot;),\n        (&quot;原子力発電所&quot;,    &quot;100万 kW = 1 GW&quot;),\n    ]\n    for name, power in examples:\n        print(f&quot;  {name:20s}: {power}&quot;)\n\nunit_summary()\n</code></pre>",
+"prereq_full": [
+{
+"slug": "circuit-series-parallel",
+"title": "直列・並列回路と合成抵抗"
+}
+],
+"related_full": [
+{
+"slug": "ohms-law",
+"title": "オームの法則（V = RI）"
+},
+{
+"slug": "circuit-series-parallel",
+"title": "直列・並列回路と合成抵抗"
+},
+{
+"slug": "electricity-basics",
+"title": "電気の基礎（電流・電圧・抵抗）"
+}
+],
+"next_full": [],
+"completed": false,
+"favorite": false
+},
+"electricity-basics": {
+"slug": "electricity-basics",
+"title": "電気の基礎（電流・電圧・抵抗）",
+"level": 1,
+"category": "Electronics",
+"related": [
+"ohms-law",
+"circuit-series-parallel",
+"electric-power"
+],
+"next": [
+"ohms-law"
+],
+"tags": [
+"electricity",
+"current",
+"voltage",
+"resistance",
+"basics"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>電気は現代のあらゆるテクノロジーの基盤です。スマートフォン・車・コンピューターはすべて電気で動いています。「なぜ電気が流れるのか」を原子レベルから理解することが、電子工学・組み込み開発・車載ECU設計の出発点です。</p>\n<h2>原子と電子</h2>\n<pre><code>原子の構造:\n\n       ○  ←── 陽子（+の電荷）\n      核  ←── 中性子（電荷なし）\n\n    ●       ←── 電子（−の電荷）\n  （軌道を回る）\n</code></pre>\n<p>物質はすべて<strong>原子</strong>でできています。原子の中心（原核）には<strong>陽子（+）と中性子</strong>があり、その周りを<strong>電子（−）</strong>が回っています。</p>\n<ul>\n<li>陽子と電子の数が同じ → 電気的に中性</li>\n<li>電子が1個少ない → プラスに帯電（正イオン）</li>\n<li>電子が1個多い → マイナスに帯電（負イオン）</li>\n</ul>\n<h2>自由電子と電気伝導</h2>\n<p>銅や鉄などの<strong>金属</strong>では、一部の電子が原子の束縛を離れて自由に動ける<strong>自由電子</strong>になっています。</p>\n<pre><code>金属の内部イメージ:\n\n  Cu²⁺  Cu²⁺  Cu²⁺  Cu²⁺\n    ●→    ●→    ●→    ●→   ← 自由電子がドリフト\n  Cu²⁺  Cu²⁺  Cu²⁺  Cu²⁺\n    ●→    ●→    ●→    ●→\n</code></pre>\n<p>電圧をかけると自由電子が一方向に流れる。これが<strong>電流</strong>です。</p>\n<h2>電流（I）</h2>\n<p><strong>電流</strong>とは、単位時間あたりに流れる電気の量です。</p>\n<p>$$I = \\frac{Q}{t}$$</p>\n<ul>\n<li><strong>I</strong>：電流 [A（アンペア）]</li>\n<li><strong>Q</strong>：電荷量 [C（クーロン）]</li>\n<li><strong>t</strong>：時間 [s（秒）]</li>\n</ul>\n<pre><code>注意：電流の向きと電子の向きは逆！\n\n電流の向き: +極 →→→→→→ −極\n電子の向き: +極 ←←←←←← −極\n</code></pre>\n<p>歴史的に電流の向きは「+から−に流れる」と定義されましたが、実際に動いているのは−の電子で、−極から+極に移動します。</p>\n<h2>電圧（V）</h2>\n<p><strong>電圧</strong>（電位差）とは、電子を動かす「押し出す力」です。水の流れに例えると「水位の差（位置エネルギーの差）」に相当します。</p>\n<pre><code>水の流れのアナロジー:\n\n 高い水位             低い水位\n ［水タンク］─────── ─────────\n               ↓↓↓ 水流（＝電流）\n ─────────────────────────────\n</code></pre>\n<ul>\n<li>単位：V（ボルト）</li>\n<li>乾電池1本：1.5V</li>\n<li>家庭用コンセント：100V（日本）</li>\n<li>車載システム：12V または 48V</li>\n</ul>\n<h2>抵抗（R）</h2>\n<p><strong>抵抗</strong>は電流の流れにくさを表します。電子が原子に衝突することで生じます。</p>\n<ul>\n<li>単位：Ω（オーム）</li>\n<li>抵抗が大きい → 電流が流れにくい</li>\n<li>抵抗が小さい → 電流が流れやすい</li>\n</ul>\n<pre><code class=\"language-python\"># 代表的な材料の抵抗率（20°C）\nresistivity = {\n    &quot;銀（Ag）&quot;:    1.59e-8,   # Ω·m（最良導体）\n    &quot;銅（Cu）&quot;:    1.72e-8,   # 電線によく使われる\n    &quot;アルミ（Al）&quot;: 2.82e-8,\n    &quot;鉄（Fe）&quot;:    1.00e-7,\n    &quot;シリコン&quot;:    6.40e+2,   # 半導体\n    &quot;ガラス&quot;:      1.00e+12,  # 絶縁体\n}\n\nfor mat, rho in resistivity.items():\n    print(f&quot;{mat:15s}: {rho:.2e} Ω·m&quot;)\n</code></pre>\n<h2>導体・半導体・絶縁体</h2>\n<table>\n<thead>\n<tr>\n<th>種類</th>\n<th>抵抗率</th>\n<th>例</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>導体</td>\n<td>10⁻⁸〜10⁻⁶ Ω·m</td>\n<td>銅、アルミ、金</td>\n</tr>\n<tr>\n<td>半導体</td>\n<td>10⁻⁴〜10⁴ Ω·m</td>\n<td>シリコン、ゲルマニウム</td>\n</tr>\n<tr>\n<td>絶縁体</td>\n<td>10⁸〜10¹⁶ Ω·m</td>\n<td>ガラス、ゴム、プラスチック</td>\n</tr>\n</tbody>\n</table>\n<h2>まとめ</h2>\n<pre><code>電気の3要素:\n\n  電圧 V ─── 電子を動かす「力」（単位: V）\n  電流 I ─── 流れる電気の量（単位: A）\n  抵抗 R ─── 流れにくさ（単位: Ω）\n\n  これら3つの関係を表すのが → オームの法則\n</code></pre>\n<p>次は <a class=\"term-link\" data-slug=\"ohms-law\" href=\"/glossary/ohms-law\">オームの法則（V = RI）</a> でこれら3つの関係を数式で学びましょう。</p>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "ohms-law",
+"title": "オームの法則（V = RI）"
+},
+{
+"slug": "circuit-series-parallel",
+"title": "直列・並列回路と合成抵抗"
+},
+{
+"slug": "electric-power",
+"title": "電力・電力量とジュール熱"
+}
+],
+"next_full": [
+{
+"slug": "ohms-law",
+"title": "オームの法則（V = RI）"
 }
 ],
 "completed": false,
@@ -3490,6 +3950,56 @@
 "completed": false,
 "favorite": false
 },
+"capacitor": {
+"slug": "capacitor",
+"title": "コンデンサ（静電容量・充放電）",
+"level": 2,
+"category": "Electronics",
+"related": [
+"electric-field",
+"alternating-current",
+"ohms-law",
+"electromagnetic-induction"
+],
+"next": [],
+"tags": [
+"capacitor",
+"capacitance",
+"charge",
+"rc-circuit",
+"electronics"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>コンデンサは「電荷を蓄えるデバイス」です。2枚の金属板の間に電場を生じさせてエネルギーを蓄えます。電源のノイズ除去・タイマー回路・フィルタ・DRAM・非接触ICカードなど、あらゆる電子回路に使われています。</p>\n<h2>静電容量（キャパシタンス）</h2>\n<p>$$C = \\frac{Q}{V}$$</p>\n<ul>\n<li><strong>C</strong>：静電容量 [F（ファラド）]</li>\n<li><strong>Q</strong>：電荷量 [C]</li>\n<li><strong>V</strong>：電圧 [V]</li>\n</ul>\n<pre><code class=\"language-python\">import numpy as np\nimport matplotlib.pyplot as plt\n\n# 平行板コンデンサの容量\nepsilon_0 = 8.854e-12   # 真空の誘電率 [F/m]\n\ndef parallel_plate_capacitor(epsilon_r, A, d):\n    &quot;&quot;&quot;\n    平行板コンデンサの静電容量\n    epsilon_r: 比誘電率, A: 板の面積 [m²], d: 板間距離 [m]\n    &quot;&quot;&quot;\n    return epsilon_r * epsilon_0 * A / d\n\n# 代表的な誘電体\ndielectrics = {\n    &quot;真空 / 空気&quot;: 1.0,\n    &quot;ポリエチレン&quot;: 2.3,\n    &quot;ガラス&quot;:      7.0,\n    &quot;セラミック（BaTiO₃）&quot;: 1200,\n}\n\nA = 1e-4    # 1cm² の板\nd = 1e-6    # 1μm の板間距離\n\nfor material, eps_r in dielectrics.items():\n    C = parallel_plate_capacitor(eps_r, A, d)\n    print(f&quot;{material:25s}: {C*1e12:.1f} pF&quot;)\n</code></pre>\n<h2>コンデンサの充放電</h2>\n<p>コンデンサをRC回路で充電/放電する時定数 τ = RC</p>\n<pre><code class=\"language-python\">def rc_charge(V0, R, C, t):\n    &quot;&quot;&quot;RC回路の充電曲線&quot;&quot;&quot;\n    tau = R * C\n    return V0 * (1 - np.exp(-t / tau))\n\ndef rc_discharge(V0, R, C, t):\n    &quot;&quot;&quot;RC回路の放電曲線&quot;&quot;&quot;\n    tau = R * C\n    return V0 * np.exp(-t / tau)\n\n# R = 10kΩ, C = 100μF\nR = 10e3      # 10 kΩ\nC = 100e-6    # 100 μF\nV_supply = 5  # V\ntau = R * C\nprint(f&quot;時定数 τ = RC = {tau*1000:.0f} ms&quot;)\nprint(f&quot;5τ = {5*tau*1000:.0f} ms で充電ほぼ完了（99.3%）&quot;)\n\nt = np.linspace(0, 5 * tau, 500)\nV_charge    = rc_charge(V_supply, R, C, t)\nV_discharge = rc_discharge(V_supply, R, C, t)\n\nfig, axes = plt.subplots(1, 2, figsize=(12, 4))\naxes[0].plot(t * 1000, V_charge, &quot;b-&quot;, lw=2)\naxes[0].axhline(V_supply * 0.632, color=&quot;gray&quot;, linestyle=&quot;--&quot;, label=&quot;63.2%（1τ）&quot;)\naxes[0].axhline(V_supply * 0.993, color=&quot;red&quot;,  linestyle=&quot;--&quot;, label=&quot;99.3%（5τ）&quot;)\naxes[0].set_xlabel(&quot;時間 [ms]&quot;)\naxes[0].set_ylabel(&quot;電圧 [V]&quot;)\naxes[0].set_title(&quot;コンデンサの充電&quot;)\naxes[0].legend()\naxes[0].grid(True)\n\naxes[1].plot(t * 1000, V_discharge, &quot;r-&quot;, lw=2)\naxes[1].axhline(V_supply * 0.368, color=&quot;gray&quot;, linestyle=&quot;--&quot;, label=&quot;36.8%（1τ）&quot;)\naxes[1].set_xlabel(&quot;時間 [ms]&quot;)\naxes[1].set_ylabel(&quot;電圧 [V]&quot;)\naxes[1].set_title(&quot;コンデンサの放電&quot;)\naxes[1].legend()\naxes[1].grid(True)\nplt.tight_layout()\nplt.show()\n</code></pre>\n<h2>コンデンサの直列・並列</h2>\n<pre><code class=\"language-python\">def series_capacitance(*caps):\n    &quot;&quot;&quot;直列合成容量（抵抗の並列と同じ計算）&quot;&quot;&quot;\n    return 1 / sum(1/C for C in caps)\n\ndef parallel_capacitance(*caps):\n    &quot;&quot;&quot;並列合成容量（抵抗の直列と同じ計算）&quot;&quot;&quot;\n    return sum(caps)\n\n# 例\nC1, C2, C3 = 10e-6, 22e-6, 47e-6   # μF\n\nC_series   = series_capacitance(C1, C2, C3)\nC_parallel = parallel_capacitance(C1, C2, C3)\n\nprint(f&quot;直列合成: {C_series*1e6:.2f} μF（最小容量より小さい）&quot;)\nprint(f&quot;並列合成: {C_parallel*1e6:.0f} μF（各容量の和）&quot;)\n</code></pre>\n<h2>コンデンサに蓄えられるエネルギー</h2>\n<p>$$E = \\frac{1}{2} C V^2$$</p>\n<pre><code class=\"language-python\">def capacitor_energy(C, V):\n    return 0.5 * C * V**2\n\n# 電源デカップリングコンデンサ（100μF, 5V）\nE_decoupling = capacitor_energy(100e-6, 5)\nprint(f&quot;デカップリングコンデンサ: {E_decoupling * 1000:.2f} mJ&quot;)\n\n# スーパーキャパシタ（EVの回生制動用, 3000F, 2.7V）\nE_supercap = capacitor_energy(3000, 2.7)\nprint(f&quot;スーパーキャパシタ: {E_supercap:.0f} J = {E_supercap/3600:.4f} Wh&quot;)\n\n# 一般的なリチウムイオン電池 18650（3.7V, 3Ah）との比較\nE_battery = 3.7 * 3 * 3600   # J\nprint(f&quot;リチウム電池 18650: {E_battery:.0f} J = {E_battery/3600:.1f} Wh&quot;)\nprint(f&quot;エネルギー密度比: スーパーキャパシタは電池の {E_supercap/E_battery*100:.2f}%&quot;)\n</code></pre>\n<h2>ローパスフィルタ（RC フィルタ）</h2>\n<pre><code class=\"language-python\">def rc_lowpass_gain(f, R, C):\n    &quot;&quot;&quot;RC ローパスフィルタのゲイン（-3dBカットオフ周波数）&quot;&quot;&quot;\n    omega = 2 * np.pi * f\n    H = 1 / np.sqrt(1 + (omega * R * C)**2)\n    return H\n\n# カットオフ周波数 fc = 1/(2πRC)\nR_f, C_f = 1e3, 1e-6    # 1kΩ, 1μF\nfc = 1 / (2 * np.pi * R_f * C_f)\nprint(f&quot;カットオフ周波数: {fc:.1f} Hz&quot;)\n\nf_range = np.logspace(1, 6, 300)\ngain    = rc_lowpass_gain(f_range, R_f, C_f)\ngain_dB = 20 * np.log10(gain)\n\nplt.figure(figsize=(9, 4))\nplt.semilogx(f_range, gain_dB, &quot;b-&quot;, lw=2)\nplt.axvline(fc, color=&quot;red&quot;, linestyle=&quot;--&quot;, label=f&quot;fc = {fc:.0f} Hz (-3dB)&quot;)\nplt.axhline(-3, color=&quot;gray&quot;, linestyle=&quot;:&quot;)\nplt.xlabel(&quot;周波数 [Hz]&quot;)\nplt.ylabel(&quot;ゲイン [dB]&quot;)\nplt.title(&quot;RC ローパスフィルタの周波数特性&quot;)\nplt.legend()\nplt.grid(True)\nplt.show()\n</code></pre>",
+"prereq_full": [
+{
+"slug": "electric-field",
+"title": "電場とクーロンの法則"
+}
+],
+"related_full": [
+{
+"slug": "electric-field",
+"title": "電場とクーロンの法則"
+},
+{
+"slug": "alternating-current",
+"title": "交流回路（AC・RMS・インピーダンス）"
+},
+{
+"slug": "ohms-law",
+"title": "オームの法則（V = RI）"
+},
+{
+"slug": "electromagnetic-induction",
+"title": "電磁誘導とファラデーの法則"
+}
+],
+"next_full": [],
+"completed": false,
+"favorite": false
+},
 "subnet": {
 "slug": "subnet",
 "title": "サブネット / **CIDR**",
@@ -3632,6 +4142,56 @@
 "completed": false,
 "favorite": false
 },
+"alternating-current": {
+"slug": "alternating-current",
+"title": "交流回路（AC・RMS・インピーダンス）",
+"level": 2,
+"category": "Electronics",
+"related": [
+"ohms-law",
+"capacitor",
+"electromagnetic-induction",
+"electric-power"
+],
+"next": [],
+"tags": [
+"ac",
+"alternating-current",
+"rms",
+"impedance",
+"electronics"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>家庭のコンセントは「交流（AC）」です。直流（DC）と違い、電圧と電流が周期的に向きを変えます。日本では50/60Hzの正弦波交流が使われています。コンデンサ・コイルが絡む回路ではインピーダンスという概念が必要になります。</p>\n<h2>交流波形</h2>\n<p>$$v(t) = V_m \\sin(2\\pi f t + \\phi)$$</p>\n<ul>\n<li><strong>V_m</strong>：最大電圧（振幅）[V]</li>\n<li><strong>f</strong>：周波数 [Hz]</li>\n<li><strong>φ</strong>：初期位相 [rad]</li>\n</ul>\n<pre><code class=\"language-python\">import numpy as np\nimport matplotlib.pyplot as plt\n\nf  = 50        # 50 Hz（東日本の商用周波数）\nVm = 141.4     # V（100V実効値の√2倍）\nT  = 1 / f     # 周期\n\nt = np.linspace(0, 3*T, 1000)\nv = Vm * np.sin(2 * np.pi * f * t)\n\nplt.figure(figsize=(10, 4))\nplt.plot(t * 1000, v, &quot;b-&quot;, lw=2, label=&quot;交流電圧&quot;)\nplt.axhline(Vm,    color=&quot;red&quot;,    linestyle=&quot;--&quot;, alpha=0.7, label=f&quot;最大値 {Vm:.1f}V&quot;)\nplt.axhline(-Vm,   color=&quot;red&quot;,    linestyle=&quot;--&quot;, alpha=0.7)\nplt.axhline(100,   color=&quot;green&quot;,  linestyle=&quot;:&quot;,  alpha=0.7, label=&quot;実効値 100V&quot;)\nplt.axhline(-100,  color=&quot;green&quot;,  linestyle=&quot;:&quot;,  alpha=0.7)\nplt.xlabel(&quot;時間 [ms]&quot;)\nplt.ylabel(&quot;電圧 [V]&quot;)\nplt.title(&quot;日本の商用交流（50Hz）&quot;)\nplt.legend()\nplt.grid(True)\nplt.show()\n</code></pre>\n<h2>実効値（RMS）</h2>\n<p>交流の「実力」を表す値。同じ電力を消費する直流電圧に相当します。</p>\n<p>$$V_{rms} = \\frac{V_m}{\\sqrt{2}} \\approx 0.707 V_m$$</p>\n<pre><code class=\"language-python\">def calc_rms(signal):\n    &quot;&quot;&quot;RMS（二乗平均平方根）を計算&quot;&quot;&quot;\n    return np.sqrt(np.mean(signal**2))\n\n# 日本の家庭用電源: 最大値 141.4V → 実効値 100V\nVm_ac = 141.4\nVrms_theory = Vm_ac / np.sqrt(2)\nVrms_calc   = calc_rms(v)\n\nprint(f&quot;理論値 Vrms = {Vrms_theory:.1f} V&quot;)\nprint(f&quot;計算値 Vrms = {Vrms_calc:.1f} V&quot;)\n\n# 各波形の実効値\nt  = np.linspace(0, 1, 10000)\nwaves = {\n    &quot;正弦波（振幅=1）&quot;:     np.sin(2*np.pi*50*t),\n    &quot;矩形波（振幅=1）&quot;:     np.sign(np.sin(2*np.pi*50*t)),\n    &quot;三角波（振幅=1）&quot;:     2*np.abs(2*(50*t - np.floor(50*t + 0.5))) - 1,\n    &quot;直流（1V）&quot;:            np.ones(10000),\n}\nfor name, wave in waves.items():\n    print(f&quot;{name:22s}: RMS = {calc_rms(wave):.4f}&quot;)\n</code></pre>\n<h2>コンデンサと交流</h2>\n<p>コンデンサは交流に対して<strong>容量性リアクタンス</strong> Xc を持ちます。</p>\n<p>$$X_C = \\frac{1}{2\\pi f C}$$</p>\n<pre><code class=\"language-python\">def capacitive_reactance(f, C):\n    &quot;&quot;&quot;容量性リアクタンス [Ω]&quot;&quot;&quot;\n    return 1 / (2 * np.pi * f * C)\n\nC = 100e-6   # 100 μF\nf_range = np.logspace(1, 5, 300)\nXc = capacitive_reactance(f_range, C)\n\nplt.figure(figsize=(8, 4))\nplt.loglog(f_range, Xc, &quot;b-&quot;, lw=2)\nplt.xlabel(&quot;周波数 [Hz]&quot;)\nplt.ylabel(&quot;リアクタンス Xc [Ω]&quot;)\nplt.title(&quot;コンデンサのリアクタンス（高周波ほど小さい = 交流を通す）&quot;)\nplt.grid(True)\nplt.show()\n\n# 実用例: 電源デカップリング\nprint(&quot;=== デカップリングコンデンサ ===&quot;)\nfor C_val in [100e-12, 10e-9, 100e-9, 10e-6, 100e-6]:\n    Xc_1MHz = capacitive_reactance(1e6, C_val)\n    print(f&quot;C = {C_val*1e9:.0f} nF: Xc at 1MHz = {Xc_1MHz:.3f} Ω&quot;)\n</code></pre>\n<h2>コイルと交流</h2>\n<p>コイルは交流に対して<strong>誘導性リアクタンス</strong> XL を持ちます。</p>\n<p>$$X_L = 2\\pi f L$$</p>\n<pre><code class=\"language-python\">def inductive_reactance(f, L):\n    &quot;&quot;&quot;誘導性リアクタンス [Ω]&quot;&quot;&quot;\n    return 2 * np.pi * f * L\n\nL = 1e-3   # 1 mH\nXL = inductive_reactance(f_range, L)\n\nplt.figure(figsize=(8, 4))\nplt.loglog(f_range, XL, &quot;r-&quot;, lw=2)\nplt.xlabel(&quot;周波数 [Hz]&quot;)\nplt.ylabel(&quot;リアクタンス XL [Ω]&quot;)\nplt.title(&quot;コイルのリアクタンス（高周波ほど大きい = 交流を阻む）&quot;)\nplt.grid(True)\nplt.show()\n</code></pre>\n<h2>インピーダンス（複素数表現）</h2>\n<p>$$Z = R + jX = R + j(X_L - X_C)$$</p>\n<pre><code class=\"language-python\">import cmath\n\ndef impedance(R, L, C, f):\n    &quot;&quot;&quot;RLC直列回路のインピーダンス（複素数）&quot;&quot;&quot;\n    XL = 2 * np.pi * f * L\n    XC = 1 / (2 * np.pi * f * C)\n    Z  = complex(R, XL - XC)\n    return Z\n\nR = 100    # 100 Ω\nL = 10e-3  # 10 mH\nC = 1e-6   # 1 μF\n\nfor f in [100, 1000, 5000, 10000]:\n    Z = impedance(R, L, C, f)\n    print(f&quot;f={f:6d} Hz: Z = {abs(Z):.1f} Ω, 位相 = {cmath.phase(Z)*180/np.pi:.1f}°&quot;)\n\n# 共振周波数（XL = XC のとき Z が最小）\nf_res = 1 / (2 * np.pi * np.sqrt(L * C))\nprint(f&quot;\\n共振周波数: {f_res:.1f} Hz&quot;)\n</code></pre>\n<h2>RLC共振回路</h2>\n<pre><code class=\"language-python\">f_range2 = np.linspace(100, 10000, 1000)\nZ_vals   = [abs(impedance(R, L, C, f)) for f in f_range2]\n\nplt.figure(figsize=(9, 4))\nplt.plot(f_range2, Z_vals, &quot;b-&quot;, lw=2)\nplt.axvline(f_res, color=&quot;red&quot;, linestyle=&quot;--&quot;, label=f&quot;共振 f₀ = {f_res:.0f} Hz&quot;)\nplt.xlabel(&quot;周波数 [Hz]&quot;)\nplt.ylabel(&quot;インピーダンス |Z| [Ω]&quot;)\nplt.title(&quot;RLC直列回路のインピーダンス特性&quot;)\nplt.legend()\nplt.grid(True)\nplt.show()\n</code></pre>",
+"prereq_full": [
+{
+"slug": "electromagnetic-induction",
+"title": "電磁誘導とファラデーの法則"
+}
+],
+"related_full": [
+{
+"slug": "ohms-law",
+"title": "オームの法則（V = RI）"
+},
+{
+"slug": "capacitor",
+"title": "コンデンサ（静電容量・充放電）"
+},
+{
+"slug": "electromagnetic-induction",
+"title": "電磁誘導とファラデーの法則"
+},
+{
+"slug": "electric-power",
+"title": "電力・電力量とジュール熱"
+}
+],
+"next_full": [],
+"completed": false,
+"favorite": false
+},
 "classification": {
 "slug": "classification",
 "title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）",
@@ -3686,6 +4246,46 @@
 "title": "勾配ブースティング（XGBoost・LightGBM）"
 }
 ],
+"completed": false,
+"favorite": false
+},
+"semiconductor": {
+"slug": "semiconductor",
+"title": "半導体の仕組み（PN接合・トランジスタ）",
+"level": 2,
+"category": "Electronics",
+"related": [
+"electricity-basics",
+"electric-field",
+"ohms-law"
+],
+"next": [],
+"tags": [
+"semiconductor",
+"transistor",
+"diode",
+"pn-junction",
+"electronics"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>半導体はスマートフォン・PC・車載ECUのすべてに使われている現代文明の基盤素材です。「どうして電流を制御できるのか」を理解することは、電子回路設計・組み込み開発の出発点です。</p>\n<h2>半導体とは</h2>\n<pre><code>導電性の比較:\n\n  金属（銅）     ← 自由電子が多い、電気をよく通す\n  ────────────────────────────\n  半導体（Si）   ← 条件によって通したり遮断したりできる ← これが重要！\n  ────────────────────────────\n  絶縁体（ガラス） ← 自由電子がほぼない、電気を通さない\n</code></pre>\n<p>シリコン（Si）は原子価4（4個の共有結合）で、単体では自由電子がほとんどありません。しかし<strong>不純物を微量添加（ドーピング）</strong>することで導電性を制御できます。</p>\n<h2>N型・P型半導体</h2>\n<pre><code class=\"language-python\">import numpy as np\nimport matplotlib.pyplot as plt\n\n# N型半導体: 5価の不純物（リン・砒素）を添加\n# → 電子（−）が余る → 電子が多数キャリア\nprint(&quot;N型半導体:&quot;)\nprint(&quot;  シリコン（4価）+ リン（5価）&quot;)\nprint(&quot;  → 共有結合に使われない電子が1個余る&quot;)\nprint(&quot;  → 自由電子が増える（電子が多数キャリア）&quot;)\n\n# P型半導体: 3価の不純物（ボロン）を添加\n# → 正孔（ホール）が生まれる\nprint(&quot;\\nP型半導体:&quot;)\nprint(&quot;  シリコン（4価）+ ボロン（3価）&quot;)\nprint(&quot;  → 共有結合が1つ不足 → 正孔（ホール）が生まれる&quot;)\nprint(&quot;  → ホールが多数キャリア（正電荷の動き）&quot;)\n</code></pre>\n<h2>PN接合ダイオード</h2>\n<p>P型とN型を接触させると<strong>空乏層</strong>が生まれます。</p>\n<pre><code class=\"language-python\">def diode_current(V, I_s=1e-12, n=1, T=300):\n    &quot;&quot;&quot;\n    ダイオードの電流-電圧特性（理想ダイオード方程式）\n    I_s: 逆方向飽和電流, n: 理想係数, T: 温度[K]\n    &quot;&quot;&quot;\n    k = 1.381e-23   # ボルツマン定数\n    q = 1.602e-19   # 電気素量\n    Vt = k * T / q  # 熱電圧 ≈ 26mV at 25°C\n    return I_s * (np.exp(V / (n * Vt)) - 1)\n\nV_range = np.linspace(-1, 0.8, 1000)\nI = diode_current(V_range) * 1e3   # mA に変換\nI_clipped = np.clip(I, -0.1, 100)   # 表示用にクリップ\n\nplt.figure(figsize=(8, 5))\nplt.plot(V_range, I_clipped, &quot;b-&quot;, lw=2)\nplt.axhline(0, color=&quot;black&quot;, lw=0.8)\nplt.axvline(0, color=&quot;black&quot;, lw=0.8)\nplt.axvline(0.7, color=&quot;red&quot;, linestyle=&quot;--&quot;, alpha=0.7, label=&quot;順方向電圧降下 ≈ 0.7V (Si)&quot;)\nplt.xlabel(&quot;電圧 [V]&quot;)\nplt.ylabel(&quot;電流 [mA]&quot;)\nplt.title(&quot;ダイオードのI-V特性（整流作用）&quot;)\nplt.legend()\nplt.ylim(-0.5, 20)\nplt.grid(True)\nplt.show()\n\n# 実用上の電圧降下\nprint(&quot;代表的なダイオードの順方向電圧降下:&quot;)\nprint(&quot;  シリコンダイオード: 約 0.6〜0.7 V&quot;)\nprint(&quot;  ゲルマニウム:       約 0.2〜0.3 V&quot;)\nprint(&quot;  LED（赤）:           約 1.8〜2.2 V&quot;)\nprint(&quot;  LED（青/白）:         約 3.0〜3.5 V&quot;)\nprint(&quot;  ショットキー:        約 0.2〜0.4 V（高速・低損失）&quot;)\n</code></pre>\n<h2>バイポーラトランジスタ（BJT）</h2>\n<p>トランジスタは「小さな電流で大きな電流を制御するスイッチ・増幅器」です。</p>\n<pre><code>NPN型トランジスタ:\n\n       コレクタ（C）\n           ↑  Ic\n    Ib →  [BJT]\n           ↓\n       エミッタ（E）\n\n  Ic = hFE × Ib   (hFE: 電流増幅率 = 100〜500)\n</code></pre>\n<pre><code class=\"language-python\"># BJTのスイッチング動作\ndef bjt_switch(V_cc, R_c, h_FE, I_b):\n    &quot;&quot;&quot;\n    NPN BJT スイッチ回路\n    V_cc: 電源電圧, R_c: コレクタ抵抗\n    h_FE: 電流増幅率, I_b: ベース電流\n    &quot;&quot;&quot;\n    I_c_sat = V_cc / R_c      # 飽和コレクタ電流\n    I_c     = h_FE * I_b      # 増幅されたコレクタ電流\n\n    if I_c &gt;= I_c_sat:\n        return &quot;ON（飽和）&quot;, I_c_sat, 0.2    # Vce_sat ≈ 0.2V\n    else:\n        return &quot;線形動作&quot;, I_c, V_cc - I_c * R_c\n\n# 例: 12V 系のリレー駆動回路\nV_cc = 12\nR_c  = 120    # Ω（リレーコイル抵抗）\nh_FE = 200\n\nfor I_b_uA in [0, 10, 50, 200]:\n    I_b = I_b_uA * 1e-6\n    state, Ic, Vce = bjt_switch(V_cc, R_c, h_FE, I_b)\n    print(f&quot;Ib={I_b_uA:3d} μA: {state}, Ic={Ic*1e3:.1f} mA, Vce={Vce:.1f} V&quot;)\n</code></pre>\n<h2>MOSFET</h2>\n<p>現代の電子機器のほとんどはMOSFETで作られています。</p>\n<pre><code class=\"language-python\"># Nチャンネル MOSFET の動作\ndef nmos_current(Vgs, Vds, Vth=2.0, k=0.01):\n    &quot;&quot;&quot;\n    NMOSのドレイン電流（簡易モデル）\n    Vth: 閾値電圧, k: プロセス依存の定数\n    &quot;&quot;&quot;\n    if Vgs &lt; Vth:\n        return 0    # カットオフ（OFF）\n\n    Vgs_eff = Vgs - Vth\n\n    if Vds &lt; Vgs_eff:\n        # 線形（トライオード）領域\n        Id = k * (Vgs_eff * Vds - Vds**2 / 2)\n    else:\n        # 飽和領域\n        Id = k / 2 * Vgs_eff**2\n\n    return Id\n\n# ドレイン特性曲線\nVds_range = np.linspace(0, 10, 200)\nplt.figure(figsize=(9, 5))\nfor Vgs in [1, 2, 3, 4, 5]:\n    Id = [nmos_current(Vgs, Vds) * 1000 for Vds in Vds_range]   # mA\n    plt.plot(Vds_range, Id, label=f&quot;Vgs = {Vgs} V&quot;)\nplt.xlabel(&quot;Vds [V]&quot;)\nplt.ylabel(&quot;Id [mA]&quot;)\nplt.title(&quot;NMOSFET ドレイン特性（Vth=2V）&quot;)\nplt.legend()\nplt.grid(True)\nplt.show()\n\n# MOSFET vs BJT の違い\nprint(&quot;\\nMOSFET vs BJT:&quot;)\nprint(&quot;           MOSFET              BJT&quot;)\nprint(&quot;  制御:    電圧制御（Vgs）      電流制御（Ib）&quot;)\nprint(&quot;  入力抵抗: 非常に高い          低〜中程度&quot;)\nprint(&quot;  速度:    高速                  低速（比較）&quot;)\nprint(&quot;  用途:    デジタル回路・CMOS   アナログ増幅・高電流&quot;)\n</code></pre>\n<h2>集積回路（IC）の基礎</h2>\n<pre><code>CMOSインバーター（NOT回路）:\n\n  VDD\n   ↓\n  [PMOS]  ← Vgs がLowのとき ON\n   ↓ Vout\n  [NMOS]  ← Vgs がHighのとき ON\n   ↓\n  GND\n\n  入力=High(1) → NMOS ON, PMOS OFF → 出力=Low(0)\n  入力=Low(0)  → NMOS OFF, PMOS ON → 出力=High(1)\n  → インバーター（NOT）の動作！\n</code></pre>\n<pre><code class=\"language-python\"># CMOS の消費電力（動的電力）\ndef cmos_dynamic_power(C_load, V_dd, f_clock):\n    &quot;&quot;&quot;\n    CMOS論理回路の動的消費電力\n    スイッチングのたびにコンデンサを充放電\n    &quot;&quot;&quot;\n    return C_load * V_dd**2 * f_clock\n\n# Intel Core i9 の概算\nC_load_total = 20e-9     # ゲート容量の合計（概算）20nF\nV_dd         = 1.2       # V（最近のCPUは低電圧化）\nf_clock      = 5e9       # 5 GHz\n\nP_dynamic = cmos_dynamic_power(C_load_total, V_dd, f_clock)\nprint(f&quot;CPUの動的消費電力（概算）: {P_dynamic:.0f} W&quot;)\nprint(&quot;（実際のTDP: 125〜250W程度 — 漏れ電流・静的電力も加わる）&quot;)\n</code></pre>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "electricity-basics",
+"title": "電気の基礎（電流・電圧・抵抗）"
+},
+{
+"slug": "electric-field",
+"title": "電場とクーロンの法則"
+},
+{
+"slug": "ohms-law",
+"title": "オームの法則（V = RI）"
+}
+],
+"next_full": [],
 "completed": false,
 "favorite": false
 },
@@ -3776,6 +4376,53 @@
 {
 "slug": "pytorch",
 "title": "PyTorch（深層学習フレームワーク）"
+}
+],
+"completed": false,
+"favorite": false
+},
+"magnetism": {
+"slug": "magnetism",
+"title": "磁界・電磁力（フレミングの法則）",
+"level": 2,
+"category": "Electronics",
+"related": [
+"electricity-basics",
+"electromagnetic-induction",
+"electric-field"
+],
+"next": [
+"electromagnetic-induction"
+],
+"tags": [
+"magnetism",
+"magnetic-field",
+"fleming",
+"electronics",
+"physics"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>電気と磁気は密接に関係しています。電流が流れると磁界が生まれ、磁界の中の電流は力を受けます（電磁力）。この原理がモーター・スピーカー・変圧器・MRIのすべての基盤です。車載システムではABSセンサーやEVのモーター制御に直結します。</p>\n<h2>磁界（磁場）</h2>\n<p>磁界の強さ <strong>H</strong> と磁束密度 <strong>B</strong> の関係：</p>\n<p>$$B = \\mu_0 \\mu_r H$$</p>\n<ul>\n<li><strong>B</strong>：磁束密度 [T（テスラ）]</li>\n<li><strong>μ₀</strong>：真空の透磁率 = 4π × 10⁻⁷ H/m</li>\n<li><strong>μᵣ</strong>：比透磁率（空気≒1, 鉄=数千〜数万）</li>\n</ul>\n<pre><code class=\"language-python\">import numpy as np\nimport matplotlib.pyplot as plt\n\nmu0 = 4 * np.pi * 1e-7   # 真空の透磁率\n\n# 代表的な磁束密度\nexamples = {\n    &quot;地球の磁場&quot;:              50e-6,   # 50 μT\n    &quot;冷蔵庫マグネット&quot;:         5e-3,    # 5 mT\n    &quot;スピーカーの磁石&quot;:         1.0,\n    &quot;MRI（医療用）&quot;:            3.0,\n    &quot;超伝導マグネット&quot;:         20.0,\n    &quot;パルスマグネット（実験）&quot;: 100.0,\n}\nfor name, B in examples.items():\n    print(f&quot;{name:22s}: {B:.3g} T&quot;)\n</code></pre>\n<h2>直線電流の周りの磁界</h2>\n<p>電流 I が流れる長い直線導線の周りに生じる磁場：</p>\n<p>$$B = \\frac{\\mu_0 I}{2\\pi r}$$</p>\n<pre><code class=\"language-python\">def B_wire(I, r):\n    &quot;&quot;&quot;直線電流 I から距離 r での磁束密度&quot;&quot;&quot;\n    return mu0 * I / (2 * np.pi * r)\n\n# 10A の電線から 1cm の距離\nB = B_wire(I=10, r=0.01)\nprint(f&quot;磁束密度: {B*1e6:.1f} μT&quot;)   # 200 μT\n\n# 距離との関係\nr_vals = np.linspace(0.5e-3, 20e-3, 200)\nplt.figure(figsize=(8, 4))\nfor I in [1, 5, 10]:\n    B_vals = B_wire(I, r_vals)\n    plt.plot(r_vals * 100, B_vals * 1e3, label=f&quot;I = {I} A&quot;)\nplt.xlabel(&quot;距離 [cm]&quot;)\nplt.ylabel(&quot;磁束密度 [mT]&quot;)\nplt.title(&quot;直線電流周りの磁場（∝ 1/r）&quot;)\nplt.legend()\nplt.grid(True)\nplt.show()\n</code></pre>\n<h2>フレミングの左手の法則（電磁力）</h2>\n<p>磁界の中の電流が受ける力（アンペア力）：</p>\n<p>$$\\vec{F} = I \\vec{L} \\times \\vec{B}$$</p>\n<pre><code>フレミングの左手の法則:\n\n  中指 → 電流の向き (Current)\n  人差し指 → 磁界の向き (field)\n  親指 → 力の向き (Force)\n\n  ← 力 ↑\n  ↑磁界\n  ● 電流（手前向き）\n</code></pre>\n<pre><code class=\"language-python\">def lorentz_force(I, L, B, angle_deg=90):\n    &quot;&quot;&quot;\n    直線電流に働くアンペア力\n    I: 電流 [A], L: 導線長 [m], B: 磁束密度 [T], angle: 角度 [度]\n    &quot;&quot;&quot;\n    angle_rad = np.deg2rad(angle_deg)\n    return I * L * B * np.sin(angle_rad)\n\n# モーターのコイル\nI_motor = 5     # A\nL_coil  = 0.1   # m（コイルの一辺の長さ）\nB_motor = 0.5   # T\n\nF = lorentz_force(I_motor, L_coil, B_motor)\nprint(f&quot;コイル1辺に働く力: {F} N&quot;)\n</code></pre>\n<h2>フレミングの右手の法則（電磁誘導）</h2>\n<pre><code>フレミングの右手の法則（発電機）:\n\n  人差し指 → 磁界の向き\n  中指    → 誘導起電力（電流）の向き\n  親指    → 導体の運動方向\n\n ← 運動\n ↑磁界\n ●→ 誘導電流\n</code></pre>\n<h2>コイルの磁界（ソレノイド）</h2>\n<pre><code class=\"language-python\">def B_solenoid(n, I):\n    &quot;&quot;&quot;ソレノイド内部の磁束密度 [T]&quot;&quot;&quot;\n    return mu0 * n * I\n\n# n: 単位長さあたりの巻数 [turns/m]\nturns   = 1000   # 1000巻\nlength  = 0.1    # 10cm\nn       = turns / length  # 10000 turns/m\nI       = 2.0    # A\n\nB = B_solenoid(n, I)\nprint(f&quot;ソレノイド内の磁束密度: {B*1000:.1f} mT&quot;)   # 25.1 mT\n\n# 鉄心を入れると (μr ≈ 1000)\nmu_r = 1000\nB_iron = B * mu_r\nprint(f&quot;鉄心入りの磁束密度: {B_iron:.2f} T&quot;)         # 25.1 T\n</code></pre>\n<h2>DCモーターの原理</h2>\n<pre><code class=\"language-python\">def dc_motor_torque(I, N, B, A):\n    &quot;&quot;&quot;\n    DCモーターのトルク\n    N: コイルの巻数, A: コイルの面積 [m²]\n    &quot;&quot;&quot;\n    return N * I * B * A\n\n# 小型DCモーター\nN_coil = 100\nI_coil = 0.5    # A\nB_mot  = 0.3    # T\nA_coil = 0.01   # 10cm × 10cm = 0.01 m²\n\ntau = dc_motor_torque(I_coil, N_coil, B_mot, A_coil)\nprint(f&quot;モータートルク: {tau:.3f} N·m = {tau*100:.1f} N·cm&quot;)\n\n# 車載モーターの出力\nrpm = 3000                          # 回転数\nomega = rpm * 2 * np.pi / 60        # 角速度 [rad/s]\nP_motor = tau * omega\nprint(f&quot;モーター出力: {P_motor:.1f} W&quot;)\n</code></pre>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "electricity-basics",
+"title": "電気の基礎（電流・電圧・抵抗）"
+},
+{
+"slug": "electromagnetic-induction",
+"title": "電磁誘導とファラデーの法則"
+},
+{
+"slug": "electric-field",
+"title": "電場とクーロンの法則"
+}
+],
+"next_full": [
+{
+"slug": "electromagnetic-induction",
+"title": "電磁誘導とファラデーの法則"
 }
 ],
 "completed": false,
@@ -3878,6 +4525,105 @@
 {
 "slug": "classification",
 "title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
+}
+],
+"completed": false,
+"favorite": false
+},
+"electric-field": {
+"slug": "electric-field",
+"title": "電場とクーロンの法則",
+"level": 2,
+"category": "Electronics",
+"related": [
+"electricity-basics",
+"capacitor",
+"ohms-law"
+],
+"next": [
+"capacitor"
+],
+"tags": [
+"electric-field",
+"coulomb",
+"charge",
+"electronics",
+"physics"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>電場（電界）は「電荷の周りに生じる力の場」です。クーロンの法則は2つの電荷の間に働く力を表します。コンデンサ・絶縁体・半導体デバイスの動作原理はすべてこの電場の概念から理解できます。</p>\n<h2>クーロンの法則</h2>\n<p>2つの点電荷の間に働く静電気力：</p>\n<p>$$F = k \\frac{q_1 \\times q_2}{r^2}$$</p>\n<ul>\n<li><strong>F</strong>：力 [N（ニュートン）]</li>\n<li><strong>k</strong>：クーロン定数 = 9.0 × 10⁹ [N·m²/C²]</li>\n<li><strong>q₁, q₂</strong>：電荷量 [C（クーロン）]</li>\n<li><strong>r</strong>：距離 [m]</li>\n</ul>\n<pre><code class=\"language-python\">import numpy as np\nimport matplotlib.pyplot as plt\n\nk = 9.0e9   # クーロン定数 [N·m²/C²]\ne = 1.6e-19  # 電気素量（電子1個の電荷）[C]\n\ndef coulomb_force(q1, q2, r):\n    &quot;&quot;&quot;クーロン力 [N]&quot;&quot;&quot;\n    F = k * abs(q1) * abs(q2) / r**2\n    sign = 1 if q1 * q2 &gt; 0 else -1   # 同符号=斥力, 異符号=引力\n    return F * sign\n\n# 陽子と電子の引力（水素原子のボーア半径: 5.29e-11 m）\nr_bohr = 5.29e-11\nF = coulomb_force(e, -e, r_bohr)\nprint(f&quot;水素原子内の引力: {F:.3e} N&quot;)   # → 8.238e-08 N\n\n# 距離と力の関係（逆二乗則）\nr_range = np.logspace(-10, -7, 100)\nF_range = k * e**2 / r_range**2\n\nplt.figure(figsize=(8, 5))\nplt.loglog(r_range * 1e9, F_range, &quot;b-&quot;, lw=2)\nplt.xlabel(&quot;距離 [nm]&quot;)\nplt.ylabel(&quot;クーロン力 [N]&quot;)\nplt.title(&quot;電子と陽子間のクーロン力（逆二乗則）&quot;)\nplt.grid(True)\nplt.show()\n</code></pre>\n<h2>電場（電界）</h2>\n<p><strong>電場 E</strong> は、その点に置いた単位電荷 (+1C) に働く力の向き・大きさを表します。</p>\n<p>$$E = \\frac{F}{q} = k \\frac{Q}{r^2}$$</p>\n<ul>\n<li>単位：V/m または N/C</li>\n</ul>\n<pre><code class=\"language-python\">def electric_field(Q, r):\n    &quot;&quot;&quot;点電荷Qから距離rでの電場 [V/m]&quot;&quot;&quot;\n    return k * abs(Q) / r**2\n\n# 電場の可視化（2D）\nx = np.linspace(-2, 2, 30)\ny = np.linspace(-2, 2, 30)\nX, Y = np.meshgrid(x, y)\n\n# +電荷を原点に置く\nQ = 1e-9   # 1 nC\nr  = np.sqrt(X**2 + Y**2 + 1e-10)   # ゼロ除算防止\nE  = k * Q / r**2\nEx = E * X / r\nEy = E * Y / r\n\nplt.figure(figsize=(7, 6))\nplt.streamplot(X, Y, Ex, Ey, density=1.5, color=&quot;steelblue&quot;, linewidth=1)\nplt.plot(0, 0, &quot;ro&quot;, ms=12, label=&quot;+Q&quot;)\nplt.axis(&quot;equal&quot;)\nplt.title(&quot;点電荷の電場（電気力線）&quot;)\nplt.legend()\nplt.show()\n</code></pre>\n<h2>電位（電圧）と電場の関係</h2>\n<p>電位差（電圧）は電場に沿った積分です。</p>\n<p>$$V = -\\int E \\, dr = k \\frac{Q}{r}$$</p>\n<pre><code class=\"language-python\">def electric_potential(Q, r):\n    &quot;&quot;&quot;点電荷Qから距離rでの電位 [V]&quot;&quot;&quot;\n    return k * Q / r\n\n# 点電荷 (Q=1nC) からの電位分布\nr_vals = np.linspace(0.1, 5, 100)   # m\nQ = 1e-9  # 1 nC\n\nV_vals = electric_potential(Q, r_vals)\nE_vals = electric_field(Q, r_vals)\n\nfig, axes = plt.subplots(1, 2, figsize=(12, 4))\naxes[0].plot(r_vals * 100, V_vals, &quot;b-&quot;, lw=2)\naxes[0].set_xlabel(&quot;距離 [cm]&quot;)\naxes[0].set_ylabel(&quot;電位 [V]&quot;)\naxes[0].set_title(&quot;電位の距離依存性（∝ 1/r）&quot;)\naxes[0].grid(True)\n\naxes[1].plot(r_vals * 100, E_vals, &quot;r-&quot;, lw=2)\naxes[1].set_xlabel(&quot;距離 [cm]&quot;)\naxes[1].set_ylabel(&quot;電場 [V/m]&quot;)\naxes[1].set_title(&quot;電場の距離依存性（∝ 1/r²）&quot;)\naxes[1].grid(True)\nplt.tight_layout()\nplt.show()\n</code></pre>\n<h2>電場と絶縁破壊</h2>\n<pre><code class=\"language-python\"># 絶縁体の絶縁破壊電界強度\nbreakdown_fields = {\n    &quot;空気&quot;:           3e6,    # V/m\n    &quot;シリコン&quot;:       3e7,\n    &quot;酸化シリコン&quot;:   1e9,\n    &quot;窒化シリコン&quot;:   1e10,\n}\n\nprint(&quot;=== 絶縁破壊電界 ===&quot;)\nfor material, E_bd in breakdown_fields.items():\n    print(f&quot;{material:12s}: {E_bd:.0e} V/m&quot;)\n\n# 雷：大気中の絶縁破壊\ncloud_voltage = 100e6   # 1億ボルト（概算）\ncloud_height  = 1000    # m\nE_thunder = cloud_voltage / cloud_height\nprint(f&quot;\\n雷雲の電場: {E_thunder:.0e} V/m （大気の限界 3×10⁶ V/m を超えると放電）&quot;)\n\n# IC回路のゲート酸化膜（10nm, 5V）\nt_ox = 10e-9   # 10nm\nV_gate = 5\nE_gate = V_gate / t_ox\nprint(f&quot;MOSFETゲート電場: {E_gate:.0e} V/m（設計上は酸化膜限界の1/10以下に）&quot;)\n</code></pre>\n<h2>帯電と静電気</h2>\n<pre><code class=\"language-python\"># 静電気エネルギー\ndef static_energy(C, V):\n    &quot;&quot;&quot;コンデンサ（または帯電体）に蓄えられたエネルギー [J]&quot;&quot;&quot;\n    return 0.5 * C * V**2\n\n# 人体の帯電（例: C≈200pF, V≈10000V）\nC_body = 200e-12   # 200 pF\nV_body = 10000     # 10 kV（歩行時の帯電）\nE_static = static_energy(C_body, V_body)\nprint(f&quot;人体の静電エネルギー: {E_static*1000:.1f} mJ&quot;)\n# IC は数十mJ で破壊されることがある → ESD 対策が重要\n</code></pre>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "electricity-basics",
+"title": "電気の基礎（電流・電圧・抵抗）"
+},
+{
+"slug": "capacitor",
+"title": "コンデンサ（静電容量・充放電）"
+},
+{
+"slug": "ohms-law",
+"title": "オームの法則（V = RI）"
+}
+],
+"next_full": [
+{
+"slug": "capacitor",
+"title": "コンデンサ（静電容量・充放電）"
+}
+],
+"completed": false,
+"favorite": false
+},
+"electromagnetic-induction": {
+"slug": "electromagnetic-induction",
+"title": "電磁誘導とファラデーの法則",
+"level": 2,
+"category": "Electronics",
+"related": [
+"magnetism",
+"alternating-current",
+"capacitor"
+],
+"next": [
+"alternating-current"
+],
+"tags": [
+"electromagnetic-induction",
+"faraday",
+"lenz",
+"transformer",
+"electronics"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"html": "<h2>概要</h2>\n<p>電磁誘導は「磁束の変化が起電力を生む」現象です。1831年にファラデーが発見したこの法則が、発電機・変圧器・非接触充電（ワイヤレス充電）・車載センサー（ABS・クランク角センサー）の原理です。</p>\n<h2>ファラデーの電磁誘導の法則</h2>\n<p>$$\\varepsilon = -N \\frac{\\Delta\\Phi}{\\Delta t}$$</p>\n<ul>\n<li><strong>ε</strong>：誘導起電力 [V]</li>\n<li><strong>N</strong>：コイルの巻数</li>\n<li><strong>ΔΦ</strong>：磁束の変化量 [Wb（ウェーバー）]</li>\n<li><strong>Δt</strong>：時間の変化 [s]</li>\n<li>マイナス符号：レンツの法則（変化を妨げる向きに誘起）</li>\n</ul>\n<pre><code class=\"language-python\">import numpy as np\nimport matplotlib.pyplot as plt\n\ndef induced_emf(N, dPhi_dt):\n    &quot;&quot;&quot;誘導起電力 [V]&quot;&quot;&quot;\n    return -N * dPhi_dt\n\n# コイルの中の磁束が変化するとき\nt = np.linspace(0, 0.1, 1000)   # 0〜100ms\nB_max = 0.5    # T\nfreq  = 50     # Hz（商用電源）\n\nPhi   = B_max * 0.01 * np.sin(2 * np.pi * freq * t)   # 磁束 Φ = B × A\ndPhi  = np.gradient(Phi, t)                              # dΦ/dt\n\nN = 100    # 巻数\nemf = induced_emf(N, dPhi)\n\nfig, axes = plt.subplots(2, 1, figsize=(10, 6))\naxes[0].plot(t * 1000, Phi * 1000, &quot;b-&quot;, lw=2)\naxes[0].set_ylabel(&quot;磁束 Φ [mWb]&quot;)\naxes[0].set_title(&quot;磁束の時間変化&quot;)\naxes[0].grid(True)\n\naxes[1].plot(t * 1000, emf, &quot;r-&quot;, lw=2)\naxes[1].set_xlabel(&quot;時間 [ms]&quot;)\naxes[1].set_ylabel(&quot;誘導起電力 [V]&quot;)\naxes[1].set_title(&quot;誘導起電力（磁束の微分）&quot;)\naxes[1].grid(True)\nplt.tight_layout()\nplt.show()\n</code></pre>\n<h2>レンツの法則</h2>\n<p>誘導電流は、磁束の変化を妨げる向きに流れます。</p>\n<pre><code>磁石を近づける           誘導電流\n  N  →→→→    ○←←○\n              ↑\n        磁石を押し返す力（斥力）が発生\n\n磁石を遠ざける           誘導電流\n  N  ←←←←    ○→→○\n              ↑\n        磁石を引き戻す力（引力）が発生\n</code></pre>\n<pre><code class=\"language-python\">def lenz_force(v_magnet, B, L, R_coil):\n    &quot;&quot;&quot;\n    磁石の速度 v から誘導電流・ブレーキ力を計算\n    L: 有効コイル長 [m], R_coil: コイル抵抗 [Ω]\n    &quot;&quot;&quot;\n    emf   = B * L * v_magnet     # 誘導起電力\n    I_ind = emf / R_coil          # 誘導電流\n    F_brake = B * I_ind * L       # ブレーキ力（レンツの法則）\n    return emf, I_ind, F_brake\n\n# 電磁ブレーキ（リニアモーターカーの制動など）\nemf, I, F = lenz_force(v_magnet=10, B=0.5, L=0.2, R_coil=2)\nprint(f&quot;誘導起電力: {emf} V&quot;)\nprint(f&quot;誘導電流:   {I} A&quot;)\nprint(f&quot;制動力:     {F} N&quot;)\n</code></pre>\n<h2>変圧器（トランス）</h2>\n<p>変圧器は電磁誘導で交流電圧を変換します。</p>\n<p>$$\\frac{V_2}{V_1} = \\frac{N_2}{N_1}$$</p>\n<pre><code class=\"language-python\">def transformer(V1, N1, N2, I1=None):\n    &quot;&quot;&quot;\n    理想変圧器の計算\n    V1: 1次電圧, N1: 1次巻数, N2: 2次巻数\n    &quot;&quot;&quot;\n    V2 = V1 * N2 / N1\n    I2 = I1 * N1 / N2 if I1 is not None else None\n    P_in = V1 * I1 if I1 is not None else None\n    P_out = V2 * I2 if I2 is not None else None\n    return V2, I2, P_in, P_out\n\n# 電柱の変圧器: 6600V → 100V\nV2, I2, P_in, P_out = transformer(6600, 6600, 100, I1=10)\nprint(f&quot;2次電圧: {V2} V&quot;)\nprint(f&quot;2次電流: {I2} A&quot;)\nprint(f&quot;入力電力: {P_in} W  出力電力: {P_out} W（理想変圧器: P_in = P_out）&quot;)\n\n# スマホ充電器: 100V → 5V\nV2, _, _, _ = transformer(100, 100, 5)\nprint(f&quot;\\nスマホ充電器 2次電圧: {V2} V&quot;)\n\n# 車載用DC-DCコンバーター（12V → 3.3V）\n# 実際はスイッチング方式だが変圧比の概念は同じ\nratio = 3.3 / 12\nprint(f&quot;12V → 3.3V の変圧比: {ratio:.3f}（N2/N1 = {ratio:.3f}）&quot;)\n</code></pre>\n<h2>自己誘導とインダクタンス</h2>\n<p>コイル自身の電流変化が逆起電力を生みます。</p>\n<p>$$\\varepsilon = -L \\frac{dI}{dt}$$</p>\n<pre><code class=\"language-python\">def self_inductance_emf(L, dI_dt):\n    &quot;&quot;&quot;自己誘導起電力 [V]&quot;&quot;&quot;\n    return -L * dI_dt\n\n# インダクタ（コイル）の特性\nL = 1e-3    # 1 mH（車載フィルター用）\n\n# 電流が急変するとき（スイッチングノイズ）\ndI_dt_spike = 1000   # A/s → 1A/ms の変化\nemf_spike   = self_inductance_emf(L, dI_dt_spike)\nprint(f&quot;スイッチングスパイク: {emf_spike} V&quot;)\n\n# インダクタに蓄えられるエネルギー\nI_coil = 5  # A\nE_inductor = 0.5 * L * I_coil**2\nprint(f&quot;インダクタのエネルギー: {E_inductor * 1000:.2f} mJ&quot;)\n</code></pre>\n<h2>車載センサーへの応用</h2>\n<pre><code class=\"language-python\"># クランク角センサー（パッシブ型）の動作原理\ndef crank_sensor_signal(rpm, teeth=60, t_total=0.1):\n    &quot;&quot;&quot;\n    歯車の回転で磁束が変化 → 誘導電圧を生成\n    rpm: エンジン回転数, teeth: 歯数, t_total: 時間[s]\n    &quot;&quot;&quot;\n    f_tooth  = rpm / 60 * teeth   # 歯が通過する周波数 [Hz]\n    t        = np.linspace(0, t_total, 5000)\n    signal   = np.sin(2 * np.pi * f_tooth * t)\n    return t, signal\n\nfor rpm in [800, 3000, 6000]:\n    t, sig = crank_sensor_signal(rpm)\n    f = rpm / 60 * 60\n    print(f&quot;RPM {rpm:5d}: センサー信号周波数 {f:.0f} Hz&quot;)\n</code></pre>",
+"prereq_full": [
+{
+"slug": "magnetism",
+"title": "磁界・電磁力（フレミングの法則）"
+}
+],
+"related_full": [
+{
+"slug": "magnetism",
+"title": "磁界・電磁力（フレミングの法則）"
+},
+{
+"slug": "alternating-current",
+"title": "交流回路（AC・RMS・インピーダンス）"
+},
+{
+"slug": "capacitor",
+"title": "コンデンサ（静電容量・充放電）"
+}
+],
+"next_full": [
+{
+"slug": "alternating-current",
+"title": "交流回路（AC・RMS・インピーダンス）"
 }
 ],
 "completed": false,
@@ -6511,8 +7257,8 @@
 "title": "通信とは"
 },
 {
-"slug": "python-basics",
-"title": "Python基礎（変数・リスト・辞書）"
+"slug": "electricity-basics",
+"title": "電気の基礎（電流・電圧・抵抗）"
 }
 ],
 "python-basics": [
@@ -6541,6 +7287,32 @@
 "title": "勾配ブースティング（XGBoost・LightGBM）"
 }
 ],
+"ohms-law": [
+{
+"slug": "circuit-series-parallel",
+"title": "直列・並列回路と合成抵抗"
+},
+{
+"slug": "electricity-basics",
+"title": "電気の基礎（電流・電圧・抵抗）"
+},
+{
+"slug": "electric-power",
+"title": "電力・電力量とジュール熱"
+},
+{
+"slug": "alternating-current",
+"title": "交流回路（AC・RMS・インピーダンス）"
+},
+{
+"slug": "capacitor",
+"title": "コンデンサ（静電容量・充放電）"
+},
+{
+"slug": "electric-field",
+"title": "電場とクーロンの法則"
+}
+],
 "ml-basics": [
 {
 "slug": "scikit-learn",
@@ -6567,6 +7339,32 @@
 "title": "データクリーニング"
 }
 ],
+"circuit-series-parallel": [
+{
+"slug": "electric-power",
+"title": "電力・電力量とジュール熱"
+},
+{
+"slug": "ohms-law",
+"title": "オームの法則（V = RI）"
+},
+{
+"slug": "electricity-basics",
+"title": "電気の基礎（電流・電圧・抵抗）"
+},
+{
+"slug": "alternating-current",
+"title": "交流回路（AC・RMS・インピーダンス）"
+},
+{
+"slug": "capacitor",
+"title": "コンデンサ（静電容量・充放電）"
+},
+{
+"slug": "electric-field",
+"title": "電場とクーロンの法則"
+}
+],
 "communication-basics": [
 {
 "slug": "osi",
@@ -6575,6 +7373,62 @@
 {
 "slug": "ethernet",
 "title": "Ethernet"
+},
+{
+"slug": "electricity-basics",
+"title": "電気の基礎（電流・電圧・抵抗）"
+},
+{
+"slug": "python-basics",
+"title": "Python基礎（変数・リスト・辞書）"
+}
+],
+"electric-power": [
+{
+"slug": "ohms-law",
+"title": "オームの法則（V = RI）"
+},
+{
+"slug": "circuit-series-parallel",
+"title": "直列・並列回路と合成抵抗"
+},
+{
+"slug": "electricity-basics",
+"title": "電気の基礎（電流・電圧・抵抗）"
+},
+{
+"slug": "alternating-current",
+"title": "交流回路（AC・RMS・インピーダンス）"
+},
+{
+"slug": "capacitor",
+"title": "コンデンサ（静電容量・充放電）"
+},
+{
+"slug": "electric-field",
+"title": "電場とクーロンの法則"
+}
+],
+"electricity-basics": [
+{
+"slug": "ohms-law",
+"title": "オームの法則（V = RI）"
+},
+{
+"slug": "circuit-series-parallel",
+"title": "直列・並列回路と合成抵抗"
+},
+{
+"slug": "electric-power",
+"title": "電力・電力量とジュール熱"
+},
+{
+"slug": "communication-basics",
+"title": "通信とは"
+},
+{
+"slug": "osi",
+"title": "OSI参照モデル"
 },
 {
 "slug": "python-basics",
@@ -7095,6 +7949,32 @@
 "title": "データ分析の流れ（EDA）"
 }
 ],
+"capacitor": [
+{
+"slug": "electric-field",
+"title": "電場とクーロンの法則"
+},
+{
+"slug": "alternating-current",
+"title": "交流回路（AC・RMS・インピーダンス）"
+},
+{
+"slug": "ohms-law",
+"title": "オームの法則（V = RI）"
+},
+{
+"slug": "electromagnetic-induction",
+"title": "電磁誘導とファラデーの法則"
+},
+{
+"slug": "circuit-series-parallel",
+"title": "直列・並列回路と合成抵抗"
+},
+{
+"slug": "electric-power",
+"title": "電力・電力量とジュール熱"
+}
+],
 "subnet": [
 {
 "slug": "dhcp",
@@ -7165,6 +8045,32 @@
 "title": "Transformerアーキテクチャ"
 }
 ],
+"alternating-current": [
+{
+"slug": "ohms-law",
+"title": "オームの法則（V = RI）"
+},
+{
+"slug": "capacitor",
+"title": "コンデンサ（静電容量・充放電）"
+},
+{
+"slug": "electromagnetic-induction",
+"title": "電磁誘導とファラデーの法則"
+},
+{
+"slug": "electric-power",
+"title": "電力・電力量とジュール熱"
+},
+{
+"slug": "circuit-series-parallel",
+"title": "直列・並列回路と合成抵抗"
+},
+{
+"slug": "electric-field",
+"title": "電場とクーロンの法則"
+}
+],
 "classification": [
 {
 "slug": "gradient-boosting",
@@ -7189,6 +8095,32 @@
 {
 "slug": "data-cleaning",
 "title": "データクリーニング"
+}
+],
+"semiconductor": [
+{
+"slug": "electric-field",
+"title": "電場とクーロンの法則"
+},
+{
+"slug": "ohms-law",
+"title": "オームの法則（V = RI）"
+},
+{
+"slug": "electricity-basics",
+"title": "電気の基礎（電流・電圧・抵抗）"
+},
+{
+"slug": "alternating-current",
+"title": "交流回路（AC・RMS・インピーダンス）"
+},
+{
+"slug": "capacitor",
+"title": "コンデンサ（静電容量・充放電）"
+},
+{
+"slug": "circuit-series-parallel",
+"title": "直列・並列回路と合成抵抗"
 }
 ],
 "dimensionality-reduction": [
@@ -7243,6 +8175,32 @@
 "title": "線形回帰"
 }
 ],
+"magnetism": [
+{
+"slug": "electromagnetic-induction",
+"title": "電磁誘導とファラデーの法則"
+},
+{
+"slug": "electric-field",
+"title": "電場とクーロンの法則"
+},
+{
+"slug": "electricity-basics",
+"title": "電気の基礎（電流・電圧・抵抗）"
+},
+{
+"slug": "alternating-current",
+"title": "交流回路（AC・RMS・インピーダンス）"
+},
+{
+"slug": "capacitor",
+"title": "コンデンサ（静電容量・充放電）"
+},
+{
+"slug": "circuit-series-parallel",
+"title": "直列・並列回路と合成抵抗"
+}
+],
 "statistics": [
 {
 "slug": "data-analysis",
@@ -7293,6 +8251,58 @@
 {
 "slug": "data-cleaning",
 "title": "データクリーニング"
+}
+],
+"electric-field": [
+{
+"slug": "capacitor",
+"title": "コンデンサ（静電容量・充放電）"
+},
+{
+"slug": "ohms-law",
+"title": "オームの法則（V = RI）"
+},
+{
+"slug": "electricity-basics",
+"title": "電気の基礎（電流・電圧・抵抗）"
+},
+{
+"slug": "magnetism",
+"title": "磁界・電磁力（フレミングの法則）"
+},
+{
+"slug": "alternating-current",
+"title": "交流回路（AC・RMS・インピーダンス）"
+},
+{
+"slug": "circuit-series-parallel",
+"title": "直列・並列回路と合成抵抗"
+}
+],
+"electromagnetic-induction": [
+{
+"slug": "alternating-current",
+"title": "交流回路（AC・RMS・インピーダンス）"
+},
+{
+"slug": "magnetism",
+"title": "磁界・電磁力（フレミングの法則）"
+},
+{
+"slug": "capacitor",
+"title": "コンデンサ（静電容量・充放電）"
+},
+{
+"slug": "circuit-series-parallel",
+"title": "直列・並列回路と合成抵抗"
+},
+{
+"slug": "electric-field",
+"title": "電場とクーロンの法則"
+},
+{
+"slug": "electric-power",
+"title": "電力・電力量とジュール熱"
 }
 ],
 "avtp": [
@@ -7439,16 +8449,16 @@
 "title": "RAG（検索拡張生成）"
 },
 {
+"slug": "electromagnetic-induction",
+"title": "電磁誘導とファラデーの法則"
+},
+{
 "slug": "fine-tuning",
 "title": "ファインチューニング（LoRA・QLoRA・PEFT）"
 },
 {
 "slug": "langchain",
 "title": "LangChain（LLMアプリ開発フレームワーク）"
-},
-{
-"slug": "rnn-lstm",
-"title": "RNN・LSTM（系列データのモデリング）"
 }
 ],
 "langchain": [
@@ -7695,12 +8705,12 @@
 "title": "CNN（畳み込みニューラルネットワーク）"
 },
 {
-"slug": "generative-models",
-"title": "生成モデル（GAN・VAE・Diffusion）"
+"slug": "electromagnetic-induction",
+"title": "電磁誘導とファラデーの法則"
 },
 {
-"slug": "image-processing",
-"title": "画像前処理・特徴抽出（深層学習向け）"
+"slug": "generative-models",
+"title": "生成モデル（GAN・VAE・Diffusion）"
 }
 ],
 "uds": [
@@ -11044,6 +12054,275 @@
 "difficulty": "中級",
 "updated": "2026-06-10",
 "excerpt": "深層学習で画像を扱う際には、モデルに合わせた前処理（リサイズ・正規化・データ拡張）が精度に大きく影響します。PyTorchの `torchvision.transforms` と OpenCV を組み合わせた実践的な前処理パイプラインを解説",
+"views": 0,
+"completed": false,
+"favorite": false
+}
+]
+},
+{
+"name": "Electronics",
+"articles": [
+{
+"slug": "ohms-law",
+"title": "オームの法則（V = RI）",
+"level": 1,
+"category": "Electronics",
+"related": [
+"electricity-basics",
+"circuit-series-parallel",
+"electric-power"
+],
+"next": [
+"circuit-series-parallel"
+],
+"tags": [
+"ohms-law",
+"voltage",
+"current",
+"resistance",
+"electronics"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "オームの法則は電気の最も基本的な法則です。「電圧・電流・抵抗の関係」を一つの式で表します。1827年にゲオルク・オームが発見し、回路設計・故障診断・車載ECU開発のすべての場面で使われます。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "circuit-series-parallel",
+"title": "直列・並列回路と合成抵抗",
+"level": 1,
+"category": "Electronics",
+"related": [
+"ohms-law",
+"electric-power",
+"electricity-basics"
+],
+"next": [
+"electric-power"
+],
+"tags": [
+"series",
+"parallel",
+"circuit",
+"resistance",
+"electronics"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "複数の抵抗を組み合わせた回路には「直列」と「並列」の2種類があります。この2つの接続の違いを理解することは、電子回路設計・故障診断・車載ハーネス設計の基本です。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "electric-power",
+"title": "電力・電力量とジュール熱",
+"level": 1,
+"category": "Electronics",
+"related": [
+"ohms-law",
+"circuit-series-parallel",
+"electricity-basics"
+],
+"next": [],
+"tags": [
+"power",
+"energy",
+"joule-heat",
+"watt",
+"electronics"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "電力は「1秒あたりに消費するエネルギー」、電力量は「使ったエネルギーの合計」です。家電の消費電力・電池の持ち時間・抵抗の発熱量はすべてここで計算します。車載ECUの熱設計にも不可欠な知識です。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "electricity-basics",
+"title": "電気の基礎（電流・電圧・抵抗）",
+"level": 1,
+"category": "Electronics",
+"related": [
+"ohms-law",
+"circuit-series-parallel",
+"electric-power"
+],
+"next": [
+"ohms-law"
+],
+"tags": [
+"electricity",
+"current",
+"voltage",
+"resistance",
+"basics"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "電気は現代のあらゆるテクノロジーの基盤です。スマートフォン・車・コンピューターはすべて電気で動いています。「なぜ電気が流れるのか」を原子レベルから理解することが、電子工学・組み込み開発・車載ECU設計の出発点です。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "capacitor",
+"title": "コンデンサ（静電容量・充放電）",
+"level": 2,
+"category": "Electronics",
+"related": [
+"electric-field",
+"alternating-current",
+"ohms-law",
+"electromagnetic-induction"
+],
+"next": [],
+"tags": [
+"capacitor",
+"capacitance",
+"charge",
+"rc-circuit",
+"electronics"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "コンデンサは「電荷を蓄えるデバイス」です。2枚の金属板の間に電場を生じさせてエネルギーを蓄えます。電源のノイズ除去・タイマー回路・フィルタ・DRAM・非接触ICカードなど、あらゆる電子回路に使われています。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "alternating-current",
+"title": "交流回路（AC・RMS・インピーダンス）",
+"level": 2,
+"category": "Electronics",
+"related": [
+"ohms-law",
+"capacitor",
+"electromagnetic-induction",
+"electric-power"
+],
+"next": [],
+"tags": [
+"ac",
+"alternating-current",
+"rms",
+"impedance",
+"electronics"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "家庭のコンセントは「交流（AC）」です。直流（DC）と違い、電圧と電流が周期的に向きを変えます。日本では50/60Hzの正弦波交流が使われています。コンデンサ・コイルが絡む回路ではインピーダンスという概念が必要になります。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "semiconductor",
+"title": "半導体の仕組み（PN接合・トランジスタ）",
+"level": 2,
+"category": "Electronics",
+"related": [
+"electricity-basics",
+"electric-field",
+"ohms-law"
+],
+"next": [],
+"tags": [
+"semiconductor",
+"transistor",
+"diode",
+"pn-junction",
+"electronics"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "半導体はスマートフォン・PC・車載ECUのすべてに使われている現代文明の基盤素材です。「どうして電流を制御できるのか」を理解することは、電子回路設計・組み込み開発の出発点です。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "magnetism",
+"title": "磁界・電磁力（フレミングの法則）",
+"level": 2,
+"category": "Electronics",
+"related": [
+"electricity-basics",
+"electromagnetic-induction",
+"electric-field"
+],
+"next": [
+"electromagnetic-induction"
+],
+"tags": [
+"magnetism",
+"magnetic-field",
+"fleming",
+"electronics",
+"physics"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "電気と磁気は密接に関係しています。電流が流れると磁界が生まれ、磁界の中の電流は力を受けます（電磁力）。この原理がモーター・スピーカー・変圧器・MRIのすべての基盤です。車載システムではABSセンサーやEVのモーター制御に直結します。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "electric-field",
+"title": "電場とクーロンの法則",
+"level": 2,
+"category": "Electronics",
+"related": [
+"electricity-basics",
+"capacitor",
+"ohms-law"
+],
+"next": [
+"capacitor"
+],
+"tags": [
+"electric-field",
+"coulomb",
+"charge",
+"electronics",
+"physics"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "電場（電界）は「電荷の周りに生じる力の場」です。クーロンの法則は2つの電荷の間に働く力を表します。コンデンサ・絶縁体・半導体デバイスの動作原理はすべてこの電場の概念から理解できます。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "electromagnetic-induction",
+"title": "電磁誘導とファラデーの法則",
+"level": 2,
+"category": "Electronics",
+"related": [
+"magnetism",
+"alternating-current",
+"capacitor"
+],
+"next": [
+"alternating-current"
+],
+"tags": [
+"electromagnetic-induction",
+"faraday",
+"lenz",
+"transformer",
+"electronics"
+],
+"difficulty": "初級",
+"updated": "2026-06-10",
+"excerpt": "電磁誘導は「磁束の変化が起電力を生む」現象です。1831年にファラデーが発見したこの法則が、発電機・変圧器・非接触充電（ワイヤレス充電）・車載センサー（ABS・クランク角センサー）の原理です。",
 "views": 0,
 "completed": false,
 "favorite": false

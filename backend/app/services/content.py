@@ -19,7 +19,7 @@ _FRONTMATTER_RE = re.compile(r"^---\s*\n(.*?)\n---\s*\n(.*)$", re.DOTALL)
 _LINK_RE = re.compile(r"\[\[([a-z0-9\-]+)\]\]")
 
 # note-style top categories shown on the home screen.
-CATEGORIES = ["Ethernet", "TCP/IP", "PCAP", "SOME/IP", "AUTOSAR", "SDV", "Automotive Bus", "Diagnostics", "Security", "Howto", "Python", "ML", "DL", "GenAI", "CV"]
+CATEGORIES = ["Ethernet", "TCP/IP", "PCAP", "SOME/IP", "AUTOSAR", "SDV", "Automotive Bus", "Diagnostics", "Security", "Howto", "Python", "ML", "DL", "GenAI", "CV", "Electronics"]
 
 # slug -> category (overridable via frontmatter `category`).
 _CATEGORY_MAP = {
@@ -106,6 +106,17 @@ _CATEGORY_MAP = {
     # GenAI additional
     "langchain": "GenAI",
     "fine-tuning": "GenAI",
+    # Electronics
+    "electricity-basics":        "Electronics",
+    "ohms-law":                  "Electronics",
+    "circuit-series-parallel":   "Electronics",
+    "electric-power":            "Electronics",
+    "electric-field":            "Electronics",
+    "magnetism":                 "Electronics",
+    "electromagnetic-induction": "Electronics",
+    "capacitor":                 "Electronics",
+    "alternating-current":       "Electronics",
+    "semiconductor":             "Electronics",
 }
 
 

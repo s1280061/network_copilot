@@ -17,7 +17,8 @@ export const CATEGORY_STYLE: Record<
   ML:        { bg: "bg-purple-100",  text: "text-purple-800",  icon: "🤖" },
   DL:        { bg: "bg-indigo-100", text: "text-indigo-800", icon: "🧠" },
   GenAI:     { bg: "bg-pink-100",   text: "text-pink-800",   icon: "✨" },
-  CV:        { bg: "bg-teal-100",   text: "text-teal-800",   icon: "👁️" },
+  CV:          { bg: "bg-teal-100",    text: "text-teal-800",    icon: "👁️" },
+  Electronics: { bg: "bg-amber-100",  text: "text-amber-800",   icon: "⚡" },
 };
 
 export const DEFAULT_STYLE = {
