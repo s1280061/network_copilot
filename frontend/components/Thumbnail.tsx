@@ -13,6 +13,7 @@ export const CATEGORY_STYLE: Record<
   "SOME/IP": { bg: "bg-orange-100", text: "text-orange-700", icon: "🚗" },
   AUTOSAR:   { bg: "bg-green-100",  text: "text-green-700",  icon: "⚙️" },
   SDV:       { bg: "bg-rose-100",   text: "text-rose-700",   icon: "🤖" },
+  Python:    { bg: "bg-yellow-100", text: "text-yellow-800", icon: "🐍" },
 };
 
 export const DEFAULT_STYLE = {
