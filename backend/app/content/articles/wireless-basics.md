@@ -11,6 +11,13 @@ tags: [wireless, radio, frequency, modulation, antenna, basics]
 ## 概要
 無線通信は電磁波（電波）を使って情報を伝える技術です。Wi-Fi・Bluetooth・5G・車載V2X・GPSはすべて異なる周波数帯の電波を使っています。「なぜ5GHzのWi-Fiは壁に弱いのか」「なぜ5Gは速いのか」を電波の物理から理解しましょう。
 
+```mermaid
+graph LR
+  TX["送信機"] --> A1["変調・アンテナ"]
+  A1 -. "電波（搬送波）" .-> A2["アンテナ・復調"]
+  A2 --> RX["受信機"]
+```
+
 ## 電波の基本性質
 
 $$c = f \times \lambda$$

@@ -11,6 +11,13 @@ tags: [ohms-law, voltage, current, resistance, electronics]
 ## 概要
 オームの法則は電気の最も基本的な法則です。「電圧・電流・抵抗の関係」を一つの式で表します。1827年にゲオルク・オームが発見し、回路設計・故障診断・車載ECU開発のすべての場面で使われます。
 
+```mermaid
+graph LR
+  V["電圧 V"] --> O["オームの法則<br/>V = R × I"]
+  R["抵抗 R"] --> O
+  O --> I["電流 I = V / R"]
+```
+
 ## オームの法則
 
 $$V = R \times I$$

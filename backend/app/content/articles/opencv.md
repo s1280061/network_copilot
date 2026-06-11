@@ -11,6 +11,13 @@ tags: [opencv, computer-vision, python, image-processing]
 ## 概要
 OpenCV（Open Source Computer Vision Library）はC++/Python対応の高速な画像処理ライブラリです。画像の読み込み・変換・フィルタリング・エッジ検出・物体検出まで、コンピュータビジョンに必要な操作がほぼすべて揃っています。
 
+```mermaid
+graph LR
+  IM["画像読込"] --> PRE["前処理<br/>(グレー化/平滑化)"]
+  PRE --> DET["特徴抽出/検出"]
+  DET --> OUT["結果描画・保存"]
+```
+
 ## なぜ使うか
 カメラ画像の前処理・特徴抽出・リアルタイム処理にはOpenCVが最速です。딥러닝での推論前の前処理（リサイズ・正規化）にも使い、自動運転の開発現場でも定番のライブラリです。
 

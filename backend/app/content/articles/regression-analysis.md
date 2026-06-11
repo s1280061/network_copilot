@@ -11,6 +11,13 @@ tags: [regression, multicollinearity, residual, ols, statsmodels, vif, statistic
 ## 概要
 回帰分析は「目的変数 Y を説明変数 X₁, X₂, ... で説明・予測する」手法です。機械学習の線形回帰とは異なり、統計的推論（係数の有意性・信頼区間・モデル診断）を重視します。多重共線性・残差診断・外れ値の検出が実務での品質チェックに欠かせません。
 
+```mermaid
+graph LR
+  X["説明変数 X1..Xp"] --> M["回帰モデル<br/>y = β0 + Σβx"]
+  M --> Y["予測 ŷ"]
+  M --> D["診断<br/>(残差/VIF/Cook距離)"]
+```
+
 ## 主要な数式
 
 **重回帰モデル**：

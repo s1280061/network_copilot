@@ -11,6 +11,12 @@ tags: [ac, alternating-current, rms, impedance, electronics]
 ## 概要
 家庭のコンセントは「交流（AC）」です。直流（DC）と違い、電圧と電流が周期的に向きを変えます。日本では50/60Hzの正弦波交流が使われています。コンデンサ・コイルが絡む回路ではインピーダンスという概念が必要になります。
 
+```mermaid
+graph LR
+  DC["直流 DC<br/>向き一定（電池）"] -. 比較 .- AC["交流 AC<br/>向きが周期反転"]
+  AC --> U["送電・家電<br/>50/60Hz 正弦波"]
+```
+
 ## 交流波形
 
 $$v(t) = V_m \sin(2\pi f t + \phi)$$

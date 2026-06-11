@@ -11,6 +11,13 @@ tags: [fastapi, python, api, web, backend]
 ## 概要
 FastAPIはPythonの型ヒントを活かした高速なWebAPIフレームワークです。自動的なOpenAPIドキュメント生成・型バリデーション・非同期処理をサポートし、機械学習モデルや分析ツールのAPIサーバーとして最も人気があります。
 
+```mermaid
+graph LR
+  R["HTTPリクエスト"] --> V["型バリデーション<br/>(Pydantic)"]
+  V --> H["エンドポイント処理"]
+  H --> J["JSONレスポンス"]
+```
+
 ## なぜ FastAPI か
 
 | | Flask | Django REST | FastAPI |

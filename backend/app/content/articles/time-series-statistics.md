@@ -11,6 +11,15 @@ tags: [time-series, arima, acf, pacf, stationarity, forecasting, statsmodels]
 ## 概要
 時系列データは「時間的に連続して観測されたデータ」です。通常の回帰分析では独立性の仮定が崩れるため、専用の手法が必要です。定常性の確認・自己相関の分析・ARIMAモデルの構築が時系列分析の基本的な流れです。
 
+```mermaid
+graph LR
+  TS["時系列"] --> ST{"定常?"}
+  ST -->|No| DF["差分をとる"]
+  DF --> AR["AR/MA/ARIMA"]
+  ST -->|Yes| AR
+  AR --> FC["予測"]
+```
+
 ## 主要な数式
 
 **自己相関関数（ACF）**（ラグ $k$）：

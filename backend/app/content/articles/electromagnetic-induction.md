@@ -11,6 +11,12 @@ tags: [electromagnetic-induction, faraday, lenz, transformer, electronics]
 ## 概要
 電磁誘導は「磁束の変化が起電力を生む」現象です。1831年にファラデーが発見したこの法則が、発電機・変圧器・非接触充電（ワイヤレス充電）・車載センサー（ABS・クランク角センサー）の原理です。
 
+```mermaid
+graph LR
+  M["磁束の変化 ΔΦ"] --> E["起電力 V = −dΦ/dt"]
+  E --> U["発電機・変圧器・<br/>ワイヤレス充電"]
+```
+
 ## ファラデーの電磁誘導の法則
 
 $$\varepsilon = -N \frac{\Delta\Phi}{\Delta t}$$

@@ -11,6 +11,13 @@ tags: [lte, 5g, cellular, nr, automotive, telematics, ota]
 ## 概要
 LTE（4G）と5Gは全国規模のモバイル通信インフラです。自動車では「テレマティクス（位置情報・盗難追跡）」「OTA（Over-the-Air）アップデート」「コネクテッドカー」「C-V2X（Cellular V2X）」に活用されています。
 
+```mermaid
+graph LR
+  C["車両<br/>(端末)"] <-->|電波| BTS["基地局"]
+  BTS --> N["コアネットワーク"]
+  N --> Cloud["クラウド<br/>(OTA/地図/追跡)"]
+```
+
 ## 主要な数式
 
 **MIMO による容量向上**（$N_t$ 送信・$N_r$ 受信アンテナ）：

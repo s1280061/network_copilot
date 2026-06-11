@@ -11,6 +11,13 @@ tags: [scapy, python, pcap, analysis, network]
 ## 概要
 ScapyはPCAPファイルの読み書き・フィルタリング・統計集計・プロトコル解析をPythonコードで自動化できます。Wiresharkが手動の目視分析なら、Scapyは**バッチ処理・大量ファイルの自動解析**に強みがあります。
 
+```mermaid
+graph LR
+  P["pcapファイル"] --> R["rdpcap()で読込"]
+  R --> F["パケット解析/フィルタ"]
+  F --> O["集計・書き出し"]
+```
+
 ## なぜ使うか
 数百MBのPCAPを毎日解析したい、特定パターンのパケットを抽出して集計したい、という場合はScapyのスクリプトが最適です。Wiresharkのエクスポート＋Excelより圧倒的に高速かつ再現性があります。
 

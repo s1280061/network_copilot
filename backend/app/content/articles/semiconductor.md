@@ -11,6 +11,13 @@ tags: [semiconductor, transistor, diode, pn-junction, electronics]
 ## 概要
 半導体はスマートフォン・PC・車載ECUのすべてに使われている現代文明の基盤素材です。「どうして電流を制御できるのか」を理解することは、電子回路設計・組み込み開発の出発点です。
 
+```mermaid
+graph LR
+  N["N型<br/>(電子)"] --> J["pn接合"]
+  P["P型<br/>(正孔)"] --> J
+  J --> D["ダイオード/トランジスタ"]
+```
+
 ## 主要な数式
 
 **ダイオードの電流–電圧特性**（ショックレーの式、熱電圧 $V_T \approx 26\,\text{mV}$）：

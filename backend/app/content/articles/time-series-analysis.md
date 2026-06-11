@@ -11,6 +11,13 @@ tags: [time-series, python, statsmodels, arima, forecasting]
 ## 概要
 時系列分析は時間順に並んだデータのパターンを発見・予測する手法です。車載ネットワークのトラフィック量の変化、ECU温度のトレンド、センサーデータの周期性など、ネットワーク診断・予兆保全に不可欠です。PythonではStatsmodels・Prophet・scikit-learnが主要ツールです。
 
+```mermaid
+graph LR
+  TS["時系列データ"] --> DC["トレンド/季節/残差<br/>に分解"]
+  DC --> MO["ARIMA等で<br/>モデル化"]
+  MO --> FC["将来を予測"]
+```
+
 ## 時系列データの構造
 
 ```python

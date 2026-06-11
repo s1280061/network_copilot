@@ -11,6 +11,13 @@ tags: [pca, factor-analysis, lda, multivariate, dimensionality-reduction, statis
 ## 概要
 多変量統計は「多数の変数を同時に扱う」手法群です。主成分分析（PCA）でデータを圧縮・可視化し、因子分析で潜在構造を発見し、判別分析で高精度な分類を行います。変数間の相関構造を活かすことが鍵です。
 
+```mermaid
+graph LR
+  D["高次元データ"] --> PCA["PCA<br/>分散最大の軸"]
+  D --> FA["因子分析<br/>潜在因子"]
+  D --> LDA["LDA<br/>クラス分離"]
+```
+
 ## 主要な数式
 
 **分散共分散行列**（$d$ 変数、$\mathbf{x}_i \in \mathbb{R}^d$）：

@@ -11,6 +11,12 @@ tags: [bluetooth, ble, bluetooth-le, automotive, wireless, pairing]
 ## 概要
 BluetoothはIEEE 802.15.1を基にしたWPAN（無線個人エリアネットワーク）規格です。スマートフォンのハンズフリー通話・音楽ストリーミング・ワイヤレスイヤホン・車載診断ツールまで広く使われています。2.4GHz帯を周波数ホッピングで使うのが特徴です。
 
+```mermaid
+graph LR
+  M["マスター<br/>(スマホ)"] <-->|ペアリング| S1["イヤホン"]
+  M <-->|2.4GHz<br/>周波数ホッピング| S2["車載機"]
+```
+
 ## Bluetooth Classic vs BLE の比較
 
 ```python
