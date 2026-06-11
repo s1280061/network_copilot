@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import { useRouter } from "next/navigation";
 import mermaid from "mermaid";
 import hljs from "highlight.js/lib/core";
@@ -59,6 +59,7 @@ export default function ArticleView({ slug }: { slug: string }) {
   const [recommended, setRecommended] = useState<Ref[]>([]);
   const [error, setError] = useState(false);
   const [faved, setFaved] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   const load = useCallback(() => {
     setArticle(null);
@@ -100,74 +101,25 @@ export default function ArticleView({ slug }: { slug: string }) {
     }
   }
 
-  // Mermaid rendering
+  // Render the article body imperatively into a ref, then enhance it
+  // (mermaid + syntax highlight + KaTeX). Doing this in a ref decouples the
+  // enhanced DOM from React re-renders (e.g. toggling お気に入り), so the
+  // rendered math/diagrams/code don't revert to raw source.
   useEffect(() => {
-    if (!article) return;
-    const blocks = document.querySelectorAll<HTMLElement>(
-      ".prose-article code.language-mermaid"
-    );
-    blocks.forEach(async (block, i) => {
-      const chart = block.textContent || "";
-      const id = `mermaid-${slug}-${i}`;
-      try {
-        const { svg } = await mermaid.render(id, chart);
-        const wrapper = document.createElement("div");
-        wrapper.className = "overflow-x-auto my-6 flex justify-center";
-        wrapper.innerHTML = svg;
-        block.closest("pre")?.replaceWith(wrapper);
-      } catch {
-        // leave as-is on error
-      }
-    });
-  }, [article, slug]);
+    const container = contentRef.current;
+    if (!article || !container) return;
 
-  // Syntax highlighting
-  useEffect(() => {
-    if (!article) return;
-    const codeBlocks = document.querySelectorAll<HTMLElement>(".prose-article pre code");
-    codeBlocks.forEach((code) => {
-      const lang = getLang(code);
-      if (lang === "mermaid") return;
+    // 1. inject the raw HTML
+    container.innerHTML = article.html;
 
-      // ハイライト実行
-      if (lang && hljs.getLanguage(lang)) {
-        code.innerHTML = hljs.highlight(code.textContent || "", { language: lang }).value;
-      } else {
-        hljs.highlightElement(code);
-      }
-      code.classList.add("hljs");
-
-      // pre ラッパーをスタイリング済みにする
-      const pre = code.closest("pre");
-      if (!pre || pre.classList.contains("hljs-wrapped")) return;
-      pre.classList.add("hljs-wrapped");
-
-      // 言語バッジ
-      if (lang && lang !== "text") {
-        const badge = document.createElement("span");
-        badge.className = "hljs-lang-badge";
-        badge.textContent = lang;
-        pre.appendChild(badge);
-      }
-
-      // コピーボタン
-      const btn = makeCopyBtn(code.textContent || "");
-      pre.appendChild(btn);
-    });
-  }, [article, slug]);
-
-  // KaTeX math rendering ($...$ inline, $$...$$ display)
-  useEffect(() => {
-    if (!article) return;
-    const container = document.querySelector<HTMLElement>(".prose-article");
-    if (!container) return;
+    // 2. KaTeX math first (ignores code/pre so it won't touch code blocks)
     try {
       renderMathInElement(container, {
         delimiters: [
           { left: "$$", right: "$$", display: true },
           { left: "\\[", right: "\\]", display: true },
-          { left: "$", right: "$", display: false },
           { left: "\\(", right: "\\)", display: false },
+          { left: "$", right: "$", display: false },
         ],
         ignoredTags: ["script", "noscript", "style", "textarea", "pre", "code"],
         throwOnError: false,
@@ -175,6 +127,47 @@ export default function ArticleView({ slug }: { slug: string }) {
     } catch {
       // leave as-is on error
     }
+
+    // 3. Mermaid diagrams
+    container
+      .querySelectorAll<HTMLElement>("code.language-mermaid")
+      .forEach(async (block, i) => {
+        const chart = block.textContent || "";
+        try {
+          const { svg } = await mermaid.render(`mermaid-${slug}-${i}`, chart);
+          const wrapper = document.createElement("div");
+          wrapper.className = "overflow-x-auto my-6 flex justify-center";
+          wrapper.innerHTML = svg;
+          block.closest("pre")?.replaceWith(wrapper);
+        } catch {
+          // leave as-is on error
+        }
+      });
+
+    // 4. Syntax highlighting for remaining code blocks
+    container.querySelectorAll<HTMLElement>("pre code").forEach((code) => {
+      const lang = getLang(code);
+      if (lang === "mermaid") return;
+
+      if (lang && hljs.getLanguage(lang)) {
+        code.innerHTML = hljs.highlight(code.textContent || "", { language: lang }).value;
+      } else {
+        hljs.highlightElement(code);
+      }
+      code.classList.add("hljs");
+
+      const pre = code.closest("pre");
+      if (!pre || pre.classList.contains("hljs-wrapped")) return;
+      pre.classList.add("hljs-wrapped");
+
+      if (lang && lang !== "text") {
+        const badge = document.createElement("span");
+        badge.className = "hljs-lang-badge";
+        badge.textContent = lang;
+        pre.appendChild(badge);
+      }
+      pre.appendChild(makeCopyBtn(code.textContent || ""));
+    });
   }, [article, slug]);
 
   // SPA link interception
@@ -231,10 +224,7 @@ export default function ArticleView({ slug }: { slug: string }) {
         <p className="text-xs text-slate-400 mt-1">{article.updated}</p>
       </div>
 
-      <div
-        className="prose-article"
-        dangerouslySetInnerHTML={{ __html: article.html }}
-      />
+      <div className="prose-article" ref={contentRef} />
 
       {allRelated.length > 0 && (
         <div className="mt-10 pt-6 border-t">
