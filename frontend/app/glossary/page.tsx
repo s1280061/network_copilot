@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { getArticles, search as apiSearch } from "@/lib/api";
 import { Article, SearchHit } from "@/lib/types";
@@ -10,6 +10,14 @@ import Thumbnail, { categoryStyle } from "@/components/Thumbnail";
 const CATEGORIES = ["Ethernet", "TCP/IP", "PCAP", "SOME/IP", "AUTOSAR", "SDV", "Automotive Bus", "Diagnostics", "Security", "Howto", "Python", "Statistics", "ML", "DL", "GenAI", "CV", "Electronics", "Automotive", "Wireless"];
 
 export default function GlossaryPage() {
+  return (
+    <Suspense fallback={null}>
+      <GlossaryContent />
+    </Suspense>
+  );
+}
+
+function GlossaryContent() {
   const searchParams = useSearchParams();
   const [items, setItems] = useState<Article[]>([]);
   const [q, setQ] = useState("");
