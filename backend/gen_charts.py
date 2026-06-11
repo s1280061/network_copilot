@@ -16,6 +16,8 @@ os.makedirs(OUT, exist_ok=True)
 plt.rcParams.update({
     "figure.dpi": 140,
     "font.size": 11,
+    "font.family": "IPAGothic",
+    "axes.unicode_minus": False,
     "axes.spines.top": False,
     "axes.spines.right": False,
     "axes.grid": True,
