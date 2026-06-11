@@ -9,7 +9,12 @@ tags: [ml, classification, python, sklearn, data-science]
 ---
 
 ## 概要
-分類（Classification）は入力データが「どのクラスに属するか」を予測するタスクです。スパム判定・故障検知・画像認識などに使います。代表的な4つのアルゴリズムを比較しながら解説します。
+「このメールはスパムか？」「この患者は病気か？」「このECUの挙動は正常か異常か？」――入力データが**どのクラスに属するかを自動判定**するのが分類タスクです。ロジスティック回帰・決定木・SVM・ランダムフォレストという4つの代表手法はそれぞれ得意な状況が異なります。まず「解釈性が必要か」「データ量はどのくらいか」で選択肢を絞りましょう。
+
+## 活用シーン
+- **故障検知**: ECUの通信ログを特徴量化して正常/異常を2値分類
+- **スパム判定**: メール本文の特徴量からスパム確率を出力
+- **顧客離脱予測**: 購買パターンから翌月の解約確率を算出
 
 ## 主要な数式
 
@@ -199,6 +204,20 @@ rf_balanced.fit(X_train, y_train)
 weights = class_weight.compute_class_weight("balanced", classes=np.unique(y), y=y)
 weight_dict = dict(enumerate(weights))
 ```
+
+## よくある間違いと対処法
+
+1. **クラス不均衡を見落とす** → 陽性が5%のデータで「全て陰性予測」するだけでAccuracy 95%になる。`class_weight="balanced"` を使い、評価はF1またはAUC-ROCで行う。
+2. **StandardScalerを忘れる** → ロジスティック回帰とSVMは特徴量スケールに敏感。`make_pipeline(StandardScaler(), model)` を習慣にする。
+3. **決定木を深くしすぎる** → `max_depth` 制限なしだと過学習する。`max_depth=4~6` と `min_samples_leaf=5~10` を設定する。
+4. **ランダムフォレストのn_estimatorsが少ない** → デフォルトの `n_estimators=100` は足りないことがある。200以上を設定し `n_jobs=-1` で並列化する。
+
+## まとめ
+
+- 解釈性重視 → ロジスティック回帰（係数が読める）または決定木（ルールが読める）
+- 精度重視 → ランダムフォレストまたは LightGBM（[[gradient-boosting]]）
+- クラス不均衡 → `class_weight="balanced"` + F1/AUC-ROC で評価
+- 必ず交差検証（`cross_val_score`）でモデルの汎化性能を確認する
 
 ## 次に学ぶべき内容
 最高精度を目指す [[gradient-boosting]]（XGBoost / LightGBM）を学びましょう。

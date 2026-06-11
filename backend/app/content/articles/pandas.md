@@ -9,10 +9,12 @@ tags: [python, pandas, dataframe, data-science]
 ---
 
 ## 概要
-PandasはExcel的な**表形式データ**を扱うライブラリです。中心となるデータ構造は `DataFrame`（2次元の表）と `Series`（1列）で、CSVの読み込み・集計・結合・整形を数行のコードで行えます。実務のデータ分析作業の大半はPandasで完結します。
+実務データの9割はCSVやExcelで来ます。そこには欠損値・型の不一致・重複が必ずあります。Pandasは「表形式データを直感的に操作する」ライブラリで、`DataFrame`（2次元の表）と `Series`（1列）が中心です。`groupby`・`merge`・`resample` などのメソッドを覚えると、Excelで数時間かかる集計が数秒で終わります。実務のデータ分析作業の大半はPandasで完結します。
 
-## なぜ必要か
-生データはCSV・Excel・データベースで提供されることがほとんどで、欠損値・型の不一致・重複などの問題を必ず含みます。NumPy配列だけでは列名の管理やテーブル結合が困難です。Pandasはそれらを直感的に扱えるAPIを提供し、NumPy・Matplotlibとシームレスに連携します。
+## 活用シーン
+- **売上集計**: CSVを読み込んで部署・月別に `groupby` で集計してピボット表を作成
+- **ログ結合**: 複数テーブルを `merge` で SQL的に結合して分析
+- **時系列集計**: 日次データを `resample("W").mean()` で週次平均に集約
 
 ## DataFrameの作成
 
@@ -186,6 +188,21 @@ graph TD
   F --> G[Matplotlib / Seaborn で可視化]
   F --> H[機械学習モデルへ]
 ```
+
+## よくある間違いと対処法
+
+1. **SettingWithCopyWarning** → `df[df["col"] > 0]["other"] = 1` のようなチェーン代入は意図通り動かない。`df.loc[df["col"] > 0, "other"] = 1` と書く。
+2. **`inplace=True` の落とし穴** → `inplace=True` は元のDataFrameを変更するが、メソッドチェーンができなくなり、メモリ節約効果もほぼない。`df = df.method()` と書く方が明瞭。
+3. **日本語列名のエラー** → 日本語列名はそのまま使えるが、`df.列名` というドット記法は使えない。`df["列名"]` を使う。
+4. **`groupby` 後の列選択を忘れる** → `df.groupby("dept").mean()` は全数値列の平均を返す。特定の列だけ必要なら `df.groupby("dept")["score"].mean()` と先に列を指定する。
+
+## まとめ
+
+- `df.info()` と `df.describe()` で最初にデータの形を把握する（欠損・型・分布を確認）
+- 行フィルタは `df[条件]`、列選択は `df["列名"]`、両方は `df.loc[行条件, "列名"]`
+- 集計は `groupby("key")["value"].agg(["mean", "count"])` が基本形
+- テーブル結合は `df.merge(other, on="key", how="left")` で SQL の LEFT JOIN
+- 時系列は `set_index("date")` して `resample("W").mean()` でリサンプリング
 
 ## 次に学ぶべき内容
 DataFrameを [[matplotlib]] でグラフ化する方法を学びましょう。

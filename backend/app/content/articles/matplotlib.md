@@ -9,10 +9,12 @@ tags: [python, matplotlib, visualization, data-science]
 ---
 
 ## 概要
-Matplotlibはデータを視覚化する基本ライブラリです。折れ線グラフ・棒グラフ・散布図・ヒストグラム・円グラフなど幅広いグラフを、細部まで自由にカスタマイズして作成できます。PandasやSeabornの `plot()` も内部でMatplotlibを使っています。
+「数値の羅列では気づかなかった異常値が、グラフにすると一目でわかった」――データ可視化はデータ分析で最も費用対効果が高いステップです。Matplotlibは折れ線・棒・散布図・ヒストグラムなど幅広いグラフを細部まで自由にカスタマイズできる基本ライブラリで、Pandas・Seabornの `plot()` も内部でMatplotlibを使っています。まず「どのグラフをいつ使うか」を覚え、その後スタイル調整を覚えるのが近道です。
 
-## なぜ必要か
-数値の羅列では気づけない傾向・外れ値・周期性も、グラフにすれば一目で把握できます。分析レポート・論文・プレゼン資料にグラフを貼るためには、PNG/PDF出力できるMatplotlibが必須です。まず「どのグラフをいつ使うか」を覚え、その後細かいスタイル調整を覚えるのが近道です。
+## 活用シーン
+- **分析レポート**: 月次売上の折れ線グラフを PNG/PDF で出力してプレゼンに貼る
+- **モデル評価**: 学習曲線・残差プロット・混同行列をサブプロットで並べて表示
+- **データ探索（EDA）**: ヒストグラムと散布図で分布・相関を素早く確認
 
 ## グラフの使い分け
 
@@ -210,6 +212,21 @@ graph TD
   B --> E[Title / Label / Legend]
   B --> F[Tick / Grid / Spine]
 ```
+
+## よくある間違いと対処法
+
+1. **日本語が文字化けする** → デフォルトフォントは日本語非対応。`plt.rcParams["font.family"] = "IPAexGothic"`（Linux）または `"MS Gothic"`（Windows）を設定する。
+2. **`plt.show()` と `plt.savefig()` の順序** → `savefig` より先に `show()` を呼ぶと空の画像が保存される。`savefig` → `show` の順にする。
+3. **`plt.plot()` と `ax.plot()` の混在** → 複数グラフを作るなら `fig, ax = plt.subplots()` で明示的に `Axes` を作り、`ax.plot()` を使う。`plt.plot()` だけだと複数サブプロットで混乱する。
+4. **`tight_layout()` を忘れる** → ラベルやタイトルが重なるときは `plt.tight_layout()` を `savefig` の直前に呼ぶ。
+
+## まとめ
+
+- `fig, ax = plt.subplots(figsize=(8, 4))` が基本形（Figure = 用紙、Axes = グラフ領域）
+- 複数グラフは `fig, axes = plt.subplots(rows, cols)` でサブプロットを作成
+- `plt.tight_layout()` → `plt.savefig("file.png", dpi=150)` の順で保存
+- 日本語使用時は `rcParams["font.family"]` を設定する
+- `plt.style.use("seaborn-v0_8-whitegrid")` でグラフを見やすくできる
 
 ## 次に学ぶべき内容
 より少ないコードで統計グラフを美しく描ける [[seaborn]] を学びましょう。

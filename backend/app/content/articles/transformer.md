@@ -9,7 +9,12 @@ tags: [transformer, attention, deep-learning, nlp, genai]
 ---
 
 ## 概要
-Transformerは2017年のGoogle論文「Attention Is All You Need」で発表されたアーキテクチャです。RNN/LSTMを使わず**Self-Attentionのみ**で系列を処理し、並列計算が可能なため大規模データへの学習が劇的に速くなりました。GPT・BERT・LLMすべての基盤技術です。
+「I saw a bank near the river」の `bank` は「銀行」ではなく「川岸」です。Transformerはこのように**文中の全単語を同時に参照**し文脈を把握するアーキテクチャです。2017年のGoogle論文「Attention Is All You Need」で発表され、RNN/LSTMを使わず Self-Attention のみで系列を処理することで並列計算が可能になり、大規模データへの学習が劇的に速くなりました。GPT・BERT・LLMすべての基盤技術です。
+
+## 活用シーン
+- **テキスト分類**: BERT系モデルで文書の感情分析や意図分類
+- **コード生成**: GPT系モデルで次のトークン（コード）を予測し補完
+- **時系列予測**: 系列データをTransformerで処理して将来値を予測
 
 ## 主要な数式
 
@@ -182,6 +187,21 @@ plt.ylabel("位置")
 plt.tight_layout()
 plt.show()
 ```
+
+## よくある間違いと対処法
+
+1. **「Attentionが理解している」という誤解** → Attentionは「理解」ではなく「重みつき平均」の計算。どのトークンに注目するかの重みを学習しているが、意味を理解しているわけではない。
+2. **位置エンコーディングを忘れる** → TransformerはAttentionだけでは語順を区別できない。Sinusoidal または学習可能な位置エンコーディングが必須。
+3. **`d_model % n_heads != 0`エラー** → Multi-Head Attention では `d_model` が `n_heads` で割り切れる必要がある（各ヘッドに `d_k = d_model // n_heads` 次元を割り当てるため）。
+4. **マスキングを忘れる（Decoder）** → 自己回帰生成では未来のトークンを参照してはいけない。因果マスク（causal mask）を設定しないとデータリークが起きる。
+
+## まとめ
+
+- Scaled Dot-Product Attention: $\text{softmax}(QK^T / \sqrt{d_k})V$ が基本演算
+- Multi-Head Attention: 複数の「注意の視点」を並列に学習して結合
+- 位置エンコーディング: 語順情報をsin/cosで埋め込む（または学習可能な埋め込み）
+- Encoder: 入力全体を双方向で参照（BERT系）、Decoder: 過去のみ参照して自己回帰生成（GPT系）
+- Pre-LN（LayerNorm → Attention）が Post-LN より学習が安定
 
 ## 次に学ぶべき内容
 TransformerをスケールアップしたモデルがLLMです。[[llm]] を学びましょう。
