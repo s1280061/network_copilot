@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { getArticles, search as apiSearch } from "@/lib/api";
 import { Article, SearchHit } from "@/lib/types";
 import Thumbnail, { categoryStyle } from "@/components/Thumbnail";
@@ -9,11 +10,12 @@ import Thumbnail, { categoryStyle } from "@/components/Thumbnail";
 const CATEGORIES = ["Ethernet", "TCP/IP", "PCAP", "SOME/IP", "AUTOSAR", "SDV", "Automotive Bus", "Diagnostics", "Security", "Howto", "Python", "Statistics", "ML", "DL", "GenAI", "CV", "Electronics", "Automotive", "Wireless"];
 
 export default function GlossaryPage() {
+  const searchParams = useSearchParams();
   const [items, setItems] = useState<Article[]>([]);
   const [q, setQ] = useState("");
   const [hits, setHits] = useState<SearchHit[] | null>(null);
   const [mode, setMode] = useState("");
-  const [activeTab, setActiveTab] = useState("all");
+  const [activeTab, setActiveTab] = useState(searchParams.get("tab") ?? "all");
 
   useEffect(() => {
     getArticles().then((d) => setItems(d.articles)).catch(() => {});

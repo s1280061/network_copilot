@@ -8,7 +8,7 @@ const NAV = [
   { href: "/", label: "ホーム", icon: "🏠" },
   { href: "/roadmap", label: "学習ロードマップ", icon: "📚" },
   { href: "/glossary", label: "用語集", icon: "📖" },
-  { href: "/dashboard", label: "ダッシュボード", icon: "📊" },
+  { href: "/glossary?tab=Statistics", label: "統計", icon: "📊" },
   { href: "/chat", label: "AIチャット", icon: "💬" },
   { href: "/pcap", label: "PCAP解析", icon: "📂" },
   { href: "/favorites", label: "お気に入り", icon: "⭐" },
@@ -30,7 +30,9 @@ export default function SidebarNav() {
       <nav className="flex-1 space-y-1 px-2">
         {NAV.map((n) => {
           const active =
-            n.href === "/" ? path === "/" : path.startsWith(n.href);
+            n.href === "/" ? path === "/" :
+            n.href.includes("?") ? false :
+            path.startsWith(n.href);
           return (
             <Link
               key={n.href}
