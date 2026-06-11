@@ -103,6 +103,7 @@ _CATEGORY_MAP = {
     "time-series-statistics": "Statistics",
     "multivariate-statistics": "Statistics",
     # ML additional
+    "evaluation-metrics": "ML",
     "clustering": "ML",
     "dimensionality-reduction": "ML",
     "anomaly-detection": "ML",

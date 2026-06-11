@@ -549,6 +549,79 @@ def chart_multivariate():
     print("✓ multivariate-statistics.png")
 
 
+# ──────────────────────────────────────────────────────────
+# evaluation-metrics.md
+# ──────────────────────────────────────────────────────────
+def chart_evaluation_metrics():
+    from sklearn.datasets import make_classification
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.ensemble import RandomForestClassifier
+    from sklearn.model_selection import train_test_split
+    from sklearn.metrics import (
+        confusion_matrix, roc_curve, roc_auc_score,
+        precision_recall_curve, average_precision_score,
+        f1_score, precision_score, recall_score,
+    )
+
+    X, y = make_classification(
+        n_samples=1000, n_features=10, weights=[0.9, 0.1], random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+    lr  = LogisticRegression(random_state=42).fit(X_train, y_train)
+    rf  = RandomForestClassifier(random_state=42).fit(X_train, y_train)
+
+    fig, axes = plt.subplots(1, 3, figsize=(14, 4.5))
+
+    # 1. Confusion matrix
+    cm = confusion_matrix(y_test, lr.predict(X_test))
+    tn, fp, fn, tp = cm.ravel()
+    labels = np.array([[f"TN\n{tn}", f"FP\n{fp}"],
+                        [f"FN\n{fn}", f"TP\n{tp}"]])
+    im = axes[0].imshow(cm, cmap="Blues")
+    for i in range(2):
+        for j in range(2):
+            axes[0].text(j, i, labels[i, j], ha="center", va="center",
+                         fontsize=13, color="white" if cm[i,j] > cm.max()*0.6 else "black")
+    axes[0].set_xticks([0,1]); axes[0].set_yticks([0,1])
+    axes[0].set_xticklabels(["予測: 陰性", "予測: 陽性"])
+    axes[0].set_yticklabels(["実際: 陰性", "実際: 陽性"])
+    axes[0].set_title("混同行列\n（ロジスティック回帰）")
+    plt.colorbar(im, ax=axes[0])
+
+    # 2. ROC curve
+    for model, name, color in [(lr, "ロジスティック回帰", "#4C72B0"),
+                                (rf, "ランダムフォレスト",  "#DD8452")]:
+        prob = model.predict_proba(X_test)[:, 1]
+        fpr, tpr, _ = roc_curve(y_test, prob)
+        auc = roc_auc_score(y_test, prob)
+        axes[1].plot(fpr, tpr, lw=2, color=color, label=f"{name}\nAUC={auc:.3f}")
+    axes[1].plot([0,1],[0,1],"--",color="gray",lw=1,label="ランダム (AUC=0.5)")
+    axes[1].fill_between([0,1],[0,1], alpha=0.05, color="gray")
+    axes[1].set_title("ROC曲線")
+    axes[1].set_xlabel("偽陽性率 FPR（1 - Specificity）")
+    axes[1].set_ylabel("真陽性率 TPR（Recall）")
+    axes[1].legend(fontsize=8)
+
+    # 3. Precision-Recall curve
+    for model, name, color in [(lr, "ロジスティック回帰", "#4C72B0"),
+                                (rf, "ランダムフォレスト",  "#DD8452")]:
+        prob = model.predict_proba(X_test)[:, 1]
+        prec, rec, _ = precision_recall_curve(y_test, prob)
+        ap = average_precision_score(y_test, prob)
+        axes[2].plot(rec, prec, lw=2, color=color, label=f"{name}\nAP={ap:.3f}")
+    baseline = y_test.mean()
+    axes[2].axhline(baseline, color="gray", linestyle="--", lw=1,
+                    label=f"ランダム (AP≈{baseline:.2f})")
+    axes[2].set_title("PR曲線（Precision-Recall）\n不均衡データに有効")
+    axes[2].set_xlabel("Recall（再現率）")
+    axes[2].set_ylabel("Precision（適合率）")
+    axes[2].legend(fontsize=8)
+
+    plt.tight_layout()
+    plt.savefig(f"{OUT}/evaluation-metrics.png"); plt.close()
+    print("✓ evaluation-metrics.png")
+
+
 if __name__ == "__main__":
     chart_normal_distribution()
     chart_regression()
@@ -561,4 +634,5 @@ if __name__ == "__main__":
     chart_gradient_boosting()
     chart_anomaly()
     chart_multivariate()
+    chart_evaluation_metrics()
     print("\n全チャート生成完了 →", OUT)

@@ -1492,6 +1492,35 @@
 "favorite": false
 },
 {
+"slug": "evaluation-metrics",
+"title": "評価指標（混同行列・Precision・Recall・F1・AUC）",
+"level": 2,
+"category": "ML",
+"related": [
+"classification",
+"ml-basics",
+"statistics",
+"anomaly-detection"
+],
+"next": [],
+"tags": [
+"confusion-matrix",
+"precision",
+"recall",
+"f1",
+"auc",
+"roc",
+"metrics",
+"imbalanced"
+],
+"difficulty": "初級",
+"updated": "2026-06-11",
+"excerpt": "機械学習モデルの「良し悪し」を正しく測るには、問題に合った評価指標を選ぶことが重要です。「精度（Accuracy）が高い＝良いモデル」は**不均衡データでは成り立ちません**。混同行列を起点に各指標の意味と使いどころを理解しましょう。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "automotive-electrical",
 "title": "車載電気システム（12V/48V・ハーネス・ECU）",
 "level": 2,
@@ -5855,6 +5884,54 @@
 "title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
 }
 ],
+"completed": false,
+"favorite": false
+},
+"evaluation-metrics": {
+"slug": "evaluation-metrics",
+"title": "評価指標（混同行列・Precision・Recall・F1・AUC）",
+"level": 2,
+"category": "ML",
+"related": [
+"classification",
+"ml-basics",
+"statistics",
+"anomaly-detection"
+],
+"next": [],
+"tags": [
+"confusion-matrix",
+"precision",
+"recall",
+"f1",
+"auc",
+"roc",
+"metrics",
+"imbalanced"
+],
+"difficulty": "初級",
+"updated": "2026-06-11",
+"html": "<h2>概要</h2>\n<p>機械学習モデルの「良し悪し」を正しく測るには、問題に合った評価指標を選ぶことが重要です。「精度（Accuracy）が高い＝良いモデル」は<strong>不均衡データでは成り立ちません</strong>。混同行列を起点に各指標の意味と使いどころを理解しましょう。</p>\n<pre><code class=\"language-mermaid\">graph TD\n  CM[&quot;混同行列\\n(Confusion Matrix)&quot;] --&gt; ACC[&quot;Accuracy\\n正解率&quot;]\n  CM --&gt; PRE[&quot;Precision\\n適合率&quot;]\n  CM --&gt; REC[&quot;Recall\\n再現率&quot;]\n  PRE --&gt; F1[&quot;F1スコア\\n（調和平均）&quot;]\n  REC --&gt; F1\n  CM --&gt; ROC[&quot;ROC曲線 / AUC&quot;]\n  CM --&gt; MCC[&quot;MCC\\n（不均衡に強い）&quot;]\n</code></pre>\n<h2>混同行列（Confusion Matrix）</h2>\n<p>二値分類における予測結果を4つのセルに整理します。</p>\n<table>\n<thead>\n<tr>\n<th></th>\n<th>予測: Positive</th>\n<th>予測: Negative</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><strong>実際: Positive</strong></td>\n<td><strong>TP</strong> True Positive（正しく陽性）</td>\n<td><strong>FN</strong> False Negative（見逃し）</td>\n</tr>\n<tr>\n<td><strong>実際: Negative</strong></td>\n<td><strong>FP</strong> False Positive（誤検知）</td>\n<td><strong>TN</strong> True Negative（正しく陰性）</td>\n</tr>\n</tbody>\n</table>\n<h3>4つのセルの直感的な理解</h3>\n<table>\n<thead>\n<tr>\n<th>記号</th>\n<th>読み方</th>\n<th>具体例（がん検診）</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>TP</td>\n<td>本当に陽性 → 陽性と予測</td>\n<td>がん患者を「がんあり」と正しく検出</td>\n</tr>\n<tr>\n<td>FN</td>\n<td>本当に陽性 → 陰性と予測</td>\n<td>がん患者を「がんなし」と見逃す（<strong>危険</strong>）</td>\n</tr>\n<tr>\n<td>FP</td>\n<td>本当は陰性 → 陽性と予測</td>\n<td>健康な人を「がんあり」と誤判定（無駄な検査）</td>\n</tr>\n<tr>\n<td>TN</td>\n<td>本当に陰性 → 陰性と予測</td>\n<td>健康な人を「がんなし」と正しく判定</td>\n</tr>\n</tbody>\n</table>\n<h2>主要な数式</h2>\n<p><strong>Accuracy（正解率）</strong>：</p>\n<p>$$\\text{Accuracy} = \\frac{TP + TN}{TP + FP + FN + TN}$$</p>\n<p><strong>Precision（適合率）</strong>：「陽性と予測した中で本当に陽性の割合」</p>\n<p>$$\\text{Precision} = \\frac{TP}{TP + FP}$$</p>\n<p><strong>Recall / Sensitivity（再現率）</strong>：「本当の陽性をどれだけ拾えたか」</p>\n<p>$$\\text{Recall} = \\frac{TP}{TP + FN}$$</p>\n<p><strong>F1スコア</strong>（PrecisionとRecallの調和平均）：</p>\n<p>$$F_1 = 2 \\cdot \\frac{\\text{Precision} \\times \\text{Recall}}{\\text{Precision} + \\text{Recall}} = \\frac{2\\,TP}{2\\,TP + FP + FN}$$</p>\n<p><strong>Specificity（特異度）</strong>：「本当の陰性をどれだけ正しく陰性と判定できたか」</p>\n<p>$$\\text{Specificity} = \\frac{TN}{TN + FP}$$</p>\n<p><strong>MCC（Matthews Correlation Coefficient）</strong>：不均衡データに強い指標</p>\n<p>$$\\text{MCC} = \\frac{TP \\cdot TN - FP \\cdot FN}{\\sqrt{(TP+FP)(TP+FN)(TN+FP)(TN+FN)}}$$</p>\n<p>$-1$（完全に逆）〜 $0$（ランダム）〜 $+1$（完璧）の範囲。</p>\n<h2>指標の使い分け</h2>\n<table>\n<thead>\n<tr>\n<th>優先すべき指標</th>\n<th>使う場面</th>\n<th>理由</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><strong>Recall</strong></td>\n<td>医療診断・詐欺検知・故障検知</td>\n<td>見逃し（FN）のコストが高い</td>\n</tr>\n<tr>\n<td><strong>Precision</strong></td>\n<td>スパムフィルタ・レコメンド</td>\n<td>誤検知（FP）のコストが高い</td>\n</tr>\n<tr>\n<td><strong>F1</strong></td>\n<td>不均衡データ全般</td>\n<td>PrecisionとRecallのバランス</td>\n</tr>\n<tr>\n<td><strong>AUC-ROC</strong></td>\n<td>モデル比較・閾値未決定時</td>\n<td>閾値に依存しない総合評価</td>\n</tr>\n<tr>\n<td><strong>MCC</strong></td>\n<td>強い不均衡データ</td>\n<td>クラス間の不均衡を考慮</td>\n</tr>\n<tr>\n<td><strong>Accuracy</strong></td>\n<td>均衡データのみ</td>\n<td>不均衡では高精度でも無意味</td>\n</tr>\n</tbody>\n</table>\n<h2>実装と可視化</h2>\n<pre><code class=\"language-python\">import numpy as np\nfrom sklearn.metrics import (\n    confusion_matrix, classification_report,\n    precision_score, recall_score, f1_score,\n    roc_auc_score, roc_curve, matthews_corrcoef,\n    ConfusionMatrixDisplay,\n)\nfrom sklearn.datasets import make_classification\nfrom sklearn.linear_model import LogisticRegression\nfrom sklearn.model_selection import train_test_split\n\n# --- サンプルデータ（不均衡: 陽性10%）---\nX, y = make_classification(\n    n_samples=1000, n_features=10,\n    weights=[0.9, 0.1],  # クラス0が90%\n    random_state=42,\n)\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)\n\nmodel = LogisticRegression(random_state=42).fit(X_train, y_train)\ny_pred = model.predict(X_test)\ny_prob = model.predict_proba(X_test)[:, 1]\n\n# --- 各指標の計算 ---\ncm = confusion_matrix(y_test, y_pred)\ntn, fp, fn, tp = cm.ravel()\n\nprint(f&quot;混同行列:\\n  TP={tp}  FN={fn}\\n  FP={fp}  TN={tn}\\n&quot;)\nprint(f&quot;Accuracy  : {(tp+tn)/(tp+fp+fn+tn):.4f}&quot;)\nprint(f&quot;Precision : {precision_score(y_test, y_pred):.4f}  ← 陽性予測の精度&quot;)\nprint(f&quot;Recall    : {recall_score(y_test, y_pred):.4f}  ← 見逃さない率&quot;)\nprint(f&quot;F1 Score  : {f1_score(y_test, y_pred):.4f}&quot;)\nprint(f&quot;AUC-ROC   : {roc_auc_score(y_test, y_prob):.4f}&quot;)\nprint(f&quot;MCC       : {matthews_corrcoef(y_test, y_pred):.4f}&quot;)\n\nprint(&quot;\\n--- classification_report ---&quot;)\nprint(classification_report(y_test, y_pred, target_names=[&quot;陰性&quot;, &quot;陽性&quot;]))\n</code></pre>\n<h2>混同行列・ROC曲線・PR曲線の可視化</h2>\n<p><img alt=\"混同行列・ROC曲線・PR曲線（不均衡データ）\" src=\"/images/charts/evaluation-metrics.png\" /></p>\n<h2>不均衡データの落とし穴</h2>\n<pre><code class=\"language-python\"># 全部「陰性」と予測するダメモデルでもAccuracyが高くなる例\ny_all_negative = np.zeros_like(y_test)\n\nprint(&quot;【全て陰性と予測したモデル】&quot;)\nprint(f&quot;  Accuracy : {(y_test == y_all_negative).mean():.4f}&quot;)  # → 0.90（高い！）\nprint(f&quot;  Recall   : {recall_score(y_test, y_all_negative):.4f}&quot;)  # → 0.00（最悪）\nprint(f&quot;  F1 Score : {f1_score(y_test, y_all_negative):.4f}&quot;)  # → 0.00\nprint(f&quot;  MCC      : {matthews_corrcoef(y_test, y_all_negative):.4f}&quot;)  # → 0.00\n</code></pre>\n<h2>ROC曲線と閾値選択</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  THR[&quot;閾値を下げる&quot;] --&gt; REC2[&quot;Recall ↑\\n（見逃し減）&quot;]\n  THR --&gt; PRE2[&quot;Precision ↓\\n（誤検知増）&quot;]\n  REC2 --&gt; TRADE[&quot;トレードオフ&quot;]\n  PRE2 --&gt; TRADE\n</code></pre>\n<pre><code class=\"language-python\">import matplotlib.pyplot as plt\n\nfpr, tpr, thresholds = roc_curve(y_test, y_prob)\nauc_score = roc_auc_score(y_test, y_prob)\n\n# Youden's J統計量で最適閾値を探す\nj_scores = tpr - fpr\nbest_idx = np.argmax(j_scores)\nbest_threshold = thresholds[best_idx]\nprint(f&quot;最適閾値（Youden's J）: {best_threshold:.3f}&quot;)\nprint(f&quot;  その時の Recall={tpr[best_idx]:.3f}, FPR={fpr[best_idx]:.3f}&quot;)\n</code></pre>\n<h2>PR曲線（Precision-Recall曲線）</h2>\n<p>不均衡データでは ROC曲線より <strong>PR曲線</strong> の方が実態を正確に反映します。</p>\n<pre><code class=\"language-python\">from sklearn.metrics import precision_recall_curve, average_precision_score\n\nprecision_curve, recall_curve, _ = precision_recall_curve(y_test, y_prob)\nap = average_precision_score(y_test, y_prob)\nprint(f&quot;Average Precision (AP): {ap:.4f}&quot;)\n# ランダムモデルのAP ≈ 陽性クラスの割合（例: 0.10）\n# AP が高いほど良いモデル\n</code></pre>\n<h2>F-βスコア（RecallとPrecisionの重み付け）</h2>\n<p>$$F_\\beta = (1 + \\beta^2) \\cdot \\frac{\\text{Precision} \\times \\text{Recall}}{\\beta^2 \\cdot \\text{Precision} + \\text{Recall}}$$</p>\n<ul>\n<li>$\\beta = 1$：F1スコア（等重み）</li>\n<li>$\\beta = 2$：Recallを重視（見逃しを減らしたい場合）</li>\n<li>$\\beta = 0.5$：Precisionを重視（誤検知を減らしたい場合）</li>\n</ul>\n<pre><code class=\"language-python\">from sklearn.metrics import fbeta_score\n\nprint(f&quot;F1    (β=1): {fbeta_score(y_test, y_pred, beta=1):.4f}&quot;)\nprint(f&quot;F2    (β=2): {fbeta_score(y_test, y_pred, beta=2):.4f}  ← Recall重視&quot;)\nprint(f&quot;F0.5  (β=0.5): {fbeta_score(y_test, y_pred, beta=0.5):.4f}  ← Precision重視&quot;)\n</code></pre>\n<h2>多クラス分類への拡張</h2>\n<table>\n<thead>\n<tr>\n<th>集計方法</th>\n<th>計算方法</th>\n<th>適した場面</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>macro</code></td>\n<td>各クラスの平均（重みなし）</td>\n<td>クラス間を等しく評価したい</td>\n</tr>\n<tr>\n<td><code>weighted</code></td>\n<td>サンプル数で重み付け平均</td>\n<td>不均衡でも実態に近い評価</td>\n</tr>\n<tr>\n<td><code>micro</code></td>\n<td>TP/FP/FNを全クラス合計</td>\n<td>全サンプルの正解率に近い</td>\n</tr>\n</tbody>\n</table>\n<pre><code class=\"language-python\">from sklearn.datasets import load_iris\nfrom sklearn.ensemble import RandomForestClassifier\n\niris = load_iris()\nX_tr, X_te, y_tr, y_te = train_test_split(iris.data, iris.target, test_size=0.3, random_state=42)\nrf = RandomForestClassifier(random_state=42).fit(X_tr, y_tr)\ny_pr = rf.predict(X_te)\n\nprint(f&quot;Macro   F1: {f1_score(y_te, y_pr, average='macro'):.4f}&quot;)\nprint(f&quot;Weighted F1: {f1_score(y_te, y_pr, average='weighted'):.4f}&quot;)\nprint(classification_report(y_te, y_pr, target_names=iris.target_names))\n</code></pre>\n<h2>評価指標まとめ</h2>\n<table>\n<thead>\n<tr>\n<th>指標</th>\n<th>範囲</th>\n<th>高いほど良い</th>\n<th>不均衡への対応</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Accuracy</td>\n<td>0〜1</td>\n<td>○</td>\n<td>△（不均衡で無意味になる）</td>\n</tr>\n<tr>\n<td>Precision</td>\n<td>0〜1</td>\n<td>○</td>\n<td>△</td>\n</tr>\n<tr>\n<td>Recall</td>\n<td>0〜1</td>\n<td>○</td>\n<td>△</td>\n</tr>\n<tr>\n<td>F1</td>\n<td>0〜1</td>\n<td>○</td>\n<td>○</td>\n</tr>\n<tr>\n<td>F-β</td>\n<td>0〜1</td>\n<td>○</td>\n<td>○（β で調整可）</td>\n</tr>\n<tr>\n<td>AUC-ROC</td>\n<td>0〜1</td>\n<td>○</td>\n<td>△（強不均衡では過大評価）</td>\n</tr>\n<tr>\n<td>AP (PR-AUC)</td>\n<td>0〜1</td>\n<td>○</td>\n<td>◎</td>\n</tr>\n<tr>\n<td>MCC</td>\n<td>-1〜1</td>\n<td>○（1が最良）</td>\n<td>◎</td>\n</tr>\n<tr>\n<td>Log Loss</td>\n<td>0〜∞</td>\n<td>×（低いほど良い）</td>\n<td>○</td>\n</tr>\n</tbody>\n</table>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "classification",
+"title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
+},
+{
+"slug": "ml-basics",
+"title": "機械学習の基礎"
+},
+{
+"slug": "statistics",
+"title": "統計学の基礎（確率・分布・検定）"
+},
+{
+"slug": "anomaly-detection",
+"title": "異常検知（Isolation Forest・Autoencoder・統計的手法）"
+}
+],
+"next_full": [],
 "completed": false,
 "favorite": false
 },
@@ -10361,6 +10438,24 @@
 "title": "データクリーニング"
 }
 ],
+"evaluation-metrics": [
+{
+"slug": "classification",
+"title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
+},
+{
+"slug": "ml-basics",
+"title": "機械学習の基礎"
+},
+{
+"slug": "statistics",
+"title": "統計学の基礎（確率・分布・検定）"
+},
+{
+"slug": "anomaly-detection",
+"title": "異常検知（Isolation Forest・Autoencoder・統計的手法）"
+}
+],
 "automotive-electrical": [
 {
 "slug": "ev-battery",
@@ -14066,6 +14161,35 @@
 "difficulty": "初級",
 "updated": "2026-06-11",
 "excerpt": "線形回帰は「入力 X から連続値 y を予測する」最もシンプルな機械学習モデルです。数値の予測（売上・気温・価格など）に使います。モデルの解釈性が高く、まず試すべきベースラインです。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "evaluation-metrics",
+"title": "評価指標（混同行列・Precision・Recall・F1・AUC）",
+"level": 2,
+"category": "ML",
+"related": [
+"classification",
+"ml-basics",
+"statistics",
+"anomaly-detection"
+],
+"next": [],
+"tags": [
+"confusion-matrix",
+"precision",
+"recall",
+"f1",
+"auc",
+"roc",
+"metrics",
+"imbalanced"
+],
+"difficulty": "初級",
+"updated": "2026-06-11",
+"excerpt": "機械学習モデルの「良し悪し」を正しく測るには、問題に合った評価指標を選ぶことが重要です。「精度（Accuracy）が高い＝良いモデル」は**不均衡データでは成り立ちません**。混同行列を起点に各指標の意味と使いどころを理解しましょう。",
 "views": 0,
 "completed": false,
 "favorite": false
