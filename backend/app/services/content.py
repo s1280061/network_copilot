@@ -66,10 +66,12 @@ _CATEGORY_MAP = {
     "scapy-pcap":        "PCAP",
     "scapy-automotive":  "PCAP",
     # Deep Learning
-    "deep-learning":   "DL",
-    "pytorch":         "DL",
-    "cnn":             "DL",
-    "rnn-lstm":        "DL",
+    "deep-learning":      "DL",
+    "pytorch":            "DL",
+    "cnn":                "DL",
+    "rnn-lstm":           "DL",
+    "gpu-architecture":   "DL",
+    "nvidia-gpu-lineup":  "DL",
     # Generative AI
     "transformer":          "GenAI",
     "llm":                  "GenAI",
