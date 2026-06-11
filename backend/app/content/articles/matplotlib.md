@@ -157,6 +157,10 @@ plt.tight_layout()
 plt.show()
 ```
 
+## グラフ一覧
+
+![折れ線・棒・散布図・ヒストグラムのサンプル](/images/charts/matplotlib.png)
+
 ## 複数グラフを並べる（subplots）
 
 ```python

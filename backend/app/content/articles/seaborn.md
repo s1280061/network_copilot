@@ -121,6 +121,10 @@ plt.tight_layout()
 plt.show()
 ```
 
+## グラフ一覧
+
+![KDE・Box plot・散布図+回帰のサンプル](/images/charts/seaborn.png)
+
 ## ペアプロット — pairplot
 
 ```python

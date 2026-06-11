@@ -135,6 +135,10 @@ print(result)
 | `sorted()` | ソート（元リスト変更なし） | `sorted(lst, reverse=True)` |
 | `isinstance()` | 型チェック | `isinstance(x, int)` |
 
+## パフォーマンス可視化
+
+![データ構造の特性比較とリスト内包表記の速度](/images/charts/python-basics.png)
+
 ## データ構造の使い分け
 
 ```mermaid

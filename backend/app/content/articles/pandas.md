@@ -95,6 +95,10 @@ import numpy as np
 df["passed"] = np.where(df["score"] >= 70, True, False)
 ```
 
+## データ可視化
+
+![カテゴリ別売上・月次推移・ピボットヒートマップ](/images/charts/pandas.png)
+
 ## グループ集計
 
 ```python

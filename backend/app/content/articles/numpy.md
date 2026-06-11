@@ -135,6 +135,10 @@ print(np.linalg.inv(A))         # 逆行列
 vals, vecs = np.linalg.eig(A)   # 固有値・固有ベクトル
 ```
 
+## NumPy可視化
+
+![ブロードキャスト・速度比較・行列積](/images/charts/numpy.png)
+
 ## NumPy vs Pythonリストの速度比較
 
 ```python
