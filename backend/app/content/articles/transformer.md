@@ -11,6 +11,26 @@ tags: [transformer, attention, deep-learning, nlp, genai]
 ## 概要
 Transformerは2017年のGoogle論文「Attention Is All You Need」で発表されたアーキテクチャです。RNN/LSTMを使わず**Self-Attentionのみ**で系列を処理し、並列計算が可能なため大規模データへの学習が劇的に速くなりました。GPT・BERT・LLMすべての基盤技術です。
 
+## 主要な数式
+
+**Scaled Dot-Product Attention**（クエリ $Q$、キー $K$、バリュー $V$）：
+
+$$\mathrm{Attention}(Q, K, V) = \mathrm{softmax}\!\left(\frac{QK^\top}{\sqrt{d_k}}\right)V$$
+
+$\sqrt{d_k}$ で割るのは、内積が次元数に比例して大きくなり softmax の勾配が消失するのを防ぐため。
+
+**マルチヘッド注意機構**：
+
+$$\mathrm{MultiHead}(Q,K,V) = \mathrm{Concat}(\mathrm{head}_1, \dots, \mathrm{head}_h)\,W^O, \quad \mathrm{head}_i = \mathrm{Attention}(QW_i^Q, KW_i^K, VW_i^V)$$
+
+**位置エンコーディング**（系列順序を埋め込む）：
+
+$$PE_{(pos, 2i)} = \sin\!\left(\frac{pos}{10000^{2i/d}}\right), \qquad PE_{(pos, 2i+1)} = \cos\!\left(\frac{pos}{10000^{2i/d}}\right)$$
+
+**層正規化と残差接続**：
+
+$$\mathrm{output} = \mathrm{LayerNorm}\big(\mathbf{x} + \mathrm{Sublayer}(\mathbf{x})\big)$$
+
 ## なぜTransformerが強いか
 
 | | RNN/LSTM | Transformer |

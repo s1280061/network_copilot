@@ -11,6 +11,32 @@ tags: [statistics, python, scipy, data-science]
 ## 概要
 統計学はデータから「確かなこと」と「不確かなこと」を区別する学問です。機械学習の精度評価・A/Bテスト・センサーデータ分析など、データを扱うすべての場面の基盤となります。PythonではSciPyとStatsmodelsが主要ライブラリです。
 
+## 主要な数式
+
+**標本平均**と**不偏分散**：
+
+$$\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i, \qquad s^2 = \frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar{x})^2$$
+
+**正規分布**の確率密度関数：
+
+$$f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)$$
+
+**標準化（z スコア）**：観測値が平均から標準偏差何個分離れているか。
+
+$$z = \frac{x - \mu}{\sigma}$$
+
+**標準誤差**と**95% 信頼区間**（母分散未知、正規近似）：
+
+$$\mathrm{SE} = \frac{s}{\sqrt{n}}, \qquad \bar{x} \pm 1.96\,\frac{s}{\sqrt{n}}$$
+
+**共分散**と**相関係数**（ピアソン）：
+
+$$\mathrm{Cov}(X,Y) = \frac{1}{n}\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y}), \qquad r = \frac{\mathrm{Cov}(X,Y)}{s_X \, s_Y}$$
+
+**ベイズの定理**：
+
+$$P(A \mid B) = \frac{P(B \mid A)\,P(A)}{P(B)}$$
+
 ## 基本統計量
 
 ```python

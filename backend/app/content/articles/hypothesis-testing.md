@@ -11,6 +11,30 @@ tags: [hypothesis-testing, t-test, anova, p-value, power, sample-size, statistic
 ## 概要
 仮説検定は「差がある・効果がある」という主張を統計的に評価する手法です。しかし p 値の誤解や検定力の無視は「再現性の危機」の主因です。p 値・効果量・検定力・サンプルサイズ設計を正しく理解することが実務では不可欠です。
 
+## 主要な数式
+
+**1標本 t 統計量**（母平均 $\mu_0$ の検定）：
+
+$$t = \frac{\bar{x} - \mu_0}{s/\sqrt{n}}, \qquad \mathrm{df} = n-1$$
+
+**独立2標本（Welch）の t 統計量**：
+
+$$t = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\dfrac{s_1^2}{n_1} + \dfrac{s_2^2}{n_2}}}$$
+
+**効果量 Cohen's d**：
+
+$$d = \frac{\bar{x}_1 - \bar{x}_2}{s_{\text{pooled}}}, \qquad s_{\text{pooled}} = \sqrt{\frac{s_1^2 + s_2^2}{2}}$$
+
+**一元配置 ANOVA の F 統計量**（群間分散 / 群内分散）：
+
+$$F = \frac{\mathrm{MS}_{\text{between}}}{\mathrm{MS}_{\text{within}}} = \frac{\sum_j n_j(\bar{x}_j - \bar{x})^2 / (k-1)}{\sum_j \sum_i (x_{ij} - \bar{x}_j)^2 / (N-k)}$$
+
+**第1種・第2種の過誤と検定力**：
+
+$$\alpha = P(\text{棄却} \mid H_0), \qquad \beta = P(\text{保留} \mid H_1), \qquad \text{検定力} = 1 - \beta$$
+
+**Bonferroni 補正**（$m$ 回の検定）：各検定の有意水準を $\alpha/m$ にする。
+
 ## 仮説検定の基本構造
 
 ```python

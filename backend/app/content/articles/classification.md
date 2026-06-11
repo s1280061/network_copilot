@@ -11,6 +11,24 @@ tags: [ml, classification, python, sklearn, data-science]
 ## 概要
 分類（Classification）は入力データが「どのクラスに属するか」を予測するタスクです。スパム判定・故障検知・画像認識などに使います。代表的な4つのアルゴリズムを比較しながら解説します。
 
+## 主要な数式
+
+**ロジスティック回帰**（シグモイド関数で確率を出力）：
+
+$$P(y=1 \mid \mathbf{x}) = \sigma(\mathbf{w}^\top \mathbf{x}) = \frac{1}{1 + e^{-\mathbf{w}^\top \mathbf{x}}}$$
+
+**多クラスの softmax**：
+
+$$P(y=k \mid \mathbf{x}) = \frac{e^{\mathbf{w}_k^\top \mathbf{x}}}{\sum_{j=1}^{K} e^{\mathbf{w}_j^\top \mathbf{x}}}$$
+
+**交差エントロピー損失**（2値）：
+
+$$\mathcal{L} = -\frac{1}{n}\sum_{i=1}^{n}\Big[y_i \log \hat{p}_i + (1-y_i)\log(1-\hat{p}_i)\Big]$$
+
+**評価指標**：
+
+$$\text{Precision} = \frac{TP}{TP+FP}, \quad \text{Recall} = \frac{TP}{TP+FN}, \quad F_1 = \frac{2\,\text{Precision}\cdot\text{Recall}}{\text{Precision}+\text{Recall}}$$
+
 ## アルゴリズムの使い分け
 
 ```mermaid

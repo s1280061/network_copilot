@@ -11,6 +11,24 @@ tags: [deep-learning, neural-network, python, ml]
 ## 概要
 深層学習（Deep Learning）は多層のニューラルネットワークを使って、データから特徴を自動的に学習する機械学習の手法です。画像認識・音声認識・自然言語処理で従来手法を大きく上回る精度を実現し、生成AIの基盤にもなっています。
 
+## 主要な数式
+
+**1層の順伝播**（重み $\mathbf{W}$、バイアス $\mathbf{b}$、活性化関数 $f$）：
+
+$$\mathbf{a}^{(l)} = f\!\left(\mathbf{W}^{(l)}\mathbf{a}^{(l-1)} + \mathbf{b}^{(l)}\right)$$
+
+**代表的な活性化関数**：
+
+$$\mathrm{ReLU}(x) = \max(0, x), \qquad \sigma(x) = \frac{1}{1+e^{-x}}, \qquad \tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}$$
+
+**誤差逆伝播法**（連鎖律で勾配を計算）：
+
+$$\frac{\partial \mathcal{L}}{\partial \mathbf{W}^{(l)}} = \boldsymbol{\delta}^{(l)} \left(\mathbf{a}^{(l-1)}\right)^\top, \qquad \boldsymbol{\delta}^{(l)} = \left(\mathbf{W}^{(l+1)\top}\boldsymbol{\delta}^{(l+1)}\right) \odot f'\!\left(\mathbf{z}^{(l)}\right)$$
+
+**Adam オプティマイザ**の更新（モーメント $m_t, v_t$）：
+
+$$\mathbf{w}_t = \mathbf{w}_{t-1} - \eta\,\frac{\hat{m}_t}{\sqrt{\hat{v}_t} + \epsilon}$$
+
 ## ニューラルネットワークの仕組み
 
 ```mermaid

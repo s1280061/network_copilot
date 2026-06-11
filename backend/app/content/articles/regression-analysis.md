@@ -11,6 +11,30 @@ tags: [regression, multicollinearity, residual, ols, statsmodels, vif, statistic
 ## 概要
 回帰分析は「目的変数 Y を説明変数 X₁, X₂, ... で説明・予測する」手法です。機械学習の線形回帰とは異なり、統計的推論（係数の有意性・信頼区間・モデル診断）を重視します。多重共線性・残差診断・外れ値の検出が実務での品質チェックに欠かせません。
 
+## 主要な数式
+
+**重回帰モデル**：
+
+$$y_i = \beta_0 + \beta_1 x_{i1} + \beta_2 x_{i2} + \cdots + \beta_p x_{ip} + \varepsilon_i, \qquad \varepsilon_i \sim \mathcal{N}(0, \sigma^2)$$
+
+**最小二乗法**は残差二乗和を最小化する：
+
+$$\hat{\beta} = \arg\min_{\beta} \sum_{i=1}^{n}(y_i - \mathbf{x}_i^\top \beta)^2$$
+
+行列形式の閉形式解（正規方程式）：
+
+$$\hat{\beta} = (\mathbf{X}^\top \mathbf{X})^{-1}\mathbf{X}^\top \mathbf{y}$$
+
+**決定係数 $R^2$ と自由度調整済み $R^2$**：
+
+$$R^2 = 1 - \frac{\sum_i (y_i - \hat{y}_i)^2}{\sum_i (y_i - \bar{y})^2}, \qquad R^2_{\text{adj}} = 1 - (1-R^2)\frac{n-1}{n-p-1}$$
+
+**分散膨張係数（VIF）**（説明変数 $j$）：
+
+$$\mathrm{VIF}_j = \frac{1}{1 - R_j^2}$$
+
+ここで $R_j^2$ は $x_j$ を他の説明変数で回帰したときの決定係数。
+
 ## 単回帰分析
 
 ```python

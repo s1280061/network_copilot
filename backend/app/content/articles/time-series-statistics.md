@@ -11,6 +11,28 @@ tags: [time-series, arima, acf, pacf, stationarity, forecasting, statsmodels]
 ## 概要
 時系列データは「時間的に連続して観測されたデータ」です。通常の回帰分析では独立性の仮定が崩れるため、専用の手法が必要です。定常性の確認・自己相関の分析・ARIMAモデルの構築が時系列分析の基本的な流れです。
 
+## 主要な数式
+
+**自己相関関数（ACF）**（ラグ $k$）：
+
+$$\rho_k = \frac{\mathrm{Cov}(y_t, y_{t-k})}{\mathrm{Var}(y_t)} = \frac{\sum_{t=k+1}^{n}(y_t - \bar{y})(y_{t-k} - \bar{y})}{\sum_{t=1}^{n}(y_t - \bar{y})^2}$$
+
+**AR(p) モデル**（自己回帰）：
+
+$$y_t = c + \sum_{i=1}^{p}\phi_i\,y_{t-i} + \varepsilon_t$$
+
+**MA(q) モデル**（移動平均）：
+
+$$y_t = \mu + \varepsilon_t + \sum_{j=1}^{q}\theta_j\,\varepsilon_{t-j}$$
+
+**ARIMA(p, d, q)**：$d$ 階差分 $\nabla^d y_t = (1-L)^d y_t$ に ARMA を適用。ラグ演算子 $L$ で表すと
+
+$$\phi(L)\,(1-L)^d\,y_t = \theta(L)\,\varepsilon_t$$
+
+**情報量規準**（モデル選択、$k$ はパラメータ数）：
+
+$$\mathrm{AIC} = -2\ln \hat{L} + 2k, \qquad \mathrm{BIC} = -2\ln \hat{L} + k\ln n$$
+
 ## 時系列の構成要素
 
 ```python

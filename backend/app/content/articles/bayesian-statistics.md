@@ -11,6 +11,26 @@ tags: [bayesian, mcmc, pymc, prior, posterior, statistics]
 ## 概要
 ベイズ統計は「データを観測するたびに信念を更新する」という枠組みです。頻度論が「確率＝長期的な頻度」と捉えるのに対し、ベイズ統計は「確率＝不確かさの度合い」として扱います。事前知識をモデルに組み込め、小サンプルでも不確かさを定量化できる点が強みです。
 
+## 主要な数式
+
+**ベイズの定理**（パラメータ $\theta$ とデータ $X$）：
+
+$$\underbrace{P(\theta \mid X)}_{\text{事後分布}} = \frac{\overbrace{P(X \mid \theta)}^{\text{尤度}}\;\overbrace{P(\theta)}^{\text{事前分布}}}{\underbrace{P(X)}_{\text{周辺尤度}}} \propto P(X \mid \theta)\,P(\theta)$$
+
+周辺尤度（エビデンス）は全パラメータについての積分：
+
+$$P(X) = \int P(X \mid \theta)\,P(\theta)\,d\theta$$
+
+**ベータ–二項共役**：事前分布 $\theta \sim \mathrm{Beta}(\alpha,\beta)$ に $n$ 回中 $k$ 回成功を観測すると、
+
+$$\theta \mid X \sim \mathrm{Beta}(\alpha + k,\; \beta + n - k)$$
+
+事後平均は $\dfrac{\alpha+k}{\alpha+\beta+n}$ となる。
+
+**ベイズ因子**（モデル $M_1$ と $M_0$ の比較）：
+
+$$\mathrm{BF}_{10} = \frac{P(X \mid M_1)}{P(X \mid M_0)}$$
+
 ## ベイズの定理
 
 ```python

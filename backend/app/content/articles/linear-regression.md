@@ -11,6 +11,24 @@ tags: [ml, regression, python, data-science]
 ## 概要
 線形回帰は「入力 X から連続値 y を予測する」最もシンプルな機械学習モデルです。数値の予測（売上・気温・価格など）に使います。モデルの解釈性が高く、まず試すべきベースラインです。
 
+## 主要な数式
+
+**予測モデル**：
+
+$$\hat{y} = w_0 + w_1 x_1 + \cdots + w_d x_d = \mathbf{w}^\top \mathbf{x}$$
+
+**損失関数（平均二乗誤差 MSE）**：
+
+$$\mathcal{L}(\mathbf{w}) = \frac{1}{n}\sum_{i=1}^{n}\left(y_i - \mathbf{w}^\top \mathbf{x}_i\right)^2$$
+
+**勾配降下法**による更新（学習率 $\eta$）：
+
+$$\mathbf{w} \leftarrow \mathbf{w} - \eta\,\nabla_{\mathbf{w}}\mathcal{L}$$
+
+**正則化**（Ridge は L2、Lasso は L1）：
+
+$$\mathcal{L}_{\text{Ridge}} = \mathrm{MSE} + \lambda\sum_j w_j^2, \qquad \mathcal{L}_{\text{Lasso}} = \mathrm{MSE} + \lambda\sum_j |w_j|$$
+
 ## なぜ必要か
 複雑なモデル（ランダムフォレスト・ニューラルネット）は精度は高いが解釈が難しい。線形回帰は「どの特徴量がどれだけ予測に効いているか」が係数から直接読み取れ、ビジネス上の説明責任を果たしやすいという強みがあります。
 
