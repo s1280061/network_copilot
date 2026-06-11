@@ -69,6 +69,10 @@ plt.title("K-Means クラスタリング")
 plt.show()
 ```
 
+## K-Means 可視化
+
+![K-meansクラスタリングとエルボー法](/images/charts/clustering-kmeans.png)
+
 ## エルボー法とシルエット分析
 
 ```python

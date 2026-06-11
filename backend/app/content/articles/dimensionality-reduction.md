@@ -103,6 +103,10 @@ loadings = pd.DataFrame(
 print(loadings.abs().sort_values("PC1", ascending=False))
 ```
 
+## PCA・t-SNEによる次元削減の可視化
+
+![PCA累積寄与率とt-SNE（手書き数字データ）](/images/charts/dimensionality-reduction.png)
+
 ## t-SNE（非線形次元削減）
 
 ```python

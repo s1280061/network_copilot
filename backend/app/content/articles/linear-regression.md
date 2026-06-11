@@ -113,6 +113,10 @@ coef_df = pd.Series(model.coef_, index=X.columns).sort_values(key=abs, ascending
 print(coef_df)
 ```
 
+## 過学習・正則化パスの可視化
+
+![モデル複雑度とRidge/Lasso係数パス](/images/charts/linear-regression-paths.png)
+
 ## 正則化 — Ridge（L2）と Lasso（L1）
 
 ```python

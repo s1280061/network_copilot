@@ -38,6 +38,10 @@ $$D_M(\mathbf{x}) = \sqrt{(\mathbf{x} - \boldsymbol{\mu})^\top \mathbf{\Sigma}^{
 
 $$\mathbf{w}^\ast = \arg\max_{\mathbf{w}} \frac{\mathbf{w}^\top \mathbf{S}_B \mathbf{w}}{\mathbf{w}^\top \mathbf{S}_W \mathbf{w}}$$
 
+## 相関ヒートマップとPCAバイプロット
+
+![相関行列ヒートマップとPCAバイプロット（Irisデータ）](/images/charts/multivariate-statistics.png)
+
 ## 主成分分析（PCA）
 
 ```python

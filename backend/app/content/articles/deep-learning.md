@@ -47,6 +47,10 @@ z = w₁x₁ + w₂x₂ + ... + b
 y = activation(z)
 ```
 
+## 活性化関数・学習曲線の可視化
+
+![活性化関数と学習曲線](/images/charts/deep-learning-curves.png)
+
 ## 活性化関数の比較
 
 ```python

@@ -78,6 +78,10 @@ plt.title("IQR法による異常検知")
 plt.show()
 ```
 
+## 異常検知の可視化
+
+![Isolation Forestによる異常点検出と異常スコア分布](/images/charts/anomaly-detection.png)
+
 ## Isolation Forest
 
 ```python

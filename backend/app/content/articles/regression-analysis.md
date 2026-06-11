@@ -166,6 +166,10 @@ ridge.fit(df_collinear, price)
 print("Ridge 係数:", dict(zip(df_collinear.columns, ridge.coef_)))
 ```
 
+## 回帰分析の可視化
+
+![単回帰散布図と残差プロット](/images/charts/regression-analysis.png)
+
 ## 残差診断
 
 ```python

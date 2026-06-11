@@ -105,6 +105,10 @@ plt.tight_layout()
 plt.show()
 ```
 
+## 正規分布の可視化
+
+![正規分布とヒストグラム](/images/charts/statistics-normal.png)
+
 ## 仮説検定の流れ
 
 ```mermaid

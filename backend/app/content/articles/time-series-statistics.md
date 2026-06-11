@@ -161,6 +161,12 @@ print("""
 """)
 ```
 
+## 時系列分解と予測の可視化
+
+![時系列分解（トレンド・残差）](/images/charts/timeseries-decompose.png)
+
+![ARIMA予測と予測区間](/images/charts/timeseries-forecast.png)
+
 ## ARIMA モデル
 
 ```python

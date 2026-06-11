@@ -101,6 +101,10 @@ model_lgb.fit(
 print(f"AUC: {roc_auc_score(y_test, model_lgb.predict_proba(X_test)[:,1]):.4f}")
 ```
 
+## 学習曲線・特徴量重要度の可視化
+
+![GBM vs RF 学習曲線と特徴量重要度](/images/charts/gradient-boosting.png)
+
 ## 特徴量重要度の可視化
 
 ```python

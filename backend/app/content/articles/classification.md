@@ -148,6 +148,10 @@ plt.show()
 
 **向いている場面:** 大量の特徴量・外れ値・欠損値・高精度が必要
 
+## 決定境界・ROC曲線の可視化
+
+![ロジスティック回帰の決定境界・混同行列・ROC曲線](/images/charts/classification-roc.png)
+
 ## モデル比較
 
 ```python
