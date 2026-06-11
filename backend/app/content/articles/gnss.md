@@ -13,180 +13,77 @@ GNSS（Global Navigation Satellite System）はGPS・GLONASS・Galileo・みち�
 
 ## GPSの測位原理
 
+GPSは「電波が衛星から届くまでの時間」から距離を求めます。電波は光速 $c$ で進むので、送信時刻と受信時刻の差に $c$ を掛ければ衛星までの距離が分かります。
+
 $$d_i = c \times (t_{receive} - t_{send_i})$$
 
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy.optimize import fsolve
+複数の衛星からの距離が分かれば、その球面の交点として位置が定まります（三辺測量）。
 
-c = 3e8   # 光速 [m/s]
-
-# GPS の仕組み: 4つ以上の衛星からの距離で位置を特定（三辺測量）
-def gps_trilateration(sat_positions, measured_distances):
-    """
-    衛星位置と測定距離から受信機の位置を計算（2D簡易版）
-    sat_positions: [(x1,y1), (x2,y2), (x3,y3)]
-    measured_distances: [d1, d2, d3]
-    """
-    def equations(pos):
-        x, y = pos
-        eqs = []
-        for (sx, sy), d in zip(sat_positions, measured_distances):
-            eqs.append((x-sx)**2 + (y-sy)**2 - d**2)
-        return eqs[:2]   # 2次元なら2つの方程式
-
-    result = fsolve(equations, [0, 0])
-    return result
-
-# 例: 3衛星から測位
-sats = [(0, 40000), (35000, 0), (-35000, 0)]  # 単位: km（地上から約20000km）
-receiver_true = (100, 200)  # 真の位置 [km]
-
-# 各衛星からの真の距離
-true_dists = [np.sqrt((receiver_true[0]-sx)**2 + (receiver_true[1]-sy)**2)
-              for sx, sy in sats]
-
-# ノイズを加えた擬似距離（実際はクロック誤差が主因）
-noise = np.random.normal(0, 1, 3)  # ±1km のノイズ
-meas_dists = [d + n for d, n in zip(true_dists, noise)]
-
-est_pos = gps_trilateration(sats, meas_dists)
-error = np.sqrt((est_pos[0]-receiver_true[0])**2 + (est_pos[1]-receiver_true[1])**2)
-print(f"真の位置:   ({receiver_true[0]:.1f}, {receiver_true[1]:.1f}) km")
-print(f"推定位置:   ({est_pos[0]:.1f}, {est_pos[1]:.1f}) km")
-print(f"測位誤差:   {error:.2f} km")
+```mermaid
+graph TD
+  S1["衛星1"] -. "距離 d1" .-> R["受信機<br/>(位置を求める)"]
+  S2["衛星2"] -. "距離 d2" .-> R
+  S3["衛星3"] -. "距離 d3" .-> R
+  S4["衛星4<br/>(時計誤差の補正用)"] -. "距離 d4" .-> R
 ```
+
+**なぜ衛星が4つ必要か**：3次元の位置（$x, y, z$）に加えて、受信機の**時計の誤差**という未知数が1つあるためです。未知数4つを解くには方程式（衛星）が4つ要ります。受信機に高精度な原子時計を積まなくて済むのは、この4衛星目のおかげです。
+
+$$d_i = \sqrt{(x-x_i)^2 + (y-y_i)^2 + (z-z_i)^2} + c\,\Delta t$$
 
 ## GNSS の種類と精度
 
-```python
-gnss_systems = {
-    "GPS（米国）": {
-        "衛星数": 31,
-        "軌道高度_km": 20200,
-        "周波数": "L1=1575.42MHz, L2=1227.60MHz",
-        "精度_m": 3,
-        "状況": "民間 SA廃止（2000年〜）",
-    },
-    "GLONASS（ロシア）": {
-        "衛星数": 24,
-        "軌道高度_km": 19100,
-        "周波数": "L1=1598.0625〜1605.375MHz（FDMA）",
-        "精度_m": 4,
-        "状況": "軍事・民間併用",
-    },
-    "Galileo（EU）": {
-        "衛星数": 30,
-        "軌道高度_km": 23222,
-        "周波数": "E1=1575.42MHz, E5=1176.45MHz",
-        "精度_m": 1,
-        "状況": "2016〜運用開始",
-    },
-    "BeiDou（中国）": {
-        "衛星数": 35,
-        "軌道高度_km": 21528,
-        "周波数": "B1=1561.098MHz",
-        "精度_m": 2.5,
-        "状況": "2020全面運用",
-    },
-    "みちびき（日本）": {
-        "衛星数": 4,
-        "軌道高度_km": 32000,
-        "周波数": "L1=1575.42MHz（GPS補完）",
-        "精度_m": 0.01,
-        "状況": "準天頂軌道・高精度（cm級）",
-    },
-}
+世界各国が独自の測位システムを運用しており、現代の受信機は複数を併用して精度と安定性を高めています。
 
-print(f"{'システム':18s} {'衛星数':6s} {'精度':6s} {'備考'}")
-print("-" * 60)
-for name, spec in gnss_systems.items():
-    print(f"{name:18s} {spec['衛星数']:4d}機  {spec['精度_m']:4.2f}m  {spec['状況']}")
-```
+| システム | 運用国 | 衛星数 | 標準精度 | 備考 |
+|---|---|---|---|---|
+| GPS | 米国 | 31 | 約3 m | 2000年に民間の精度制限を撤廃 |
+| GLONASS | ロシア | 24 | 約4 m | 軍事・民間併用 |
+| Galileo | EU | 30 | 約1 m | 2016年運用開始 |
+| BeiDou | 中国 | 35 | 約2.5 m | 2020年全面運用 |
+| みちびき (QZSS) | 日本 | 4 | cm級 | 準天頂軌道でGPSを補完・補強 |
+
+すべての主要システムが **L1帯=1575.42MHz** を共有しているため、1つの受信機で複数システムを同時受信できます。
 
 ## 測位精度向上の技術
 
-```python
-# DGNSS / RTK の仕組み
-accuracy_methods = {
-    "単独測位（GPS単体）": {
-        "精度": "3〜5m",
-        "原理": "衛星4個以上から三辺測量",
-        "用途": "カーナビ・スマートフォン",
-    },
-    "SBAS（衛星航法補強）": {
-        "精度": "1〜2m",
-        "原理": "地上局が誤差を計算→静止衛星で補正信号を配信",
-        "用途": "航空・高精度ナビ（MSAS: 日本版SBAS）",
-    },
-    "DGNSS（差分測位）": {
-        "精度": "0.5〜1m",
-        "原理": "既知位置の基準局との差分補正",
-        "用途": "測量・建設機械・農業機械",
-    },
-    "RTK（リアルタイムキネマティック）": {
-        "精度": "1〜2cm",
-        "原理": "搬送波位相を使った高精度測位",
-        "用途": "測量・精密農業・自動運転",
-    },
-    "みちびき（CLAS）": {
-        "精度": "6cm",
-        "原理": "衛星補強信号 + みちびき補強",
-        "用途": "自動運転・農業・ドローン（日本全国）",
-    },
-}
+単独測位の数mの誤差を、補正技術でcm級まで縮められます。
 
-for method, spec in accuracy_methods.items():
-    print(f"【{method}】")
-    print(f"  精度: {spec['精度']}  原理: {spec['原理']}")
-    print(f"  用途: {spec['用途']}")
-    print()
-```
+| 方式 | 精度 | 原理 | 主な用途 |
+|---|---|---|---|
+| 単独測位 | 3〜5 m | 衛星4個以上で三辺測量 | カーナビ・スマホ |
+| SBAS | 1〜2 m | 静止衛星から誤差補正を配信 | 航空・高精度ナビ |
+| DGNSS | 0.5〜1 m | 既知位置の基準局との差分補正 | 測量・建機・農機 |
+| RTK | 1〜2 cm | 搬送波位相を利用 | 測量・精密農業・自動運転 |
+| みちびき CLAS | 約6 cm | 衛星補強信号 | 自動運転・ドローン（日本全国） |
+
+> 誤差の主な原因は、電離層・対流圏による電波の遅延と、衛星・受信機の時計誤差です。補正技術はこれらを基準局で測って差し引く発想です。
 
 ## 自動車へのGNSS応用
 
-```python
-import datetime
+GNSSはナビだけでなく、緊急通報や自動運転にも使われます。
 
-# eCall（欧州義務化の緊急通報システム）
-def ecall_message(lat, lon, speed_kmh, heading_deg, timestamp):
-    """MSD（Minimum Set of Data）: 事故時に自動送信"""
-    return {
-        "messageIdentifier": 1,
-        "control": {
-            "automaticActivation": True,  # 自動起動 or 手動
-            "testCall": False,
-        },
-        "vehicleIdentificationNumber": "JH4DA9350MS017849",
-        "vehicleType": "passenger_car",
-        "timestamp": timestamp.isoformat(),
-        "vehicleLocation": {
-            "latitude":  lat,
-            "longitude": lon,
-            "positionCanBeTrusted": True,
-        },
-        "vehicleDirection": heading_deg,
-        "recentVehicleLocationN1": {"latitude": lat - 0.001, "longitude": lon},
-        "numberOfPassengers": 2,
-    }
+| 用途 | 内容 |
+|---|---|
+| カーナビ | 地図上の自車位置表示・ルート案内 |
+| eCall（EU義務化） | 事故時に位置・車両情報を自動で緊急通報 |
+| テレマティクス | 盗難追跡・走行データ収集 |
+| 自動運転 | 自車位置推定（地図照合の基準） |
 
-import json
-msg = ecall_message(35.6812, 139.7671, 0, 90,
-                    datetime.datetime(2024, 3, 15, 14, 30, 0))
-print("eCall MSD（事故時緊急通報）:")
-print(json.dumps(msg, indent=2, ensure_ascii=False))
+**自動運転の測位精度要件**：
 
-# 自動運転での精度要件
-print("\n自動運転の測位精度要件:")
-requirements = {
-    "一般道（レーン維持）":      "< 0.1m（10cm）",
-    "高速道路（車線変更）":      "< 0.5m",
-    "駐車場（自動駐車）":        "< 0.02m（2cm）",
-    "歩行者認識回避（法的）":   "位置確定 + センサーフュージョン",
-}
-for scenario, req in requirements.items():
-    print(f"  {scenario:24s}: {req}")
+| シーン | 必要精度 |
+|---|---|
+| 高速道路の車線変更 | < 0.5 m |
+| 一般道のレーン維持 | < 0.1 m（10cm） |
+| 自動駐車 | < 0.02 m（2cm） |
 
-print("\n→ GNSS単体では不足 → LiDAR/カメラ/HDMAPと融合（センサーフュージョン）が必須")
+ただしGNSSはトンネル・高層ビル街・地下では受信できず、また数cmの誤差も残ります。そのため自動運転では **GNSS単体に頼らず、LiDAR・カメラ・HDマップと組み合わせる（センサーフュージョン）** ことが必須です。
+
+```mermaid
+graph LR
+  G["GNSS<br/>(絶対位置)"] --> F["センサーフュージョン"]
+  L["LiDAR/カメラ<br/>(周囲認識)"] --> F
+  M["HDマップ"] --> F
+  F --> P["高精度な自車位置"]
 ```
