@@ -157,6 +157,10 @@ answer = rag_query("車載EthernetでVLANを使う理由は？")
 print(answer)
 ```
 
+## 可視化
+
+![検索スコア分布とRAGあり/なし精度比較](/images/charts/rag.png)
+
 ## 検索精度を上げる工夫
 
 ```python

@@ -27,6 +27,10 @@ $$\mathbf{c}_t = \mathbf{f}_t \odot \mathbf{c}_{t-1} + \mathbf{i}_t \odot \tilde
 
 忘却ゲート $\mathbf{f}_t$ が過去の情報をどれだけ残すかを制御し、勾配消失を緩和する。
 
+## 可視化
+
+![ルックバックウィンドウと1ステップ予測](/images/charts/rnn-lstm.png)
+
 ## RNN vs LSTM vs GRU
 
 ```mermaid

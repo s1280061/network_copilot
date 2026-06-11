@@ -66,6 +66,10 @@ graph LR
 
 `RunnableWithMessageHistory` でチェーンを包み、`session_id` を指定すると、前の発言を覚えたまま会話を続けられます。
 
+## 可視化
+
+![RAGパイプラインのレイテンシ内訳](/images/charts/langchain.png)
+
 ## RAGパイプラインの構築
 
 RAG（検索拡張生成）は、社内文書などからLLMに関連情報を渡して回答精度を上げる手法です。

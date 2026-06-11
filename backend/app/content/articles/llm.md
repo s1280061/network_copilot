@@ -29,6 +29,10 @@ $$\mathrm{PPL} = \exp\!\left(-\frac{1}{n}\sum_{t=1}^{n}\log P(w_t \mid w_{<t})\r
 
 $$P(w_i) = \frac{\exp(z_i / T)}{\sum_j \exp(z_j / T)}$$
 
+## 可視化
+
+![温度パラメータによるトークン確率分布とスケーリング則](/images/charts/llm.png)
+
 ## LLMの仕組み
 
 ```mermaid

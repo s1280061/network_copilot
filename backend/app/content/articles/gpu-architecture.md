@@ -65,6 +65,10 @@ t0 = time.perf_counter(); _ = Ag @ Bg; torch.cuda.synchronize()
 print(f"GPU: {(time.perf_counter()-t0)*1000:.2f} ms")
 ```
 
+## 可視化
+
+![ルーフラインモデルとデータ型別スループット](/images/charts/gpu-architecture.png)
+
 ## CUDA 実行モデル
 
 CUDAはスレッドを3階層で管理します。「1024要素の配列に +1」する処理なら、4ブロック × 256スレッド = 1024スレッドが同時に走ります。

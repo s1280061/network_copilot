@@ -29,6 +29,10 @@ $$y = \max_{(m,n)\in\mathcal{R}} x_{m,n}$$
 
 $$\hat{x} = \frac{x - \mu_{\mathcal{B}}}{\sqrt{\sigma_{\mathcal{B}}^2 + \epsilon}}, \qquad y = \gamma\hat{x} + \beta$$
 
+## 可視化
+
+![畳み込み演算と学習曲線](/images/charts/cnn.png)
+
 ## なぜ全結合層ではダメか
 256×256の画像を全結合層に入力すると入力次元が65,536になり、パラメータ数が爆発します。CNNは**局所受容野（畳み込み）と重み共有**で、位置によらず同じフィルタを適用するため、大幅にパラメータ数を削減できます。
 

@@ -25,6 +25,10 @@ graph TD
   E --> E1["✅ GPU 8〜16GB\n✅ 4bit量子化\n△ 少し精度低下"]
 ```
 
+## 可視化
+
+![ファインチューニング手法別損失曲線とパラメータ数比較](/images/charts/fine-tuning.png)
+
 ## LoRAの仕組み
 
 ```python

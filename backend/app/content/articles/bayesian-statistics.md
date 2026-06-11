@@ -38,6 +38,10 @@ $$\theta \mid X \sim \mathrm{Beta}(\alpha + k,\; \beta + n - k)$$
 
 $$\mathrm{BF}_{10} = \frac{P(X \mid M_1)}{P(X \mid M_0)}$$
 
+## 可視化
+
+![事前分布・尤度・事後分布の更新](/images/charts/bayesian-statistics.png)
+
 ## ベイズの定理
 
 ```python

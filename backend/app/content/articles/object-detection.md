@@ -49,6 +49,10 @@ pred = [60, 60, 210, 190]
 print(f"IoU: {compute_iou(gt, pred):.3f}")  # 0.7以上が一般的な閾値
 ```
 
+## 可視化
+
+![IoU算出とPrecision-Recall曲線](/images/charts/object-detection.png)
+
 ## Non-Maximum Suppression（NMS）
 
 ```python

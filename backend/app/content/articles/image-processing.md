@@ -21,6 +21,10 @@ graph LR
   D --> E[モデル入力<br/>テンソル]
 ```
 
+## 可視化
+
+![原画像・ガウシアンブラー・エッジ検出・ヒストグラム](/images/charts/image-processing.png)
+
 ## torchvision.transforms の基本
 
 ```python

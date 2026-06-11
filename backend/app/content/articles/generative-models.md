@@ -29,6 +29,10 @@ $$q(\mathbf{x}_t | \mathbf{x}_{t-1}) = \mathcal{N}\!\left(\mathbf{x}_t;\, \sqrt{
 
 逆過程でノイズを予測して除去し、データを生成する。
 
+## 可視化
+
+![GAN損失曲線とVAE潜在空間](/images/charts/generative-models.png)
+
 ## GAN（敵対的生成ネットワーク）
 
 ```python

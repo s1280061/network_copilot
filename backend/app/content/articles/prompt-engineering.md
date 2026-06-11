@@ -22,6 +22,10 @@ graph TD
   A --> F[例を示す<br/>Few-shot]
 ```
 
+## 可視化
+
+![Zero-shot/One-shot/Few-shot/CoT 精度比較](/images/charts/prompt-engineering.png)
+
 ## 役割を与える（Role Prompting）
 
 ```python

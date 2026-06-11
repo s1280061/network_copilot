@@ -129,6 +129,10 @@ class SimpleQFormer(nn.Module):
         return self.norm(out)   # (B, 32, 768)
 ```
 
+## 可視化
+
+![クロスアテンションマップと圧縮率](/images/charts/qformer.png)
+
 ## CLIPとの比較
 
 | 観点 | CLIP | Q-Former (BLIP-2) |

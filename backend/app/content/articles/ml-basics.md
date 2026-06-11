@@ -66,6 +66,10 @@ graph LR
   E -->|改善| B
 ```
 
+## 可視化
+
+![バイアス-バリアンス・トレードオフと学習曲線](/images/charts/ml-basics.png)
+
 ## 過学習と汎化
 
 ```python

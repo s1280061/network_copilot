@@ -31,6 +31,10 @@ $$PE_{(pos, 2i)} = \sin\!\left(\frac{pos}{10000^{2i/d}}\right), \qquad PE_{(pos,
 
 $$\mathrm{output} = \mathrm{LayerNorm}\big(\mathbf{x} + \mathrm{Sublayer}(\mathbf{x})\big)$$
 
+## 可視化
+
+![アテンションヒートマップと位置エンコーディング](/images/charts/transformer.png)
+
 ## なぜTransformerが強いか
 
 | | RNN/LSTM | Transformer |

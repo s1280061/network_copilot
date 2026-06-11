@@ -54,6 +54,10 @@ def load_blip2():
     return model, processor
 ```
 
+## 可視化
+
+![テキスト-パッチアテンションと学習曲線](/images/charts/blip.png)
+
 ## 画像キャプション生成
 
 ```python

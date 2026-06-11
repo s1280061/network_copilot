@@ -14,6 +14,10 @@ scikit-learn（sklearn）はPythonで最も広く使われる機械学習ライ�
 ## なぜ使うか
 PyTorch/TensorFlowはニューラルネットワーク向けですが、scikit-learnは**表形式データ（テーブルデータ）に強い**ライブラリです。決定木・SVM・ランダムフォレストなど古典的な手法を数行で試せ、特徴量エンジニアリング・交差検証・パイプラインも完備しています。
 
+## 可視化
+
+![パイプライン別交差検証スコア比較](/images/charts/scikit-learn.png)
+
 ## 共通のAPI設計
 
 ```python

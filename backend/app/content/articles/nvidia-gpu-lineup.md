@@ -32,6 +32,10 @@ graph LR
   K[Kepler] --> M[Maxwell] --> P[Pascal] --> V[Volta] --> T[Turing] --> A[Ampere] --> Ada[Ada Lovelace] --> H[Hopper] --> B[Blackwell]
 ```
 
+## 可視化
+
+![主要GPUのTFLOPS・メモリ帯域幅比較](/images/charts/nvidia-gpu-lineup.png)
+
 ## コンシューマー向け：GeForce RTX シリーズ
 
 ゲーミング・個人のAI開発向け。コストパフォーマンスに優れますが、ECCメモリ非対応・データセンター利用にライセンス制約があります。

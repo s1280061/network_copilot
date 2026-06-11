@@ -58,6 +58,10 @@ loss = contrastive_loss(img_emb, txt_emb)
 print(f"対照損失: {loss.item():.4f}  (理論最小値 ≈ {np.log(N):.4f})")
 ```
 
+## 可視化
+
+![画像-テキスト類似度ヒートマップ](/images/charts/clip.png)
+
 ## CLIPを使ったゼロショット分類
 
 ```python

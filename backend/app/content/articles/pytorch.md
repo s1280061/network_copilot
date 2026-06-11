@@ -21,6 +21,10 @@ graph LR
   A --> E[Hugging Face等<br/>豊富なエコシステム]
 ```
 
+## 可視化
+
+![MLP学習曲線と重み分布](/images/charts/pytorch.png)
+
 ## テンソルの基本
 
 ```python

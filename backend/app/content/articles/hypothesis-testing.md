@@ -43,6 +43,10 @@ $$\alpha = P(\text{棄却} \mid H_0), \qquad \beta = P(\text{保留} \mid H_1), 
 
 **Bonferroni 補正**（$m$ 回の検定）：各検定の有意水準を $\alpha/m$ にする。
 
+## 可視化
+
+![t分布と棄却域・p値の可視化](/images/charts/hypothesis-testing.png)
+
 ## 仮説検定の基本構造
 
 ```python
