@@ -97,6 +97,11 @@ _CATEGORY_MAP = {
     "statistics": "Python",
     "fastapi": "Python",
     "time-series-analysis": "Python",
+    "bayesian-statistics":   "Python",
+    "hypothesis-testing":    "Python",
+    "regression-analysis":   "Python",
+    "time-series-statistics": "Python",
+    "multivariate-statistics": "Python",
     # ML additional
     "clustering": "ML",
     "dimensionality-reduction": "ML",

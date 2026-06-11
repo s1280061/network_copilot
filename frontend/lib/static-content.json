@@ -1221,6 +1221,35 @@
 "favorite": false
 },
 {
+"slug": "hypothesis-testing",
+"title": "仮説検定と検定力（t検定・ANOVA・サンプルサイズ設計）",
+"level": 2,
+"category": "Python",
+"related": [
+"statistics",
+"bayesian-statistics",
+"linear-regression"
+],
+"next": [
+"bayesian-statistics"
+],
+"tags": [
+"hypothesis-testing",
+"t-test",
+"anova",
+"p-value",
+"power",
+"sample-size",
+"statistics"
+],
+"difficulty": "初級",
+"updated": "2026-06-11",
+"excerpt": "仮説検定は「差がある・効果がある」という主張を統計的に評価する手法です。しかし p 値の誤解や検定力の無視は「再現性の危機」の主因です。p 値・効果量・検定力・サンプルサイズ設計を正しく理解することが実務では不可欠です。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "classification",
 "title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）",
 "level": 2,
@@ -1269,6 +1298,36 @@
 "difficulty": "初級",
 "updated": "2026-06-10",
 "excerpt": "半導体はスマートフォン・PC・車載ECUのすべてに使われている現代文明の基盤素材です。「どうして電流を制御できるのか」を理解することは、電子回路設計・組み込み開発の出発点です。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "regression-analysis",
+"title": "回帰分析（重回帰・多重共線性・残差診断）",
+"level": 2,
+"category": "Python",
+"related": [
+"statistics",
+"linear-regression",
+"ml-basics",
+"hypothesis-testing"
+],
+"next": [
+"hypothesis-testing"
+],
+"tags": [
+"regression",
+"multicollinearity",
+"residual",
+"ols",
+"statsmodels",
+"vif",
+"statistics"
+],
+"difficulty": "初級",
+"updated": "2026-06-11",
+"excerpt": "回帰分析は「目的変数 Y を説明変数 X₁, X₂, ... で説明・予測する」手法です。機械学習の線形回帰とは異なり、統計的推論（係数の有意性・信頼区間・モデル診断）を重視します。多重共線性・残差診断・外れ値の検出が実務での品質チェックに",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -2265,6 +2324,32 @@
 "favorite": false
 },
 {
+"slug": "bayesian-statistics",
+"title": "ベイズ統計（事前分布・事後分布・ベイズ更新）",
+"level": 3,
+"category": "Python",
+"related": [
+"statistics",
+"ml-basics",
+"linear-regression"
+],
+"next": [],
+"tags": [
+"bayesian",
+"mcmc",
+"pymc",
+"prior",
+"posterior",
+"statistics"
+],
+"difficulty": "中級",
+"updated": "2026-06-11",
+"excerpt": "ベイズ統計は「データを観測するたびに信念を更新する」という枠組みです。頻度論が「確率＝長期的な頻度」と捉えるのに対し、ベイズ統計は「確率＝不確かさの度合い」として扱います。事前知識をモデルに組み込め、小サンプルでも不確かさを定量化できる点が",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "gradient-boosting",
 "title": "勾配ブースティング（XGBoost・LightGBM）",
 "level": 3,
@@ -2291,6 +2376,34 @@
 "favorite": false
 },
 {
+"slug": "multivariate-statistics",
+"title": "多変量統計（主成分分析・因子分析・判別分析）",
+"level": 3,
+"category": "Python",
+"related": [
+"statistics",
+"dimensionality-reduction",
+"clustering",
+"ml-basics",
+"regression-analysis"
+],
+"next": [],
+"tags": [
+"pca",
+"factor-analysis",
+"lda",
+"multivariate",
+"dimensionality-reduction",
+"statistics"
+],
+"difficulty": "中級",
+"updated": "2026-06-11",
+"excerpt": "多変量統計は「多数の変数を同時に扱う」手法群です。主成分分析（PCA）でデータを圧縮・可視化し、因子分析で潜在構造を発見し、判別分析で高精度な分類を行います。変数間の相関構造を活かすことが鍵です。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "time-series-analysis",
 "title": "時系列分析（ARIMA・予測・異常検知）",
 "level": 3,
@@ -2312,6 +2425,34 @@
 "difficulty": "中級",
 "updated": "2026-06-10",
 "excerpt": "時系列分析は時間順に並んだデータのパターンを発見・予測する手法です。車載ネットワークのトラフィック量の変化、ECU温度のトレンド、センサーデータの周期性など、ネットワーク診断・予兆保全に不可欠です。PythonではStatsmodels・P",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "time-series-statistics",
+"title": "時系列統計（自己相関・定常性・ARIMAモデル）",
+"level": 3,
+"category": "Python",
+"related": [
+"statistics",
+"regression-analysis",
+"anomaly-detection",
+"time-series-analysis"
+],
+"next": [],
+"tags": [
+"time-series",
+"arima",
+"acf",
+"pacf",
+"stationarity",
+"forecasting",
+"statsmodels"
+],
+"difficulty": "中級",
+"updated": "2026-06-11",
+"excerpt": "時系列データは「時間的に連続して観測されたデータ」です。通常の回帰分析では独立性の仮定が崩れるため、専用の手法が必要です。定常性の確認・自己相関の分析・ARIMAモデルの構築が時系列分析の基本的な流れです。",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -5196,6 +5337,60 @@
 "completed": false,
 "favorite": false
 },
+"hypothesis-testing": {
+"slug": "hypothesis-testing",
+"title": "仮説検定と検定力（t検定・ANOVA・サンプルサイズ設計）",
+"level": 2,
+"category": "Python",
+"related": [
+"statistics",
+"bayesian-statistics",
+"linear-regression"
+],
+"next": [
+"bayesian-statistics"
+],
+"tags": [
+"hypothesis-testing",
+"t-test",
+"anova",
+"p-value",
+"power",
+"sample-size",
+"statistics"
+],
+"difficulty": "初級",
+"updated": "2026-06-11",
+"html": "<h2>概要</h2>\n<p>仮説検定は「差がある・効果がある」という主張を統計的に評価する手法です。しかし p 値の誤解や検定力の無視は「再現性の危機」の主因です。p 値・効果量・検定力・サンプルサイズ設計を正しく理解することが実務では不可欠です。</p>\n<h2>仮説検定の基本構造</h2>\n<pre><code class=\"language-python\">import numpy as np\nfrom scipy import stats\nimport matplotlib.pyplot as plt\n\n# 仮説検定の手順\n# 1. H0（帰無仮説）と H1（対立仮説）を設定\n# 2. 有意水準 α を決める（慣習的に 0.05）\n# 3. 検定統計量を計算\n# 4. p 値を求める\n# 5. p &lt; α なら H0 を棄却\n\n# 例: 新しい工場ラインの部品寸法（μ=10mm が規格）\nrng = np.random.default_rng(42)\nmeasurements = rng.normal(loc=10.15, scale=0.5, size=30)   # 実際はわずかにずれている\n\n# 1標本 t 検定\nt_stat, p_val = stats.ttest_1samp(measurements, popmean=10.0)\nprint(f&quot;t 統計量: {t_stat:.3f}&quot;)\nprint(f&quot;p 値:     {p_val:.4f}&quot;)\nprint(f&quot;平均:     {measurements.mean():.3f}&quot;)\nprint(f&quot;結論: {'H0 棄却（有意差あり）' if p_val &lt; 0.05 else 'H0 保留（有意差なし）'}&quot;)\n</code></pre>\n<h2>2標本 t 検定（独立・対応あり）</h2>\n<pre><code class=\"language-python\"># 独立2標本 t 検定: A グループ vs B グループ\ngroup_a = rng.normal(100, 15, 50)   # 対照群（平均100）\ngroup_b = rng.normal(108, 15, 50)   # 介入群（平均108）\n\n# Welch の t 検定（等分散を仮定しない、推奨）\nt, p = stats.ttest_ind(group_a, group_b, equal_var=False)\nprint(f&quot;\\n独立2標本 t 検定&quot;)\nprint(f&quot;t = {t:.3f}, p = {p:.4f}&quot;)\n\n# Cohen's d: 効果量（実務的な大きさの指標）\npooled_std = np.sqrt((group_a.std()**2 + group_b.std()**2) / 2)\ncohens_d   = (group_b.mean() - group_a.mean()) / pooled_std\nprint(f&quot;Cohen's d = {cohens_d:.3f}  ({'小' if abs(cohens_d)&lt;0.5 else '中' if abs(cohens_d)&lt;0.8 else '大'}効果)&quot;)\n\n# 対応あり t 検定: 同一被験者の before/after\nbefore = rng.normal(70, 10, 30)\nafter  = before + rng.normal(5, 3, 30)   # 処置で平均5点改善\n\nt_paired, p_paired = stats.ttest_rel(before, after)\nprint(f&quot;\\n対応あり t 検定&quot;)\nprint(f&quot;t = {t_paired:.3f}, p = {p_paired:.4f}&quot;)\nprint(f&quot;平均変化: {(after - before).mean():.2f}&quot;)\n</code></pre>\n<h2>ANOVA（分散分析）</h2>\n<pre><code class=\"language-python\"># 3グループ以上の比較には ANOVA\n# F 検定: グループ間分散 / グループ内分散\n\n# 例: 3種類の施肥方法による収穫量\nfertilizer_a = rng.normal(65, 8, 20)\nfertilizer_b = rng.normal(72, 8, 20)\nfertilizer_c = rng.normal(68, 8, 20)\n\nf_stat, p_anova = stats.f_oneway(fertilizer_a, fertilizer_b, fertilizer_c)\nprint(f&quot;一元配置 ANOVA: F = {f_stat:.3f}, p = {p_anova:.4f}&quot;)\n\n# 有意なら多重比較（Tukey HSD）で差のあるペアを特定\nfrom statsmodels.stats.multicomp import pairwise_tukeyhsd\nimport pandas as pd\n\ndata   = np.concatenate([fertilizer_a, fertilizer_b, fertilizer_c])\ngroups = [&quot;A&quot;]*20 + [&quot;B&quot;]*20 + [&quot;C&quot;]*20\n\nresult = pairwise_tukeyhsd(data, groups, alpha=0.05)\nprint(result)\n# → A-B: 有意差あり, A-C: 有意差なし, B-C: 有意差あり  など\n\n# η² (eta-squared): ANOVA の効果量\nss_between = sum(\n    len(g) * (g.mean() - data.mean())**2\n    for g in [fertilizer_a, fertilizer_b, fertilizer_c]\n)\nss_total = sum((data - data.mean())**2)\neta_sq = ss_between / ss_total\nprint(f&quot;η² = {eta_sq:.3f}  ({'小' if eta_sq&lt;0.06 else '中' if eta_sq&lt;0.14 else '大'}効果)&quot;)\n</code></pre>\n<h2>p 値の罠と効果量</h2>\n<pre><code class=\"language-python\"># p &lt; 0.05 でも実務的に意味がない差のケース\n\n# 巨大サンプルでは微小差も「有意」になる\nrng2 = np.random.default_rng(0)\nfor n in [30, 300, 3000, 30000]:\n    a = rng2.normal(100.0, 15, n)\n    b = rng2.normal(100.5, 15, n)   # 差は 0.5 点（実務的には無視できる）\n    _, p = stats.ttest_ind(a, b)\n    d = 0.5 / 15  # Cohen's d ≈ 0.033（非常に小さな効果）\n    print(f&quot;n={n:6d}: p={p:.4f}  {'★有意' if p&lt;0.05 else '  非有意'}  Cohen's d={d:.3f}&quot;)\n\n# 教訓: p 値だけで判断せず効果量も必ず報告する\n# 効果量の目安 (Cohen, 1988)\n# d: 小=0.2, 中=0.5, 大=0.8\n# r: 小=0.1, 中=0.3, 大=0.5\n# η²: 小=0.01, 中=0.06, 大=0.14\n</code></pre>\n<h2>検定力（Power）分析</h2>\n<pre><code class=\"language-python\">from statsmodels.stats.power import TTestIndPower, FTestAnovaPower\n\n# 検定力 = P(H0 を正しく棄却 | H1 が真)\n# = 1 − β（β: 第2種過誤の確率）\n# 目標: 検定力 ≥ 0.80\n\npower_analysis = TTestIndPower()\n\n# 必要サンプルサイズの計算\neffect_size = 0.5    # 中程度の効果\nalpha       = 0.05\npower       = 0.80\n\nn_required = power_analysis.solve_power(\n    effect_size=effect_size,\n    alpha=alpha,\n    power=power,\n    ratio=1.0,          # 2グループ同数\n    alternative=&quot;two-sided&quot;,\n)\nprint(f&quot;必要サンプルサイズ（各グループ）: {np.ceil(n_required):.0f}&quot;)\n\n# 検定力曲線: サンプルサイズ vs 検定力\nsample_sizes = np.arange(10, 200, 5)\npowers = [\n    power_analysis.power(effect_size=0.5, nobs1=n, alpha=0.05)\n    for n in sample_sizes\n]\n\nplt.figure(figsize=(8, 4))\nplt.plot(sample_sizes, powers)\nplt.axhline(0.80, color=&quot;red&quot;, linestyle=&quot;--&quot;, label=&quot;目標検定力 0.80&quot;)\nplt.axvline(n_required, color=&quot;orange&quot;, linestyle=&quot;--&quot;, label=f&quot;必要 n={n_required:.0f}&quot;)\nplt.xlabel(&quot;サンプルサイズ（各グループ）&quot;)\nplt.ylabel(&quot;検定力&quot;)\nplt.title(&quot;t 検定の検定力曲線（Cohen's d = 0.5）&quot;)\nplt.legend()\nplt.grid(True, alpha=0.3)\nplt.tight_layout()\nplt.show()\n</code></pre>\n<h2>多重検定の補正</h2>\n<pre><code class=\"language-python\">from statsmodels.stats.multitest import multipletests\n\n# 複数の検定を同時に行うと偶然有意になる確率が上がる\n# α=0.05 で20検定 → 少なくとも1つ偽陽性になる確率 ≈ 1-(0.95)^20 ≈ 64%\n\np_values = np.array([0.001, 0.008, 0.039, 0.041, 0.042,\n                      0.060, 0.074, 0.205, 0.396, 0.510])\n\n# Bonferroni 補正（保守的、独立検定向け）\nreject_bon, p_bon, _, _ = multipletests(p_values, alpha=0.05, method=&quot;bonferroni&quot;)\n\n# Benjamini-Hochberg 補正（FDR制御、探索的研究向け）\nreject_bh,  p_bh,  _, _ = multipletests(p_values, alpha=0.05, method=&quot;fdr_bh&quot;)\n\nprint(&quot;元の p値  | Bonferroni | BH(FDR)&quot;)\nprint(&quot;-&quot; * 40)\nfor p, r_b, r_h in zip(p_values, reject_bon, reject_bh):\n    print(f&quot;{p:.3f}      | {'棄却' if r_b else '保留'}       | {'棄却' if r_h else '保留'}&quot;)\n</code></pre>\n<h2>ノンパラメトリック検定</h2>\n<pre><code class=\"language-python\"># 正規分布を仮定できないデータ（順序尺度・外れ値が多い）に使う\n\ndata1 = np.array([2, 4, 6, 8, 10, 12, 100])  # 外れ値あり\ndata2 = np.array([1, 3, 5, 7, 9, 11, 13])\n\n# Mann-Whitney U 検定（独立2標本 t 検定の代替）\nu, p_mw = stats.mannwhitneyu(data1, data2, alternative=&quot;two-sided&quot;)\nprint(f&quot;Mann-Whitney U: U={u}, p={p_mw:.4f}&quot;)\n\n# Wilcoxon 符号順位検定（対応あり t 検定の代替）\nw, p_wil = stats.wilcoxon(data1[:-1], data2[:-1])\nprint(f&quot;Wilcoxon: W={w}, p={p_wil:.4f}&quot;)\n\n# Kruskal-Wallis 検定（一元配置 ANOVA の代替）\ng1 = [1, 2, 3, 4, 5]\ng2 = [2, 4, 6, 8, 10]\ng3 = [1, 3, 5, 7, 9]\nh, p_kw = stats.kruskal(g1, g2, g3)\nprint(f&quot;Kruskal-Wallis: H={h:.3f}, p={p_kw:.4f}&quot;)\n</code></pre>\n<h2>検定の選び方チートシート</h2>\n<table>\n<thead>\n<tr>\n<th>データの状況</th>\n<th>推奨検定</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1標本、正規分布、μ=μ₀?</td>\n<td>1標本 t 検定</td>\n</tr>\n<tr>\n<td>独立2群、正規分布</td>\n<td>Welch の t 検定</td>\n</tr>\n<tr>\n<td>対応あり2群、正規分布</td>\n<td>対応あり t 検定</td>\n</tr>\n<tr>\n<td>独立2群、非正規 or 順序</td>\n<td>Mann-Whitney U</td>\n</tr>\n<tr>\n<td>対応あり2群、非正規</td>\n<td>Wilcoxon 符号順位</td>\n</tr>\n<tr>\n<td>独立3群以上、正規分布</td>\n<td>一元配置 ANOVA + Tukey HSD</td>\n</tr>\n<tr>\n<td>独立3群以上、非正規</td>\n<td>Kruskal-Wallis</td>\n</tr>\n<tr>\n<td>カテゴリ変数の独立性</td>\n<td>カイ二乗検定</td>\n</tr>\n<tr>\n<td>2変数の相関</td>\n<td>Pearson r (正規) / Spearman ρ (非正規)</td>\n</tr>\n</tbody>\n</table>",
+"prereq_full": [
+{
+"slug": "regression-analysis",
+"title": "回帰分析（重回帰・多重共線性・残差診断）"
+}
+],
+"related_full": [
+{
+"slug": "statistics",
+"title": "統計学の基礎（確率・分布・検定）"
+},
+{
+"slug": "bayesian-statistics",
+"title": "ベイズ統計（事前分布・事後分布・ベイズ更新）"
+},
+{
+"slug": "linear-regression",
+"title": "線形回帰"
+}
+],
+"next_full": [
+{
+"slug": "bayesian-statistics",
+"title": "ベイズ統計（事前分布・事後分布・ベイズ更新）"
+}
+],
+"completed": false,
+"favorite": false
+},
 "classification": {
 "slug": "classification",
 "title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）",
@@ -5290,6 +5485,60 @@
 }
 ],
 "next_full": [],
+"completed": false,
+"favorite": false
+},
+"regression-analysis": {
+"slug": "regression-analysis",
+"title": "回帰分析（重回帰・多重共線性・残差診断）",
+"level": 2,
+"category": "Python",
+"related": [
+"statistics",
+"linear-regression",
+"ml-basics",
+"hypothesis-testing"
+],
+"next": [
+"hypothesis-testing"
+],
+"tags": [
+"regression",
+"multicollinearity",
+"residual",
+"ols",
+"statsmodels",
+"vif",
+"statistics"
+],
+"difficulty": "初級",
+"updated": "2026-06-11",
+"html": "<h2>概要</h2>\n<p>回帰分析は「目的変数 Y を説明変数 X₁, X₂, ... で説明・予測する」手法です。機械学習の線形回帰とは異なり、統計的推論（係数の有意性・信頼区間・モデル診断）を重視します。多重共線性・残差診断・外れ値の検出が実務での品質チェックに欠かせません。</p>\n<h2>単回帰分析</h2>\n<pre><code class=\"language-python\">import numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport statsmodels.api as sm\nfrom scipy import stats\n\nrng = np.random.default_rng(42)\n\n# データ生成: 気温とアイス販売数の関係\ntemperature = rng.uniform(15, 35, 60)\nice_cream   = 2.5 * temperature - 20 + rng.normal(0, 5, 60)\n\n# statsmodels による回帰（OLS: 最小二乗法）\nX = sm.add_constant(temperature)   # 切片項を追加\nmodel = sm.OLS(ice_cream, X).fit()\nprint(model.summary())\n# → coef, std err, t値, p値, 信頼区間などが出力される\n\n# 回帰直線の可視化\nx_range = np.linspace(15, 35, 100)\nX_pred  = sm.add_constant(x_range)\npred    = model.get_prediction(X_pred)\nmean_pred  = pred.predicted_mean\nci_lower, ci_upper = pred.conf_int().T\n\nplt.figure(figsize=(8, 5))\nplt.scatter(temperature, ice_cream, alpha=0.6, label=&quot;観測値&quot;)\nplt.plot(x_range, mean_pred, &quot;r-&quot;, label=&quot;回帰直線&quot;)\nplt.fill_between(x_range, ci_lower, ci_upper, alpha=0.2, label=&quot;95% 信頼区間&quot;)\nplt.xlabel(&quot;気温 (℃)&quot;)\nplt.ylabel(&quot;販売数&quot;)\nplt.legend()\nplt.title(f&quot;単回帰分析  R²={model.rsquared:.3f}&quot;)\nplt.tight_layout()\nplt.show()\n</code></pre>\n<h2>重回帰分析</h2>\n<pre><code class=\"language-python\"># 複数の説明変数で目的変数を予測\n# 例: 住宅価格 ~ 面積 + 築年数 + 駅距離\n\nn = 200\narea    = rng.uniform(30, 120, n)          # 面積 (m²)\nage     = rng.uniform(0, 40, n)            # 築年数\nstation = rng.uniform(1, 30, n)            # 駅距離 (分)\n\nprice = (\n    3.0 * area\n    - 0.5 * age\n    - 2.0 * station\n    + 50\n    + rng.normal(0, 10, n)\n)\n\ndf = pd.DataFrame({\n    &quot;price&quot;:   price,\n    &quot;area&quot;:    area,\n    &quot;age&quot;:     age,\n    &quot;station&quot;: station,\n})\n\nX = sm.add_constant(df[[&quot;area&quot;, &quot;age&quot;, &quot;station&quot;]])\nmodel_multi = sm.OLS(df[&quot;price&quot;], X).fit()\nprint(model_multi.summary())\n\n# 標準化係数（β係数）: 説明変数の相対的な影響力\nfrom sklearn.preprocessing import StandardScaler\n\nscaler = StandardScaler()\nX_scaled = scaler.fit_transform(df[[&quot;area&quot;, &quot;age&quot;, &quot;station&quot;]])\ny_scaled = (df[&quot;price&quot;] - df[&quot;price&quot;].mean()) / df[&quot;price&quot;].std()\n\nmodel_std = sm.OLS(y_scaled, sm.add_constant(X_scaled)).fit()\ncoef_names = [&quot;const&quot;, &quot;area&quot;, &quot;age&quot;, &quot;station&quot;]\nfor name, coef in zip(coef_names[1:], model_std.params[1:]):\n    print(f&quot;β_{name:8s} = {coef:+.3f}&quot;)\n</code></pre>\n<h2>多重共線性の検出と対処</h2>\n<pre><code class=\"language-python\">from statsmodels.stats.outliers_influence import variance_inflation_factor\n\n# VIF（分散膨張係数）で多重共線性を診断\n# VIF &gt; 10 は問題あり、&gt; 5 で注意\n\n# 共線性を含む例: floor と area が強く相関\nfloor = area / 3 + rng.normal(0, 2, n)   # 階数 ≈ 面積/3\n\ndf_collinear = pd.DataFrame({\n    &quot;area&quot;:    area,\n    &quot;floor&quot;:   floor,       # area と強く相関\n    &quot;age&quot;:     age,\n    &quot;station&quot;: station,\n})\n\nX_c = sm.add_constant(df_collinear)\n\nvif_data = pd.DataFrame({\n    &quot;feature&quot;: df_collinear.columns,\n    &quot;VIF&quot;:     [variance_inflation_factor(df_collinear.values, i)\n                for i in range(df_collinear.shape[1])],\n})\nprint(vif_data)\n# area と floor の VIF が高くなる\n\n# 対処法1: 相関の高い変数を一方削除\n# 対処法2: PCA で次元削減\nfrom sklearn.decomposition import PCA\npca = PCA(n_components=1)\narea_pc = pca.fit_transform(df_collinear[[&quot;area&quot;, &quot;floor&quot;]])\n\n# 対処法3: Ridge 回帰（L2 正則化）\nfrom sklearn.linear_model import Ridge\nridge = Ridge(alpha=1.0)\nridge.fit(df_collinear, price)\nprint(&quot;Ridge 係数:&quot;, dict(zip(df_collinear.columns, ridge.coef_)))\n</code></pre>\n<h2>残差診断</h2>\n<pre><code class=\"language-python\"># 回帰の4大仮定: ① 線形性 ② 等分散性 ③ 正規性 ④ 独立性\n\nresiduals = model_multi.resid\nfitted    = model_multi.fittedvalues\n\nfig, axes = plt.subplots(2, 2, figsize=(10, 8))\n\n# 1. 残差 vs 当てはめ値（線形性・等分散性）\naxes[0, 0].scatter(fitted, residuals, alpha=0.5)\naxes[0, 0].axhline(0, color=&quot;red&quot;, linestyle=&quot;--&quot;)\naxes[0, 0].set_xlabel(&quot;当てはめ値&quot;)\naxes[0, 0].set_ylabel(&quot;残差&quot;)\naxes[0, 0].set_title(&quot;残差 vs 当てはめ値&quot;)\n\n# 2. Q-Q プロット（正規性）\nstats.probplot(residuals, plot=axes[0, 1])\naxes[0, 1].set_title(&quot;Normal Q-Q Plot&quot;)\n\n# 3. スケール-ロケーション（等分散性）\nsqrt_abs_resid = np.sqrt(np.abs(residuals))\naxes[1, 0].scatter(fitted, sqrt_abs_resid, alpha=0.5)\naxes[1, 0].set_xlabel(&quot;当てはめ値&quot;)\naxes[1, 0].set_ylabel(&quot;√|標準化残差|&quot;)\naxes[1, 0].set_title(&quot;Scale-Location&quot;)\n\n# 4. 残差のヒストグラム\naxes[1, 1].hist(residuals, bins=20, edgecolor=&quot;black&quot;)\naxes[1, 1].set_xlabel(&quot;残差&quot;)\naxes[1, 1].set_ylabel(&quot;頻度&quot;)\naxes[1, 1].set_title(&quot;残差分布&quot;)\n\nplt.tight_layout()\nplt.show()\n\n# Shapiro-Wilk 検定（正規性の検定）\nw, p_shapiro = stats.shapiro(residuals[:50])   # n≤5000 推奨\nprint(f&quot;Shapiro-Wilk: W={w:.4f}, p={p_shapiro:.4f}&quot;)\nprint(&quot;正規性:&quot; , &quot;○&quot; if p_shapiro &gt; 0.05 else &quot;×（注意）&quot;)\n\n# Durbin-Watson 統計量（独立性・自己相関）\nfrom statsmodels.stats.stattools import durbin_watson\ndw = durbin_watson(residuals)\nprint(f&quot;Durbin-Watson: {dw:.3f}  (2に近いほど独立、&lt;1 or &gt;3 は自己相関あり)&quot;)\n</code></pre>\n<h2>外れ値・影響値の検出</h2>\n<pre><code class=\"language-python\"># Cook の距離: 各観測値がモデル全体に与える影響力\ninfluence = model_multi.get_influence()\ncooks_d   = influence.cooks_distance[0]\n\n# 閾値: 4/n を超えると影響値\nthreshold = 4 / len(price)\ninfluential = np.where(cooks_d &gt; threshold)[0]\nprint(f&quot;影響値の観測点（Cook's D &gt; {threshold:.3f}）: {len(influential)} 個&quot;)\n\nplt.figure(figsize=(10, 4))\nplt.stem(range(len(cooks_d)), cooks_d, markerfmt=&quot;,&quot;, linefmt=&quot;C0-&quot;)\nplt.axhline(threshold, color=&quot;red&quot;, linestyle=&quot;--&quot;, label=f&quot;閾値 4/n={threshold:.3f}&quot;)\nplt.xlabel(&quot;観測点インデックス&quot;)\nplt.ylabel(&quot;Cook's Distance&quot;)\nplt.title(&quot;Cook の距離&quot;)\nplt.legend()\nplt.tight_layout()\nplt.show()\n\n# レバレッジ（説明変数空間での外れ値）\nleverage = influence.hat_matrix_diag\nhigh_leverage = leverage &gt; 2 * X.shape[1] / n\nprint(f&quot;高レバレッジ点: {high_leverage.sum()} 個&quot;)\n</code></pre>\n<h2>回帰診断まとめ</h2>\n<table>\n<thead>\n<tr>\n<th>チェック項目</th>\n<th>指標</th>\n<th>基準</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>多重共線性</td>\n<td>VIF</td>\n<td>&lt; 5（目安）、&gt; 10 は問題</td>\n</tr>\n<tr>\n<td>残差の正規性</td>\n<td>Shapiro-Wilk, Q-Q プロット</td>\n<td>p &gt; 0.05 で正規性あり</td>\n</tr>\n<tr>\n<td>等分散性</td>\n<td>Breusch-Pagan 検定, Scale-Location</td>\n<td>残差が水平バンド内</td>\n</tr>\n<tr>\n<td>独立性</td>\n<td>Durbin-Watson</td>\n<td>1.5 〜 2.5 が目安</td>\n</tr>\n<tr>\n<td>外れ値</td>\n<td>Cook's Distance</td>\n<td>&lt; 4/n</td>\n</tr>\n<tr>\n<td>モデル適合度</td>\n<td>Adjusted R², AIC/BIC</td>\n<td>高 Adj.R²、低 AIC/BIC</td>\n</tr>\n</tbody>\n</table>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "statistics",
+"title": "統計学の基礎（確率・分布・検定）"
+},
+{
+"slug": "linear-regression",
+"title": "線形回帰"
+},
+{
+"slug": "ml-basics",
+"title": "機械学習の基礎"
+},
+{
+"slug": "hypothesis-testing",
+"title": "仮説検定と検定力（t検定・ANOVA・サンプルサイズ設計）"
+}
+],
+"next_full": [
+{
+"slug": "hypothesis-testing",
+"title": "仮説検定と検定力（t検定・ANOVA・サンプルサイズ設計）"
+}
+],
 "completed": false,
 "favorite": false
 },
@@ -7225,6 +7474,52 @@
 "completed": false,
 "favorite": false
 },
+"bayesian-statistics": {
+"slug": "bayesian-statistics",
+"title": "ベイズ統計（事前分布・事後分布・ベイズ更新）",
+"level": 3,
+"category": "Python",
+"related": [
+"statistics",
+"ml-basics",
+"linear-regression"
+],
+"next": [],
+"tags": [
+"bayesian",
+"mcmc",
+"pymc",
+"prior",
+"posterior",
+"statistics"
+],
+"difficulty": "中級",
+"updated": "2026-06-11",
+"html": "<h2>概要</h2>\n<p>ベイズ統計は「データを観測するたびに信念を更新する」という枠組みです。頻度論が「確率＝長期的な頻度」と捉えるのに対し、ベイズ統計は「確率＝不確かさの度合い」として扱います。事前知識をモデルに組み込め、小サンプルでも不確かさを定量化できる点が強みです。</p>\n<h2>ベイズの定理</h2>\n<pre><code class=\"language-python\">import numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy import stats\n\n# ベイズの定理: P(θ|X) ∝ P(X|θ) × P(θ)\n# 事後分布  ∝  尤度     × 事前分布\n\n# コインの表裏（θ = 表が出る確率）を推定する例\n# 事前分布: θ ~ Beta(2, 2)  →「0.5 くらいかな」という弱い信念\n# データ: 10回投げて7回表\n\nn_trials = 10\nn_heads  = 7\n\nalpha_prior, beta_prior = 2, 2          # 事前分布パラメータ\nalpha_post = alpha_prior + n_heads       # 事後分布 = Beta(α+成功, β+失敗)\nbeta_post  = beta_prior  + (n_trials - n_heads)\n\ntheta = np.linspace(0, 1, 300)\n\nprior     = stats.beta.pdf(theta, alpha_prior, beta_prior)\nlikelihood = stats.binom.pmf(n_heads, n_trials, theta)   # 正規化前\nlikelihood /= likelihood.max()                            # スケール合わせ（可視化用）\nposterior  = stats.beta.pdf(theta, alpha_post, beta_post)\n\nplt.figure(figsize=(8, 4))\nplt.plot(theta, prior,     label=f&quot;事前分布 Beta({alpha_prior},{beta_prior})&quot;, linestyle=&quot;--&quot;)\nplt.plot(theta, likelihood,label=&quot;尤度（スケール調整）&quot;, linestyle=&quot;:&quot;)\nplt.plot(theta, posterior, label=f&quot;事後分布 Beta({alpha_post},{beta_post})&quot;, linewidth=2)\nplt.xlabel(&quot;θ（表の確率）&quot;)\nplt.ylabel(&quot;密度&quot;)\nplt.legend()\nplt.title(&quot;ベイズ更新: コインの表裏推定&quot;)\nplt.tight_layout()\nplt.show()\n\nprint(f&quot;事後分布の平均: {alpha_post / (alpha_post + beta_post):.3f}&quot;)\nprint(f&quot;事後分布の95% 信用区間: {stats.beta.ppf([0.025, 0.975], alpha_post, beta_post)}&quot;)\n</code></pre>\n<h2>逐次ベイズ更新</h2>\n<pre><code class=\"language-python\"># データが来るたびに信念を更新する → ベイズ統計の本質\n# 同じコイン推定を1投ずつ更新\n\nrng = np.random.default_rng(42)\nflips = rng.binomial(1, 0.65, size=30)  # 真の表確率 0.65\n\nalpha, beta_p = 2, 2   # 初期事前分布\nhistory = [(alpha, beta_p)]\n\nfor flip in flips:\n    alpha  += flip\n    beta_p += (1 - flip)\n    history.append((alpha, beta_p))\n\nfig, axes = plt.subplots(1, 3, figsize=(12, 4))\nfor ax, step in zip(axes, [1, 10, 30]):\n    a, b = history[step]\n    x = np.linspace(0, 1, 300)\n    ax.plot(x, stats.beta.pdf(x, a, b))\n    ax.axvline(0.65, color=&quot;red&quot;, linestyle=&quot;--&quot;, label=&quot;真の値&quot;)\n    ax.set_title(f&quot;{step}回観測後: Beta({a},{b})&quot;)\n    ax.set_xlabel(&quot;θ&quot;)\n    ax.legend()\nplt.tight_layout()\nplt.show()\n</code></pre>\n<h2>MCMC（マルコフ連鎖モンテカルロ）</h2>\n<pre><code class=\"language-python\"># 解析的に解けない複雑なモデルにはMCMCでサンプリング\n# PyMC を使った線形回帰のベイズ推定\n\nimport pymc as pm\nimport arviz as az\n\n# データ生成（真の傾き=2、切片=1、ノイズσ=0.5）\nrng = np.random.default_rng(0)\nX_obs = rng.uniform(0, 10, 50)\ny_obs = 2.0 * X_obs + 1.0 + rng.normal(0, 0.5, 50)\n\nwith pm.Model() as linear_model:\n    # 事前分布\n    intercept = pm.Normal(&quot;intercept&quot;, mu=0, sigma=10)\n    slope     = pm.Normal(&quot;slope&quot;,     mu=0, sigma=10)\n    sigma     = pm.HalfNormal(&quot;sigma&quot;, sigma=1)\n\n    # 尤度\n    mu = intercept + slope * X_obs\n    y  = pm.Normal(&quot;y&quot;, mu=mu, sigma=sigma, observed=y_obs)\n\n    # MCMC サンプリング（NUTS: No-U-Turn Sampler）\n    trace = pm.sample(2000, tune=1000, chains=4, random_seed=42, progressbar=False)\n\n# 結果確認\nsummary = az.summary(trace, var_names=[&quot;intercept&quot;, &quot;slope&quot;, &quot;sigma&quot;])\nprint(summary)\n# →  mean  sd   hdi_3%  hdi_97%\n# intercept ≈ 1.0\n# slope     ≈ 2.0\n\naz.plot_posterior(trace, var_names=[&quot;slope&quot;], ref_val=2.0)\nplt.show()\n</code></pre>\n<h2>ベイズ因子（モデル比較）</h2>\n<pre><code class=\"language-python\">from scipy.special import betaln\n\ndef log_bayes_factor_coin(n_heads, n_trials, alpha=1, beta=1):\n    &quot;&quot;&quot;\n    H0: θ = 0.5 (公正なコイン)\n    H1: θ ~ Beta(α, β) (任意の確率)\n    ベイズ因子 BF10 = P(data|H1) / P(data|H0)\n    &quot;&quot;&quot;\n    # H0 の周辺尤度\n    log_p_h0 = stats.binom.logpmf(n_heads, n_trials, 0.5)\n\n    # H1 の周辺尤度 (Beta-Binomial)\n    log_p_h1 = (\n        betaln(alpha + n_heads, beta + n_trials - n_heads)\n        - betaln(alpha, beta)\n        + stats.binom.logpmf(n_heads, n_trials, 0.5) * 0  # 組み合わせ項は相殺\n    )\n    # 簡易計算\n    from math import comb, log\n    p_h0 = 0.5 ** n_trials\n    from scipy.special import beta as beta_fn\n    p_h1 = (comb(n_trials, n_heads)\n            * beta_fn(alpha + n_heads, beta + n_trials - n_heads)\n            / beta_fn(alpha, beta))\n\n    bf = p_h1 / p_h0\n    return bf\n\nfor heads in [5, 7, 9, 10]:\n    bf = log_bayes_factor_coin(heads, 10)\n    interp = (&quot;H0支持&quot; if bf &lt; 1/3 else\n              &quot;H1支持&quot; if bf &gt; 3  else &quot;どちらとも言えない&quot;)\n    print(f&quot;10回中{heads}回表: BF10 = {bf:.2f}  → {interp}&quot;)\n</code></pre>\n<h2>ベイズ A/B テスト</h2>\n<pre><code class=\"language-python\">def bayesian_ab_test(conv_a, n_a, conv_b, n_b,\n                     alpha_prior=1, beta_prior=1, n_samples=100_000):\n    &quot;&quot;&quot;\n    A/B テストをベイズ的に評価\n    conv_x: コンバージョン数, n_x: 試行数\n    戻り値: P(B &gt; A), 期待リフト\n    &quot;&quot;&quot;\n    rng = np.random.default_rng(42)\n    # 事後分布からサンプリング\n    samples_a = rng.beta(alpha_prior + conv_a, beta_prior + n_a - conv_a, n_samples)\n    samples_b = rng.beta(alpha_prior + conv_b, beta_prior + n_b - conv_b, n_samples)\n\n    prob_b_better = (samples_b &gt; samples_a).mean()\n    expected_lift = ((samples_b - samples_a) / samples_a).mean() * 100\n\n    print(f&quot;A: {conv_a}/{n_a} = {conv_a/n_a*100:.1f}%&quot;)\n    print(f&quot;B: {conv_b}/{n_b} = {conv_b/n_b*100:.1f}%&quot;)\n    print(f&quot;P(B &gt; A) = {prob_b_better:.1%}&quot;)\n    print(f&quot;期待リフト = {expected_lift:+.1f}%&quot;)\n\n    # 95% 信用区間\n    diff = samples_b - samples_a\n    ci = np.percentile(diff, [2.5, 97.5])\n    print(f&quot;差の95%信用区間: [{ci[0]:+.4f}, {ci[1]:+.4f}]&quot;)\n    return prob_b_better\n\n# 例: A(従来) vs B(新デザイン)\nbayesian_ab_test(conv_a=120, n_a=1000, conv_b=145, n_b=1000)\n</code></pre>\n<h2>事前分布の選び方</h2>\n<table>\n<thead>\n<tr>\n<th>パラメータ</th>\n<th>推奨事前分布</th>\n<th>理由</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>確率 p ∈ [0,1]</td>\n<td>Beta(1,1) — 無情報 / Beta(α,β) — 情報あり</td>\n<td>共役事前分布、解析的に解ける</td>\n</tr>\n<tr>\n<td>平均 μ ∈ ℝ</td>\n<td>Normal(0, σ)</td>\n<td>連続値、対称</td>\n</tr>\n<tr>\n<td>分散 σ &gt; 0</td>\n<td>HalfNormal / Exponential</td>\n<td>正値制約</td>\n</tr>\n<tr>\n<td>カウント λ &gt; 0</td>\n<td>Gamma</td>\n<td>ポアソン分布の共役</td>\n</tr>\n<tr>\n<td>多クラス確率</td>\n<td>Dirichlet</td>\n<td>多項分布の共役</td>\n</tr>\n</tbody>\n</table>\n<h2>頻度論 vs ベイズ 比較</h2>\n<table>\n<thead>\n<tr>\n<th>観点</th>\n<th>頻度論</th>\n<th>ベイズ</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>確率の解釈</td>\n<td>長期的な頻度</td>\n<td>不確かさの度合い</td>\n</tr>\n<tr>\n<td>パラメータ</td>\n<td>固定した未知値</td>\n<td>確率変数</td>\n</tr>\n<tr>\n<td>結果の表現</td>\n<td>信頼区間（95% CI）</td>\n<td>信用区間（HDI）</td>\n</tr>\n<tr>\n<td>事前知識の組み込み</td>\n<td>難しい</td>\n<td>事前分布として自然に組み込む</td>\n</tr>\n<tr>\n<td>計算コスト</td>\n<td>低い</td>\n<td>MCMC など高コスト</td>\n</tr>\n<tr>\n<td>サンプルサイズ</td>\n<td>大サンプルで強力</td>\n<td>小サンプルでも機能する</td>\n</tr>\n</tbody>\n</table>",
+"prereq_full": [
+{
+"slug": "hypothesis-testing",
+"title": "仮説検定と検定力（t検定・ANOVA・サンプルサイズ設計）"
+}
+],
+"related_full": [
+{
+"slug": "statistics",
+"title": "統計学の基礎（確率・分布・検定）"
+},
+{
+"slug": "ml-basics",
+"title": "機械学習の基礎"
+},
+{
+"slug": "linear-regression",
+"title": "線形回帰"
+}
+],
+"next_full": [],
+"completed": false,
+"favorite": false
+},
 "gradient-boosting": {
 "slug": "gradient-boosting",
 "title": "勾配ブースティング（XGBoost・LightGBM）",
@@ -7271,6 +7566,57 @@
 "completed": false,
 "favorite": false
 },
+"multivariate-statistics": {
+"slug": "multivariate-statistics",
+"title": "多変量統計（主成分分析・因子分析・判別分析）",
+"level": 3,
+"category": "Python",
+"related": [
+"statistics",
+"dimensionality-reduction",
+"clustering",
+"ml-basics",
+"regression-analysis"
+],
+"next": [],
+"tags": [
+"pca",
+"factor-analysis",
+"lda",
+"multivariate",
+"dimensionality-reduction",
+"statistics"
+],
+"difficulty": "中級",
+"updated": "2026-06-11",
+"html": "<h2>概要</h2>\n<p>多変量統計は「多数の変数を同時に扱う」手法群です。主成分分析（PCA）でデータを圧縮・可視化し、因子分析で潜在構造を発見し、判別分析で高精度な分類を行います。変数間の相関構造を活かすことが鍵です。</p>\n<h2>主成分分析（PCA）</h2>\n<pre><code class=\"language-python\">import numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.decomposition import PCA\n\n# データ: 自動車のスペック（馬力・燃費・重量・最高速度・加速）\nnp.random.seed(42)\nn = 100\n\n# 潜在因子: &quot;パワー系&quot; と &quot;エコノミー系&quot;\npower_factor  = np.random.normal(0, 1, n)\neconomy_factor = np.random.normal(0, 1, n)\n\ndata = pd.DataFrame({\n    &quot;horsepower&quot;: 200 + 50 * power_factor + np.random.normal(0, 10, n),\n    &quot;top_speed&quot;:  200 + 20 * power_factor + np.random.normal(0, 5, n),\n    &quot;weight&quot;:    1500 + 200 * power_factor - 50 * economy_factor + np.random.normal(0, 30, n),\n    &quot;fuel_eff&quot;:   15  - 3  * power_factor + 3 * economy_factor + np.random.normal(0, 1, n),\n    &quot;accel_0_100&quot;: 8  - 1.5 * power_factor + np.random.normal(0, 0.5, n),\n})\n\n# 標準化（単位・スケールが異なる変数を揃える）\nscaler = StandardScaler()\nX_scaled = scaler.fit_transform(data)\n\n# PCA 実行\npca = PCA()\nX_pca = pca.fit_transform(X_scaled)\n\n# 寄与率\nexplained_var = pca.explained_variance_ratio_\ncumulative_var = np.cumsum(explained_var)\n\nfig, axes = plt.subplots(1, 2, figsize=(12, 5))\n\n# スクリープロット\naxes[0].bar(range(1, len(explained_var)+1), explained_var * 100, label=&quot;各成分&quot;)\naxes[0].plot(range(1, len(cumulative_var)+1), cumulative_var * 100,\n             &quot;ro-&quot;, label=&quot;累積寄与率&quot;)\naxes[0].axhline(80, color=&quot;gray&quot;, linestyle=&quot;--&quot;, label=&quot;80%ライン&quot;)\naxes[0].set_xlabel(&quot;主成分番号&quot;)\naxes[0].set_ylabel(&quot;寄与率 (%)&quot;)\naxes[0].set_title(&quot;スクリープロット&quot;)\naxes[0].legend()\n\n# バイプロット\naxes[1].scatter(X_pca[:, 0], X_pca[:, 1], alpha=0.6)\nfor i, col in enumerate(data.columns):\n    axes[1].arrow(0, 0,\n                  pca.components_[0, i] * 3,\n                  pca.components_[1, i] * 3,\n                  head_width=0.1, color=&quot;red&quot;)\n    axes[1].text(pca.components_[0, i] * 3.2,\n                 pca.components_[1, i] * 3.2, col, fontsize=9)\naxes[1].set_xlabel(f&quot;PC1 ({explained_var[0]*100:.1f}%)&quot;)\naxes[1].set_ylabel(f&quot;PC2 ({explained_var[1]*100:.1f}%)&quot;)\naxes[1].set_title(&quot;バイプロット&quot;)\nplt.tight_layout()\nplt.show()\n\n# 因子負荷量（各変数と主成分の相関）\nloadings = pd.DataFrame(\n    pca.components_.T * np.sqrt(pca.explained_variance_),\n    index=data.columns,\n    columns=[f&quot;PC{i+1}&quot; for i in range(len(pca.components_))],\n)\nprint(&quot;因子負荷量（上位2成分）:&quot;)\nprint(loadings[[&quot;PC1&quot;, &quot;PC2&quot;]].round(3))\n</code></pre>\n<h2>因子分析</h2>\n<pre><code class=\"language-python\">from sklearn.decomposition import FactorAnalysis\nfrom factor_analyzer import FactorAnalyzer   # pip install factor_analyzer\n\n# 因子分析 vs PCA:\n# PCA: 分散を最大化するように軸を回転（記述的）\n# 因子分析: 潜在因子が観測変数を「生成する」モデル（説明的）\n\n# 適切な因子数の決定\nfa_test = FactorAnalyzer(n_factors=5, rotation=None)\nfa_test.fit(X_scaled)\n\nev, v = fa_test.get_eigenvalues()\nprint(&quot;固有値:&quot;, np.round(ev, 3))\nprint(f&quot;固有値 &gt; 1 の因子数: {(ev &gt; 1).sum()}  (Kaiser 基準)&quot;)\n\n# 本番: 2因子、バリマックス回転\nfa = FactorAnalyzer(n_factors=2, rotation=&quot;varimax&quot;)\nfa.fit(X_scaled)\n\n# 因子負荷量\nloadings_fa = pd.DataFrame(\n    fa.loadings_,\n    index=data.columns,\n    columns=[&quot;Factor1&quot;, &quot;Factor2&quot;],\n)\nprint(&quot;\\n因子負荷量（バリマックス回転後）:&quot;)\nprint(loadings_fa.round(3))\n\n# 共通性（各変数が因子で説明される割合）\ncommunalities = fa.get_communalities()\nprint(&quot;\\n共通性:&quot;)\nfor var, comm in zip(data.columns, communalities):\n    print(f&quot;  {var:12s}: {comm:.3f}&quot;)\n</code></pre>\n<h2>線形判別分析（LDA）</h2>\n<pre><code class=\"language-python\">from sklearn.discriminant_analysis import LinearDiscriminantAnalysis\nfrom sklearn.model_selection import cross_val_score\nfrom sklearn.datasets import load_iris\nfrom sklearn.metrics import classification_report\n\n# Iris データセットで LDA\niris = load_iris()\nX, y = iris.data, iris.target\n\n# LDA: クラス間分散 / クラス内分散 を最大化\nlda = LinearDiscriminantAnalysis()\nlda.fit(X, y)\n\n# 交差検証\nscores = cross_val_score(lda, X, y, cv=5)\nprint(f&quot;LDA 精度: {scores.mean():.3f} ± {scores.std():.3f}&quot;)\n\n# 判別スコアの可視化（2次元に射影）\nX_lda = lda.transform(X)\ncolors = [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;]\nplt.figure(figsize=(8, 5))\nfor i, (cls, color) in enumerate(zip(iris.target_names, colors)):\n    mask = y == i\n    plt.scatter(X_lda[mask, 0], X_lda[mask, 1], label=cls, color=color, alpha=0.7)\nplt.xlabel(&quot;LD1&quot;)\nplt.ylabel(&quot;LD2&quot;)\nplt.title(&quot;LDA による Iris データの判別&quot;)\nplt.legend()\nplt.tight_layout()\nplt.show()\n\n# 各変数の判別への寄与\ncoef_df = pd.DataFrame(\n    lda.coef_,\n    columns=iris.feature_names,\n    index=iris.target_names,\n)\nprint(&quot;\\nLDA 係数（各クラス）:&quot;)\nprint(coef_df.round(3))\n</code></pre>\n<h2>マハラノビス距離による異常検知</h2>\n<pre><code class=\"language-python\">from scipy.spatial.distance import mahalanobis\n\n# 多変量外れ値の検出: 相関構造を考慮した距離\nX_train = X_scaled[:100]\nmean = X_train.mean(axis=0)\ncov_inv = np.linalg.inv(np.cov(X_train.T))\n\n# 各サンプルのマハラノビス距離\ndistances = np.array([\n    mahalanobis(x, mean, cov_inv) for x in X_scaled\n])\n\n# カイ二乗分布の 97.5 パーセンタイルを閾値に\nfrom scipy.stats import chi2\nthreshold = chi2.ppf(0.975, df=X_scaled.shape[1])\noutliers  = distances &gt; np.sqrt(threshold)\n\nprint(f&quot;外れ値の数: {outliers.sum()}&quot;)\nprint(f&quot;外れ値インデックス: {np.where(outliers)[0]}&quot;)\n\n# ユークリッド距離との比較\nfrom scipy.spatial.distance import cdist\neucl_dist = cdist([mean], X_scaled)[0]\n\nfig, axes = plt.subplots(1, 2, figsize=(10, 4))\naxes[0].hist(eucl_dist, bins=20)\naxes[0].set_title(&quot;ユークリッド距離&quot;)\naxes[1].hist(distances, bins=20)\naxes[1].axvline(np.sqrt(threshold), color=&quot;red&quot;, linestyle=&quot;--&quot;, label=&quot;閾値&quot;)\naxes[1].set_title(&quot;マハラノビス距離&quot;)\naxes[1].legend()\nplt.tight_layout()\nplt.show()\n</code></pre>\n<h2>正準相関分析（CCA）</h2>\n<pre><code class=\"language-python\">from sklearn.cross_decomposition import CCA\n\n# CCA: 2つの変数群間の最大相関を見つける\n# 例: 体格指標 と 運動能力指標 の関係\n\nnp.random.seed(42)\nn = 200\nhidden = np.random.normal(0, 1, n)\n\nX_phys = np.column_stack([\n    hidden + np.random.normal(0, 0.5, n),   # 身長\n    hidden + np.random.normal(0, 0.5, n),   # 体重\n    hidden + np.random.normal(0, 1.0, n),   # 筋肉量\n])\nY_sport = np.column_stack([\n    hidden + np.random.normal(0, 0.5, n),   # 走力\n    hidden + np.random.normal(0, 0.5, n),   # 跳躍力\n])\n\ncca = CCA(n_components=1)\nX_c, Y_c = cca.fit_transform(X_phys, Y_sport)\n\nfrom scipy.stats import pearsonr\nr, p = pearsonr(X_c[:, 0], Y_c[:, 0])\nprint(f&quot;第1正準相関係数: r = {r:.3f}, p = {p:.4e}&quot;)\n</code></pre>\n<h2>手法選択ガイド</h2>\n<table>\n<thead>\n<tr>\n<th>目的</th>\n<th>手法</th>\n<th>キーワード</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>次元削減・可視化</td>\n<td>PCA</td>\n<td>寄与率・スクリープロット</td>\n</tr>\n<tr>\n<td>潜在因子の発見</td>\n<td>因子分析</td>\n<td>因子負荷量・バリマックス回転</td>\n</tr>\n<tr>\n<td>教師あり分類</td>\n<td>LDA</td>\n<td>クラス間分散最大化</td>\n</tr>\n<tr>\n<td>多変量外れ値検出</td>\n<td>マハラノビス距離</td>\n<td>相関構造を考慮</td>\n</tr>\n<tr>\n<td>2変数群の関係</td>\n<td>正準相関分析</td>\n<td>変数群間の共変動</td>\n</tr>\n<tr>\n<td>クラスタリング</td>\n<td>K-means / 階層クラスタ</td>\n<td>非教師あり分類</td>\n</tr>\n</tbody>\n</table>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "statistics",
+"title": "統計学の基礎（確率・分布・検定）"
+},
+{
+"slug": "dimensionality-reduction",
+"title": "次元削減（PCA・t-SNE・UMAP）"
+},
+{
+"slug": "clustering",
+"title": "クラスタリング（K-Means・DBSCAN・階層型）"
+},
+{
+"slug": "ml-basics",
+"title": "機械学習の基礎"
+},
+{
+"slug": "regression-analysis",
+"title": "回帰分析（重回帰・多重共線性・残差診断）"
+}
+],
+"next_full": [],
+"completed": false,
+"favorite": false
+},
 "time-series-analysis": {
 "slug": "time-series-analysis",
 "title": "時系列分析（ARIMA・予測・異常検知）",
@@ -7310,6 +7656,53 @@
 {
 "slug": "anomaly-detection",
 "title": "異常検知（Isolation Forest・Autoencoder・統計的手法）"
+}
+],
+"next_full": [],
+"completed": false,
+"favorite": false
+},
+"time-series-statistics": {
+"slug": "time-series-statistics",
+"title": "時系列統計（自己相関・定常性・ARIMAモデル）",
+"level": 3,
+"category": "Python",
+"related": [
+"statistics",
+"regression-analysis",
+"anomaly-detection",
+"time-series-analysis"
+],
+"next": [],
+"tags": [
+"time-series",
+"arima",
+"acf",
+"pacf",
+"stationarity",
+"forecasting",
+"statsmodels"
+],
+"difficulty": "中級",
+"updated": "2026-06-11",
+"html": "<h2>概要</h2>\n<p>時系列データは「時間的に連続して観測されたデータ」です。通常の回帰分析では独立性の仮定が崩れるため、専用の手法が必要です。定常性の確認・自己相関の分析・ARIMAモデルの構築が時系列分析の基本的な流れです。</p>\n<h2>時系列の構成要素</h2>\n<pre><code class=\"language-python\">import numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\nfrom statsmodels.tsa.seasonal import seasonal_decompose\n\n# 時系列を 4 要素に分解\n# 1. トレンド (Trend)     : 長期的な増減傾向\n# 2. 季節性 (Seasonal)   : 周期的なパターン\n# 3. 周期 (Cyclic)       : 不規則な長期波動（景気サイクルなど）\n# 4. 不規則変動 (Residual): 説明できないランダムノイズ\n\nnp.random.seed(42)\nn = 120\nt = np.arange(n)\n\ntrend    = 0.05 * t\nseasonal = 5 * np.sin(2 * np.pi * t / 12)   # 12ヶ月周期\nnoise    = np.random.normal(0, 1, n)\nseries   = trend + seasonal + noise + 20\n\nidx = pd.date_range(&quot;2014-01&quot;, periods=n, freq=&quot;ME&quot;)\nts  = pd.Series(series, index=idx)\n\n# 加法モデルで分解\nresult = seasonal_decompose(ts, model=&quot;additive&quot;, period=12)\n\nfig, axes = plt.subplots(4, 1, figsize=(10, 8))\nts.plot(ax=axes[0], title=&quot;観測値&quot;)\nresult.trend.plot(ax=axes[1], title=&quot;トレンド&quot;)\nresult.seasonal.plot(ax=axes[2], title=&quot;季節性&quot;)\nresult.resid.plot(ax=axes[3], title=&quot;残差&quot;)\nplt.tight_layout()\nplt.show()\n</code></pre>\n<h2>定常性の確認</h2>\n<pre><code class=\"language-python\">from statsmodels.tsa.stattools import adfuller, kpss\n\ndef check_stationarity(series, name=&quot;&quot;):\n    &quot;&quot;&quot;ADF 検定と KPSS 検定で定常性を確認&quot;&quot;&quot;\n\n    # ADF 検定: H0 = 単位根あり（非定常）\n    adf_result = adfuller(series.dropna(), autolag=&quot;AIC&quot;)\n    adf_p = adf_result[1]\n\n    # KPSS 検定: H0 = 定常\n    kpss_result = kpss(series.dropna(), regression=&quot;c&quot;, nlags=&quot;auto&quot;)\n    kpss_p = kpss_result[1]\n\n    print(f&quot;\\n--- {name} ---&quot;)\n    print(f&quot;ADF  検定: p={adf_p:.4f}  {'→ 定常' if adf_p &lt; 0.05 else '→ 非定常（単位根あり）'}&quot;)\n    print(f&quot;KPSS 検定: p={kpss_p:.4f}  {'→ 非定常' if kpss_p &lt; 0.05 else '→ 定常'}&quot;)\n\n    # 両検定の組み合わせで判断\n    if adf_p &lt; 0.05 and kpss_p &gt; 0.05:\n        conclusion = &quot;✓ 定常&quot;\n    elif adf_p &gt; 0.05 and kpss_p &lt; 0.05:\n        conclusion = &quot;✗ 非定常（差分が必要）&quot;\n    else:\n        conclusion = &quot;△ 判断困難&quot;\n    print(f&quot;結論: {conclusion}&quot;)\n    return adf_p &lt; 0.05\n\n# 元の系列（非定常）\nstationary = check_stationarity(ts, &quot;元の系列&quot;)\n\n# 1階差分を取ると定常になることが多い\nts_diff = ts.diff().dropna()\ncheck_stationarity(ts_diff, &quot;1階差分&quot;)\n\n# ログ変換（分散が増大するトレンドに有効）\nts_log = np.log(ts)\nts_log_diff = ts_log.diff().dropna()\ncheck_stationarity(ts_log_diff, &quot;対数差分&quot;)\n</code></pre>\n<h2>ACF / PACF の読み方</h2>\n<pre><code class=\"language-python\">from statsmodels.graphics.tsaplots import plot_acf, plot_pacf\n\n# ACF: 自己相関関数 → MA(q) の次数 q を特定\n# PACF: 偏自己相関関数 → AR(p) の次数 p を特定\n\nfig, axes = plt.subplots(2, 2, figsize=(12, 8))\n\n# AR(2) プロセスの例\nar_coefs = [1, -0.6, -0.3]   # AR(2): y_t = 0.6*y_{t-1} + 0.3*y_{t-2} + ε_t\nfrom statsmodels.tsa.arima_process import arma_generate_sample\nar2_series = arma_generate_sample(ar=ar_coefs, ma=[1], nsample=300, seed=42)\n\nplot_acf(ar2_series,  lags=20, ax=axes[0, 0], title=&quot;AR(2) - ACF\\n（指数減衰 → AR プロセス）&quot;)\nplot_pacf(ar2_series, lags=20, ax=axes[0, 1], title=&quot;AR(2) - PACF\\n（2次以降でカットオフ → p=2）&quot;)\n\n# MA(2) プロセスの例\nma_coefs = [1, 0.7, 0.4]\nma2_series = arma_generate_sample(ar=[1], ma=ma_coefs, nsample=300, seed=42)\n\nplot_acf(ma2_series,  lags=20, ax=axes[1, 0], title=&quot;MA(2) - ACF\\n（2次以降でカットオフ → q=2）&quot;)\nplot_pacf(ma2_series, lags=20, ax=axes[1, 1], title=&quot;MA(2) - PACF\\n（指数減衰 → MA プロセス）&quot;)\n\nplt.tight_layout()\nplt.show()\n\n# ARIMAモデルの次数選択ガイド\nprint(&quot;&quot;&quot;\n次数選択の目安:\n  ACF: 急カットオフ → MA(q)、q = カットオフ点\n  PACF: 急カットオフ → AR(p)、p = カットオフ点\n  両方: 指数減衰 → ARMA(p,q)\n  d: 定常化に必要な差分回数（ADF/KPSS で確認）\n&quot;&quot;&quot;)\n</code></pre>\n<h2>ARIMA モデル</h2>\n<pre><code class=\"language-python\">from statsmodels.tsa.arima.model import ARIMA\nimport warnings\nwarnings.filterwarnings(&quot;ignore&quot;)\n\n# 実データ: 月次の電力消費量（シミュレーション）\nnp.random.seed(123)\nn_obs = 120\ndates = pd.date_range(&quot;2015-01&quot;, periods=n_obs, freq=&quot;ME&quot;)\nelec  = (\n    500\n    + 0.3 * np.arange(n_obs)\n    + 80 * np.sin(2 * np.pi * np.arange(n_obs) / 12)\n    + np.random.normal(0, 15, n_obs)\n)\nts_elec = pd.Series(elec, index=dates)\n\n# 訓練/テスト分割\ntrain = ts_elec[:-12]\ntest  = ts_elec[-12:]\n\n# ARIMA(p, d, q) フィッティング\nmodel_arima = ARIMA(train, order=(2, 1, 1)).fit()\nprint(model_arima.summary())\n\n# 予測\nforecast = model_arima.forecast(steps=12)\nconf_int = model_arima.get_forecast(steps=12).conf_int()\n\n# 精度評価\nmae  = np.abs(test.values - forecast.values).mean()\nrmse = np.sqrt(((test.values - forecast.values)**2).mean())\nmape = (np.abs((test.values - forecast.values) / test.values)).mean() * 100\n\nprint(f&quot;\\nMAE:  {mae:.2f}&quot;)\nprint(f&quot;RMSE: {rmse:.2f}&quot;)\nprint(f&quot;MAPE: {mape:.1f}%&quot;)\n\n# 可視化\nplt.figure(figsize=(12, 5))\ntrain.plot(label=&quot;訓練データ&quot;)\ntest.plot(label=&quot;実測値&quot;, color=&quot;green&quot;)\nforecast.plot(label=&quot;予測値&quot;, color=&quot;red&quot;, linestyle=&quot;--&quot;)\nplt.fill_between(conf_int.index, conf_int.iloc[:, 0], conf_int.iloc[:, 1],\n                 alpha=0.2, color=&quot;red&quot;, label=&quot;95% 予測区間&quot;)\nplt.legend()\nplt.title(&quot;ARIMA(2,1,1) 電力消費量予測&quot;)\nplt.tight_layout()\nplt.show()\n</code></pre>\n<h2>自動次数選択 (auto_arima)</h2>\n<pre><code class=\"language-python\"># pmdarima を使うと AIC 最小化で自動的に最適次数を探索\n# pip install pmdarima\n\nfrom pmdarima import auto_arima\n\nauto_model = auto_arima(\n    train,\n    seasonal=True, m=12,        # 季節性あり、12ヶ月周期\n    d=None,                     # 差分次数を自動判定\n    start_p=0, max_p=3,\n    start_q=0, max_q=3,\n    information_criterion=&quot;aic&quot;,\n    stepwise=True,\n    error_action=&quot;ignore&quot;,\n    suppress_warnings=True,\n)\nprint(auto_model.summary())\nprint(f&quot;選択されたモデル: SARIMA{auto_model.order}x{auto_model.seasonal_order}&quot;)\n</code></pre>\n<h2>SARIMA（季節性 ARIMA）</h2>\n<pre><code class=\"language-python\">from statsmodels.tsa.statespace.sarimax import SARIMAX\n\n# SARIMA(p,d,q)(P,D,Q)[s]\n# s: 季節周期（月次データなら s=12）\nsarima = SARIMAX(\n    train,\n    order=(1, 1, 1),\n    seasonal_order=(1, 1, 1, 12),\n).fit(disp=False)\n\nsarima_forecast = sarima.forecast(steps=12)\nsarima_mae  = np.abs(test.values - sarima_forecast.values).mean()\nprint(f&quot;SARIMA MAE: {sarima_mae:.2f}  (vs ARIMA: {mae:.2f})&quot;)\n# 季節パターンがある場合、SARIMA の方が精度が高い\n</code></pre>\n<h2>残差診断</h2>\n<pre><code class=\"language-python\"># モデルの残差が白色ノイズかどうかを確認\nfrom statsmodels.stats.diagnostic import acorr_ljungbox\n\nresiduals = model_arima.resid\n\n# Ljung-Box 検定: H0 = 残差に自己相関なし（白色ノイズ）\nlb_result = acorr_ljungbox(residuals, lags=[10, 20], return_df=True)\nprint(lb_result)\n# p &gt; 0.05 なら残差は白色ノイズ → モデル適切\n\nfig, axes = plt.subplots(2, 2, figsize=(10, 8))\npd.Series(residuals).plot(ax=axes[0, 0], title=&quot;残差系列&quot;)\naxes[0, 0].axhline(0, color=&quot;red&quot;, linestyle=&quot;--&quot;)\n\nplot_acf(residuals, lags=20, ax=axes[0, 1], title=&quot;残差の ACF&quot;)\naxes[1, 0].hist(residuals, bins=20)\naxes[1, 0].set_title(&quot;残差のヒストグラム&quot;)\nfrom scipy.stats import probplot\nprobplot(residuals, plot=axes[1, 1])\naxes[1, 1].set_title(&quot;残差の Q-Q プロット&quot;)\nplt.tight_layout()\nplt.show()\n</code></pre>\n<h2>モデル比較</h2>\n<table>\n<thead>\n<tr>\n<th>モデル</th>\n<th>特徴</th>\n<th>使いどころ</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>AR(p)</td>\n<td>過去の自分の値で予測</td>\n<td>慣性が強いデータ</td>\n</tr>\n<tr>\n<td>MA(q)</td>\n<td>過去の誤差で予測</td>\n<td>ショック後に収束するデータ</td>\n</tr>\n<tr>\n<td>ARMA(p,q)</td>\n<td>AR + MA の組み合わせ</td>\n<td>定常時系列一般</td>\n</tr>\n<tr>\n<td>ARIMA(p,d,q)</td>\n<td>差分で定常化 + ARMA</td>\n<td>トレンドあり非定常データ</td>\n</tr>\n<tr>\n<td>SARIMA</td>\n<td>ARIMA + 季節成分</td>\n<td>月次・四半期など季節性あり</td>\n</tr>\n<tr>\n<td>Prophet</td>\n<td>トレンド + 季節 + 祝日</td>\n<td>ビジネスデータ、欠損値に強い</td>\n</tr>\n<tr>\n<td>LSTM/Transformer</td>\n<td>深層学習</td>\n<td>複雑な非線形パターン</td>\n</tr>\n</tbody>\n</table>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "statistics",
+"title": "統計学の基礎（確率・分布・検定）"
+},
+{
+"slug": "regression-analysis",
+"title": "回帰分析（重回帰・多重共線性・残差診断）"
+},
+{
+"slug": "anomaly-detection",
+"title": "異常検知（Isolation Forest・Autoencoder・統計的手法）"
+},
+{
+"slug": "time-series-analysis",
+"title": "時系列分析（ARIMA・予測・異常検知）"
 }
 ],
 "next_full": [],
@@ -9627,6 +10020,32 @@
 "title": "直列・並列回路と合成抵抗"
 }
 ],
+"hypothesis-testing": [
+{
+"slug": "bayesian-statistics",
+"title": "ベイズ統計（事前分布・事後分布・ベイズ更新）"
+},
+{
+"slug": "statistics",
+"title": "統計学の基礎（確率・分布・検定）"
+},
+{
+"slug": "linear-regression",
+"title": "線形回帰"
+},
+{
+"slug": "automotive-torque",
+"title": "トルクと馬力（自動車工学の基礎）"
+},
+{
+"slug": "electric-power",
+"title": "電力・電力量とジュール熱"
+},
+{
+"slug": "multivariate-statistics",
+"title": "多変量統計（主成分分析・因子分析・判別分析）"
+}
+],
 "classification": [
 {
 "slug": "gradient-boosting",
@@ -9679,6 +10098,32 @@
 "title": "コンデンサ（静電容量・充放電）"
 }
 ],
+"regression-analysis": [
+{
+"slug": "hypothesis-testing",
+"title": "仮説検定と検定力（t検定・ANOVA・サンプルサイズ設計）"
+},
+{
+"slug": "statistics",
+"title": "統計学の基礎（確率・分布・検定）"
+},
+{
+"slug": "linear-regression",
+"title": "線形回帰"
+},
+{
+"slug": "ml-basics",
+"title": "機械学習の基礎"
+},
+{
+"slug": "bayesian-statistics",
+"title": "ベイズ統計（事前分布・事後分布・ベイズ更新）"
+},
+{
+"slug": "multivariate-statistics",
+"title": "多変量統計（主成分分析・因子分析・判別分析）"
+}
+],
 "automotive-transmission": [
 {
 "slug": "automotive-engine",
@@ -9727,8 +10172,8 @@
 "title": "異常検知（Isolation Forest・Autoencoder・統計的手法）"
 },
 {
-"slug": "classification",
-"title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
+"slug": "multivariate-statistics",
+"title": "多変量統計（主成分分析・因子分析・判別分析）"
 }
 ],
 "deep-learning": [
@@ -10629,6 +11074,32 @@
 "title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
 }
 ],
+"bayesian-statistics": [
+{
+"slug": "statistics",
+"title": "統計学の基礎（確率・分布・検定）"
+},
+{
+"slug": "ml-basics",
+"title": "機械学習の基礎"
+},
+{
+"slug": "linear-regression",
+"title": "線形回帰"
+},
+{
+"slug": "hypothesis-testing",
+"title": "仮説検定と検定力（t検定・ANOVA・サンプルサイズ設計）"
+},
+{
+"slug": "multivariate-statistics",
+"title": "多変量統計（主成分分析・因子分析・判別分析）"
+},
+{
+"slug": "regression-analysis",
+"title": "回帰分析（重回帰・多重共線性・残差診断）"
+}
+],
 "gradient-boosting": [
 {
 "slug": "classification",
@@ -10655,7 +11126,37 @@
 "title": "データクリーニング"
 }
 ],
+"multivariate-statistics": [
+{
+"slug": "dimensionality-reduction",
+"title": "次元削減（PCA・t-SNE・UMAP）"
+},
+{
+"slug": "statistics",
+"title": "統計学の基礎（確率・分布・検定）"
+},
+{
+"slug": "regression-analysis",
+"title": "回帰分析（重回帰・多重共線性・残差診断）"
+},
+{
+"slug": "clustering",
+"title": "クラスタリング（K-Means・DBSCAN・階層型）"
+},
+{
+"slug": "ml-basics",
+"title": "機械学習の基礎"
+},
+{
+"slug": "bayesian-statistics",
+"title": "ベイズ統計（事前分布・事後分布・ベイズ更新）"
+}
+],
 "time-series-analysis": [
+{
+"slug": "time-series-statistics",
+"title": "時系列統計（自己相関・定常性・ARIMAモデル）"
+},
 {
 "slug": "statistics",
 "title": "統計学の基礎（確率・分布・検定）"
@@ -10675,10 +11176,28 @@
 {
 "slug": "classification",
 "title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
+}
+],
+"time-series-statistics": [
+{
+"slug": "time-series-analysis",
+"title": "時系列分析（ARIMA・予測・異常検知）"
 },
 {
-"slug": "clustering",
-"title": "クラスタリング（K-Means・DBSCAN・階層型）"
+"slug": "regression-analysis",
+"title": "回帰分析（重回帰・多重共線性・残差診断）"
+},
+{
+"slug": "statistics",
+"title": "統計学の基礎（確率・分布・検定）"
+},
+{
+"slug": "anomaly-detection",
+"title": "異常検知（Isolation Forest・Autoencoder・統計的手法）"
+},
+{
+"slug": "rnn-lstm",
+"title": "RNN・LSTM（系列データのモデリング）"
 }
 ],
 "object-detection": [
@@ -13027,6 +13546,65 @@
 "favorite": false
 },
 {
+"slug": "hypothesis-testing",
+"title": "仮説検定と検定力（t検定・ANOVA・サンプルサイズ設計）",
+"level": 2,
+"category": "Python",
+"related": [
+"statistics",
+"bayesian-statistics",
+"linear-regression"
+],
+"next": [
+"bayesian-statistics"
+],
+"tags": [
+"hypothesis-testing",
+"t-test",
+"anova",
+"p-value",
+"power",
+"sample-size",
+"statistics"
+],
+"difficulty": "初級",
+"updated": "2026-06-11",
+"excerpt": "仮説検定は「差がある・効果がある」という主張を統計的に評価する手法です。しかし p 値の誤解や検定力の無視は「再現性の危機」の主因です。p 値・効果量・検定力・サンプルサイズ設計を正しく理解することが実務では不可欠です。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "regression-analysis",
+"title": "回帰分析（重回帰・多重共線性・残差診断）",
+"level": 2,
+"category": "Python",
+"related": [
+"statistics",
+"linear-regression",
+"ml-basics",
+"hypothesis-testing"
+],
+"next": [
+"hypothesis-testing"
+],
+"tags": [
+"regression",
+"multicollinearity",
+"residual",
+"ols",
+"statsmodels",
+"vif",
+"statistics"
+],
+"difficulty": "初級",
+"updated": "2026-06-11",
+"excerpt": "回帰分析は「目的変数 Y を説明変数 X₁, X₂, ... で説明・予測する」手法です。機械学習の線形回帰とは異なり、統計的推論（係数の有意性・信頼区間・モデル診断）を重視します。多重共線性・残差診断・外れ値の検出が実務での品質チェックに",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "statistics",
 "title": "統計学の基礎（確率・分布・検定）",
 "level": 2,
@@ -13107,6 +13685,60 @@
 "favorite": false
 },
 {
+"slug": "bayesian-statistics",
+"title": "ベイズ統計（事前分布・事後分布・ベイズ更新）",
+"level": 3,
+"category": "Python",
+"related": [
+"statistics",
+"ml-basics",
+"linear-regression"
+],
+"next": [],
+"tags": [
+"bayesian",
+"mcmc",
+"pymc",
+"prior",
+"posterior",
+"statistics"
+],
+"difficulty": "中級",
+"updated": "2026-06-11",
+"excerpt": "ベイズ統計は「データを観測するたびに信念を更新する」という枠組みです。頻度論が「確率＝長期的な頻度」と捉えるのに対し、ベイズ統計は「確率＝不確かさの度合い」として扱います。事前知識をモデルに組み込め、小サンプルでも不確かさを定量化できる点が",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "multivariate-statistics",
+"title": "多変量統計（主成分分析・因子分析・判別分析）",
+"level": 3,
+"category": "Python",
+"related": [
+"statistics",
+"dimensionality-reduction",
+"clustering",
+"ml-basics",
+"regression-analysis"
+],
+"next": [],
+"tags": [
+"pca",
+"factor-analysis",
+"lda",
+"multivariate",
+"dimensionality-reduction",
+"statistics"
+],
+"difficulty": "中級",
+"updated": "2026-06-11",
+"excerpt": "多変量統計は「多数の変数を同時に扱う」手法群です。主成分分析（PCA）でデータを圧縮・可視化し、因子分析で潜在構造を発見し、判別分析で高精度な分類を行います。変数間の相関構造を活かすことが鍵です。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "time-series-analysis",
 "title": "時系列分析（ARIMA・予測・異常検知）",
 "level": 3,
@@ -13128,6 +13760,34 @@
 "difficulty": "中級",
 "updated": "2026-06-10",
 "excerpt": "時系列分析は時間順に並んだデータのパターンを発見・予測する手法です。車載ネットワークのトラフィック量の変化、ECU温度のトレンド、センサーデータの周期性など、ネットワーク診断・予兆保全に不可欠です。PythonではStatsmodels・P",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "time-series-statistics",
+"title": "時系列統計（自己相関・定常性・ARIMAモデル）",
+"level": 3,
+"category": "Python",
+"related": [
+"statistics",
+"regression-analysis",
+"anomaly-detection",
+"time-series-analysis"
+],
+"next": [],
+"tags": [
+"time-series",
+"arima",
+"acf",
+"pacf",
+"stationarity",
+"forecasting",
+"statsmodels"
+],
+"difficulty": "中級",
+"updated": "2026-06-11",
+"excerpt": "時系列データは「時間的に連続して観測されたデータ」です。通常の回帰分析では独立性の仮定が崩れるため、専用の手法が必要です。定常性の確認・自己相関の分析・ARIMAモデルの構築が時系列分析の基本的な流れです。",
 "views": 0,
 "completed": false,
 "favorite": false
