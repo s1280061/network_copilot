@@ -107,10 +107,36 @@ export const setProgress = (slug: string, completed: boolean) =>
     }
   );
 
+// In static mode (no backend, e.g. Vercel), favorites are persisted in
+// localStorage so the feature works without a server.
+const FAV_KEY = "nc_favorites";
+type FavItem = Ref & { created_at: string };
+
+function readLocalFavorites(): FavItem[] {
+  if (typeof window === "undefined") return [];
+  try {
+    return JSON.parse(localStorage.getItem(FAV_KEY) || "[]");
+  } catch {
+    return [];
+  }
+}
+
+function writeLocalFavorites(favs: FavItem[]) {
+  if (typeof window === "undefined") return;
+  localStorage.setItem(FAV_KEY, JSON.stringify(favs));
+}
+
 export const addFavorite = (slug: string, title: string) =>
   liveOrStatic<{ ok: boolean }>(
     "/api/favorites",
-    () => ({ ok: false }),
+    () => {
+      const favs = readLocalFavorites();
+      if (!favs.some((f) => f.slug === slug)) {
+        favs.unshift({ slug, title, created_at: new Date().toISOString() });
+        writeLocalFavorites(favs);
+      }
+      return { ok: true };
+    },
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -119,15 +145,22 @@ export const addFavorite = (slug: string, title: string) =>
   );
 
 export const removeFavorite = (slug: string) =>
-  liveOrStatic<{ ok: boolean }>(`/api/favorites/${slug}`, () => ({ ok: false }), {
-    method: "DELETE",
-  });
+  liveOrStatic<{ ok: boolean }>(
+    `/api/favorites/${slug}`,
+    () => {
+      writeLocalFavorites(readLocalFavorites().filter((f) => f.slug !== slug));
+      return { ok: true };
+    },
+    { method: "DELETE" }
+  );
 
 export const getFavorites = () =>
-  liveOrStatic<{ favorites: (Ref & { created_at: string })[] }>(
-    "/api/favorites",
-    () => ({ favorites: [] })
-  );
+  liveOrStatic<{ favorites: FavItem[] }>("/api/favorites", () => ({
+    favorites: readLocalFavorites(),
+  }));
+
+export const isFavorite = (slug: string): boolean =>
+  readLocalFavorites().some((f) => f.slug === slug);
 
 export const getHistory = () =>
   liveOrStatic<History>("/api/history", () => ({

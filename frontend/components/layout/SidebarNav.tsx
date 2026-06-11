@@ -11,7 +11,6 @@ const NAV = [
   { href: "/glossary?tab=Statistics", label: "統計", icon: "📊" },
   { href: "/chat", label: "AIチャット", icon: "💬" },
   { href: "/favorites", label: "お気に入り", icon: "⭐" },
-  { href: "/history", label: "学習履歴", icon: "📝" },
   { href: "/python", label: "Python DS", icon: "🐍" },
 ];
 

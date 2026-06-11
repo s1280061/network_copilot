@@ -14,7 +14,7 @@ import sql from "highlight.js/lib/languages/sql";
 import cpp from "highlight.js/lib/languages/cpp";
 import renderMathInElement from "katex/contrib/auto-render";
 import "katex/dist/katex.min.css";
-import { getArticle, getRecommend } from "@/lib/api";
+import { getArticle, getRecommend, getFavorites, addFavorite, removeFavorite } from "@/lib/api";
 import { Article, Ref } from "@/lib/types";
 import { useStudyPanel } from "@/lib/study-context";
 import Thumbnail from "@/components/Thumbnail";
@@ -58,6 +58,7 @@ export default function ArticleView({ slug }: { slug: string }) {
   const [article, setArticle] = useState<Article | null>(null);
   const [recommended, setRecommended] = useState<Ref[]>([]);
   const [error, setError] = useState(false);
+  const [faved, setFaved] = useState(false);
 
   const load = useCallback(() => {
     setArticle(null);
@@ -80,6 +81,24 @@ export default function ArticleView({ slug }: { slug: string }) {
   useEffect(() => {
     load();
   }, [load]);
+
+  // reflect current favorite state for this article
+  useEffect(() => {
+    getFavorites()
+      .then((d) => setFaved(d.favorites.some((f) => f.slug === slug)))
+      .catch(() => setFaved(false));
+  }, [slug]);
+
+  async function toggleFavorite() {
+    if (!article) return;
+    if (faved) {
+      await removeFavorite(slug);
+      setFaved(false);
+    } else {
+      await addFavorite(slug, article.title);
+      setFaved(true);
+    }
+  }
 
   // Mermaid rendering
   useEffect(() => {
@@ -195,7 +214,20 @@ export default function ArticleView({ slug }: { slug: string }) {
         <span className="text-xs px-2 py-0.5 rounded-full bg-slate-100 text-slate-500">
           {article.category}
         </span>
-        <h1 className="text-2xl font-bold mt-2">{article.title}</h1>
+        <div className="flex items-start justify-between gap-3 mt-2">
+          <h1 className="text-2xl font-bold">{article.title}</h1>
+          <button
+            onClick={toggleFavorite}
+            title={faved ? "お気に入りから削除" : "お気に入りに追加"}
+            className={`shrink-0 text-sm border rounded-full px-3 py-1.5 transition ${
+              faved
+                ? "bg-amber-50 border-amber-300 text-amber-600"
+                : "bg-white border-slate-300 text-slate-500 hover:border-amber-400 hover:text-amber-600"
+            }`}
+          >
+            {faved ? "★ お気に入り済み" : "☆ お気に入り"}
+          </button>
+        </div>
         <p className="text-xs text-slate-400 mt-1">{article.updated}</p>
       </div>
 
