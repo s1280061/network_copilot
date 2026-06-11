@@ -11,6 +11,22 @@ tags: [clustering, unsupervised, kmeans, dbscan, python, scikit-learn]
 ## 概要
 クラスタリングはラベルなしデータをグループに分ける教師なし学習です。車載ネットワークでは「同じ挙動パターンのECUをグループ化」「通信フローの分類」「異常なパケットの検出」に活用されます。PythonではScikit-learnが主要ライブラリです。
 
+## 主要な数式
+
+**K-means の目的関数**（クラスタ内二乗和 WCSS を最小化）：
+
+$$J = \sum_{k=1}^{K}\sum_{\mathbf{x}\in C_k} \lVert \mathbf{x} - \boldsymbol{\mu}_k \rVert^2, \qquad \boldsymbol{\mu}_k = \frac{1}{|C_k|}\sum_{\mathbf{x}\in C_k}\mathbf{x}$$
+
+**ユークリッド距離**：
+
+$$d(\mathbf{x}, \mathbf{y}) = \sqrt{\sum_{i=1}^{d}(x_i - y_i)^2}$$
+
+**シルエット係数**（クラスタリング品質、$a$=同クラスタ内平均距離、$b$=最近接他クラスタへの平均距離）：
+
+$$s = \frac{b - a}{\max(a, b)} \in [-1, 1]$$
+
+1に近いほど良いクラスタリング。
+
 ## K-Meansクラスタリング
 
 ```python

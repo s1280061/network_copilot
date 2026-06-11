@@ -11,6 +11,24 @@ tags: [gan, vae, diffusion, generative-ai, pytorch, deep-learning]
 ## 概要
 生成モデルはデータの分布を学習して新しいサンプルを生成するモデルです。GAN（Generative Adversarial Network）・VAE（Variational Autoencoder）・Diffusionモデルが三大潮流です。ネットワークセキュリティではデータ拡張・合成トラフィック生成・異常サンプル生成に活用されます。
 
+## 主要な数式
+
+**GAN の min-max ゲーム**（生成器 $G$ と識別器 $D$）：
+
+$$\min_G \max_D \; \mathbb{E}_{\mathbf{x}\sim p_{\text{data}}}[\log D(\mathbf{x})] + \mathbb{E}_{\mathbf{z}\sim p_z}[\log(1 - D(G(\mathbf{z})))]$$
+
+**VAE の変分下限（ELBO）**：
+
+$$\mathcal{L} = \mathbb{E}_{q(\mathbf{z}|\mathbf{x})}[\log p(\mathbf{x}|\mathbf{z})] - \mathrm{KL}\big(q(\mathbf{z}|\mathbf{x}) \,\Vert\, p(\mathbf{z})\big)$$
+
+第1項が再構成、第2項が事前分布への正則化。
+
+**Diffusion モデルの順過程**（ノイズを徐々に付加）：
+
+$$q(\mathbf{x}_t | \mathbf{x}_{t-1}) = \mathcal{N}\!\left(\mathbf{x}_t;\, \sqrt{1-\beta_t}\,\mathbf{x}_{t-1},\, \beta_t \mathbf{I}\right)$$
+
+逆過程でノイズを予測して除去し、データを生成する。
+
 ## GAN（敵対的生成ネットワーク）
 
 ```python

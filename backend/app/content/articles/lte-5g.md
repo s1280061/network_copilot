@@ -11,6 +11,24 @@ tags: [lte, 5g, cellular, nr, automotive, telematics, ota]
 ## 概要
 LTE（4G）と5Gは全国規模のモバイル通信インフラです。自動車では「テレマティクス（位置情報・盗難追跡）」「OTA（Over-the-Air）アップデート」「コネクテッドカー」「C-V2X（Cellular V2X）」に活用されています。
 
+## 主要な数式
+
+**MIMO による容量向上**（$N_t$ 送信・$N_r$ 受信アンテナ）：
+
+$$C = \min(N_t, N_r)\,B\log_2(1 + \mathrm{SNR})$$
+
+空間多重化でアンテナ数に比例して速度が上がる（5Gの Massive MIMO の原理）。
+
+**理論ピークレート**（変調多値数 $M$、レイヤ数 $L$、リソース要素数 $R$）：
+
+$$R_{\text{peak}} \approx L \cdot \log_2(M) \cdot R \;\;[\text{bps}]$$
+
+**ドップラーシフト**（移動速度 $v$、搬送波周波数 $f_c$）：
+
+$$f_d = \frac{v}{c}\,f_c\cos\theta$$
+
+高速移動する車両では周波数ずれの補正が必要になる。
+
 ## LTE の基本アーキテクチャ
 
 ```

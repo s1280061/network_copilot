@@ -11,6 +11,24 @@ tags: [wifi, ieee80211, wireless-lan, 802.11ax, ofdm, networking]
 ## 概要
 Wi-Fi（IEEE 802.11）は世界中で使われている無線LAN規格です。「なぜ5GHzは速いが繋がりにくいのか」「Wi-Fi 6は何が違うのか」を物理層から理解しましょう。車載では駐車場の地図更新・ディーラーでの診断・路車間通信の補助に使われます。
 
+## 主要な数式
+
+**シャノンの通信路容量**（帯域幅 $B$、信号対雑音比 SNR）：
+
+$$C = B \log_2(1 + \mathrm{SNR}) \;\;[\text{bps}]$$
+
+帯域を広げるか SNR を上げると理論最大速度が増える。
+
+**SNR のデシベル表現**：
+
+$$\mathrm{SNR_{dB}} = 10\log_{10}\!\left(\frac{P_{\text{signal}}}{P_{\text{noise}}}\right)$$
+
+**自由空間伝搬損失**（距離 $d$、周波数 $f$）：
+
+$$\mathrm{FSPL_{dB}} = 20\log_{10}(d) + 20\log_{10}(f) + 20\log_{10}\!\left(\frac{4\pi}{c}\right)$$
+
+周波数が高い（5GHz > 2.4GHz）ほど損失が大きく、届きにくくなる。
+
 ## Wi-Fi 規格の進化
 
 ```python

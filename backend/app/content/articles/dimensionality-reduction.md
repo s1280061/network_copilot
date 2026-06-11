@@ -11,6 +11,18 @@ tags: [pca, tsne, umap, dimensionality-reduction, python, scikit-learn]
 ## 概要
 次元削減は高次元データを低次元空間に圧縮する手法です。車載ネットワークでは数百のセンサーやプロトコル特徴量を2〜3次元に圧縮して可視化・分類に使います。PCAは線形、t-SNE・UMAPは非線形な構造を保持します。
 
+## 主要な数式
+
+**PCA**：共分散行列 $\mathbf{\Sigma}$ の固有値分解で分散最大の軸を求める。
+
+$$\mathbf{\Sigma}\mathbf{v}_k = \lambda_k \mathbf{v}_k, \qquad \text{累積寄与率} = \frac{\sum_{k=1}^{m}\lambda_k}{\sum_{j=1}^{d}\lambda_j}$$
+
+**t-SNE**：高次元の類似度を条件付き確率で、低次元を t 分布で表し KL ダイバージェンスを最小化。
+
+$$p_{j|i} = \frac{\exp(-\lVert \mathbf{x}_i - \mathbf{x}_j \rVert^2 / 2\sigma_i^2)}{\sum_{k\ne i}\exp(-\lVert \mathbf{x}_i - \mathbf{x}_k \rVert^2 / 2\sigma_i^2)}$$
+
+$$q_{ij} = \frac{(1 + \lVert \mathbf{y}_i - \mathbf{y}_j \rVert^2)^{-1}}{\sum_{k\ne l}(1 + \lVert \mathbf{y}_k - \mathbf{y}_l \rVert^2)^{-1}}, \qquad \mathrm{KL}(P\Vert Q) = \sum_{i\ne j} p_{ij}\log\frac{p_{ij}}{q_{ij}}$$
+
 ## PCA（主成分分析）
 
 ```python

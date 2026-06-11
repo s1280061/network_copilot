@@ -11,6 +11,24 @@ tags: [cnn, deep-learning, pytorch, image, computer-vision]
 ## 概要
 CNN（Convolutional Neural Network）は画像データに特化したニューラルネットワークです。畳み込み層・プーリング層を積み重ね、画像の局所パターン（エッジ→テクスチャ→形状→物体）を階層的に学習します。画像分類・物体検出・セグメンテーションの基盤技術です。
 
+## 主要な数式
+
+**2次元畳み込み**（入力 $I$、カーネル $K$）：
+
+$$(I * K)_{i,j} = \sum_{m}\sum_{n} I_{i+m,\,j+n}\,K_{m,n}$$
+
+**出力サイズ**（入力 $W$、カーネル $F$、パディング $P$、ストライド $S$）：
+
+$$W_{\text{out}} = \left\lfloor \frac{W - F + 2P}{S} \right\rfloor + 1$$
+
+**最大プーリング**（領域 $\mathcal{R}$）：
+
+$$y = \max_{(m,n)\in\mathcal{R}} x_{m,n}$$
+
+**バッチ正規化**：
+
+$$\hat{x} = \frac{x - \mu_{\mathcal{B}}}{\sqrt{\sigma_{\mathcal{B}}^2 + \epsilon}}, \qquad y = \gamma\hat{x} + \beta$$
+
 ## なぜ全結合層ではダメか
 256×256の画像を全結合層に入力すると入力次元が65,536になり、パラメータ数が爆発します。CNNは**局所受容野（畳み込み）と重み共有**で、位置によらず同じフィルタを適用するため、大幅にパラメータ数を削減できます。
 

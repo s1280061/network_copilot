@@ -11,6 +11,26 @@ tags: [ev, battery, bms, lithium-ion, charging, automotive]
 ## 概要
 電気自動車（EV）の心臓部はリチウムイオンバッテリーパックです。スマートフォンと同じ原理ですが、容量は数万倍。電圧・容量・BMS（バッテリー管理システム）・充電方式の仕組みを理解することは、EV開発・診断の基盤です。
 
+## 主要な数式
+
+**蓄えられるエネルギー**（電圧 $V$、容量 $Q$）：
+
+$$E\,[\text{Wh}] = V\,[\text{V}] \times Q\,[\text{Ah}]$$
+
+例：400V × 75Ah = 30kWh。
+
+**充電時間の目安**（充電電力 $P$、効率 $\eta$）：
+
+$$t = \frac{E}{P \cdot \eta}$$
+
+**C レート**（充放電速度、容量 $Q$ に対する電流 $I$）：
+
+$$\text{C-rate} = \frac{I}{Q}$$
+
+1C は1時間で満充電/放電する電流。**充電率（SOC）**は
+
+$$\mathrm{SOC} = \frac{Q_{\text{remaining}}}{Q_{\text{rated}}} \times 100\,[\%]$$
+
 ## リチウムイオン電池の仕組み
 
 ```

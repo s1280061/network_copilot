@@ -11,6 +11,22 @@ tags: [rnn, lstm, deep-learning, pytorch, time-series, nlp]
 ## 概要
 RNN（Recurrent Neural Network）は系列データ（時系列・テキスト・音声）を扱うために設計されたニューラルネットワークです。前のタイムステップの出力を次のステップの入力として使うことで、「文脈」を保持します。LSTMはRNNの長期依存問題を解決した改良版です。
 
+## 主要な数式
+
+**RNN の隠れ状態更新**：
+
+$$\mathbf{h}_t = \tanh\!\left(\mathbf{W}_{hh}\mathbf{h}_{t-1} + \mathbf{W}_{xh}\mathbf{x}_t + \mathbf{b}_h\right)$$
+
+**LSTM のゲート**（忘却・入力・出力）：
+
+$$\mathbf{f}_t = \sigma(\mathbf{W}_f[\mathbf{h}_{t-1}, \mathbf{x}_t] + \mathbf{b}_f), \quad \mathbf{i}_t = \sigma(\mathbf{W}_i[\cdot] + \mathbf{b}_i), \quad \mathbf{o}_t = \sigma(\mathbf{W}_o[\cdot] + \mathbf{b}_o)$$
+
+**セル状態と隠れ状態の更新**：
+
+$$\mathbf{c}_t = \mathbf{f}_t \odot \mathbf{c}_{t-1} + \mathbf{i}_t \odot \tilde{\mathbf{c}}_t, \qquad \mathbf{h}_t = \mathbf{o}_t \odot \tanh(\mathbf{c}_t)$$
+
+忘却ゲート $\mathbf{f}_t$ が過去の情報をどれだけ残すかを制御し、勾配消失を緩和する。
+
 ## RNN vs LSTM vs GRU
 
 ```mermaid

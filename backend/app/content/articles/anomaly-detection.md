@@ -11,6 +11,24 @@ tags: [anomaly-detection, isolation-forest, autoencoder, python, scikit-learn]
 ## 概要
 異常検知は正常パターンから外れたデータを自動識別する技術です。車載ネットワークでは「不正なCAN IDのパケット」「異常なデータレート急上昇」「未知のECUからの通信」など、サイバー攻撃・故障の早期発見に重要です。ラベルなしデータで学習できる教師なし手法が主流です。
 
+## 主要な数式
+
+**z スコア法**（$|z| > 3$ を異常とする）：
+
+$$z = \frac{x - \mu}{\sigma}$$
+
+**マハラノビス距離**（多変量、相関を考慮）：
+
+$$D_M(\mathbf{x}) = \sqrt{(\mathbf{x} - \boldsymbol{\mu})^\top \mathbf{\Sigma}^{-1}(\mathbf{x} - \boldsymbol{\mu})}$$
+
+**オートエンコーダの再構成誤差**（誤差が大きいほど異常）：
+
+$$\mathrm{score}(\mathbf{x}) = \lVert \mathbf{x} - \hat{\mathbf{x}} \rVert^2, \qquad \hat{\mathbf{x}} = \mathrm{Decoder}(\mathrm{Encoder}(\mathbf{x}))$$
+
+**閾値の設定**（正常データの誤差分布の分位点）：
+
+$$\tau = \mu_{\text{err}} + k\,\sigma_{\text{err}}$$
+
 ## 統計的手法（Z-スコア・IQR）
 
 ```python

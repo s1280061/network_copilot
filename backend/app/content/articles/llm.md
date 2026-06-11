@@ -11,6 +11,24 @@ tags: [llm, gpt, bert, genai, nlp, transformer]
 ## 概要
 LLM（Large Language Model）はTransformerをベースに、巨大なテキストコーパスで学習した言語モデルです。GPT-4・Claude・Gemini・Llama などが代表例で、翻訳・要約・コード生成・質問応答・創作など多様なタスクを単一モデルでこなします。
 
+## 主要な数式
+
+**言語モデルの確率分解**（次トークン予測）：
+
+$$P(w_1, \dots, w_n) = \prod_{t=1}^{n} P(w_t \mid w_1, \dots, w_{t-1})$$
+
+**学習の目的（負の対数尤度）**：
+
+$$\mathcal{L} = -\sum_{t=1}^{n}\log P(w_t \mid w_{<t})$$
+
+**パープレキシティ**（モデルの予測性能、低いほど良い）：
+
+$$\mathrm{PPL} = \exp\!\left(-\frac{1}{n}\sum_{t=1}^{n}\log P(w_t \mid w_{<t})\right)$$
+
+**温度付き softmax**（生成のランダム性を制御、$T$ が大きいほど多様）：
+
+$$P(w_i) = \frac{\exp(z_i / T)}{\sum_j \exp(z_j / T)}$$
+
 ## LLMの仕組み
 
 ```mermaid
