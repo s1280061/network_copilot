@@ -112,6 +112,7 @@ _CATEGORY_MAP = {
     "object-detection": "CV",
     "clip": "CV",
     "blip": "CV",
+    "qformer": "CV",
     # GenAI additional
     "langchain": "GenAI",
     "fine-tuning": "GenAI",

@@ -1905,6 +1905,35 @@
 "favorite": false
 },
 {
+"slug": "qformer",
+"title": "Q-Former（クエリトランスフォーマー）― BLIP-2のブリッジ機構",
+"level": 3,
+"category": "CV",
+"related": [
+"blip",
+"clip",
+"transformer",
+"llm",
+"deep-learning"
+],
+"next": [],
+"tags": [
+"qformer",
+"blip2",
+"multimodal",
+"vision-language",
+"cross-attention",
+"frozen-model",
+"query-tokens"
+],
+"difficulty": "中級",
+"updated": "2026-06-11",
+"excerpt": "Q-Former（Querying Transformer）は、**凍結された画像エンコーダ（ViT）と凍結された大規模言語モデル（LLM）を橋渡しする軽量モジュール**です。BLIP-2（2023年、Salesforce Research",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "rag",
 "title": "RAG（検索拡張生成）",
 "level": 3,
@@ -6627,6 +6656,58 @@
 "completed": false,
 "favorite": false
 },
+"qformer": {
+"slug": "qformer",
+"title": "Q-Former（クエリトランスフォーマー）― BLIP-2のブリッジ機構",
+"level": 3,
+"category": "CV",
+"related": [
+"blip",
+"clip",
+"transformer",
+"llm",
+"deep-learning"
+],
+"next": [],
+"tags": [
+"qformer",
+"blip2",
+"multimodal",
+"vision-language",
+"cross-attention",
+"frozen-model",
+"query-tokens"
+],
+"difficulty": "中級",
+"updated": "2026-06-11",
+"html": "<h2>概要</h2>\n<p>Q-Former（Querying Transformer）は、<strong>凍結された画像エンコーダ（ViT）と凍結された大規模言語モデル（LLM）を橋渡しする軽量モジュール</strong>です。BLIP-2（2023年、Salesforce Research）で提案され、巨大なモデルを再学習せずにマルチモーダル能力を獲得できる点で画期的でした。</p>\n<pre><code class=\"language-mermaid\">graph LR\n  IMG[&quot;画像\\n(入力)&quot;] --&gt; VIT[&quot;凍結ViT\\n(EVA-ViT-g など)&quot;]\n  VIT --&gt;|画像特徴\\n257 tokens| QF[&quot;Q-Former\\n学習可能&quot;]\n  LQ[&quot;学習可能な\\nクエリトークン\\n(32個)&quot;] --&gt; QF\n  QF --&gt;|32次元\\nソフトプロンプト| LLM[&quot;凍結LLM\\n(OPT / FlanT5 など)&quot;]\n  TXT[&quot;テキストプロンプト&quot;] --&gt; LLM\n  LLM --&gt; OUT[&quot;生成テキスト\\n(キャプション・VQA・対話)&quot;]\n</code></pre>\n<h2>アーキテクチャの全体像</h2>\n<table>\n<thead>\n<tr>\n<th>コンポーネント</th>\n<th>パラメータ数</th>\n<th>学習</th>\n<th>役割</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>ViT-g（画像エンコーダ）</td>\n<td>1.3B</td>\n<td><strong>凍結</strong></td>\n<td>画像特徴を抽出</td>\n</tr>\n<tr>\n<td>Q-Former</td>\n<td><strong>188M</strong></td>\n<td><strong>学習</strong></td>\n<td>視覚と言語の橋渡し</td>\n</tr>\n<tr>\n<td>OPT-6.7B / FlanT5-XXL</td>\n<td>6.7B / 11B</td>\n<td><strong>凍結</strong></td>\n<td>テキスト生成</td>\n</tr>\n</tbody>\n</table>\n<p>全体の88%のパラメータが凍結されるため、<strong>188Mだけを学習</strong>してマルチモーダル能力を獲得できます。</p>\n<h2>主要な数式</h2>\n<p><strong>クロスアテンション</strong>（クエリ $Q$、キー $K$、バリュー $V$）：</p>\n<p>$$\\mathrm{Attention}(Q, K, V) = \\mathrm{softmax}!\\left(\\frac{QK^\\top}{\\sqrt{d_k}}\\right)V$$</p>\n<ul>\n<li>$Q$：学習可能なクエリトークン（$32 \\times d$）</li>\n<li>$K, V$：ViTの出力画像特徴（$257 \\times d$）から生成</li>\n<li>32個のクエリが257個の画像トークンから必要な情報を選択的に取得</li>\n</ul>\n<p><strong>クエリトークンの射影</strong>（Q-Former → LLM入力）：</p>\n<p>$$\\mathbf{h}<em _text_proj=\"\\text{proj\">{\\text{LLM}} = W</em>}}\\,\\mathbf{q<em _text_LLM=\"\\text{LLM\">{\\text{out}} \\in \\mathbb{R}^{32 \\times d</em>$$}}</p>\n<p>LLMのembedding次元 $d_{\\text{LLM}}$ に線形射影し、ソフトプロンプトとして前置。</p>\n<h2>Q-Formerの内部構造</h2>\n<pre><code class=\"language-mermaid\">graph TB\n  subgraph QFormer[&quot;Q-Former（BERT-baseベース）&quot;]\n    direction TB\n    QT[&quot;クエリトークン\\n32 × 768&quot;]\n    TK[&quot;テキストトークン\\n(事前学習時のみ)&quot;]\n    SA[&quot;自己アテンション\\n(クエリ ↔ テキスト)&quot;]\n    CA[&quot;クロスアテンション\\n(クエリ → 画像特徴)&quot;]\n    FF[&quot;FFN&quot;]\n    QT --&gt; SA\n    TK --&gt; SA\n    SA --&gt; CA\n    CA --&gt; FF\n  end\n  VIT2[&quot;ViT出力\\n257 tokens&quot;] --&gt; CA\n  FF --&gt; OUT2[&quot;出力クエリ\\n32 tokens&quot;]\n</code></pre>\n<ul>\n<li><strong>自己アテンション</strong>：クエリトークン同士、およびクエリとテキストの相互作用</li>\n<li><strong>クロスアテンション</strong>：クエリが画像特徴から情報を抽出（交互に配置）</li>\n<li>テキストアテンションマスクを切り替えることで複数タスクを同時学習</li>\n</ul>\n<h2>2段階事前学習</h2>\n<h3>第1段階：視覚-言語表現学習</h3>\n<pre><code class=\"language-mermaid\">graph LR\n  subgraph Stage1[&quot;第1段階（ViT + Q-Former）&quot;]\n    direction LR\n    I[&quot;画像&quot;] --&gt; V[&quot;凍結ViT&quot;]\n    V --&gt; Q[&quot;Q-Former&quot;]\n    Q --&gt; ITC[&quot;Image-Text\\nContrastive (ITC)&quot;]\n    Q --&gt; ITM[&quot;Image-Text\\nMatching (ITM)&quot;]\n    Q --&gt; ITG[&quot;Image-grounded\\nText Generation (ITG)&quot;]\n  end\n</code></pre>\n<table>\n<thead>\n<tr>\n<th>目的関数</th>\n<th>略称</th>\n<th>学習内容</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>画像-テキスト対照学習</td>\n<td>ITC</td>\n<td>対応する画像・テキストペアを近くに</td>\n</tr>\n<tr>\n<td>画像-テキストマッチング</td>\n<td>ITM</td>\n<td>画像とテキストが対応するか二値分類</td>\n</tr>\n<tr>\n<td>画像条件付きテキスト生成</td>\n<td>ITG</td>\n<td>画像を見てキャプションを生成</td>\n</tr>\n</tbody>\n</table>\n<h3>第2段階：LLMへのブートストラッピング</h3>\n<p>凍結LLMに対し、Q-Formerの出力（32トークン）をソフトプロンプトとして接続し、言語生成能力を転移します。</p>\n<pre><code class=\"language-python\">import torch\nimport torch.nn as nn\n\nclass SimpleQFormer(nn.Module):\n    &quot;&quot;&quot;Q-Formerの最小実装（概念デモ）&quot;&quot;&quot;\n\n    def __init__(self, num_queries=32, d_model=768, num_heads=12, num_layers=6):\n        super().__init__()\n        # 学習可能なクエリトークン\n        self.query_tokens = nn.Parameter(torch.zeros(1, num_queries, d_model))\n        nn.init.trunc_normal_(self.query_tokens, std=0.02)\n\n        encoder_layer = nn.TransformerDecoderLayer(\n            d_model=d_model, nhead=num_heads,\n            dim_feedforward=d_model * 4, batch_first=True\n        )\n        self.transformer = nn.TransformerDecoder(encoder_layer, num_layers=num_layers)\n        self.norm = nn.LayerNorm(d_model)\n\n    def forward(self, image_features):\n        &quot;&quot;&quot;\n        image_features: (B, 257, 768)  ← ViTの出力\n        returns:        (B, 32,  768)  ← 圧縮された視覚表現\n        &quot;&quot;&quot;\n        B = image_features.size(0)\n        queries = self.query_tokens.expand(B, -1, -1)\n        # クエリが画像特徴にクロスアテンション\n        out = self.transformer(queries, image_features)\n        return self.norm(out)   # (B, 32, 768)\n</code></pre>\n<h2>CLIPとの比較</h2>\n<table>\n<thead>\n<tr>\n<th>観点</th>\n<th>CLIP</th>\n<th>Q-Former (BLIP-2)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>画像-言語結合</td>\n<td>対照学習（コサイン距離）</td>\n<td>クロスアテンション（動的）</td>\n</tr>\n<tr>\n<td>圧縮方法</td>\n<td>グローバル1ベクトル</td>\n<td>32クエリトークン（局所情報保持）</td>\n</tr>\n<tr>\n<td>LLM統合</td>\n<td>×（生成なし）</td>\n<td>○（凍結LLMに接続可能）</td>\n</tr>\n<tr>\n<td>追加学習コスト</td>\n<td>エンコーダ全体</td>\n<td>Q-Formerのみ（188M）</td>\n</tr>\n<tr>\n<td>ゼロショット分類</td>\n<td>得意</td>\n<td>△（CLIPの方が高精度）</td>\n</tr>\n<tr>\n<td>画像キャプション / VQA</td>\n<td>△</td>\n<td>得意</td>\n</tr>\n</tbody>\n</table>\n<h2>なぜ32クエリで十分か</h2>\n<p>ViTは画像を $16 \\times 16$ パッチに分割し、257トークン（256パッチ + CLSトークン）を出力します。Q-Formerの32クエリは、この257トークンから<strong>LLMが必要とする言語的に有意な情報のみを選択的に抽出</strong>します。</p>\n<p>$$\\text{圧縮率} = \\frac{257}{32} \\approx 8\\times$$</p>\n<p>実験的に32クエリが精度とコストのバランス点であることが示されています（16では情報不足、64では過剰）。</p>\n<h2>主要性能指標（BLIP-2）</h2>\n<table>\n<thead>\n<tr>\n<th>タスク</th>\n<th>データセット</th>\n<th>BLIP-2</th>\n<th>従来SOTA</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>ゼロショット VQA</td>\n<td>VQAv2</td>\n<td><strong>65.2</strong></td>\n<td>61.0</td>\n</tr>\n<tr>\n<td>画像キャプション</td>\n<td>COCO</td>\n<td><strong>145.8</strong> CIDEr</td>\n<td>138.0</td>\n</tr>\n<tr>\n<td>画像-テキスト検索</td>\n<td>Flickr30K R@1</td>\n<td><strong>96.9</strong></td>\n<td>94.0</td>\n</tr>\n<tr>\n<td>ゼロショット VQA</td>\n<td>GQA</td>\n<td><strong>44.7</strong></td>\n<td>41.6</td>\n</tr>\n</tbody>\n</table>\n<h2>後継と影響</h2>\n<pre><code class=\"language-mermaid\">graph LR\n  QF2[&quot;Q-Former\\n(BLIP-2, 2023)&quot;] --&gt; IB[&quot;InstructBLIP\\n(指示チューニング)&quot;]\n  QF2 --&gt; MIL[&quot;MiniGPT-4\\n(Vicuna接続)&quot;]\n  QF2 --&gt; LL[&quot;LLaVA\\n(MLPブリッジに簡略化)&quot;]\n  QF2 --&gt; INT[&quot;InternVL\\n(スケールアップ)&quot;]\n  IB --&gt; GPT4V[&quot;GPT-4V 系\\nマルチモーダルLLM&quot;]\n  LL --&gt; GPT4V\n</code></pre>\n<p>Q-Formerの「凍結モデルの組み合わせ」というアイデアは、その後のマルチモーダルLLM研究の標準的な出発点となりました。LLaVAではQ-Formerをより単純なMLPプロジェクタに置き換えても同等性能が出ることが示され、アーキテクチャの議論が続いています。</p>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "blip",
+"title": "BLIP / BLIP-2（視覚言語モデルの最前線）"
+},
+{
+"slug": "clip",
+"title": "CLIP（画像とテキストの対照学習）"
+},
+{
+"slug": "transformer",
+"title": "Transformerアーキテクチャ"
+},
+{
+"slug": "llm",
+"title": "LLM（大規模言語モデル）"
+},
+{
+"slug": "deep-learning",
+"title": "深層学習の基礎（ニューラルネットワーク）"
+}
+],
+"next_full": [],
+"completed": false,
+"favorite": false
+},
 "rag": {
 "slug": "rag",
 "title": "RAG（検索拡張生成）",
@@ -10404,6 +10485,10 @@
 {
 "slug": "rag",
 "title": "RAG（検索拡張生成）"
+},
+{
+"slug": "qformer",
+"title": "Q-Former（クエリトランスフォーマー）― BLIP-2のブリッジ機構"
 }
 ],
 "clip": [
@@ -10664,6 +10749,28 @@
 {
 "slug": "anomaly-detection",
 "title": "異常検知（Isolation Forest・Autoencoder・統計的手法）"
+}
+],
+"qformer": [
+{
+"slug": "blip",
+"title": "BLIP / BLIP-2（視覚言語モデルの最前線）"
+},
+{
+"slug": "clip",
+"title": "CLIP（画像とテキストの対照学習）"
+},
+{
+"slug": "transformer",
+"title": "Transformerアーキテクチャ"
+},
+{
+"slug": "llm",
+"title": "LLM（大規模言語モデル）"
+},
+{
+"slug": "deep-learning",
+"title": "深層学習の基礎（ニューラルネットワーク）"
 }
 ],
 "rag": [
@@ -14466,6 +14573,35 @@
 "difficulty": "中級",
 "updated": "2026-06-10",
 "excerpt": "CLIP（Contrastive Language-Image Pre-Training）はOpenAIが2021年に発表した視覚言語モデルです。4億枚の画像とテキストのペアで学習し、**テキストで画像を検索**・**ゼロショット画像分類*",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "qformer",
+"title": "Q-Former（クエリトランスフォーマー）― BLIP-2のブリッジ機構",
+"level": 3,
+"category": "CV",
+"related": [
+"blip",
+"clip",
+"transformer",
+"llm",
+"deep-learning"
+],
+"next": [],
+"tags": [
+"qformer",
+"blip2",
+"multimodal",
+"vision-language",
+"cross-attention",
+"frozen-model",
+"query-tokens"
+],
+"difficulty": "中級",
+"updated": "2026-06-11",
+"excerpt": "Q-Former（Querying Transformer）は、**凍結された画像エンコーダ（ViT）と凍結された大規模言語モデル（LLM）を橋渡しする軽量モジュール**です。BLIP-2（2023年、Salesforce Research",
 "views": 0,
 "completed": false,
 "favorite": false
