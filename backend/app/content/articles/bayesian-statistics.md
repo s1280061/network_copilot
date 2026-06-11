@@ -2,7 +2,7 @@
 slug: bayesian-statistics
 title: ベイズ統計（事前分布・事後分布・ベイズ更新）
 level: 3
-category: Python
+category: Statistics
 related: [statistics, ml-basics, linear-regression]
 next: []
 tags: [bayesian, mcmc, pymc, prior, posterior, statistics]

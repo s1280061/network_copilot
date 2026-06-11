@@ -1224,7 +1224,7 @@
 "slug": "hypothesis-testing",
 "title": "仮説検定と検定力（t検定・ANOVA・サンプルサイズ設計）",
 "level": 2,
-"category": "Python",
+"category": "Statistics",
 "related": [
 "statistics",
 "bayesian-statistics",
@@ -1306,7 +1306,7 @@
 "slug": "regression-analysis",
 "title": "回帰分析（重回帰・多重共線性・残差診断）",
 "level": 2,
-"category": "Python",
+"category": "Statistics",
 "related": [
 "statistics",
 "linear-regression",
@@ -1442,7 +1442,7 @@
 "slug": "statistics",
 "title": "統計学の基礎（確率・分布・検定）",
 "level": 2,
-"category": "Python",
+"category": "Statistics",
 "related": [
 "numpy",
 "pandas",
@@ -1459,7 +1459,7 @@
 "data-science"
 ],
 "difficulty": "初級",
-"updated": "2026-06-10",
+"updated": "2026-06-11",
 "excerpt": "統計学はデータから「確かなこと」と「不確かなこと」を区別する学問です。機械学習の精度評価・A/Bテスト・センサーデータ分析など、データを扱うすべての場面の基盤となります。PythonではSciPyとStatsmodelsが主要ライブラリです",
 "views": 0,
 "completed": false,
@@ -2327,7 +2327,7 @@
 "slug": "bayesian-statistics",
 "title": "ベイズ統計（事前分布・事後分布・ベイズ更新）",
 "level": 3,
-"category": "Python",
+"category": "Statistics",
 "related": [
 "statistics",
 "ml-basics",
@@ -2379,7 +2379,7 @@
 "slug": "multivariate-statistics",
 "title": "多変量統計（主成分分析・因子分析・判別分析）",
 "level": 3,
-"category": "Python",
+"category": "Statistics",
 "related": [
 "statistics",
 "dimensionality-reduction",
@@ -2433,7 +2433,7 @@
 "slug": "time-series-statistics",
 "title": "時系列統計（自己相関・定常性・ARIMAモデル）",
 "level": 3,
-"category": "Python",
+"category": "Statistics",
 "related": [
 "statistics",
 "regression-analysis",
@@ -5341,7 +5341,7 @@
 "slug": "hypothesis-testing",
 "title": "仮説検定と検定力（t検定・ANOVA・サンプルサイズ設計）",
 "level": 2,
-"category": "Python",
+"category": "Statistics",
 "related": [
 "statistics",
 "bayesian-statistics",
@@ -5492,7 +5492,7 @@
 "slug": "regression-analysis",
 "title": "回帰分析（重回帰・多重共線性・残差診断）",
 "level": 2,
-"category": "Python",
+"category": "Statistics",
 "related": [
 "statistics",
 "linear-regression",
@@ -5731,7 +5731,7 @@
 "slug": "statistics",
 "title": "統計学の基礎（確率・分布・検定）",
 "level": 2,
-"category": "Python",
+"category": "Statistics",
 "related": [
 "numpy",
 "pandas",
@@ -5748,7 +5748,7 @@
 "data-science"
 ],
 "difficulty": "初級",
-"updated": "2026-06-10",
+"updated": "2026-06-11",
 "html": "<h2>概要</h2>\n<p>統計学はデータから「確かなこと」と「不確かなこと」を区別する学問です。機械学習の精度評価・A/Bテスト・センサーデータ分析など、データを扱うすべての場面の基盤となります。PythonではSciPyとStatsmodelsが主要ライブラリです。</p>\n<h2>基本統計量</h2>\n<pre><code class=\"language-python\">import numpy as np\nimport scipy.stats as stats\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\nnp.random.seed(42)\ndata = np.random.normal(loc=170, scale=8, size=300)   # 身長データ（cm）\n\nprint(f&quot;平均:     {np.mean(data):.2f}&quot;)\nprint(f&quot;中央値:   {np.median(data):.2f}&quot;)\nprint(f&quot;標準偏差: {np.std(data, ddof=1):.2f}&quot;)   # 不偏標準偏差\nprint(f&quot;分散:     {np.var(data, ddof=1):.2f}&quot;)\nprint(f&quot;歪度:     {stats.skew(data):.4f}&quot;)         # 0 = 対称\nprint(f&quot;尖度:     {stats.kurtosis(data):.4f}&quot;)     # 0 = 正規分布\nprint(f&quot;95%信頼区間: {stats.t.interval(0.95, len(data)-1, np.mean(data), stats.sem(data))}&quot;)\n</code></pre>\n<h2>主要な確率分布</h2>\n<pre><code class=\"language-python\">fig, axes = plt.subplots(2, 3, figsize=(14, 8))\n\nx = np.linspace(-4, 4, 300)\n\n# 正規分布（連続）\naxes[0,0].plot(x, stats.norm.pdf(x), color=&quot;steelblue&quot;, lw=2)\naxes[0,0].set_title(&quot;正規分布 N(0,1)&quot;)\n\n# t分布（小標本）\nfor df in [1, 5, 30]:\n    axes[0,1].plot(x, stats.t.pdf(x, df), label=f&quot;df={df}&quot;, lw=2)\naxes[0,1].plot(x, stats.norm.pdf(x), &quot;k--&quot;, label=&quot;Normal&quot;, lw=1.5)\naxes[0,1].set_title(&quot;t分布&quot;)\naxes[0,1].legend(fontsize=8)\n\n# カイ二乗分布\nx_chi = np.linspace(0, 20, 300)\nfor df in [2, 4, 8]:\n    axes[0,2].plot(x_chi, stats.chi2.pdf(x_chi, df), label=f&quot;k={df}&quot;, lw=2)\naxes[0,2].set_title(&quot;カイ二乗分布&quot;)\naxes[0,2].legend(fontsize=8)\n\n# ポアソン分布（離散）\nk = np.arange(0, 20)\nfor lam in [1, 4, 8]:\n    axes[1,0].bar(k + lam*0.1, stats.poisson.pmf(k, lam), width=0.3, alpha=0.6, label=f&quot;λ={lam}&quot;)\naxes[1,0].set_title(&quot;ポアソン分布&quot;)\naxes[1,0].legend(fontsize=8)\n\n# 二項分布\nk = np.arange(0, 21)\nfor p in [0.3, 0.5, 0.7]:\n    axes[1,1].plot(k, stats.binom.pmf(k, 20, p), &quot;o-&quot;, label=f&quot;p={p}&quot;, lw=2)\naxes[1,1].set_title(&quot;二項分布 n=20&quot;)\naxes[1,1].legend(fontsize=8)\n\n# 一様分布\naxes[1,2].fill_between([0, 1], [1, 1], color=&quot;steelblue&quot;, alpha=0.5)\naxes[1,2].set_ylim(0, 1.5)\naxes[1,2].set_title(&quot;一様分布 U(0,1)&quot;)\n\nplt.tight_layout()\nplt.show()\n</code></pre>\n<h2>仮説検定の流れ</h2>\n<pre><code class=\"language-mermaid\">graph TD\n  A[帰無仮説 H₀ を設定&lt;br/&gt;「差がない」] --&gt; B[有意水準 α を決める&lt;br/&gt;0.05 が慣例]\n  B --&gt; C[検定統計量を計算]\n  C --&gt; D[p値を求める]\n  D --&gt; E{p値 &lt; α?}\n  E --&gt;|Yes| F[H₀ を棄却&lt;br/&gt;有意差あり]\n  E --&gt;|No| G[H₀ を採択できない&lt;br/&gt;有意差なし]\n</code></pre>\n<h2>t検定（平均の比較）</h2>\n<pre><code class=\"language-python\">group_a = np.random.normal(75, 10, 50)   # A群のスコア\ngroup_b = np.random.normal(80, 12, 50)   # B群のスコア\n\n# 独立2標本t検定\nt_stat, p_val = stats.ttest_ind(group_a, group_b, equal_var=False)  # Welchのt検定\nprint(f&quot;t統計量: {t_stat:.3f}  p値: {p_val:.4f}&quot;)\nprint(&quot;有意差あり&quot; if p_val &lt; 0.05 else &quot;有意差なし&quot;)\n\n# 対応のあるt検定（ビフォー/アフター）\nbefore = np.random.normal(70, 8, 30)\nafter  = before + np.random.normal(5, 3, 30)   # 介入後に平均+5\nt2, p2 = stats.ttest_rel(before, after)\nprint(f&quot;\\n対応t検定: t={t2:.3f}, p={p2:.4f}&quot;)\n\n# 効果量（Cohen's d）\npooled_std = np.sqrt((group_a.std()**2 + group_b.std()**2) / 2)\ncohens_d   = (group_b.mean() - group_a.mean()) / pooled_std\nprint(f&quot;効果量 Cohen's d: {cohens_d:.3f}&quot;)   # 0.2=小 0.5=中 0.8=大\n</code></pre>\n<h2>分散分析（ANOVA）</h2>\n<pre><code class=\"language-python\"># 3グループ以上の平均差を一度に検定\ngroup_c = np.random.normal(85, 10, 50)\n\nf_stat, p_anova = stats.f_oneway(group_a, group_b, group_c)\nprint(f&quot;一元配置ANOVA: F={f_stat:.3f}, p={p_anova:.4f}&quot;)\n\n# 多重比較（Tukey HSD）\nfrom statsmodels.stats.multicomp import pairwise_tukeyhsd\nimport pandas as pd\n\ndata_all    = np.concatenate([group_a, group_b, group_c])\nlabels_all  = [&quot;A&quot;]*50 + [&quot;B&quot;]*50 + [&quot;C&quot;]*50\ntukey = pairwise_tukeyhsd(data_all, labels_all, alpha=0.05)\nprint(tukey.summary())\n</code></pre>\n<h2>相関と回帰の統計的検定</h2>\n<pre><code class=\"language-python\">x = np.random.randn(100)\ny = 0.6 * x + np.random.randn(100) * 0.8\n\n# ピアソン相関係数（線形）\nr, p = stats.pearsonr(x, y)\nprint(f&quot;ピアソンr: {r:.3f}  p値: {p:.4f}&quot;)\n\n# スピアマン相関（ノンパラ）\nrho, p_s = stats.spearmanr(x, y)\nprint(f&quot;スピアマンρ: {rho:.3f}  p値: {p_s:.4f}&quot;)\n\n# 正規性の検定\n_, p_norm = stats.shapiro(x[:50])   # Shapiro-Wilk（n&lt;=50）\nprint(f&quot;Shapiro-Wilk p値: {p_norm:.4f} ({'正規' if p_norm &gt; 0.05 else '非正規'})&quot;)\n</code></pre>\n<h2>次に学ぶべき内容</h2>\n<p>時系列データの統計的分析は <a class=\"term-link\" data-slug=\"time-series-analysis\" href=\"/glossary/time-series-analysis\">時系列分析（ARIMA・予測・異常検知）</a> で学びましょう。</p>",
 "prereq_full": [],
 "related_full": [
@@ -7478,7 +7478,7 @@
 "slug": "bayesian-statistics",
 "title": "ベイズ統計（事前分布・事後分布・ベイズ更新）",
 "level": 3,
-"category": "Python",
+"category": "Statistics",
 "related": [
 "statistics",
 "ml-basics",
@@ -7570,7 +7570,7 @@
 "slug": "multivariate-statistics",
 "title": "多変量統計（主成分分析・因子分析・判別分析）",
 "level": 3,
-"category": "Python",
+"category": "Statistics",
 "related": [
 "statistics",
 "dimensionality-reduction",
@@ -7666,7 +7666,7 @@
 "slug": "time-series-statistics",
 "title": "時系列統計（自己相関・定常性・ARIMAモデル）",
 "level": 3,
-"category": "Python",
+"category": "Statistics",
 "related": [
 "statistics",
 "regression-analysis",
@@ -13546,92 +13546,6 @@
 "favorite": false
 },
 {
-"slug": "hypothesis-testing",
-"title": "仮説検定と検定力（t検定・ANOVA・サンプルサイズ設計）",
-"level": 2,
-"category": "Python",
-"related": [
-"statistics",
-"bayesian-statistics",
-"linear-regression"
-],
-"next": [
-"bayesian-statistics"
-],
-"tags": [
-"hypothesis-testing",
-"t-test",
-"anova",
-"p-value",
-"power",
-"sample-size",
-"statistics"
-],
-"difficulty": "初級",
-"updated": "2026-06-11",
-"excerpt": "仮説検定は「差がある・効果がある」という主張を統計的に評価する手法です。しかし p 値の誤解や検定力の無視は「再現性の危機」の主因です。p 値・効果量・検定力・サンプルサイズ設計を正しく理解することが実務では不可欠です。",
-"views": 0,
-"completed": false,
-"favorite": false
-},
-{
-"slug": "regression-analysis",
-"title": "回帰分析（重回帰・多重共線性・残差診断）",
-"level": 2,
-"category": "Python",
-"related": [
-"statistics",
-"linear-regression",
-"ml-basics",
-"hypothesis-testing"
-],
-"next": [
-"hypothesis-testing"
-],
-"tags": [
-"regression",
-"multicollinearity",
-"residual",
-"ols",
-"statsmodels",
-"vif",
-"statistics"
-],
-"difficulty": "初級",
-"updated": "2026-06-11",
-"excerpt": "回帰分析は「目的変数 Y を説明変数 X₁, X₂, ... で説明・予測する」手法です。機械学習の線形回帰とは異なり、統計的推論（係数の有意性・信頼区間・モデル診断）を重視します。多重共線性・残差診断・外れ値の検出が実務での品質チェックに",
-"views": 0,
-"completed": false,
-"favorite": false
-},
-{
-"slug": "statistics",
-"title": "統計学の基礎（確率・分布・検定）",
-"level": 2,
-"category": "Python",
-"related": [
-"numpy",
-"pandas",
-"data-analysis",
-"seaborn"
-],
-"next": [
-"data-analysis"
-],
-"tags": [
-"statistics",
-"python",
-"scipy",
-"data-science"
-],
-"difficulty": "初級",
-"updated": "2026-06-10",
-"excerpt": "統計学はデータから「確かなこと」と「不確かなこと」を区別する学問です。機械学習の精度評価・A/Bテスト・センサーデータ分析など、データを扱うすべての場面の基盤となります。PythonではSciPyとStatsmodelsが主要ライブラリです",
-"views": 0,
-"completed": false,
-"favorite": false
-},
-{
 "slug": "seaborn",
 "title": "Seaborn（統計可視化）",
 "level": 3,
@@ -13685,10 +13599,127 @@
 "favorite": false
 },
 {
+"slug": "time-series-analysis",
+"title": "時系列分析（ARIMA・予測・異常検知）",
+"level": 3,
+"category": "Python",
+"related": [
+"statistics",
+"pandas",
+"numpy",
+"anomaly-detection"
+],
+"next": [],
+"tags": [
+"time-series",
+"python",
+"statsmodels",
+"arima",
+"forecasting"
+],
+"difficulty": "中級",
+"updated": "2026-06-10",
+"excerpt": "時系列分析は時間順に並んだデータのパターンを発見・予測する手法です。車載ネットワークのトラフィック量の変化、ECU温度のトレンド、センサーデータの周期性など、ネットワーク診断・予兆保全に不可欠です。PythonではStatsmodels・P",
+"views": 0,
+"completed": false,
+"favorite": false
+}
+]
+},
+{
+"name": "Statistics",
+"articles": [
+{
+"slug": "hypothesis-testing",
+"title": "仮説検定と検定力（t検定・ANOVA・サンプルサイズ設計）",
+"level": 2,
+"category": "Statistics",
+"related": [
+"statistics",
+"bayesian-statistics",
+"linear-regression"
+],
+"next": [
+"bayesian-statistics"
+],
+"tags": [
+"hypothesis-testing",
+"t-test",
+"anova",
+"p-value",
+"power",
+"sample-size",
+"statistics"
+],
+"difficulty": "初級",
+"updated": "2026-06-11",
+"excerpt": "仮説検定は「差がある・効果がある」という主張を統計的に評価する手法です。しかし p 値の誤解や検定力の無視は「再現性の危機」の主因です。p 値・効果量・検定力・サンプルサイズ設計を正しく理解することが実務では不可欠です。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "regression-analysis",
+"title": "回帰分析（重回帰・多重共線性・残差診断）",
+"level": 2,
+"category": "Statistics",
+"related": [
+"statistics",
+"linear-regression",
+"ml-basics",
+"hypothesis-testing"
+],
+"next": [
+"hypothesis-testing"
+],
+"tags": [
+"regression",
+"multicollinearity",
+"residual",
+"ols",
+"statsmodels",
+"vif",
+"statistics"
+],
+"difficulty": "初級",
+"updated": "2026-06-11",
+"excerpt": "回帰分析は「目的変数 Y を説明変数 X₁, X₂, ... で説明・予測する」手法です。機械学習の線形回帰とは異なり、統計的推論（係数の有意性・信頼区間・モデル診断）を重視します。多重共線性・残差診断・外れ値の検出が実務での品質チェックに",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "statistics",
+"title": "統計学の基礎（確率・分布・検定）",
+"level": 2,
+"category": "Statistics",
+"related": [
+"numpy",
+"pandas",
+"data-analysis",
+"seaborn"
+],
+"next": [
+"data-analysis"
+],
+"tags": [
+"statistics",
+"python",
+"scipy",
+"data-science"
+],
+"difficulty": "初級",
+"updated": "2026-06-11",
+"excerpt": "統計学はデータから「確かなこと」と「不確かなこと」を区別する学問です。機械学習の精度評価・A/Bテスト・センサーデータ分析など、データを扱うすべての場面の基盤となります。PythonではSciPyとStatsmodelsが主要ライブラリです",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "bayesian-statistics",
 "title": "ベイズ統計（事前分布・事後分布・ベイズ更新）",
 "level": 3,
-"category": "Python",
+"category": "Statistics",
 "related": [
 "statistics",
 "ml-basics",
@@ -13714,7 +13745,7 @@
 "slug": "multivariate-statistics",
 "title": "多変量統計（主成分分析・因子分析・判別分析）",
 "level": 3,
-"category": "Python",
+"category": "Statistics",
 "related": [
 "statistics",
 "dimensionality-reduction",
@@ -13739,36 +13770,10 @@
 "favorite": false
 },
 {
-"slug": "time-series-analysis",
-"title": "時系列分析（ARIMA・予測・異常検知）",
-"level": 3,
-"category": "Python",
-"related": [
-"statistics",
-"pandas",
-"numpy",
-"anomaly-detection"
-],
-"next": [],
-"tags": [
-"time-series",
-"python",
-"statsmodels",
-"arima",
-"forecasting"
-],
-"difficulty": "中級",
-"updated": "2026-06-10",
-"excerpt": "時系列分析は時間順に並んだデータのパターンを発見・予測する手法です。車載ネットワークのトラフィック量の変化、ECU温度のトレンド、センサーデータの周期性など、ネットワーク診断・予兆保全に不可欠です。PythonではStatsmodels・P",
-"views": 0,
-"completed": false,
-"favorite": false
-},
-{
 "slug": "time-series-statistics",
 "title": "時系列統計（自己相関・定常性・ARIMAモデル）",
 "level": 3,
-"category": "Python",
+"category": "Statistics",
 "related": [
 "statistics",
 "regression-analysis",

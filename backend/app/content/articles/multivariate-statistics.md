@@ -2,7 +2,7 @@
 slug: multivariate-statistics
 title: 多変量統計（主成分分析・因子分析・判別分析）
 level: 3
-category: Python
+category: Statistics
 related: [statistics, dimensionality-reduction, clustering, ml-basics, regression-analysis]
 next: []
 tags: [pca, factor-analysis, lda, multivariate, dimensionality-reduction, statistics]

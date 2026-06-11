@@ -2,7 +2,7 @@
 slug: regression-analysis
 title: 回帰分析（重回帰・多重共線性・残差診断）
 level: 2
-category: Python
+category: Statistics
 related: [statistics, linear-regression, ml-basics, hypothesis-testing]
 next: [hypothesis-testing]
 tags: [regression, multicollinearity, residual, ols, statsmodels, vif, statistics]

@@ -2,7 +2,7 @@
 slug: time-series-statistics
 title: 時系列統計（自己相関・定常性・ARIMAモデル）
 level: 3
-category: Python
+category: Statistics
 related: [statistics, regression-analysis, anomaly-detection, time-series-analysis]
 next: []
 tags: [time-series, arima, acf, pacf, stationarity, forecasting, statsmodels]

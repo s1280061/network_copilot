@@ -2,7 +2,7 @@
 slug: statistics
 title: 統計学の基礎（確率・分布・検定）
 level: 2
-category: Python
+category: Statistics
 related: [numpy, pandas, data-analysis, seaborn]
 next: [data-analysis]
 tags: [statistics, python, scipy, data-science]

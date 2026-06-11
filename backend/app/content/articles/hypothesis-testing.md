@@ -2,7 +2,7 @@
 slug: hypothesis-testing
 title: 仮説検定と検定力（t検定・ANOVA・サンプルサイズ設計）
 level: 2
-category: Python
+category: Statistics
 related: [statistics, bayesian-statistics, linear-regression]
 next: [bayesian-statistics]
 tags: [hypothesis-testing, t-test, anova, p-value, power, sample-size, statistics]

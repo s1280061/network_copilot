@@ -19,7 +19,7 @@ _FRONTMATTER_RE = re.compile(r"^---\s*\n(.*?)\n---\s*\n(.*)$", re.DOTALL)
 _LINK_RE = re.compile(r"\[\[([a-z0-9\-]+)\]\]")
 
 # note-style top categories shown on the home screen.
-CATEGORIES = ["Ethernet", "TCP/IP", "PCAP", "SOME/IP", "AUTOSAR", "SDV", "Automotive Bus", "Diagnostics", "Security", "Howto", "Python", "ML", "DL", "GenAI", "CV", "Electronics", "Automotive", "Wireless"]
+CATEGORIES = ["Ethernet", "TCP/IP", "PCAP", "SOME/IP", "AUTOSAR", "SDV", "Automotive Bus", "Diagnostics", "Security", "Howto", "Python", "Statistics", "ML", "DL", "GenAI", "CV", "Electronics", "Automotive", "Wireless"]
 
 # slug -> category (overridable via frontmatter `category`).
 _CATEGORY_MAP = {
@@ -94,14 +94,14 @@ _CATEGORY_MAP = {
     "seaborn": "Python",
     "data-cleaning": "Python",
     "data-analysis": "Python",
-    "statistics": "Python",
+    "statistics": "Statistics",
     "fastapi": "Python",
     "time-series-analysis": "Python",
-    "bayesian-statistics":   "Python",
-    "hypothesis-testing":    "Python",
-    "regression-analysis":   "Python",
-    "time-series-statistics": "Python",
-    "multivariate-statistics": "Python",
+    "bayesian-statistics":   "Statistics",
+    "hypothesis-testing":    "Statistics",
+    "regression-analysis":   "Statistics",
+    "time-series-statistics": "Statistics",
+    "multivariate-statistics": "Statistics",
     # ML additional
     "clustering": "ML",
     "dimensionality-reduction": "ML",
