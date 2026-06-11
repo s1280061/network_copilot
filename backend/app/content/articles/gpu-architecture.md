@@ -13,329 +13,174 @@ GPU（Graphics Processing Unit）はもともとゲームのグラフィック�
 
 ## CPU vs GPU のアーキテクチャ比較
 
-```
-CPU（Intel Core i9）            GPU（NVIDIA RTX 4090）
-┌─────────────────┐            ┌──────────────────────────────┐
-│ コア × 24       │            │ CUDA コア × 16,384            │
-│ 高クロック      │            │ Tensor コア × 512             │
-│ 大容量キャッシュ │            │ SM（Streaming Multiprocessor）│
-│ 分岐予測・OoO   │            │   × 128                      │
-│ DDR5 メモリ     │            │ GDDR6X 24GB 1008GB/s          │
-└─────────────────┘            └──────────────────────────────┘
+| 項目 | CPU（Core i9） | GPU（RTX 4090） |
+|---|---|---|
+| コア数 | 24 コア（高クロック） | 16,384 CUDA コア + 512 Tensor コア |
+| 設計思想 | 少数の賢いコア | 多数の単純なコア |
+| 得意な処理 | 逐次処理・複雑な制御フロー・低レイテンシ | 並列処理・行列演算・高スループット |
+| メモリ | DDR5（〜50 GB/s） | GDDR6X 24GB（1008 GB/s） |
+| 制御機構 | 分岐予測・アウトオブオーダー実行 | SIMT（多数スレッドで同一命令） |
 
-CPU の強み: 逐次処理・複雑な制御フロー・低レイテンシ
-GPU の強み: 並列処理・行列演算・大規模スループット
+```mermaid
+graph LR
+  subgraph CPU["CPU: 少数の強力なコア"]
+    C1[Core]:::big
+    C2[Core]:::big
+    C3[Core]:::big
+    C4[Core]:::big
+  end
+  subgraph GPU["GPU: 数千の小さなコア"]
+    direction TB
+    G1[コア群]:::sm
+    G2[コア群]:::sm
+    G3[コア群]:::sm
+  end
+  classDef big fill:#89b4fa,stroke:#333;
+  classDef sm fill:#a6e3a1,stroke:#333;
 ```
+
+**性能の指標**：理論演算性能（FLOPS）はコア数・クロック・コアあたり演算数で決まります。
+
+$$\text{FLOPS} = (\text{コア数}) \times (\text{クロック周波数}) \times (\text{1クロックあたり演算数})$$
+
+実効性能はメモリ帯域に律速されることも多く、**演算強度**（1バイトあたりの演算量）が高いほどGPUが有利です。
+
+$$\text{演算強度} = \frac{\text{演算回数 [FLOP]}}{\text{メモリアクセス量 [Byte]}}$$
+
+行列積（大サイズ）は演算強度が高いため、GPUがCPUに対して数十倍速くなります。実測には以下のコードが使えます。
 
 ```python
-import numpy as np
-import time
+import numpy as np, torch, time
 
-# CPU vs GPU の速度差を実感するコード
-# 行列積 (4096 × 4096) の計算
+N = 4096
+A = np.random.randn(N, N).astype(np.float32)
+B = np.random.randn(N, N).astype(np.float32)
 
-def benchmark_matmul():
-    N = 4096
-    A = np.random.randn(N, N).astype(np.float32)
-    B = np.random.randn(N, N).astype(np.float32)
+t0 = time.perf_counter(); A @ B
+print(f"CPU: {(time.perf_counter()-t0)*1000:.1f} ms")
 
-    # CPU（NumPy）
-    t0 = time.perf_counter()
-    C_cpu = A @ B
-    t_cpu = time.perf_counter() - t0
-
-    print(f"CPU (NumPy):   {t_cpu*1000:.1f} ms")
-
-    try:
-        import torch
-        A_gpu = torch.from_numpy(A).cuda()
-        B_gpu = torch.from_numpy(B).cuda()
-
-        # GPU ウォームアップ
-        _ = A_gpu @ B_gpu
-        torch.cuda.synchronize()
-
-        t0 = time.perf_counter()
-        C_gpu = A_gpu @ B_gpu
-        torch.cuda.synchronize()   # GPU 完了を待つ
-        t_gpu = time.perf_counter() - t0
-
-        print(f"GPU (CUDA):    {t_gpu*1000:.2f} ms")
-        print(f"高速化倍率:    {t_cpu/t_gpu:.0f}x")
-    except Exception as e:
-        print(f"GPU 未使用: {e}")
-
-benchmark_matmul()
+Ag, Bg = torch.from_numpy(A).cuda(), torch.from_numpy(B).cuda()
+_ = Ag @ Bg; torch.cuda.synchronize()          # ウォームアップ
+t0 = time.perf_counter(); _ = Ag @ Bg; torch.cuda.synchronize()
+print(f"GPU: {(time.perf_counter()-t0)*1000:.2f} ms")
 ```
 
 ## CUDA 実行モデル
 
-```
-GPU の実行階層:
+CUDAはスレッドを3階層で管理します。「1024要素の配列に +1」する処理なら、4ブロック × 256スレッド = 1024スレッドが同時に走ります。
 
-Grid（カーネル全体）
-└── Block（スレッドブロック, 最大 1024 スレッド）
-    └── Thread（1つの計算単位）
-
-例: 1024要素の配列に +1 する処理
-
-  Grid = (4 blocks)
-  Block = (256 threads)
-  → 合計 4 × 256 = 1024 スレッドが同時に動く
+```mermaid
+graph TD
+  Grid["Grid（カーネル全体）"] --> B0["Block 0<br/>256 threads"]
+  Grid --> B1["Block 1<br/>256 threads"]
+  Grid --> B2["Block 2<br/>256 threads"]
+  Grid --> B3["Block 3<br/>256 threads"]
+  B0 --> T["Thread（1計算単位）"]
 ```
 
-```python
-# CUDA カーネルのコンセプト（Python CuPy で確認）
-# pip install cupy-cuda12x
+| 階層 | 意味 | 規模 |
+|---|---|---|
+| Grid | カーネル全体 | 複数ブロック |
+| Block | スレッドの集まり | 最大 1024 スレッド |
+| Warp | スケジューリング単位 | 必ず 32 スレッド |
+| Thread | 最小の計算単位 | レジスタを持つ |
 
-try:
-    import cupy as cp
-
-    # CuPy: NumPy と同じ API で GPU を使う
-    N = 10_000_000  # 1000万要素
-
-    x_gpu = cp.random.randn(N, dtype=cp.float32)
-    y_gpu = cp.random.randn(N, dtype=cp.float32)
-
-    # GPU で要素ごとの演算（全スレッドが同時に動く）
-    t0 = time.perf_counter()
-    z_gpu = cp.sqrt(x_gpu**2 + y_gpu**2)
-    cp.cuda.Stream.null.synchronize()
-    t_gpu = time.perf_counter() - t0
-
-    # CPU で同じ計算
-    x_cpu = cp.asnumpy(x_gpu)
-    y_cpu = cp.asnumpy(y_gpu)
-    t0 = time.perf_counter()
-    z_cpu = np.sqrt(x_cpu**2 + y_cpu**2)
-    t_cpu = time.perf_counter() - t0
-
-    print(f"CPU: {t_cpu*1000:.1f} ms")
-    print(f"GPU: {t_gpu*1000:.1f} ms  ({t_cpu/t_gpu:.0f}x 高速)")
-
-except ImportError:
-    print("CuPy未インストール（pip install cupy-cuda12x）")
-```
+**Warp（32スレッドの束）** は必ず同じ命令を同時実行します（SIMT）。そのため `if` の分岐でスレッドが別々の経路に進むと、両方の経路を順番に実行することになり遅くなります（**Warp Divergence**）。条件分岐はwarp単位で揃えるのが高速化の鉄則です。
 
 ## SM（Streaming Multiprocessor）の構造
 
-```
-SM（Streaming Multiprocessor）1個の中身（Hopper アーキテクチャ）:
+GPUは複数のSMで構成され、各SMがCUDAコア・Tensorコア・キャッシュを内蔵します。
 
-  ┌──────────────────────────────────────────┐
-  │ Warp Scheduler × 4                       │
-  │ Dispatch Unit  × 4                       │
-  ├────────────────┬─────────────────────────┤
-  │ CUDA Core × 128│ Tensor Core × 4（FP16） │
-  │ (FP32 / INT32) │ （行列積を1クロックで）  │
-  ├────────────────┴─────────────────────────┤
-  │ Register File  256KB                     │
-  │ L1 Cache / Shared Memory  256KB          │
-  │ LD/ST Unit × 32   SFU × 16              │
-  └──────────────────────────────────────────┘
-
-Warp = 32 スレッドの束（GPU の基本スケジューリング単位）
-→ 32スレッドが必ず同じ命令を同時実行（SIMT: Single Instruction Multiple Threads）
+```mermaid
+graph TD
+  subgraph SM["SM 1個（Hopper）"]
+    WS["Warp Scheduler × 4"]
+    CC["CUDA Core × 128<br/>(FP32 / INT32)"]
+    TC["Tensor Core × 4<br/>(行列積を高速化)"]
+    RF["Register File 256KB"]
+    L1["L1 / Shared Memory 256KB"]
+  end
+  WS --> CC
+  WS --> TC
 ```
+
+GPU全体のCUDAコア数は概算で **SM数 × 128** です。PyTorchで確認できます。
 
 ```python
-# Warp の概念を Python で確認
 import torch
-
-if torch.cuda.is_available():
-    # CUDA デバイス情報の取得
-    props = torch.cuda.get_device_properties(0)
-    print(f"GPU: {props.name}")
-    print(f"SM 数: {props.multi_processor_count}")
-    print(f"CUDA コア数（概算）: {props.multi_processor_count * 128}")
-    print(f"Warp サイズ: {32} threads")
-    print(f"最大スレッド/ブロック: {props.max_threads_per_block}")
-    print(f"VRAM: {props.total_memory / 1e9:.1f} GB")
-    print(f"メモリ帯域幅（概算）: 利用 nvidia-smi --query-gpu=memory.bandwidth")
-
-# Warp divergence（パフォーマンスに影響する注意点）
-print("\n⚠️ Warp Divergence の例:")
-print("""
-// 悪い例（分岐でwarpが分裂する）
-if (threadIdx.x % 2 == 0) {
-    // 偶数スレッドだけ実行 → 奇数スレッドは待機
-    result = a * b;
-} else {
-    // 奇数スレッドだけ実行 → 偶数スレッドは待機
-    result = a + b;
-}
-// → 本来同時実行できる 32 スレッドが直列化してしまう！
-""")
+p = torch.cuda.get_device_properties(0)
+print(p.name, "SM:", p.multi_processor_count,
+      "CUDAコア概算:", p.multi_processor_count * 128,
+      "VRAM:", f"{p.total_memory/1e9:.1f}GB")
 ```
 
 ## GPU メモリ階層
 
-```python
-# GPU のメモリ階層（速度と容量のトレードオフ）
-memory_hierarchy = {
-    "レジスタ": {
-        "帯域幅": "〜 28 TB/s",
-        "レイテンシ": "1 クロック",
-        "サイズ": "256 KB / SM",
-        "用途": "スレッドローカル変数",
-    },
-    "L1 / Shared Memory": {
-        "帯域幅": "〜 20 TB/s",
-        "レイテンシ": "〜 20 クロック",
-        "サイズ": "256 KB / SM",
-        "用途": "スレッドブロック内でのデータ共有・タイリング",
-    },
-    "L2 Cache": {
-        "帯域幅": "〜 5 TB/s",
-        "レイテンシ": "〜 200 クロック",
-        "サイズ": "60 MB（H100 SXM）",
-        "用途": "DRAM アクセスのキャッシュ",
-    },
-    "HBM2e / GDDR6X（VRAM）": {
-        "帯域幅": "〜 3.35 TB/s（H100 SXM）",
-        "レイテンシ": "〜 600 クロック",
-        "サイズ": "80 GB（H100 SXM）",
-        "用途": "モデルパラメータ・活性化・勾配の格納",
-    },
-    "CPU RAM（Host Memory）": {
-        "帯域幅": "〜 50 GB/s",
-        "レイテンシ": "数千クロック + PCIe 転送",
-        "サイズ": "DDR5 数百 GB",
-        "用途": "データセット・チェックポイント",
-    },
-}
+メモリは「速いが小さい」レジスタから「遅いが大きい」VRAM・CPU RAMまで階層化されています。学習を速くする鍵は、低速なVRAM/PCIeへのアクセスをいかに減らすかです。
 
-print(f"{'階層':25s} {'帯域幅':18s} {'サイズ':20s} {'用途'}")
-print("-" * 90)
-for name, spec in memory_hierarchy.items():
-    print(f"{name:25s} {spec['帯域幅']:18s} {spec['サイズ']:20s} {spec['用途']}")
+| 階層 | 帯域幅 | レイテンシ | サイズ | 用途 |
+|---|---|---|---|---|
+| レジスタ | 〜28 TB/s | 1 クロック | 256 KB/SM | スレッドローカル変数 |
+| L1 / Shared | 〜20 TB/s | 〜20 クロック | 256 KB/SM | ブロック内共有・タイリング |
+| L2 Cache | 〜5 TB/s | 〜200 クロック | 60 MB（H100） | DRAMのキャッシュ |
+| VRAM（HBM/GDDR） | 〜3.35 TB/s | 〜600 クロック | 80 GB（H100） | パラメータ・活性化・勾配 |
+| CPU RAM | 〜50 GB/s | 数千ク＋PCIe | 数百 GB | データセット・チェックポイント |
+
+```mermaid
+graph LR
+  R["レジスタ<br/>最速・最小"] --> L1["L1/Shared"] --> L2["L2"] --> V["VRAM"] --> H["CPU RAM<br/>最遅・最大"]
 ```
 
 ## Tensor コアと混合精度学習
 
+Tensorコアは FP16/BF16/FP8 の行列積を専用回路で処理し、FP32より桁違いに高速です。
+
+| GPU | FP16 性能 | FP8 性能 |
+|---|---|---|
+| A100 | 312 TFLOPS | — |
+| H100 | 989 TFLOPS | 1,979 TFLOPS |
+
+PyTorchの**自動混合精度（AMP）** を使うと、精度をほぼ保ちつつVRAMを約半分にし、Tensorコアで高速化できます。
+
 ```python
-# Tensor コアは FP16/BF16 の行列積を専用ハードウェアで超高速化
-# A100: 312 TFLOPS (FP16 with sparsity)
-# H100: 1,979 TFLOPS (FP8 with sparsity)
-
-import torch
-
-def mixed_precision_example():
-    """PyTorch の自動混合精度（AMP）"""
-    if not torch.cuda.is_available():
-        print("CUDA が必要です")
-        return
-
-    model = torch.nn.Sequential(
-        torch.nn.Linear(1024, 4096),
-        torch.nn.GELU(),
-        torch.nn.Linear(4096, 1024),
-    ).cuda()
-
-    optimizer = torch.optim.Adam(model.parameters())
-    scaler    = torch.cuda.amp.GradScaler()   # FP16 の勾配スケーリング
-
-    x = torch.randn(64, 1024, device="cuda")
-
-    # FP32 での通常学習
-    t0 = time.perf_counter()
-    for _ in range(100):
-        y = model(x)
-        loss = y.sum()
-        optimizer.zero_grad()
-        loss.backward()
-        optimizer.step()
-    torch.cuda.synchronize()
-    t_fp32 = time.perf_counter() - t0
-
-    # FP16 混合精度（Tensor コアを活用）
-    t0 = time.perf_counter()
-    for _ in range(100):
-        with torch.cuda.amp.autocast():   # FP16 でフォワード
-            y = model(x)
-            loss = y.sum()
-        scaler.scale(loss).backward()
-        scaler.step(optimizer)
-        scaler.update()
-        optimizer.zero_grad()
-    torch.cuda.synchronize()
-    t_fp16 = time.perf_counter() - t0
-
-    print(f"FP32: {t_fp32*1000:.1f} ms")
-    print(f"FP16 (AMP): {t_fp16*1000:.1f} ms  ({t_fp32/t_fp16:.1f}x 高速)")
-
-mixed_precision_example()
+scaler = torch.cuda.amp.GradScaler()
+for x in loader:
+    with torch.cuda.amp.autocast():     # FP16でフォワード
+        loss = model(x).sum()
+    scaler.scale(loss).backward()       # 勾配スケーリング
+    scaler.step(optimizer); scaler.update()
+    optimizer.zero_grad()
 ```
 
 ## GPU 使用率のモニタリング
 
+学習中は `nvidia-smi` または PyTorch でVRAM・使用率を監視します。
+
+```bash
+# 1秒ごとに更新表示
+nvidia-smi -l 1
+# 必要な項目だけCSVで取得
+nvidia-smi --query-gpu=utilization.gpu,memory.used,temperature.gpu,power.draw --format=csv
+```
+
 ```python
-import subprocess
-
-def gpu_monitor():
-    """nvidia-smi でGPU状態を確認"""
-    try:
-        result = subprocess.run(
-            ["nvidia-smi", "--query-gpu=name,utilization.gpu,memory.used,memory.total,temperature.gpu,power.draw",
-             "--format=csv,noheader,nounits"],
-            capture_output=True, text=True
-        )
-        for i, line in enumerate(result.stdout.strip().split("\n")):
-            name, util, mem_used, mem_total, temp, power = [x.strip() for x in line.split(",")]
-            print(f"GPU {i}: {name}")
-            print(f"  使用率:     {util}%")
-            print(f"  VRAM:       {mem_used}/{mem_total} MiB ({int(mem_used)/int(mem_total)*100:.0f}%)")
-            print(f"  温度:        {temp}°C")
-            print(f"  消費電力:   {float(power):.0f} W")
-    except FileNotFoundError:
-        print("nvidia-smi が見つかりません")
-
-# PyTorch でのメモリ確認
-if torch.cuda.is_available():
-    print(f"割当済み VRAM: {torch.cuda.memory_allocated()/1e9:.2f} GB")
-    print(f"キャッシュ済み: {torch.cuda.memory_reserved()/1e9:.2f} GB")
-    print(f"最大使用量:    {torch.cuda.max_memory_allocated()/1e9:.2f} GB")
+print(f"割当済み: {torch.cuda.memory_allocated()/1e9:.2f} GB")
+print(f"最大使用: {torch.cuda.max_memory_allocated()/1e9:.2f} GB")
 ```
 
 ## VRAM が足りないときの対処法
 
-```python
-vram_tips = {
-    "バッチサイズを減らす": {
-        "効果": "VRAM 線形削減",
-        "デメリット": "学習が不安定になりやすい",
-        "代替": "Gradient Accumulation で等価バッチサイズを維持",
-    },
-    "混合精度 (FP16/BF16)": {
-        "効果": "VRAM 約 50% 削減",
-        "コード": "torch.cuda.amp.autocast()",
-        "備考": "精度低下はほぼなし、Tensor コア活用で高速化も",
-    },
-    "Gradient Checkpointing": {
-        "効果": "活性化メモリを大幅削減（最大 O(√n) まで）",
-        "コード": "model.gradient_checkpointing_enable()",
-        "デメリット": "再計算により学習速度 30〜40% 低下",
-    },
-    "Flash Attention": {
-        "効果": "Transformer の Attention 計算を IO-efficient に",
-        "コード": "pip install flash-attn",
-        "効果量": "Attention の VRAM を大幅削減・高速化",
-    },
-    "量子化 (INT8/INT4)": {
-        "効果": "推論時は VRAM を 50〜75% 削減",
-        "コード": "bitsandbytes ライブラリ",
-        "備考": "学習には QLoRA を使用",
-    },
-    "モデル並列 / DeepSpeed": {
-        "効果": "複数 GPU にモデルを分散",
-        "コード": "deepspeed / accelerate",
-        "備考": "ZeRO-3 でパラメータ・勾配・オプティマイザ状態を分散",
-    },
-}
+VRAM不足（`CUDA out of memory`）は最も頻出するエラーです。以下を上から順に試します。
 
-print("VRAM 不足への対処法:")
-for method, info in vram_tips.items():
-    print(f"\n【{method}】")
-    print(f"  効果: {info['効果']}")
-    if 'コード' in info: print(f"  実装: {info['コード']}")
-```
+| 手法 | 効果 | デメリット / 実装 |
+|---|---|---|
+| バッチサイズを減らす | VRAMを線形に削減 | 学習が不安定 → Gradient Accumulation で補う |
+| 混合精度 (FP16/BF16) | VRAM 約 50%減・高速化 | `torch.cuda.amp.autocast()` |
+| Gradient Checkpointing | 活性化メモリを大幅削減 | 速度 30〜40%低下 / `gradient_checkpointing_enable()` |
+| Flash Attention | Attention を省メモリ・高速化 | `pip install flash-attn` |
+| 量子化 (INT8/INT4) | 推論VRAM 50〜75%減 | `bitsandbytes`、学習は QLoRA |
+| モデル並列 / DeepSpeed | 複数GPUに分散 | ZeRO-3 でパラメータ・勾配・状態を分散 |
+
+**Gradient Accumulation** はバッチを小分けにして勾配を貯め、等価的に大きなバッチを再現する手法です。
+
+$$\text{実効バッチサイズ} = (\text{ミニバッチ}) \times (\text{累積ステップ数})$$
