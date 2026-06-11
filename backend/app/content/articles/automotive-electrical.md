@@ -13,202 +13,99 @@ tags: [automotive, electrical, 12v, 48v, harness, ecu, can, electronics]
 
 ## 車載電源システムの概要
 
-```
-車載電源アーキテクチャ:
+バッテリーからヒューズボックスを経て、多数のECUへ電力とネットワークが分配されます。
 
-  バッテリー（12V / 48V）
-       ↓
-  ヒューズボックス / スマートジャンクションボックス
-       ↓
-  ┌────────────────────────────┐
-  │ エンジンECU   │ ブレーキECU │
-  │ トランスミッションECU      │
-  │ ボディECU     │ エアコンECU │
-  │ メーターECU   │ エアバッグECU│
-  └────────────────────────────┘
-  すべてCAN/LIN/Ethernetネットワークで接続
+```mermaid
+graph TD
+  B["バッテリー<br/>12V / 48V"] --> F["ヒューズボックス /<br/>スマートジャンクションボックス"]
+  F --> E1["エンジンECU"]
+  F --> E2["ブレーキECU"]
+  F --> E3["ボディECU"]
+  F --> E4["メーターECU"]
+  E1 -.CAN/LIN/Ethernet.- E2
+  E2 -.-> E3 -.-> E4
 ```
 
-```python
-import numpy as np
+## 12Vバッテリーと電圧降下
 
-# 12V 鉛バッテリーの基本特性
-battery = {
-    "公称電圧":    12,       # V（実際は12.6V充電完了, 11.8V放電限界）
-    "容量":        60,       # Ah（60Ah = 60A × 1時間 = 720Wh）
-    "冷間始動電流": 550,      # CCA (Cold Cranking Amps at -18°C)
-    "内部抵抗":    0.01,     # Ω（新品時）
-}
+鉛バッテリーの公称電圧は12V（満充電で12.6V、放電限界11.8V）。始動時にはスターターモーターが大電流を引くため、内部抵抗による**電圧降下**が起きます。オームの法則 $V_{\text{drop}} = I \times R$ そのものです。
 
-# スターターモーター始動時の電圧降下
-I_starter = 200  # A（始動電流）
-R_internal = 0.01
-V_drop = I_starter * R_internal
-print(f"始動時電圧降下: {V_drop} V → バッテリー端子は {12 - V_drop} V")
+$$V_{\text{drop}} = I_{\text{starter}} \times R_{\text{internal}} = 200\,\text{A} \times 0.01\,\Omega = 2\,\text{V}$$
 
-# 消費電流の内訳（エンジン動作中）
-current_consumers = {
-    "ECU群（全部）":       20,   # A
-    "ヘッドライト（LED）": 5,
-    "エアコンブロア":      15,
-    "電動パワステ":         8,
-    "ホーン":               5,   # 瞬時
-    "シートヒーター":      10,
-    "リアデフォッガー":    12,
-}
-total_I = sum(current_consumers.values())
-print(f"\n合計消費電流: {total_I} A")
-print(f"オルタネーター必要出力: {total_I * 14.4:.0f} W（≈{total_I*14.4/1000:.1f}kW）")
-```
+つまり始動の瞬間、端子電圧は 12V → 約10V まで落ちます。バッテリーが劣化して内部抵抗が増えると、この降下が大きくなり始動不良になります。
+
+**エンジン動作中の主な消費電流（12V系）**：
+
+| 負荷 | 電流 |
+|---|---|
+| ECU群（全体） | 20 A |
+| エアコンブロア | 15 A |
+| リアデフォッガー | 12 A |
+| シートヒーター | 10 A |
+| 電動パワステ | 8 A |
+| ヘッドライト（LED） | 5 A |
+
+合計 約70Aで、オルタネーターには $70\,\text{A} \times 14.4\,\text{V} \approx 1\,\text{kW}$ の発電が求められます。
 
 ## オルタネーター（発電機）
 
-```python
-# オルタネーター: エンジン駆動で14V前後の直流を発電
-def alternator_power(engine_rpm, pulley_ratio=2.5, alt_efficiency=0.65):
-    """
-    オルタネーターの発電量計算
-    pulley_ratio: エンジン/オルタネーター プーリー比
-    """
-    alt_rpm = engine_rpm * pulley_ratio
-    # 代表的なオルタネーター特性（80A定格）
-    if alt_rpm < 1000:
-        I_max = 0
-    elif alt_rpm < 2000:
-        I_max = 80 * (alt_rpm - 1000) / 1000
-    else:
-        I_max = 80   # 定格電流 80A
+オルタネーターはエンジンでベルト駆動され、14V前後の直流を発電します。プーリー比でエンジンより高速に回り、アイドリングでも発電できるよう設計されています。
 
-    P_out = 14.4 * I_max * alt_efficiency   # W
-    return alt_rpm, I_max, P_out
+| エンジン回転数 | オルタネーター回転数 | 発電電流（80A定格） |
+|---|---|---|
+| 600 rpm（アイドル） | 1,500 rpm | 約40 A |
+| 1,000 rpm | 2,500 rpm | 80 A（定格） |
+| 2,000 rpm以上 | 5,000 rpm | 80 A（頭打ち） |
 
-print("エンジン回転数とオルタネーター出力:")
-for rpm in [600, 800, 1000, 1500, 2000, 3000]:
-    alt_rpm, I, P = alternator_power(rpm)
-    print(f"  {rpm:4d} rpm → ALT {alt_rpm:.0f} rpm: {I:.0f} A, {P:.0f} W")
-```
+> アイドリングで電装品を多用するとバッテリーが持ち出しになるのは、低回転では発電が追いつかないためです。
 
 ## ワイヤーハーネスの設計
 
-```python
-# 電線のサイズ選択（許容電流と電圧降下）
-# AWG/sq mm → 許容電流の対応
-wire_specs = {
-    "0.3 sq": {"I_max": 7,  "R_per_m": 0.062},  # Ω/m
-    "0.5 sq": {"I_max": 10, "R_per_m": 0.038},
-    "0.85sq": {"I_max": 13, "R_per_m": 0.022},
-    "1.25sq": {"I_max": 19, "R_per_m": 0.015},
-    "2.0 sq": {"I_max": 25, "R_per_m": 0.0092},
-    "3.0 sq": {"I_max": 32, "R_per_m": 0.0062},
-    "5.0 sq": {"I_max": 42, "R_per_m": 0.0037},
-}
+電線は「許容電流」と「電圧降下」の2つで太さを選びます。電圧降下は往復距離（行き＋帰り）で計算します。
 
-def select_wire(I_load, length_m, V_supply=12, V_drop_max=0.5):
-    """
-    負荷電流と配線長から最適な電線サイズを選択
-    V_drop_max: 許容電圧降下 [V]
-    """
-    print(f"負荷電流: {I_load}A, 配線長: {length_m}m")
-    print(f"（往復 {length_m*2}m = 電圧降下計算に使用）")
-    for sq, spec in wire_specs.items():
-        if I_load <= spec["I_max"]:
-            V_drop = I_load * spec["R_per_m"] * length_m * 2
-            ok = "✅" if V_drop <= V_drop_max else "⚠️"
-            print(f"  {sq}: {V_drop:.3f}V降下 {ok}")
-            if V_drop <= V_drop_max:
-                print(f"  → {sq} を推奨")
-                return sq
-    return "規格外（並列敷設を検討）"
+$$V_{\text{drop}} = I \times R_{\text{per\_m}} \times (2L)$$
 
-select_wire(I_load=10, length_m=3)
-print()
-select_wire(I_load=25, length_m=5)
-```
+| 断面積 | 許容電流 | 抵抗 [Ω/m] |
+|---|---|---|
+| 0.5 sq | 10 A | 0.038 |
+| 0.85 sq | 13 A | 0.022 |
+| 1.25 sq | 19 A | 0.015 |
+| 2.0 sq | 25 A | 0.0092 |
+| 3.0 sq | 32 A | 0.0062 |
+
+例：10Aを3m先へ送る場合、0.5sqでは $10 \times 0.038 \times 6 = 2.28\,\text{V}$ も降下してしまいます。許容降下0.5V以内に収めるには 1.25sq以上が必要です。配線が長い・電流が大きいほど太い電線が要る、というのがハーネス設計の基本です。
 
 ## ECUの電源回路
 
-```python
-# ECUへの電源供給の典型パターン
-ecu_power_patterns = {
-    "常時電源（+B）": {
-        "電圧": "12V（バッテリー直結）",
-        "用途": "メモリ保持・時計・盗難防止",
-        "ECU側処理": "スリープ中も微小電流消費（暗電流 5〜15mA）",
-    },
-    "イグニッション電源（IG）": {
-        "電圧": "12V（キーON/エンジンON時）",
-        "用途": "ECU本体の動作電源",
-        "ECU側処理": "IG-ONで起動、IG-OFFで後処理してスリープ",
-    },
-    "アクセサリー電源（ACC）": {
-        "電圧": "12V（ACC位置以降）",
-        "用途": "ラジオ・ナビ・パワーウィンドウ",
-        "ECU側処理": "エンジン停止でも動作",
-    },
-}
+ECUにはエンジン状態に応じて3系統の電源が供給されます。
 
-for power_type, info in ecu_power_patterns.items():
-    print(f"【{power_type}】")
-    for k, v in info.items():
-        print(f"  {k}: {v}")
-    print()
+| 電源 | 供給タイミング | 用途 |
+|---|---|---|
+| 常時電源（+B） | 常時（バッテリー直結） | メモリ保持・時計・盗難防止（暗電流 5〜15mA） |
+| IG電源 | キーON / エンジンON | ECU本体の動作電源 |
+| ACC電源 | ACC位置以降 | ラジオ・ナビ・パワーウィンドウ |
 
-# ECU内部の電源降圧
-print("ECU内部の電圧変換:")
-print("  12V → 5V: リニアレギュレーター or DC-DCコンバーター")
-print("  5V  → 3.3V: LDO（Low Dropout Regulator）")
-print("  3.3V → 1.2V: CPU コアへの供給")
-print()
+ECU内部では12Vを段階的に降圧します（12V → 5V → 3.3V → CPUコア1.2V）。降圧方式には2種類あり、効率が大きく異なります。
 
-# 電圧降圧の効率比較
-V_in, V_out, I_load = 12, 5, 1.0
-# リニアレギュレーター（熱で捨てる）
-P_heat_linear = (V_in - V_out) * I_load
-P_out = V_out * I_load
-eta_linear = P_out / (V_in * I_load)
-print(f"リニアレギュレーター: 効率 {eta_linear*100:.0f}%（発熱 {P_heat_linear}W）")
+| 方式 | 効率 | 特徴 |
+|---|---|---|
+| リニアレギュレーター | 低い（$\eta = V_{out}/V_{in}$） | 差分を熱で捨てる。12V→5Vなら約42% |
+| スイッチングDC-DC | 高い（約90%） | 発熱が少なく大電流向き |
 
-# スイッチングコンバーター（効率良好）
-eta_switching = 0.90
-P_in_sw = P_out / eta_switching
-print(f"スイッチングDC-DC:   効率 {eta_switching*100:.0f}%（発熱 {P_in_sw-P_out:.1f}W）")
-```
+12V→5Vで1A供給する場合、リニア方式は $(12-5)\times 1 = 7\,\text{W}$ も発熱します。大電流ではスイッチング方式が必須です。
 
 ## 48V マイルドハイブリッドシステム
 
-```python
-# 最新の自動車では 12V + 48V のデュアル電源
-system_48v = {
-    "概要": "エンジンアシスト・回生ブレーキ用の補助電源システム",
-    "採用車種": "Mercedes A-Class, BMW 5系, Audi A6 など",
-    "メリット": [
-        "回生制動で燃費 10〜15% 向上",
-        "電動コンプレッサー・電動スーパーチャージャーが使える",
-        "スタート/ストップの滑らかな動作",
-        "完全EVより安価（バッテリー小型）",
-    ],
-    "コンポーネント": {
-        "BSG":    "ベルト駆動スタータージェネレーター（12kW程度）",
-        "48Vバッテリー": "リチウムイオン 0.5〜1kWh",
-        "DC-DC変換器": "48V ↔ 12V 変換（双方向）",
-    },
-}
+最新車では 12V に加えて **48V** 系統を併用します。電力 $P = VI$ より、同じ電力なら電圧を4倍にすれば電流は1/4になり、配線を細く・軽くできるのが狙いです。
 
-print("=== 48V マイルドハイブリッド ===")
-print(f"概要: {system_48v['概要']}")
-print("\nメリット:")
-for benefit in system_48v["メリット"]:
-    print(f"  ・{benefit}")
-print("\nコンポーネント:")
-for comp, desc in system_48v["コンポーネント"].items():
-    print(f"  {comp}: {desc}")
+| 項目 | 内容 |
+|---|---|
+| 主なコンポーネント | BSG（ベルト駆動スタータージェネレーター 12kW級）、48Vリチウム電池 0.5〜1kWh、双方向DC-DC |
+| メリット | 回生制動で燃費10〜15%向上／電動過給／滑らかなアイドルストップ／完全EVより安価 |
+| 採用車種 | Mercedes A-Class, BMW 5シリーズ, Audi A6 など |
 
-# 回生エネルギーの計算
-m = 1500   # kg
-v1 = 100 / 3.6  # 100km/h → m/s
-v2 = 0
-KE = 0.5 * m * (v1**2 - v2**2)   # 運動エネルギー [J]
-eta_regen = 0.60   # 回収効率
-E_recovered = KE * eta_regen
-print(f"\n100→0km/hブレーキの回生エネルギー: {E_recovered/3600:.2f} Wh")
-```
+**回生ブレーキのエネルギー**は運動エネルギーの式で見積もれます。
+
+$$E = \frac{1}{2}mv^2 \times \eta_{\text{regen}}$$
+
+車重1500kgが100km/h（27.8 m/s）から停止する際の運動エネルギーは約580 kJ。回収効率60%なら約 **97 Wh** を電池に戻せます。これを繰り返し利用することで燃費が改善します。

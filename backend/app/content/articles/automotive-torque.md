@@ -13,7 +13,7 @@ tags: [torque, horsepower, power, automotive, engine, mechanics]
 
 ## トルクとは
 
-トルクは「回転させる力のモーメント」です。
+トルクは「回転させる力のモーメント」です。回転軸から遠い位置で力を加えるほど大きくなります。
 
 $$\tau = F \times r$$
 
@@ -21,184 +21,92 @@ $$\tau = F \times r$$
 - **F**：力 [N]
 - **r**：腕の長さ（回転軸からの距離）[m]
 
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-
-# トルクの感覚を掴む例
-examples = {
-    "ドアを開ける（端を押す, 80cm）": (20, 0.8),    # 20N × 0.8m
-    "ドアを開ける（軸近くを押す, 5cm）": (20, 0.05), # 20N × 0.05m
-    "ボルト締め（レンチ20cm, 50N）":  (50, 0.2),
-    "インパクトレンチ":               (None, None),
-    "軽自動車エンジン（最大）":        (None, None),
-    "トラックエンジン（最大）":        (None, None),
-}
-
-print("トルクの具体例:")
-print(f"  ドアノブ（端を押す）:  20N × 0.8m = {20*0.8} N·m")
-print(f"  ドアノブ（軸近く）:    20N × 0.05m = {20*0.05} N·m  （4倍の力が必要！）")
-print(f"  ボルト締め:           50N × 0.2m = {50*0.2} N·m")
-print()
-
-# 自動車エンジンのトルク
-car_torques = {
-    "軽自動車（NA 660cc）":    60,     # N·m
-    "コンパクトカー（1.5L）": 130,
-    "スポーツカー（2.0L）":   300,
-    "SUV（3.5L）":            380,
-    "大型トラック（6L）":    2000,
-    "テスラ Model S Plaid":  1420,    # EV（モーター直接）
-}
-for name, torque in car_torques.items():
-    print(f"  {name:25s}: {torque:5d} N·m")
+```mermaid
+graph LR
+  A["回転軸"] -. "腕の長さ r" .-> B["力点"]
+  B -- "力 F" --> C["トルク τ = F × r"]
 ```
+
+身近な例で感覚を掴むと、同じ20Nの力でもドアの端（0.8m）を押せば 16 N·m、軸の近く（0.05m）では 1 N·m しか生まれません。だから軸の近くを押すとドアは重く感じます。
+
+| 行為 | 力 × 腕の長さ | トルク |
+|---|---|---|
+| ドアの端を押す | 20N × 0.8m | 16 N·m |
+| ドアの軸近くを押す | 20N × 0.05m | 1 N·m |
+| レンチでボルト締め | 50N × 0.2m | 10 N·m |
+
+**自動車エンジンの最大トルクの目安**：
+
+| 車種 | 最大トルク |
+|---|---|
+| 軽自動車（NA 660cc） | 60 N·m |
+| コンパクトカー（1.5L） | 130 N·m |
+| スポーツカー（2.0Lターボ） | 300 N·m |
+| SUV（3.5L） | 380 N·m |
+| テスラ Model S Plaid（EV） | 1,420 N·m |
+| 大型トラック（6L） | 2,000 N·m |
 
 ## 出力（馬力）とトルクの関係
 
+出力は「単位時間あたりにする仕事」で、トルクと回転数の積で決まります。
+
 $$P = \tau \times \omega = \tau \times \frac{2\pi n}{60}$$
 
-- **P**：出力 [W]
-- **τ**：トルク [N·m]
-- **ω**：角速度 [rad/s]
-- **n**：回転数 [rpm]
+- **P**：出力 [W]　- **τ**：トルク [N·m]　- **ω**：角速度 [rad/s]　- **n**：回転数 [rpm]
 
-```python
-def power_from_torque(torque_Nm, rpm):
-    """トルクと回転数から出力を計算"""
-    omega = 2 * np.pi * rpm / 60
-    power_W = torque_Nm * omega
-    power_kW = power_W / 1000
-    power_PS = power_kW / 0.7355   # 1PS = 0.7355kW（メートル馬力）
-    return power_kW, power_PS
+単位換算は **1 PS = 0.7355 kW**（メートル馬力）。この式で計算すると：
 
-# 典型的なエンジン性能を計算
-print("=== エンジン性能の計算 ===")
-examples = [
-    ("軽自動車（660cc）",    60,  5500),
-    ("普通車（2.0L）",      200,  4000),
-    ("スポーツカー（2.0L）", 400,  6000),
-    ("大型トラック",        2000, 1500),
-]
-for name, torque, rpm in examples:
-    kW, PS = power_from_torque(torque, rpm)
-    print(f"  {name:22s}: {torque:4d} N·m × {rpm:4d} rpm = {kW:6.1f} kW ({PS:.0f} PS)")
-```
+| 車種 | トルク | 回転数 | 出力 |
+|---|---|---|---|
+| 軽自動車（660cc） | 60 N·m | 5,500 rpm | 35 kW（47 PS） |
+| 普通車（2.0L） | 200 N·m | 4,000 rpm | 84 kW（114 PS） |
+| スポーツカー（2.0L） | 400 N·m | 6,000 rpm | 251 kW（342 PS） |
+| 大型トラック | 2,000 N·m | 1,500 rpm | 314 kW（427 PS） |
+
+> 同じトルクでも高回転まで回せるほど出力（馬力）は大きくなります。「トルク＝力強さ」「馬力＝速さの伸び」と覚えると直感的です。
 
 ## トルク曲線と出力曲線
 
+エンジンのトルクは全回転域で一定ではなく、中回転域でピークを迎えます。出力 $P = \tau\omega$ は回転数に比例する成分があるため、トルクのピークより**高い回転数**で最大になります。
+
+```mermaid
+graph LR
+  L["低回転<br/>トルク細い"] --> M["中回転<br/>最大トルク"] --> H["高回転<br/>最大出力"]
+```
+
+| 領域 | 特徴 |
+|---|---|
+| 低回転 | トルクが立ち上がる前で力不足 |
+| 中回転（トルクピーク） | 最も力強い。登坂・追い越しが得意 |
+| 高回転（出力ピーク） | 最高速の伸びを担う |
+
+実際の特性をシミュレーションするには次のような関数を使います（中回転でトルクが最大になるモデル）。
+
 ```python
-# エンジン特性カーブのシミュレーション（2.0L NAエンジン）
-def engine_curves(rpm_range):
-    """典型的なNA 2.0L エンジンのトルク・出力カーブ"""
-    # トルクは中回転域でピーク
-    torque = (
-        150
-        + 60 * np.exp(-((rpm_range - 3500) / 1500)**2)  # ピーク at 3500rpm
-        - 20 * (rpm_range / 7000)**3                      # 高回転で低下
-    )
-    torque = np.clip(torque, 50, 220)
-    power_kW = torque * 2 * np.pi * rpm_range / 60 / 1000
-    return torque, power_kW
-
-rpm_range = np.linspace(1000, 7000, 500)
-torque, power = engine_curves(rpm_range)
-power_PS = power / 0.7355
-
-fig, ax1 = plt.subplots(figsize=(10, 5))
-ax2 = ax1.twinx()
-
-ax1.plot(rpm_range, torque, "r-", lw=2, label="トルク [N·m]")
-ax2.plot(rpm_range, power_PS, "b-", lw=2, label="出力 [PS]")
-
-ax1.set_xlabel("エンジン回転数 [rpm]")
-ax1.set_ylabel("トルク [N·m]", color="red")
-ax2.set_ylabel("出力 [PS]", color="blue")
-ax1.set_title("2.0L NAエンジン　トルク・出力カーブ")
-ax1.legend(loc="upper left")
-ax2.legend(loc="upper right")
-ax1.grid(True, alpha=0.4)
-plt.show()
-
-# 最大値
-max_torque = torque.max()
-max_power  = power_PS.max()
-rpm_at_max_torque = rpm_range[torque.argmax()]
-rpm_at_max_power  = rpm_range[power_PS.argmax()]
-print(f"最大トルク: {max_torque:.0f} N·m at {rpm_at_max_torque:.0f} rpm")
-print(f"最大出力:   {max_power:.0f} PS  at {rpm_at_max_power:.0f} rpm")
+import numpy as np
+rpm = np.linspace(1000, 7000, 500)
+torque = np.clip(150 + 60*np.exp(-((rpm-3500)/1500)**2), 50, 220)  # N·m
+power_PS = torque * 2*np.pi*rpm/60 / 1000 / 0.7355                  # PS
+print("最大トルク:", torque.max().round(), "N·m  /  最大出力:", power_PS.max().round(), "PS")
 ```
 
 ## EVのトルク特性（ガソリン車との違い）
 
-```python
-# EVモーターのトルク特性
-def ev_torque_curve(rpm_range, T_max=400, rpm_base=3000, P_max_kW=150):
-    """
-    EVモーターの特性:
-    - 定トルク領域（0〜rpm_base）: 最大トルクを維持
-    - 定出力領域（rpm_base以上）: 出力一定でトルクが低下
-    """
-    torque = np.where(
-        rpm_range <= rpm_base,
-        T_max,
-        P_max_kW * 1000 / (2 * np.pi * rpm_range / 60)  # P = T × ω
-    )
-    return torque
+EVモーターは**0回転から最大トルク**を出せるのが最大の特徴です。低速域は一定トルク、高速域は出力一定（トルクは $\tau = P/\omega$ で反比例的に低下）という2段階の特性になります。
 
-rpm = np.linspace(0, 10000, 500)
-T_ev     = ev_torque_curve(rpm)
-T_gas, _ = engine_curves(rpm)
-P_ev = T_ev * 2 * np.pi * rpm / 60 / 1000
-
-fig, axes = plt.subplots(1, 2, figsize=(12, 5))
-axes[0].plot(rpm, T_ev,  "b-", lw=2, label="EV（永久磁石モーター）")
-axes[0].plot(rpm, T_gas, "r-", lw=2, label="ガソリン2.0L NA")
-axes[0].set_xlabel("回転数 [rpm]")
-axes[0].set_ylabel("トルク [N·m]")
-axes[0].set_title("トルク曲線比較")
-axes[0].legend()
-axes[0].grid(True, alpha=0.4)
-
-axes[1].plot(rpm, P_ev / 0.7355, "b-", lw=2, label="EV")
-axes[1].set_xlabel("回転数 [rpm]")
-axes[1].set_ylabel("出力 [PS]")
-axes[1].set_title("出力曲線（EV）")
-axes[1].legend()
-axes[1].grid(True, alpha=0.4)
-plt.tight_layout()
-plt.show()
-
-print("\nEV vs ガソリン車のトルク特性の違い:")
-print("  EV:    0rpmから最大トルク → 発進が強烈")
-print("  ガソリン: 中回転域でトルクピーク → ギアで回転域を維持が必要")
-```
+| 駆動方式 | 低速トルク | 特性 |
+|---|---|---|
+| ガソリンエンジン | 弱い（回さないと出ない） | 中回転でピーク → 変速機で回転域を維持 |
+| EVモーター | 0rpmから最大 | 発進が強烈・変速機がほぼ不要 |
 
 ## 駆動力と加速度
 
-```python
-def driving_force(torque_engine, gear_ratio, final_ratio, tire_radius, efficiency=0.9):
-    """
-    エンジントルクから車輪の駆動力を計算
-    gear_ratio: 変速比, final_ratio: ファイナルギア比
-    tire_radius: タイヤ半径 [m]
-    """
-    torque_wheel = torque_engine * gear_ratio * final_ratio * efficiency
-    force = torque_wheel / tire_radius
-    return force, torque_wheel
+エンジントルクは変速比・ファイナルギア比で増幅され、タイヤ半径で割ると路面を蹴る**駆動力**になります。
 
-# 1速発進時の計算
-m_car    = 1500   # 車両重量 [kg]
-T_engine = 200    # エンジントルク [N·m]
-gear1    = 3.5    # 1速変速比
-final    = 4.0    # ファイナルギア比
-r_tire   = 0.3    # タイヤ半径 [m]
+$$F = \frac{\tau_{\text{engine}} \times (\text{変速比}) \times (\text{ファイナル比}) \times \eta}{r_{\text{tire}}}, \qquad a = \frac{F}{m}$$
 
-F, T_wheel = driving_force(T_engine, gear1, final, r_tire)
-a = F / m_car   # a = F/m
+たとえば エンジントルク200 N·m、1速3.5、ファイナル4.0、効率0.9、タイヤ半径0.3m、車重1500kg なら：
 
-print(f"1速発進時の駆動力: {F:.0f} N")
-print(f"車輪トルク:        {T_wheel:.0f} N·m")
-print(f"加速度:            {a:.2f} m/s²")
-print(f"0→100km/h 概算:    {100/3.6/a:.1f} 秒（空気抵抗・タイヤ滑り無視）")
-```
+$$F = \frac{200 \times 3.5 \times 4.0 \times 0.9}{0.3} \approx 8{,}400\ \text{N}, \qquad a = \frac{8400}{1500} \approx 5.6\ \text{m/s}^2$$
+
+低いギア（大きな変速比）ほど駆動力が増えて加速が鋭くなる一方、回転数がすぐ頭打ちになるため最高速は伸びません。これが変速機（多段ギア）が必要な理由です。
