@@ -12,6 +12,8 @@ import json from "highlight.js/lib/languages/json";
 import yaml from "highlight.js/lib/languages/yaml";
 import sql from "highlight.js/lib/languages/sql";
 import cpp from "highlight.js/lib/languages/cpp";
+import renderMathInElement from "katex/contrib/auto-render";
+import "katex/dist/katex.min.css";
 import { getArticle, getRecommend } from "@/lib/api";
 import { Article, Ref } from "@/lib/types";
 import { useStudyPanel } from "@/lib/study-context";
@@ -133,6 +135,27 @@ export default function ArticleView({ slug }: { slug: string }) {
       const btn = makeCopyBtn(code.textContent || "");
       pre.appendChild(btn);
     });
+  }, [article, slug]);
+
+  // KaTeX math rendering ($...$ inline, $$...$$ display)
+  useEffect(() => {
+    if (!article) return;
+    const container = document.querySelector<HTMLElement>(".prose-article");
+    if (!container) return;
+    try {
+      renderMathInElement(container, {
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$", right: "$", display: false },
+          { left: "\\(", right: "\\)", display: false },
+        ],
+        ignoredTags: ["script", "noscript", "style", "textarea", "pre", "code"],
+        throwOnError: false,
+      });
+    } catch {
+      // leave as-is on error
+    }
   }, [article, slug]);
 
   // SPA link interception
