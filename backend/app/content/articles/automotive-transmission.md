@@ -13,176 +13,83 @@ tags: [transmission, gear, ratio, automotive, powertrain, cvt]
 
 ## ギア比の基本
 
+ギア比 $i$ は入力と出力の回転数の比です。回転数を落とす（減速する）と、その分トルクが増えます。
+
 $$i = \frac{n_{in}}{n_{out}} = \frac{T_{out}}{T_{in}}$$
 
-```python
-import numpy as np
-import matplotlib.pyplot as plt
+つまり減速比が大きいほど車輪に伝わるトルクは増え、力強くなります。車輪トルクと車速は次式で求まります。
 
-def gear_output(T_in, n_in, gear_ratio, final_ratio=4.0, efficiency=0.95):
-    """変速機出力側のトルクと回転数を計算"""
-    T_out = T_in * gear_ratio * final_ratio * efficiency
-    n_out = n_in / (gear_ratio * final_ratio)   # rpm（タイヤの回転数）
-    return T_out, n_out
+$$T_{\text{wheel}} = T_{\text{engine}} \times i \times i_{\text{final}} \times \eta, \qquad v = \frac{2\pi n_{\text{wheel}}}{60} \times r_{\text{tire}}$$
 
-# 典型的な5速MTのギア比
-gear_ratios = {
-    "1速": 3.50,
-    "2速": 2.05,
-    "3速": 1.38,
-    "4速": 1.00,
-    "5速": 0.79,
-    "後退": 3.80,
-}
-final_ratio = 4.06   # ファイナルギア比
+**5速MT（エンジン180 N·m @ 3000rpm、ファイナル4.06、タイヤ半径0.3m）の例**：
 
-T_engine = 180   # N·m（中回転域トルク）
-n_engine = 3000  # rpm
+| ギア | 変速比 | 車輪トルク | 車速 |
+|---|---|---|---|
+| 1速 | 3.50 | 約2,600 N·m | 約20 km/h |
+| 2速 | 2.05 | 約1,500 N·m | 約34 km/h |
+| 3速 | 1.38 | 約1,020 N·m | 約50 km/h |
+| 4速 | 1.00 | 約740 N·m | 約70 km/h |
+| 5速 | 0.79 | 約580 N·m | 約88 km/h |
 
-print(f"エンジン: {T_engine}N·m @ {n_engine}rpm\n")
-print(f"{'ギア':6s} {'変速比':6s} {'車輪トルク':10s} {'車速(km/h)':12s}")
-print("-" * 50)
+低いギアは大トルク・低速、高いギアは小トルク・高速。1つのエンジンで「発進の力」と「高速の静かさ」を両立する仕組みです。
 
-tire_radius = 0.3   # m
-
-for gear, ratio in gear_ratios.items():
-    if gear == "後退": continue
-    T_wheel, n_wheel = gear_output(T_engine, n_engine, ratio, final_ratio)
-    # 車速計算: v = ω × r = (2πn/60) × r
-    v_ms  = (2 * np.pi * n_wheel / 60) * tire_radius
-    v_kmh = v_ms * 3.6
-    print(f"{gear:4s}  {ratio:5.2f}  {T_wheel:8.0f} N·m  {v_kmh:8.1f} km/h")
+```mermaid
+graph LR
+  L["1速<br/>大トルク・低速"] --> M["3-4速<br/>バランス"] --> H["5速<br/>小トルク・高速"]
 ```
 
 ## 各ギアの車速−エンジン回転数の関係
 
-```python
-# 各ギアでの車速と回転数の対応
-v_range = np.linspace(0, 200, 200)   # km/h
+同じ車速でも、低いギアでは回転数が高く、高いギアでは低くなります。レッドゾーン（約6,500rpm）に達したら次のギアへシフトアップします。各ギアは特定の車速域をカバーし、それらを繋ぐことで全速度域を走れます。
 
-fig, ax = plt.subplots(figsize=(10, 6))
-for gear, ratio in gear_ratios.items():
-    if gear == "後退": continue
-    # v [km/h] = 2π × rpm / 60 × r_tire × 3.6 / (ratio × final)
-    rpm_vals = v_range / 3.6 / tire_radius * 60 / (2 * np.pi) * ratio * final_ratio
-    # レッドゾーン上限
-    mask = rpm_vals < 7000
-    ax.plot(v_range[mask], rpm_vals[mask], lw=2, label=gear)
-
-ax.axhline(6500, color="red",  linestyle="--", alpha=0.5, label="レッドゾーン")
-ax.axhline(1000, color="gray", linestyle="--", alpha=0.5, label="アイドル")
-ax.fill_between([0, 200], [6500, 6500], [7000, 7000], color="red", alpha=0.1)
-ax.set_xlabel("車速 [km/h]")
-ax.set_ylabel("エンジン回転数 [rpm]")
-ax.set_title("5速MTの各ギアにおける車速−回転数特性")
-ax.legend()
-ax.set_ylim(0, 7500)
-ax.grid(True, alpha=0.4)
-plt.tight_layout()
-plt.show()
-```
+| ギア | 得意な車速域（目安） | 6500rpm時の車速 |
+|---|---|---|
+| 1速 | 0〜30 km/h | 約43 km/h |
+| 2速 | 20〜55 km/h | 約74 km/h |
+| 3速 | 40〜80 km/h | 約110 km/h |
+| 4速 | 60〜120 km/h | 約152 km/h |
+| 5速 | 90 km/h〜 | 約193 km/h |
 
 ## CVT（無段変速機）
 
-```python
-# CVTはプーリー径を連続的に変化させてギア比を無段階制御
-def cvt_ratio(v_kmh, rpm_target=2500, final=4.0):
-    """目標回転数を維持するCVTのギア比計算"""
-    v_ms = v_kmh / 3.6
-    n_wheel = v_ms / tire_radius * 60 / (2 * np.pi)   # 車輪rpm
-    ratio = rpm_target / (n_wheel * final)
-    return max(0.4, min(ratio, 3.5))   # CVTの変速比範囲でクリップ
+CVTはプーリー（滑車）の径を連続的に変えることで、ギア比を**無段階**に制御します。これにより、車速が変わってもエンジンを最も効率の良い回転数（例：2,500rpm）に保てます。
 
-v_range = np.linspace(5, 180, 300)
-ratios  = [cvt_ratio(v) for v in v_range]
-rpms    = [cvt_ratio(v) * v / 3.6 / tire_radius * 60 / (2*np.pi) * final_ratio
-           for v in v_range]
-
-fig, axes = plt.subplots(1, 2, figsize=(12, 4))
-axes[0].plot(v_range, ratios, "g-", lw=2)
-axes[0].set_xlabel("車速 [km/h]")
-axes[0].set_ylabel("変速比")
-axes[0].set_title("CVTの変速比（目標2500rpm維持）")
-axes[0].grid(True)
-
-axes[1].plot(v_range, rpms, "g-", lw=2, label="CVT")
-# MT 4速で比較
-rpm_4th = [v / 3.6 / tire_radius * 60 / (2*np.pi) * gear_ratios["4速"] * final_ratio
-           for v in v_range]
-axes[1].plot(v_range, rpm_4th, "b--", lw=1.5, alpha=0.7, label="MT 4速（固定）")
-axes[1].axhline(2500, color="red", linestyle=":", label="目標rpm")
-axes[1].set_xlabel("車速 [km/h]")
-axes[1].set_ylabel("エンジン回転数 [rpm]")
-axes[1].set_title("CVT vs MT のエンジン回転数")
-axes[1].legend()
-axes[1].grid(True)
-plt.tight_layout()
-plt.show()
+```mermaid
+graph LR
+  E["エンジン"] --> P1["可変プーリー入力"] -. "金属ベルト" .-> P2["可変プーリー出力"] --> W["車輪"]
 ```
 
-## EVのシングルスピードドライブ
+| 方式 | エンジン回転数の動き | 燃費 |
+|---|---|---|
+| MT（固定ギア） | 車速とともに上下に変動 | ギア段数に依存 |
+| CVT（無段） | 効率の良い回転数を維持 | 一般に良好 |
 
-```python
-# EVは変速機が不要（モーターが0rpmからトルク発生）
-print("=== EV vs ICE の駆動系比較 ===\n")
-
-components = {
-    "ガソリン車（MT）": ["エンジン", "クラッチ", "変速機（5〜6速）",
-                        "プロペラシャフト", "ディファレンシャル", "ドライブシャフト"],
-    "ガソリン車（AT）": ["エンジン", "トルクコンバーター", "AT（6〜10速）",
-                        "プロペラシャフト", "ディファレンシャル", "ドライブシャフト"],
-    "BEV（後輪駆動）":  ["モーター（1つ）", "シングルスピードリダクションギア",
-                        "ディファレンシャル", "ドライブシャフト"],
-}
-
-for car_type, parts in components.items():
-    print(f"【{car_type}】")
-    for i, p in enumerate(parts):
-        arrow = " → " if i < len(parts)-1 else ""
-        print(f"  {p}{arrow}", end="")
-    print("\n")
-
-print("EVが変速機不要な理由:")
-print("  ① モーターは0rpmから最大トルクを発生")
-print("  ② 回転数は0〜16,000rpm超まで幅広い")
-print("  ③ リダクションギア（減速比6〜12）1段で十分")
-print("  → 部品点数が大幅削減 → 軽量・低コスト・高信頼性")
-```
+MTでは加速中に回転数がノコギリ状に上下しますが、CVTは目標回転数をほぼ一定に保ったまま車速だけが上がります。
 
 ## トルクコンバーター（AT）
 
-```python
-# トルクコンバーター: 流体を使ったトルク増幅装置
-# ストール状態（出力側静止）では トルク比 ≈ 2〜3倍
-def torque_converter(T_engine, slip_ratio):
-    """
-    トルクコンバーターの特性（概略）
-    slip_ratio: 入出力回転比（0=ストール, 1=直結）
-    """
-    # 簡易モデル: スリップが大きいほどトルク倍増
-    torque_ratio = 2.5 - 1.5 * slip_ratio   # ストール時2.5倍, 直結時1.0倍
-    efficiency   = slip_ratio * (2 - slip_ratio)  # 効率はスリップで低下
-    return T_engine * torque_ratio, efficiency
+ATは流体（オイル）を介してトルクを伝える**トルクコンバーター**を使います。出力側が止まっている発進時（ストール）には、トルクを2〜3倍に増幅する効果があります。
 
-slip_range = np.linspace(0, 1, 100)
-T_out_list, eff_list = zip(*[torque_converter(200, s) for s in slip_range])
+| 速度比（出力/入力） | トルク比 | 効率 |
+|---|---|---|
+| 0（ストール・発進時） | 約2.5倍 | 低い（滑り大） |
+| 0.5 | 約1.7倍 | 中 |
+| 0.85以上（ロックアップ） | 1.0倍（直結） | 高い |
 
-fig, axes = plt.subplots(1, 2, figsize=(10, 4))
-axes[0].plot(slip_range, T_out_list, "r-", lw=2)
-axes[0].axhline(200, color="gray", linestyle="--", label="エンジントルク")
-axes[0].set_xlabel("速度比 (出力rpm / 入力rpm)")
-axes[0].set_ylabel("出力トルク [N·m]")
-axes[0].set_title("トルクコンバーターの出力トルク")
-axes[0].legend()
-axes[0].grid(True)
+発進時はトルク増幅で力強く、巡航時は**ロックアップクラッチ**で直結して滑りをなくし燃費を稼ぐ、という使い分けをします。
 
-axes[1].plot(slip_range, [e*100 for e in eff_list], "b-", lw=2)
-axes[1].axvline(0.85, color="red", linestyle="--", label="ロックアップ点（≈85%）")
-axes[1].set_xlabel("速度比")
-axes[1].set_ylabel("効率 [%]")
-axes[1].set_title("トルクコンバーターの効率")
-axes[1].legend()
-axes[1].grid(True)
-plt.tight_layout()
-plt.show()
-```
+## EVのシングルスピードドライブ
+
+EVはモーターが0rpmから最大トルクを出し、かつ高回転（16,000rpm超）まで回せるため、**変速機が不要**です。減速比6〜12の固定ギア1段で全速度域をカバーできます。
+
+| 駆動方式 | 主な構成部品 |
+|---|---|
+| ガソリン車（AT） | エンジン → トルクコンバーター → AT(6〜10速) → デフ → ドライブシャフト |
+| BEV | モーター → シングルスピード減速ギア → デフ → ドライブシャフト |
+
+EVが変速機不要な理由：
+- ① モーターは0rpmから最大トルクを発生
+- ② 0〜16,000rpm超まで幅広く回せる
+- ③ 減速ギア1段で十分
+
+結果として部品点数が大幅に減り、**軽量・低コスト・高信頼性**になります。
