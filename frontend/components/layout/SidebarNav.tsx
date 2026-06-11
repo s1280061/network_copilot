@@ -6,7 +6,6 @@ import { useState } from "react";
 
 const NAV = [
   { href: "/", label: "ホーム", icon: "🏠" },
-  { href: "/roadmap", label: "学習ロードマップ", icon: "📚" },
   { href: "/glossary", label: "用語集", icon: "📖" },
   { href: "/glossary?tab=Statistics", label: "統計", icon: "📊" },
   { href: "/chat", label: "AIチャット", icon: "💬" },

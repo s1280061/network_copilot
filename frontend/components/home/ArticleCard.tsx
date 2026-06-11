@@ -10,7 +10,7 @@ export default function ArticleCard({ a }: { a: ArticleMeta }) {
   return (
     <Link
       href={`/glossary/${a.slug}`}
-      className="block w-56 shrink-0 border rounded-xl bg-white overflow-hidden hover:border-sky-400 hover:shadow-md transition"
+      className="block w-full sm:w-56 sm:shrink-0 border rounded-xl bg-white overflow-hidden hover:border-sky-400 hover:shadow-md transition"
     >
       <Thumbnail slug={a.slug} category={a.category} className="h-28 w-full" />
       <div className="p-3">

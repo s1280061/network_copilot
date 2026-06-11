@@ -136,7 +136,7 @@ export default function HomePage() {
                 すべて見る →
               </Link>
             </div>
-            <div className="flex gap-3 overflow-x-auto pb-2">
+            <div className="flex flex-col sm:flex-row gap-3 sm:overflow-x-auto pb-2">
               {c.articles.slice(0, 6).map((a) => (
                 <ArticleCard key={a.slug} a={a} />
               ))}
