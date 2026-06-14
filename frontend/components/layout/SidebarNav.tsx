@@ -15,6 +15,7 @@ const NAV = [
   { href: "/chat", label: "AIチャット", icon: "💬" },
   { href: "/favorites", label: "お気に入り", icon: "⭐" },
   { href: "/python", label: "Python DS", icon: "🐍" },
+  { href: "/board", label: "掲示板", icon: "📝" },
 ];
 
 export default function SidebarNav() {
