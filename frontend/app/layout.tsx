@@ -8,6 +8,14 @@ import { StudyProvider } from "@/lib/study-context";
 export const metadata: Metadata = {
   title: "Network Copilot",
   description: "車載ネットワーク・データサイエンスの技術記事サイト",
+  icons: {
+    icon: [
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon-192.png",   sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png",   sizes: "512x512", type: "image/png" },
+    ],
+    apple: { url: "/icon-192.png", sizes: "192x192" },
+  },
 };
 
 export default function RootLayout({
@@ -17,6 +25,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
+      <head>
+        <link rel="manifest" href="/manifest.json" />
+      </head>
       <body className="bg-slate-50 text-slate-800">
         <StudyProvider>
           <div className="flex flex-col h-screen">
