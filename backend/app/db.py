@@ -41,6 +41,14 @@ def init_db() -> None:
                 title TEXT NOT NULL,
                 viewed_at TEXT NOT NULL DEFAULT (datetime('now'))
             );
+
+            CREATE TABLE IF NOT EXISTS comments (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                slug TEXT NOT NULL,
+                user_id TEXT NOT NULL,
+                content TEXT NOT NULL,
+                created_at TEXT NOT NULL DEFAULT (datetime('now','localtime'))
+            );
             """
         )
         conn.commit()
@@ -165,6 +173,29 @@ def ranking(limit: int = 10, days: int | None = None):
         f"{where} GROUP BY slug, title ORDER BY views DESC LIMIT ?"
     )
     return _fetch(sql, params + (limit,))
+
+
+# ---- comments ----
+def add_comment(slug: str, user_id: str, content: str) -> dict:
+    with get_conn() as conn:
+        cur = conn.execute(
+            "INSERT INTO comments (slug, user_id, content) VALUES (?, ?, ?)",
+            (slug, user_id, content),
+        )
+        conn.commit()
+        row = conn.execute(
+            "SELECT id, slug, user_id, content, created_at FROM comments WHERE id = ?",
+            (cur.lastrowid,),
+        ).fetchone()
+    return dict(row)
+
+
+def list_comments(slug: str, limit: int = 200):
+    return _fetch(
+        "SELECT id, slug, user_id, content, created_at FROM comments "
+        "WHERE slug = ? ORDER BY id ASC LIMIT ?",
+        (slug, limit),
+    )
 
 
 def _fetch(sql: str, params: tuple = ()):

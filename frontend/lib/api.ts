@@ -205,3 +205,42 @@ function staticDashboard(): Dashboard {
 }
 
 export const IS_STATIC = !HAS_BACKEND;
+
+// ---- comments ----
+export interface Comment {
+  id: number;
+  slug: string;
+  user_id: string;
+  content: string;
+  created_at: string;
+}
+
+export async function getComments(slug: string): Promise<Comment[]> {
+  if (!HAS_BACKEND) return [];
+  try {
+    const res = await fetch(`${BASE}/api/comments/${slug}`, { cache: "no-store" });
+    const d = await res.json();
+    return d.comments as Comment[];
+  } catch {
+    return [];
+  }
+}
+
+export async function postComment(
+  slug: string,
+  user_id: string,
+  content: string
+): Promise<Comment | null> {
+  if (!HAS_BACKEND) return null;
+  try {
+    const res = await fetch(`${BASE}/api/comments/${slug}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ user_id, content }),
+    });
+    if (!res.ok) return null;
+    return (await res.json()) as Comment;
+  } catch {
+    return null;
+  }
+}

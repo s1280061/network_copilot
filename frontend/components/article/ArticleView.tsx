@@ -18,6 +18,7 @@ import { getArticle, getRecommend, getFavorites, addFavorite, removeFavorite } f
 import { Article, Ref } from "@/lib/types";
 import { useStudyPanel } from "@/lib/study-context";
 import Thumbnail from "@/components/Thumbnail";
+import CommentThread from "@/components/article/CommentThread";
 
 hljs.registerLanguage("python", python);
 hljs.registerLanguage("bash", bash);
@@ -259,6 +260,8 @@ export default function ArticleView({ slug }: { slug: string }) {
           </div>
         </div>
       )}
+
+      <CommentThread slug={slug} />
     </article>
   );
 }
