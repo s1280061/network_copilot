@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
@@ -26,6 +27,22 @@ export default function SidebarNav() {
         collapsed ? "w-14" : "w-56"
       } shrink-0 border-r bg-white py-4 overflow-y-auto transition-all duration-300 flex flex-col`}
     >
+      {/* ロゴ */}
+      <Link href="/" className="flex items-center gap-2.5 px-3 pb-4 border-b border-slate-100 mb-2">
+        <Image
+          src="/icon-192.png"
+          alt="Network Copilot"
+          width={32}
+          height={32}
+          className="rounded-lg shrink-0"
+        />
+        {!collapsed && (
+          <span className="text-sm font-bold text-slate-800 truncate leading-tight">
+            Network<br />Copilot
+          </span>
+        )}
+      </Link>
+
       <nav className="flex-1 space-y-1 px-2">
         {NAV.map((n) => {
           const active =
