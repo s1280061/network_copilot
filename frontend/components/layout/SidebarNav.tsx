@@ -2,24 +2,28 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { usePathname, useSearchParams } from "next/navigation";
+import { useState, Suspense } from "react";
 
 const NAV = [
   { href: "/", label: "ホーム", icon: "🏠" },
   { href: "/glossary", label: "用語集", icon: "📖" },
-  { href: "/glossary?tab=Statistics", label: "統計", icon: "📊" },
-  { href: "/glossary?tab=ML", label: "機械学習", icon: "🤖" },
-  { href: "/glossary?tab=DL", label: "深層学習", icon: "🧠" },
-  { href: "/glossary?tab=GenAI", label: "生成AI", icon: "✨" },
+  { href: "/glossary?tab=Statistics", label: "統計", icon: "📊", tab: "Statistics" },
+  { href: "/glossary?tab=ML", label: "機械学習", icon: "🤖", tab: "ML" },
+  { href: "/glossary?tab=DL", label: "深層学習", icon: "🧠", tab: "DL" },
+  { href: "/glossary?tab=GenAI", label: "生成AI", icon: "✨", tab: "GenAI" },
+  { href: "/glossary?tab=Python", label: "Python", icon: "🐍", tab: "Python" },
+  { href: "/glossary?tab=C言語", label: "C言語", icon: "🔧", tab: "C言語" },
+  { href: "/glossary?tab=CAD%2F設計", label: "CAD/設計", icon: "📐", tab: "CAD/設計" },
   { href: "/chat", label: "AIチャット", icon: "💬" },
   { href: "/favorites", label: "お気に入り", icon: "⭐" },
-  { href: "/python", label: "Python DS", icon: "🐍" },
   { href: "/board", label: "掲示板", icon: "📝" },
 ];
 
-export default function SidebarNav() {
+function SidebarNavInner() {
   const path = usePathname();
+  const searchParams = useSearchParams();
+  const currentTab = searchParams.get("tab") ?? "";
   const [collapsed, setCollapsed] = useState(true);
 
   return (
@@ -46,10 +50,16 @@ export default function SidebarNav() {
 
       <nav className="flex-1 space-y-1 px-2">
         {NAV.map((n) => {
-          const active =
-            n.href === "/" ? path === "/" :
-            n.href.includes("?") ? false :
-            path.startsWith(n.href);
+          let active: boolean;
+          if (n.href === "/") {
+            active = path === "/";
+          } else if ("tab" in n && n.tab) {
+            active = path === "/glossary" && currentTab === n.tab;
+          } else if (n.href === "/glossary") {
+            active = path === "/glossary" && !currentTab;
+          } else {
+            active = path.startsWith(n.href);
+          }
           return (
             <Link
               key={n.href}
@@ -77,5 +87,16 @@ export default function SidebarNav() {
         {!collapsed && <span>閉じる</span>}
       </button>
     </aside>
+  );
+}
+
+export default function SidebarNav() {
+  return (
+
+    <Suspense fallback={
+      <aside className="w-14 shrink-0 border-r bg-white py-4" />
+    }>
+      <SidebarNavInner />
+    </Suspense>
   );
 }

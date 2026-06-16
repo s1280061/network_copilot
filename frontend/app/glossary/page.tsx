@@ -7,7 +7,7 @@ import { getArticles, search as apiSearch } from "@/lib/api";
 import { Article, SearchHit } from "@/lib/types";
 import Thumbnail, { categoryStyle } from "@/components/Thumbnail";
 
-const CATEGORIES = ["Ethernet", "TCP/IP", "PCAP", "SOME/IP", "AUTOSAR", "SDV", "Automotive Bus", "Diagnostics", "Security", "Howto", "Python", "Statistics", "ML", "DL", "GenAI", "CV", "Electronics", "Automotive", "Wireless"];
+const CATEGORIES = ["Ethernet", "TCP/IP", "PCAP", "SOME/IP", "AUTOSAR", "SDV", "Automotive Bus", "Diagnostics", "Security", "Howto", "Python", "C言語", "CAD/設計", "Statistics", "ML", "DL", "GenAI", "CV", "Electronics", "Automotive", "Wireless"];
 
 export default function GlossaryPage() {
   return (
@@ -24,6 +24,14 @@ function GlossaryContent() {
   const [hits, setHits] = useState<SearchHit[] | null>(null);
   const [mode, setMode] = useState("");
   const [activeTab, setActiveTab] = useState(searchParams.get("tab") ?? "all");
+
+  // searchParams が変わるたびに（サイドバーのタブリンクを押したとき等）タブを同期する
+  useEffect(() => {
+    const tab = searchParams.get("tab") ?? "all";
+    setActiveTab(tab);
+    setHits(null);
+    setQ("");
+  }, [searchParams]);
 
   useEffect(() => {
     getArticles().then((d) => setItems(d.articles)).catch(() => {});
