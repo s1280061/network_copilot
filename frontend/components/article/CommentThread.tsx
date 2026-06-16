@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, useCallback } from "react";
-import { getComments, postComment, Comment, IS_STATIC } from "@/lib/api";
+import { getComments, postComment, Comment } from "@/lib/api";
 
 /** ブラウザに保存する匿名ID（日付ベース、毎日変わる2ch風） */
 function getAnonymousId(): string {
@@ -47,19 +47,9 @@ export default function CommentThread({ slug }: { slug: string }) {
       setContent("");
       setTimeout(() => bottomRef.current?.scrollIntoView({ behavior: "smooth" }), 50);
     } else {
-      setError("投稿に失敗しました。バックエンドが必要です。");
+      setError("投稿に失敗しました。しばらく待ってから再試行してください。");
     }
     setPosting(false);
-  }
-
-  if (IS_STATIC) {
-    return (
-      <div className="mt-10 pt-6 border-t border-slate-200">
-        <p className="text-xs text-slate-400 text-center">
-          💬 コメント機能はバックエンド接続時のみ利用できます
-        </p>
-      </div>
-    );
   }
 
   return (

@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
-import { getComments, Comment, IS_STATIC } from "@/lib/api";
+import { getComments, Comment } from "@/lib/api";
 import staticContent from "@/lib/static-content.json";
 
 interface ThreadSummary {
@@ -47,15 +47,6 @@ export default function BoardPage() {
   }, []);
 
   useEffect(() => { load(); }, [load]);
-
-  if (IS_STATIC) {
-    return (
-      <div className="text-center py-20 text-slate-400">
-        <p className="text-4xl mb-4">📝</p>
-        <p>掲示板はバックエンド接続時のみ利用できます</p>
-      </div>
-    );
-  }
 
   return (
     <div className="max-w-2xl mx-auto">
