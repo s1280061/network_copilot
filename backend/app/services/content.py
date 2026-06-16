@@ -19,7 +19,7 @@ _FRONTMATTER_RE = re.compile(r"^---\s*\n(.*?)\n---\s*\n(.*)$", re.DOTALL)
 _LINK_RE = re.compile(r"\[\[([a-z0-9\-]+)\]\]")
 
 # note-style top categories shown on the home screen.
-CATEGORIES = ["Ethernet", "TCP/IP", "PCAP", "SOME/IP", "AUTOSAR", "SDV", "Automotive Bus", "Diagnostics", "Security", "Howto", "Python", "C言語", "Statistics", "ML", "DL", "GenAI", "CV", "Electronics", "Automotive", "Wireless"]
+CATEGORIES = ["Ethernet", "TCP/IP", "PCAP", "SOME/IP", "AUTOSAR", "SDV", "Automotive Bus", "Diagnostics", "Security", "Howto", "Python", "C言語", "CAD/設計", "Statistics", "ML", "DL", "GenAI", "CV", "Electronics", "Automotive", "Wireless"]
 
 # slug -> category (overridable via frontmatter `category`).
 _CATEGORY_MAP = {
@@ -121,6 +121,11 @@ _CATEGORY_MAP = {
     "c-basics":    "C言語",
     "c-pointers":  "C言語",
     "c-structs":   "C言語",
+    # CAD/設計
+    "cad-basics":              "CAD/設計",
+    "3d-math":                 "CAD/設計",
+    "orthographic-projection": "CAD/設計",
+    "engineering-sketch":      "CAD/設計",
     # Automotive
     "engineering-drawing":       "Automotive",
     "automotive-torque":         "Automotive",

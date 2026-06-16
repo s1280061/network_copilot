@@ -412,6 +412,34 @@
 "favorite": false
 },
 {
+"slug": "cad-basics",
+"title": "CADの基礎",
+"level": 2,
+"category": "CAD/設計",
+"related": [
+"3d-math",
+"orthographic-projection",
+"engineering-sketch"
+],
+"next": [
+"3d-math",
+"orthographic-projection"
+],
+"tags": [
+"cad",
+"design",
+"engineering",
+"2d",
+"3d"
+],
+"difficulty": "初級",
+"updated": "2026-06-16",
+"excerpt": "**CAD（Computer-Aided Design）** とは、コンピュータを使って設計図や3Dモデルを作成するツール・技術の総称です。紙と鉛筆での手描き製図に取って代わり、現代の製造業・建築・電子機器設計の現場では不可欠な存在となって",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "c-basics",
 "title": "C言語の基礎",
 "level": 2,
@@ -1220,6 +1248,30 @@
 "favorite": false
 },
 {
+"slug": "engineering-sketch",
+"title": "ポンチ絵・エンジニアリングスケッチ",
+"level": 2,
+"category": "CAD/設計",
+"related": [
+"cad-basics",
+"orthographic-projection"
+],
+"tags": [
+"cad",
+"sketch",
+"drawing",
+"design",
+"communication"
+],
+"next": [],
+"difficulty": "初級",
+"updated": "2026-06-16",
+"excerpt": "**ポンチ絵（ぽんちえ）** とは、アイデアや構造を**フリーハンドで素早く描いた略図**のことです。英語では **engineering sketch** や **concept sketch** と呼ばれます。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "alternating-current",
 "title": "交流回路（AC・RMS・インピーダンス）",
 "level": 2,
@@ -1406,6 +1458,35 @@
 "difficulty": "初級",
 "updated": "2026-06-11",
 "excerpt": "「500次元のデータをグラフで見たい」「特徴量が多すぎてモデルが遅い」――次元削減はこの2つの問題を解決します。高次元データを低次元空間に圧縮することで、可視化・クラスタリング・計算高速化が可能になります。PCA（線形・高速・解釈可能）、t",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "orthographic-projection",
+"title": "正投影図・第一角法・第三角法",
+"level": 2,
+"category": "CAD/設計",
+"related": [
+"cad-basics",
+"3d-math",
+"engineering-sketch"
+],
+"prereq": [
+"cad-basics"
+],
+"tags": [
+"cad",
+"drawing",
+"projection",
+"JIS",
+"ISO",
+"engineering"
+],
+"next": [],
+"difficulty": "初級",
+"updated": "2026-06-16",
+"excerpt": "立体（3Dモデル）を**平面の図面（2D）に落とし込む**方法が「投影」です。正投影（直投影）は、光線が投影面に対して**垂直・平行**に当たるとして描く手法で、寸法が正確に表れるため製造図面の基本です。",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -1627,6 +1708,34 @@
 "difficulty": "初級",
 "updated": "2026-06-11",
 "excerpt": "電磁誘導は「磁束の変化が起電力を生む」現象です。1831年にファラデーが発見したこの法則が、発電機・変圧器・非接触充電（ワイヤレス充電）・車載センサー（ABS・クランク角センサー）の原理です。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "3d-math",
+"title": "3次元の数学（座標系・変換行列・回転）",
+"level": 3,
+"category": "CAD/設計",
+"related": [
+"cad-basics",
+"orthographic-projection"
+],
+"prereq": [
+"cad-basics"
+],
+"tags": [
+"cad",
+"math",
+"matrix",
+"3d",
+"rotation",
+"coordinate"
+],
+"next": [],
+"difficulty": "中級",
+"updated": "2026-06-16",
+"excerpt": "CADソフトが3Dモデルを表示・操作・変換するとき、内部では**行列演算**が絶え間なく走っています。「部品を90°回転させる」「別の座標系に変換する」「カメラ視点を計算する」——これらはすべて行列の積で表現されます。",
 "views": 0,
 "completed": false,
 "favorite": false
@@ -3904,6 +4013,58 @@
 "completed": false,
 "favorite": false
 },
+"cad-basics": {
+"slug": "cad-basics",
+"title": "CADの基礎",
+"level": 2,
+"category": "CAD/設計",
+"related": [
+"3d-math",
+"orthographic-projection",
+"engineering-sketch"
+],
+"next": [
+"3d-math",
+"orthographic-projection"
+],
+"tags": [
+"cad",
+"design",
+"engineering",
+"2d",
+"3d"
+],
+"difficulty": "初級",
+"updated": "2026-06-16",
+"html": "<h2>CADとは何か</h2>\n<p><strong>CAD（Computer-Aided Design）</strong> とは、コンピュータを使って設計図や3Dモデルを作成するツール・技術の総称です。紙と鉛筆での手描き製図に取って代わり、現代の製造業・建築・電子機器設計の現場では不可欠な存在となっています。</p>\n<pre><code class=\"language-mermaid\">graph LR\n  A[&quot;アイデア・コンセプト&quot;] --&gt; B[&quot;2D CAD&lt;br/&gt;（図面・スケッチ）&quot;]\n  A --&gt; C[&quot;3D CAD&lt;br/&gt;（ソリッドモデル）&quot;]\n  B --&gt; D[&quot;製造図面&lt;br/&gt;（寸法・公差）&quot;]\n  C --&gt; E[&quot;シミュレーション&lt;br/&gt;（強度・熱・流体）&quot;]\n  C --&gt; F[&quot;CAM&lt;br/&gt;（NC加工データ）&quot;]\n  D --&gt; G[&quot;製品製造&quot;]\n  F --&gt; G\n</code></pre>\n<h2>2D CAD vs 3D CAD</h2>\n<table>\n<thead>\n<tr>\n<th>項目</th>\n<th>2D CAD</th>\n<th>3D CAD</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>表現</td>\n<td>線・円・寸法で平面図</td>\n<td>ソリッド・サーフェスで立体モデル</td>\n</tr>\n<tr>\n<td>代表ソフト</td>\n<td>AutoCAD, DraftSight, JW-CAD</td>\n<td>CATIA, SolidWorks, Fusion 360, FreeCAD</td>\n</tr>\n<tr>\n<td>用途</td>\n<td>建築平面図・回路図・部品図</td>\n<td>機械部品・自動車・航空機・家電</td>\n</tr>\n<tr>\n<td>難易度</td>\n<td>比較的易しい</td>\n<td>習得に時間がかかる</td>\n</tr>\n<tr>\n<td>強み</td>\n<td>軽量・シンプル</td>\n<td>干渉チェック・シミュレーション可能</td>\n</tr>\n</tbody>\n</table>\n<h2>2D CADの基本要素</h2>\n<p>2D CADは以下の幾何要素で図形を構成します：</p>\n<pre><code>エンティティ（幾何要素）:\n  ・点（Point）         → 参照点、交点\n  ・線分（Line）        → 輪郭線、中心線\n  ・円・円弧（Circle/Arc）→ 穴、フィレット\n  ・ポリライン          → 閉じた輪郭\n  ・スプライン曲線       → 自由曲線\n  ・文字（Text）        → 寸法値、注記\n  ・寸法（Dimension）   → 長さ・角度・半径の記入\n</code></pre>\n<h3>レイヤー（層）管理</h3>\n<p>2D CADでは「レイヤー」で線の種類・色・表示/非表示を管理します：</p>\n<table>\n<thead>\n<tr>\n<th>レイヤー名</th>\n<th>線の種類</th>\n<th>線の色</th>\n<th>用途</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>外形線</td>\n<td>実線（太）</td>\n<td>白/黒</td>\n<td>部品の輪郭</td>\n</tr>\n<tr>\n<td>中心線</td>\n<td>一点鎖線（細）</td>\n<td>赤</td>\n<td>円・対称の中心</td>\n</tr>\n<tr>\n<td>隠れ線</td>\n<td>破線（細）</td>\n<td>黄</td>\n<td>見えない輪郭</td>\n</tr>\n<tr>\n<td>寸法線</td>\n<td>実線（細）</td>\n<td>青</td>\n<td>寸法記入</td>\n</tr>\n<tr>\n<td>補助線</td>\n<td>実線（極細）</td>\n<td>緑</td>\n<td>作図補助</td>\n</tr>\n</tbody>\n</table>\n<h2>3D CADのモデリング手法</h2>\n<h3>ソリッドモデリング</h3>\n<p>最も一般的な手法。<strong>スケッチ（2D断面）→ フィーチャー操作</strong>で立体を作ります。</p>\n<pre><code>フィーチャー操作の種類:\n  押し出し（Extrude）  ： 断面を直線方向に押し出す\n  回転（Revolve）      ： 断面を軸の周りに回転させる\n  掃引（Sweep）        ： 断面をパス（曲線）に沿って動かす\n  ロフト（Loft）       ： 複数断面を滑らかにつなぐ\n  フィレット           ： エッジを丸める\n  チャンファー         ： エッジを面取りする\n  穴（Hole）           ： ドリル穴・タップ穴を追加\n  シェル               ： 中をくり抜いて薄肉にする\n</code></pre>\n<pre><code class=\"language-mermaid\">graph LR\n  A[&quot;2Dスケッチ&lt;br/&gt;（円Ø50）&quot;] --&gt;|&quot;押し出し&lt;br/&gt;高さ30mm&quot;| B[&quot;円柱&quot;]\n  B --&gt;|&quot;穴追加&lt;br/&gt;Ø20貫通&quot;| C[&quot;パイプ形状&quot;]\n  C --&gt;|&quot;フィレット&lt;br/&gt;R3&quot;| D[&quot;最終形状&quot;]\n</code></pre>\n<h3>アセンブリ（組み立て）</h3>\n<p>複数の部品（パーツ）を「拘束」で位置決めして組み立てます：</p>\n<table>\n<thead>\n<tr>\n<th>拘束の種類</th>\n<th>意味</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>一致（Coincident）</td>\n<td>面・エッジ・点を合わせる</td>\n</tr>\n<tr>\n<td>同心（Concentric）</td>\n<td>円柱・穴の軸を一致させる</td>\n</tr>\n<tr>\n<td>平行（Parallel）</td>\n<td>面・エッジを平行にする</td>\n</tr>\n<tr>\n<td>距離（Distance）</td>\n<td>指定距離を保つ</td>\n</tr>\n<tr>\n<td>角度（Angle）</td>\n<td>指定角度を保つ</td>\n</tr>\n</tbody>\n</table>\n<h2>代表的なCADソフト</h2>\n<h3>商用</h3>\n<table>\n<thead>\n<tr>\n<th>ソフト</th>\n<th>得意分野</th>\n<th>価格帯</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><strong>CATIA</strong> (Dassault)</td>\n<td>航空・自動車の大規模設計</td>\n<td>非常に高価</td>\n</tr>\n<tr>\n<td><strong>SolidWorks</strong></td>\n<td>機械設計・中小製造業</td>\n<td>高価</td>\n</tr>\n<tr>\n<td><strong>NX</strong> (Siemens)</td>\n<td>大規模製品設計</td>\n<td>非常に高価</td>\n</tr>\n<tr>\n<td><strong>Fusion 360</strong> (Autodesk)</td>\n<td>ものづくり・教育</td>\n<td>サブスク（安価）</td>\n</tr>\n<tr>\n<td><strong>AutoCAD</strong></td>\n<td>2D製図・汎用</td>\n<td>サブスク</td>\n</tr>\n</tbody>\n</table>\n<h3>無料・オープンソース</h3>\n<table>\n<thead>\n<tr>\n<th>ソフト</th>\n<th>特徴</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><strong>FreeCAD</strong></td>\n<td>Python拡張可能・パラメトリック3D</td>\n</tr>\n<tr>\n<td><strong>LibreCAD</strong></td>\n<td>2D専用・軽量</td>\n</tr>\n<tr>\n<td><strong>OpenSCAD</strong></td>\n<td>コードで3Dモデルを記述</td>\n</tr>\n<tr>\n<td><strong>Blender</strong></td>\n<td>製品設計よりアート向け</td>\n</tr>\n<tr>\n<td><strong>Onshape</strong></td>\n<td>ブラウザで動く・無料プランあり</td>\n</tr>\n</tbody>\n</table>\n<h2>CADデータのフォーマット</h2>\n<table>\n<thead>\n<tr>\n<th>形式</th>\n<th>種別</th>\n<th>特徴</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>.STEP</code> / <code>.STP</code></td>\n<td>ソリッド交換</td>\n<td>業界標準・ほぼ全ソフトで読める</td>\n</tr>\n<tr>\n<td><code>.IGES</code></td>\n<td>サーフェス交換</td>\n<td>古いが普及している</td>\n</tr>\n<tr>\n<td><code>.STL</code></td>\n<td>メッシュ</td>\n<td>3Dプリンタ向け・形状のみ</td>\n</tr>\n<tr>\n<td><code>.DXF</code> / <code>.DWG</code></td>\n<td>2D図面</td>\n<td>AutoCAD互換</td>\n</tr>\n<tr>\n<td><code>.PARASOLID</code></td>\n<td>カーネル形式</td>\n<td>SolidWorks/NX系</td>\n</tr>\n<tr>\n<td><code>.3MF</code></td>\n<td>3Dプリンタ向け</td>\n<td>STLの後継</td>\n</tr>\n</tbody>\n</table>\n<h2>CAD図面に必要な情報</h2>\n<p>3D CADから<strong>2D図面（製造図）</strong> を生成する際には以下を記入します：</p>\n<pre><code>必須情報:\n  ① 投影図（正面・側面・上面など） ← 次の記事で詳解\n  ② 寸法（長さ・角度・半径・直径）\n  ③ 公差（許容誤差：例 Ø10 ±0.05）\n  ④ 表面粗さ（Ra 1.6など）\n  ⑤ 幾何公差（平行度・直角度・真円度など）\n  ⑥ 材料・熱処理\n  ⑦ 表題欄（部品名・図番・設計者・日付・縮尺）\n</code></pre>\n<h2>まとめ</h2>\n<ul>\n<li>CADはアイデアを正確な形状データに変換するツール</li>\n<li>2D CADは図面作成・3D CADはモデル→シミュレーション→製造まで一貫</li>\n<li>ソリッドモデリングは「スケッチ＋フィーチャー」の積み重ね</li>\n<li>図面にはモデルだけでなく寸法・公差・材料などの製造情報が必須</li>\n</ul>\n<p>次は3Dモデルを操るための<strong>3次元数学（座標系・変換行列・回転）</strong>を学びます。</p>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "3d-math",
+"title": "3次元の数学（座標系・変換行列・回転）"
+},
+{
+"slug": "orthographic-projection",
+"title": "正投影図・第一角法・第三角法"
+},
+{
+"slug": "engineering-sketch",
+"title": "ポンチ絵・エンジニアリングスケッチ"
+}
+],
+"next_full": [
+{
+"slug": "3d-math",
+"title": "3次元の数学（座標系・変換行列・回転）"
+},
+{
+"slug": "orthographic-projection",
+"title": "正投影図・第一角法・第三角法"
+}
+],
+"completed": false,
+"favorite": false
+},
 "c-basics": {
 "slug": "c-basics",
 "title": "C言語の基礎",
@@ -5466,6 +5627,41 @@
 "completed": false,
 "favorite": false
 },
+"engineering-sketch": {
+"slug": "engineering-sketch",
+"title": "ポンチ絵・エンジニアリングスケッチ",
+"level": 2,
+"category": "CAD/設計",
+"related": [
+"cad-basics",
+"orthographic-projection"
+],
+"tags": [
+"cad",
+"sketch",
+"drawing",
+"design",
+"communication"
+],
+"next": [],
+"difficulty": "初級",
+"updated": "2026-06-16",
+"html": "<h2>ポンチ絵とは</h2>\n<p><strong>ポンチ絵（ぽんちえ）</strong> とは、アイデアや構造を<strong>フリーハンドで素早く描いた略図</strong>のことです。英語では <strong>engineering sketch</strong> や <strong>concept sketch</strong> と呼ばれます。</p>\n<p>もともと「ポンチ」はヨーロッパの風刺漫画（Punch）から来た言葉で、簡略化された絵を指します。製造業・ものづくりの現場では「精密な CAD 図面を描く前段階の手書きメモ」として今も活躍しています。</p>\n<pre><code class=\"language-mermaid\">graph LR\n  A[&quot;💡 アイデア&quot;] --&gt; B[&quot;✏️ ポンチ絵&lt;br/&gt;（5〜10分）&quot;]\n  B --&gt; C[&quot;議論・検討&lt;br/&gt;修正&quot;]\n  C --&gt; D[&quot;🖥️ CAD設計&lt;br/&gt;（数時間〜）&quot;]\n  D --&gt; E[&quot;正式図面&lt;br/&gt;（製造へ）&quot;]\n</code></pre>\n<h2>ポンチ絵が必要な理由</h2>\n<table>\n<thead>\n<tr>\n<th>場面</th>\n<th>CAD図面</th>\n<th>ポンチ絵</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>アイデア出し</td>\n<td>❌ 時間がかかる</td>\n<td>✅ 即座に描ける</td>\n</tr>\n<tr>\n<td>会議での説明</td>\n<td>△ 画面が必要</td>\n<td>✅ 紙1枚で伝わる</td>\n</tr>\n<tr>\n<td>問題の共有</td>\n<td>△ 詳細すぎて本質が埋もれる</td>\n<td>✅ 要点だけを強調</td>\n</tr>\n<tr>\n<td>現場での確認</td>\n<td>❌ PC/タブレット必須</td>\n<td>✅ 油性ペンと紙だけ</td>\n</tr>\n<tr>\n<td>複数案の比較</td>\n<td>△ 作り直しに時間がかかる</td>\n<td>✅ 並べて比較しやすい</td>\n</tr>\n</tbody>\n</table>\n<blockquote>\n<p>「1000文字より1枚の絵」。複雑な構造も、ポンチ絵1枚で関係者全員が素早く共有できます。</p>\n</blockquote>\n<h2>ポンチ絵の描き方</h2>\n<h3>基本姿勢</h3>\n<ul>\n<li><strong>正確さより速さ・伝わりやすさ優先</strong></li>\n<li>定規・コンパスは使わない（使う時間があればCADで描く）</li>\n<li>線が曲がっても太さが揃わなくても問題なし</li>\n<li><strong>見ている人が3秒で理解できる</strong>かどうかが基準</li>\n</ul>\n<h3>立体を描くコツ</h3>\n<p>エンジニアリングスケッチでよく使う立体表現：</p>\n<h4>アイソメトリック図（等角投影）</h4>\n<p>3軸を120°ずつ開いて描く。奥行きが直感的に伝わる。</p>\n<pre><code>      /\\\n     /  \\\n    /    \\\n   /      \\\n  |        |\n  |  箱型  |\n  |        |\n   \\      /\n    \\    /\n     \\  /\n      \\/\n\n描き方:\n  ① 縦軸（高さ）を垂直に\n  ② 横軸を左右30°傾けて描く\n  ③ 奥行き軸を右上30°に描く\n</code></pre>\n<h4>キャビネット図（斜投影）</h4>\n<p>正面図は実形のまま、奥行きを45°・1/2の長さで描く。</p>\n<pre><code>  正面図       奥行き(45°方向、実長の1/2)\n  ┌───┐       ┌───┐\n  │   │      ╱   ╱│\n  │   │     ╱   ╱ │\n  └───┘    └───┘  │\n            │   │  │\n            └───┘\n</code></pre>\n<h3>よく使う記号と省略表現</h3>\n<pre><code>記号:\n  ○  穴（貫通）、軸の断面\n  ⊕  穴の中心マーク\n  →  力・方向・流れ\n  ≈  大体この寸法（正確な数字が不明なとき）\n  Ø20 直径20mmの穴\n  □  正方形断面\n\n省略:\n  対称形: 片側だけ描いて中心線を引く\n  繰り返し: 1つを詳細に描き「×6ヶ所」と注記\n  内部構造: 破線で外から見えない部分を示す\n</code></pre>\n<h2>実際のポンチ絵の例</h2>\n<h3>例1：ブラケット（取付金具）</h3>\n<pre><code>           [取付面（壁側）]\n       ┌───────────────┐\n       │  ○      ○    │  ← M8穴×2\n       │               │\n       └──┬──────────┘\n          │  （リブ）\n    ┌─────┴────────────┐\n    │  ○          ○   │  ← M6穴×2（部品取付側）\n    └─────────────────┘\n    　　　  t=3 SUS304\n    　　　  全長 L=120\n</code></pre>\n<h3>例2：油圧回路のブロック図</h3>\n<pre><code>  タンク\n  [====]\n    │\n   [P]── ポンプ（電動）\n    │\n  [絞り弁]\n    │\n  ┌─┴─┐\n [A]  [B]  ← 方向切換弁ポート\n  │    │\n[シリンダ─左]  [シリンダ─右]\n  └────┘\n    ↑伸長    ↑収縮\n</code></pre>\n<h3>例3：組み付け手順のポンチ絵</h3>\n<pre><code>STEP 1           STEP 2           STEP 3\n  ベース            ブラケット        ボルト締め\n  ┌───┐          ┌───┐           ┌───┐\n  │   │    →    │ ╔═╗ │    →    │ ╔═╗ │\n  │   │          │ ║ ║ │           │ ╠═╣ │\n  └───┘          └─╚═╝─┘          └─╚═╝─┘\n                   ↑挿入             ↑M6×3本\n</code></pre>\n<h2>ポンチ絵に書くべき情報</h2>\n<p>良いポンチ絵には以下を盛り込みます：</p>\n<pre><code>必須:\n  □ 大まかな形状・構成\n  □ 主要寸法（概略値でOK）\n  □ 材料・板厚（決まっていれば）\n  □ 穴の位置・大きさ\n\nあると良い:\n  □ 矢印で力・動き・流れを示す\n  □ 重要な部位に注記（ここが接触面、ここが応力集中部など）\n  □ スケール感（A4用紙に対してどれくらいの大きさか）\n  □ 図の名前・作成者・日付\n</code></pre>\n<h2>デジタルポンチ絵ツール</h2>\n<p>手書きにこだわらなくても、以下のデジタルツールで素早くスケッチできます：</p>\n<table>\n<thead>\n<tr>\n<th>ツール</th>\n<th>特徴</th>\n<th>向いている場面</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><strong>Excalidraw</strong></td>\n<td>ブラウザで使える・手書き風</td>\n<td>オンライン会議での共有</td>\n</tr>\n<tr>\n<td><strong>draw.io</strong></td>\n<td>フロー図・ブロック図が得意</td>\n<td>システム構成・電気回路</td>\n</tr>\n<tr>\n<td><strong>Procreate / GoodNotes</strong></td>\n<td>iPad + Apple Pencil</td>\n<td>本格的な手書きスケッチ</td>\n</tr>\n<tr>\n<td><strong>OneNote / Notion</strong></td>\n<td>手書き＋文字を混在</td>\n<td>議事録と一緒にまとめたい</td>\n</tr>\n<tr>\n<td><strong>FreeCAD スケッチャー</strong></td>\n<td>そのままCADに移行できる</td>\n<td>形状が決まってきたら</td>\n</tr>\n</tbody>\n</table>\n<h2>ポンチ絵からCADへの流れ</h2>\n<pre><code class=\"language-mermaid\">graph TD\n  A[&quot;ポンチ絵で形状を決める&quot;] --&gt; B[&quot;概略寸法を書き込む&quot;]\n  B --&gt; C[&quot;設計審査・承認&quot;]\n  C --&gt; D[&quot;CADでスケッチ作成&quot;]\n  D --&gt; E[&quot;フィーチャー（押し出し等）&quot;]\n  E --&gt; F[&quot;アセンブリで干渉確認&quot;]\n  F --&gt; G[&quot;正式図面出図&quot;]\n  G --&gt; H[&quot;製造・発注&quot;]\n</code></pre>\n<p>ポンチ絵段階での修正は<strong>5分</strong>、CAD段階での修正は<strong>30分〜数時間</strong>、製造後の修正は<strong>数日〜数週間</strong>かかります。早い段階でポンチ絵を使って議論することが、設計品質の向上とコスト削減に直結します。</p>\n<h2>プロのポンチ絵のコツ</h2>\n<ol>\n<li><strong>3つの視点で描く癖をつける</strong> → 正面・上・横を素早くセットで描く</li>\n<li><strong>比率を意識する</strong> → 大きいものと小さいものの相対感を合わせる</li>\n<li><strong>太さで重要度を示す</strong> → 外形線は太く、補助は細く</li>\n<li><strong>矢印を積極的に使う</strong> → 動き・力・流れ・組み付け方向</li>\n<li><strong>「このくらい」を書く</strong> → 厳密な数字でなく「約50mm」「A4くらい」でOK</li>\n<li><strong>描きすぎない</strong> → 伝えたい点に絞る。全部描こうとするとCADより遅くなる</li>\n</ol>\n<h2>まとめ</h2>\n<table>\n<thead>\n<tr>\n<th>場面</th>\n<th>使うべき道具</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>思いついたとき</td>\n<td>紙とペン（ポンチ絵）</td>\n</tr>\n<tr>\n<td>複数案を比較</td>\n<td>紙×複数枚（ポンチ絵）</td>\n</tr>\n<tr>\n<td>会議で共有</td>\n<td>ホワイトボード or デジタルスケッチ</td>\n</tr>\n<tr>\n<td>形状が確定</td>\n<td>CAD（2D or 3D）</td>\n</tr>\n<tr>\n<td>製造に出す</td>\n<td>正式図面（JIS準拠）</td>\n</tr>\n</tbody>\n</table>\n<p>ポンチ絵は「下手でいい」のではなく「<strong>要点が明確なら十分</strong>」というものです。現場の熟練エンジニアほど素早く本質的なポンチ絵を描きます。</p>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "cad-basics",
+"title": "CADの基礎"
+},
+{
+"slug": "orthographic-projection",
+"title": "正投影図・第一角法・第三角法"
+}
+],
+"next_full": [],
+"completed": false,
+"favorite": false
+},
 "alternating-current": {
 "slug": "alternating-current",
 "title": "交流回路（AC・RMS・インピーダンス）",
@@ -5807,6 +6003,55 @@
 {
 "slug": "numpy",
 "title": "NumPy（配列・行列演算）"
+}
+],
+"next_full": [],
+"completed": false,
+"favorite": false
+},
+"orthographic-projection": {
+"slug": "orthographic-projection",
+"title": "正投影図・第一角法・第三角法",
+"level": 2,
+"category": "CAD/設計",
+"related": [
+"cad-basics",
+"3d-math",
+"engineering-sketch"
+],
+"prereq": [
+"cad-basics"
+],
+"tags": [
+"cad",
+"drawing",
+"projection",
+"JIS",
+"ISO",
+"engineering"
+],
+"next": [],
+"difficulty": "初級",
+"updated": "2026-06-16",
+"html": "<h2>正投影図とは</h2>\n<p>立体（3Dモデル）を<strong>平面の図面（2D）に落とし込む</strong>方法が「投影」です。正投影（直投影）は、光線が投影面に対して<strong>垂直・平行</strong>に当たるとして描く手法で、寸法が正確に表れるため製造図面の基本です。</p>\n<pre><code class=\"language-mermaid\">graph LR\n  subgraph &quot;3Dモデル&quot;\n    OBJ[&quot;🔲 部品&quot;]\n  end\n  subgraph &quot;投影面（ガラス板のイメージ）&quot;\n    F[&quot;正面図&lt;br/&gt;（Front View）&quot;]\n    S[&quot;側面図&lt;br/&gt;（Side View）&quot;]\n    T[&quot;上面図&lt;br/&gt;（Top View）&quot;]\n  end\n  OBJ --&gt;|&quot;正面から&quot;| F\n  OBJ --&gt;|&quot;右から&quot;| S\n  OBJ --&gt;|&quot;上から&quot;| T\n</code></pre>\n<h2>三面図の構成</h2>\n<p>多くの部品は<strong>3方向からの投影（三面図）</strong> で形状が完全に決まります：</p>\n<table>\n<thead>\n<tr>\n<th>図</th>\n<th>別名</th>\n<th>見る方向</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>正面図（主投影図）</td>\n<td>フロントビュー</td>\n<td>正面（部品の主要な形状面）</td>\n</tr>\n<tr>\n<td>平面図</td>\n<td>トップビュー・上面図</td>\n<td>真上から</td>\n</tr>\n<tr>\n<td>側面図</td>\n<td>サイドビュー</td>\n<td>右または左から</td>\n</tr>\n</tbody>\n</table>\n<h2>第一角法（ヨーロッパ式）</h2>\n<p><strong>JIS（日本工業規格）・ISO</strong> が採用。ヨーロッパ・日本で標準。</p>\n<p>「物体を<strong>投影面の手前</strong>に置く」イメージ。視点から見た光線が<strong>物体を通過して奥の面に投影</strong>されます。</p>\n<pre><code>        上\n        ↑\n左  ←  [物体]  →  右\n        ↓\n        下\n\n配置ルール（第一角法）:\n  ┌──────────────────┐\n  │   [上面図]       │\n  ├──────┬───────────┤\n  │[左面]│[正面図]  [右面]\n  ├──────┴───────────┤\n  │   [下面図]       │\n  └──────────────────┘\n  ※ 正面図の「右」に左側面図が来る（視線方向と反対側）\n</code></pre>\n<pre><code class=\"language-mermaid\">graph TB\n  A[&quot;視点（正面）&quot;] --&gt;|&quot;光線&quot;| B[&quot;物体&quot;] --&gt;|&quot;通過して奥へ&quot;| C[&quot;投影面（正面図）&quot;]\n  D[&quot;視点（右）&quot;]  --&gt;|&quot;光線&quot;| B          --&gt;|&quot;通過して左へ&quot;| E[&quot;投影面（左側面図が右に）&quot;]\n</code></pre>\n<h3>第一角法の記号</h3>\n<p>図面の表題欄近くに記入される<strong>投影法記号</strong>：</p>\n<pre><code>第一角法マーク: 円錐の尖った側が「見る方向」を向く\n  ◁—● （左が細くなった円錐と丸）\n</code></pre>\n<h2>第三角法（アメリカ式）</h2>\n<p><strong>ASME（アメリカ）・各国の製造業</strong>で広く使用。アメリカ系の自動車・航空宇宙産業ではこちらが主流。</p>\n<p>「物体を<strong>投影面の奥</strong>に置く」イメージ。光線が<strong>透明なガラス面に当たって手前に映る</strong>（窓ガラスに顔を映すイメージ）。</p>\n<pre><code>配置ルール（第三角法）:\n  ┌──────────────────┐\n  │   [上面図]       │\n  ├──────┬───────────┤\n  │[左面]│[正面図]  [右面]\n  ├──────┴───────────┤\n  │   [下面図]       │\n  └──────────────────┘\n  ※ 正面図の「右」に右側面図が来る（直感的）\n</code></pre>\n<blockquote>\n<p>注目：配置の<strong>レイアウトは同じでも意味が逆</strong>。第三角法では見た方向の側に図が来るので直感的。</p>\n</blockquote>\n<h3>第三角法の記号</h3>\n<pre><code>第三角法マーク: 円錐の丸い側が「見る方向」を向く\n  ●—▷ （丸と右が細くなった円錐）\n</code></pre>\n<h2>第一角法 vs 第三角法 比較</h2>\n<table>\n<thead>\n<tr>\n<th>項目</th>\n<th>第一角法</th>\n<th>第三角法</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>採用地域</td>\n<td>日本・ヨーロッパ・中国</td>\n<td>アメリカ・カナダ</td>\n</tr>\n<tr>\n<td>規格</td>\n<td>JIS B 0001, ISO</td>\n<td>ASME Y14.5</td>\n</tr>\n<tr>\n<td>直感性</td>\n<td>やや分かりにくい</td>\n<td>直感的（見た方向に図が来る）</td>\n</tr>\n<tr>\n<td>右側面図の位置</td>\n<td>正面図の<strong>左</strong>に配置</td>\n<td>正面図の<strong>右</strong>に配置</td>\n</tr>\n</tbody>\n</table>\n<pre><code class=\"language-mermaid\">graph LR\n  subgraph &quot;第一角法&quot;\n    A1[&quot;[右側面図]&quot;] --- A2[&quot;[正面図]&quot;] --- A3[&quot;[左側面図]&quot;]\n  end\n  subgraph &quot;第三角法&quot;\n    B1[&quot;[左側面図]&quot;] --- B2[&quot;[正面図]&quot;] --- B3[&quot;[右側面図]&quot;]\n  end\n</code></pre>\n<h2>断面図</h2>\n<p>隠れた内部形状を表すため、<strong>切断面で切った断面</strong>を描く方法。</p>\n<pre><code>断面の種類:\n  全断面図（Full Section）   : 部品全体を切断\n  半断面図（Half Section）   : 対称部品の半分を断面に\n  部分断面図（Broken Section）: 一部だけ切り欠く\n  回転断面図（Revolved Section）: 断面をその場に90°回転して描く\n  展開断面図（Removed Section）: 断面を別の場所に描く\n</code></pre>\n<p>断面部分には<strong>ハッチング</strong>（斜線）を入れて、切断された実体を示します：</p>\n<table>\n<thead>\n<tr>\n<th>材料</th>\n<th>ハッチングパターン</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>鉄鋼</td>\n<td>45°細斜線</td>\n</tr>\n<tr>\n<td>アルミ</td>\n<td>横線</td>\n</tr>\n<tr>\n<td>銅・黄銅</td>\n<td>斜線+点</td>\n</tr>\n<tr>\n<td>ゴム・シール</td>\n<td>黒塗り</td>\n</tr>\n</tbody>\n</table>\n<h2>補助投影図（局部投影）</h2>\n<p>傾斜面は正面・側面・上面に正確に映らないため、傾斜面に<strong>平行な補助投影面</strong>を設けて描きます。</p>\n<pre><code>  ／──────────────────────────＼\n ／  傾斜面（正面図では歪む）   ＼\n ＼───────────────────────────／\n         ↓ 補助投影\n  ┌────────────────────┐\n  │  傾斜面の実形が現れる │\n  └────────────────────┘\n</code></pre>\n<h2>線の種類と意味</h2>\n<p>JIS B 0001 で定められた線の使い方：</p>\n<table>\n<thead>\n<tr>\n<th>線の種類</th>\n<th>太さ</th>\n<th>用途</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>外形線（実線・太）</td>\n<td>0.5〜0.7mm</td>\n<td>見える輪郭</td>\n</tr>\n<tr>\n<td>隠れ線（破線・細）</td>\n<td>0.25〜0.35mm</td>\n<td>見えない輪郭</td>\n</tr>\n<tr>\n<td>中心線（一点鎖線・細）</td>\n<td>0.25mm</td>\n<td>円・対称の中心、回転軸</td>\n</tr>\n<tr>\n<td>切断線（一点鎖線・太端部）</td>\n<td>両端太</td>\n<td>断面の切断位置</td>\n</tr>\n<tr>\n<td>寸法線・寸法補助線（細）</td>\n<td>0.25mm</td>\n<td>寸法記入</td>\n</tr>\n<tr>\n<td>破断線（フリーハンドに近い）</td>\n<td>細</td>\n<td>中断を示す</td>\n</tr>\n</tbody>\n</table>\n<h2>寸法記入のルール</h2>\n<pre><code>基本原則:\n  ① 寸法は一箇所に一度だけ記入（重複禁止）\n  ② 内形寸法・外形寸法を明確に\n  ③ 機能上重要な寸法は直接記入\n  ④ 計算で求められる寸法は不要\n  ⑤ 寸法は加工・測定しやすい場所に\n\n記号:\n  Ø  直径（Φ、丸棒・穴）\n  R  半径（フィレット・円弧）\n  □  正方形断面\n  ◇  板厚\n  SR 球の半径\n  SØ 球の直径\n</code></pre>\n<h2>公差（Tolerance）</h2>\n<p>設計寸法どおりに製造することは不可能なので、許容できる誤差範囲（公差）を指定します。</p>\n<pre><code>記入例: 50 ±0.05\n  → 49.95mm 〜 50.05mm の範囲なら合格\n\n  最大材料条件: 50.05mm（穴なら最小径、軸なら最大径）\n  最小材料条件: 49.95mm\n\nはめあい（JIS B 0401）:\n  Ø20 H7/f6 → 穴Ø20H7 と 軸Ø20f6 の組み合わせ\n  H7 = 穴側の公差クラス（大文字）\n  f6 = 軸側の公差クラス（小文字）\n</code></pre>\n<h2>表面粗さ</h2>\n<pre><code>記号:  √ Ra 1.6   （算術平均粗さ 1.6μm）\n\n代表的な粗さと加工法:\n  Ra 25   → 旋削（荒削り）\n  Ra 6.3  → フライス削り（通常）\n  Ra 1.6  → 旋削（仕上げ）\n  Ra 0.4  → 研削\n  Ra 0.1  → ラッピング・超仕上げ\n</code></pre>\n<h2>まとめ</h2>\n<pre><code>図面を読むチェックリスト:\n  □ 投影法マーク確認（第一角 or 第三角）\n  □ 正面図がどれか特定する\n  □ 各図の配置関係を把握する\n  □ 隠れ線（破線）で内部構造を確認\n  □ 断面図の切断位置を確認\n  □ 寸法・公差・表面粗さを読む\n  □ 材料・表題欄を確認\n</code></pre>\n<p>第一角法（日本・欧州）と第三角法（米国）は投影面の位置の考え方が逆なので、自動車・航空など国際的な仕事では両方を読めることが必須です。</p>",
+"prereq_full": [
+{
+"slug": "cad-basics",
+"title": "CADの基礎"
+}
+],
+"related_full": [
+{
+"slug": "cad-basics",
+"title": "CADの基礎"
+},
+{
+"slug": "3d-math",
+"title": "3次元の数学（座標系・変換行列・回転）"
+},
+{
+"slug": "engineering-sketch",
+"title": "ポンチ絵・エンジニアリングスケッチ"
 }
 ],
 "next_full": [],
@@ -6212,6 +6457,50 @@
 "title": "交流回路（AC・RMS・インピーダンス）"
 }
 ],
+"completed": false,
+"favorite": false
+},
+"3d-math": {
+"slug": "3d-math",
+"title": "3次元の数学（座標系・変換行列・回転）",
+"level": 3,
+"category": "CAD/設計",
+"related": [
+"cad-basics",
+"orthographic-projection"
+],
+"prereq": [
+"cad-basics"
+],
+"tags": [
+"cad",
+"math",
+"matrix",
+"3d",
+"rotation",
+"coordinate"
+],
+"next": [],
+"difficulty": "中級",
+"updated": "2026-06-16",
+"html": "<h2>なぜ3次元数学が必要か</h2>\n<p>CADソフトが3Dモデルを表示・操作・変換するとき、内部では<strong>行列演算</strong>が絶え間なく走っています。「部品を90°回転させる」「別の座標系に変換する」「カメラ視点を計算する」——これらはすべて行列の積で表現されます。</p>\n<p>ロボット工学・コンピュータグラフィックス・自動車シミュレーション・点群処理（LiDAR）でも同じ数学が使われます。</p>\n<h2>座標系の基礎</h2>\n<h3>直交座標系（デカルト座標系）</h3>\n<p>3D空間は <strong>X軸・Y軸・Z軸</strong> の3本の直交する軸で定義されます。</p>\n<pre><code>右手座標系（CAD・数学で一般的）:\n  右手の親指 → X軸（右方向）\n  人差し指   → Y軸（上方向）\n  中指       → Z軸（手前方向）\n\n左手座標系（DirectXなど一部のゲームエンジン）:\n  Z軸が奥方向に向く\n</code></pre>\n<p>点 P の位置は $(x, y, z)$ の3つの数値で表されます。</p>\n<h3>同次座標（ホモジニアス座標）</h3>\n<p>3D変換（平行移動を含む）を<strong>行列の積</strong>だけで統一的に扱うため、$(x, y, z)$ に $w=1$ を加えた <strong>4次元ベクトル</strong> を使います。</p>\n<p>$$\\mathbf{p} = \\begin{pmatrix} x \\ y \\ z \\ 1 \\end{pmatrix}$$</p>\n<p>これにより平行移動・回転・スケーリングをすべて $4\\times4$ 行列で表現できます。</p>\n<h2>3つの基本変換</h2>\n<h3>1. 平行移動（Translation）</h3>\n<p>点を $(t_x, t_y, t_z)$ だけ動かす：</p>\n<p>$$T = \\begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; t_x \\ 0 &amp; 1 &amp; 0 &amp; t_y \\ 0 &amp; 0 &amp; 1 &amp; t_z \\ 0 &amp; 0 &amp; 0 &amp; 1 \\end{pmatrix}$$</p>\n<p>$$\\mathbf{p'} = T \\mathbf{p} = \\begin{pmatrix} x + t_x \\ y + t_y \\ z + t_z \\ 1 \\end{pmatrix}$$</p>\n<h3>2. スケーリング（Scaling）</h3>\n<p>各軸方向に $s_x, s_y, s_z$ 倍に拡大・縮小：</p>\n<p>$$S = \\begin{pmatrix} s_x &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; s_y &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; s_z &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \\end{pmatrix}$$</p>\n<h3>3. 回転（Rotation）</h3>\n<h4>X軸周りの回転（角度 $\\theta$）</h4>\n<p>$$R_x(\\theta) = \\begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; \\cos\\theta &amp; -\\sin\\theta &amp; 0 \\ 0 &amp; \\sin\\theta &amp; \\cos\\theta &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \\end{pmatrix}$$</p>\n<h4>Y軸周りの回転</h4>\n<p>$$R_y(\\theta) = \\begin{pmatrix} \\cos\\theta &amp; 0 &amp; \\sin\\theta &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\ -\\sin\\theta &amp; 0 &amp; \\cos\\theta &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \\end{pmatrix}$$</p>\n<h4>Z軸周りの回転</h4>\n<p>$$R_z(\\theta) = \\begin{pmatrix} \\cos\\theta &amp; -\\sin\\theta &amp; 0 &amp; 0 \\ \\sin\\theta &amp; \\cos\\theta &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \\end{pmatrix}$$</p>\n<h2>変換の合成（行列の積）</h2>\n<p>複数の変換を<strong>行列の積</strong>で合成できます。ただし<strong>順番が大事</strong>（行列の積は非可換）。</p>\n<p>「Z軸で45°回転してから $(2, 0, 0)$ 平行移動」：</p>\n<p>$$M = T \\cdot R_z(45°)$$</p>\n<pre><code class=\"language-python\">import numpy as np\n\ndef rotation_z(deg):\n    r = np.radians(deg)\n    return np.array([\n        [np.cos(r), -np.sin(r), 0, 0],\n        [np.sin(r),  np.cos(r), 0, 0],\n        [0,          0,         1, 0],\n        [0,          0,         0, 1],\n    ])\n\ndef translation(tx, ty, tz):\n    return np.array([\n        [1, 0, 0, tx],\n        [0, 1, 0, ty],\n        [0, 0, 1, tz],\n        [0, 0, 0,  1],\n    ])\n\n# 点 P = (1, 0, 0)\nP = np.array([1, 0, 0, 1])\n\nRz = rotation_z(45)\nT  = translation(2, 0, 0)\n\n# 先に回転 → 後に平行移動\nM = T @ Rz\nP_new = M @ P\nprint(f&quot;変換後: ({P_new[0]:.3f}, {P_new[1]:.3f}, {P_new[2]:.3f})&quot;)\n# 変換後: (2.707, 0.707, 0.000)\n</code></pre>\n<blockquote>\n<p>⚠️ $T \\cdot R \\neq R \\cdot T$。「回転してから移動」と「移動してから回転」では結果が異なります。</p>\n</blockquote>\n<h2>オイラー角</h2>\n<p>回転を「X, Y, Z 軸周りの3つの角度」で表す方法を <strong>オイラー角</strong> と言います。CADや航空（ピッチ・ロール・ヨー）でよく使われます。</p>\n<pre><code>ヨー（Yaw）   ψ : Z軸（鉛直）周りの回転 → 左右を向く\nピッチ（Pitch）θ : Y軸周りの回転         → 上下を向く\nロール（Roll） φ : X軸周りの回転         → 傾く\n</code></pre>\n<p>$$R = R_z(\\psi) \\cdot R_y(\\theta) \\cdot R_x(\\phi)$$</p>\n<blockquote>\n<p>⚠️ <strong>ジンバルロック問題</strong>：特定の角度の組み合わせで1自由度が失われる現象。アニメーション・ロボットでは<strong>クォータニオン</strong>（四元数）が使われることが多い。</p>\n</blockquote>\n<h2>クォータニオン（四元数）</h2>\n<p>回転をジンバルロックなく表現する方法。単位クォータニオン $\\mathbf{q} = (w, x, y, z)$、$|\\mathbf{q}|=1$ で回転を表します。</p>\n<p>$$\\mathbf{q} = \\cos\\frac{\\theta}{2} + \\sin\\frac{\\theta}{2}(x\\mathbf{i} + y\\mathbf{j} + z\\mathbf{k})$$</p>\n<p>回転軸 $\\hat{n} = (n_x, n_y, n_z)$ の周りに角度 $\\theta$ 回転する場合：</p>\n<p>$$w = \\cos\\frac{\\theta}{2}, \\quad (x,y,z) = \\sin\\frac{\\theta}{2}(n_x, n_y, n_z)$$</p>\n<pre><code class=\"language-python\">import numpy as np\n\ndef quaternion_from_axis_angle(axis, angle_deg):\n    &quot;&quot;&quot;軸ベクトルと角度からクォータニオンを生成&quot;&quot;&quot;\n    axis = np.array(axis, dtype=float)\n    axis /= np.linalg.norm(axis)  # 単位ベクトル化\n    r = np.radians(angle_deg) / 2\n    return np.array([np.cos(r), *(np.sin(r) * axis)])\n\ndef quaternion_to_matrix(q):\n    &quot;&quot;&quot;クォータニオン → 3×3回転行列&quot;&quot;&quot;\n    w, x, y, z = q\n    return np.array([\n        [1-2*(y*y+z*z),   2*(x*y-w*z),   2*(x*z+w*y)],\n        [  2*(x*y+w*z), 1-2*(x*x+z*z),   2*(y*z-w*x)],\n        [  2*(x*z-w*y),   2*(y*z+w*x), 1-2*(x*x+y*y)],\n    ])\n\n# Z軸周りに45°回転\nq = quaternion_from_axis_angle([0, 0, 1], 45)\nR = quaternion_to_matrix(q)\nprint(&quot;回転行列:\\n&quot;, np.round(R, 3))\n</code></pre>\n<h2>点群への応用（LiDAR・3Dスキャン）</h2>\n<p>自動車のLiDARや3Dスキャナは大量の点群データを出力します。センサーの取り付け位置・姿勢に合わせて変換行列を適用することで、車両座標系に統合できます。</p>\n<pre><code class=\"language-python\">import numpy as np\n\ndef transform_pointcloud(points, R, t):\n    &quot;&quot;&quot;\n    points: (N, 3) の点群\n    R: 3x3 回転行列\n    t: (3,) 平行移動ベクトル\n    &quot;&quot;&quot;\n    return (R @ points.T).T + t\n\n# センサーが車両後方2m・高さ1.5mに取り付け\nR_sensor = rotation_z(180)[:3, :3]   # 180°回転（後ろ向き）\nt_sensor  = np.array([-2.0, 0.0, 1.5])\n\n# ダミー点群\npoints = np.array([\n    [1.0, 0.0, 0.0],\n    [2.0, 1.0, 0.0],\n    [3.0, 0.0, 0.5],\n])\n\ntransformed = transform_pointcloud(points, R_sensor, t_sensor)\nprint(&quot;変換後の点群:\\n&quot;, np.round(transformed, 3))\n</code></pre>\n<h2>投影変換（3D→2D）</h2>\n<p>3D空間の点を2Dスクリーンに映す変換です。CADのビューポートや正投影図でも使われます。</p>\n<h3>平行投影（正投影）</h3>\n<p>$$\\begin{pmatrix} u \\ v \\end{pmatrix} = \\begin{pmatrix} x \\ y \\end{pmatrix}$$</p>\n<p>（Z成分を捨てるだけ。CAD図面の正面図・側面図がこれ）</p>\n<h3>透視投影</h3>\n<p>$$u = \\frac{f \\cdot x}{z}, \\quad v = \\frac{f \\cdot y}{z}$$</p>\n<p>焦点距離 $f$、物体が遠いほど小さく見える（遠近法）。</p>\n<h2>まとめ</h2>\n<table>\n<thead>\n<tr>\n<th>概念</th>\n<th>表現</th>\n<th>用途</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>平行移動</td>\n<td>$4\\times4$ 行列</td>\n<td>位置変更</td>\n</tr>\n<tr>\n<td>回転（軸別）</td>\n<td>$4\\times4$ 行列</td>\n<td>向き変更</td>\n</tr>\n<tr>\n<td>スケーリング</td>\n<td>$4\\times4$ 行列</td>\n<td>拡大縮小</td>\n</tr>\n<tr>\n<td>オイラー角</td>\n<td>3つの角度</td>\n<td>直感的な回転表現</td>\n</tr>\n<tr>\n<td>クォータニオン</td>\n<td>$(w,x,y,z)$</td>\n<td>ジンバルロック回避</td>\n</tr>\n<tr>\n<td>変換合成</td>\n<td>行列の積 $M_2 \\cdot M_1$</td>\n<td>複数変換の合成</td>\n</tr>\n<tr>\n<td>正投影</td>\n<td>Z成分を捨てる</td>\n<td>CAD投影図</td>\n</tr>\n</tbody>\n</table>\n<p>次は「<strong>正投影図・第一角法・第三角法</strong>」でCAD図面の読み書きを学びます。</p>",
+"prereq_full": [
+{
+"slug": "cad-basics",
+"title": "CADの基礎"
+}
+],
+"related_full": [
+{
+"slug": "cad-basics",
+"title": "CADの基礎"
+},
+{
+"slug": "orthographic-projection",
+"title": "正投影図・第一角法・第三角法"
+}
+],
+"next_full": [],
 "completed": false,
 "favorite": false
 },
@@ -9649,6 +9938,20 @@
 "title": "V2X通信 (Vehicle-to-Everything)"
 }
 ],
+"cad-basics": [
+{
+"slug": "3d-math",
+"title": "3次元の数学（座標系・変換行列・回転）"
+},
+{
+"slug": "orthographic-projection",
+"title": "正投影図・第一角法・第三角法"
+},
+{
+"slug": "engineering-sketch",
+"title": "ポンチ絵・エンジニアリングスケッチ"
+}
+],
 "c-basics": [
 {
 "slug": "c-pointers",
@@ -10399,6 +10702,24 @@
 "title": "Transformerアーキテクチャ"
 }
 ],
+"engineering-sketch": [
+{
+"slug": "cad-basics",
+"title": "CADの基礎"
+},
+{
+"slug": "orthographic-projection",
+"title": "正投影図・第一角法・第三角法"
+},
+{
+"slug": "3d-math",
+"title": "3次元の数学（座標系・変換行列・回転）"
+},
+{
+"slug": "engineering-drawing",
+"title": "図面の読み方（自動車部品・機械製図）"
+}
+],
 "alternating-current": [
 {
 "slug": "ohms-law",
@@ -10579,6 +10900,24 @@
 {
 "slug": "multivariate-statistics",
 "title": "多変量統計（主成分分析・因子分析・判別分析）"
+}
+],
+"orthographic-projection": [
+{
+"slug": "cad-basics",
+"title": "CADの基礎"
+},
+{
+"slug": "engineering-sketch",
+"title": "ポンチ絵・エンジニアリングスケッチ"
+},
+{
+"slug": "3d-math",
+"title": "3次元の数学（座標系・変換行列・回転）"
+},
+{
+"slug": "engineering-drawing",
+"title": "図面の読み方（自動車部品・機械製図）"
 }
 ],
 "deep-learning": [
@@ -10779,6 +11118,20 @@
 {
 "slug": "electric-field",
 "title": "電場とクーロンの法則"
+}
+],
+"3d-math": [
+{
+"slug": "cad-basics",
+"title": "CADの基礎"
+},
+{
+"slug": "orthographic-projection",
+"title": "正投影図・第一角法・第三角法"
+},
+{
+"slug": "engineering-sketch",
+"title": "ポンチ絵・エンジニアリングスケッチ"
 }
 ],
 "avtp": [
@@ -14174,6 +14527,120 @@
 "difficulty": "中級",
 "updated": "2026-06-14",
 "excerpt": "「名前・年齢・スコア」のような**複数の異なる型のデータをひとまとめ**にしたい場面があります。配列は同じ型しか入れられませんが、**構造体（struct）** は異なる型を束ねられます。",
+"views": 0,
+"completed": false,
+"favorite": false
+}
+]
+},
+{
+"name": "CAD/設計",
+"articles": [
+{
+"slug": "cad-basics",
+"title": "CADの基礎",
+"level": 2,
+"category": "CAD/設計",
+"related": [
+"3d-math",
+"orthographic-projection",
+"engineering-sketch"
+],
+"next": [
+"3d-math",
+"orthographic-projection"
+],
+"tags": [
+"cad",
+"design",
+"engineering",
+"2d",
+"3d"
+],
+"difficulty": "初級",
+"updated": "2026-06-16",
+"excerpt": "**CAD（Computer-Aided Design）** とは、コンピュータを使って設計図や3Dモデルを作成するツール・技術の総称です。紙と鉛筆での手描き製図に取って代わり、現代の製造業・建築・電子機器設計の現場では不可欠な存在となって",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "engineering-sketch",
+"title": "ポンチ絵・エンジニアリングスケッチ",
+"level": 2,
+"category": "CAD/設計",
+"related": [
+"cad-basics",
+"orthographic-projection"
+],
+"tags": [
+"cad",
+"sketch",
+"drawing",
+"design",
+"communication"
+],
+"next": [],
+"difficulty": "初級",
+"updated": "2026-06-16",
+"excerpt": "**ポンチ絵（ぽんちえ）** とは、アイデアや構造を**フリーハンドで素早く描いた略図**のことです。英語では **engineering sketch** や **concept sketch** と呼ばれます。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "orthographic-projection",
+"title": "正投影図・第一角法・第三角法",
+"level": 2,
+"category": "CAD/設計",
+"related": [
+"cad-basics",
+"3d-math",
+"engineering-sketch"
+],
+"prereq": [
+"cad-basics"
+],
+"tags": [
+"cad",
+"drawing",
+"projection",
+"JIS",
+"ISO",
+"engineering"
+],
+"next": [],
+"difficulty": "初級",
+"updated": "2026-06-16",
+"excerpt": "立体（3Dモデル）を**平面の図面（2D）に落とし込む**方法が「投影」です。正投影（直投影）は、光線が投影面に対して**垂直・平行**に当たるとして描く手法で、寸法が正確に表れるため製造図面の基本です。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "3d-math",
+"title": "3次元の数学（座標系・変換行列・回転）",
+"level": 3,
+"category": "CAD/設計",
+"related": [
+"cad-basics",
+"orthographic-projection"
+],
+"prereq": [
+"cad-basics"
+],
+"tags": [
+"cad",
+"math",
+"matrix",
+"3d",
+"rotation",
+"coordinate"
+],
+"next": [],
+"difficulty": "中級",
+"updated": "2026-06-16",
+"excerpt": "CADソフトが3Dモデルを表示・操作・変換するとき、内部では**行列演算**が絶え間なく走っています。「部品を90°回転させる」「別の座標系に変換する」「カメラ視点を計算する」——これらはすべて行列の積で表現されます。",
 "views": 0,
 "completed": false,
 "favorite": false
