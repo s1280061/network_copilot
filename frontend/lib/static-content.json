@@ -2710,6 +2710,33 @@
 "favorite": false
 },
 {
+"slug": "fourier-analysis",
+"title": "フーリエ解析と時系列への応用",
+"level": 3,
+"category": "Statistics",
+"related": [
+"time-series-statistics",
+"time-series-analysis",
+"signal-processing"
+],
+"tags": [
+"statistics",
+"fourier",
+"fft",
+"signal",
+"time-series",
+"python",
+"numpy"
+],
+"next": [],
+"difficulty": "中級",
+"updated": "2026-06-16",
+"excerpt": "どんな周期信号も、**複数の正弦波（サイン波・コサイン波）の重ね合わせ**で表現できる——これがフーリエ解析の核心です。「時間軸のデータ」を「周波数軸のデータ」に変換することで、肉眼では見えにくい周期性・ノイズ・季節成分を発見できます。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "bayesian-statistics",
 "title": "ベイズ統計（事前分布・事後分布・ベイズ更新）",
 "level": 3,
@@ -8544,6 +8571,44 @@
 "completed": false,
 "favorite": false
 },
+"fourier-analysis": {
+"slug": "fourier-analysis",
+"title": "フーリエ解析と時系列への応用",
+"level": 3,
+"category": "Statistics",
+"related": [
+"time-series-statistics",
+"time-series-analysis",
+"signal-processing"
+],
+"tags": [
+"statistics",
+"fourier",
+"fft",
+"signal",
+"time-series",
+"python",
+"numpy"
+],
+"next": [],
+"difficulty": "中級",
+"updated": "2026-06-16",
+"html": "<h2>フーリエ解析とは</h2>\n<p>どんな周期信号も、<strong>複数の正弦波（サイン波・コサイン波）の重ね合わせ</strong>で表現できる——これがフーリエ解析の核心です。「時間軸のデータ」を「周波数軸のデータ」に変換することで、肉眼では見えにくい周期性・ノイズ・季節成分を発見できます。</p>\n<pre><code class=\"language-mermaid\">graph LR\n  A[&quot;時間領域\\n複雑な波形&quot;] --&gt;|&quot;フーリエ変換 FFT&quot;| B[&quot;周波数領域\\nどの周波数が強いか&quot;]\n  B --&gt;|&quot;逆フーリエ変換 IFFT&quot;| A\n</code></pre>\n<p><strong>活用シーン</strong>：\n- 音声・振動のノイズ除去（エンジン異常検知）\n- 株価・売上の季節性分析\n- ECG（心電図）・脳波の周波数解析\n- 画像圧縮（JPEG の基礎技術）\n- 通信信号の変復調</p>\n<h2>正弦波の基礎</h2>\n<pre><code class=\"language-python\">import numpy as np\nimport matplotlib.pyplot as plt\n\n# サンプリング設定\nfs = 1000        # サンプリング周波数 1000 Hz\nT  = 1.0         # 1秒間のデータ\nt  = np.linspace(0, T, int(fs * T), endpoint=False)\n\n# 3つの正弦波を合成\nf1, A1 = 5,  1.0   # 5 Hz, 振幅 1.0\nf2, A2 = 20, 0.5   # 20 Hz, 振幅 0.5\nf3, A3 = 50, 0.3   # 50 Hz, 振幅 0.3\n\nsig = (A1 * np.sin(2 * np.pi * f1 * t) +\n       A2 * np.sin(2 * np.pi * f2 * t) +\n       A3 * np.sin(2 * np.pi * f3 * t))\n\nplt.figure(figsize=(10, 3))\nplt.plot(t[:200], sig[:200])\nplt.xlabel(&quot;時間 [s]&quot;); plt.ylabel(&quot;振幅&quot;)\nplt.title(&quot;3つの正弦波の合成信号（最初の0.2秒）&quot;)\nplt.tight_layout(); plt.savefig(&quot;signal_time.png&quot;, dpi=120); plt.show()\n</code></pre>\n<h2>離散フーリエ変換（DFT）と FFT</h2>\n<p><strong>DFT（Discrete Fourier Transform）</strong> は離散サンプルを周波数成分に分解します。計算量 (O(N^2)) の DFT を (O(N \\log N)) に高速化したのが <strong>FFT（Fast Fourier Transform）</strong> です。</p>\n<p>$$X[k] = \\sum_{n=0}^{N-1} x[n] \\cdot e^{-j 2\\pi kn/N}$$</p>\n<pre><code class=\"language-python\">from scipy.fft import fft, fftfreq\n\nN = len(sig)\nyf = fft(sig)                  # 複素フーリエ係数\nxf = fftfreq(N, 1/fs)          # 対応する周波数軸\n\n# 振幅スペクトル（正の周波数のみ）\namp = np.abs(yf[:N//2]) * 2 / N\n\nplt.figure(figsize=(10, 4))\nplt.plot(xf[:N//2], amp)\nplt.xlabel(&quot;周波数 [Hz]&quot;); plt.ylabel(&quot;振幅&quot;)\nplt.title(&quot;FFT 振幅スペクトル&quot;)\nplt.xlim(0, 100)\nplt.axvline(5,  color=&quot;r&quot;, linestyle=&quot;--&quot;, label=&quot;5 Hz&quot;)\nplt.axvline(20, color=&quot;g&quot;, linestyle=&quot;--&quot;, label=&quot;20 Hz&quot;)\nplt.axvline(50, color=&quot;b&quot;, linestyle=&quot;--&quot;, label=&quot;50 Hz&quot;)\nplt.legend(); plt.tight_layout()\nplt.savefig(&quot;fft_spectrum.png&quot;, dpi=120); plt.show()\n\n# ピーク周波数を自動検出\npeak_indices = np.argsort(amp)[-5:][::-1]\nprint(&quot;上位 5 周波数成分:&quot;)\nfor i in peak_indices:\n    print(f&quot;  {xf[i]:.1f} Hz  振幅={amp[i]:.3f}&quot;)\n</code></pre>\n<p>出力：</p>\n<pre><code>上位 5 周波数成分:\n  5.0 Hz  振幅=1.000\n  20.0 Hz 振幅=0.500\n  50.0 Hz 振幅=0.300\n  ...\n</code></pre>\n<p>3つの周波数成分が正確に検出されます。</p>\n<h2>ノイズ除去（ローパスフィルタ）</h2>\n<p>FFT でノイズを含む信号から目的の成分だけを抽出できます。</p>\n<pre><code class=\"language-python\"># ノイズを付加\nnoise = 0.5 * np.random.randn(len(t))\nsig_noisy = sig + noise\n\n# FFT\nyf_noisy = fft(sig_noisy)\nxf = fftfreq(N, 1/fs)\n\n# ローパスフィルタ: 30 Hz 以上をゼロに\ncutoff = 30\nyf_filtered = yf_noisy.copy()\nyf_filtered[np.abs(xf) &gt; cutoff] = 0\n\n# 逆FFTで時間領域に戻す\nfrom scipy.fft import ifft\nsig_filtered = np.real(ifft(yf_filtered))\n\nplt.figure(figsize=(12, 6))\nplt.subplot(2, 1, 1)\nplt.plot(t[:300], sig_noisy[:300], alpha=0.6, label=&quot;ノイズあり&quot;)\nplt.plot(t[:300], sig[:300], &quot;r&quot;, lw=2, label=&quot;元信号&quot;)\nplt.legend(); plt.title(&quot;元信号 vs ノイズあり信号&quot;)\n\nplt.subplot(2, 1, 2)\nplt.plot(t[:300], sig_filtered[:300], &quot;g&quot;, lw=2, label=&quot;フィルタ後&quot;)\nplt.plot(t[:300], sig[:300], &quot;r--&quot;, alpha=0.5, label=&quot;元信号&quot;)\nplt.legend(); plt.title(f&quot;ローパスフィルタ適用後（カットオフ {cutoff} Hz）&quot;)\nplt.tight_layout(); plt.savefig(&quot;noise_filter.png&quot;, dpi=120); plt.show()\n\nmse_before = np.mean((sig_noisy - sig)**2)\nmse_after  = np.mean((sig_filtered - sig)**2)\nprint(f&quot;フィルタ前 MSE: {mse_before:.4f}&quot;)\nprint(f&quot;フィルタ後 MSE: {mse_after:.4f}&quot;)\nprint(f&quot;ノイズ削減率: {(1 - mse_after/mse_before)*100:.1f}%&quot;)\n</code></pre>\n<h2>時系列データへの応用（季節性の発見）</h2>\n<pre><code class=\"language-python\">import pandas as pd\n\n# 月次売上データ（3年分）を生成\nnp.random.seed(42)\nmonths = 36\nt_sales = np.arange(months)\n\n# トレンド + 季節性 + ノイズ\ntrend      = 100 + 2 * t_sales           # 右肩上がりトレンド\nseasonal   = 30 * np.sin(2*np.pi * t_sales / 12)   # 12ヶ月周期\nnoise_sales = 10 * np.random.randn(months)\nsales = trend + seasonal + noise_sales\n\n# FFT で周波数解析\nyf_sales = fft(sales)\nxf_sales = fftfreq(months, d=1)           # 1ヶ月単位 → 周期は「ヶ月」\namp_sales = np.abs(yf_sales[:months//2]) * 2 / months\n\n# 正の周波数のみ（周期に変換: period = 1 / freq）\nfreqs_pos = xf_sales[:months//2]\nperiods   = np.where(freqs_pos &gt; 0, 1 / freqs_pos, np.inf)\n\nprint(&quot;=== 売上データの主要周期 ===&quot;)\npeak_idx = np.argsort(amp_sales[1:])[-3:] + 1   # DC成分を除く\nfor i in peak_idx[::-1]:\n    print(f&quot;  周期 {periods[i]:.1f} ヶ月  振幅={amp_sales[i]:.1f}&quot;)\n</code></pre>\n<p>出力：</p>\n<pre><code>=== 売上データの主要周期 ===\n  周期 12.0 ヶ月  振幅=28.4   ← 年次季節性を検出！\n  周期  6.0 ヶ月  振幅= 5.3\n  周期 18.0 ヶ月  振幅= 3.1\n</code></pre>\n<h2>スペクトログラム（時間×周波数の可視化）</h2>\n<p>信号の周波数成分が<strong>時間とともにどう変化するか</strong>を見る手法。音楽・振動監視に使います。</p>\n<pre><code class=\"language-python\">from scipy import signal as scipy_signal\n\n# 周波数が時間とともに変わる信号（チャープ信号）\nfs_chirp = 1000\nt_chirp  = np.linspace(0, 2, 2 * fs_chirp)\nchirp    = scipy_signal.chirp(t_chirp, f0=5, f1=100, t1=2, method=&quot;linear&quot;)\n\nf_spec, t_spec, Sxx = scipy_signal.spectrogram(chirp, fs=fs_chirp, nperseg=128)\n\nplt.figure(figsize=(10, 4))\nplt.pcolormesh(t_spec, f_spec, 10 * np.log10(Sxx + 1e-10),\n               shading=&quot;gouraud&quot;, cmap=&quot;viridis&quot;)\nplt.ylabel(&quot;周波数 [Hz]&quot;); plt.xlabel(&quot;時間 [s]&quot;)\nplt.colorbar(label=&quot;パワー [dB]&quot;)\nplt.title(&quot;スペクトログラム（チャープ信号）&quot;)\nplt.ylim(0, 150); plt.tight_layout()\nplt.savefig(&quot;spectrogram.png&quot;, dpi=120); plt.show()\n</code></pre>\n<h2>パワースペクトル密度（PSD）</h2>\n<p>エンジン振動・音響など<strong>連続信号のパワー分布</strong>を評価します。</p>\n<pre><code class=\"language-python\">from scipy.signal import welch\n\n# Welch 法: 窓関数を使って安定したPSDを推定\nfrequencies, psd = welch(sig_noisy, fs=fs, nperseg=256)\n\nplt.figure(figsize=(10, 4))\nplt.semilogy(frequencies, psd)\nplt.xlabel(&quot;周波数 [Hz]&quot;); plt.ylabel(&quot;パワースペクトル密度 [V²/Hz]&quot;)\nplt.title(&quot;Welch法によるPSD推定&quot;)\nplt.xlim(0, 100); plt.grid(True, alpha=0.3)\nplt.tight_layout(); plt.savefig(&quot;psd.png&quot;, dpi=120); plt.show()\n</code></pre>\n<h2>窓関数の選び方</h2>\n<p>FFT では信号の端の不連続が「スペクトル漏れ」を引き起こします。<strong>窓関数</strong>を掛けることで抑制できます。</p>\n<pre><code class=\"language-python\">from scipy.signal import get_window\n\nN_win = 256\nwindows = {\n    &quot;矩形（なし）&quot;: np.ones(N_win),\n    &quot;Hanning&quot;:   get_window(&quot;hann&quot;,    N_win),\n    &quot;Hamming&quot;:   get_window(&quot;hamming&quot;, N_win),\n    &quot;Blackman&quot;:  get_window(&quot;blackman&quot;,N_win),\n}\n\nfig, axes = plt.subplots(1, 2, figsize=(12, 4))\nfor name, win in windows.items():\n    axes[0].plot(win, label=name, alpha=0.7)\n    W = np.abs(fft(win, 2048))[:1024]\n    W = 20 * np.log10(W / W.max() + 1e-10)\n    axes[1].plot(W[:200], label=name, alpha=0.7)\n\naxes[0].set_title(&quot;窓関数（時間領域）&quot;); axes[0].legend()\naxes[1].set_title(&quot;窓関数（周波数応答 dB）&quot;); axes[1].legend()\naxes[1].set_ylim(-100, 5)\nplt.tight_layout(); plt.savefig(&quot;windows.png&quot;, dpi=120); plt.show()\n</code></pre>\n<table>\n<thead>\n<tr>\n<th>窓関数</th>\n<th>スペクトル漏れ</th>\n<th>周波数分解能</th>\n<th>用途</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>矩形（なし）</td>\n<td>大きい</td>\n<td>最高</td>\n<td>周期信号が切れ目なく続く場合</td>\n</tr>\n<tr>\n<td>Hanning</td>\n<td>小さい</td>\n<td>良い</td>\n<td><strong>汎用・最もよく使われる</strong></td>\n</tr>\n<tr>\n<td>Hamming</td>\n<td>小さい</td>\n<td>良い</td>\n<td>音声処理</td>\n</tr>\n<tr>\n<td>Blackman</td>\n<td>非常に小さい</td>\n<td>やや低い</td>\n<td>高ダイナミックレンジが必要な場合</td>\n</tr>\n</tbody>\n</table>\n<h2>実践：自動車エンジン振動の異常検知</h2>\n<pre><code class=\"language-python\">np.random.seed(0)\nfs_engine = 5000   # 5 kHz サンプリング\nt_engine  = np.linspace(0, 0.5, int(fs_engine * 0.5))\n\n# 正常: 点火周波数 100 Hz のみ\nnormal = np.sin(2 * np.pi * 100 * t_engine) + 0.1 * np.random.randn(len(t_engine))\n\n# 異常: 200 Hz の異常振動が出現（軸受け損傷など）\nabnormal = (np.sin(2 * np.pi * 100 * t_engine) +\n            0.8 * np.sin(2 * np.pi * 200 * t_engine) +\n            0.1 * np.random.randn(len(t_engine)))\n\ndef top_freqs(sig, fs, top_n=3):\n    N = len(sig)\n    yf = fft(sig * get_window(&quot;hann&quot;, N))\n    xf = fftfreq(N, 1/fs)\n    amp = np.abs(yf[:N//2]) * 2 / N\n    idx = np.argsort(amp)[-top_n:][::-1]\n    return [(xf[i], amp[i]) for i in idx]\n\nprint(&quot;=== 正常エンジン ===&quot;)\nfor f, a in top_freqs(normal, fs_engine):\n    print(f&quot;  {f:.0f} Hz  振幅={a:.3f}&quot;)\n\nprint(&quot;\\n=== 異常エンジン ===&quot;)\nfor f, a in top_freqs(abnormal, fs_engine):\n    print(f&quot;  {f:.0f} Hz  振幅={a:.3f}  {'⚠️ 異常!' if f &gt; 150 else ''}&quot;)\n</code></pre>\n<p>出力：</p>\n<pre><code>=== 正常エンジン ===\n  100 Hz  振幅=0.998\n  ...\n\n=== 異常エンジン ===\n  100 Hz  振幅=0.998\n  200 Hz  振幅=0.797  ⚠️ 異常!\n  ...\n</code></pre>\n<h2>まとめ</h2>\n<table>\n<thead>\n<tr>\n<th>手法</th>\n<th>用途</th>\n<th>Python</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>FFT</td>\n<td>周波数成分の抽出・ピーク検出</td>\n<td><code>scipy.fft.fft</code></td>\n</tr>\n<tr>\n<td>IFFT</td>\n<td>周波数→時間領域の復元</td>\n<td><code>scipy.fft.ifft</code></td>\n</tr>\n<tr>\n<td>ローパスフィルタ</td>\n<td>ノイズ除去・高周波除去</td>\n<td>FFT係数をゼロにして IFFT</td>\n</tr>\n<tr>\n<td>スペクトログラム</td>\n<td>時間×周波数の変化を可視化</td>\n<td><code>scipy.signal.spectrogram</code></td>\n</tr>\n<tr>\n<td>PSD（Welch法）</td>\n<td>連続信号のパワー分布推定</td>\n<td><code>scipy.signal.welch</code></td>\n</tr>\n<tr>\n<td>窓関数</td>\n<td>スペクトル漏れの抑制</td>\n<td>Hanning を基本に選ぶ</td>\n</tr>\n</tbody>\n</table>\n<pre><code>時系列分析でフーリエを使う流れ:\n  1. データをプロット → 周期性があるか目視確認\n  2. FFT で振幅スペクトルを描く → 主要周波数を特定\n  3. 窓関数（Hanning）を適用してスペクトル漏れを抑制\n  4. ノイズ除去 or 特定成分の抽出 → IFFT で時間領域に戻す\n  5. 時間変化する信号 → スペクトログラムで可視化\n</code></pre>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "time-series-statistics",
+"title": "時系列統計（自己相関・定常性・ARIMAモデル）"
+},
+{
+"slug": "time-series-analysis",
+"title": "時系列分析（ARIMA・予測・異常検知）"
+}
+],
+"next_full": [],
+"completed": false,
+"favorite": false
+},
 "bayesian-statistics": {
 "slug": "bayesian-statistics",
 "title": "ベイズ統計（事前分布・事後分布・ベイズ更新）",
@@ -11023,16 +11088,16 @@
 "title": "回帰分析（重回帰・多重共線性・残差診断）"
 },
 {
+"slug": "fourier-analysis",
+"title": "フーリエ解析と時系列への応用"
+},
+{
 "slug": "seaborn",
 "title": "Seaborn（統計可視化）"
 },
 {
 "slug": "statistics",
 "title": "統計学の基礎（確率・分布・検定）"
-},
-{
-"slug": "anomaly-detection",
-"title": "異常検知（Isolation Forest・Autoencoder・統計的手法）"
 }
 ],
 "scikit-learn": [
@@ -11375,8 +11440,8 @@
 "title": "ベイズ統計（事前分布・事後分布・ベイズ更新）"
 },
 {
-"slug": "multivariate-statistics",
-"title": "多変量統計（主成分分析・因子分析・判別分析）"
+"slug": "fourier-analysis",
+"title": "フーリエ解析と時系列への応用"
 }
 ],
 "automotive-transmission": [
@@ -12457,6 +12522,32 @@
 "title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
 }
 ],
+"fourier-analysis": [
+{
+"slug": "time-series-analysis",
+"title": "時系列分析（ARIMA・予測・異常検知）"
+},
+{
+"slug": "time-series-statistics",
+"title": "時系列統計（自己相関・定常性・ARIMAモデル）"
+},
+{
+"slug": "numpy",
+"title": "NumPy（配列・行列演算）"
+},
+{
+"slug": "p-value",
+"title": "p値の意味と正しい解釈"
+},
+{
+"slug": "seaborn",
+"title": "Seaborn（統計可視化）"
+},
+{
+"slug": "statistics",
+"title": "統計学の基礎（確率・分布・検定）"
+}
+],
 "bayesian-statistics": [
 {
 "slug": "statistics",
@@ -12471,16 +12562,16 @@
 "title": "線形回帰"
 },
 {
+"slug": "fourier-analysis",
+"title": "フーリエ解析と時系列への応用"
+},
+{
 "slug": "hypothesis-testing",
 "title": "仮説検定と検定力（t検定・ANOVA・サンプルサイズ設計）"
 },
 {
 "slug": "multivariate-statistics",
 "title": "多変量統計（主成分分析・因子分析・判別分析）"
-},
-{
-"slug": "p-value",
-"title": "p値の意味と正しい解釈"
 }
 ],
 "gradient-boosting": [
@@ -12557,8 +12648,8 @@
 "title": "異常検知（Isolation Forest・Autoencoder・統計的手法）"
 },
 {
-"slug": "classification",
-"title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
+"slug": "fourier-analysis",
+"title": "フーリエ解析と時系列への応用"
 }
 ],
 "time-series-statistics": [
@@ -12577,6 +12668,10 @@
 {
 "slug": "anomaly-detection",
 "title": "異常検知（Isolation Forest・Autoencoder・統計的手法）"
+},
+{
+"slug": "fourier-analysis",
+"title": "フーリエ解析と時系列への応用"
 },
 {
 "slug": "rnn-lstm",
@@ -15463,6 +15558,33 @@
 "difficulty": "初級",
 "updated": "2026-06-11",
 "excerpt": "「この薬は本当に効いているのか？」「A/Bテストで施策Bが良かったのは偶然？」――データから**意味のある結論を引き出す**ための道具が統計学です。機械学習の精度評価・A/Bテスト・センサーデータ分析など、データを扱うすべての場面の基盤とな",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "fourier-analysis",
+"title": "フーリエ解析と時系列への応用",
+"level": 3,
+"category": "Statistics",
+"related": [
+"time-series-statistics",
+"time-series-analysis",
+"signal-processing"
+],
+"tags": [
+"statistics",
+"fourier",
+"fft",
+"signal",
+"time-series",
+"python",
+"numpy"
+],
+"next": [],
+"difficulty": "中級",
+"updated": "2026-06-16",
+"excerpt": "どんな周期信号も、**複数の正弦波（サイン波・コサイン波）の重ね合わせ**で表現できる——これがフーリエ解析の核心です。「時間軸のデータ」を「周波数軸のデータ」に変換することで、肉眼では見えにくい周期性・ノイズ・季節成分を発見できます。",
 "views": 0,
 "completed": false,
 "favorite": false

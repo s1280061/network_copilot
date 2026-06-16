@@ -118,6 +118,7 @@ _CATEGORY_MAP = {
     "langchain": "GenAI",
     "fine-tuning": "GenAI",
     # アルゴリズム
+    "fourier-analysis":        "Statistics",
     "p-value":                 "Statistics",
     "hierarchical-clustering": "ML",
     "big-o-notation":    "アルゴリズム",
