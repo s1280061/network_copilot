@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
-import { getComments, Comment } from "@/lib/api";
+import { Comment } from "@/lib/api";
 import staticContent from "@/lib/static-content.json";
 
 interface ThreadSummary {
@@ -15,9 +15,27 @@ interface ThreadSummary {
 
 const SC: any = staticContent;
 
+// 記事メタデータをslugで引けるマップ
+const articleMap: Record<string, { title: string; category: string }> = {};
+for (const a of (SC.articles as any[])) {
+  articleMap[a.slug] = { title: a.title, category: a.category };
+}
+
 function formatDate(s: string) {
   const d = new Date(s);
+  if (isNaN(d.getTime())) return s;
   return `${d.getFullYear()}/${String(d.getMonth() + 1).padStart(2, "0")}/${String(d.getDate()).padStart(2, "0")} ${String(d.getHours()).padStart(2, "0")}:${String(d.getMinutes()).padStart(2, "0")}`;
+}
+
+async function fetchAllComments(): Promise<Comment[]> {
+  try {
+    const res = await fetch("/api/comments", { cache: "no-store" });
+    if (!res.ok) return [];
+    const d = await res.json();
+    return d.comments as Comment[];
+  } catch {
+    return [];
+  }
 }
 
 export default function BoardPage() {
@@ -27,21 +45,31 @@ export default function BoardPage() {
 
   const load = useCallback(async () => {
     setLoading(true);
-    const articles: any[] = SC.articles || [];
-    // コメントがある記事だけ並べる（並行フェッチ）
-    const results = await Promise.all(
-      articles.map(async (a) => {
-        const comments = await getComments(a.slug);
-        return { slug: a.slug, title: a.title, category: a.category, comments };
+    const allComments = await fetchAllComments();
+
+    // slug ごとにグループ化
+    const grouped: Record<string, Comment[]> = {};
+    for (const c of allComments) {
+      (grouped[c.slug] ??= []).push(c);
+    }
+
+    const active: ThreadSummary[] = Object.entries(grouped)
+      .map(([slug, comments]) => {
+        const meta = articleMap[slug] ?? { title: slug, category: "" };
+        // created_at 昇順に並べてから最後を「最終」とする
+        const sorted = [...comments].sort((a, b) =>
+          a.created_at < b.created_at ? -1 : 1
+        );
+        return {
+          slug,
+          title: meta.title,
+          category: meta.category,
+          comments: sorted,
+          lastAt: sorted[sorted.length - 1].created_at,
+        };
       })
-    );
-    const active = results
-      .filter((r) => r.comments.length > 0)
-      .map((r) => ({
-        ...r,
-        lastAt: r.comments[r.comments.length - 1].created_at,
-      }))
       .sort((a, b) => (a.lastAt < b.lastAt ? 1 : -1));
+
     setThreads(active);
     setLoading(false);
   }, []);
@@ -52,9 +80,12 @@ export default function BoardPage() {
     <div className="max-w-2xl mx-auto">
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-xl font-bold text-slate-800">📝 掲示板</h1>
-        <span className="text-xs text-slate-400">
-          コメントがある記事スレッド一覧
-        </span>
+        <button
+          onClick={load}
+          className="text-xs text-slate-400 hover:text-indigo-600 transition"
+        >
+          🔄 更新
+        </button>
       </div>
 
       {loading ? (
@@ -90,7 +121,6 @@ export default function BoardPage() {
                         最終: {formatDate(t.lastAt)}
                       </span>
                     </div>
-                    {/* 最新コメントのプレビュー */}
                     <p className="text-xs text-slate-500 mt-1 truncate">
                       <span className="font-mono text-green-700">
                         ID:{t.comments[t.comments.length - 1].user_id}
