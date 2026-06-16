@@ -215,10 +215,10 @@ export interface Comment {
   created_at: string;
 }
 
+// Comments always use the Next.js API route (works without a separate backend)
 export async function getComments(slug: string): Promise<Comment[]> {
-  if (!HAS_BACKEND) return [];
   try {
-    const res = await fetch(`${BASE}/api/comments/${slug}`, { cache: "no-store" });
+    const res = await fetch(`/api/comments/${slug}`, { cache: "no-store" });
     const d = await res.json();
     return d.comments as Comment[];
   } catch {
@@ -231,9 +231,8 @@ export async function postComment(
   user_id: string,
   content: string
 ): Promise<Comment | null> {
-  if (!HAS_BACKEND) return null;
   try {
-    const res = await fetch(`${BASE}/api/comments/${slug}`, {
+    const res = await fetch(`/api/comments/${slug}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ user_id, content }),
