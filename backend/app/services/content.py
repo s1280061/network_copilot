@@ -19,7 +19,7 @@ _FRONTMATTER_RE = re.compile(r"^---\s*\n(.*?)\n---\s*\n(.*)$", re.DOTALL)
 _LINK_RE = re.compile(r"\[\[([a-z0-9\-]+)\]\]")
 
 # note-style top categories shown on the home screen.
-CATEGORIES = ["Ethernet", "TCP/IP", "PCAP", "SOME/IP", "AUTOSAR", "SDV", "Automotive Bus", "Diagnostics", "Security", "Howto", "Python", "C言語", "CAD/設計", "Statistics", "ML", "DL", "GenAI", "CV", "Electronics", "Automotive", "Wireless"]
+CATEGORIES = ["Ethernet", "TCP/IP", "PCAP", "SOME/IP", "AUTOSAR", "SDV", "Automotive Bus", "Diagnostics", "Security", "Howto", "Python", "アルゴリズム", "C言語", "CAD/設計", "Statistics", "ML", "DL", "GenAI", "CV", "Electronics", "Automotive", "Wireless"]
 
 # slug -> category (overridable via frontmatter `category`).
 _CATEGORY_MAP = {
@@ -117,6 +117,11 @@ _CATEGORY_MAP = {
     # GenAI additional
     "langchain": "GenAI",
     "fine-tuning": "GenAI",
+    # アルゴリズム
+    "big-o-notation":    "アルゴリズム",
+    "data-structures":   "アルゴリズム",
+    "sorting-algorithms": "アルゴリズム",
+    "search-algorithms": "アルゴリズム",
     # C言語
     "c-basics":    "C言語",
     "c-pointers":  "C言語",
