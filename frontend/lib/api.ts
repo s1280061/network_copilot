@@ -107,60 +107,59 @@ export const setProgress = (slug: string, completed: boolean) =>
     }
   );
 
-// In static mode (no backend, e.g. Vercel), favorites are persisted in
-// localStorage so the feature works without a server.
-const FAV_KEY = "nc_favorites";
+// Favorites are stored server-side (Next.js API route) keyed by the same
+// anonymous user_id used for comments, so they persist across sessions.
 type FavItem = Ref & { created_at: string };
 
-function readLocalFavorites(): FavItem[] {
-  if (typeof window === "undefined") return [];
+function getUserId(): string {
+  if (typeof window === "undefined") return "";
+  const stored = localStorage.getItem("nc_user_id");
+  if (stored) return stored;
+  const id = Math.random().toString(36).slice(2, 10).toUpperCase();
+  localStorage.setItem("nc_user_id", id);
+  return id;
+}
+
+export const addFavorite = async (slug: string, title: string): Promise<{ ok: boolean }> => {
+  const userId = getUserId();
   try {
-    return JSON.parse(localStorage.getItem(FAV_KEY) || "[]");
-  } catch {
-    return [];
-  }
-}
-
-function writeLocalFavorites(favs: FavItem[]) {
-  if (typeof window === "undefined") return;
-  localStorage.setItem(FAV_KEY, JSON.stringify(favs));
-}
-
-export const addFavorite = (slug: string, title: string) =>
-  liveOrStatic<{ ok: boolean }>(
-    "/api/favorites",
-    () => {
-      const favs = readLocalFavorites();
-      if (!favs.some((f) => f.slug === slug)) {
-        favs.unshift({ slug, title, created_at: new Date().toISOString() });
-        writeLocalFavorites(favs);
-      }
-      return { ok: true };
-    },
-    {
+    await fetch("/api/favorites", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ slug, title }),
-    }
-  );
+      body: JSON.stringify({ user_id: userId, slug, title }),
+    });
+  } catch {}
+  return { ok: true };
+};
 
-export const removeFavorite = (slug: string) =>
-  liveOrStatic<{ ok: boolean }>(
-    `/api/favorites/${slug}`,
-    () => {
-      writeLocalFavorites(readLocalFavorites().filter((f) => f.slug !== slug));
-      return { ok: true };
-    },
-    { method: "DELETE" }
-  );
+export const removeFavorite = async (slug: string): Promise<{ ok: boolean }> => {
+  const userId = getUserId();
+  try {
+    await fetch(`/api/favorites/${slug}?user_id=${encodeURIComponent(userId)}`, {
+      method: "DELETE",
+    });
+  } catch {}
+  return { ok: true };
+};
 
-export const getFavorites = () =>
-  liveOrStatic<{ favorites: FavItem[] }>("/api/favorites", () => ({
-    favorites: readLocalFavorites(),
-  }));
+export const getFavorites = async (): Promise<{ favorites: FavItem[] }> => {
+  const userId = getUserId();
+  if (!userId) return { favorites: [] };
+  try {
+    const res = await fetch(`/api/favorites?user_id=${encodeURIComponent(userId)}`, {
+      cache: "no-store",
+    });
+    const d = await res.json();
+    return { favorites: d.favorites ?? [] };
+  } catch {
+    return { favorites: [] };
+  }
+};
 
-export const isFavorite = (slug: string): boolean =>
-  readLocalFavorites().some((f) => f.slug === slug);
+export const isFavorite = async (slug: string): Promise<boolean> => {
+  const { favorites } = await getFavorites();
+  return favorites.some((f) => f.slug === slug);
+};
 
 export const getHistory = () =>
   liveOrStatic<History>("/api/history", () => ({
