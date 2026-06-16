@@ -15,7 +15,7 @@ tags: [c, pointer, memory, address]
 
 ```mermaid
 graph LR
-  subgraph メモリ
+  subgraph "メモリ"
     A["アドレス: 0x1000<br/>変数 x = 42"]
     B["アドレス: 0x2000<br/>ポインタ p = 0x1000"]
   end
@@ -117,7 +117,7 @@ int main(void) {
 
 ```mermaid
 graph LR
-  subgraph メモリ（連続領域）
+  subgraph "メモリ（連続領域）"
     A0["0x1000: 10"]
     A1["0x1004: 20"]
     A2["0x1008: 30"]
@@ -239,7 +239,7 @@ int main(void) {
 
 ```mermaid
 graph TB
-  subgraph プロセスのメモリ空間
+  subgraph "プロセスのメモリ空間"
     direction TB
     A["テキスト領域（コード）"]
     B["データ領域（グローバル変数）"]
