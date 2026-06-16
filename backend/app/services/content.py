@@ -118,6 +118,7 @@ _CATEGORY_MAP = {
     "langchain": "GenAI",
     "fine-tuning": "GenAI",
     # アルゴリズム
+    "hierarchical-clustering": "ML",
     "big-o-notation":    "アルゴリズム",
     "data-structures":   "アルゴリズム",
     "sorting-algorithms": "アルゴリズム",

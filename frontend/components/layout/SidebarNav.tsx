@@ -13,6 +13,7 @@ const NAV = [
   { href: "/glossary?tab=DL", label: "深層学習", icon: "🧠", tab: "DL" },
   { href: "/glossary?tab=GenAI", label: "生成AI", icon: "✨", tab: "GenAI" },
   { href: "/glossary?tab=Python", label: "Python", icon: "🐍", tab: "Python" },
+  { href: "/glossary?tab=アルゴリズム", label: "アルゴリズム", icon: "⚙️", tab: "アルゴリズム" },
   { href: "/glossary?tab=C言語", label: "C言語", icon: "🔧", tab: "C言語" },
   { href: "/glossary?tab=CAD%2F設計", label: "CAD/設計", icon: "📐", tab: "CAD/設計" },
   { href: "/chat", label: "AIチャット", icon: "💬" },

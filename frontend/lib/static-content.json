@@ -2926,6 +2926,35 @@
 "favorite": false
 },
 {
+"slug": "hierarchical-clustering",
+"title": "階層的クラスタリング",
+"level": 3,
+"category": "ML",
+"related": [
+"clustering",
+"dimensionality-reduction",
+"evaluation-metrics"
+],
+"prereq": [
+"clustering"
+],
+"tags": [
+"ml",
+"clustering",
+"dendrogram",
+"ward",
+"scipy",
+"unsupervised"
+],
+"next": [],
+"difficulty": "中級",
+"updated": "2026-06-16",
+"excerpt": "k-meansがクラスタ数 \\(k\\) を事前に決める必要があるのに対し、**階層的クラスタリング**はデータを段階的に合体（または分割）させ、**どのクラスタ数でも後から選べる**ツリー構造（デンドログラム）を作ります。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "autosar",
 "title": "AUTOSAR",
 "level": 4,
@@ -8882,6 +8911,55 @@
 "completed": false,
 "favorite": false
 },
+"hierarchical-clustering": {
+"slug": "hierarchical-clustering",
+"title": "階層的クラスタリング",
+"level": 3,
+"category": "ML",
+"related": [
+"clustering",
+"dimensionality-reduction",
+"evaluation-metrics"
+],
+"prereq": [
+"clustering"
+],
+"tags": [
+"ml",
+"clustering",
+"dendrogram",
+"ward",
+"scipy",
+"unsupervised"
+],
+"next": [],
+"difficulty": "中級",
+"updated": "2026-06-16",
+"html": "<h2>階層的クラスタリングとは</h2>\n<p>k-meansがクラスタ数 (k) を事前に決める必要があるのに対し、<strong>階層的クラスタリング</strong>はデータを段階的に合体（または分割）させ、<strong>どのクラスタ数でも後から選べる</strong>ツリー構造（デンドログラム）を作ります。</p>\n<pre><code class=\"language-mermaid\">graph TB\n  A[&quot;5つのデータ点\\na, b, c, d, e&quot;]\n  A --&gt; B[&quot;最も近い2点を合体\\n(a,b)&quot;]\n  B --&gt; C[&quot;次に近い組を合体\\n(a,b,c)&quot;]\n  C --&gt; D[&quot;さらに合体\\n(a,b,c,d)&quot;]\n  D --&gt; E[&quot;全体が1クラスタ\\n(a,b,c,d,e)&quot;]\n  B --&gt; F[&quot;デンドログラム\\n（木構造で可視化）&quot;]\n  C --&gt; F\n  D --&gt; F\n  E --&gt; F\n</code></pre>\n<p><strong>活用シーン</strong>：\n- 遺伝子発現データの解析（どの遺伝子が似た挙動か）\n- 顧客セグメントの自然な構造を発見\n- 文書・ニュース記事のグルーピング\n- クラスタ数が未知の探索的分析</p>\n<h2>2種類の手法</h2>\n<table>\n<thead>\n<tr>\n<th>手法</th>\n<th>方向</th>\n<th>特徴</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><strong>凝集型（Agglomerative）</strong></td>\n<td>下から上（各点→1クラスタ）</td>\n<td>一般的・実用的</td>\n</tr>\n<tr>\n<td><strong>分割型（Divisive）</strong></td>\n<td>上から下（1クラスタ→各点）</td>\n<td>計算コストが高い</td>\n</tr>\n</tbody>\n</table>\n<p>以下では凝集型に絞って解説します。</p>\n<h2>距離の測り方（リンケージ基準）</h2>\n<p>2つのクラスタ間の距離をどう定義するかで結果が大きく変わります。</p>\n<table>\n<thead>\n<tr>\n<th>リンケージ</th>\n<th>定義</th>\n<th>特徴</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><strong>単連結（Single）</strong></td>\n<td>最も近い2点間の距離</td>\n<td>鎖状の細長いクラスタになりやすい</td>\n</tr>\n<tr>\n<td><strong>完全連結（Complete）</strong></td>\n<td>最も遠い2点間の距離</td>\n<td>コンパクトなクラスタ・外れ値に敏感</td>\n</tr>\n<tr>\n<td><strong>平均連結（Average）</strong></td>\n<td>全ペアの平均距離</td>\n<td>バランスが良い</td>\n</tr>\n<tr>\n<td><strong>Ward法</strong></td>\n<td>合体後の分散増加量を最小化</td>\n<td>等サイズ・球状クラスタに強い・<strong>最もよく使われる</strong></td>\n</tr>\n</tbody>\n</table>\n<pre><code>単連結: dist(C1, C2) = min_{x∈C1, y∈C2} d(x, y)\n完全連結: dist(C1, C2) = max_{x∈C1, y∈C2} d(x, y)\n平均連結: dist(C1, C2) = (1/|C1||C2|) Σ d(x, y)\nWard: dist(C1, C2) = Δ分散 = (n1*n2)/(n1+n2) * ||μ1-μ2||²\n</code></pre>\n<h2>Pythonによる実装</h2>\n<h3>SciPy を使った基本例</h3>\n<pre><code class=\"language-python\">import numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.cluster.hierarchy import dendrogram, linkage, fcluster\nfrom scipy.spatial.distance import pdist\n\n# サンプルデータ（3つのグループ）\nnp.random.seed(42)\nX = np.vstack([\n    np.random.randn(10, 2) + [0, 0],\n    np.random.randn(10, 2) + [5, 0],\n    np.random.randn(10, 2) + [2.5, 4],\n])\nlabels_true = [0]*10 + [1]*10 + [2]*10\n\n# 階層的クラスタリング（Ward法）\nZ = linkage(X, method=&quot;ward&quot;, metric=&quot;euclidean&quot;)\n# Z: (n-1, 4) の配列\n# 各行 = [合体したクラスタ1, クラスタ2, 距離, マージ後のサイズ]\nprint(&quot;連結行列（最初の5行）:&quot;)\nprint(np.round(Z[:5], 2))\n\n# デンドログラムの描画\nplt.figure(figsize=(10, 5))\ndendrogram(Z, leaf_font_size=10, color_threshold=5)\nplt.title(&quot;Ward法によるデンドログラム&quot;)\nplt.xlabel(&quot;データ点のインデックス&quot;)\nplt.ylabel(&quot;距離（クラスタ間）&quot;)\nplt.tight_layout()\nplt.savefig(&quot;dendrogram.png&quot;, dpi=120)\nplt.show()\n</code></pre>\n<h3>クラスタ数を指定して切り出す</h3>\n<pre><code class=\"language-python\"># 方法1: クラスタ数 k を指定\nk = 3\nlabels = fcluster(Z, t=k, criterion=&quot;maxclust&quot;)\nprint(f&quot;k={k} でのラベル: {labels}&quot;)\n# [1 1 1 ... 2 2 2 ... 3 3 3]  ← 各点のクラスタ番号\n\n# 方法2: 距離閾値で切り出す\nthreshold = 5.0\nlabels2 = fcluster(Z, t=threshold, criterion=&quot;distance&quot;)\nprint(f&quot;閾値={threshold} でのラベル: {labels2}&quot;)\n</code></pre>\n<h3>scikit-learn版</h3>\n<pre><code class=\"language-python\">from sklearn.cluster import AgglomerativeClustering\nfrom sklearn.metrics import adjusted_rand_score\n\nmodel = AgglomerativeClustering(\n    n_clusters=3,\n    linkage=&quot;ward&quot;\n)\nlabels = model.fit_predict(X)\nari = adjusted_rand_score(labels_true, labels)\nprint(f&quot;Adjusted Rand Index: {ari:.3f}&quot;)   # 1.0に近いほど正解に近い\n</code></pre>\n<h2>デンドログラムの読み方</h2>\n<pre><code>高さ（Y軸）= 合体時のクラスタ間距離\n\n       ┌──────────────────────────────┐\n 10 ── │                              │  ← ここで切ると 2クラスタ\n       │                              │\n  5 ── │           ┌────────┐         │  ← ここで切ると 3クラスタ\n       │           │        │         │\n  2 ── │    ┌──┐   │  ┌──┐  │  ┌──┐  │\n       │    │  │   │  │  │  │  │  │  │\n  0 ── ┴────┴──┴───┴──┴──┴──┴──┴──┴──┘\n            G1      G2         G3\n\n切る高さ（閾値）を大きくする → クラスタ数が減る\n切る高さを小さくする         → クラスタ数が増える\n</code></pre>\n<p>「クラスタ間の距離が急に跳ね上がる場所（肘）」で切るのが目安です。</p>\n<h2>最適クラスタ数の選び方</h2>\n<pre><code class=\"language-python\"># 連結距離の「ジャンプ」を見る\nlast = Z[-20:, 2]          # 最後の20回のマージ距離\nacceleration = np.diff(last, 2)   # 2階差分\nk_opt = len(last) - np.argmax(acceleration)\nprint(f&quot;推奨クラスタ数: {k_opt}&quot;)\n\n# シルエットスコアで評価\nfrom sklearn.metrics import silhouette_score\n\nscores = []\nk_range = range(2, 8)\nfor k in k_range:\n    lbl = fcluster(Z, t=k, criterion=&quot;maxclust&quot;)\n    s = silhouette_score(X, lbl)\n    scores.append((k, s))\n    print(f&quot;  k={k}: silhouette={s:.3f}&quot;)\n\nbest_k = max(scores, key=lambda x: x[1])[0]\nprint(f&quot;\\n最良 k = {best_k}&quot;)\n</code></pre>\n<h2>リンケージ手法の比較</h2>\n<pre><code class=\"language-python\">import matplotlib.pyplot as plt\nfrom scipy.cluster.hierarchy import dendrogram, linkage\n\nmethods = [&quot;single&quot;, &quot;complete&quot;, &quot;average&quot;, &quot;ward&quot;]\nfig, axes = plt.subplots(1, 4, figsize=(16, 4))\n\nfor ax, method in zip(axes, methods):\n    Z = linkage(X, method=method)\n    dendrogram(Z, ax=ax, no_labels=True)\n    ax.set_title(method)\n    ax.set_ylabel(&quot;距離&quot; if ax == axes[0] else &quot;&quot;)\n\nplt.suptitle(&quot;リンケージ手法の比較&quot;)\nplt.tight_layout()\nplt.savefig(&quot;linkage_comparison.png&quot;, dpi=120)\nplt.show()\n</code></pre>\n<h2>k-means との比較</h2>\n<table>\n<thead>\n<tr>\n<th>項目</th>\n<th>k-means</th>\n<th>階層的クラスタリング</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>クラスタ数</td>\n<td>事前に必要</td>\n<td>後から決められる</td>\n</tr>\n<tr>\n<td>スケーラビリティ</td>\n<td>✅ 大規模データ向き O(nkT)</td>\n<td>⚠️ O(n² log n)〜O(n³)</td>\n</tr>\n<tr>\n<td>クラスタ形状</td>\n<td>球状を仮定</td>\n<td>制限なし（リンケージ依存）</td>\n</tr>\n<tr>\n<td>決定論性</td>\n<td>❌ 初期値依存</td>\n<td>✅ 結果が一意</td>\n</tr>\n<tr>\n<td>可視化</td>\n<td>散布図</td>\n<td>デンドログラム</td>\n</tr>\n<tr>\n<td>外れ値への耐性</td>\n<td>弱い</td>\n<td>Ward法は比較的強い</td>\n</tr>\n</tbody>\n</table>\n<h2>実践：ワインデータの解析</h2>\n<pre><code class=\"language-python\">from sklearn.datasets import load_wine\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.cluster import AgglomerativeClustering\nfrom sklearn.metrics import adjusted_rand_score\nimport numpy as np\n\nwine = load_wine()\nX_wine = StandardScaler().fit_transform(wine.data)\n\nresults = []\nfor linkage in [&quot;ward&quot;, &quot;complete&quot;, &quot;average&quot;, &quot;single&quot;]:\n    model = AgglomerativeClustering(n_clusters=3, linkage=linkage)\n    labels = model.fit_predict(X_wine)\n    ari = adjusted_rand_score(wine.target, labels)\n    results.append((linkage, ari))\n    print(f&quot;  {linkage:10s}: ARI = {ari:.3f}&quot;)\n\nbest = max(results, key=lambda x: x[1])\nprint(f&quot;\\n最良リンケージ: {best[0]}（ARI={best[1]:.3f}）&quot;)\n</code></pre>\n<p>典型的な出力：</p>\n<pre><code>  ward      : ARI = 0.897\n  complete  : ARI = 0.640\n  average   : ARI = 0.491\n  single    : ARI = 0.052\n\n最良リンケージ: ward（ARI=0.897）\n</code></pre>\n<h2>よくある落とし穴</h2>\n<table>\n<thead>\n<tr>\n<th>問題</th>\n<th>症状</th>\n<th>対策</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>スケールが違う特徴量</td>\n<td>距離が支配される</td>\n<td><code>StandardScaler</code> で標準化</td>\n</tr>\n<tr>\n<td>大規模データ</td>\n<td>O(n²) で遅い・メモリ不足</td>\n<td>Mini-batch や k-means を検討</td>\n</tr>\n<tr>\n<td>単連結の「鎖」現象</td>\n<td>細長い不自然なクラスタ</td>\n<td>Ward法か完全連結に変える</td>\n</tr>\n<tr>\n<td>クラスタ数の選択</td>\n<td>デンドログラムが読みにくい</td>\n<td>シルエットスコアで定量評価</td>\n</tr>\n</tbody>\n</table>\n<h2>まとめ</h2>\n<ul>\n<li>階層的クラスタリングはデンドログラムで<strong>クラスタ構造を可視化</strong>できる</li>\n<li><strong>Ward法</strong>が最もよく使われる（分散増加を最小化・コンパクトなクラスタ）</li>\n<li>クラスタ数は後から選べる → 探索的分析に最適</li>\n<li>大規模データには計算量 O(n²) 以上がネック → k-means との使い分けが重要</li>\n<li><code>StandardScaler</code> による前処理は必須</li>\n</ul>",
+"prereq_full": [
+{
+"slug": "clustering",
+"title": "クラスタリング（K-Means・DBSCAN・階層型）"
+}
+],
+"related_full": [
+{
+"slug": "clustering",
+"title": "クラスタリング（K-Means・DBSCAN・階層型）"
+},
+{
+"slug": "dimensionality-reduction",
+"title": "次元削減（PCA・t-SNE・UMAP）"
+},
+{
+"slug": "evaluation-metrics",
+"title": "評価指標（混同行列・Precision・Recall・F1・AUC）"
+}
+],
+"next_full": [],
+"completed": false,
+"favorite": false
+},
 "autosar": {
 "slug": "autosar",
 "title": "AUTOSAR",
@@ -10910,12 +10988,12 @@
 "title": "機械学習の基礎"
 },
 {
-"slug": "classification",
-"title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
+"slug": "hierarchical-clustering",
+"title": "階層的クラスタリング"
 },
 {
-"slug": "data-analysis",
-"title": "データ分析の流れ（EDA）"
+"slug": "classification",
+"title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
 }
 ],
 "capacitor": [
@@ -12516,6 +12594,32 @@
 {
 "slug": "bluetooth",
 "title": "Bluetooth（Classic/BLE）の仕組みと車載応用"
+}
+],
+"hierarchical-clustering": [
+{
+"slug": "clustering",
+"title": "クラスタリング（K-Means・DBSCAN・階層型）"
+},
+{
+"slug": "dimensionality-reduction",
+"title": "次元削減（PCA・t-SNE・UMAP）"
+},
+{
+"slug": "evaluation-metrics",
+"title": "評価指標（混同行列・Precision・Recall・F1・AUC）"
+},
+{
+"slug": "classification",
+"title": "分類アルゴリズム（ロジスティック回帰・決定木・SVM・ランダムフォレスト）"
+},
+{
+"slug": "deep-learning",
+"title": "深層学習の基礎（ニューラルネットワーク）"
+},
+{
+"slug": "gradient-boosting",
+"title": "勾配ブースティング（XGBoost・LightGBM）"
 }
 ],
 "autosar": [
@@ -15572,6 +15676,35 @@
 "difficulty": "中級",
 "updated": "2026-06-16",
 "excerpt": "「99.9%は正常、残り0.1%の異常を自動で見つけたい」――でも異常データはほとんど収集できない。これが異常検知の本質的な難しさです。正常パターンだけで学習し、そこから外れたデータを「異常」と判定する教師なし手法が主流です。車載ネットワー",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "hierarchical-clustering",
+"title": "階層的クラスタリング",
+"level": 3,
+"category": "ML",
+"related": [
+"clustering",
+"dimensionality-reduction",
+"evaluation-metrics"
+],
+"prereq": [
+"clustering"
+],
+"tags": [
+"ml",
+"clustering",
+"dendrogram",
+"ward",
+"scipy",
+"unsupervised"
+],
+"next": [],
+"difficulty": "中級",
+"updated": "2026-06-16",
+"excerpt": "k-meansがクラスタ数 \\(k\\) を事前に決める必要があるのに対し、**階層的クラスタリング**はデータを段階的に合体（または分割）させ、**どのクラスタ数でも後から選べる**ツリー構造（デンドログラム）を作ります。",
 "views": 0,
 "completed": false,
 "favorite": false
