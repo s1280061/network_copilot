@@ -1092,6 +1092,31 @@
 "favorite": false
 },
 {
+"slug": "p-value",
+"title": "p値の意味と正しい解釈",
+"level": 2,
+"category": "Statistics",
+"related": [
+"hypothesis-testing",
+"bayesian-statistics",
+"regression-analysis"
+],
+"tags": [
+"statistics",
+"p-value",
+"hypothesis-testing",
+"significance",
+"python"
+],
+"next": [],
+"difficulty": "初級",
+"updated": "2026-06-16",
+"excerpt": "**p値（p-value）** とは、「帰無仮説が正しいと仮定したとき、今回の観測結果と同じかそれ以上に極端な結果が偶然生じる確率」です。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "scikit-learn",
 "title": "scikit-learn（機械学習ライブラリ）",
 "level": 2,
@@ -5473,6 +5498,46 @@
 "title": "tsharkで車載通信をフィルタ・解析する"
 }
 ],
+"completed": false,
+"favorite": false
+},
+"p-value": {
+"slug": "p-value",
+"title": "p値の意味と正しい解釈",
+"level": 2,
+"category": "Statistics",
+"related": [
+"hypothesis-testing",
+"bayesian-statistics",
+"regression-analysis"
+],
+"tags": [
+"statistics",
+"p-value",
+"hypothesis-testing",
+"significance",
+"python"
+],
+"next": [],
+"difficulty": "初級",
+"updated": "2026-06-16",
+"html": "<h2>p値は「偶然起きる確率」</h2>\n<p><strong>p値（p-value）</strong> とは、「帰無仮説が正しいと仮定したとき、今回の観測結果と同じかそれ以上に極端な結果が偶然生じる確率」です。</p>\n<p>一言で言えば：</p>\n<blockquote>\n<p><strong>p値 = 帰無仮説が正しいときに、このデータ（以上に極端なもの）が偶然出る確率</strong></p>\n</blockquote>\n<pre><code class=\"language-mermaid\">graph LR\n  A[&quot;実験・観測&quot;] --&gt; B[&quot;帰無仮説 H₀を仮定\\n（効果はない・差はない）&quot;]\n  B --&gt; C[&quot;検定統計量を計算\\n（t値・F値・χ²値など）&quot;]\n  C --&gt; D[&quot;p値を算出&quot;]\n  D --&gt; E{&quot;p &lt; α\\n（有意水準）？&quot;}\n  E --&gt;|&quot;Yes&quot;| F[&quot;H₀を棄却\\n（有意な差あり）&quot;]\n  E --&gt;|&quot;No&quot;| G[&quot;H₀を棄却できない\\n（差があるとは言えない）&quot;]\n</code></pre>\n<h2>具体例で理解する</h2>\n<p><strong>シナリオ</strong>：新しい薬が血圧を下げるか調べる。</p>\n<ul>\n<li><strong>帰無仮説 H₀</strong>：薬は効果なし（血圧変化の平均 = 0）</li>\n<li><strong>対立仮説 H₁</strong>：薬は効果あり（血圧変化の平均 ≠ 0）</li>\n<li>測定結果：p値 = 0.03</li>\n</ul>\n<p>このとき「<strong>もし薬に効果がなかったとしたら、今回のような結果（以上に極端な変化）が偶然起きる確率は 3%</strong>」ということです。</p>\n<p>有意水準 α = 0.05 なら p &lt; α なので「帰無仮説を棄却 → 有意な効果あり」と判断します。</p>\n<h2>p値の計算（Python）</h2>\n<pre><code class=\"language-python\">import numpy as np\nfrom scipy import stats\n\n# 薬を飲んだ患者の血圧変化（n=30人）\nnp.random.seed(42)\nchanges = np.random.normal(loc=-5, scale=10, size=30)   # 平均-5mmHg\nprint(f&quot;サンプル平均: {changes.mean():.2f} mmHg&quot;)\nprint(f&quot;サンプル標準偏差: {changes.std():.2f} mmHg&quot;)\n\n# 1標本t検定：平均が0と異なるか\nt_stat, p_value = stats.ttest_1samp(changes, popmean=0)\nprint(f&quot;\\nt統計量: {t_stat:.3f}&quot;)\nprint(f&quot;p値:     {p_value:.4f}&quot;)\n\nif p_value &lt; 0.05:\n    print(&quot;→ p &lt; 0.05：帰無仮説を棄却（有意な血圧低下あり）&quot;)\nelse:\n    print(&quot;→ p ≥ 0.05：帰無仮説を棄却できない&quot;)\n</code></pre>\n<pre><code>サンプル平均: -5.21 mmHg\nサンプル標準偏差: 9.73 mmHg\n\nt統計量: -2.933\np値:     0.0064\n→ p &lt; 0.05：帰無仮説を棄却（有意な血圧低下あり）\n</code></pre>\n<h2>有意水準 α とは</h2>\n<p><strong>α（アルファ、有意水準）</strong> は「偽陽性を許容する確率の上限」です。事前に決めます。</p>\n<table>\n<thead>\n<tr>\n<th>α</th>\n<th>使われる場面</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0.05（5%）</td>\n<td>社会科学・医学の一般的な基準</td>\n</tr>\n<tr>\n<td>0.01（1%）</td>\n<td>より厳しい基準（大規模臨床試験など）</td>\n</tr>\n<tr>\n<td>0.001（0.1%）</td>\n<td>物理学・ゲノム研究など極めて厳しい場合</td>\n</tr>\n</tbody>\n</table>\n<pre><code class=\"language-python\"># 有意水準ごとの判定\nalpha_levels = [0.10, 0.05, 0.01, 0.001]\nfor alpha in alpha_levels:\n    result = &quot;棄却&quot; if p_value &lt; alpha else &quot;棄却できない&quot;\n    print(f&quot;α={alpha}: {result}  (p={p_value:.4f})&quot;)\n</code></pre>\n<pre><code>α=0.1:   棄却  (p=0.0064)\nα=0.05:  棄却  (p=0.0064)\nα=0.01:  棄却  (p=0.0064)\nα=0.001: 棄却できない  (p=0.0064)\n</code></pre>\n<h2>p値についてよくある誤解</h2>\n<h3>❌ 誤解1：「p値 = 帰無仮説が正しい確率」</h3>\n<pre><code>❌ 「p = 0.03 だから帰無仮説が正しい確率は 3%」\n✅ 正しくは「帰無仮説が正しいとき、今回のデータが偶然起きる確率が 3%」\n</code></pre>\n<p>p値は「帰無仮説の確率」ではなく「データの極端さの確率」です。</p>\n<h3>❌ 誤解2：「p &lt; 0.05 なら効果が大きい」</h3>\n<pre><code class=\"language-python\"># 大サンプルでは小さな効果でも p &lt; 0.05 になる\nnp.random.seed(0)\nfor n in [30, 300, 3000, 30000]:\n    x = np.random.normal(0.01, 1, n)   # 効果はほぼゼロ（0.01差）\n    _, p = stats.ttest_1samp(x, 0)\n    print(f&quot;n={n:6d}: 平均={x.mean():.4f}, p={p:.4f}  {'← 有意！' if p&lt;0.05 else ''}&quot;)\n</code></pre>\n<pre><code>n=    30: 平均=0.0305, p=0.8622\nn=   300: 平均=0.0520, p=0.3756\nn=  3000: 平均=0.0177, p=0.2963\nn= 30000: 平均=0.0112, p=0.0375  ← 有意！\n</code></pre>\n<p>n=30,000 で「有意」になったが、<strong>効果量は 0.011 で実質ゼロ</strong>。p値だけでは効果の大きさは分かりません。</p>\n<h3>❌ 誤解3：「p = 0.06 は失敗・p = 0.04 は成功」</h3>\n<p>0.05 という閾値は恣意的です。p = 0.049 と p = 0.051 に本質的な違いはありません。</p>\n<h3>❌ 誤解4：「p ≥ 0.05 なら効果はない」</h3>\n<pre><code>p ≥ 0.05 → 「効果がないとは言えない」であって「効果がない」ではない\n         → サンプルが小さすぎて検出できなかっただけかもしれない\n</code></pre>\n<h2>効果量（Effect Size）を必ず一緒に報告する</h2>\n<p>p値だけでなく<strong>効果量</strong>（効果の実際の大きさ）を報告するのが現代の標準です。</p>\n<pre><code class=\"language-python\"># Cohen's d: 標準化された効果量\ndef cohens_d(x, mu0=0):\n    return (x.mean() - mu0) / x.std(ddof=1)\n\nnp.random.seed(42)\nsmall_effect  = np.random.normal(0.2, 1, 100)   # d = 0.2（小）\nmedium_effect = np.random.normal(0.5, 1, 100)   # d = 0.5（中）\nlarge_effect  = np.random.normal(0.8, 1, 100)   # d = 0.8（大）\n\nfor name, data in [(&quot;小&quot;, small_effect), (&quot;中&quot;, medium_effect), (&quot;大&quot;, large_effect)]:\n    d = cohens_d(data)\n    _, p = stats.ttest_1samp(data, 0)\n    print(f&quot;効果{name}: d={d:.2f}, p={p:.4f}&quot;)\n</code></pre>\n<pre><code>効果小: d=0.18, p=0.0692\n効果中: d=0.50, p=0.0000\n効果大: d=0.77, p=0.0000\n</code></pre>\n<table>\n<thead>\n<tr>\n<th>Cohen's d</th>\n<th>効果の大きさ</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>d ≈ 0.2</td>\n<td>小（Small）</td>\n</tr>\n<tr>\n<td>d ≈ 0.5</td>\n<td>中（Medium）</td>\n</tr>\n<tr>\n<td>d ≈ 0.8</td>\n<td>大（Large）</td>\n</tr>\n</tbody>\n</table>\n<h2>信頼区間との組み合わせ</h2>\n<p>p値よりも<strong>信頼区間（Confidence Interval）</strong> の方が情報量が多いことがあります。</p>\n<pre><code class=\"language-python\"># 信頼区間を計算\ndata = np.random.normal(-5, 10, 30)\nn = len(data)\nmean = data.mean()\nse = stats.sem(data)                    # 標準誤差\n\nci_95 = stats.t.interval(0.95, df=n-1, loc=mean, scale=se)\nci_99 = stats.t.interval(0.99, df=n-1, loc=mean, scale=se)\n\nprint(f&quot;標本平均: {mean:.2f}&quot;)\nprint(f&quot;95%信頼区間: [{ci_95[0]:.2f}, {ci_95[1]:.2f}]&quot;)\nprint(f&quot;99%信頼区間: [{ci_99[0]:.2f}, {ci_99[1]:.2f}]&quot;)\n</code></pre>\n<blockquote>\n<p>「95% 信頼区間が [-8.2, -1.8] mmHg」は「p &lt; 0.05」より情報が豊富。ゼロを含まない → 有意、かつ効果の推定範囲がわかる。</p>\n</blockquote>\n<h2>多重検定問題</h2>\n<p>複数の検定を繰り返すと偽陽性が増えます。</p>\n<pre><code class=\"language-python\">import numpy as np\nfrom scipy import stats\n\nnp.random.seed(0)\n# 100個の検定を行う（真の効果はゼロ）\nn_tests = 100\np_values = [stats.ttest_1samp(np.random.normal(0, 1, 30), 0)[1]\n            for _ in range(n_tests)]\n\nfalse_positives = sum(p &lt; 0.05 for p in p_values)\nprint(f&quot;偽陽性の数: {false_positives} / {n_tests}&quot;)\n# → 約5個が「有意」になる（α=0.05の意味通り）\n\n# Bonferroni補正: α を検定数で割る\nalpha_bonferroni = 0.05 / n_tests\nfp_corrected = sum(p &lt; alpha_bonferroni for p in p_values)\nprint(f&quot;Bonferroni補正後の偽陽性: {fp_corrected} / {n_tests}&quot;)\n</code></pre>\n<table>\n<thead>\n<tr>\n<th>補正法</th>\n<th>方法</th>\n<th>特徴</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><strong>Bonferroni</strong></td>\n<td>α / n_tests</td>\n<td>厳しすぎることも</td>\n</tr>\n<tr>\n<td><strong>Holm</strong></td>\n<td>ステップダウン法</td>\n<td>Bonferroniより検出力あり</td>\n</tr>\n<tr>\n<td><strong>BH（FDR）</strong></td>\n<td>偽発見率を制御</td>\n<td>ゲノム研究などで標準</td>\n</tr>\n</tbody>\n</table>\n<pre><code class=\"language-python\">from statsmodels.stats.multitest import multipletests\n\nreject, p_corrected, _, _ = multipletests(p_values, alpha=0.05, method=&quot;fdr_bh&quot;)\nprint(f&quot;BH法で有意: {sum(reject)} / {n_tests}&quot;)\n</code></pre>\n<h2>まとめ</h2>\n<pre><code>p値を正しく使うチェックリスト:\n  □ p値 = 「帰無仮説が正しいときにこのデータが偶然起きる確率」\n  □ α（有意水準）は事前に決める（後出しNG）\n  □ p &lt; α だけでなく 効果量（Cohen's d など）を必ず報告\n  □ 信頼区間も一緒に示すと情報量が増える\n  □ 複数の検定を行うときは多重補正を適用する\n  □ p ≥ 0.05 は「効果なし」ではなく「検出できなかった」\n  □ サンプルサイズが大きいと小さな効果でも有意になる\n</code></pre>\n<p>p値は「あり・なし」の二値ではなく、<strong>証拠の強さを示す連続値</strong>として捉えましょう。</p>",
+"prereq_full": [],
+"related_full": [
+{
+"slug": "hypothesis-testing",
+"title": "仮説検定と検定力（t検定・ANOVA・サンプルサイズ設計）"
+},
+{
+"slug": "bayesian-statistics",
+"title": "ベイズ統計（事前分布・事後分布・ベイズ更新）"
+},
+{
+"slug": "regression-analysis",
+"title": "回帰分析（重回帰・多重共線性・残差診断）"
+}
+],
+"next_full": [],
 "completed": false,
 "favorite": false
 },
@@ -10944,6 +11009,32 @@
 "title": "pcapから車載通信パターンを読む"
 }
 ],
+"p-value": [
+{
+"slug": "hypothesis-testing",
+"title": "仮説検定と検定力（t検定・ANOVA・サンプルサイズ設計）"
+},
+{
+"slug": "bayesian-statistics",
+"title": "ベイズ統計（事前分布・事後分布・ベイズ更新）"
+},
+{
+"slug": "regression-analysis",
+"title": "回帰分析（重回帰・多重共線性・残差診断）"
+},
+{
+"slug": "seaborn",
+"title": "Seaborn（統計可視化）"
+},
+{
+"slug": "statistics",
+"title": "統計学の基礎（確率・分布・検定）"
+},
+{
+"slug": "anomaly-detection",
+"title": "異常検知（Isolation Forest・Autoencoder・統計的手法）"
+}
+],
 "scikit-learn": [
 {
 "slug": "linear-regression",
@@ -11194,6 +11285,10 @@
 "title": "統計学の基礎（確率・分布・検定）"
 },
 {
+"slug": "p-value",
+"title": "p値の意味と正しい解釈"
+},
+{
 "slug": "linear-regression",
 "title": "線形回帰"
 },
@@ -11204,10 +11299,6 @@
 {
 "slug": "electric-power",
 "title": "電力・電力量とジュール熱"
-},
-{
-"slug": "multivariate-statistics",
-"title": "多変量統計（主成分分析・因子分析・判別分析）"
 }
 ],
 "classification": [
@@ -12388,8 +12479,8 @@
 "title": "多変量統計（主成分分析・因子分析・判別分析）"
 },
 {
-"slug": "regression-analysis",
-"title": "回帰分析（重回帰・多重共線性・残差診断）"
+"slug": "p-value",
+"title": "p値の意味と正しい解釈"
 }
 ],
 "gradient-boosting": [
@@ -15265,6 +15356,31 @@
 {
 "name": "Statistics",
 "articles": [
+{
+"slug": "p-value",
+"title": "p値の意味と正しい解釈",
+"level": 2,
+"category": "Statistics",
+"related": [
+"hypothesis-testing",
+"bayesian-statistics",
+"regression-analysis"
+],
+"tags": [
+"statistics",
+"p-value",
+"hypothesis-testing",
+"significance",
+"python"
+],
+"next": [],
+"difficulty": "初級",
+"updated": "2026-06-16",
+"excerpt": "**p値（p-value）** とは、「帰無仮説が正しいと仮定したとき、今回の観測結果と同じかそれ以上に極端な結果が偶然生じる確率」です。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
 {
 "slug": "hypothesis-testing",
 "title": "仮説検定と検定力（t検定・ANOVA・サンプルサイズ設計）",
