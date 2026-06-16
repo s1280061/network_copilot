@@ -33,7 +33,7 @@ $$\hat{y} = w_0 + w_1 x_1 + \cdots + w_d x_d = \mathbf{w}^\top \mathbf{x}$$
 
 $$\mathcal{L}(\mathbf{w}) = \frac{1}{n}\sum_{i=1}^{n}\left(y_i - \mathbf{w}^\top \mathbf{x}_i\right)^2$$
 
-**勾配降下法**による更新（学習率 $\eta$）：
+**勾配降下法**による更新（学習率 \(\eta\)）：
 
 $$\mathbf{w} \leftarrow \mathbf{w} - \eta\,\nabla_{\mathbf{w}}\mathcal{L}$$
 

@@ -18,11 +18,11 @@ tags: [transformer, attention, deep-learning, nlp, genai]
 
 ## 主要な数式
 
-**Scaled Dot-Product Attention**（クエリ $Q$、キー $K$、バリュー $V$）：
+**Scaled Dot-Product Attention**（クエリ \(Q\)、キー \(K\)、バリュー \(V\)）：
 
 $$\mathrm{Attention}(Q, K, V) = \mathrm{softmax}\!\left(\frac{QK^\top}{\sqrt{d_k}}\right)V$$
 
-$\sqrt{d_k}$ で割るのは、内積が次元数に比例して大きくなり softmax の勾配が消失するのを防ぐため。
+\(\sqrt{d_k}\) で割るのは、内積が次元数に比例して大きくなり softmax の勾配が消失するのを防ぐため。
 
 **マルチヘッド注意機構**：
 
@@ -197,7 +197,7 @@ plt.show()
 
 ## まとめ
 
-- Scaled Dot-Product Attention: $\text{softmax}(QK^T / \sqrt{d_k})V$ が基本演算
+- Scaled Dot-Product Attention: \(\text{softmax}(QK^T / \sqrt{d_k})V\) が基本演算
 - Multi-Head Attention: 複数の「注意の視点」を並列に学習して結合
 - 位置エンコーディング: 語順情報をsin/cosで埋め込む（または学習可能な埋め込み）
 - Encoder: 入力全体を双方向で参照（BERT系）、Decoder: 過去のみ参照して自己回帰生成（GPT系）

@@ -30,7 +30,7 @@ $$\mathbf{f}_t = \sigma(\mathbf{W}_f[\mathbf{h}_{t-1}, \mathbf{x}_t] + \mathbf{b
 
 $$\mathbf{c}_t = \mathbf{f}_t \odot \mathbf{c}_{t-1} + \mathbf{i}_t \odot \tilde{\mathbf{c}}_t, \qquad \mathbf{h}_t = \mathbf{o}_t \odot \tanh(\mathbf{c}_t)$$
 
-忘却ゲート $\mathbf{f}_t$ が過去の情報をどれだけ残すかを制御し、勾配消失を緩和する。
+忘却ゲート \(\mathbf{f}_t\) が過去の情報をどれだけ残すかを制御し、勾配消失を緩和する。
 
 ## 可視化
 

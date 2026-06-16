@@ -18,7 +18,7 @@ tags: [pca, tsne, umap, dimensionality-reduction, python, scikit-learn]
 
 ## 主要な数式
 
-**PCA**：共分散行列 $\mathbf{\Sigma}$ の固有値分解で分散最大の軸を求める。
+**PCA**：共分散行列 \(\mathbf{\Sigma}\) の固有値分解で分散最大の軸を求める。
 
 $$\mathbf{\Sigma}\mathbf{v}_k = \lambda_k \mathbf{v}_k, \qquad \text{累積寄与率} = \frac{\sum_{k=1}^{m}\lambda_k}{\sum_{j=1}^{d}\lambda_j}$$
 

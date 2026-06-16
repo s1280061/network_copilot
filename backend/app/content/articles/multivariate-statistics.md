@@ -20,7 +20,7 @@ graph LR
 
 ## 主要な数式
 
-**分散共分散行列**（$d$ 変数、$\mathbf{x}_i \in \mathbb{R}^d$）：
+**分散共分散行列**（\(d\) 変数、\(\mathbf{x}_i \in \mathbb{R}^d\)）：
 
 $$\mathbf{\Sigma} = \frac{1}{n-1}\sum_{i=1}^{n}(\mathbf{x}_i - \bar{\mathbf{x}})(\mathbf{x}_i - \bar{\mathbf{x}})^\top$$
 
@@ -28,13 +28,13 @@ $$\mathbf{\Sigma} = \frac{1}{n-1}\sum_{i=1}^{n}(\mathbf{x}_i - \bar{\mathbf{x}})
 
 $$\mathbf{\Sigma}\,\mathbf{v}_k = \lambda_k\,\mathbf{v}_k$$
 
-第 $k$ 主成分の**寄与率**は $\dfrac{\lambda_k}{\sum_{j=1}^{d}\lambda_j}$。
+第 \(k\) 主成分の**寄与率**は \(\dfrac{\lambda_k}{\sum_{j=1}^{d}\lambda_j}\)。
 
 **マハラノビス距離**（相関構造を考慮した距離）：
 
 $$D_M(\mathbf{x}) = \sqrt{(\mathbf{x} - \boldsymbol{\mu})^\top \mathbf{\Sigma}^{-1} (\mathbf{x} - \boldsymbol{\mu})}$$
 
-**線形判別分析（LDA）**はクラス間分散 $\mathbf{S}_B$ とクラス内分散 $\mathbf{S}_W$ の比を最大化：
+**線形判別分析（LDA）**はクラス間分散 \(\mathbf{S}_B\) とクラス内分散 \(\mathbf{S}_W\) の比を最大化：
 
 $$\mathbf{w}^\ast = \arg\max_{\mathbf{w}} \frac{\mathbf{w}^\top \mathbf{S}_B \mathbf{w}}{\mathbf{w}^\top \mathbf{S}_W \mathbf{w}}$$
 

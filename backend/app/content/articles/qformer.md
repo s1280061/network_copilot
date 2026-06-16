@@ -33,19 +33,19 @@ graph LR
 
 ## 主要な数式
 
-**クロスアテンション**（クエリ $Q$、キー $K$、バリュー $V$）：
+**クロスアテンション**（クエリ \(Q\)、キー \(K\)、バリュー \(V\)）：
 
 $$\mathrm{Attention}(Q, K, V) = \mathrm{softmax}\!\left(\frac{QK^\top}{\sqrt{d_k}}\right)V$$
 
-- $Q$：学習可能なクエリトークン（$32 \times d$）
-- $K, V$：ViTの出力画像特徴（$257 \times d$）から生成
+- \(Q\)：学習可能なクエリトークン（\(32 \times d\)）
+- \(K, V\)：ViTの出力画像特徴（\(257 \times d\)）から生成
 - 32個のクエリが257個の画像トークンから必要な情報を選択的に取得
 
 **クエリトークンの射影**（Q-Former → LLM入力）：
 
 $$\mathbf{h}_{\text{LLM}} = W_{\text{proj}}\,\mathbf{q}_{\text{out}} \in \mathbb{R}^{32 \times d_{\text{LLM}}}$$
 
-LLMのembedding次元 $d_{\text{LLM}}$ に線形射影し、ソフトプロンプトとして前置。
+LLMのembedding次元 \(d_{\text{LLM}}\) に線形射影し、ソフトプロンプトとして前置。
 
 ## Q-Formerの内部構造
 
@@ -146,7 +146,7 @@ class SimpleQFormer(nn.Module):
 
 ## なぜ32クエリで十分か
 
-ViTは画像を $16 \times 16$ パッチに分割し、257トークン（256パッチ + CLSトークン）を出力します。Q-Formerの32クエリは、この257トークンから**LLMが必要とする言語的に有意な情報のみを選択的に抽出**します。
+ViTは画像を \(16 \times 16\) パッチに分割し、257トークン（256パッチ + CLSトークン）を出力します。Q-Formerの32クエリは、この257トークンから**LLMが必要とする言語的に有意な情報のみを選択的に抽出**します。
 
 $$\text{圧縮率} = \frac{257}{32} \approx 8\times$$
 

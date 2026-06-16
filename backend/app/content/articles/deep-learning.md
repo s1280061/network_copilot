@@ -18,7 +18,7 @@ tags: [deep-learning, neural-network, python, ml]
 
 ## 主要な数式
 
-**1層の順伝播**（重み $\mathbf{W}$、バイアス $\mathbf{b}$、活性化関数 $f$）：
+**1層の順伝播**（重み \(\mathbf{W}\)、バイアス \(\mathbf{b}\)、活性化関数 \(f\)）：
 
 $$\mathbf{a}^{(l)} = f\!\left(\mathbf{W}^{(l)}\mathbf{a}^{(l-1)} + \mathbf{b}^{(l)}\right)$$
 
@@ -30,7 +30,7 @@ $$\mathrm{ReLU}(x) = \max(0, x), \qquad \sigma(x) = \frac{1}{1+e^{-x}}, \qquad \
 
 $$\frac{\partial \mathcal{L}}{\partial \mathbf{W}^{(l)}} = \boldsymbol{\delta}^{(l)} \left(\mathbf{a}^{(l-1)}\right)^\top, \qquad \boldsymbol{\delta}^{(l)} = \left(\mathbf{W}^{(l+1)\top}\boldsymbol{\delta}^{(l+1)}\right) \odot f'\!\left(\mathbf{z}^{(l)}\right)$$
 
-**Adam オプティマイザ**の更新（モーメント $m_t, v_t$）：
+**Adam オプティマイザ**の更新（モーメント \(m_t, v_t\)）：
 
 $$\mathbf{w}_t = \mathbf{w}_{t-1} - \eta\,\frac{\hat{m}_t}{\sqrt{\hat{v}_t} + \epsilon}$$
 

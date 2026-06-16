@@ -21,7 +21,7 @@ graph LR
 
 ## 主要な数式
 
-**1標本 t 統計量**（母平均 $\mu_0$ の検定）：
+**1標本 t 統計量**（母平均 \(\mu_0\) の検定）：
 
 $$t = \frac{\bar{x} - \mu_0}{s/\sqrt{n}}, \qquad \mathrm{df} = n-1$$
 
@@ -41,7 +41,7 @@ $$F = \frac{\mathrm{MS}_{\text{between}}}{\mathrm{MS}_{\text{within}}} = \frac{\
 
 $$\alpha = P(\text{棄却} \mid H_0), \qquad \beta = P(\text{保留} \mid H_1), \qquad \text{検定力} = 1 - \beta$$
 
-**Bonferroni 補正**（$m$ 回の検定）：各検定の有意水準を $\alpha/m$ にする。
+**Bonferroni 補正**（\(m\) 回の検定）：各検定の有意水準を \(\alpha/m\) にする。
 
 ## 可視化
 

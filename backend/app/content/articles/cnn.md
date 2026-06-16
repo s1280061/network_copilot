@@ -13,15 +13,15 @@ CNN（Convolutional Neural Network）は画像データに特化したニュー�
 
 ## 主要な数式
 
-**2次元畳み込み**（入力 $I$、カーネル $K$）：
+**2次元畳み込み**（入力 \(I\)、カーネル \(K\)）：
 
 $$(I * K)_{i,j} = \sum_{m}\sum_{n} I_{i+m,\,j+n}\,K_{m,n}$$
 
-**出力サイズ**（入力 $W$、カーネル $F$、パディング $P$、ストライド $S$）：
+**出力サイズ**（入力 \(W\)、カーネル \(F\)、パディング \(P\)、ストライド \(S\)）：
 
 $$W_{\text{out}} = \left\lfloor \frac{W - F + 2P}{S} \right\rfloor + 1$$
 
-**最大プーリング**（領域 $\mathcal{R}$）：
+**最大プーリング**（領域 \(\mathcal{R}\)）：
 
 $$y = \max_{(m,n)\in\mathcal{R}} x_{m,n}$$
 

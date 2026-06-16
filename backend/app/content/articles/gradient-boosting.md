@@ -18,11 +18,11 @@ tags: [ml, xgboost, lightgbm, boosting, python, data-science]
 
 ## 主要な数式
 
-**加法モデル**（$M$ 本の木 $h_m$ を学習率 $\nu$ で逐次追加）：
+**加法モデル**（\(M\) 本の木 \(h_m\) を学習率 \(\nu\) で逐次追加）：
 
 $$F_M(\mathbf{x}) = F_0(\mathbf{x}) + \nu\sum_{m=1}^{M} h_m(\mathbf{x})$$
 
-各ステップで損失 $L$ の負の勾配（擬似残差）を新しい木で近似する：
+各ステップで損失 \(L\) の負の勾配（擬似残差）を新しい木で近似する：
 
 $$r_{im} = -\left[\frac{\partial L(y_i, F(\mathbf{x}_i))}{\partial F(\mathbf{x}_i)}\right]_{F=F_{m-1}}$$
 
@@ -30,7 +30,7 @@ $$r_{im} = -\left[\frac{\partial L(y_i, F(\mathbf{x}_i))}{\partial F(\mathbf{x}_
 
 $$\mathcal{L} = \sum_{i} L(y_i, \hat{y}_i) + \sum_{m}\Omega(h_m), \qquad \Omega(h) = \gamma T + \frac{1}{2}\lambda\sum_{j=1}^{T} w_j^2$$
 
-ここで $T$ は葉の数、$w_j$ は葉の重み。
+ここで \(T\) は葉の数、\(w_j\) は葉の重み。
 
 ## なぜ強いか
 

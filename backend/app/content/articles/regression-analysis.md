@@ -37,15 +37,15 @@ $$\hat{\beta} = \arg\min_{\beta} \sum_{i=1}^{n}(y_i - \mathbf{x}_i^\top \beta)^2
 
 $$\hat{\beta} = (\mathbf{X}^\top \mathbf{X})^{-1}\mathbf{X}^\top \mathbf{y}$$
 
-**決定係数 $R^2$ と自由度調整済み $R^2$**：
+**決定係数 \(R^2\) と自由度調整済み \(R^2\)**：
 
 $$R^2 = 1 - \frac{\sum_i (y_i - \hat{y}_i)^2}{\sum_i (y_i - \bar{y})^2}, \qquad R^2_{\text{adj}} = 1 - (1-R^2)\frac{n-1}{n-p-1}$$
 
-**分散膨張係数（VIF）**（説明変数 $j$）：
+**分散膨張係数（VIF）**（説明変数 \(j\)）：
 
 $$\mathrm{VIF}_j = \frac{1}{1 - R_j^2}$$
 
-ここで $R_j^2$ は $x_j$ を他の説明変数で回帰したときの決定係数。
+ここで \(R_j^2\) は \(x_j\) を他の説明変数で回帰したときの決定係数。
 
 ## 単回帰分析
 

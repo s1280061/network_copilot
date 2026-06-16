@@ -22,7 +22,7 @@ graph LR
 
 ## 主要な数式
 
-**自己相関関数（ACF）**（ラグ $k$）：
+**自己相関関数（ACF）**（ラグ \(k\)）：
 
 $$\rho_k = \frac{\mathrm{Cov}(y_t, y_{t-k})}{\mathrm{Var}(y_t)} = \frac{\sum_{t=k+1}^{n}(y_t - \bar{y})(y_{t-k} - \bar{y})}{\sum_{t=1}^{n}(y_t - \bar{y})^2}$$
 
@@ -34,11 +34,11 @@ $$y_t = c + \sum_{i=1}^{p}\phi_i\,y_{t-i} + \varepsilon_t$$
 
 $$y_t = \mu + \varepsilon_t + \sum_{j=1}^{q}\theta_j\,\varepsilon_{t-j}$$
 
-**ARIMA(p, d, q)**：$d$ 階差分 $\nabla^d y_t = (1-L)^d y_t$ に ARMA を適用。ラグ演算子 $L$ で表すと
+**ARIMA(p, d, q)**：\(d\) 階差分 \(\nabla^d y_t = (1-L)^d y_t\) に ARMA を適用。ラグ演算子 \(L\) で表すと
 
 $$\phi(L)\,(1-L)^d\,y_t = \theta(L)\,\varepsilon_t$$
 
-**情報量規準**（モデル選択、$k$ はパラメータ数）：
+**情報量規準**（モデル選択、\(k\) はパラメータ数）：
 
 $$\mathrm{AIC} = -2\ln \hat{L} + 2k, \qquad \mathrm{BIC} = -2\ln \hat{L} + k\ln n$$
 

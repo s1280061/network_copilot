@@ -19,7 +19,7 @@ graph LR
 
 ## 主要な数式
 
-**シャノンの通信路容量**（帯域幅 $B$、信号対雑音比 SNR）：
+**シャノンの通信路容量**（帯域幅 \(B\)、信号対雑音比 SNR）：
 
 $$C = B \log_2(1 + \mathrm{SNR}) \;\;[\text{bps}]$$
 
@@ -29,7 +29,7 @@ $$C = B \log_2(1 + \mathrm{SNR}) \;\;[\text{bps}]$$
 
 $$\mathrm{SNR_{dB}} = 10\log_{10}\!\left(\frac{P_{\text{signal}}}{P_{\text{noise}}}\right)$$
 
-**自由空間伝搬損失**（距離 $d$、周波数 $f$）：
+**自由空間伝搬損失**（距離 \(d\)、周波数 \(f\)）：
 
 $$\mathrm{FSPL_{dB}} = 20\log_{10}(d) + 20\log_{10}(f) + 20\log_{10}\!\left(\frac{4\pi}{c}\right)$$
 

@@ -13,7 +13,7 @@ tags: [gan, vae, diffusion, generative-ai, pytorch, deep-learning]
 
 ## 主要な数式
 
-**GAN の min-max ゲーム**（生成器 $G$ と識別器 $D$）：
+**GAN の min-max ゲーム**（生成器 \(G\) と識別器 \(D\)）：
 
 $$\min_G \max_D \; \mathbb{E}_{\mathbf{x}\sim p_{\text{data}}}[\log D(\mathbf{x})] + \mathbb{E}_{\mathbf{z}\sim p_z}[\log(1 - D(G(\mathbf{z})))]$$
 

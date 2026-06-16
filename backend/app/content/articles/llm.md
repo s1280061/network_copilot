@@ -30,7 +30,7 @@ $$\mathcal{L} = -\sum_{t=1}^{n}\log P(w_t \mid w_{<t})$$
 
 $$\mathrm{PPL} = \exp\!\left(-\frac{1}{n}\sum_{t=1}^{n}\log P(w_t \mid w_{<t})\right)$$
 
-**温度付き softmax**（生成のランダム性を制御、$T$ が大きいほど多様）：
+**温度付き softmax**（生成のランダム性を制御、\(T\) が大きいほど多様）：
 
 $$P(w_i) = \frac{\exp(z_i / T)}{\sum_j \exp(z_j / T)}$$
 

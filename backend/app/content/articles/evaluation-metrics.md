@@ -71,7 +71,7 @@ $$\text{Specificity} = \frac{TN}{TN + FP}$$
 
 $$\text{MCC} = \frac{TP \cdot TN - FP \cdot FN}{\sqrt{(TP+FP)(TP+FN)(TN+FP)(TN+FN)}}$$
 
-$-1$（完全に逆）〜 $0$（ランダム）〜 $+1$（完璧）の範囲。
+\(-1\)（完全に逆）〜 \(0\)（ランダム）〜 \(+1\)（完璧）の範囲。
 
 ## 指標の使い分け
 
@@ -186,9 +186,9 @@ print(f"Average Precision (AP): {ap:.4f}")
 
 $$F_\beta = (1 + \beta^2) \cdot \frac{\text{Precision} \times \text{Recall}}{\beta^2 \cdot \text{Precision} + \text{Recall}}$$
 
-- $\beta = 1$：F1スコア（等重み）
-- $\beta = 2$：Recallを重視（見逃しを減らしたい場合）
-- $\beta = 0.5$：Precisionを重視（誤検知を減らしたい場合）
+- \(\beta = 1\)：F1スコア（等重み）
+- \(\beta = 2\)：Recallを重視（見逃しを減らしたい場合）
+- \(\beta = 0.5\)：Precisionを重視（誤検知を減らしたい場合）
 
 ```python
 from sklearn.metrics import fbeta_score

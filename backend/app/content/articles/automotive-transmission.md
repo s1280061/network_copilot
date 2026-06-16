@@ -13,7 +13,7 @@ tags: [transmission, gear, ratio, automotive, powertrain, cvt]
 
 ## ギア比の基本
 
-ギア比 $i$ は入力と出力の回転数の比です。回転数を落とす（減速する）と、その分トルクが増えます。
+ギア比 \(i\) は入力と出力の回転数の比です。回転数を落とす（減速する）と、その分トルクが増えます。
 
 $$i = \frac{n_{in}}{n_{out}} = \frac{T_{out}}{T_{in}}$$
 

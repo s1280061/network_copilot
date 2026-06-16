@@ -25,7 +25,7 @@ graph LR
 
 ## 主要な数式
 
-**ベイズの定理**（パラメータ $\theta$ とデータ $X$）：
+**ベイズの定理**（パラメータ \(\theta\) とデータ \(X\)）：
 
 $$\underbrace{P(\theta \mid X)}_{\text{事後分布}} = \frac{\overbrace{P(X \mid \theta)}^{\text{尤度}}\;\overbrace{P(\theta)}^{\text{事前分布}}}{\underbrace{P(X)}_{\text{周辺尤度}}} \propto P(X \mid \theta)\,P(\theta)$$
 
@@ -33,13 +33,13 @@ $$\underbrace{P(\theta \mid X)}_{\text{事後分布}} = \frac{\overbrace{P(X \mi
 
 $$P(X) = \int P(X \mid \theta)\,P(\theta)\,d\theta$$
 
-**ベータ–二項共役**：事前分布 $\theta \sim \mathrm{Beta}(\alpha,\beta)$ に $n$ 回中 $k$ 回成功を観測すると、
+**ベータ–二項共役**：事前分布 \(\theta \sim \mathrm{Beta}(\alpha,\beta)\) に \(n\) 回中 \(k\) 回成功を観測すると、
 
 $$\theta \mid X \sim \mathrm{Beta}(\alpha + k,\; \beta + n - k)$$
 
-事後平均は $\dfrac{\alpha+k}{\alpha+\beta+n}$ となる。
+事後平均は \(\dfrac{\alpha+k}{\alpha+\beta+n}\) となる。
 
-**ベイズ因子**（モデル $M_1$ と $M_0$ の比較）：
+**ベイズ因子**（モデル \(M_1\) と \(M_0\) の比較）：
 
 $$\mathrm{BF}_{10} = \frac{P(X \mid M_1)}{P(X \mid M_0)}$$
 
