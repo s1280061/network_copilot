@@ -133,6 +133,7 @@ _CATEGORY_MAP = {
     "cad-basics":              "CAD/設計",
     "3d-math":                 "CAD/設計",
     "orthographic-projection": "CAD/設計",
+    "third-angle-projection":  "CAD/設計",
     "engineering-sketch":      "CAD/設計",
     # Automotive
     "engineering-drawing":       "Automotive",

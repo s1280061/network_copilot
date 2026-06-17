@@ -1658,6 +1658,35 @@
 "favorite": false
 },
 {
+"slug": "third-angle-projection",
+"title": "第三角投影法（正面図・平面図・右側面図）の描き方",
+"level": 2,
+"category": "CAD/設計",
+"related": [
+"orthographic-projection",
+"cad-basics",
+"engineering-sketch"
+],
+"prereq": [
+"orthographic-projection"
+],
+"tags": [
+"cad",
+"drawing",
+"third-angle",
+"orthographic",
+"projection",
+"exercise"
+],
+"next": [],
+"difficulty": "初級",
+"updated": "2026-06-17",
+"excerpt": "**第三角投影法（Third-angle projection）** は、立体を3つの基準面（正面・水平・側面）に投影して描く製図法で、アメリカ・日本の機械製図（JIS、ASME Y14.3）で広く使われています。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "statistics",
 "title": "統計学の基礎（確率・分布・検定）",
 "level": 2,
@@ -6538,6 +6567,55 @@
 "completed": false,
 "favorite": false
 },
+"third-angle-projection": {
+"slug": "third-angle-projection",
+"title": "第三角投影法（正面図・平面図・右側面図）の描き方",
+"level": 2,
+"category": "CAD/設計",
+"related": [
+"orthographic-projection",
+"cad-basics",
+"engineering-sketch"
+],
+"prereq": [
+"orthographic-projection"
+],
+"tags": [
+"cad",
+"drawing",
+"third-angle",
+"orthographic",
+"projection",
+"exercise"
+],
+"next": [],
+"difficulty": "初級",
+"updated": "2026-06-17",
+"html": "<h2>第三角投影法とは</h2>\n<p><strong>第三角投影法（Third-angle projection）</strong> は、立体を3つの基準面（正面・水平・側面）に投影して描く製図法で、アメリカ・日本の機械製図（JIS、ASME Y14.3）で広く使われています。</p>\n<p>立体を「透明なガラス箱」の中に置き、観察者の<strong>手前から見たまま</strong>を投影面に映すのが特徴です（第一角法は逆に、立体の向こう側に投影面を置きます）。</p>\n<pre><code class=\"language-mermaid\">graph LR\n  A[&quot;観察者&quot;] --&gt; B[&quot;投影面（ガラス箱）&quot;]\n  B --&gt; C[&quot;立体（対象物）&quot;]\n  A -.-&gt;|&quot;見た通りを\\n手前の面に投影&quot;| B\n</code></pre>\n<h2>三面図の基本配置</h2>\n<p>第三角法では、<strong>正面図を中心</strong>に、</p>\n<ul>\n<li><strong>平面図（Top View）</strong>：正面図の <strong>上</strong></li>\n<li><strong>右側面図（Right Side View）</strong>：正面図の <strong>右</strong></li>\n<li>左側面図が必要な場合は正面図の左、底面図は正面図の下</li>\n</ul>\n<p>という決まった配置で並べます。</p>\n<p><img alt=\"第三角投影法の配置ルール\" src=\"/images/charts/third-angle-layout.png\" /></p>\n<p>この配置を守ることで、図面を見る人は正面図を中心に視線を上下左右に動かすだけで、対象物の幅・奥行き・高さの関係を読み取れます。</p>\n<h2>立体から三面図を作る</h2>\n<p>次のL字形のブロックを例に、3つの図を作ってみましょう。</p>\n<p><img alt=\"立体と三面図の対応\" src=\"/images/charts/third-angle-projection.png\" /></p>\n<table>\n<thead>\n<tr>\n<th>図</th>\n<th>見る方向</th>\n<th>表す情報</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>① 立体</td>\n<td>（斜めから見た参考図）</td>\n<td>全体形状の確認用</td>\n</tr>\n<tr>\n<td>② 正面図（Front View）</td>\n<td>−Y方向（手前から）</td>\n<td><strong>幅（X）× 高さ（Z）</strong></td>\n</tr>\n<tr>\n<td>③ 平面図（Top View）</td>\n<td>−Z方向（上から）</td>\n<td><strong>幅（X）× 奥行き（Y）</strong></td>\n</tr>\n<tr>\n<td>④ 右側面図（Right Side View）</td>\n<td>+X方向（右から）</td>\n<td><strong>奥行き（Y）× 高さ（Z）</strong></td>\n</tr>\n</tbody>\n</table>\n<h3>読み取りのポイント</h3>\n<ul>\n<li>正面図と平面図は <strong>幅（X方向の長さ）が一致</strong> する（縦の補助線でつながる）</li>\n<li>正面図と右側面図は <strong>高さ（Z方向の長さ）が一致</strong> する（横の補助線でつながる）</li>\n<li>平面図と右側面図は <strong>奥行き（Y方向の長さ）が一致</strong> する</li>\n</ul>\n<pre><code>        平面図\n          ↑\n          │ 幅が一致\n正面図 ──┼──── 右側面図\n          │ 高さが一致\n</code></pre>\n<p>奥行きの一致は、平面図と右側面図の間で <strong>45°の補助線（マイター線）</strong> を使って転写するのが製図の定石です。</p>\n<h2>隠れ線・中心線の描き方</h2>\n<ul>\n<li><strong>外形線（見える輪郭）</strong>：太い実線</li>\n<li><strong>隠れ線（裏に隠れた輪郭）</strong>：破線</li>\n<li><strong>中心線</strong>：一点鎖線（細い線—長い線—短い線の繰り返し）</li>\n</ul>\n<pre><code>外形線:  ───────────\n隠れ線:  - - - - - - -\n中心線:  ─ ─ · ─ ─ · ─ ─\n</code></pre>\n<p>段差や穴がある部品では、表からは見えない稜線も「隠れ線」として破線で描き込むのが重要です。描き忘れると、図面だけ見た人が形状を誤解してしまいます。</p>\n<h2>第一角法との違い（再確認）</h2>\n<table>\n<thead>\n<tr>\n<th>項目</th>\n<th>第一角法（JIS旧来・欧州）</th>\n<th>第三角法（ASME・米国・現在のJIS推奨）</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>投影面の位置</td>\n<td>立体の向こう側</td>\n<td>立体の手前側（観察者側）</td>\n</tr>\n<tr>\n<td>平面図の位置</td>\n<td>正面図の <strong>下</strong></td>\n<td>正面図の <strong>上</strong></td>\n</tr>\n<tr>\n<td>右側面図の位置</td>\n<td>正面図の <strong>左</strong></td>\n<td>正面図の <strong>右</strong></td>\n</tr>\n<tr>\n<td>図面の記号</td>\n<td>⊖（円錐の頂点が左）</td>\n<td>⊖（円錐の頂点が右、第一角法と鏡像）</td>\n</tr>\n</tbody>\n</table>\n<pre><code class=\"language-mermaid\">graph TB\n  subgraph &quot;第一角法&quot;\n    F1[&quot;正面図&quot;]\n    F1b[&quot;平面図（下）&quot;]\n    F1 --&gt; F1b\n  end\n  subgraph &quot;第三角法&quot;\n    F2[&quot;平面図（上）&quot;]\n    F2b[&quot;正面図&quot;]\n    F2 --&gt; F2b\n  end\n</code></pre>\n<p>混在すると図面の解釈を誤るため、<strong>図面の表題欄に第一角法／第三角法の記号を必ず明記</strong>します。</p>\n<h2>演習問題</h2>\n<p>以下の図形について、第三角投影法での三面図を考えてみましょう（紙に手描きしてから答えを確認するのがおすすめです）。</p>\n<h3>演習1：直方体に円柱の穴があるブロック</h3>\n<p>幅60mm・奥行き40mm・高さ20mmの直方体の中心に、直径20mmの円柱の貫通穴が高さ方向に空いている。</p>\n<p><strong>問</strong>：正面図・平面図・右側面図をそれぞれ簡単に説明せよ。</p>\n<details>\n<summary>解説を見る</summary>\n\n- **正面図**：幅60mm×高さ20mmの長方形。円柱の穴は高さ方向に貫通しているため、正面から見ると**穴の外形が見えない**ので、中心線（一点鎖線）のみが縦に1本入る。\n- **平面図**：幅60mm×奥行き40mmの長方形の中央に、直径20mmの**円（実線）**が見える（穴が上から丸見えのため）。\n- **右側面図**：奥行き40mm×高さ20mmの長方形。正面図と同様、穴は奥行き方向ではなく高さ方向に貫通しているため外形線としては見えず、中心線のみ。\n\nポイント：**穴の軸方向と同じ方向から見た図には円が見え、軸と垂直な方向から見た図には中心線だけが入る**。\n</details>\n\n<h3>演習2：L字形ブロックの右側面図の高さ</h3>\n<p>本文中のL字形ブロック（ベース：幅4×奥行き3×高さ1、上段：幅2×奥行き1×高さ1を左奥に追加）について、右側面図の全体の高さは何になるか。</p>\n<details>\n<summary>解説を見る</summary>\n\n右側面図はY-Z平面（奥行き×高さ）を表す図です。\n\n- ベース部分の高さ：1（Z: 0→1）\n- 上段部分の高さ：1（Z: 1→2）\n\n立体の最大高さは Z=0 から Z=2 なので、**右側面図全体の高さは 2**（ベースの高さ1 + 上段の高さ1）になります。正面図と右側面図は高さが一致するため、正面図の高さも同じく2であることが確認できます。\n</details>\n\n<h3>演習3：第一角法と第三角法の見分け方</h3>\n<p>ある図面の表題欄に「正面図の右に側面図が描かれている」配置が確認できた。これは第一角法・第三角法のどちらか。</p>\n<details>\n<summary>解説を見る</summary>\n\n**第三角法**。第三角法では右側面図を正面図の**右**に配置するのがルール（観察者側にガラス箱があり、見たままを投影するため）。第一角法では右側面図は正面図の**左**に配置されます。\n</details>\n\n<h2>まとめ</h2>\n<ul>\n<li>第三角投影法は <strong>正面図を中心に、上＝平面図、右＝右側面図</strong> という配置ルールを持つ</li>\n<li>図同士は <strong>補助線（マイター線含む）</strong> で寸法の一致を保ちながら描く</li>\n<li>隠れた形状は <strong>破線（隠れ線）</strong>、対称軸や穴の中心は <strong>一点鎖線（中心線）</strong> で表現する</li>\n<li>第一角法との混在を避けるため、図面には投影法の記号を明記する</li>\n<li>実際の設計では3DCADから自動的に三面図を生成することが多いが、<strong>手で描いて考える練習</strong>が形状理解の力を養う</li>\n</ul>",
+"prereq_full": [
+{
+"slug": "orthographic-projection",
+"title": "正投影図・第一角法・第三角法"
+}
+],
+"related_full": [
+{
+"slug": "orthographic-projection",
+"title": "正投影図・第一角法・第三角法"
+},
+{
+"slug": "cad-basics",
+"title": "CADの基礎"
+},
+{
+"slug": "engineering-sketch",
+"title": "ポンチ絵・エンジニアリングスケッチ"
+}
+],
+"next_full": [],
+"completed": false,
+"favorite": false
+},
 "statistics": {
 "slug": "statistics",
 "title": "統計学の基礎（確率・分布・検定）",
@@ -10470,6 +10548,10 @@
 {
 "slug": "engineering-sketch",
 "title": "ポンチ絵・エンジニアリングスケッチ"
+},
+{
+"slug": "third-angle-projection",
+"title": "第三角投影法（正面図・平面図・右側面図）の描き方"
 }
 ],
 "c-basics": [
@@ -11306,6 +11388,10 @@
 "title": "正投影図・第一角法・第三角法"
 },
 {
+"slug": "third-angle-projection",
+"title": "第三角投影法（正面図・平面図・右側面図）の描き方"
+},
+{
 "slug": "3d-math",
 "title": "3次元の数学（座標系・変換行列・回転）"
 },
@@ -11524,6 +11610,10 @@
 "title": "3次元の数学（座標系・変換行列・回転）"
 },
 {
+"slug": "third-angle-projection",
+"title": "第三角投影法（正面図・平面図・右側面図）の描き方"
+},
+{
 "slug": "engineering-drawing",
 "title": "図面の読み方（自動車部品・機械製図）"
 }
@@ -11578,6 +11668,28 @@
 {
 "slug": "capacitor",
 "title": "コンデンサ（静電容量・充放電）"
+}
+],
+"third-angle-projection": [
+{
+"slug": "orthographic-projection",
+"title": "正投影図・第一角法・第三角法"
+},
+{
+"slug": "engineering-sketch",
+"title": "ポンチ絵・エンジニアリングスケッチ"
+},
+{
+"slug": "cad-basics",
+"title": "CADの基礎"
+},
+{
+"slug": "3d-math",
+"title": "3次元の数学（座標系・変換行列・回転）"
+},
+{
+"slug": "engineering-drawing",
+"title": "図面の読み方（自動車部品・機械製図）"
 }
 ],
 "statistics": [
@@ -11754,6 +11866,10 @@
 {
 "slug": "engineering-sketch",
 "title": "ポンチ絵・エンジニアリングスケッチ"
+},
+{
+"slug": "third-angle-projection",
+"title": "第三角投影法（正面図・平面図・右側面図）の描き方"
 }
 ],
 "avtp": [
@@ -15414,6 +15530,35 @@
 "difficulty": "初級",
 "updated": "2026-06-16",
 "excerpt": "立体（3Dモデル）を**平面の図面（2D）に落とし込む**方法が「投影」です。正投影（直投影）は、光線が投影面に対して**垂直・平行**に当たるとして描く手法で、寸法が正確に表れるため製造図面の基本です。",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "third-angle-projection",
+"title": "第三角投影法（正面図・平面図・右側面図）の描き方",
+"level": 2,
+"category": "CAD/設計",
+"related": [
+"orthographic-projection",
+"cad-basics",
+"engineering-sketch"
+],
+"prereq": [
+"orthographic-projection"
+],
+"tags": [
+"cad",
+"drawing",
+"third-angle",
+"orthographic",
+"projection",
+"exercise"
+],
+"next": [],
+"difficulty": "初級",
+"updated": "2026-06-17",
+"excerpt": "**第三角投影法（Third-angle projection）** は、立体を3つの基準面（正面・水平・側面）に投影して描く製図法で、アメリカ・日本の機械製図（JIS、ASME Y14.3）で広く使われています。",
 "views": 0,
 "completed": false,
 "favorite": false
