@@ -1,37 +1,57 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { getArticles, search as apiSearch } from "@/lib/api";
 import { Article, SearchHit } from "@/lib/types";
+import Thumbnail, { categoryStyle } from "@/components/Thumbnail";
+
+const CATEGORIES = ["Ethernet", "TCP/IP", "PCAP", "SOME/IP", "AUTOSAR", "SDV", "Automotive Bus", "Diagnostics", "Security", "Howto", "Python", "アルゴリズム", "C言語", "CAD/設計", "Statistics", "ML", "DL", "GenAI", "CV", "Electronics", "Automotive", "Wireless"];
 
 export default function GlossaryPage() {
+  return (
+    <Suspense fallback={null}>
+      <GlossaryContent />
+    </Suspense>
+  );
+}
+
+function GlossaryContent() {
+  const searchParams = useSearchParams();
   const [items, setItems] = useState<Article[]>([]);
   const [q, setQ] = useState("");
   const [hits, setHits] = useState<SearchHit[] | null>(null);
   const [mode, setMode] = useState("");
+  const [activeTab, setActiveTab] = useState(searchParams.get("tab") ?? "all");
+
+  // searchParams が変わるたびに（サイドバーのタブリンクを押したとき等）タブを同期する
+  useEffect(() => {
+    const tab = searchParams.get("tab") ?? "all";
+    setActiveTab(tab);
+    setHits(null);
+    setQ("");
+  }, [searchParams]);
 
   useEffect(() => {
     getArticles().then((d) => setItems(d.articles)).catch(() => {});
   }, []);
 
   async function runSearch() {
-    if (!q.trim()) {
-      setHits(null);
-      return;
-    }
+    if (!q.trim()) { setHits(null); return; }
     const d = await apiSearch(q);
     setHits(d.results);
     setMode(d.mode);
   }
 
+  const displayed = activeTab === "all"
+    ? items
+    : items.filter((a) => a.category === activeTab);
+
   return (
     <div>
       <header className="mb-5">
-        <h1 className="text-2xl font-bold">用語集</h1>
-        <p className="text-slate-500 text-sm mt-1">
-          各用語は記事ページです。検索は意味検索(RAG)に対応しています。
-        </p>
+        <h1 className="text-2xl font-bold">記事一覧</h1>
       </header>
 
       <div className="flex gap-2 mb-5">
@@ -39,70 +59,90 @@ export default function GlossaryPage() {
           value={q}
           onChange={(e) => setQ(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && runSearch()}
-          placeholder="意味で検索 (例: 確実にデータを届ける仕組み)"
-          className="flex-1 border rounded-lg px-4 py-2"
+          placeholder="キーワードで検索..."
+          className="flex-1 border rounded-lg px-4 py-2 text-sm"
         />
-        <button onClick={runSearch} className="bg-sky-600 text-white px-5 rounded-lg">
+        <button onClick={runSearch} className="bg-sky-600 text-white px-5 rounded-lg text-sm">
           検索
         </button>
       </div>
 
       {hits !== null ? (
         <div>
-          <div className="flex items-center justify-between mb-2">
+          <div className="flex items-center justify-between mb-3">
             <p className="text-sm text-slate-500">
-              検索結果（{mode === "semantic" ? "意味検索" : "キーワード"}）
+              {hits.length} 件（{mode === "semantic" ? "意味検索" : "キーワード"}）
             </p>
-            <button
-              onClick={() => {
-                setHits(null);
-                setQ("");
-              }}
-              className="text-xs text-slate-400 hover:text-slate-600"
-            >
+            <button onClick={() => { setHits(null); setQ(""); }} className="text-xs text-slate-400 hover:text-slate-600">
               一覧に戻る
             </button>
           </div>
-          {hits.length === 0 && (
-            <p className="text-sm text-slate-400">該当する記事がありません。</p>
-          )}
-          <ul className="space-y-1">
-            {hits.map((h) => (
-              <li key={h.slug}>
+          {hits.length === 0 && <p className="text-sm text-slate-400">該当する記事がありません。</p>}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {hits.map((h) => {
+              const art = items.find((a) => a.slug === h.slug);
+              const style = categoryStyle(h.category ?? "");
+              return (
                 <Link
+                  key={h.slug}
                   href={`/glossary/${h.slug}`}
-                  className="flex items-center justify-between border rounded-lg px-3 py-2 bg-white hover:border-sky-400"
+                  className="block border rounded-xl bg-white overflow-hidden hover:border-sky-400 hover:shadow-sm transition"
                 >
-                  <span className="font-medium">{h.title}</span>
-                  <span className="text-xs text-slate-400">
-                    {h.category}
-                    {h.score !== undefined && ` ・類似度 ${h.score}`}
-                  </span>
+                  {art && <Thumbnail slug={art.slug} category={art.category} className="h-28 w-full" />}
+                  <div className="p-3">
+                    <span className={`text-xs px-2 py-0.5 rounded-full ${style.bg} ${style.text}`}>{h.category}</span>
+                    <p className="font-semibold text-sm mt-2">{h.title}</p>
+                    {art?.excerpt && <p className="text-xs text-slate-500 mt-1 line-clamp-2">{art.excerpt}</p>}
+                  </div>
                 </Link>
-              </li>
-            ))}
-          </ul>
+              );
+            })}
+          </div>
         </div>
       ) : (
-        <div className="grid sm:grid-cols-2 gap-3">
-          {items.map((a) => (
-            <Link
-              key={a.slug}
-              href={`/glossary/${a.slug}`}
-              className="block border rounded-lg p-4 bg-white hover:border-sky-400 hover:shadow-sm transition"
+        <>
+          {/* Category tabs */}
+          <div className="flex gap-2 flex-wrap mb-5">
+            <button
+              onClick={() => setActiveTab("all")}
+              className={`text-xs px-3 py-1.5 rounded-full border transition ${activeTab === "all" ? "bg-slate-800 text-white border-slate-800" : "bg-white text-slate-600 hover:border-slate-400"}`}
             >
-              <div className="flex items-center justify-between">
-                <h2 className="font-semibold">{a.title}</h2>
-                <span className="text-xs text-slate-400">{a.category}</span>
-              </div>
-              <p className="text-sm text-slate-500 mt-1 line-clamp-2">{a.excerpt}</p>
-              <div className="flex gap-2 mt-2 text-xs">
-                {a.completed && <span className="text-green-600">✓ 学習済み</span>}
-                {a.favorite && <span className="text-amber-600">★</span>}
-              </div>
-            </Link>
-          ))}
-        </div>
+              すべて
+            </button>
+            {CATEGORIES.map((c) => {
+              const style = categoryStyle(c);
+              return (
+                <button
+                  key={c}
+                  onClick={() => setActiveTab(c)}
+                  className={`text-xs px-3 py-1.5 rounded-full border transition ${activeTab === c ? `${style.bg} ${style.text} border-transparent` : "bg-white text-slate-600 hover:border-slate-400"}`}
+                >
+                  {c}
+                </button>
+              );
+            })}
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {displayed.map((a) => {
+              const style = categoryStyle(a.category);
+              return (
+                <Link
+                  key={a.slug}
+                  href={`/glossary/${a.slug}`}
+                  className="block border rounded-xl bg-white overflow-hidden hover:border-sky-400 hover:shadow-sm transition"
+                >
+                  <Thumbnail slug={a.slug} category={a.category} className="h-28 w-full" />
+                  <div className="p-3">
+                    <span className={`text-xs px-2 py-0.5 rounded-full ${style.bg} ${style.text}`}>{a.category}</span>
+                    <h2 className="font-semibold text-sm mt-2">{a.title}</h2>
+                    <p className="text-xs text-slate-500 mt-1 line-clamp-2">{a.excerpt}</p>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </>
       )}
     </div>
   );

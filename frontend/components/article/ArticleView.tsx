@@ -1,21 +1,57 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 import mermaid from "mermaid";
-import {
-  getArticle,
-  setProgress,
-  addFavorite,
-  removeFavorite,
-  getRecommend,
-} from "@/lib/api";
+import hljs from "highlight.js/lib/core";
+import python from "highlight.js/lib/languages/python";
+import bash from "highlight.js/lib/languages/bash";
+import javascript from "highlight.js/lib/languages/javascript";
+import typescript from "highlight.js/lib/languages/typescript";
+import json from "highlight.js/lib/languages/json";
+import yaml from "highlight.js/lib/languages/yaml";
+import sql from "highlight.js/lib/languages/sql";
+import cpp from "highlight.js/lib/languages/cpp";
+import renderMathInElement from "katex/contrib/auto-render";
+import "katex/dist/katex.min.css";
+import { getArticle, getRecommend, getFavorites, addFavorite, removeFavorite } from "@/lib/api";
 import { Article, Ref } from "@/lib/types";
 import { useStudyPanel } from "@/lib/study-context";
-import { recordView } from "@/lib/profile";
+import Thumbnail from "@/components/Thumbnail";
+import CommentThread from "@/components/article/CommentThread";
+
+hljs.registerLanguage("python", python);
+hljs.registerLanguage("bash", bash);
+hljs.registerLanguage("shell", bash);
+hljs.registerLanguage("javascript", javascript);
+hljs.registerLanguage("typescript", typescript);
+hljs.registerLanguage("json", json);
+hljs.registerLanguage("yaml", yaml);
+hljs.registerLanguage("sql", sql);
+hljs.registerLanguage("cpp", cpp);
+hljs.registerLanguage("c", cpp);
 
 mermaid.initialize({ startOnLoad: false, theme: "default", securityLevel: "loose" });
+
+/** language-xxx クラスから言語名を抽出 */
+function getLang(code: HTMLElement): string {
+  const cls = Array.from(code.classList).find((c) => c.startsWith("language-"));
+  return cls ? cls.replace("language-", "") : "";
+}
+
+/** コピーボタンを生成 */
+function makeCopyBtn(text: string): HTMLButtonElement {
+  const btn = document.createElement("button");
+  btn.className = "hljs-copy-btn";
+  btn.textContent = "コピー";
+  btn.addEventListener("click", () => {
+    navigator.clipboard.writeText(text).then(() => {
+      btn.textContent = "✓ コピー済み";
+      setTimeout(() => { btn.textContent = "コピー"; }, 2000);
+    });
+  });
+  return btn;
+}
 
 export default function ArticleView({ slug }: { slug: string }) {
   const router = useRouter();
@@ -23,6 +59,8 @@ export default function ArticleView({ slug }: { slug: string }) {
   const [article, setArticle] = useState<Article | null>(null);
   const [recommended, setRecommended] = useState<Ref[]>([]);
   const [error, setError] = useState(false);
+  const [faved, setFaved] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   const load = useCallback(() => {
     setArticle(null);
@@ -31,13 +69,9 @@ export default function ArticleView({ slug }: { slug: string }) {
     getArticle(slug)
       .then((a) => {
         setArticle(a);
-        recordView(a.slug);
         setPanel({
-          title: a.title,
           slug: a.slug,
-          prereq: a.prereq_full,
-          related: a.related_full,
-          next: a.next_full,
+          related: [...a.related_full, ...a.next_full],
         });
       })
       .catch(() => setError(true));
@@ -50,28 +84,93 @@ export default function ArticleView({ slug }: { slug: string }) {
     load();
   }, [load]);
 
-  // Render mermaid code blocks after HTML is injected
+  // reflect current favorite state for this article
   useEffect(() => {
+    getFavorites()
+      .then((d) => setFaved(d.favorites.some((f) => f.slug === slug)))
+      .catch(() => setFaved(false));
+  }, [slug]);
+
+  async function toggleFavorite() {
     if (!article) return;
-    const blocks = document.querySelectorAll<HTMLElement>(
-      ".prose-article code.language-mermaid"
-    );
-    blocks.forEach(async (block, i) => {
-      const chart = block.textContent || "";
-      const id = `mermaid-${slug}-${i}`;
-      try {
-        const { svg } = await mermaid.render(id, chart);
-        const wrapper = document.createElement("div");
-        wrapper.className = "overflow-x-auto my-6 flex justify-center";
-        wrapper.innerHTML = svg;
-        block.closest("pre")?.replaceWith(wrapper);
-      } catch {
-        // leave as-is on error
+    if (faved) {
+      await removeFavorite(slug);
+      setFaved(false);
+    } else {
+      await addFavorite(slug, article.title);
+      setFaved(true);
+    }
+  }
+
+  // Render the article body imperatively into a ref, then enhance it
+  // (mermaid + syntax highlight + KaTeX). Doing this in a ref decouples the
+  // enhanced DOM from React re-renders (e.g. toggling お気に入り), so the
+  // rendered math/diagrams/code don't revert to raw source.
+  useEffect(() => {
+    const container = contentRef.current;
+    if (!article || !container) return;
+
+    // 1. inject the raw HTML
+    container.innerHTML = article.html;
+
+    // 2. KaTeX math first (ignores code/pre so it won't touch code blocks)
+    try {
+      renderMathInElement(container, {
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "\\[", right: "\\]", display: true },
+          { left: "\\(", right: "\\)", display: false },
+        ],
+        ignoredTags: ["script", "noscript", "style", "textarea", "pre", "code"],
+        throwOnError: false,
+      });
+    } catch {
+      // leave as-is on error
+    }
+
+    // 3. Mermaid diagrams
+    container
+      .querySelectorAll<HTMLElement>("code.language-mermaid")
+      .forEach(async (block, i) => {
+        const chart = block.textContent || "";
+        try {
+          const { svg } = await mermaid.render(`mermaid-${slug}-${i}`, chart);
+          const wrapper = document.createElement("div");
+          wrapper.className = "overflow-x-auto my-6 flex justify-center";
+          wrapper.innerHTML = svg;
+          block.closest("pre")?.replaceWith(wrapper);
+        } catch {
+          // leave as-is on error
+        }
+      });
+
+    // 4. Syntax highlighting for remaining code blocks
+    container.querySelectorAll<HTMLElement>("pre code").forEach((code) => {
+      const lang = getLang(code);
+      if (lang === "mermaid") return;
+
+      if (lang && hljs.getLanguage(lang)) {
+        code.innerHTML = hljs.highlight(code.textContent || "", { language: lang }).value;
+      } else {
+        hljs.highlightElement(code);
       }
+      code.classList.add("hljs");
+
+      const pre = code.closest("pre");
+      if (!pre || pre.classList.contains("hljs-wrapped")) return;
+      pre.classList.add("hljs-wrapped");
+
+      if (lang && lang !== "text") {
+        const badge = document.createElement("span");
+        badge.className = "hljs-lang-badge";
+        badge.textContent = lang;
+        pre.appendChild(badge);
+      }
+      pre.appendChild(makeCopyBtn(code.textContent || ""));
     });
   }, [article, slug]);
 
-  // Intercept internal [[term]] links for SPA navigation.
+  // SPA link interception
   useEffect(() => {
     function onClick(e: MouseEvent) {
       const t = (e.target as HTMLElement)?.closest("a.term-link");
@@ -85,103 +184,60 @@ export default function ArticleView({ slug }: { slug: string }) {
     return () => document.removeEventListener("click", onClick);
   }, [router]);
 
-  async function toggleDone() {
-    if (!article) return;
-    await setProgress(article.slug, !article.completed);
-    setArticle({ ...article, completed: !article.completed });
-  }
-
-  async function toggleFav() {
-    if (!article) return;
-    if (article.favorite) await removeFavorite(article.slug);
-    else await addFavorite(article.slug, article.title);
-    setArticle({ ...article, favorite: !article.favorite });
-  }
-
   if (error)
     return <p className="text-red-600">記事が見つかりませんでした: {slug}</p>;
   if (!article) return <p className="text-slate-400">読み込み中...</p>;
 
+  const allRelated = [
+    ...article.related_full,
+    ...article.next_full,
+    ...article.prereq_full,
+  ].filter((r, i, arr) => arr.findIndex((x) => x.slug === r.slug) === i);
+
   return (
     <article>
-      <div className="relative w-full rounded-xl overflow-hidden bg-black mb-6" style={{ aspectRatio: "1376/768", maxHeight: "200px" }}>
-        <Image
-          src={`/thumbnails/${article.slug}.jpg`}
-          alt={article.title}
-          fill
-          className="object-contain"
-          onError={(e) => {
-            const img = e.currentTarget as HTMLImageElement;
-            const prompt = encodeURIComponent(
-              `${article.title} automotive ADAS network technical diagram, professional, dark blue theme`
-            );
-            img.src = `https://image.pollinations.ai/prompt/${prompt}?width=1376&height=768&nologo=true&seed=${article.slug.length}`;
-          }}
-        />
-      </div>
-      <div className="flex items-start justify-between gap-4 mb-4">
-        <div>
-          <span className="text-xs font-semibold text-sky-600">
-            Level {article.level}
-          </span>
-          <h1 className="text-2xl font-bold">{article.title}</h1>
-        </div>
-        <div className="flex gap-2 shrink-0">
-          <button
-            onClick={toggleFav}
-            className={`text-sm rounded-md px-3 py-1.5 border ${
-              article.favorite
-                ? "bg-amber-50 border-amber-300 text-amber-700"
-                : "border-slate-300 text-slate-600 hover:bg-slate-50"
-            }`}
-          >
-            {article.favorite ? "★ お気に入り" : "☆ お気に入り"}
-          </button>
-          <button
-            onClick={toggleDone}
-            className={`text-sm rounded-md px-3 py-1.5 border ${
-              article.completed
-                ? "bg-green-50 border-green-300 text-green-700"
-                : "border-slate-300 text-slate-600 hover:bg-slate-50"
-            }`}
-          >
-            {article.completed ? "✓ 学習済み" : "学習済みにする"}
-          </button>
-        </div>
-      </div>
-
-      <div
-        className="prose-article"
-        dangerouslySetInnerHTML={{ __html: article.html }}
+      <Thumbnail
+        slug={article.slug}
+        title={article.title}
+        category={article.category}
+        className="w-full h-48 sm:h-64 rounded-xl mb-6"
+        iconClassName="text-6xl"
       />
 
-      {article.prereq_full.length > 0 && (
-        <LinkSection
-          label="前提知識"
-          items={article.prereq_full}
-          onClick={(s) => router.push(`/glossary/${s}`)}
-        />
-      )}
+      <div className="mb-6">
+        <span className="text-xs px-2 py-0.5 rounded-full bg-slate-100 text-slate-500">
+          {article.category}
+        </span>
+        <div className="flex items-start justify-between gap-3 mt-2">
+          <h1 className="text-2xl font-bold">{article.title}</h1>
+          <button
+            onClick={toggleFavorite}
+            title={faved ? "お気に入りから削除" : "お気に入りに追加"}
+            className={`shrink-0 text-sm border rounded-full px-3 py-1.5 transition ${
+              faved
+                ? "bg-amber-50 border-amber-300 text-amber-600"
+                : "bg-white border-slate-300 text-slate-500 hover:border-amber-400 hover:text-amber-600"
+            }`}
+          >
+            {faved ? "★ お気に入り済み" : "☆ お気に入り"}
+          </button>
+        </div>
+        <p className="text-xs text-slate-400 mt-1">{article.updated}</p>
+      </div>
 
-      {article.related_full.length > 0 && (
-        <LinkSection
-          label="関連知識"
-          items={article.related_full}
-          onClick={(s) => router.push(`/glossary/${s}`)}
-        />
-      )}
+      <div className="prose-article" ref={contentRef} />
 
-      {article.next_full.length > 0 && (
-        <div className="mt-6 border-t pt-4">
-          <p className="text-sm text-slate-500 mb-2">次に学ぶべき内容</p>
+      {allRelated.length > 0 && (
+        <div className="mt-10 pt-6 border-t">
+          <p className="text-sm font-semibold text-slate-600 mb-3">関連記事</p>
           <div className="flex flex-wrap gap-2">
-            {article.next_full.map((n) => (
+            {allRelated.map((it) => (
               <button
-                key={n.slug}
-                onClick={() => router.push(`/glossary/${n.slug}`)}
-                className="text-sm bg-sky-600 text-white rounded-md px-3 py-1.5 hover:bg-sky-700"
+                key={it.slug}
+                onClick={() => router.push(`/glossary/${it.slug}`)}
+                className="text-sm border rounded-full px-4 py-1.5 bg-white text-slate-700 hover:border-sky-400 hover:text-sky-600 transition"
               >
-                {n.title} →
+                {it.title}
               </button>
             ))}
           </div>
@@ -189,16 +245,14 @@ export default function ArticleView({ slug }: { slug: string }) {
       )}
 
       {recommended.length > 0 && (
-        <div className="mt-8 border-t pt-4">
-          <p className="text-sm font-semibold text-slate-700 mb-2">
-            ✨ あなたへのおすすめ
-          </p>
+        <div className="mt-8">
+          <p className="text-sm font-semibold text-slate-600 mb-3">おすすめ記事</p>
           <div className="grid sm:grid-cols-2 gap-2">
             {recommended.map((r) => (
               <button
                 key={r.slug}
                 onClick={() => router.push(`/glossary/${r.slug}`)}
-                className="text-left text-sm border rounded-lg px-3 py-2 bg-white hover:border-sky-400"
+                className="text-left text-sm border rounded-lg px-4 py-3 bg-white hover:border-sky-400 hover:shadow-sm transition"
               >
                 {r.title} →
               </button>
@@ -206,33 +260,8 @@ export default function ArticleView({ slug }: { slug: string }) {
           </div>
         </div>
       )}
-    </article>
-  );
-}
 
-function LinkSection({
-  label,
-  items,
-  onClick,
-}: {
-  label: string;
-  items: Ref[];
-  onClick: (slug: string) => void;
-}) {
-  return (
-    <div className="mt-6 border-t pt-4">
-      <p className="text-sm text-slate-500 mb-2">{label}</p>
-      <div className="flex flex-wrap gap-2">
-        {items.map((it) => (
-          <button
-            key={it.slug}
-            onClick={() => onClick(it.slug)}
-            className="text-sm border rounded-md px-3 py-1.5 bg-white text-slate-700 hover:border-sky-400"
-          >
-            {it.title}
-          </button>
-        ))}
-      </div>
-    </div>
+      <CommentThread slug={slug} />
+    </article>
   );
 }

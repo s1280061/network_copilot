@@ -4,7 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from .config import get_settings
 from .db import init_db
 from .knowledge import lookup_glossary
-from .routers import chat, pcap, content, progress, home, search
+from .routers import chat, pcap, content, progress, home, search, comments
 
 settings = get_settings()
 app = FastAPI(title="Network Learning Copilot API", version="0.2.0")
@@ -50,3 +50,4 @@ app.include_router(pcap.router)
 app.include_router(progress.router)
 app.include_router(home.router)
 app.include_router(search.router)
+app.include_router(comments.router)

@@ -107,27 +107,59 @@ export const setProgress = (slug: string, completed: boolean) =>
     }
   );
 
-export const addFavorite = (slug: string, title: string) =>
-  liveOrStatic<{ ok: boolean }>(
-    "/api/favorites",
-    () => ({ ok: false }),
-    {
+// Favorites are stored server-side (Next.js API route) keyed by the same
+// anonymous user_id used for comments, so they persist across sessions.
+type FavItem = Ref & { created_at: string };
+
+function getUserId(): string {
+  if (typeof window === "undefined") return "";
+  const stored = localStorage.getItem("nc_user_id");
+  if (stored) return stored;
+  const id = Math.random().toString(36).slice(2, 10).toUpperCase();
+  localStorage.setItem("nc_user_id", id);
+  return id;
+}
+
+export const addFavorite = async (slug: string, title: string): Promise<{ ok: boolean }> => {
+  const userId = getUserId();
+  try {
+    await fetch("/api/favorites", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ slug, title }),
-    }
-  );
+      body: JSON.stringify({ user_id: userId, slug, title }),
+    });
+  } catch {}
+  return { ok: true };
+};
 
-export const removeFavorite = (slug: string) =>
-  liveOrStatic<{ ok: boolean }>(`/api/favorites/${slug}`, () => ({ ok: false }), {
-    method: "DELETE",
-  });
+export const removeFavorite = async (slug: string): Promise<{ ok: boolean }> => {
+  const userId = getUserId();
+  try {
+    await fetch(`/api/favorites/${slug}?user_id=${encodeURIComponent(userId)}`, {
+      method: "DELETE",
+    });
+  } catch {}
+  return { ok: true };
+};
 
-export const getFavorites = () =>
-  liveOrStatic<{ favorites: (Ref & { created_at: string })[] }>(
-    "/api/favorites",
-    () => ({ favorites: [] })
-  );
+export const getFavorites = async (): Promise<{ favorites: FavItem[] }> => {
+  const userId = getUserId();
+  if (!userId) return { favorites: [] };
+  try {
+    const res = await fetch(`/api/favorites?user_id=${encodeURIComponent(userId)}`, {
+      cache: "no-store",
+    });
+    const d = await res.json();
+    return { favorites: d.favorites ?? [] };
+  } catch {
+    return { favorites: [] };
+  }
+};
+
+export const isFavorite = async (slug: string): Promise<boolean> => {
+  const { favorites } = await getFavorites();
+  return favorites.some((f) => f.slug === slug);
+};
 
 export const getHistory = () =>
   liveOrStatic<History>("/api/history", () => ({
@@ -172,3 +204,41 @@ function staticDashboard(): Dashboard {
 }
 
 export const IS_STATIC = !HAS_BACKEND;
+
+// ---- comments ----
+export interface Comment {
+  id: number;
+  slug: string;
+  user_id: string;
+  content: string;
+  created_at: string;
+}
+
+// Comments always use the Next.js API route (works without a separate backend)
+export async function getComments(slug: string): Promise<Comment[]> {
+  try {
+    const res = await fetch(`/api/comments/${slug}`, { cache: "no-store" });
+    const d = await res.json();
+    return d.comments as Comment[];
+  } catch {
+    return [];
+  }
+}
+
+export async function postComment(
+  slug: string,
+  user_id: string,
+  content: string
+): Promise<Comment | null> {
+  try {
+    const res = await fetch(`/api/comments/${slug}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ user_id, content }),
+    });
+    if (!res.ok) return null;
+    return (await res.json()) as Comment;
+  } catch {
+    return null;
+  }
+}

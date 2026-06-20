@@ -19,7 +19,7 @@ _FRONTMATTER_RE = re.compile(r"^---\s*\n(.*?)\n---\s*\n(.*)$", re.DOTALL)
 _LINK_RE = re.compile(r"\[\[([a-z0-9\-]+)\]\]")
 
 # note-style top categories shown on the home screen.
-CATEGORIES = ["Ethernet", "TCP/IP", "PCAP", "SOME/IP", "AUTOSAR", "SDV", "Automotive Bus", "Diagnostics", "Security", "Howto"]
+CATEGORIES = ["Ethernet", "TCP/IP", "PCAP", "SOME/IP", "AUTOSAR", "SDV", "Automotive Bus", "Diagnostics", "Security", "Howto", "Python", "アルゴリズム", "C言語", "CAD/設計", "Statistics", "ML", "DL", "GenAI", "CV", "Electronics", "Automotive", "Wireless"]
 
 # slug -> category (overridable via frontmatter `category`).
 _CATEGORY_MAP = {
@@ -61,6 +61,105 @@ _CATEGORY_MAP = {
     "howto-pcap-analyze": "Howto",
     "micro-autobox": "SDV",
     "ipv4-ipv6": "TCP/IP",
+    # Scapy
+    "scapy-basics":      "PCAP",
+    "scapy-pcap":        "PCAP",
+    "scapy-automotive":  "PCAP",
+    # Deep Learning
+    "deep-learning":      "DL",
+    "pytorch":            "DL",
+    "cnn":                "DL",
+    "rnn-lstm":           "DL",
+    "gpu-architecture":   "DL",
+    "nvidia-gpu-lineup":  "DL",
+    # Generative AI
+    "transformer":          "GenAI",
+    "llm":                  "GenAI",
+    "prompt-engineering":   "GenAI",
+    "rag":                  "GenAI",
+    # Computer Vision
+    "opencv":              "CV",
+    "image-processing":    "CV",
+    # Machine Learning
+    "ml-basics":          "ML",
+    "scikit-learn":       "ML",
+    "linear-regression":  "ML",
+    "classification":     "ML",
+    "gradient-boosting":  "ML",
+    # Python Data Science
+    "python-basics": "Python",
+    "numpy": "Python",
+    "pandas": "Python",
+    "matplotlib": "Python",
+    "seaborn": "Python",
+    "data-cleaning": "Python",
+    "data-analysis": "Python",
+    "statistics": "Statistics",
+    "fastapi": "Python",
+    "time-series-analysis": "Python",
+    "bayesian-statistics":   "Statistics",
+    "hypothesis-testing":    "Statistics",
+    "regression-analysis":   "Statistics",
+    "time-series-statistics": "Statistics",
+    "multivariate-statistics": "Statistics",
+    # ML additional
+    "evaluation-metrics": "ML",
+    "clustering": "ML",
+    "dimensionality-reduction": "ML",
+    "anomaly-detection": "ML",
+    # DL additional
+    "generative-models": "DL",
+    # CV additional
+    "object-detection": "CV",
+    "clip": "CV",
+    "blip": "CV",
+    "qformer": "CV",
+    # GenAI additional
+    "langchain": "GenAI",
+    "fine-tuning": "GenAI",
+    # アルゴリズム
+    "fourier-analysis":        "Statistics",
+    "p-value":                 "Statistics",
+    "hierarchical-clustering": "ML",
+    "big-o-notation":    "アルゴリズム",
+    "data-structures":   "アルゴリズム",
+    "sorting-algorithms": "アルゴリズム",
+    "search-algorithms": "アルゴリズム",
+    # C言語
+    "c-basics":    "C言語",
+    "c-pointers":  "C言語",
+    "c-structs":   "C言語",
+    # CAD/設計
+    "cad-basics":              "CAD/設計",
+    "3d-math":                 "CAD/設計",
+    "orthographic-projection": "CAD/設計",
+    "third-angle-projection":  "CAD/設計",
+    "engineering-sketch":      "CAD/設計",
+    # Automotive
+    "engineering-drawing":       "Automotive",
+    "automotive-torque":         "Automotive",
+    "automotive-engine":         "Automotive",
+    "automotive-transmission":   "Automotive",
+    "automotive-electrical":     "Automotive",
+    "ev-battery":                "Automotive",
+    # Wireless
+    "wireless-basics":           "Wireless",
+    "wifi":                      "Wireless",
+    "bluetooth":                 "Wireless",
+    "lte-5g":                    "Wireless",
+    "v2x-wireless":              "Wireless",
+    "gnss":                      "Wireless",
+    # Electronics
+    "electricity-basics":        "Electronics",
+    "ohms-law":                  "Electronics",
+    "circuit-series-parallel":   "Electronics",
+    "electric-power":            "Electronics",
+    "electric-field":            "Electronics",
+    "magnetism":                 "Electronics",
+    "electromagnetic-induction": "Electronics",
+    "capacitor":                 "Electronics",
+    "alternating-current":       "Electronics",
+    "semiconductor":             "Electronics",
 }
 
 
