@@ -111,7 +111,11 @@ export default function ArticleView({ slug }: { slug: string }) {
           fill
           className="object-contain"
           onError={(e) => {
-            (e.currentTarget as HTMLImageElement).parentElement!.style.display = "none";
+            const img = e.currentTarget as HTMLImageElement;
+            const prompt = encodeURIComponent(
+              `${article.title} automotive ADAS network technical diagram, professional, dark blue theme`
+            );
+            img.src = `https://image.pollinations.ai/prompt/${prompt}?width=1376&height=768&nologo=true&seed=${article.slug.length}`;
           }}
         />
       </div>

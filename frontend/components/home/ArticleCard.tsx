@@ -16,7 +16,13 @@ export default function ArticleCard({ a }: { a: ArticleMeta }) {
           alt={a.title}
           fill
           className="object-cover"
-          onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+          onError={(e) => {
+            const img = e.currentTarget as HTMLImageElement;
+            const prompt = encodeURIComponent(
+              `${a.title} automotive ADAS network technical diagram, professional, dark blue theme`
+            );
+            img.src = `https://image.pollinations.ai/prompt/${prompt}?width=640&height=360&nologo=true&seed=${a.slug.length}`;
+          }}
         />
       </div>
       <div className="p-4">
