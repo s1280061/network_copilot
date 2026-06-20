@@ -77,6 +77,12 @@ next: [tcp, udp]
 `**...**` で囲む。複数記事へ一括適用するときは `backend/bold_keywords.py` を流用
 （slug → [(語, 太字版)] の辞書。コードブロックと見出し行は除外し、既に太字のものはスキップ）。
 
+> ⚠️ 一括太字化の落とし穴: **frontmatter（先頭の `--- ... ---` 区間）は絶対に太字化しない**。
+> 過去に `slug:` や `title:` 内のキーワードまで `**` で囲んでしまい、`slug: howto-**ping**-ecu`
+> のように slug が壊れて本番URLが不正になった事故がある。一括置換は必ず frontmatter を
+> 除外して body だけに適用すること。万一壊したら `backend/fix_frontmatter_bold.py`
+> （frontmatter区間の `**` を一掃する）で復旧できる。
+
 ---
 
 ## ② カテゴリ登録
