@@ -1,6 +1,6 @@
 ---
-slug: howto-**ping**-ecu
-title: ECUへの**ping****疎通確認**手順
+slug: howto-ping-ecu
+title: ECUへのping疎通確認手順
 level: 2
 category: Howto
 difficulty: 初級

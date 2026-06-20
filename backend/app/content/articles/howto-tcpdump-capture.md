@@ -5,7 +5,7 @@ level: 3
 category: Howto
 difficulty: 中級
 related: [tcpdump, pcap, wireshark, tshark]
-next: [howto**-w**ireshark-someip]
+next: [howto-wireshark-someip]
 tags: [howto, tool, cli, pcap]
 ---
 

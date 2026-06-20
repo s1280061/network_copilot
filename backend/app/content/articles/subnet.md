@@ -1,6 +1,6 @@
 ---
 slug: subnet
-title: サブネット / **CIDR**
+title: サブネット / CIDR
 level: 2
 category: TCP/IP
 difficulty: 中級

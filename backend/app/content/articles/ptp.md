@@ -1,6 +1,6 @@
 ---
 slug: ptp
-title: PTP (精密時刻同期 / **IEEE 1588**)
+title: PTP (精密時刻同期 / IEEE 1588)
 level: 3
 category: Ethernet
 difficulty: 中級

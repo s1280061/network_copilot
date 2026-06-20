@@ -1,6 +1,6 @@
 ---
 slug: sdv
-title: SDV(**ソフトウェア定義車両**)
+title: SDV(ソフトウェア定義車両)
 level: 5
 related: [adas-comm, autosar, ros2-dds, ethernet]
 next: [adas-comm]

@@ -1,6 +1,6 @@
 ---
 slug: icmp
-title: ICMP / **ping**
+title: ICMP / ping
 level: 2
 category: TCP/IP
 difficulty: 初級

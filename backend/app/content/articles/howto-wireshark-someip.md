@@ -1,5 +1,5 @@
 ---
-slug: howto-wireshark-**someip**
+slug: howto-wireshark-someip
 title: WiresharkでSOME/IPを解析する
 level: 3
 category: Howto
