@@ -1,0 +1,12 @@
+[
+  {
+    "slug": "network",
+    "title": "ネットワーク講義ノート",
+    "category": "ネットワーク",
+    "description": "OSI参照モデル・TCP/IP・車載Ethernet・SOME/IP などを、定義/要点/例/演習つきの講義レジュメ形式でまとめたPDFノート。",
+    "file": "/notes/network.pdf",
+    "icon": "🌐",
+    "updated": "2026-06-21",
+    "source": "https://github.com/s1280061/engineering-notes/tree/main/01_Network"
+  }
+]
