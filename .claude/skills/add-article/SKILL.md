@@ -177,6 +177,23 @@ main への push で **Vercel が自動デプロイ**する。push 時に
 - [ ] `npm run build` が成功
 - [ ] commit して `git push origin main`（= Vercel 反映）
 
+## PDFノートの同期
+
+サイドバーの「📕 PDFノート」(`/notes`) は、別リポジトリ
+`C:\Users\s1280\Desktop\engineering-notes` の LaTeX 製PDFを同梱して表示している。
+ノート側でPDFをビルドし直したら、手動コピーせず同期スクリプトを使う:
+
+```powershell
+cd C:\Users\s1280\Desktop\network_copilot\backend
+python sync_notes.py
+```
+
+- engineering-notes の各 `NN_Name/main.pdf` を `frontend/public/notes/<slug>.pdf` にコピー。
+- `frontend/lib/notes.json` を更新。**既存エントリの手書きメタ（title/description/icon/category/source）は
+  保持**し、`file` と `updated` だけ最新化する。新しい章は デフォルト値で追加されるので、
+  必要なら notes.json の description / icon を後から整える。
+- 同期後は通常どおり `npm run build` → `git push`（④以降は不要、記事ではないので gen_static も不要）。
+
 ## AIチャットについて（参考）
 
 チャットは `frontend/app/api/chat/route.ts`（Next.js API Route）で動く。
