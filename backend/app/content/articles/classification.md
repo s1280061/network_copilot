@@ -86,6 +86,14 @@ feat_importance = pd.Series(np.abs(coef)).sort_values(ascending=False)
 print("上位特徴量:", feat_importance.head(5))
 ```
 
+**数式で表すと**
+
+$$
+\hat{p} = \sigma(\mathbf{w}^\top \mathbf{x} + b) = \frac{1}{1 + e^{-(\mathbf{w}^\top \mathbf{x} + b)}}, \qquad \hat{y} = \mathbb{1}[\hat{p} \ge 0.5]
+$$
+
+シグモイド関数で線形結合を0〜1の確率に変換し、閾値0.5でクラスを判定します。学習は交差エントロピー損失の最小化で、係数 `coef_` の絶対値が大きいほど予測への寄与が大きい特徴量です。
+
 **向いている場面:** 特徴量が少ない・線形分離しやすい・確率が必要
 
 ## 2. 決定木
@@ -108,6 +116,14 @@ importances = pd.Series(dt.feature_importances_).sort_values(ascending=False)
 print("上位特徴量:", importances.head(5))
 ```
 
+**数式で表すと**
+
+$$
+\mathrm{Gini}(t) = 1 - \sum_{k=1}^{K} p_k^2
+$$
+
+決定木は各ノードで不純度（ジニ係数）が最も下がる分割を選びます。\(p_k\) はノード \(t\) 内でクラス \(k\) が占める割合で、純粋なノードほど \(\mathrm{Gini}=0\) に近づきます。
+
 **向いている場面:** ルールを人間が読む必要がある・欠損値に強い・前処理不要
 
 ## 3. サポートベクターマシン（SVM）
@@ -120,6 +136,14 @@ svm.fit(X_train, y_train)
 print(classification_report(y_test, svm.predict(X_test)))
 print(f"AUC: {roc_auc_score(y_test, svm.predict_proba(X_test)[:,1]):.3f}")
 ```
+
+**数式で表すと**
+
+$$
+\min_{\mathbf{w},b}\ \frac{1}{2}\lVert \mathbf{w}\rVert^2 + C\sum_{i=1}^{n}\xi_i \quad \text{s.t.}\quad y_i(\mathbf{w}^\top \phi(\mathbf{x}_i)+b) \ge 1-\xi_i
+$$
+
+SVM はクラス間のマージン（\(\lVert \mathbf{w}\rVert\) の逆数に比例）を最大化します。`C` は誤分類（スラック \(\xi_i\)）への罰則の強さ、`kernel="rbf"` は写像 \(\phi\) により非線形分離を可能にします。
 
 **向いている場面:** 高次元・中規模データ・マージン最大化が重要
 
@@ -150,6 +174,14 @@ plt.title("特徴量重要度（Random Forest）")
 plt.tight_layout()
 plt.show()
 ```
+
+**数式で表すと**
+
+$$
+\hat{y} = \operatorname*{arg\,max}_{k}\ \sum_{t=1}^{T} \mathbb{1}\!\left[h_t(\mathbf{x}) = k\right]
+$$
+
+ランダムフォレストはブートストラップ標本と特徴量のランダム選択で作った \(T\) 本の決定木 \(h_t\) の多数決で予測します。木を独立に多数作ることで分散を下げ、過学習を抑えます。
 
 **向いている場面:** 大量の特徴量・外れ値・欠損値・高精度が必要
 
@@ -204,6 +236,14 @@ rf_balanced.fit(X_train, y_train)
 weights = class_weight.compute_class_weight("balanced", classes=np.unique(y), y=y)
 weight_dict = dict(enumerate(weights))
 ```
+
+**数式で表すと**
+
+$$
+w_k = \frac{n}{K \cdot n_k}
+$$
+
+`class_weight="balanced"` は各クラス \(k\) の重みをサンプル数 \(n_k\) に反比例させ（\(n\) は総数、\(K\) はクラス数）、少数クラスの誤分類に大きなペナルティを与えて不均衡を補正します。
 
 ## よくある間違いと対処法
 

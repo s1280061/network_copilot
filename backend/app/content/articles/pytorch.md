@@ -71,6 +71,14 @@ L.backward()
 print(a.grad, b.grad)      # ∂L/∂a=3.0, ∂L/∂b=8.0
 ```
 
+**数式で表すと**
+
+$$
+y = x^2 + 2x + 1 \;\Rightarrow\; \frac{dy}{dx} = 2x + 2, \qquad L = ab + b^2 \;\Rightarrow\; \frac{\partial L}{\partial a} = b,\; \frac{\partial L}{\partial b} = a + 2b
+$$
+
+`backward()` は連鎖律で各変数の勾配 \(\partial L/\partial \theta\) を自動計算し、`.grad` に格納します。
+
 ## ニューラルネットワークの定義（nn.Module）
 
 ```python
@@ -97,6 +105,14 @@ model = MLP(in_features=20, hidden=128, n_classes=3)
 print(model)
 print(f"パラメータ数: {sum(p.numel() for p in model.parameters()):,}")
 ```
+
+**数式で表すと**
+
+$$
+\mathbf{h}_1 = \mathrm{ReLU}\!\left(\mathrm{BN}(W_1\mathbf{x} + \mathbf{b}_1)\right), \quad \mathbf{h}_2 = \mathrm{ReLU}(W_2\mathbf{h}_1 + \mathbf{b}_2), \quad \mathbf{y} = W_3\mathbf{h}_2 + \mathbf{b}_3
+$$
+
+各 `nn.Linear` は \(W\mathbf{x} + \mathbf{b}\) のアフィン変換で、間に BatchNorm・ReLU・Dropout を挟みます。出力層は活性化を掛けず、softmax は `CrossEntropyLoss` 内部で適用されます。
 
 ## 訓練ループ
 

@@ -80,6 +80,16 @@ plt.tight_layout()
 plt.show()
 ```
 
+**数式で表すと**
+
+加法モデルでは、観測値をトレンド・季節・残差の和に分解する。
+
+$$
+y_t = T_t + S_t + R_t
+$$
+
+\(T_t\) はトレンド、\(S_t\) は周期 \(m\) の季節成分（\(S_t = S_{t-m}\)）、\(R_t\) は残差。分散が水準に比例して増える場合は乗法モデル \(y_t = T_t \cdot S_t \cdot R_t\) を使う。
+
 ## 定常性の確認
 
 ```python
@@ -123,6 +133,16 @@ ts_log_diff = ts_log.diff().dropna()
 check_stationarity(ts_log_diff, "対数差分")
 ```
 
+**数式で表すと**
+
+ADF 検定は次の回帰で単位根 \(\gamma = 0\) を検定する。\(d\) 階差分はラグ演算子 \(L\) を用いて表す。
+
+$$
+\Delta y_t = \alpha + \beta t + \gamma\, y_{t-1} + \sum_{i=1}^{p}\delta_i\,\Delta y_{t-i} + \varepsilon_t, \qquad \nabla^d y_t = (1-L)^d y_t
+$$
+
+\(\gamma < 0\) が有意（p < 0.05）なら単位根なし＝定常。1階差分 \(\Delta y_t = y_t - y_{t-1}\) でトレンドを除去できることが多い。
+
 ## ACF / PACF の読み方
 
 ```python
@@ -160,6 +180,16 @@ print("""
   d: 定常化に必要な差分回数（ADF/KPSS で確認）
 """)
 ```
+
+**数式で表すと**
+
+コードで生成した AR(2)・MA(2) プロセスはそれぞれ次の式で定義される。
+
+$$
+\text{AR(2): } y_t = \phi_1 y_{t-1} + \phi_2 y_{t-2} + \varepsilon_t, \qquad \text{MA(2): } y_t = \varepsilon_t + \theta_1 \varepsilon_{t-1} + \theta_2 \varepsilon_{t-2}
+$$
+
+AR は PACF がラグ \(p\) でカットオフし、MA は ACF がラグ \(q\) でカットオフする性質を使って次数を推定する。
 
 ## 時系列分解と予測の可視化
 
@@ -220,6 +250,16 @@ plt.tight_layout()
 plt.show()
 ```
 
+**数式で表すと**
+
+ARIMA(p, d, q) は \(d\) 階差分した系列に AR と MA を適用する。予測精度は次の指標で評価する。
+
+$$
+\phi(L)(1-L)^d y_t = \theta(L)\varepsilon_t, \qquad \mathrm{RMSE} = \sqrt{\frac{1}{h}\sum_{t=1}^{h}(y_t - \hat{y}_t)^2}, \quad \mathrm{MAPE} = \frac{100}{h}\sum_{t=1}^{h}\left|\frac{y_t - \hat{y}_t}{y_t}\right|
+$$
+
+\(\phi(L), \theta(L)\) は AR・MA のラグ多項式、\(h\) は予測期間。
+
 ## 自動次数選択 (auto_arima)
 
 ```python
@@ -262,6 +302,16 @@ print(f"SARIMA MAE: {sarima_mae:.2f}  (vs ARIMA: {mae:.2f})")
 # 季節パターンがある場合、SARIMA の方が精度が高い
 ```
 
+**数式で表すと**
+
+SARIMA は通常の ARIMA に周期 \(s\) の季節項を掛け合わせる。
+
+$$
+\phi_p(L)\,\Phi_P(L^s)\,(1-L)^d\,(1-L^s)^D\, y_t = \theta_q(L)\,\Theta_Q(L^s)\,\varepsilon_t
+$$
+
+大文字 \(\Phi, \Theta, P, D, Q\) が季節成分に対応し、\((1-L^s)^D\) が季節差分を表す。
+
 ## 残差診断
 
 ```python
@@ -288,6 +338,16 @@ axes[1, 1].set_title("残差の Q-Q プロット")
 plt.tight_layout()
 plt.show()
 ```
+
+**数式で表すと**
+
+Ljung–Box 検定は、ラグ \(h\) までの残差自己相関 \(\hat{\rho}_k\) がまとめてゼロかを検定する。
+
+$$
+Q = n(n+2)\sum_{k=1}^{h}\frac{\hat{\rho}_k^2}{n-k}
+$$
+
+\(Q\) は自由度 \(h\) のカイ二乗分布に従う。p > 0.05 なら残差は白色ノイズとみなせ、モデルが適切と判断する。
 
 ## モデル比較
 

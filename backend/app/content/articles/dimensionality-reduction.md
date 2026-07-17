@@ -82,6 +82,14 @@ n_components_90 = (cumsum >= 0.90).argmax() + 1
 print(f"90%の分散を説明するのに必要な主成分: {n_components_90}")
 ```
 
+**数式で表すと**
+
+$$
+\mathbf{\Sigma} = \frac{1}{n-1}\mathbf{X}^\top \mathbf{X}, \qquad \mathbf{\Sigma}\mathbf{v}_k = \lambda_k \mathbf{v}_k, \qquad \text{寄与率}_k = \frac{\lambda_k}{\sum_{j=1}^{d}\lambda_j}
+$$
+
+`explained_variance_ratio_` は共分散行列 \(\mathbf{\Sigma}\) の固有値 \(\lambda_k\) を全体で正規化した値です。その累積和が 90% を超える最小の主成分数を採用します。
+
 ## PCAで2次元に圧縮・可視化
 
 ```python
@@ -108,6 +116,14 @@ loadings = pd.DataFrame(
 print(loadings.abs().sort_values("PC1", ascending=False))
 ```
 
+**数式で表すと**
+
+$$
+\mathbf{Z} = \mathbf{X}\mathbf{W}, \qquad \mathbf{W} = [\mathbf{v}_1\ \mathbf{v}_2]
+$$
+
+`fit_transform` は上位 2 固有ベクトル（負荷量 `components_`）を並べた射影行列 \(\mathbf{W}\) にデータを掛け、各点を主成分座標 \(\mathbf{Z}\) に変換します。
+
 ## PCA・t-SNEによる次元削減の可視化
 
 ![PCA累積寄与率とt-SNE（手書き数字データ）](/images/charts/dimensionality-reduction.png)
@@ -133,6 +149,14 @@ plt.legend()
 plt.title("t-SNE 2次元可視化")
 plt.show()
 ```
+
+**数式で表すと**
+
+$$
+p_{ij} = \frac{p_{j|i} + p_{i|j}}{2n}, \qquad \mathrm{KL}(P\Vert Q) = \sum_{i\ne j} p_{ij}\log\frac{p_{ij}}{q_{ij}}
+$$
+
+t-SNE は高次元での対称化類似度 \(p_{ij}\) と、低次元で t 分布に基づく \(q_{ij}\) の KL ダイバージェンスを勾配降下で最小化し、埋め込み座標 \(\mathbf{y}_i\) を求めます。
 
 ## UMAP（高速・グローバル構造保持）
 
@@ -216,6 +240,15 @@ for i, color in enumerate(colors):
 plt.legend()
 plt.title("オートエンコーダー 潜在空間")
 plt.show()
+```
+
+**数式で表すと**
+
+$$
+\mathbf{z} = f_{\text{enc}}(\mathbf{x}), \quad \hat{\mathbf{x}} = f_{\text{dec}}(\mathbf{z}), \qquad \mathcal{L} = \frac{1}{n}\sum_{i=1}^{n}\lVert \mathbf{x}_i - \hat{\mathbf{x}}_i \rVert^2
+$$
+
+エンコーダで低次元の潜在表現 \(\mathbf{z}\) に圧縮し、デコーダで元の次元へ復元します。復元誤差（MSE）\(\mathcal{L}\) を最小化することで、非線形な次元削減が学習されます。
 
 ## よくある間違いと対処法
 
@@ -230,4 +263,3 @@ plt.show()
 - t-SNE: 非線形・可視化専用（変換できない）・局所構造保持・`perplexity=30` が出発点
 - UMAP: 非線形・大規模データ対応・グローバル構造保持・本番環境での変換も可能
 - オートエンコーダ: 非線形・深層学習による次元削減・異常検知にも応用できる
-```

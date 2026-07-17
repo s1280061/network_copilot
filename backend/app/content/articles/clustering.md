@@ -74,6 +74,14 @@ plt.title("K-Means クラスタリング")
 plt.show()
 ```
 
+**数式で表すと**
+
+$$
+\boldsymbol{\mu}_k = \frac{1}{|C_k|}\sum_{\mathbf{x}\in C_k}\mathbf{x}, \qquad C_k = \{\mathbf{x} : k = \arg\min_j \lVert \mathbf{x} - \boldsymbol{\mu}_j \rVert^2 \}
+$$
+
+`fit_predict` は「各点を最も近い重心 \(\boldsymbol{\mu}_j\) に割り当てる」ステップと「重心を所属点の平均で更新する」ステップを、目的関数 \(J\) が収束するまで交互に繰り返します。
+
 ## K-Means 可視化
 
 ![K-meansクラスタリングとエルボー法](/images/charts/clustering-kmeans.png)
@@ -107,6 +115,14 @@ plt.tight_layout()
 plt.show()
 ```
 
+**数式で表すと**
+
+$$
+\text{Inertia} = \sum_{k=1}^{K}\sum_{\mathbf{x}\in C_k} \lVert \mathbf{x} - \boldsymbol{\mu}_k \rVert^2, \qquad s(i) = \frac{b(i) - a(i)}{\max\bigl(a(i), b(i)\bigr)}
+$$
+
+`inertia_` はクラスタ内二乗和（WCSS）で \(k\) を増やすほど単調減少します。一方シルエット係数は同クラスタ内平均距離 \(a(i)\) と最近接他クラスタへの平均距離 \(b(i)\) の差から求まり、値が最大となる \(k\) が最適解の目安です。
+
 ## DBSCANクラスタリング
 
 ```python
@@ -132,6 +148,14 @@ plt.title("DBSCAN クラスタリング")
 plt.show()
 ```
 
+**数式で表すと**
+
+$$
+N_\varepsilon(\mathbf{x}) = \{\mathbf{y} : d(\mathbf{x}, \mathbf{y}) \le \varepsilon \}, \qquad \mathbf{x}\ \text{はコア点} \iff |N_\varepsilon(\mathbf{x})| \ge \texttt{min\_samples}
+$$
+
+半径 \(\varepsilon\)（`eps`）内の近傍点数が `min_samples` 以上の点をコア点とし、そこから密度到達可能な点を同一クラスタにまとめます。どのクラスタにも属さない点はノイズ（ラベル \(-1\)）として異常扱いになります。
+
 ## 階層型クラスタリング（デンドログラム）
 
 ```python
@@ -153,6 +177,14 @@ agg = AgglomerativeClustering(n_clusters=3, linkage="ward")
 labels_agg = agg.fit_predict(X)
 print(f"Agglomerative シルエット: {silhouette_score(X, labels_agg):.3f}")
 ```
+
+**数式で表すと**
+
+$$
+d_{\text{Ward}}(C_i, C_j) = \frac{|C_i|\,|C_j|}{|C_i| + |C_j|}\,\lVert \boldsymbol{\mu}_i - \boldsymbol{\mu}_j \rVert^2
+$$
+
+Ward 法（`method="ward"`）は、2 クラスタを合体したときのクラスタ内分散の増加量が最小になるペアを毎回選んでマージします。この値が小さいほど「似たクラスタどうし」と判定されます。
 
 ## クラスタリングの比較
 
@@ -196,6 +228,7 @@ cluster_labels = pipe.named_steps["km"].labels_
 print("クラスタ別件数:")
 for k, count in zip(*np.unique(cluster_labels, return_counts=True)):
     print(f"  Cluster {k}: {count} 件")
+```
 
 ## まとめ
 
@@ -204,4 +237,3 @@ for k, count in zip(*np.unique(cluster_labels, return_counts=True)):
 - 階層型: デンドログラムで構造を視覚的に確認できる・大規模データには遅い
 - クラスタリング前に必ず `StandardScaler` で標準化する
 - 高次元データは PCA で次元削減してからクラスタリングすると精度が上がることが多い
-```

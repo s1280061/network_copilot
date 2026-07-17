@@ -81,7 +81,13 @@ print(classification_report(y_test, y_pred))
 print(f"AUC: {roc_auc_score(y_test, y_proba):.4f}")
 ```
 
-## LightGBM（XGBより高速）
+**数式で表すと**
+
+$$
+F_m(\mathbf{x}) = F_{m-1}(\mathbf{x}) + \nu\, h_m(\mathbf{x}), \qquad r_{im} = -\left[\frac{\partial L(y_i, F(\mathbf{x}_i))}{\partial F(\mathbf{x}_i)}\right]_{F=F_{m-1}}
+$$
+
+各ステップで前段までの予測 \(F_{m-1}\) の擬似残差 \(r_{im}\)（損失の負の勾配）を新しい木 \(h_m\) で近似し、学習率 \(\nu\)（`learning_rate`）を掛けて加算します。`n_estimators` が木の本数 \(M\) です。
 
 ```python
 import lightgbm as lgb

@@ -168,6 +168,14 @@ print(f"最適閾値（Youden's J）: {best_threshold:.3f}")
 print(f"  その時の Recall={tpr[best_idx]:.3f}, FPR={fpr[best_idx]:.3f}")
 ```
 
+**数式で表すと**
+
+$$
+J = \mathrm{TPR} - \mathrm{FPR} = \text{Recall} + \text{Specificity} - 1
+$$
+
+Youden's J は各閾値での真陽性率と偽陽性率の差で、\(J\) を最大化する閾値が ROC 曲線上で左上に最も近い点、すなわち感度と特異度のバランスが最良の動作点になります。
+
 ## PR曲線（Precision-Recall曲線）
 
 不均衡データでは ROC曲線より **PR曲線** の方が実態を正確に反映します。
@@ -181,6 +189,14 @@ print(f"Average Precision (AP): {ap:.4f}")
 # ランダムモデルのAP ≈ 陽性クラスの割合（例: 0.10）
 # AP が高いほど良いモデル
 ```
+
+**数式で表すと**
+
+$$
+\mathrm{AP} = \sum_{n} (R_n - R_{n-1})\, P_n
+$$
+
+Average Precision は PR曲線の下側面積で、閾値を変えたときの Precision \(P_n\) を Recall の増分 \(R_n - R_{n-1}\) で重み付けして積み上げた値です。強い不均衡データでは ROC-AUC より実態を反映します。
 
 ## F-βスコア（RecallとPrecisionの重み付け）
 

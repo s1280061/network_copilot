@@ -114,6 +114,16 @@ print("コサイン類似度行列:")
 print(sims.numpy().round(3))
 ```
 
+**数式で表すと**
+
+mean pooling（attention mask で有効トークンのみ平均）と、正規化ベクトル間のコサイン類似度：
+
+$$
+\mathbf{v} = \frac{\sum_{t} m_t\,\mathbf{h}_t}{\sum_{t} m_t}, \qquad \mathrm{sim}(\mathbf{a}, \mathbf{b}) = \frac{\mathbf{a}\cdot\mathbf{b}}{\lVert\mathbf{a}\rVert\,\lVert\mathbf{b}\rVert}
+$$
+
+各トークン埋め込み \(\mathbf{h}_t\) をマスク \(m_t\) で重み付き平均して文ベクトルを作り、L2正規化後の内積で意味的類似度を測ります。
+
 ## Anthropic Claude API の使い方
 
 ```python

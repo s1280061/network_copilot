@@ -57,6 +57,14 @@ for material, eps_r in dielectrics.items():
     print(f"{material:25s}: {C*1e12:.1f} pF")
 ```
 
+**数式で表すと**
+
+$$
+C = \varepsilon_r \varepsilon_0 \frac{A}{d}
+$$
+
+平行板コンデンサの静電容量 \(C\) [F]。板の面積 \(A\) [m²] に比例し、板間距離 \(d\) [m] に反比例します。\(\varepsilon_0\) は真空の誘電率、\(\varepsilon_r\) は比誘電率です。
+
 ## コンデンサの充放電
 
 コンデンサをRC回路で充電/放電する時定数 τ = RC
@@ -105,6 +113,14 @@ plt.tight_layout()
 plt.show()
 ```
 
+**数式で表すと**
+
+$$
+V_{\text{charge}}(t) = V_0\left(1 - e^{-t/\tau}\right), \qquad V_{\text{discharge}}(t) = V_0\, e^{-t/\tau}
+$$
+
+RC回路の充電・放電電圧。時定数 \(\tau = RC\) [s] は電圧が約63.2%（充電）まで変化するのにかかる時間で、\(5\tau\) でほぼ完了します。
+
 ## コンデンサの直列・並列
 
 ```python
@@ -125,6 +141,14 @@ C_parallel = parallel_capacitance(C1, C2, C3)
 print(f"直列合成: {C_series*1e6:.2f} μF（最小容量より小さい）")
 print(f"並列合成: {C_parallel*1e6:.0f} μF（各容量の和）")
 ```
+
+**数式で表すと**
+
+$$
+\frac{1}{C_{\text{直列}}} = \sum_i \frac{1}{C_i}, \qquad C_{\text{並列}} = \sum_i C_i
+$$
+
+コンデンサは抵抗と逆で、直列だと合成容量が小さく（逆数の和）、並列だと各容量の和になります（単位 [F]）。
 
 ## コンデンサに蓄えられるエネルギー
 
@@ -147,6 +171,14 @@ E_battery = 3.7 * 3 * 3600   # J
 print(f"リチウム電池 18650: {E_battery:.0f} J = {E_battery/3600:.1f} Wh")
 print(f"エネルギー密度比: スーパーキャパシタは電池の {E_supercap/E_battery*100:.2f}%")
 ```
+
+**数式で表すと**
+
+$$
+E = \frac{1}{2} C V^2
+$$
+
+コンデンサに蓄えられるエネルギー \(E\) [J]。容量 \(C\) [F] に比例し、電圧 \(V\) [V] の2乗に比例します。
 
 ## ローパスフィルタ（RC フィルタ）
 
@@ -177,3 +209,11 @@ plt.legend()
 plt.grid(True)
 plt.show()
 ```
+
+**数式で表すと**
+
+$$
+|H(f)| = \frac{1}{\sqrt{1 + (2\pi f R C)^2}}, \qquad f_c = \frac{1}{2\pi R C}
+$$
+
+RCローパスフィルタのゲイン \(|H(f)|\) とカットオフ周波数 \(f_c\) [Hz]。\(f_c\) はゲインが \(-3\,\text{dB}\)（約0.707倍）になる周波数で、これより高い周波数を減衰させます。

@@ -90,6 +90,16 @@ print(f"事後分布の平均: {alpha_post / (alpha_post + beta_post):.3f}")
 print(f"事後分布の95% 信用区間: {stats.beta.ppf([0.025, 0.975], alpha_post, beta_post)}")
 ```
 
+**数式で表すと**
+
+ベータ–二項共役により、事後分布は成功回数 \(k\) と失敗回数 \(n-k\) を事前パラメータに足すだけで求まる。
+
+$$
+\theta \mid X \sim \mathrm{Beta}(\alpha + k,\; \beta + n - k), \qquad \mathbb{E}[\theta \mid X] = \frac{\alpha + k}{\alpha + \beta + n}
+$$
+
+\(\alpha,\beta\) は事前分布のパラメータ、\(n\) は試行数、\(k\) は成功数。
+
 ## 逐次ベイズ更新
 
 ```python
@@ -119,6 +129,16 @@ for ax, step in zip(axes, [1, 10, 30]):
 plt.tight_layout()
 plt.show()
 ```
+
+**数式で表すと**
+
+逐次更新では、ある時点の事後分布が次の観測の事前分布になる。1 回の観測 \(x_t \in \{0,1\}\) ごとに、
+
+$$
+\mathrm{Beta}(\alpha_t, \beta_t) \;\xrightarrow{\,x_t\,}\; \mathrm{Beta}(\alpha_t + x_t,\; \beta_t + (1 - x_t))
+$$
+
+これを繰り返すと、全データを一括で観測した場合と同じ事後分布に収束する。
 
 ## MCMC（マルコフ連鎖モンテカルロ）
 
@@ -158,6 +178,16 @@ az.plot_posterior(trace, var_names=["slope"], ref_val=2.0)
 plt.show()
 ```
 
+**数式で表すと**
+
+このモデルは、傾き・切片・ノイズに事前分布を置いた線形回帰。
+
+$$
+y_i \sim \mathcal{N}(\alpha + \beta x_i,\; \sigma^2), \quad \alpha \sim \mathcal{N}(0, 10^2),\; \beta \sim \mathcal{N}(0, 10^2),\; \sigma \sim \mathrm{HalfNormal}(1)
+$$
+
+MCMC は事後分布 \(P(\alpha,\beta,\sigma \mid X, y)\) から直接サンプルを生成し、解析的に解けない積分を近似する。
+
 ## ベイズ因子（モデル比較）
 
 ```python
@@ -196,6 +226,16 @@ for heads in [5, 7, 9, 10]:
     print(f"10回中{heads}回表: BF10 = {bf:.2f}  → {interp}")
 ```
 
+**数式で表すと**
+
+ベイズ因子は 2 モデルの周辺尤度の比。ここでは \(H_0:\theta=0.5\) と \(H_1:\theta\sim\mathrm{Beta}(\alpha,\beta)\) を比較する。
+
+$$
+\mathrm{BF}_{10} = \frac{P(X \mid H_1)}{P(X \mid H_0)} = \frac{\dbinom{n}{k}\dfrac{B(\alpha+k,\;\beta+n-k)}{B(\alpha,\beta)}}{\dbinom{n}{k}\,0.5^{n}}
+$$
+
+\(B(\cdot,\cdot)\) はベータ関数。\(\mathrm{BF}_{10}>3\) で \(H_1\) 支持、\(<1/3\) で \(H_0\) 支持が目安。
+
 ## ベイズ A/B テスト
 
 ```python
@@ -228,6 +268,20 @@ def bayesian_ab_test(conv_a, n_a, conv_b, n_b,
 # 例: A(従来) vs B(新デザイン)
 bayesian_ab_test(conv_a=120, n_a=1000, conv_b=145, n_b=1000)
 ```
+
+**数式で表すと**
+
+各案のコンバージョン率の事後分布からサンプリングし、B が A を上回る確率を推定する。
+
+$$
+\theta_A \sim \mathrm{Beta}(\alpha + c_A,\; \beta + n_A - c_A), \quad \theta_B \sim \mathrm{Beta}(\alpha + c_B,\; \beta + n_B - c_B)
+$$
+
+$$
+P(B > A) = \Pr(\theta_B > \theta_A) \approx \frac{1}{M}\sum_{m=1}^{M}\mathbf{1}\!\left[\theta_B^{(m)} > \theta_A^{(m)}\right]
+$$
+
+\(c_A, c_B\) はコンバージョン数、\(M\) はサンプル数、\(\mathbf{1}[\cdot]\) は指示関数。
 
 ## 事前分布の選び方
 

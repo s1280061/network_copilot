@@ -116,6 +116,16 @@ plt.legend(); plt.title("学習曲線")
 plt.tight_layout(); plt.show()
 ```
 
+**数式で表すと**
+
+識別器と生成器を交互に最適化します（BCE損失で実装）：
+
+$$
+\mathcal{L}_D = -\mathbb{E}_{\mathbf{x}\sim p_{\text{data}}}[\log D(\mathbf{x})] - \mathbb{E}_{\mathbf{z}\sim p_z}[\log(1 - D(G(\mathbf{z})))], \qquad \mathcal{L}_G = -\mathbb{E}_{\mathbf{z}\sim p_z}[\log D(G(\mathbf{z}))]
+$$
+
+識別器は本物を1・偽物を0に近づけ、生成器は偽物を本物（1）と誤認させるように学習します。
+
 ## VAE（変分オートエンコーダー）
 
 ```python
@@ -174,6 +184,16 @@ with torch.no_grad():
     print(f"生成サンプル形状: {generated.shape}")
 ```
 
+**数式で表すと**
+
+再パラメータ化トリックで潜在変数をサンプリングし、再構成誤差とKL項の和を最小化します：
+
+$$
+\mathbf{z} = \boldsymbol{\mu} + \boldsymbol{\sigma}\odot\boldsymbol{\epsilon},\; \boldsymbol{\epsilon}\sim\mathcal{N}(0, I), \qquad \mathcal{L} = \underbrace{\mathrm{BCE}(\hat{\mathbf{x}}, \mathbf{x})}_{\text{再構成}} + \underbrace{\tfrac{1}{2}\sum_j\!\left(\mu_j^2 + \sigma_j^2 - \log\sigma_j^2 - 1\right)}_{\text{KL}}
+$$
+
+第2項は \(q(\mathbf{z}|\mathbf{x})\) を標準正規分布 \(p(\mathbf{z})\) に近づける正則化で、`log_var` は \(\log\sigma^2\) に対応します。
+
 ## Diffusionモデルの概念
 
 ```mermaid
@@ -225,6 +245,16 @@ for step in range(100):
     opt.zero_grad(); loss.backward(); opt.step()
 print(f"Diffusion訓練損失: {loss.item():.4f}")
 ```
+
+**数式で表すと**
+
+任意ステップ \(t\) のノイズ付きサンプルは閉形式で生成でき、ネットワークは加えたノイズ \(\boldsymbol{\epsilon}\) を予測します：
+
+$$
+\mathbf{x}_t = \sqrt{\bar{\alpha}_t}\,\mathbf{x}_0 + \sqrt{1 - \bar{\alpha}_t}\,\boldsymbol{\epsilon},\; \boldsymbol{\epsilon}\sim\mathcal{N}(0, I), \qquad \mathcal{L} = \mathbb{E}_{t,\mathbf{x}_0,\boldsymbol{\epsilon}}\left\|\boldsymbol{\epsilon} - \boldsymbol{\epsilon}_\theta(\mathbf{x}_t, t)\right\|^2
+$$
+
+ここで \(\bar{\alpha}_t = \prod_{s=1}^{t}(1-\beta_s)\)（コード上の `alpha_bar`）で、損失は予測ノイズと真のノイズの平均二乗誤差です。
 
 ## GAN vs VAE vs Diffusion 比較
 

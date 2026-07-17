@@ -87,6 +87,16 @@ plt.tight_layout()
 plt.show()
 ```
 
+**数式で表すと**
+
+単回帰は説明変数1つの直線あてはめ。最小二乗法で傾き \(\hat{\beta}_1\) と切片 \(\hat{\beta}_0\) を求める。
+
+$$
+\hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1 x_i, \qquad \hat{\beta}_1 = \frac{\sum_i (x_i-\bar{x})(y_i-\bar{y})}{\sum_i (x_i-\bar{x})^2}, \qquad \hat{\beta}_0 = \bar{y} - \hat{\beta}_1 \bar{x}
+$$
+
+決定係数 \(R^2\) は残差二乗和と全変動の比で、あてはまりの良さを表す。
+
 ## 重回帰分析
 
 ```python
@@ -130,6 +140,16 @@ for name, coef in zip(coef_names[1:], model_std.params[1:]):
     print(f"β_{name:8s} = {coef:+.3f}")
 ```
 
+**数式で表すと**
+
+重回帰は行列形式で表し、正規方程式で係数ベクトルを一括推定する。
+
+$$
+\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\varepsilon}, \qquad \hat{\boldsymbol{\beta}} = (\mathbf{X}^\top \mathbf{X})^{-1}\mathbf{X}^\top \mathbf{y}
+$$
+
+標準化係数は各変数を平均0・分散1に揃えてから回帰した係数で、単位に依らない相対的な影響力を比較できる。
+
 ## 多重共線性の検出と対処
 
 ```python
@@ -170,6 +190,16 @@ ridge = Ridge(alpha=1.0)
 ridge.fit(df_collinear, price)
 print("Ridge 係数:", dict(zip(df_collinear.columns, ridge.coef_)))
 ```
+
+**数式で表すと**
+
+VIF は変数 \(j\) を他の説明変数で回帰した決定係数 \(R_j^2\) から計算する。Ridge 回帰は L2 正則化項を加えて係数を安定化させる。
+
+$$
+\mathrm{VIF}_j = \frac{1}{1 - R_j^2}, \qquad \hat{\boldsymbol{\beta}}^{\text{ridge}} = \arg\min_{\boldsymbol{\beta}} \left\{ \sum_i (y_i - \mathbf{x}_i^\top\boldsymbol{\beta})^2 + \lambda \sum_{j} \beta_j^2 \right\}
+$$
+
+\(\lambda\)（コード中の `alpha`）が大きいほど係数が0方向に縮小し、多重共線性による不安定さを抑える。
 
 ## 回帰分析の可視化
 
@@ -223,6 +253,16 @@ dw = durbin_watson(residuals)
 print(f"Durbin-Watson: {dw:.3f}  (2に近いほど独立、<1 or >3 は自己相関あり)")
 ```
 
+**数式で表すと**
+
+残差は \(e_i = y_i - \hat{y}_i\)。Durbin–Watson 統計量は隣接残差の差から自己相関を測る。
+
+$$
+\mathrm{DW} = \frac{\sum_{i=2}^{n}(e_i - e_{i-1})^2}{\sum_{i=1}^{n} e_i^2}
+$$
+
+DW は 0〜4 の値をとり、2 付近なら自己相関なし、0 に近いと正の自己相関を示す。
+
 ## 外れ値・影響値の検出
 
 ```python
@@ -250,6 +290,16 @@ leverage = influence.hat_matrix_diag
 high_leverage = leverage > 2 * X.shape[1] / n
 print(f"高レバレッジ点: {high_leverage.sum()} 個")
 ```
+
+**数式で表すと**
+
+Cook の距離は観測 \(i\) を除いたときの予測値の変化量を測る影響度指標。
+
+$$
+D_i = \frac{\sum_{j=1}^{n}(\hat{y}_j - \hat{y}_{j(i)})^2}{p\,s^2} = \frac{e_i^2}{p\,s^2}\cdot\frac{h_{ii}}{(1-h_{ii})^2}
+$$
+
+\(h_{ii}\) はレバレッジ（ハット行列の対角成分）、\(p\) はパラメータ数、\(s^2\) は残差分散。\(D_i > 4/n\) が影響値の目安。
 
 ## よくある間違いと対処法
 

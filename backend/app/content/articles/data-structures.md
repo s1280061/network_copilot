@@ -110,6 +110,14 @@ ll.delete(3)
 print(ll.to_list())   # [0, 1, 2, 4, 5]
 ```
 
+**計算量・数式で表すと**
+
+$$
+T_{\text{prepend}} = O(1), \quad T_{\text{append}} = T_{\text{delete}} = O(n)
+$$
+
+先頭操作は \(O(1)\)、末尾追加や値による削除は末尾までの走査が必要で \(O(n)\) です。
+
 ```mermaid
 graph LR
   H["head"] --> N0["0 | →"]
@@ -168,6 +176,14 @@ print(is_balanced("({[]})"))   # True
 print(is_balanced("({[})"))    # False
 ```
 
+**計算量・数式で表すと**
+
+$$
+T_{\text{push}} = T_{\text{pop}} = T_{\text{peek}} = O(1), \quad T_{\text{is\_balanced}}(n) = O(n)
+$$
+
+スタックの基本操作は \(O(1)\)、文字列長 \(n\) を1回走査する対応チェックは \(O(n)\) です。
+
 **活用場面**：
 - 関数呼び出しのコールスタック
 - ブラウザの「戻る」ボタン
@@ -218,6 +234,14 @@ graph = {"A": ["B", "C"], "B": ["D"], "C": ["D", "E"], "D": [], "E": []}
 for node, level in bfs_levels(graph, "A"):
     print(f"  Level {level}: {node}")
 ```
+
+**計算量・数式で表すと**
+
+$$
+T_{\text{enqueue}} = T_{\text{dequeue}} = O(1), \quad T_{\text{BFS}} = O(V + E)
+$$
+
+キューの出し入れは \(O(1)\)、BFS は全頂点 \(V\) と全辺 \(E\) を1回ずつ処理して \(O(V+E)\) です。
 
 > ⚠️ `list` を使って `pop(0)` でキューを実装すると O(n) になります。`collections.deque` を使いましょう。
 
@@ -327,6 +351,14 @@ print(bst.search(4))    # True
 print(bst.inorder())    # [1, 3, 4, 5, 6, 7, 8] ← ソート済み！
 ```
 
+**計算量・数式で表すと**
+
+$$
+T_{\text{search}} = T_{\text{insert}} = O(h), \quad h = O(\log n)\ \text{(平衡時)},\ O(n)\ \text{(最悪)}
+$$
+
+探索・挿入は木の高さ \(h\) に比例します。平衡していれば \(O(\log n)\)、偏った木では \(O(n)\) です。
+
 ```mermaid
 graph TD
   R["5"] --> L["3"]
@@ -352,6 +384,14 @@ def postorder(node):   # 後順: 左 → 右 → 根（ディレクトリの削�
     if not node: return []
     return postorder(node.left) + postorder(node.right) + [node.val]
 ```
+
+**計算量・数式で表すと**
+
+$$
+T(n) = 2T(n/2) + O(1) = O(n)
+$$
+
+いずれの巡回も各ノードをちょうど1回訪問するため、全体で \(O(n)\) です。
 
 ## ヒープ（Heap）
 
@@ -382,6 +422,14 @@ def top_k(arr, k):
 
 print(top_k([3,1,4,1,5,9,2,6], 3))  # [9, 6, 5]
 ```
+
+**計算量・数式で表すと**
+
+$$
+T_{\text{push}} = T_{\text{pop}} = O(\log n), \quad T_{\text{heapify}} = O(n), \quad T_{\text{top\_k}} = O(n \log k)
+$$
+
+push/pop は木の高さ分の \(O(\log n)\)、構築は \(O(n)\)、上位 \(k\) 件の取得は \(O(n \log k)\) です。
 
 | 操作 | ヒープ |
 |------|--------|

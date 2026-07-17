@@ -129,6 +129,14 @@ class SimpleQFormer(nn.Module):
         return self.norm(out)   # (B, 32, 768)
 ```
 
+**数式で表すと**
+
+$$
+\mathbf{q}_{\text{out}} = \mathrm{softmax}\!\left(\frac{Q K^\top}{\sqrt{d_k}}\right) V, \qquad K, V = f(\text{image\_features})
+$$
+
+32個のクエリ \(Q\) が257個の画像特徴（キー \(K\)・バリュー \(V\)）へクロスアテンションし、視覚情報を32トークンへ圧縮します。
+
 ## 可視化
 
 ![クロスアテンションマップと圧縮率](/images/charts/qformer.png)

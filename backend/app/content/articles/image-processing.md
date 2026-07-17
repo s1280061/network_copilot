@@ -59,6 +59,16 @@ x     = train_transform(img)   # (3, 224, 224) Tensor
 print(x.shape, x.min().item(), x.max().item())
 ```
 
+**数式で表すと**
+
+`ToTensor` で \([0,1]\) にスケールした後、チャンネルごとに平均 \(\mu_c\)・標準偏差 \(\sigma_c\) で標準化します：
+
+$$
+x'_{c} = \frac{x_c - \mu_c}{\sigma_c}
+$$
+
+各チャンネルの分布を平均0・分散1付近に揃えることで、学習が安定し収束が速くなります。
+
 ## Albumentations — 高速・高機能なデータ拡張
 
 ```python
@@ -195,7 +205,19 @@ class GradCAM:
         cam     = torch.relu(cam)
         cam     = cam / (cam.max() + 1e-8)
         return cam.squeeze().cpu().numpy()
+```
 
+**数式で表すと**
+
+各チャンネルの勾配を大域平均プーリングして重み \(\alpha_k\) とし、活性化マップ \(A^k\) の重み付き和に ReLU を適用します：
+
+$$
+\alpha_k = \frac{1}{HW}\sum_{i}\sum_{j}\frac{\partial y^c}{\partial A^k_{ij}}, \qquad L_{\text{Grad-CAM}}^c = \mathrm{ReLU}\!\left(\sum_k \alpha_k A^k\right)
+$$
+
+クラス \(c\) のスコアへの寄与が大きい特徴マップほど強調され、モデルが注目した領域が可視化されます。
+
+```python
 # 使用例
 backbone   = models.resnet18(weights=models.ResNet18_Weights.DEFAULT)
 grad_cam   = GradCAM(backbone, backbone.layer4[-1].conv2)

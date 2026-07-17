@@ -74,7 +74,19 @@ cropped = img_bgr[y1:y2, x1:x2]
 center  = (w // 2, h // 2)
 M       = cv2.getRotationMatrix2D(center, angle=30, scale=1.0)
 rotated = cv2.warpAffine(img_bgr, M, (w, h))
+```
 
+**数式で表すと**
+
+角度 \(\theta\)、スケール \(s\) の回転を表すアフィン変換（中心 \((c_x, c_y)\) まわり）：
+
+$$
+\begin{bmatrix} x' \\ y' \end{bmatrix} = \begin{bmatrix} s\cos\theta & s\sin\theta \\ -s\sin\theta & s\cos\theta \end{bmatrix}\begin{bmatrix} x - c_x \\ y - c_y \end{bmatrix} + \begin{bmatrix} c_x \\ c_y \end{bmatrix}
+$$
+
+各画素を中心まわりに回転・拡大した座標へ写像します。
+
+```python
 # 水平・垂直反転
 flip_h = cv2.flip(img_bgr, 1)   # 水平
 flip_v = cv2.flip(img_bgr, 0)   # 垂直
@@ -106,6 +118,16 @@ adaptive_binary  = cv2.adaptiveThreshold(gray, 255,
                                           cv2.THRESH_BINARY, 11, 2)
 ```
 
+**数式で表すと**
+
+固定しきい値 \(T\) による2値化：
+
+$$
+g(x, y) = \begin{cases} 255 & \text{if } f(x, y) > T \\ 0 & \text{otherwise} \end{cases}
+$$
+
+各画素値 \(f(x,y)\) をしきい値 \(T\) と比較して白黒に分けます。大津法は分離度が最大になる \(T\) を自動決定します。
+
 ## フィルタリング（ノイズ除去・ぼかし）
 
 ```python
@@ -123,6 +145,16 @@ blurred = cv2.GaussianBlur(img_bgr, (5, 5), 0)
 sharpened = cv2.addWeighted(img_bgr, 1.5, blurred, -0.5, 0)
 ```
 
+**数式で表すと**
+
+ガウシアンフィルタはカーネル \(G\) と画像の畳み込み、アンシャープマスクは元画像とぼかし画像の重み付き差分：
+
+$$
+G(x, y) = \frac{1}{2\pi\sigma^2}\exp\!\left(-\frac{x^2 + y^2}{2\sigma^2}\right), \qquad I_{\text{sharp}} = (1+\lambda)\,I - \lambda\,(G * I)
+$$
+
+ガウシアンカーネルで平滑化してノイズを除去し、元画像からぼかし成分を引くことでエッジを強調します。
+
 ## エッジ検出
 
 ```python
@@ -136,7 +168,19 @@ sobel   = cv2.magnitude(sobel_x, sobel_y)
 
 # Laplacian
 laplacian = cv2.Laplacian(gray, cv2.CV_64F)
+```
 
+**数式で表すと**
+
+Sobelは方向別の勾配を求め、その大きさをエッジ強度とします。Laplacianは2階微分の和です：
+
+$$
+G_x = \frac{\partial I}{\partial x}, \quad G_y = \frac{\partial I}{\partial y}, \quad \lVert\nabla I\rVert = \sqrt{G_x^2 + G_y^2}, \qquad \nabla^2 I = \frac{\partial^2 I}{\partial x^2} + \frac{\partial^2 I}{\partial y^2}
+$$
+
+輝度変化が急な箇所（勾配が大きい箇所）ほどエッジとして強く検出されます。
+
+```python
 fig, axes = plt.subplots(1, 3, figsize=(14, 4))
 for ax, img, title in zip(axes,
     [edges_canny, np.uint8(np.abs(sobel)), np.uint8(np.abs(laplacian))],

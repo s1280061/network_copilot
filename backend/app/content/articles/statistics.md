@@ -64,6 +64,14 @@ print(f"尖度:     {stats.kurtosis(data):.4f}")     # 0 = 正規分布
 print(f"95%信頼区間: {stats.t.interval(0.95, len(data)-1, np.mean(data), stats.sem(data))}")
 ```
 
+**数式で表すと**
+
+$$
+\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i, \qquad s = \sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar{x})^2}
+$$
+
+\(\bar{x}\) は標本平均、\(s\) は不偏標準偏差（`ddof=1` に対応）。歪度は分布の非対称性、尖度は裾の重さを表す。
+
 ## 主要な確率分布
 
 ```python
@@ -153,6 +161,16 @@ cohens_d   = (group_b.mean() - group_a.mean()) / pooled_std
 print(f"効果量 Cohen's d: {cohens_d:.3f}")   # 0.2=小 0.5=中 0.8=大
 ```
 
+**数式で表すと**
+
+Welch の t 統計量と効果量 Cohen's d は次のとおり。
+
+$$
+t = \frac{\bar{x}_A - \bar{x}_B}{\sqrt{\dfrac{s_A^2}{n_A} + \dfrac{s_B^2}{n_B}}}, \qquad d = \frac{\bar{x}_B - \bar{x}_A}{s_{\text{pooled}}}
+$$
+
+\(s_A^2, s_B^2\) は各群の分散、\(s_{\text{pooled}}\) はプールした標準偏差。分子の平均差を標準誤差で割った量が t 統計量。
+
 ## 分散分析（ANOVA）
 
 ```python
@@ -172,6 +190,16 @@ tukey = pairwise_tukeyhsd(data_all, labels_all, alpha=0.05)
 print(tukey.summary())
 ```
 
+**数式で表すと**
+
+一元配置 ANOVA の F 統計量は、群間変動と群内変動の比。
+
+$$
+F = \frac{\text{群間平均平方}}{\text{群内平均平方}} = \frac{\dfrac{1}{k-1}\sum_{j=1}^{k} n_j(\bar{x}_j - \bar{x})^2}{\dfrac{1}{N-k}\sum_{j=1}^{k}\sum_{i=1}^{n_j}(x_{ij} - \bar{x}_j)^2}
+$$
+
+\(k\) は群数、\(N\) は全標本数、\(\bar{x}_j\) は各群の平均、\(\bar{x}\) は全体平均。
+
 ## 相関と回帰の統計的検定
 
 ```python
@@ -190,6 +218,16 @@ print(f"スピアマンρ: {rho:.3f}  p値: {p_s:.4f}")
 _, p_norm = stats.shapiro(x[:50])   # Shapiro-Wilk（n<=50）
 print(f"Shapiro-Wilk p値: {p_norm:.4f} ({'正規' if p_norm > 0.05 else '非正規'})")
 ```
+
+**数式で表すと**
+
+ピアソン相関係数は共分散を各標準偏差で割った量、スピアマン相関は順位に変換した値のピアソン相関。
+
+$$
+r = \frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})}{\sqrt{\sum_{i=1}^{n}(x_i-\bar{x})^2}\,\sqrt{\sum_{i=1}^{n}(y_i-\bar{y})^2}}, \qquad \rho = 1 - \frac{6\sum_{i=1}^{n} d_i^2}{n(n^2-1)}
+$$
+
+\(d_i\) は \(x_i, y_i\) の順位差。\(r\) は線形関係、\(\rho\) は単調関係の強さを表す。
 
 ## よくある間違いと対処法
 

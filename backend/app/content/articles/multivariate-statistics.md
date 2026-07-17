@@ -116,6 +116,16 @@ print("因子負荷量（上位2成分）:")
 print(loadings[["PC1", "PC2"]].round(3))
 ```
 
+**数式で表すと**
+
+PCA は共分散行列 \(\mathbf{\Sigma}\) の固有値分解で主成分（分散最大の直交軸）を求める。
+
+$$
+\mathbf{\Sigma}\,\mathbf{v}_k = \lambda_k\,\mathbf{v}_k, \qquad \text{寄与率}_k = \frac{\lambda_k}{\sum_{j=1}^{d}\lambda_j}
+$$
+
+固有値 \(\lambda_k\) は第 \(k\) 主成分が説明する分散、\(\mathbf{v}_k\) はその方向。因子負荷量は \(\mathbf{v}_k\sqrt{\lambda_k}\) で各変数と主成分の相関を表す。
+
 ## 因子分析
 
 ```python
@@ -153,6 +163,16 @@ print("\n共通性:")
 for var, comm in zip(data.columns, communalities):
     print(f"  {var:12s}: {comm:.3f}")
 ```
+
+**数式で表すと**
+
+因子分析は観測変数を共通因子 \(\mathbf{f}\) と独自因子 \(\boldsymbol{\varepsilon}\) の線形結合で表す生成モデル。
+
+$$
+\mathbf{x} = \mathbf{\Lambda}\mathbf{f} + \boldsymbol{\varepsilon}, \qquad h_j^2 = \sum_{k} \lambda_{jk}^2
+$$
+
+\(\mathbf{\Lambda}\) は因子負荷行列、共通性 \(h_j^2\) は変数 \(j\) の分散のうち共通因子で説明される割合。
 
 ## 線形判別分析（LDA）
 
@@ -198,6 +218,16 @@ print("\nLDA 係数（各クラス）:")
 print(coef_df.round(3))
 ```
 
+**数式で表すと**
+
+LDA はクラス内分散 \(\mathbf{S}_W\) に対しクラス間分散 \(\mathbf{S}_B\) を最大化する射影方向 \(\mathbf{w}\) を求める。
+
+$$
+\mathbf{w}^\ast = \arg\max_{\mathbf{w}} \frac{\mathbf{w}^\top \mathbf{S}_B \mathbf{w}}{\mathbf{w}^\top \mathbf{S}_W \mathbf{w}}, \qquad \mathbf{S}_B \mathbf{w} = \lambda\,\mathbf{S}_W \mathbf{w}
+$$
+
+これは一般化固有値問題 \(\mathbf{S}_W^{-1}\mathbf{S}_B\) の固有ベクトルとして解ける。
+
 ## マハラノビス距離による異常検知
 
 ```python
@@ -236,6 +266,16 @@ plt.tight_layout()
 plt.show()
 ```
 
+**数式で表すと**
+
+マハラノビス距離は共分散の逆行列で重み付けし、変数間の相関とスケールを考慮した距離を測る。
+
+$$
+D_M(\mathbf{x}) = \sqrt{(\mathbf{x} - \boldsymbol{\mu})^\top \mathbf{\Sigma}^{-1} (\mathbf{x} - \boldsymbol{\mu})}
+$$
+
+多変量正規分布のもとで \(D_M^2\) は自由度 \(d\) のカイ二乗分布に従うため、その分位点を外れ値判定の閾値に使える。
+
 ## 正準相関分析（CCA）
 
 ```python
@@ -265,6 +305,16 @@ from scipy.stats import pearsonr
 r, p = pearsonr(X_c[:, 0], Y_c[:, 0])
 print(f"第1正準相関係数: r = {r:.3f}, p = {p:.4e}")
 ```
+
+**数式で表すと**
+
+CCA は2つの変数群 \(\mathbf{X}, \mathbf{Y}\) の線形結合どうしの相関を最大化する重み \(\mathbf{a}, \mathbf{b}\) を求める。
+
+$$
+\rho = \max_{\mathbf{a}, \mathbf{b}} \mathrm{corr}(\mathbf{a}^\top \mathbf{X},\; \mathbf{b}^\top \mathbf{Y}) = \max_{\mathbf{a}, \mathbf{b}} \frac{\mathbf{a}^\top \mathbf{\Sigma}_{XY}\mathbf{b}}{\sqrt{\mathbf{a}^\top \mathbf{\Sigma}_{XX}\mathbf{a}}\,\sqrt{\mathbf{b}^\top \mathbf{\Sigma}_{YY}\mathbf{b}}}
+$$
+
+\(\mathbf{\Sigma}_{XY}\) は群間の共分散行列。\(\rho\) が第1正準相関係数。
 
 ## 手法選択ガイド
 

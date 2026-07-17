@@ -128,6 +128,14 @@ print(f"出力形状: {y.shape}")   # (10, 3)
 print(f"各行の和: {y.sum(axis=1)}")  # すべて 1.0
 ```
 
+**数式で表すと**
+
+$$
+\mathbf{a}^{(l)} = \mathrm{ReLU}\!\left(\mathbf{a}^{(l-1)}W^{(l)} + \mathbf{b}^{(l)}\right), \qquad \hat{\mathbf{y}} = \mathrm{softmax}\!\left(\mathbf{a}^{(L-1)}W^{(L)} + \mathbf{b}^{(L)}\right)
+$$
+
+各層で「重み付き和 \(z = aW + b\)」を計算し、隠れ層は ReLU、出力層は softmax を適用します。softmax は \(\mathrm{softmax}(z)_i = e^{z_i} / \sum_j e^{z_j}\) で、出力を和が 1 の確率分布に変換します。
+
 ## 損失関数
 
 ```python
@@ -140,6 +148,14 @@ def cross_entropy(y_pred, y_true):
 def mse(y_pred, y_true):
     return np.mean((y_pred - y_true) ** 2)
 ```
+
+**数式で表すと**
+
+$$
+\mathcal{L}_{\text{CE}} = -\frac{1}{N}\sum_{n=1}^{N}\sum_{k} y_{n,k}\log \hat{y}_{n,k}, \qquad \mathcal{L}_{\text{MSE}} = \frac{1}{N}\sum_{n=1}^{N}\left(\hat{y}_n - y_n\right)^2
+$$
+
+交差エントロピーは分類（正解クラスの予測確率が高いほど損失が小さい）、平均二乗誤差は回帰に用います。
 
 ## 誤差逆伝播（Backpropagation）の直感
 

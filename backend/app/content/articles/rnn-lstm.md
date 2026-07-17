@@ -117,6 +117,16 @@ for epoch in range(50):
         print(f"Epoch {epoch+1}: val_loss={val_loss:.4f}")
 ```
 
+**数式で表すと**
+
+LSTM が各タイムステップで隠れ状態を更新し、最終ステップ \(\mathbf{h}_T\) を線形層に通して1ステップ先を予測します：
+
+$$
+\mathbf{c}_t = \mathbf{f}_t \odot \mathbf{c}_{t-1} + \mathbf{i}_t \odot \tilde{\mathbf{c}}_t, \quad \mathbf{h}_t = \mathbf{o}_t \odot \tanh(\mathbf{c}_t), \quad \hat{y} = \mathbf{w}^\top \mathbf{h}_T + b
+$$
+
+損失は平均二乗誤差 \(\mathcal{L} = \frac{1}{N}\sum_n (\hat{y}_n - y_n)^2\) を用います。
+
 ## テキスト分類への応用
 
 ```python
@@ -143,6 +153,16 @@ model = TextClassifier(vocab_size=10000, embed_dim=128,
 x = torch.randint(0, 10000, (32, 100))   # バッチ32・長さ100
 print(model(x).shape)                    # (32, 2)
 ```
+
+**数式で表すと**
+
+双方向LSTMは系列を順・逆両方向に処理し、それぞれの最終隠れ状態を結合して分類します：
+
+$$
+\mathbf{h} = \left[\overrightarrow{\mathbf{h}}_T;\, \overleftarrow{\mathbf{h}}_1\right], \qquad \mathbf{y} = W\mathbf{h} + \mathbf{b}
+$$
+
+結合により隠れ次元が2倍になるため、線形層の入力は \(\text{hidden}\times 2\) になります。
 
 ## 予測結果の可視化
 

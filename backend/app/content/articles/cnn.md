@@ -92,6 +92,16 @@ print(model(x).shape)                   # (8, 10)
 print(f"パラメータ数: {sum(p.numel() for p in model.parameters()):,}")
 ```
 
+**数式で表すと**
+
+各畳み込みブロックは「畳み込み → バッチ正規化 → ReLU → 最大プーリング」を計算します：
+
+$$
+\mathbf{h} = \mathrm{MaxPool}\Big(\mathrm{ReLU}\big(\mathrm{BN}(\mathbf{x} * K + \mathbf{b})\big)\Big), \qquad (\mathbf{x} * K)_{i,j} = \sum_{m}\sum_{n} x_{i+m,\,j+n}\,K_{m,n}
+$$
+
+パディング1・カーネル3×3で空間サイズを保ち、2×2プーリングで縦横を半分に縮小するため、32×32 が3ブロックで 4×4 になります。
+
 ## CIFAR-10 でのトレーニング
 
 ```python

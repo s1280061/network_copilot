@@ -61,6 +61,14 @@ V, formula = ohms_law(R=100, I=2)
 print(f"電圧 V = {V} V  ({formula})")   # → 200.0 V
 ```
 
+**数式で表すと**
+
+$$
+V = R I \quad\Longleftrightarrow\quad I = \frac{V}{R} \quad\Longleftrightarrow\quad R = \frac{V}{I}
+$$
+
+電圧 \( V \) [V]、抵抗 \( R \) [Ω]、電流 \( I \) [A] の関係。2つが分かれば残り1つが求まります。
+
 ## グラフで見るオームの法則
 
 ```python
@@ -114,6 +122,14 @@ print(f"必要な抵抗: {R} Ω")     # → 150 Ω
 print(f"最も近い規格値: 150Ω または 180Ω を使う")
 ```
 
+**数式で表すと**
+
+$$
+R = \frac{V_{supply} - V_{LED}}{I_{LED}}
+$$
+
+制限抵抗が受け持つ電圧 \( V_{supply}-V_{LED} \) [V] を目標電流 \( I_{LED} \) [A] で割った値。オームの法則そのものです。
+
 ### 車載システム（12V）の例
 
 ```python
@@ -133,6 +149,14 @@ I_ecu = 0.010   # 10mA
 R_ecu = V_ecu / I_ecu
 print(f"ECU制御回路の抵抗: {R_ecu} Ω")   # → 330 Ω
 ```
+
+**数式で表すと**
+
+$$
+I = \frac{P}{V}, \qquad R = \frac{V}{I} = \frac{V^2}{P}
+$$
+
+電力 \( P \) [W] と電圧 \( V \) [V] から電流 \( I \) [A] を求め、さらにオームの法則で等価抵抗 \( R \) [Ω] を導きます。
 
 ## 抵抗のカラーコード
 

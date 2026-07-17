@@ -38,6 +38,14 @@ print(linear_search(data, 99))   # 3
 print(linear_search(data, 50))   # -1
 ```
 
+**計算量・数式で表すと**
+
+$$
+T_{\text{worst}}(n) = O(n), \quad T_{\text{avg}}(n) = O(n/2) = O(n)
+$$
+
+先頭から順に比較するため、最悪・平均ともに \(n\) に比例します。
+
 ## 二分探索（Binary Search）
 
 **ソート済み配列**を前提に、毎回「半分」に絞り込む。100万件でも約20回で見つかります。
@@ -59,6 +67,14 @@ arr = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
 print(binary_search(arr, 13))   # 6
 print(binary_search(arr, 4))    # -1
 ```
+
+**計算量・数式で表すと**
+
+$$
+T(n) = T(n/2) + O(1) = O(\log n)
+$$
+
+毎回探索範囲が半分になるため、最悪でも \(\lceil \log_2 n \rceil\) 回の比較で済みます。
 
 **動作の様子**（13を探す, n=10）：
 ```
@@ -123,6 +139,14 @@ weights = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 print(min_ship_capacity(weights, 5))   # 15
 ```
 
+**計算量・数式で表すと**
+
+$$
+T(n) = O\!\left(n \log \sum_i w_i\right)
+$$
+
+答えの範囲を二分探索（\(O(\log \sum w_i)\) 回）し、各回で判定 `can_ship` を \(O(n)\) で行います。
+
 ## グラフ探索
 
 グラフは「ノード（頂点）」と「エッジ（辺）」の集合。SNSの友達関係・地図・タスク依存関係などを表現します。
@@ -182,6 +206,14 @@ print(bfs(graph, "A"))          # ['A', 'B', 'C', 'D', 'E', 'F']
 print(bfs(graph, "A", goal="F"))  # ['A', 'C', 'F']  ← 2ステップ
 ```
 
+**計算量・数式で表すと**
+
+$$
+T = O(V + E)
+$$
+
+各頂点 \(V\) と各辺 \(E\) を1回ずつ処理します。重みなしグラフの最短経路（辺数最小）を保証します。
+
 ### BFS で最短距離を求める
 
 ```python
@@ -200,6 +232,14 @@ def shortest_distance(graph, start):
 print(shortest_distance(graph, "A"))
 # {'A': 0, 'B': 1, 'C': 1, 'D': 2, 'E': 2, 'F': 2}
 ```
+
+**計算量・数式で表すと**
+
+$$
+T = O(V + E)
+$$
+
+BFS と同じく全頂点・全辺を1回走査し、各ノードへの最短ステップ数 \(\text{dist}[v]\) を確定します。
 
 ## 深さ優先探索（DFS: Depth-First Search）
 
@@ -236,6 +276,14 @@ def dfs_stack(graph, start):
 print(dfs_recursive(graph, "A"))  # ['A', 'B', 'D', 'E', 'F', 'C']
 print(dfs_stack(graph, "A"))      # ['A', 'B', 'D', 'E', 'F', 'C']
 ```
+
+**計算量・数式で表すと**
+
+$$
+T = O(V + E)
+$$
+
+各頂点と各辺を1回ずつ訪問します。再帰版は深さ分の \(O(V)\)、スタック版も同オーダーの補助メモリを使います。
 
 ### 連結成分の数を数える
 
@@ -295,6 +343,14 @@ print(dijkstra(road, "東京"))
 # {'東京': 0, '名古屋': 90, '仙台': 100, '大阪': 160}
 ```
 
+**計算量・数式で表すと**
+
+$$
+T = O\!\left((V + E) \log V\right)
+$$
+
+各辺の緩和ごとにヒープへ push/pop（\(O(\log V)\)）します。負の重みがない場合に最小コストを保証します。
+
 ## Union-Find（素集合データ構造）
 
 グループ（集合）の合体と「同じグループか？」の判定を高速に行います。
@@ -332,6 +388,14 @@ print(uf.connected(0, 2))   # True（0-1-2 でつながっている）
 print(uf.connected(0, 3))   # False（別グループ）
 print(uf.connected(3, 4))   # True
 ```
+
+**計算量・数式で表すと**
+
+$$
+T_{\text{find}} = T_{\text{union}} = O(\alpha(n)) \approx O(1)
+$$
+
+経路圧縮とランクによる合併を併用すると、1操作あたりほぼ定数時間（\(\alpha\) はアッカーマン関数の逆関数）になります。
 
 ## BFS vs DFS の使い分け
 

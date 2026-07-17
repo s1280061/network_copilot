@@ -58,6 +58,14 @@ loss = contrastive_loss(img_emb, txt_emb)
 print(f"対照損失: {loss.item():.4f}  (理論最小値 ≈ {np.log(N):.4f})")
 ```
 
+**数式で表すと**
+
+$$
+\mathcal{L} = -\frac{1}{2N} \sum_{i=1}^{N} \left[ \log \frac{\exp(\langle I_i, T_i\rangle / \tau)}{\sum_{j=1}^{N} \exp(\langle I_i, T_j\rangle / \tau)} + \log \frac{\exp(\langle I_i, T_i\rangle / \tau)}{\sum_{j=1}^{N} \exp(\langle I_j, T_i\rangle / \tau)} \right]
+$$
+
+正規化済み埋め込みの内積（コサイン類似度）\(\langle I_i, T_j\rangle\) を温度 \(\tau\) でスケールし、対応するペア \((I_i, T_i)\) を正例とする画像→テキスト・テキスト→画像の双方向 InfoNCE 損失です。
+
 ## 可視化
 
 ![画像-テキスト類似度ヒートマップ](/images/charts/clip.png)
@@ -150,6 +158,14 @@ def visualize_similarity(images, texts, model, processor):
     plt.show()
     return similarity
 ```
+
+**数式で表すと**
+
+$$
+\mathrm{sim}(I, T) = \frac{I \cdot T}{\|I\| \, \|T\|}
+$$
+
+画像特徴 \(I\) とテキスト特徴 \(T\) を L2 正規化してから内積を取ることで、\(-1\)〜\(1\) のコサイン類似度が得られます。
 
 ## 画像検索（テキストクエリ）
 

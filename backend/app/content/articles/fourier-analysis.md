@@ -51,6 +51,16 @@ plt.title("3つの正弦波の合成信号（最初の0.2秒）")
 plt.tight_layout(); plt.savefig("signal_time.png", dpi=120); plt.show()
 ```
 
+**数式で表すと**
+
+合成信号は複数の正弦波の重ね合わせ。周波数 \(f_k\)・振幅 \(A_k\) の波の和で表す。
+
+$$
+x(t) = \sum_{k} A_k \sin(2\pi f_k t)
+$$
+
+ここでは \((f_k, A_k) = (5, 1.0), (20, 0.5), (50, 0.3)\)。フーリエ解析はこの逆問題（波形から \(f_k, A_k\) を復元）を解く。
+
 ## 離散フーリエ変換（DFT）と FFT
 
 **DFT（Discrete Fourier Transform）** は離散サンプルを周波数成分に分解します。計算量 \(O(N^2)\) の DFT を \(O(N \log N)\) に高速化したのが **FFT（Fast Fourier Transform）** です。
@@ -84,6 +94,16 @@ print("上位 5 周波数成分:")
 for i in peak_indices:
     print(f"  {xf[i]:.1f} Hz  振幅={amp[i]:.3f}")
 ```
+
+**数式で表すと**
+
+FFT で得た複素係数 \(X[k]\) から、片側振幅スペクトルを計算する（負の周波数分を2倍し \(N\) で正規化）。
+
+$$
+A[k] = \frac{2}{N}\,\bigl|X[k]\bigr|, \qquad f_k = \frac{k\,f_s}{N}
+$$
+
+\(f_s\) はサンプリング周波数、\(N\) はサンプル数。ピーク位置 \(f_k\) が信号に含まれる周波数成分を表す。
 
 出力：
 ```
@@ -137,6 +157,16 @@ print(f"フィルタ後 MSE: {mse_after:.4f}")
 print(f"ノイズ削減率: {(1 - mse_after/mse_before)*100:.1f}%")
 ```
 
+**数式で表すと**
+
+ローパスフィルタは、カットオフ周波数 \(f_c\) を超える成分をゼロにしてから逆離散フーリエ変換（IDFT）で時間領域に戻す。
+
+$$
+\hat{X}[k] = \begin{cases} X[k] & |f_k| \le f_c \\ 0 & |f_k| > f_c \end{cases}, \qquad \hat{x}[n] = \frac{1}{N}\sum_{k=0}^{N-1} \hat{X}[k]\, e^{\,j 2\pi kn/N}
+$$
+
+高周波のノイズ成分を除去し、低周波の元信号だけを復元する。
+
 ## 時系列データへの応用（季節性の発見）
 
 ```python
@@ -167,6 +197,16 @@ peak_idx = np.argsort(amp_sales[1:])[-3:] + 1   # DC成分を除く
 for i in peak_idx[::-1]:
     print(f"  周期 {periods[i]:.1f} ヶ月  振幅={amp_sales[i]:.1f}")
 ```
+
+**数式で表すと**
+
+周波数を周期に変換すると、時系列の季節性の長さが直接わかる。
+
+$$
+\text{周期} = \frac{1}{f_k} = \frac{N}{k}\quad(\text{サンプル間隔単位})
+$$
+
+月次データ（間隔1ヶ月）で \(k\) 番目の成分の周期が12となる位置に強いピークが立てば、年次季節性の存在を示す。
 
 出力：
 ```
@@ -200,6 +240,16 @@ plt.ylim(0, 150); plt.tight_layout()
 plt.savefig("spectrogram.png", dpi=120); plt.show()
 ```
 
+**数式で表すと**
+
+スペクトログラムは短時間フーリエ変換（STFT）の大きさの二乗。窓 \(w\) をずらしながら局所的な周波数を求める。
+
+$$
+\mathrm{STFT}\{x\}(m, k) = \sum_{n} x[n]\,w[n - m]\, e^{-j 2\pi kn/N}, \qquad S(m, k) = \bigl|\mathrm{STFT}\{x\}(m, k)\bigr|^2
+$$
+
+\(m\) は時間位置、\(k\) は周波数ビン。これにより周波数成分の時間変化を可視化できる。
+
 ## パワースペクトル密度（PSD）
 
 エンジン振動・音響など**連続信号のパワー分布**を評価します。
@@ -217,6 +267,16 @@ plt.title("Welch法によるPSD推定")
 plt.xlim(0, 100); plt.grid(True, alpha=0.3)
 plt.tight_layout(); plt.savefig("psd.png", dpi=120); plt.show()
 ```
+
+**数式で表すと**
+
+Welch 法は信号を重なりのある \(K\) 個のセグメントに分け、各ピリオドグラムを平均して分散の小さい PSD 推定を得る。
+
+$$
+\hat{P}(f) = \frac{1}{K}\sum_{i=1}^{K} \frac{1}{U}\left| \sum_{n} w[n]\, x_i[n]\, e^{-j 2\pi f n} \right|^2
+$$
+
+\(x_i\) は \(i\) 番目のセグメント、\(w\) は窓関数、\(U\) は窓の正規化係数。平均化により滑らかなスペクトルになる。
 
 ## 窓関数の選び方
 

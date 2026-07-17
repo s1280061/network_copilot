@@ -73,6 +73,16 @@ print(f"平均:     {measurements.mean():.3f}")
 print(f"結論: {'H0 棄却（有意差あり）' if p_val < 0.05 else 'H0 保留（有意差なし）'}")
 ```
 
+**数式で表すと**
+
+1標本 t 検定は、標本平均と仮説値 \(\mu_0\) の差を標準誤差で割る。
+
+$$
+t = \frac{\bar{x} - \mu_0}{s/\sqrt{n}}, \qquad \mathrm{df} = n - 1
+$$
+
+\(\bar{x}\) は標本平均、\(s\) は不偏標準偏差、\(n\) は標本数。この \(t\) を自由度 \(n-1\) の t 分布と比べて p 値を求める。
+
 ## 2標本 t 検定（独立・対応あり）
 
 ```python
@@ -99,6 +109,16 @@ print(f"\n対応あり t 検定")
 print(f"t = {t_paired:.3f}, p = {p_paired:.4f}")
 print(f"平均変化: {(after - before).mean():.2f}")
 ```
+
+**数式で表すと**
+
+Welch の独立2標本 t 検定と、対応あり t 検定（差 \(d_i = a_i - b_i\) に対する1標本検定）。
+
+$$
+t_{\text{ind}} = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\dfrac{s_1^2}{n_1} + \dfrac{s_2^2}{n_2}}}, \qquad t_{\text{paired}} = \frac{\bar{d}}{s_d/\sqrt{n}}
+$$
+
+対応ありでは各被験者内の差 \(d_i\) をとることで個人差の変動を除去できる。
 
 ## ANOVA（分散分析）
 
@@ -134,6 +154,16 @@ ss_total = sum((data - data.mean())**2)
 eta_sq = ss_between / ss_total
 print(f"η² = {eta_sq:.3f}  ({'小' if eta_sq<0.06 else '中' if eta_sq<0.14 else '大'}効果)")
 ```
+
+**数式で表すと**
+
+F 統計量は群間平均平方と群内平均平方の比、効果量 \(\eta^2\) は群間平方和の全平方和に対する割合。
+
+$$
+F = \frac{\mathrm{MS}_{\text{between}}}{\mathrm{MS}_{\text{within}}}, \qquad \eta^2 = \frac{\mathrm{SS}_{\text{between}}}{\mathrm{SS}_{\text{total}}} = \frac{\sum_j n_j(\bar{x}_j - \bar{x})^2}{\sum_j \sum_i (x_{ij} - \bar{x})^2}
+$$
+
+\(\eta^2\) は「群の違いで説明できる分散の割合」を表す。
 
 ## p 値の罠と効果量
 
@@ -201,6 +231,16 @@ plt.tight_layout()
 plt.show()
 ```
 
+**数式で表すと**
+
+検定力は第2種過誤 \(\beta\) の余事象。両側 t 検定で必要サンプルサイズはおおよそ次で近似される。
+
+$$
+\text{検定力} = 1 - \beta = P(\text{棄却} \mid H_1), \qquad n \approx \frac{2\,(z_{1-\alpha/2} + z_{1-\beta})^2}{d^2}
+$$
+
+\(d\) は効果量（Cohen's d）、\(z\) は標準正規分布の分位点。効果量が小さいほど必要な \(n\) は急増する。
+
 ## 多重検定の補正
 
 ```python
@@ -223,6 +263,16 @@ print("-" * 40)
 for p, r_b, r_h in zip(p_values, reject_bon, reject_bh):
     print(f"{p:.3f}      | {'棄却' if r_b else '保留'}       | {'棄却' if r_h else '保留'}")
 ```
+
+**数式で表すと**
+
+Bonferroni は各検定の閾値を厳しくし、Benjamini–Hochberg (BH) は順位付けした p 値を段階的に比較して FDR を制御する。
+
+$$
+\text{Bonferroni: } p_i < \frac{\alpha}{m}, \qquad \text{BH: } p_{(i)} \le \frac{i}{m}\,\alpha
+$$
+
+\(m\) は検定数、\(p_{(i)}\) は昇順に並べた \(i\) 番目の p 値。BH は Bonferroni より検出力が高い。
 
 ## ノンパラメトリック検定
 
@@ -247,6 +297,16 @@ g3 = [1, 3, 5, 7, 9]
 h, p_kw = stats.kruskal(g1, g2, g3)
 print(f"Kruskal-Wallis: H={h:.3f}, p={p_kw:.4f}")
 ```
+
+**数式で表すと**
+
+Mann–Whitney U は順位和 \(R_1\) を用いて計算する（値そのものではなく順位を使うため外れ値に頑健）。
+
+$$
+U_1 = R_1 - \frac{n_1(n_1+1)}{2}, \qquad U = \min(U_1, U_2)
+$$
+
+\(R_1\) は群1の順位和、\(n_1, n_2\) は各群の標本数。
 
 ## 検定の選び方チートシート
 

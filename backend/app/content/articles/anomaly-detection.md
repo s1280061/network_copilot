@@ -85,6 +85,14 @@ plt.title("IQR法による異常検知")
 plt.show()
 ```
 
+**数式で表すと**
+
+$$
+z = \frac{x - \mu}{\sigma}, \qquad [\,Q_1 - 1.5\,\mathrm{IQR},\ Q_3 + 1.5\,\mathrm{IQR}\,], \quad \mathrm{IQR} = Q_3 - Q_1
+$$
+
+Z-スコア法は平均 \(\mu\)・標準偏差 \(\sigma\) からの標準化偏差が \(|z|>3\) の点を異常とします。IQR 法は第 1・第 3 四分位 \(Q_1, Q_3\) から定めた区間の外側を異常とし、外れ値の影響を受けにくいのが特徴です。
+
 ## 異常検知の可視化
 
 ![Isolation Forestによる異常点検出と異常スコア分布](/images/charts/anomaly-detection.png)
@@ -127,6 +135,14 @@ plt.legend()
 plt.title("Isolation Forest 決定境界")
 plt.show()
 ```
+
+**数式で表すと**
+
+$$
+s(\mathbf{x}, n) = 2^{-\dfrac{E[h(\mathbf{x})]}{c(n)}}, \qquad c(n) = 2H(n-1) - \frac{2(n-1)}{n}
+$$
+
+`score_samples` は、各木でデータ点が孤立するまでの平均経路長 \(E[h(\mathbf{x})]\) を、正規化定数 \(c(n)\) で割って算出します。経路長が短い（＝少ない分割で孤立する）点ほどスコアが 1 に近づき、異常と判定されます。
 
 ## One-Class SVM
 
@@ -176,6 +192,14 @@ print(f"再構成誤差閾値: {threshold:.4f}")
 print(classification_report(y_true, y_ae, target_names=["異常", "正常"]))
 ```
 
+**数式で表すと**
+
+$$
+\mathrm{score}(\mathbf{x}) = \lVert \mathbf{x} - \hat{\mathbf{x}} \rVert^2, \qquad \tau = \mathrm{percentile}_{95}\bigl(\{\mathrm{score}(\mathbf{x}) : \mathbf{x}\in \text{正常}\}\bigr)
+$$
+
+正常データのみで学習したモデルの再構成誤差を異常スコアとし、正常データ誤差分布の 95 パーセンタイルを閾値 \(\tau\) に設定します。\(\mathrm{score}(\mathbf{x}) > \tau\) の点を異常と判定します。
+
 ## よくある間違いと対処法
 
 1. **`contamination` を実際の異常率に合わせない** → Isolation Forest の `contamination` はデータ中の想定異常率。実際の異常が少ない場合は `0.01〜0.05` を設定する。デフォルトの `auto` は過去との比較。
@@ -208,6 +232,15 @@ plt.scatter(anomaly_idx, temp[anomaly_idx], color="red", s=80, zorder=5, label="
 plt.legend()
 plt.title("移動ウィンドウ Z-スコアによる時系列異常検知")
 plt.show()
+```
+
+**数式で表すと**
+
+$$
+z_t = \frac{x_t - \mu_t}{\sigma_t + \epsilon}, \qquad \mu_t = \frac{1}{w}\sum_{i=t-w+1}^{t} x_i, \quad \sigma_t = \sqrt{\frac{1}{w}\sum_{i=t-w+1}^{t}(x_i - \mu_t)^2}
+$$
+
+固定閾値ではなく、窓幅 \(w\)（`window`）の移動平均 \(\mu_t\)・移動標準偏差 \(\sigma_t\) から動的な正常範囲を作ります。\(|z_t| > 3\) の時刻を異常とし、環境変化に追従できます。
 
 ## まとめ
 
@@ -216,4 +249,3 @@ plt.show()
 - One-Class SVM: 正常データのみで学習・高次元データでも有効・`nu` パラメータで検知感度調整
 - オートエンコーダ: 再構成誤差が大きい＝異常。複雑なパターンの異常に対応できる
 - 時系列異常検知は移動ウィンドウで「動的な正常範囲」を設定する
-```

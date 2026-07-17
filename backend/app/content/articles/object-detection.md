@@ -49,6 +49,14 @@ pred = [60, 60, 210, 190]
 print(f"IoU: {compute_iou(gt, pred):.3f}")  # 0.7以上が一般的な閾値
 ```
 
+**数式で表すと**
+
+$$
+\mathrm{IoU}(A, B) = \frac{|A \cap B|}{|A \cup B|} = \frac{|A \cap B|}{|A| + |B| - |A \cap B|}
+$$
+
+2つのボックス \(A, B\) の重なり面積を和集合面積で割った値で、\(0\)（重なりなし）〜\(1\)（完全一致）を取ります。
+
 ## 可視化
 
 ![IoU算出とPrecision-Recall曲線](/images/charts/object-detection.png)
@@ -73,6 +81,14 @@ scores = [0.9, 0.75, 0.85, 0.6]
 kept   = nms(boxes, scores, iou_threshold=0.5)
 print(f"NMS後の検出: {kept} → スコア {[scores[i] for i in kept]}")
 ```
+
+**数式で表すと**
+
+$$
+\mathcal{K} = \Big\{\, b_i \;\Big|\; \mathrm{IoU}(b_i, b_j) < \tau \ \ \forall\, b_j \in \mathcal{K},\ s_j > s_i \,\Big\}
+$$
+
+スコア \(s\) の高い順にボックスを走査し、すでに採用したボックスと \(\mathrm{IoU}\) が閾値 \(\tau\) 以上重なるものを抑制（除去）します。
 
 ## YOLOv8の使い方
 
@@ -158,6 +174,14 @@ def average_precision(recalls, precisions):
 # mAP@50: IoU=0.5での各クラスAPの平均
 # mAP@50-95: IoU=0.5〜0.95の平均（COCO標準）
 ```
+
+**数式で表すと**
+
+$$
+\mathrm{AP} = \frac{1}{11} \sum_{t \in \{0, 0.1, \dots, 1.0\}} \max_{\tilde{r} \ge t} p(\tilde{r}), \qquad \mathrm{mAP} = \frac{1}{C} \sum_{c=1}^{C} \mathrm{AP}_c
+$$
+
+各再現率 \(t\) での最大適合率を11点で平均したものが AP、全 \(C\) クラスの AP を平均したものが mAP です。
 
 ## 主要モデルの比較
 

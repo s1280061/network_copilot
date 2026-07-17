@@ -61,6 +61,14 @@ rmse = mean_squared_error(y_test, y_pred) ** 0.5
 print(f"RMSE: {rmse:.3f}")
 ```
 
+**数式で表すと**
+
+$$
+\hat{y} = \mathbf{w}^\top \mathbf{x} + b, \qquad \mathrm{RMSE} = \sqrt{\frac{1}{n}\sum_{i=1}^{n}\left(y_i - \hat{y}_i\right)^2}
+$$
+
+`fit` は誤差二乗和を最小にする重み \(\mathbf{w}\) と切片 \(b\) を学習し、RMSE は予測値と実測値の平均的なずれを \(y\) と同じ単位で表します。
+
 ## 機械学習の一般的なワークフロー
 
 ```mermaid
@@ -106,7 +114,13 @@ plt.tight_layout()
 plt.show()
 ```
 
-## 評価指標の使い分け
+**数式で表すと**
+
+$$
+\hat{y} = \sum_{j=0}^{d} w_j\, x^{j}
+$$
+
+次数 \(d\) の多項式回帰は特徴量を \(x, x^2, \dots, x^d\) に拡張した線形回帰です。\(d\) を大きくするほど表現力は増しますが、訓練データの雑音まで学習して過学習に陥ります。
 
 | タスク | 指標 | 意味 |
 |---|---|---|

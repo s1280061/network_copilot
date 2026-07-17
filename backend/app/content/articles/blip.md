@@ -238,6 +238,14 @@ print(f"出力 (Q-Former): {out.shape}")           # [2, 32, 768]
 print("→ 256トークンの視覚情報を32トークンに圧縮してLLMへ渡す")
 ```
 
+**数式で表すと**
+
+$$
+\mathrm{CrossAttention}(Q, K, V) = \mathrm{softmax}\!\left(\frac{QK^\top}{\sqrt{d_k}}\right) V
+$$
+
+学習可能なクエリ \(Q\)（\(32 \times d\)）が、画像特徴から得たキー \(K\)・バリュー \(V\)（\(N_{\text{patch}} \times d\)）に注目し、必要な視覚情報を32トークンへ選択的に集約します。
+
 ## 画像−テキスト検索（Retrieval）
 
 ```python

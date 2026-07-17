@@ -82,6 +82,14 @@ def scaled_dot_product_attention(Q, K, V, mask=None):
     return torch.matmul(weights, V), weights
 ```
 
+**数式で表すと**
+
+$$
+\mathrm{Attention}(Q, K, V) = \mathrm{softmax}\!\left(\frac{QK^\top}{\sqrt{d_k}}\right)V
+$$
+
+クエリとキーの内積で類似度を計算し、\(\sqrt{d_k}\) で割ってスケーリングした後、softmax で正規化した重みをバリューに掛けます。
+
 ## Multi-Head Attention
 
 ```python
@@ -108,6 +116,14 @@ class MultiHeadAttention(nn.Module):
         attn = attn.transpose(1, 2).contiguous().view(Q.size(0), -1, self.n_heads * self.d_k)
         return self.W_o(attn)
 ```
+
+**数式で表すと**
+
+$$
+\mathrm{MultiHead}(Q,K,V) = \mathrm{Concat}(\mathrm{head}_1, \dots, \mathrm{head}_h)\,W^O, \quad \mathrm{head}_i = \mathrm{Attention}(QW_i^Q, KW_i^K, VW_i^V)
+$$
+
+各ヘッドが独立に注意を計算し、結果を結合して \(W^O\) で射影します。複数の「注意の視点」を並列に学習できます。
 
 ## Transformer Encoder Block
 
@@ -177,6 +193,19 @@ def sinusoidal_encoding(max_len=100, d_model=64):
     enc[:, 1::2] = np.cos(pos / 10000 ** (dim / d_model))
     return enc
 
+pe = sinusoidal_encoding()  # noqa: E402
+```
+
+**数式で表すと**
+
+$$
+PE_{(pos, 2i)} = \sin\!\left(\frac{pos}{10000^{2i/d}}\right), \qquad PE_{(pos, 2i+1)} = \cos\!\left(\frac{pos}{10000^{2i/d}}\right)
+$$
+
+位置 \(pos\) と次元 \(i\) ごとに異なる周波数の正弦・余弦で語順情報を埋め込みます。偶数次元に \(\sin\)、奇数次元に \(\cos\) を割り当てます。
+
+```python
+# 可視化
 pe = sinusoidal_encoding()
 plt.figure(figsize=(10, 4))
 plt.imshow(pe[:50, :], cmap="RdBu", aspect="auto")

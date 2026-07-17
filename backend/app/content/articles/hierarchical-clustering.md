@@ -95,6 +95,14 @@ plt.savefig("dendrogram.png", dpi=120)
 plt.show()
 ```
 
+**数式で表すと**
+
+$$
+d_{\text{Ward}}(C_i, C_j) = \frac{n_i\,n_j}{n_i + n_j}\,\lVert \boldsymbol{\mu}_i - \boldsymbol{\mu}_j \rVert^2
+$$
+
+`linkage(..., method="ward")` は、各ステップで合体後の分散増加量 \(d_{\text{Ward}}\) が最小になるクラスタ対を選び、連結行列 \(Z\) の各行に `[クラスタ1, クラスタ2, 距離, サイズ]` を記録していきます。
+
 ### クラスタ数を指定して切り出す
 
 ```python
@@ -169,6 +177,14 @@ for k in k_range:
 best_k = max(scores, key=lambda x: x[1])[0]
 print(f"\n最良 k = {best_k}")
 ```
+
+**数式で表すと**
+
+$$
+a_m = d_{m+1} - 2 d_m + d_{m-1}, \qquad k_{\text{opt}} = \arg\max_m a_m
+$$
+
+`np.diff(last, 2)` はマージ距離列 \(d_m\) の 2 階差分（加速度）で、距離が急に跳ね上がる位置を捉えます。これが最大となる箇所を最適クラスタ数の目安とし、シルエットスコア \(s\) の最大化と併用して確定します。
 
 ## リンケージ手法の比較
 

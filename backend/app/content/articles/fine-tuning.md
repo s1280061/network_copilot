@@ -59,6 +59,14 @@ print(f"Full: {full_params:,} params")
 print(f"LoRA: {lora_params:,} params ({lora_params/full_params*100:.1f}%)")
 ```
 
+**数式で表すと**
+
+$$
+h = W_0 x + \frac{\alpha}{r}\,B A\,x, \qquad B \in \mathbb{R}^{d \times r},\ A \in \mathbb{R}^{r \times k}
+$$
+
+凍結した元の重み \(W_0\) に、低ランク（ランク \(r\)）行列積 \(BA\) による更新を \(\alpha/r\) 倍して加えます。更新するパラメータは \(r(d+k)\) 個だけで済みます。
+
 ## HuggingFace PEFTによるLoRA
 
 ```python

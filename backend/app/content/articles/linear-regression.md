@@ -85,7 +85,13 @@ plt.tight_layout()
 plt.show()
 ```
 
-## 重回帰（特徴量が複数）
+**数式で表すと**
+
+$$
+\hat{y} = w_1 x + w_0, \qquad \mathbf{w} = (\mathbf{X}^\top \mathbf{X})^{-1}\mathbf{X}^\top \mathbf{y}
+$$
+
+`fit` は最小二乗法の正規方程式を解いて傾き `coef_` \(=w_1\) と切片 `intercept_` \(=w_0\) を求めます。\(R^2\) は \(1 - \mathrm{SS_{res}}/\mathrm{SS_{tot}}\) で、1に近いほど説明力が高いことを表します。
 
 ```python
 import pandas as pd
@@ -149,6 +155,14 @@ for name, m in [("Ridge", ridge), ("Lasso", lasso), ("ElasticNet", enet)]:
     print(f"{name}: R²={r2:.3f}")
 ```
 
+**数式で表すと**
+
+$$
+\mathcal{L}_{\text{Ridge}} = \mathrm{MSE} + \lambda\sum_j w_j^2, \quad \mathcal{L}_{\text{Lasso}} = \mathrm{MSE} + \lambda\sum_j |w_j|, \quad \mathcal{L}_{\text{ENet}} = \mathrm{MSE} + \lambda\Big(\alpha\sum_j |w_j| + (1-\alpha)\sum_j w_j^2\Big)
+$$
+
+L2罰則（Ridge）は係数を滑らかに縮小し、L1罰則（Lasso）は一部の係数を厳密に0にして特徴選択を行います。ElasticNet は両者を \(\alpha\)（`l1_ratio`）で混合します。
+
 ## 残差分析（モデルの診断）
 
 ```python
@@ -172,6 +186,14 @@ plt.tight_layout()
 plt.show()
 ```
 
+**数式で表すと**
+
+$$
+e_i = y_i - \hat{y}_i
+$$
+
+残差 \(e_i\) は実測値と予測値の差です。線形回帰が適切なら残差は平均0でランダムに散らばり（等分散）、ヒストグラムは正規分布に近づきます。傾向が残る場合はモデルの誤設定を示します。
+
 ## 多項式回帰（非線形関係を線形モデルで近似）
 
 ```python
@@ -188,6 +210,14 @@ model_poly = make_pipeline(
 model_poly.fit(X_nl, y_nl)
 print(f"R²: {model_poly.score(X_nl, y_nl):.3f}")
 ```
+
+**数式で表すと**
+
+$$
+\hat{y} = w_0 + w_1 x + w_2 x^2 + \cdots + w_d x^d
+$$
+
+`PolynomialFeatures` で入力を \(x, x^2, \dots, x^d\) に拡張すると、係数について線形なまま非線形な関係を近似できます（ここでは \(d=2\)）。
 
 ## 評価指標のまとめ
 

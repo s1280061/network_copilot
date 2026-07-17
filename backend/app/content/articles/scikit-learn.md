@@ -56,6 +56,14 @@ enc = OneHotEncoder(sparse_output=False, drop="first")
 X_cat = enc.fit_transform(df[["city", "type"]])
 ```
 
+**数式で表すと**
+
+$$
+z = \frac{x - \mu}{\sigma}, \qquad x_{\text{norm}} = \frac{x - x_{\min}}{x_{\max} - x_{\min}}
+$$
+
+`StandardScaler` は平均 \(\mu\)・標準偏差 \(\sigma\) で標準化（平均0・分散1）し、`MinMaxScaler` は最小0・最大1の範囲へ線形変換します。統計量は訓練データで `fit` し、テストには `transform` のみ適用します。
+
 ## 訓練/テスト分割と交差検証
 
 ```python
@@ -76,6 +84,14 @@ cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
 scores = cross_val_score(model, X, y, cv=cv, scoring="f1_macro")
 print(f"CV F1: {scores.mean():.3f} ± {scores.std():.3f}")
 ```
+
+**数式で表すと**
+
+$$
+\mathrm{CV} = \frac{1}{k}\sum_{i=1}^{k} \mathrm{score}\!\left(\mathcal{D}_{\text{test}}^{(i)}\right)
+$$
+
+\(k\)-fold 交差検証はデータを \(k\) 分割し、各 fold をテストに使ったスコアの平均で汎化性能を推定します。標準偏差が大きいほど分割による評価のばらつきが大きいことを示します。
 
 ## Pipeline — 前処理とモデルを一体化
 
