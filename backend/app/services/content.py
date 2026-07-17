@@ -264,6 +264,45 @@ def _prerequisites() -> dict:
     return prereq
 
 
+_CODE_FENCE_RE = re.compile(r"```.*?```", re.DOTALL)
+_MATH_PATTERNS = [
+    re.compile(r"\$\$.*?\$\$", re.DOTALL),   # block  $$ ... $$
+    re.compile(r"\\\[.*?\\\]", re.DOTALL),   # block  \[ ... \]
+    re.compile(r"\\\(.*?\\\)", re.DOTALL),   # inline \( ... \)
+]
+
+
+def _protect_math(body: str) -> tuple[str, list[str]]:
+    """Replace math spans with inert placeholders so the Markdown converter
+    doesn't mangle LaTeX (strip backslashes, turn `_`/`*` into emphasis, etc.).
+    Fenced code blocks are left untouched. Returns (protected_body, store)."""
+    store: list[str] = []
+
+    def protect_segment(seg: str) -> str:
+        for pat in _MATH_PATTERNS:
+            def repl(m: re.Match) -> str:
+                store.append(m.group(0))
+                return f"@@MATH{len(store) - 1}MATH@@"
+
+            seg = pat.sub(repl, seg)
+        return seg
+
+    out: list[str] = []
+    last = 0
+    for m in _CODE_FENCE_RE.finditer(body):
+        out.append(protect_segment(body[last:m.start()]))
+        out.append(m.group(0))  # code block untouched
+        last = m.end()
+    out.append(protect_segment(body[last:]))
+    return "".join(out), store
+
+
+def _restore_math(html: str, store: list[str]) -> str:
+    for i, s in enumerate(store):
+        html = html.replace(f"@@MATH{i}MATH@@", s)
+    return html
+
+
 def _resolve_links(body: str) -> str:
     """Replace [[slug]] with a markdown link to /glossary/slug using the title."""
     titles = _titles()
@@ -294,7 +333,10 @@ def get_article(slug: str) -> dict | None:
         return None
     # resolve links first (on raw markdown), then convert to HTML.
     body = _resolve_links(a["body"])
+    # shield LaTeX math from the Markdown converter, then restore it verbatim.
+    body, math_store = _protect_math(body)
     html = md.markdown(body, extensions=["extra"])
+    html = _restore_math(html, math_store)
     titles = _titles()
     meta = a["meta"]
     related = [{"slug": s, "title": titles.get(s, s)} for s in meta["related"] if s in titles]
