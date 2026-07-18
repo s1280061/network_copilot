@@ -16,6 +16,7 @@ const NAV = [
   { href: "/glossary?tab=アルゴリズム", label: "アルゴリズム", icon: "⚙️", tab: "アルゴリズム" },
   { href: "/glossary?tab=C言語", label: "C言語", icon: "🔧", tab: "C言語" },
   { href: "/glossary?tab=CAD%2F設計", label: "CAD/設計", icon: "📐", tab: "CAD/設計" },
+  { href: "/glossary?tab=制御工学", label: "制御工学", icon: "🎛️", tab: "制御工学" },
   { href: "/notes", label: "PDFノート", icon: "📕" },
   { href: "/chat", label: "AIチャット", icon: "💬" },
   { href: "/favorites", label: "お気に入り", icon: "⭐" },

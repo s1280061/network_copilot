@@ -19,7 +19,7 @@ _FRONTMATTER_RE = re.compile(r"^---\s*\n(.*?)\n---\s*\n(.*)$", re.DOTALL)
 _LINK_RE = re.compile(r"\[\[([a-z0-9\-]+)\]\]")
 
 # note-style top categories shown on the home screen.
-CATEGORIES = ["Ethernet", "TCP/IP", "PCAP", "SOME/IP", "AUTOSAR", "SDV", "Automotive Bus", "Diagnostics", "Security", "Howto", "Python", "アルゴリズム", "C言語", "CAD/設計", "Statistics", "ML", "DL", "GenAI", "CV", "Electronics", "Automotive", "Wireless"]
+CATEGORIES = ["Ethernet", "TCP/IP", "PCAP", "SOME/IP", "AUTOSAR", "SDV", "Automotive Bus", "Diagnostics", "Security", "Howto", "Python", "アルゴリズム", "C言語", "CAD/設計", "制御工学", "Statistics", "ML", "DL", "GenAI", "CV", "Electronics", "Automotive", "Wireless"]
 
 # slug -> category (overridable via frontmatter `category`).
 _CATEGORY_MAP = {
@@ -135,6 +135,13 @@ _CATEGORY_MAP = {
     "orthographic-projection": "CAD/設計",
     "third-angle-projection":  "CAD/設計",
     "engineering-sketch":      "CAD/設計",
+    # 制御工学
+    "laplace-transform":    "制御工学",
+    "transfer-function":    "制御工学",
+    "block-diagram":        "制御工学",
+    "control-engineering":  "制御工学",
+    "matlab-simulink":      "制御工学",
+    "auto-parking-control": "制御工学",
     # Automotive
     "engineering-drawing":       "Automotive",
     "automotive-torque":         "Automotive",

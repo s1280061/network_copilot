@@ -7,7 +7,7 @@ import { getArticles, search as apiSearch } from "@/lib/api";
 import { Article, SearchHit } from "@/lib/types";
 import Thumbnail, { categoryStyle } from "@/components/Thumbnail";
 
-const CATEGORIES = ["Ethernet", "TCP/IP", "PCAP", "SOME/IP", "AUTOSAR", "SDV", "Automotive Bus", "Diagnostics", "Security", "Howto", "Python", "アルゴリズム", "C言語", "CAD/設計", "Statistics", "ML", "DL", "GenAI", "CV", "Electronics", "Automotive", "Wireless"];
+const CATEGORIES = ["Ethernet", "TCP/IP", "PCAP", "SOME/IP", "AUTOSAR", "SDV", "Automotive Bus", "Diagnostics", "Security", "Howto", "Python", "アルゴリズム", "C言語", "CAD/設計", "制御工学", "Statistics", "ML", "DL", "GenAI", "CV", "Electronics", "Automotive", "Wireless"];
 
 export default function GlossaryPage() {
   return (
