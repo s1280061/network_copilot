@@ -28,23 +28,58 @@ function stripHtml(html: string): string {
   return html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
 }
 
+// Japanese question phrasings that carry no search signal ("〜とは？", "〜について"…).
+// Stripped so the actual term remains for matching (Japanese has no word spaces,
+// so "RAGとは" would otherwise become a single unmatchable token).
+const QUESTION_STOPWORDS = [
+  "とは何ですか", "とは何か", "とはなにか", "とは何", "とはなに", "とは",
+  "について教えて", "についておしえて", "について", "を教えて", "を説明して",
+  "を教えてください", "教えてください", "って何ですか", "ってなに", "って何",
+  "ってなんですか", "の意味", "の仕組み", "の使い方", "どういう意味", "どういうもの",
+  "ですか", "とはどういう", "を知りたい", "が知りたい", "説明して", "って", "とは?",
+];
+
+function normalizeQuestion(q: string): string {
+  let s = q.toLowerCase();
+  for (const w of QUESTION_STOPWORDS) s = s.split(w.toLowerCase()).join(" ");
+  return s;
+}
+
+const SPLIT_RE = /[\s　、。.，,／\/・:：;；()（）「」『』【】\[\]?？!！]+/;
+
 function ragSearch(question: string, k = 3): { slug: string; title: string; text: string }[] {
-  const words = question
-    .toLowerCase()
-    .split(/[\s　、。？?！!,，]+/)
-    .filter((w) => w.length > 1);
+  const qLower = question.toLowerCase();
+  const qNorm = normalizeQuestion(question);
+
+  // query tokens: normalized chunks + standalone latin/number runs
+  const chunkTokens = qNorm.split(SPLIT_RE).filter((w) => w.length > 1);
+  const latinTokens = (qNorm.match(/[a-z0-9]+/g) || []).filter((w) => w.length > 1);
+  const qTokens = Array.from(new Set([...chunkTokens, ...latinTokens]));
 
   const articles: any[] = SC.articles || [];
   const scored = articles.map((a: any) => {
-    const hay = [
-      a.title || "",
-      a.excerpt || "",
-      ...(a.tags || []),
-      a.category || "",
-    ]
-      .join(" ")
-      .toLowerCase();
-    const score = words.reduce((s, w) => s + (hay.includes(w) ? 1 : 0), 0);
+    const title = (a.title || "").toLowerCase();
+    const tags = (a.tags || []).map((t: any) => String(t).toLowerCase());
+    // keyword pieces of the title (handles Japanese terms in parentheses etc.)
+    const titleParts = title.split(SPLIT_RE).filter((w: string) => w.length > 1);
+    const slugParts = String(a.slug || "").toLowerCase().split(/[-_]+/).filter((w) => w.length > 1);
+
+    const hay = [title, a.excerpt || "", ...tags, a.category || ""].join(" ").toLowerCase();
+
+    let score = 0;
+    // forward: query token found in the article's text (title hits weigh more)
+    for (const w of qTokens) {
+      if (title.includes(w)) score += 3;
+      else if (hay.includes(w)) score += 1;
+    }
+    // reverse: an article keyword appears in the question itself
+    // (catches Japanese terms like "俯瞰変換" that don't tokenize on spaces)
+    for (const t of tags) if (t.length > 1 && qLower.includes(t)) score += 2;
+    for (const p of titleParts) if (qLower.includes(p)) score += 3;
+    for (const p of slugParts) if (qLower.includes(p)) score += 2;
+    // strong boost when the whole title is mentioned
+    if (title.length > 1 && qLower.includes(title)) score += 5;
+
     return { slug: a.slug, title: a.title, score };
   });
 
