@@ -3424,6 +3424,37 @@
 "favorite": false
 },
 {
+"slug": "bev-transform",
+"title": "カメラのBEV変換（俯瞰変換）",
+"level": 4,
+"category": "CV",
+"related": [
+"image-processing",
+"opencv",
+"auto-parking-control",
+"object-detection"
+],
+"prereq": [
+"opencv"
+],
+"tags": [
+"cv",
+"bev",
+"homography",
+"perspective-transform",
+"ipm",
+"adas",
+"camera"
+],
+"next": [],
+"difficulty": "上級",
+"updated": "2026-07-20",
+"excerpt": "**BEV（Bird's Eye View、鳥瞰図／俯瞰図）変換** とは、車体に取り付けたカメラの「斜め前を見た画像」を、**真上から見下ろした地図のような画像**に変換する画像処理です。**IPM（Inverse Perspective",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
 "slug": "fine-tuning",
 "title": "ファインチューニング（LoRA・QLoRA・PEFT）",
 "level": 4,
@@ -10195,6 +10226,61 @@
 "completed": false,
 "favorite": false
 },
+"bev-transform": {
+"slug": "bev-transform",
+"title": "カメラのBEV変換（俯瞰変換）",
+"level": 4,
+"category": "CV",
+"related": [
+"image-processing",
+"opencv",
+"auto-parking-control",
+"object-detection"
+],
+"prereq": [
+"opencv"
+],
+"tags": [
+"cv",
+"bev",
+"homography",
+"perspective-transform",
+"ipm",
+"adas",
+"camera"
+],
+"next": [],
+"difficulty": "上級",
+"updated": "2026-07-20",
+"html": "<h2>BEV変換とは</h2>\n<p><strong>BEV（Bird's Eye View、鳥瞰図／俯瞰図）変換</strong> とは、車体に取り付けたカメラの「斜め前を見た画像」を、<strong>真上から見下ろした地図のような画像</strong>に変換する画像処理です。<strong>IPM（Inverse Perspective Mapping、逆透視変換）</strong> とも呼ばれます。</p>\n<p><img alt=\"BEV変換の概念\" src=\"/images/charts/bev-transform.png\" /></p>\n<p>カメラ画像では遠くのものほど小さく・狭く歪み、平行な車線は遠方で1点に収束します。BEV変換をかけると平行線が平行に戻り、<strong>実世界の距離・位置関係がそのまま測れる</strong>ようになります。自動駐車や車線認識、サラウンドビュー（アラウンドビューモニタ）の基盤技術です。</p>\n<pre><code class=\"language-mermaid\">graph LR\n  A[&quot;カメラ画像\\n（透視投影・歪む）&quot;] --&gt;|&quot;ホモグラフィ H&quot;| B[&quot;BEV画像\\n（真上から・等尺）&quot;]\n  B --&gt; C[&quot;車線検出・駐車枠検出\\n距離計測・経路計画&quot;]\n</code></pre>\n<h2>なぜBEVが必要か</h2>\n<table>\n<thead>\n<tr>\n<th>課題（カメラ視点）</th>\n<th>BEVでの解決</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>遠近で物体サイズが変わる</td>\n<td>距離に依らず一定スケール</td>\n</tr>\n<tr>\n<td>平行な車線が交わって見える</td>\n<td>平行のまま → 車線幅を正確に測れる</td>\n</tr>\n<tr>\n<td>複数カメラの画像を統合しにくい</td>\n<td>共通の地面座標に合成できる（サラウンドビュー）</td>\n</tr>\n<tr>\n<td>障害物までの距離が分からない</td>\n<td>地面上の実距離 [m] を直接読める</td>\n</tr>\n</tbody>\n</table>\n<h2>数学的な原理：ホモグラフィ</h2>\n<p>「平面（地面）を別の平面（俯瞰図）へ写す」変換は、<strong>ホモグラフィ（射影変換）</strong> と呼ばれる \\(3\\times3\\) 行列 \\(H\\) で表せます。同次座標を使い、</p>\n<p>$$\n\\begin{bmatrix} x' \\\\ y' \\\\ w' \\end{bmatrix}\n= H\n\\begin{bmatrix} u \\\\ v \\\\ 1 \\end{bmatrix}\n=\n\\begin{bmatrix} h_{11} & h_{12} & h_{13} \\\\ h_{21} & h_{22} & h_{23} \\\\ h_{31} & h_{32} & h_{33} \\end{bmatrix}\n\\begin{bmatrix} u \\\\ v \\\\ 1 \\end{bmatrix}\n$$</p>\n<p>変換後の画像座標は、同次座標を \\(w'\\) で割って得ます。</p>\n<p>$$\nX = \\frac{x'}{w'} = \\frac{h_{11}u + h_{12}v + h_{13}}{h_{31}u + h_{32}v + h_{33}},\\qquad\nY = \\frac{y'}{w'} = \\frac{h_{21}u + h_{22}v + h_{23}}{h_{31}u + h_{32}v + h_{33}}\n$$</p>\n<p>\\(H\\) は自由度8（スケール不定のため9成分−1）。<strong>対応点が4組あれば解ける</strong>のがポイントです。</p>\n<h2>4点対応で変換行列を求める</h2>\n<p>BEV変換は「カメラ画像上で地面の四角形（台形に見える）を選ぶ → それを俯瞰図の長方形に対応させる」だけで作れます。</p>\n<pre><code class=\"language-python\">import cv2\nimport numpy as np\n\n# カメラ画像上の4点（地面の台形。遠方ほど内側に寄る）\nsrc = np.float32([\n    [580, 460],   # 左上（遠く・左車線）\n    [700, 460],   # 右上（遠く・右車線）\n    [1040, 680],  # 右下（手前・右車線）\n    [240, 680],   # 左下（手前・左車線）\n])\n# 俯瞰図での対応点（長方形。実世界の平行線に対応）\ndst = np.float32([\n    [300, 0],\n    [980, 0],\n    [980, 720],\n    [300, 720],\n])\n\n# ホモグラフィ行列 H を計算（4点対応）\nH = cv2.getPerspectiveTransform(src, dst)\nprint(&quot;H =\\n&quot;, np.round(H, 4))\n</code></pre>\n<p><strong>数式で表すと</strong>、<code>getPerspectiveTransform</code> は4組の対応点 \\((u_i,v_i)\\to(X_i,Y_i)\\) が</p>\n<p>$$\nX_i(h_{31}u_i + h_{32}v_i + 1) = h_{11}u_i + h_{12}v_i + h_{13}\n$$</p>\n<p>（Yも同様）を満たすよう連立方程式を解き、\\(3\\times3\\) 行列 \\(H\\) を一意に決めています。</p>\n<pre><code class=\"language-python\"># 画像をBEVへ変換（ワープ）\nimg = cv2.imread(&quot;road.jpg&quot;)\nbev = cv2.warpPerspective(img, H, (1280, 720))\ncv2.imwrite(&quot;bev.jpg&quot;, bev)\n\n# 逆変換（BEV → カメラ視点）は逆行列\nH_inv = np.linalg.inv(H)\nback = cv2.warpPerspective(bev, H_inv, (1280, 720))\n</code></pre>\n<p><strong>数式で表すと</strong>、<code>warpPerspective</code> は出力画素 \\((X,Y)\\) ごとに \\(H^{-1}\\) で入力座標 \\((u,v)\\) を逆算し、双一次補間で画素値を埋めます（バックワードワーピング）。逆変換に \\(H^{-1}\\) を使えるのはホモグラフィが可逆だからです。</p>\n<h2>カメラパラメータから求める方法</h2>\n<p>対応点を手で選ぶ代わりに、<strong>カメラの内部・外部パラメータ</strong>が分かっていれば理論的に \\(H\\) を導けます。ピンホールカメラモデルでは、世界座標 \\((X, Y, Z)\\) と画像座標 \\((u, v)\\) が</p>\n<p>$$\ns \\begin{bmatrix} u \\\\ v \\\\ 1 \\end{bmatrix}\n= K\\, [R \\mid t]\n\\begin{bmatrix} X \\\\ Y \\\\ Z \\\\ 1 \\end{bmatrix}\n$$</p>\n<p>で結ばれます。\\(K\\) は内部パラメータ（焦点距離・光学中心）、\\(R, t\\) は回転・並進（カメラの取付姿勢）。地面を \\(Z = 0\\) と置くと \\(Z\\) の列が消え、\\((X, Y)\\) と \\((u, v)\\) を結ぶ \\(3\\times3\\) のホモグラフィに帰着します。</p>\n<p>$$\ns \\begin{bmatrix} u \\\\ v \\\\ 1 \\end{bmatrix}\n= K\\,[\\,r_1 \\; r_2 \\; t\\,]\n\\begin{bmatrix} X \\\\ Y \\\\ 1 \\end{bmatrix}\n= H_{\\text{地面}} \\begin{bmatrix} X \\\\ Y \\\\ 1 \\end{bmatrix}\n$$</p>\n<pre><code class=\"language-python\"># 内部パラメータ K と外部パラメータ R,t から地面ホモグラフィを構成\ndef ground_homography(K, R, t):\n    # 地面 Z=0 なので R の1,2列目と t を使う\n    H_cam = K @ np.column_stack([R[:, 0], R[:, 1], t])\n    return np.linalg.inv(H_cam)   # 画像→地面(BEV)\n</code></pre>\n<p><strong>数式で表すと</strong>、上の関数は \\(H_{\\text{地面}} = K[r_1\\ r_2\\ t]\\)（世界→画像）を作り、その逆 \\(H_{\\text{地面}}^{-1}\\)（画像→BEV）を返しています。</p>\n<h2>事前の歪み補正が必須</h2>\n<p>広角・魚眼カメラ（車載の周辺監視で多用）はレンズ歪みが大きいため、BEV変換の前に <strong>歪み補正（undistortion）</strong> をかけます。半径方向歪みは</p>\n<p>$$\nu_{\\text{corr}} = u\\,(1 + k_1 r^2 + k_2 r^4 + k_3 r^6), \\quad r^2 = u^2 + v^2\n$$</p>\n<p>でモデル化され、<code>cv2.undistort</code> で補正します。これを飛ばすと直線が曲がり、BEV上の距離がずれます。</p>\n<pre><code class=\"language-python\">undistorted = cv2.undistort(img, K, dist_coeffs)\nbev = cv2.warpPerspective(undistorted, H, (1280, 720))\n</code></pre>\n<h2>自動駐車・ADASでの応用</h2>\n<pre><code class=\"language-mermaid\">flowchart LR\n  subgraph &quot;4カメラ&quot;\n    F[&quot;前&quot;]; B[&quot;後&quot;]; L[&quot;左&quot;]; R[&quot;右&quot;]\n  end\n  F --&gt; W[&quot;各画像を\\n歪み補正＋BEV変換&quot;]\n  B --&gt; W; L --&gt; W; R --&gt; W\n  W --&gt; S[&quot;地面座標で合成\\nサラウンドビュー&quot;]\n  S --&gt; P[&quot;駐車枠検出\\n障害物・白線抽出&quot;]\n  P --&gt; C[&quot;経路計画・追従制御&quot;]\n</code></pre>\n<ul>\n<li><strong>サラウンドビューモニタ</strong>：前後左右4カメラのBEVを地面座標で合成し、車を真上から見た映像を生成</li>\n<li><strong>駐車枠検出</strong>：BEV上では白線が平行・等尺になるため、枠のサイズ・角度を正確に測れる（<a class=\"term-link\" data-slug=\"auto-parking-control\" href=\"/glossary/auto-parking-control\">自動駐車への制御工学の応用</a> の目標位置になる）</li>\n<li><strong>車線認識</strong>：平行線として扱えるので曲率・車線幅の推定が安定</li>\n<li><strong>距離計測</strong>：地面上の実距離 [m] が直接読め、障害物までの余裕を判断</li>\n</ul>\n<p>BEVで得た駐車枠の中心線が、制御工学側の「目標経路」になります。知覚（BEV）→計画→制御という流れは <a class=\"term-link\" data-slug=\"auto-parking-control\" href=\"/glossary/auto-parking-control\">自動駐車への制御工学の応用</a> を参照してください。</p>\n<h2>限界と注意点</h2>\n<table>\n<thead>\n<tr>\n<th>限界</th>\n<th>内容</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>平面仮定</td>\n<td>地面が平らな前提。段差・坂・立体物は歪む（背の高い物体は伸びる）</td>\n</tr>\n<tr>\n<td>遠方の精度</td>\n<td>遠くほど1画素が広い実距離に対応し、解像度・精度が落ちる</td>\n</tr>\n<tr>\n<td>キャリブレーション依存</td>\n<td>取付角のずれがBEV全体の歪みに直結。定期的な校正が必要</td>\n</tr>\n<tr>\n<td>動的物体</td>\n<td>歩行者・他車は地面上の点ではないため位置がずれる</td>\n</tr>\n</tbody>\n</table>\n<p>近年は幾何変換だけでなく、<strong>深層学習でカメラ特徴を直接BEV空間へ写す</strong>手法（BEVFormer、Lift-Splat-Shoot 等）も自動運転で主流になりつつあります。</p>\n<h2>まとめ</h2>\n<ul>\n<li>BEV変換はカメラの斜め視点画像を真上からの俯瞰図に直す処理（IPM）</li>\n<li>地面という平面の写像なので <strong>ホモグラフィ（\\(3\\times3\\) 射影変換）</strong> で表せる</li>\n<li><strong>4点対応</strong>（<code>getPerspectiveTransform</code>）または<strong>カメラパラメータ</strong>から \\(H\\) を求める</li>\n<li>事前の歪み補正が必須。魚眼ほど重要</li>\n<li>サラウンドビュー・駐車枠検出・車線認識の基盤で、<a class=\"term-link\" data-slug=\"auto-parking-control\" href=\"/glossary/auto-parking-control\">自動駐車への制御工学の応用</a> の知覚を担う</li>\n</ul>",
+"prereq_full": [
+{
+"slug": "opencv",
+"title": "OpenCV（画像処理基礎）"
+}
+],
+"related_full": [
+{
+"slug": "image-processing",
+"title": "画像前処理・特徴抽出（深層学習向け）"
+},
+{
+"slug": "opencv",
+"title": "OpenCV（画像処理基礎）"
+},
+{
+"slug": "auto-parking-control",
+"title": "自動駐車への制御工学の応用"
+},
+{
+"slug": "object-detection",
+"title": "物体検出（YOLO・Faster R-CNN・SSD）"
+}
+],
+"next_full": [],
+"completed": false,
+"favorite": false
+},
 "fine-tuning": {
 "slug": "fine-tuning",
 "title": "ファインチューニング（LoRA・QLoRA・PEFT）",
@@ -12534,8 +12620,8 @@
 "title": "LLM（大規模言語モデル）"
 },
 {
-"slug": "langchain",
-"title": "LangChain（LLMアプリ開発フレームワーク）"
+"slug": "bev-transform",
+"title": "カメラのBEV変換（俯瞰変換）"
 }
 ],
 "cnn": [
@@ -13860,6 +13946,32 @@
 "title": "Bluetooth（Classic/BLE）の仕組みと車載応用"
 }
 ],
+"bev-transform": [
+{
+"slug": "image-processing",
+"title": "画像前処理・特徴抽出（深層学習向け）"
+},
+{
+"slug": "auto-parking-control",
+"title": "自動駐車への制御工学の応用"
+},
+{
+"slug": "opencv",
+"title": "OpenCV（画像処理基礎）"
+},
+{
+"slug": "object-detection",
+"title": "物体検出（YOLO・Faster R-CNN・SSD）"
+},
+{
+"slug": "adas-comm",
+"title": "ADAS通信"
+},
+{
+"slug": "blip",
+"title": "BLIP / BLIP-2（視覚言語モデルの最前線）"
+}
+],
 "fine-tuning": [
 {
 "slug": "llm",
@@ -13934,8 +14046,8 @@
 "title": "ADAS通信"
 },
 {
-"slug": "laplace-transform",
-"title": "ラプラス変換とは何か"
+"slug": "bev-transform",
+"title": "カメラのBEV変換（俯瞰変換）"
 }
 ],
 "cybersecurity": [
@@ -13986,8 +14098,8 @@
 "title": "自動駐車への制御工学の応用"
 },
 {
-"slug": "micro-autobox",
-"title": "MicroAutoBox（dSPACE）"
+"slug": "bev-transform",
+"title": "カメラのBEV変換（俯瞰変換）"
 }
 ],
 "ros2-dds": [
@@ -17541,6 +17653,37 @@
 "difficulty": "中級",
 "updated": "2026-07-17",
 "excerpt": "深層学習で画像を扱う際には、モデルに合わせた前処理（リサイズ・正規化・データ拡張）が精度に大きく影響します。PyTorchの `torchvision.transforms` と OpenCV を組み合わせた実践的な前処理パイプラインを解説",
+"views": 0,
+"completed": false,
+"favorite": false
+},
+{
+"slug": "bev-transform",
+"title": "カメラのBEV変換（俯瞰変換）",
+"level": 4,
+"category": "CV",
+"related": [
+"image-processing",
+"opencv",
+"auto-parking-control",
+"object-detection"
+],
+"prereq": [
+"opencv"
+],
+"tags": [
+"cv",
+"bev",
+"homography",
+"perspective-transform",
+"ipm",
+"adas",
+"camera"
+],
+"next": [],
+"difficulty": "上級",
+"updated": "2026-07-20",
+"excerpt": "**BEV（Bird's Eye View、鳥瞰図／俯瞰図）変換** とは、車体に取り付けたカメラの「斜め前を見た画像」を、**真上から見下ろした地図のような画像**に変換する画像処理です。**IPM（Inverse Perspective",
 "views": 0,
 "completed": false,
 "favorite": false

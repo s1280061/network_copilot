@@ -111,6 +111,7 @@ _CATEGORY_MAP = {
     "generative-models": "DL",
     # CV additional
     "object-detection": "CV",
+    "bev-transform": "CV",
     "clip": "CV",
     "blip": "CV",
     "qformer": "CV",
